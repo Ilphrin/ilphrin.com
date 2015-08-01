@@ -1,0 +1,55 @@
+#Globals
+source: .
+destination: ./_site
+plugins: ./_plugins
+layouts: ./_layouts
+collection: null
+
+#Handling reading
+safe: false
+include: [".htaccess"]
+exclude: []
+keep_files: [".git"]
+encoding: "utf-8"
+markdown_ext: "markdown, mkdown, mkdn, mkd"
+paginate: 5
+paginate_path: kevin/page/:num
+
+#Filtering content
+show_drafts: null
+future: true
+unpublished: false
+
+#Plugins
+whitelist: []
+gem: []
+
+#Conversion
+highlighters: rouge
+lsi: false
+exercpt_separators: "\n\n"
+
+#Serving
+detach: true
+port: 4001
+
+#Backwards compatibility
+relative_permalinks: false
+
+#Outputting
+permalink: date
+timezone:
+
+#Markdown processors
+maruku:
+  png_engine: blahtex
+  png_dir: images/latex
+  png_url: /images/latex
+  fenced_code_blocks: true
+
+rdiscount:
+  extensions: []
+
+redcarpet:
+  extensions: []
+

@@ -1,0 +1,27 @@
+---
+layout: index_kevin
+lang: fr
+---
+
+<div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/{{ page.cover }}');">
+        <time datetime="{{ page.date | date: '%-d %B %Y'}}">
+          <h1> {{ page.title }} </h1>
+          <p>
+            {% include date.html date=page.date %}
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    {{ content }}
+  {% include comment_template.html %}
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
