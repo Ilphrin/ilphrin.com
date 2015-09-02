@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a href="https://www.github.com/Ilphrin">Github</a>
+    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/linuxmint.png');">
+        <time datetime="1 March 2013">
+          <h1> Faire son propre écran de login MDM en HTML </h1>
+          <p>
+            
+  
+    1<sup>er</sup>
+
+
+mars
+  
+2013
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Salut tout l’monde!</p>
+
+<p><a href="http://blog.linuxmint.com/?p=2327">The Linux Mint Blog</a> à publié récemment un article concernant MDM expliquant qu’il gère maintenant les thèmes HTML5.  Si vous n’aimez pas l’Anglais, voici comment avoir la dernière version de mdm:
+<!--break-->
+- Télécharger et installer l’archive ici : <a href="http://build.linuxmint.com/automate/www/instances/linuxmint/ubuntu/pool/main/m/mdm/">archive</a></p>
+
+<ul>
+  <li>
+    <p>Enlever les “ajustements de Mint” (je met entre guillemet car je ne sais pas vraiment à quoi cela correspond) :</p>
+
+    <pre><code>  rm -f /etc/linuxmint/adjustments/15-mdm.overwrite 
+</code></pre>
+  </li>
+  <li>Redémarrer son pc</li>
+  <li>Ensuite vous pouvez configurer MDM par deux façons:</li>
+  <li>Par le menu du panel   :  Menu-&gt;Administration-&gt;Ecran de démarrage (Login Window)</li>
+  <li>
+    <p>Ou en ligne de commande avec:</p>
+
+    <pre><code>  sudo mdmsetup 
+</code></pre>
+  </li>
+  <li>Dans l’onglet “Locale”, mettez “Style” sur HTML</li>
+  <li>Faites une copie du répertoire /usr/share/mdm/html-themes/mdm dans votre dossier personnel, ce sera ce dossier là avec lequel vous ferez mumuse ;)</li>
+  <li>Quand vous avez fini vous pouvez nommer votre thème comme bon vous semble puis le copier dans le répertoire /usr/share/mdm/html-themes/</li>
+</ul>
+
+<p>Vous pouvez avoir un aperçu de votre résultat en entrant la commande</p>
+
+<pre><code>mdm-theme-emulator 
+</code></pre>
+
+<p>Et en ouvrant le fichier <strong>index.html</strong></p>
+
+<p>Et voilà vous avez de quoi vous occuper un bon moment! Moi je ne peux pas encore faire  grand chose vu qu’il faut connaitre l’html/css et le javascript pour faire de joli trucs, du coup je me suis contenté de celui proposé de base.</p>
+
+<p>Bonne journée à tous! _o/</p>
+
+  <div id="comments">
+	
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html" />
+		<input type="hidden" name="return_url" value="/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" /> (requis)</p>
+				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" ></textarea>
+		<input type="submit" name="submit" value="Envoyer" />
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Faire son propre écran de login MDM en HTML&url=/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>

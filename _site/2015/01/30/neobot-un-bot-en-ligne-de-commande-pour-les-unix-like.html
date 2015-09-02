@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a href="https://www.github.com/Ilphrin">Github</a>
+    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/circuit.jpg');">
+        <time datetime="30 January 2015">
+          <h1> Neobot un bot en ligne de commande pour les unix like </h1>
+          <p>
+            
+  
+    30
+
+
+janvier
+  
+2015
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Salut tout le monde</p>
+
+<p>Alors tout d’abord pour ceux qui ne le savent pas, qu’est-ce qu’un <em>bot</em> en informatique? C’est un programme qui va se gérer tout seul pour accomplir une ou des tâches voulues par les développeurs du bot. Leurs utilisation est vaste, cela va du jeu vidéo (les ennemis d’un jeu de FPS contrôlés par l’ordinateur par exemple) à la gestion des salons de discussion IRC en passant par les bien connus spambots, vous savez les faux comptes inscris sur les forums de discussions simplement pour balancer de la pub en vrac… Pour en savoir plus, je vous invite à lire la page wikipédia sur les <a href="https://fr.wikipedia.org/wiki/Bot_informatique">bot informatique</a>.</p>
+
+<!--break-->
+<p>Il existe une catégorie de bot qui ont pour but de tenir une conversation en ayant l’air le plus possible humain, connu sous le nom de Chatbot. C’est sur cette catégorie de bot que l’on va s’attarder aujourd’hui avec <a href="http://dcjtech.info/topic/neobot-v1-0b-release/">Neobot</a>. C’est un logiciel développé par Devyn C. Johnson (dont j’ai déjà parlé ici, rappelez-vous les articles sur le <a href="http://mintic.blog4ever.com/blog/linux-kernel-introduction">Kernel Linux</a>), dont le coeur du programme est développé en Python3, pour quelque détails supplémentaires sur les outils utilisé, vous pouvez regarder <a href="https://www.chatbots.org/chatbot/neo/">ICI</a>.</p>
+
+<p>Neobot est portable, c’est-à-dire qu’il n’a pas besoin d’être installé pour être lancé. Une fois téléchargé et dezippé, vous pouvez lancer directement l’executable appelé Betabot. Il faut attendre quelques secondes pour que le Neobot soit totalement lancé. Lorsque que c’est le cas il devrait vous afficher un message de bonjour. Voilà vous pouvez commencer à discuter avec lui (uniquement en anglais pour le moment)</p>
+
+<p>Je trouve ce bot particulièrement intéressant pour deux raisons principalement: la première est que, malgré le fait que ce soit écrit en python qui est un langage haut niveau, Neobot est assez performant. Il utilise un format de base de données crée spécialement pour cette catégorie de bot appelé Xaiml.</p>
+
+<p>La deuxième est que vous pouvez poser des questions sur votre pc a Neobot et il pourra vous repondre. Par exemple si vous lui demandez de lancer Firefox et bien il ira chercher Firefox et le lancera pour vous. Vous pouvez aussi demander des inforomations sur votre système. Par exemple si vous lui demandez “Where am I” il vous repondra par le dossier courant dans lequel vous êtes dans votre temrinal.</p>
+
+<p>Si vous souhaitez voir un peu les autres projets sur lesquels Devyn C.Johnson a travaillé ou même en discuter, vous pouvez aller jeter un coup d’oeil sur <a href="http://dcjtech.info/">http://dcjtech.info</a>.</p>
+
+<p>Bonne journée à tous!</p>
+
+
+  <div id="comments">
+	
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like" />
+		<input type="hidden" name="return_url" value="/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" /> (requis)</p>
+				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" ></textarea>
+		<input type="submit" name="submit" value="Envoyer" />
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Neobot un bot en ligne de commande pour les unix like&url=/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>

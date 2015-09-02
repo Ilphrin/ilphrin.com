@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a href="https://www.github.com/Ilphrin">Github</a>
+    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/game.jpg');">
+        <time datetime="8 October 2012">
+          <h1> Un jeu de dessin basé sur les lois de la physique </h1>
+          <p>
+            
+  
+    8
+
+
+octobre
+  
+2012
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Caph est un petit jeu extrêmement sympathique dont le but est de faire se coller un objet A sur un objet B. Basé sur deux principes : Primo tout est a base de dessins. Pour parvenir a votre objectif, vous n’avez que votre souris qui vous permet de dessiner des formes sur lesquelles vont venir se construire vos techniques pour faire avances l’objet A. Secundo la difficulté la plus importante, est que ce jeu est basé sur les lois de la physique ! En effet selon ce que vous dessinez il y aura des effet de gravité et d’énergie mécanique variable.
+<!--break-->
+##Installation</p>
+
+<p>Pour installer ce jeu il faut aller télécharger a partir de → <a href="http://caphgame.sourceforge.net/">Caph</a></p>
+
+<p>Normalement une commande par le terminal et apt-get permettrai de l’installer. Mais depuis peu il y a des problèmes avec le fichier deb. Mais pour les autres version il n’y a manifestement pas de problème, vous pouvez donc continuer à utiliser ces version du jeux. Pour le reste il faut suivre le lien précédent et dans la catégorie “Downloads” cliquer sur le lien et télécharger la dernière version. Ensuite dans le répertoire où vous l’avez téléchargé vous faites une extraction d’un contenu de l’archive avec votre gestionnaire d’archive préféré. Ensuite ça se complique légèrement. Il faut aller dans le dossier caph/src/ puis vous ouvrez un terminal dans ce répertoire. vous lancez ensuite les commandes suivante:</p>
+
+<pre><code>./config                           
+./build                            
+</code></pre>
+
+<p>Ne faites pas attention aux quelques messages apparaissant, maintenant vous pouvez exécuter le fichier caph avec un simple ./caph . Le jeu se lance alors!</p>
+
+<p>A partir de là libre à vous de créer les raccourcis que vous voulez pour lancer le jeu plus rapidement. (Par exemple en exécutant une commande avec Gnome-Pie!)</p>
+
+<p>Si vous voulez plus d’infos sur le jeu, il y a un répertoire doc dans le jeu avec un fichier README qui fournit pas mal d’informations.</p>
+
+<h2 id="comment-jouer">Comment jouer</h2>
+
+<p>Voici les commande de base a connaître :</p>
+
+<p>La souris vous permet de dessiner toutes les formes qui vous passent par la tête pour arriver au bout du niveau. Le clic-droit vous permet de changer de types de matériaux (Noir : Solide , Vert:Solide déformable et Bleu :Corde flexible).</p>
+
+<p>Echap permet de faire un retour arrière dans les objets crées. Il est surtout a combiner avec la touche T qui permet de stopper les temps.</p>
+
+<p>La touche R permet de recommencer le niveau</p>
+
+<p>La touche N permet de passer au niveau suivant (n’ayant pas de système de sauvegarde vous pouvez retourner a votre niveau de cette façon)</p>
+
+<p>Et enfin la touche Q vous permet de quitter le jeu.</p>
+
+<p>Voilà j’espère que vous vous amuserez bien avec ce petit jeu, en tout cas au début c’est un peu difficile a prendre en main mais après ça va mieux. Bien sur les niveau vont en difficulté crescendo ! (je ne sais pas encore combien de niveau il existe, je vous le dirais quand je l’aurais fini x) ). Sur ce bonne fin de journée a tous et amusez-vous bien !</p>
+
+  <div id="comments">
+	
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques" />
+		<input type="hidden" name="return_url" value="/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" /> (requis)</p>
+				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" ></textarea>
+		<input type="submit" name="submit" value="Envoyer" />
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Un jeu de dessin basé sur les lois de la physique&url=/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>

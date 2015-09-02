@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a href="https://www.github.com/Ilphrin">Github</a>
+    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/micro.jpg');">
+        <time datetime="8 March 2014">
+          <h1> Passage de Skype à Ekiga </h1>
+          <p>
+            
+  
+    8
+
+
+mars
+  
+2014
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Salut tout l’monde!</p>
+
+<p>Ça faisait un moment que je n’avais pas écrit. La cause: Un manque de temps effroyable. Entre les cours, les activités extérieures et deux trois occupations je n’ai plus le temps de rien faire. Mais bon voilà après une longue absence je reviens pour vous parler d’une alternative à Skype qui est déjà bien connue, répondant au nom de <a href="http://ekiga.org/">Ekiga</a>.
+<!--break-->
+Cela faisait un moment que je me disais qu’il fallait que j’enlève Skype de mon ordinateur. Il est un peu lourd, les notifications sonores sont vraiment moches sur mon pc, et tout récemment à l’acquisition de ma nouvelle webcam je me suis rendu compte que quand je voulais la configurer avec <a href="http://doc.ubuntu-fr.org/guvcview">guvcview</a>, et bien Skype n’était pas content et faisait planter ma session. Ce qui est tout de même gênant car ma caméra permet de faire du 720p avec une luminosité et des couleurs plus qu’acceptable, et Skype me réduit tout ça à du 320x260 et des bandes de couleurs.</p>
+
+<p>Soit, il ne me restait qu’à trouver un autre logiciel pouvant le remplacer, et essayer de faire venir mes contacts dessus, ce qui n’est pas chose aisée quand le monde entier est habitué à ce seul Skype. A bout d’environ 5 secondes de recherches je trouve mon bonheur. Ekiga est un logiciel de visioconférence sous licence GPLv2 et multiplateforme, qui permet de gérer l’appel Pc à Pc, Pc à téléphone, ainsi que la messagerie instantanée, exactement ce que je cherche somme toute.</p>
+
+<p>Je lance donc l’installation avec le gestionnaire de logiciels de Linux Mint, et tout de suite un assistant de configuration apparait pour m’aider à configurer mon premier compte en 9 étapes. Ekiga nous demande d’abord de saisir Nom et Prénom, ou son pseudo si l’on veut apparaitre avec quelque chose d’un peu personnalisé aux autres contacts. Ensuite après une brève explication sur l’utilisation du <a href="https://fr.wikipedia.org/wiki/Session_Initiation_Protocol">SIP</a> et du <a href="https://fr.wikipedia.org/wiki/H.323">H323</a>, Ekiga nous invite à créer un compte SIP par le biais de son site, ce que j’ai fais dans mon cas mais l’on peut très bien sauter cette étape si l’on possède déjà un compte avec un autre service en cochant la case en bas de la fenêtre.</p>
+
+<p><img src="/images/ekiga1.png" alt="Ekiga" title="ekiga1.pnh" /></p>
+
+<p>L’inscription sur le site ekiga.net se fait comme n’importe quel autre compte.  Si ce n’est qu’il y a l’adresse ekiga à prendre en compte (ce n’est pas celle-ci qui faut indiquer à la 4e étape de la configuration de compte). Je n’ai pas fait la configuration Pc-To-Phone parce que ce n’est pas pour ça que je l’ai installé, et je ne pense pas avoir à m’en servir donc je l’ai passée.  Pour ce qui est du type de connexion et des périphériques audio je conseille de laisser tout par défaut au début, et si ça ne marche vraiment pas à ce moment-là vous pourrez toujours revenir configurer tout cela. Pareil pour le périphérique d’entrée vidéo, ce n’est utile que si vous avez une caméra sinon cela ne sert à rien d’y toucher. (Note: Si vous en avez une de branché, sélectionnez-la maintenant sinon ce sera l’autre qui sera prit par défaut, qui est une icone mouvante qui se balade à la place du cadre de l’image de votre caméra)</p>
+
+<p>Voilà après un récapitulatif des paramètres vous pouvez cliquer sur Appliquer pour terminer la configuration! Si tout s’est bien passé maintenant il vous reste à ajouter des contacts. C’est là que l’adresse Ekiga est utile! Car c’est elle qu’il faut indiquer dans la fenêtre d’ajout de contact. La case Nom peut être remplacé par ce que vous voulez, c’est vous qui choisissez le nom par lequel cette personne apparaitra dans votre liste de contact ou dans vos discussions!</p>
+
+<p>Bon pour tout vous avouer certaines choses ne marchent pas encore correctement, mais il faudrait que j’essaie avec d’autre personnes pour être certain. Par exemple je reçoit bien la flux vidéo et audio de mon contact (moi sur un Linux Mint 16 et mon contact sur un Windows 8), le son de micro lui est bien envoyé et je me vois bien moi-même en petit avec ma caméra mais mon contact ne me voit pas.</p>
+
+<p>Voilà j’espère que ce court article vous aura plu, n’hésitez pas à me dire si certaines explication sont incorrecte/incompréhensible/mal dite.</p>
+
+<p>Sur ce, bonne journée et amusez-vous bien!</p>
+
+  <div id="comments">
+	
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/2014/03/08/passage-de-skype-a-ekiga" />
+		<input type="hidden" name="return_url" value="/2014/03/08/passage-de-skype-a-ekiga.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" /> (requis)</p>
+				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" ></textarea>
+		<input type="submit" name="submit" value="Envoyer" />
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Passage de Skype à Ekiga&url=/2014/03/08/passage-de-skype-a-ekiga.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>

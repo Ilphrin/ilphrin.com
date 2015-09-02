@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a href="https://www.github.com/Ilphrin">Github</a>
+    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/sunflower.jpg');">
+        <time datetime="10 August 2014">
+          <h1> Sunflower passe en version 0.2-59 </h1>
+          <p>
+            
+  
+    10
+
+
+août
+  
+2014
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Bonjour à tous!</p>
+
+<p>Ce n’est pas la première fois que je parle de Sunflower. Petite piqûre de rappel, c’est un gestionnaire de fichier pour  GNU/Linux entièrement codé en Python, avec la bibliothèque GTK. La particularité de Sunflower réside dans le fait qu’il propose une vue en panneaux jumelés, c’est-à-dire que c’est comme si on avait deux onglets d’exploration d’ouvert simultanément, chacun des onglets prenant une portion de la largeur de la fenêtre.
+<!--break-->
+Récemment une version majeure pour Sunflower à été publiée, rajoutant plusieurs support et corrigeant quelques bugs. Voici une petite liste de ce qui a été modifié:</p>
+
+<ul>
+  <li>Configuration de la taille de police</li>
+  <li>Support de l’interface DBus</li>
+  <li>Verrouillage des onglets et menus</li>
+  <li>Plusieurs traductions mises à jour (dont la française par votre humble serviteur :p)</li>
+  <li>Amélioration des performances pour le chargement des répertoire</li>
+  <li>Plusieurs corrections pour la liaison avec Git</li>
+</ul>
+
+<p>Et tout un tas d’autres ajouts et corrections que l’on peut retrouver en lisant le fichier <a href="https://github.com/MeanEYE/Sunflower/blob/master/CHANGES">CHANGES</a>. (Vraiment, la liste est longue!)</p>
+
+<p>Si on veut vraiment la toute dernière version on peut aller la chercher directement sur le dépot Github. Mais des paquets stables existent aussi pour les distributions les plus courantes (Ubuntu-like, Archlinux, etc…)</p>
+
+<p>Voilà c’est tout pour cet article, j’en ai plusieurs autres en préparation que je vais essayer de sortir avant que les cours ne reprennent, notamment un article sur Pygame, et peut-être une liste des musiques ou livres libres que j’ai écoutées ou lus récemment.</p>
+
+<p>À la prochaine!</p>
+
+  <div id="comments">
+	
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/2014/08/10/sunflower-pass-en-version-0-2-59" />
+		<input type="hidden" name="return_url" value="/2014/08/10/sunflower-pass-en-version-0-2-59.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" /> (requis)</p>
+				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" ></textarea>
+		<input type="submit" name="submit" value="Envoyer" />
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Sunflower passe en version 0.2-59&url=/2014/08/10/sunflower-pass-en-version-0-2-59.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>

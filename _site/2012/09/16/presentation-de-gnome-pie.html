@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a href="https://www.github.com/Ilphrin">Github</a>
+    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/');">
+        <time datetime="16 September 2012">
+          <h1> Présentation de Gnome-pie </h1>
+          <p>
+            
+  
+    16
+
+
+septembre
+  
+2012
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Gnome-pie est un petit logiciel fort sympathique. Il permet, par le biais d’un raccourcis tapé au clavier, de faire apparaître un disque de ses logiciels.</p>
+
+<p>En fait le terme exact devrait être une « tarte » de logiciels. Puisque ‘Pie’ en anglais veut dire aussi bien disque que tarte. Mais d’après le développeur on parle plus généralement de tartes. (je le soupçonne d’être fondateur d’une multinationale alimentaire…)
+<!--break-->
+Bon voici clairement a quoi ressemble les tartes :</p>
+
+<p>&lt;iframe width:”420” height:”360” src=”https://vimeo.com/30618179” frameborder=”0”&gt;&lt;/iframe&gt;
+(Vidéo officielle de Simon Schneegans, le développeur).</p>
+
+<p>Pour l’installation, je vais honteusement recopier le tuto du site de Mr Schneegans ^_^ :</p>
+
+<h2 id="installation-par-pparecommand">Installation par PPA(recommandé)</h2>
+
+<pre><code>sudo add-apt-repository ppa:simonschneegans/testing
+sudo apt-get update
+sudo apt-get install gnome-pie
+Installation par les sources
+</code></pre>
+
+<p>Avec gtk2 :</p>
+
+<pre><code>sudo apt-get install git build-essential libgtk2.0-dev libcairo2-dev libappindicator-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-dev valac cmake libunique-dev libbamf-dev libwnck-dev bamfdaemon
+</code></pre>
+
+<p>Avec gtk3 :</p>
+
+<p>sudo apt-get install git build-essential libgtk-3-dev libcairo2-dev libappindicator3-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-3-dev valac cmake libunique-3.0-dev libbamf3-dev libwnck-3-dev bamfdaemon</p>
+
+<p>Ensuite pour les deux cas vous n’avez plus qu’à télécharger Gnome-pie, le compiler et l’installer comme ceci :</p>
+
+<pre><code>git clone git://github.com/Simmesimme/Gnome-Pie.git
+cd Gnome-Pie &amp;&amp; ./make.sh
+cd build &amp;&amp; sudo make install
+</code></pre>
+
+<p>Ensuite, quelle que soit votre méthode d’installation, je vous recommande de le faire lancer au démarrage de votre session.</p>
+
+<h2 id="configurationpossibilits-de-base">Configuration/Possibilités de base</h2>
+
+<p>Au premier lancement plusieurs tartes sont déjà disponibles. Donc notamment les raccourcis clavier qui vont avec, voici plus ou moins ce que donnent ces raccourcis :</p>
+
+<p>-Ctrl+Alt+A : 6 objets ; Redémarrer Déconnecter Arrêter ainsi que trois logiciel qui sont sur votre ordinateur (je ne me souviens plus desquels je les ais changés depuis longtemps).</p>
+
+<p>-Ctrl+Alt+B : x objets ; Tous les dossier de votre répertoire personnel ainsi que les différents volumes montés.</p>
+
+<p>-Ctrl+Alt+Espace ; Représente les différents types de logiciels présents sur votre ordinateur ( Ceux qui sont dans votre menu de bureau par exemple Accessoire Internet Préférence Administration etc…)</p>
+
+<p>-Ctrl+Alt+W : Les différentes options de fenêtre c’est-à-dire Réduire Agrandir Restaurer Fermer.</p>
+
+<p>-Ctrl+Alt+M : Celui que j’utilise le plus fréquemment. Il correspond aux boutons de base de votre lecteur de musique. Lecture/Pause Précédant Suivant Stop.</p>
+
+<p>-Ctrl+Alt+Q : Redémarrer Arrêter Déconnecter.</p>
+
+<p>Il y a deux moyens pour créer/éditer ses propres tartes :</p>
+
+<p>-Le mode graphique : Dans le menu préférence de gnome-pie. Vous pouvez sélectionner les tartes existantes en cliquant sur l’un de ceux de la liste de gauche, puis en cliquant dans le vide sur la tarte montrée a droite pour en ajouter une. Là il ne vous reste plus qu’à taper la commande a lancer et a vous choisir un nom ainsi qu’une icône.</p>
+
+<p>Vous pouvez aussi ajouter une tarte en cliquant sur l’icône + en bas a gauche de la fenêtre. Là il vous est demandé d’entrer un nom ainsi que d’appuyer sur la combinaison de touche nécessaire a l’ouverture de cette tarte. Vous pouvez dès lors y ajouter des applications.</p>
+
+<p>Attention : Sur mon ordinateur la sélection d’icône provoque un crash du logiciel, peut-être que vous aurez plus de chances que moi, en attendant si c’est votre cas vous pourrez choisir l’icône avec la deuxième méthode que je vais vous présenter.</p>
+
+<p>-Le mode texte : Vous pouvez aussi tout écrire a la main, en allant directement dans le fichier de config. L’avantage ? Si comme moi vous avez un problème avec les icône, vous pouvez les choisir en donnant le chemin de l’icône.</p>
+
+<p>Chez moi le fichier de config se trouve dans : /home/chezmoi/.conf/gnome-pie/pies.conf</p>
+
+<p>Vous devez normalement vous retrouver devant un fichier de type texte xml. Vous pouvez créer une tarte de la façon suivante :</p>
+
+<pre><code>&lt;pie name="Multimédia" id="831" icon="stock_media-play" hotkey="Control+Alt+m"&gt;&lt;/pie&gt;
+</code></pre>
+
+<p>Vous avez plusieurs choses bizarres dans ces lignes, je vais vous y décrire ce que fait chaque attribut :</p>
+
+<ul>
+  <li>
+    <p>&lt; pie&gt; &lt; /pie&gt; Correspond a la création d’une tarte avec une balise ouvrante et une fermante.</p>
+  </li>
+  <li>
+    <p>name= ‘‘Multimédia ‘’ Correspond au nom donné a la tarte, ici c’est Multimédia (plus quelques caractères pour gérer l’accent du ‘‘é’’ ).</p>
+  </li>
+  <li>
+    <p>'’id=831’’ Bon alors celui-ci je dois avouer que je ne saurais l’utiliser correctement. Je ne sais non plus comment il fonctionne (si quelqu’un peut me le dire d’ailleurs ce serait cool x) ).</p>
+  </li>
+  <li>
+    <p>icon=’‘stock_media-play’’ Là il vous est possible de choisir votre icône. Soit c’est une icône système auquel cas vous pouvez directement entrer son nom, ou alors vous écrivez le chemin (de préférence le chemin absolu) pour y accéder.</p>
+  </li>
+  <li>
+    <p>hotkey=”Control+Alt+m” Là il s’agit du raccourcis sur lequel appuyer pour ouvrir la tarte, je ne saurais expliquer comment savoir a quoi correspondent les caractères qu’il y a entre chacune des touches a entrer.</p>
+  </li>
+</ul>
+
+<p>Vous pouvez aussi a l’intérieur d’une tarte mettre une nouvelle application. Les lignes ressemblent a ceci : (j’ai pris une icône de la tarte Multimédia)</p>
+
+<pre><code>&lt;slice type="key" name="Piste Suivante" icon="stock_media-next" command="XF86AudioNext" quickAction="true"/&gt;
+</code></pre>
+
+<p>Alors là à l’inverse des balises <pie> et &lt; /pie&gt; la balise &lt; slice /&gt; est dite orpheline, car elle se termine sur la même balise qui l'à commencé (on peut le voir notamment avec le '/' a la fin). Littéralement slice en français veut dire 'part' comme...part de tarte ! C'est bien fait n'est-ce pas ^^</pie></p>
+
+<p>Bon passons au découpage de cette balise :</p>
+
+<ul>
+  <li>
+    <p>type=’‘key’’ signifie que c’est une commande un peu spéciale. Généralement quand vous voudrez ajouter une part de tarte cela sera plutôt : type=’‘app’’ .</p>
+  </li>
+  <li>
+    <p>name= ‘‘Piste suivante’’ Est le nom qui va s’afficher pour le bouton.</p>
+  </li>
+  <li>
+    <p>icone=’‘stock_media-next’’ Est la même chose que pour la balise <pie> .</pie></p>
+  </li>
+  <li>
+    <p>command=’’ XF86AudioNext’’ Est la commande qui va être lancée. Vous pouvez écrire une commande comme vous le feriez dans un terminal.</p>
+  </li>
+  <li>
+    <p>quickAction=’true’’ Bon je dois avouer ne pas connaître grand chose non plus sur l’utilité de cet attribut, mais toutes les applications que j’ai ajouté se sont vues mettre l’attribut : quickAction=”false” .</p>
+  </li>
+</ul>
+
+<p>Personnellement je n’ai crée qu’un seule tarte nommée ‘Jeux’ dans laquelle j’ai mis….mes jeux !</p>
+
+<p>Voici le lien sur site de Mr Schneegans: <a href="http://www.simonschneegans.de">http://www.simonschneegans.de</a></p>
+
+<p>Bon et bien voilà je crois que j’ai fait le tour. Sur ce je vais vous souhaiter une bonne fin de journée, tout en espérant en avoir amadoué quelques uns ;P</p>
+
+  <div id="comments">
+	
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/2012/09/16/presentation-de-gnome-pie" />
+		<input type="hidden" name="return_url" value="/2012/09/16/presentation-de-gnome-pie.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" /> (requis)</p>
+				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" ></textarea>
+		<input type="submit" name="submit" value="Envoyer" />
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Présentation de Gnome-pie&url=/2012/09/16/presentation-de-gnome-pie.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>

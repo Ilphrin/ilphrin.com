@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a href="https://www.github.com/Ilphrin">Github</a>
+    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/circuit.jpg');">
+        <time datetime="13 July 2013">
+          <h1> Linux Kernel: Introduction </h1>
+          <p>
+            
+  
+    13
+
+
+juillet
+  
+2013
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Salut tout l’monde!</p>
+
+<p>Aujourd’hui on va parler du noyau linux (au cas où vous n’auriez pas lu le titre… :p), et cet article est le premier d’une suite sur le sujet, qui proviennent du site linux.org que je me permet de vous retranscrire en français ici.
+<!--break-->
+En 1991, un étudiant Finlandais du nom de Linus Benedict Torvalds crée  le noyau du système d’exploitation tel qu’on le connaît aujourd’hui. En  septembre 1991 sort la version 0.01 de Linux, et en Février 1992, il  passe sous licence GPL.  La licence  GNU General Public License (GPL) autorise les utilisateurs à utiliser, récupérer, modifier et  distribuer le code source légalement. Ceci a permit au noyau de devenir très populaire car tout le monde pouvait le télécharger gratuitement. Maintenant que tout le monde peut construire son propre noyau, il peut être utile de savoir comment obtenir, éditer, configurer, compiler et installer un noyau Linux.</p>
+
+<p>Le noyau  est le cœur du système d’exploitation. Le système d’exploitation regroupe tous les programmes qui s’occupent du matériel et autorise l’utilisateur à lancer des applications sur un ordinateur. Le noyau contrôle le matériel et les applications. Les applications ne communiquent pas directement avec le matériel, au lieu de cela ils vont demander au noyau. Pour faire simple, le logiciel s’exécute à partir du noyau et celui-ci agit sur le matériel. Sans noyau, un ordinateur n’est qu’un objet sans utilité.</p>
+
+<p>Il y a de nombreuses raisons pour qu’un utilisateur veuille faire son propre noyau. De nombreux utilisateurs veulent faire un noyau qui ne contient que le code nécessaire pour faire tourner leur système. Par exemple, un noyau contient des drivers pour des outils FireWire, mais mon ordinateur n’a pas ces ports. Quand le système se “boot”, du temps et de la RAM sont gaspillés sur des drivers pour les outils que mon système n’a pas d’installé. Si je voulais modifier mon noyau, je pourrais faire mon propre noyau qui n’aurai pas les drivers FireWire. Il y a une autre raison : un outil pourrait appartenir à un utilisateur avec un hardware particulier, mais le noyau qui vint avec la dernière version d’Ubuntu ne contient pas le driver nécessaire. Cet utilisateur pourrait donc télécharger le dernier noyau (qui a quelques versions d’avance sur les noyaux Linux Ubuntu) et faire leur propre noyau qui a le driver nécessaire. Cependant, ces deux raisons sont les plus communes pour les utilisateurs qui veulent faire leur propre noyau.</p>
+
+<p>Avant de télécharger un noyau, nous devrions discuter de quelques faits et définitions importantes. Le noyau Linux est un noyau monolithique. Cela veut dire que le système d’opérant entier est sur la RAM réservée comme espace pour le noyau. Pour être plus clair, le noyau est mis sur la RAM. L’espace utilisé par le noyau est révervé pour le noyau. Le noyau seul peut utiliser cet espace réservé. Le noyau s’approprie cet espace sur la RAM jusqu’à ce que le système soit éteint. En contraste avec l’espace du noyau, il y a l’espace de l’utilisateur. L’espace d’utilisateur est l’espace sur la RAM auquel appartient l’utilisateur des programmes. Des applications comme les navigateurs web, les jeux vidéos, les processeurs word, media players, fond d’écran, thèmes, etc, sont tous sur l’espace d’utilisateur sur la RAM. Quand une application est fermée, n’importe quel programme peut utiliser l’espace nouvellement disponible. Avec l’espace du noyau, une fois que l’espace sur la RAM est prise, rien d’autre ne peut avoir cet espace.</p>
+
+<p>Le noyau  Linux est aussi un noyau multi-tâches. Cela signifie que le noyau met en pause certaines taches afin de s’assurer que chaque application puisse utiliser un peu de charge CPU pour sa propre utilisation. Par exemple, si une application est exécutée mais attend de recevoir des données, le noyau mettra cette application en attente et autorisera un autre programme à utiliser les nouvelles ressources CPU disponible jusqu’à ce que les données arrivent. Sinon, le système gaspillerait des ressources pour les tâches qui attendent des données ou qu’un autre programme s’exécute. Le noyau va forcer le programme à attendre pour utiliser du CPU ou arrêtera d’utiliser de la charge CPU. Les applications de peuvent pas sortir de leur pauses ou utiliser des ressources CPU sans l’accord du noyau.</p>
+
+<p>Le noyau  Linux fait apparaître les périphériques comme des fichiers dans le dossier /dev . Les ports USB, par exemple, sont situés dans /dev/bus/usb. Les partitions du disque-dur peuvent être trouvées dans /dev/disk/by-label. C’est parce que Linux agit ainsi que beaucoup de gens disent que “Sous Linux, tout est fichier”. Si un utilisateur voulait accéder aux données de sa carte mémoire par exemple, il ne pourraient pas y avoir accès directement par le biais de ces fichiers.</p>
+
+<p>Le noyau Linux est portable. La portablité est une des principales caractéristique qui rends Linux si populaire. La portabilité est la capacité du noyau à fonctionner sur une grande variété de processeurs et de systèmes. Cela inclut donc de nombre supports de processeurs tels que Alpha, AMD, ARM, C6X, Intel, x86, Microblaze, MIPS, PowerPC, SPARC, UltraSPARC, etc… Ceci n’est pas une liste exhaustive.</p>
+
+<p>Dans le dossier de démarrage (/boot), les utilisateurs peuvent voir un fichier “vmlinux” ou “vmlinuz”. Ces deux fichier sont des noyaux Linux compilés. Celui que finit par “z” est compressé. Le “vm” signifie mémoire virtuelle. Sur les systèmes avec un/des processeurs SPARC, les utilisateurs peuvent voir un fichier zImage à la place. Un petit nombre peuvent trouver aussi un fichier bzImage; c’est aussi un noyau Linux compressé. Cela ne change rien de savoir de quel type est celui de l’utilisateur, ce sont tous des fichiers exécutables qui ne devraient pas être modifiés tant que l’utilisateur ne sait pas ce qu’il fait. Sinon leur système pourraient ne pour être démarré, et le système de fonctionnerai plus.</p>
+
+<p>Le code source est le codage du programme. Avec le code source, les programmeurs peuvent faire des changements au noyau et  voir comment il fonctionne.</p>
+
+<p>Maintenant que nous comprenons un peu plus le fonctionnement du noyau, il est temps de télécharger le code source. Allez sur <a href="https://www.kernel.org/">kernel.org</a> et cliquez sur le gros bouton “download”. Une fois que le téléchargement est fini, décompressez le fichier téléchargé.</p>
+
+<p>Voilà, à une prochaine fois pour de nouvelle infos! ;) Vous pouvez trouver l’article original <a href="http://www.linux.org/threads/%EF%BB%BFthe-linux-kernel-introduction.4203/">ICI</a></p>
+
+<p>Un grand merci à <a href="http://riku-paradise-finder.deviantart.com/">Octopussy</a> qui a fait la moitié du boulot pour cette traduction! (en plus de m’avoir encore corrigée un article ;) )</p>
+
+  <div id="comments">
+	
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/2013/07/13/Linux-Kernel:-Introduction" />
+		<input type="hidden" name="return_url" value="/2013/07/13/Linux-Kernel:-Introduction.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" /> (requis)</p>
+				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" ></textarea>
+		<input type="submit" name="submit" value="Envoyer" />
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Linux Kernel: Introduction&url=/2013/07/13/Linux-Kernel:-Introduction.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>

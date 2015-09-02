@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a href="https://www.github.com/Ilphrin">Github</a>
+    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/book.jpg');">
+        <time datetime="23 June 2013">
+          <h1> Faire de la traduction avec gettext : Exemple avec Sunflower </h1>
+          <p>
+            
+  
+    23
+
+
+juin
+  
+2013
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Salut tout le monde!</p>
+
+<p>J’ai plusieurs fois eu affaire à des logiciels que je trouvais vraiment sympa, mais qui n’étaient pas disponibles en français, ce qui m’empêchait de bien l’utiliser, ou de le montrer à d’autres personnes qui n’y connaissent rien à l’anglais.  Ne connaissant pas encore bien la programmation, j’ai eu l’idée de faire un peu de traduction pour contribuer un peu aux logiciels que j’utilise. Je me suis donc tourné vers Sunflower, dont le site dispose d’un lien expliquant comment lui préparer une traduction. En fait on utilise un logiciel libre qui apparemment est très utilisé dans le monde de la traduction de logiciels.
+<!--break-->
+Le principe de base de ce logiciel n’est pas très compliqué à comprendre. Il va regarder le code source du logiciel et noter toutes les chaînes de caractères que l’utilisateur final pourrait voir d’une façon ou d’une autre, et les stocker dans un fichier avec l’extension .pot qui servira de base pour toutes les traductions que l’on peut faire du logiciel. Lorsque l’on décide de faire une traduction, on crée un dossier dans le répertoire où se trouve le fichier .pot avec comme nom l’indicatif de la langue (français -&gt; fr, espagnol -&gt; es, etc…). Dedans on crée un fichier avec l’extension .po qui sera une copie de l’autre fichier.</p>
+
+<p>Sunflower dispose déjà de son fichier sunflower.pot situé dans  /usr/share/sunflower/translations/  (pour ma distribution Arch Linux) ainsi que quelques dossiers de traduction. J’ai donc crée un répertoire fr/LC_MESSAGES/   avec dedans un fichier sunflower.po qui est l’exacte copie du sunflower.pot.  Lorsque l’on ouvre le fichier on tombe sur quelque chose comme ça :</p>
+
+<p><img src="/home/pellet_k/Perso/Site web/_site/images/sunflower01.png" alt="Sunflower" /></p>
+
+<p>Au début on a quelques commentaires de descriptions, puis quelques lignes de texte qui rajoutent de la description (où vous pouvez , notamment, indiquer la langue dans laquelle vous souhaitez traduire et quelques informations comme votre nom et votre mail qui pourront être utile, par exemple pour l’auteur du logiciel pour vous contacter).  Ensuite et bien on a l’utile: les blocs de traduction. Il sont composés de trois éléments.</p>
+
+<ul>
+  <li>Un commentaire qui indique le fichier et la ligne dans laquelle se trouve la chaîne de caractère</li>
+  <li>Le msgid suivit d’une ligne en Anglais ( enfin qui est dans la langue source du logiciel, c’est quand même généralement l’Anglais!)</li>
+  <li>le msgstr qui est simplement composé de deux guillemets. C’est entre ces guillemets que vous mettrez votre traduction de la ligne du dessus.</li>
+</ul>
+
+<p>(Pour y avoir fait, il y a environ 500 termes à traduire pour Sunflower, mais avec un peu de boulot, d’aide et de google traduction on en vient à bout en quelques jours ^^). Quand vous pensez avoir fini ou fait la majeure partie de la traduction, il va falloir transformer ceci en un fichier binaire que Sunflower utilisera pour charger les traductions. Pour ce faire on utilise la commande suivante :</p>
+
+<pre><code>msgfmt sunflower.po
+</code></pre>
+
+<p>Et voilà un fichier .mo qui est crée. Si votre système est configuré pour le français, Sunflower devrait par la suite charger le fichier généré ainsi (Note: Cela nécessite que le fichier crée soit appelé sunflower.mo  mais il est de  base nommé messages.mo, il suffit de le renommer pour que tout rentre en ordre). Et vous voilà avec un beau logiciel en français! Gettext est capable de bien des choses, j’ai mis un lien vers la documentation un peu en dessous.  Sur ce bonne journée à tous et bonne traduction!</p>
+
+<p><u>Sources:</u></p>
+
+<p><a href="https://code.google.com/p/sunflower-fm/">Sunflower</a></p>
+
+<p><a href="http://www.gnu.org/software/gettext/">Documentation Gettext</a></p>
+
+  <div id="comments">
+	
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower" />
+		<input type="hidden" name="return_url" value="/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" /> (requis)</p>
+				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" ></textarea>
+		<input type="submit" name="submit" value="Envoyer" />
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Faire de la traduction avec gettext : Exemple avec Sunflower&url=/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>
