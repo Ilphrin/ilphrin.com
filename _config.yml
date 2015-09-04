@@ -4,6 +4,9 @@ destination: ./_site
 plugins: ./_plugins
 layouts: ./_layouts
 collection: null
+name: Ilphrin's website
+description: A blog about IT, free software and stuff like that
+url: http://ilphrin.com
 
 #Handling reading
 safe: false
@@ -52,4 +55,3 @@ rdiscount:
 
 redcarpet:
   extensions: []
-

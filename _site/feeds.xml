@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>Ilphrin's website</title>
+		<description>A blog about IT, free software and stuff like that</description>
+		<link>http://ilphrin.com</link>
+		<atom:link href="http://ilphrin.com/feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Un nouveau blog tout beau avec Jekyll</title>
+				
+					<description>&lt;p&gt;Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.&lt;/p&gt;
+
+&lt;p&gt;Mais bon j’y suis finalement arrivé. Il manque encore quelques petite touches au site (je pense notamment aux commentaires, qui ne fonctionnenent pas du tout vous pouvez essayer vous ne verrez jamais votre commentaire s’afficher sur mon site, et aussi une petite liste des copains et autres sites a voir. Peut-être vais-je rajouter ça dans l’onglet Contact).&lt;/p&gt;
+
+&lt;p&gt;Un peu de technique maintenant. Comme je l’ai mentionné, j’utilise Jekyll pour faire de la génération de code statique. Pour ceux qui ne savent pas, statique signifie (en gros) qu’il n’y a pas de code PHP, donc pas de gestion coté serveur. Vous avec de l’HTML, et du CSS. C’est quasiment tout ce qu’il y a sur ce site. Le gros avantage de Jekyll par rapport a ce que je voulais est qu’il est spécialisé pour la conception de Blogs, avec une gestion des articles qui sont écrit de mon coté en langage Markdown, puis sont transformé en page HTML/CSS par Jekyll selon un modèle que j’ai défini.&lt;/p&gt;
+
+&lt;p&gt;Ah oui il faut en parler des ces modèles, ou plutôt appelé par Jekyll des Layouts. Pour générer du code avec Jekyll, on commence par écrire des pages qui serviront de modèles pour la génération, et en mettant dedans des commandes Jekyll pour lui donner des informations, comme lui dire a quel endroit insérer le contenu de la page qui utilise ce Layout. Un modèle peut être tout et n’importe quoi en HTML. Pour ce site j’utilise a peu près deux catégories de Layouts, d’un coté ceux qui contiennent le code de base d’une page HTML donc avec le DOCTYPE les balises &amp;lt;head&amp;gt; les lignes d’insertion de CSS etc… Agrémentés donc en plein milieu d’une ligne avec  pour placer le contenu de la page. Et d’un autre coté j’utilise des Layouts qui eux-mêmes sont derivés des Layouts de la première catégories.&lt;/p&gt;
+
+&lt;p&gt;C’est le système que j’aime le plus avec Jekyll car ça permet de créer des modèles de pages au début, ce qui fait que pour la suite on a plus qu’à écrire le contenu qu’on veut et indiquer le modèle a utiliser. Non seulement ça simplifie la vie mais c’est en plus très facilement lisible quand on veut remettre les mains dans le cambouis. Par exemple quand j’écris cet article, j’écris un fichier de type Markdown, avec le contenu de mon article et le formattage que je veux faire (Jekyll s’occupe aussi de convertir le Markdown en HTML. Franchement, quel homme ce Jekyll!), et avec au début deux trois lignes d’information qui sont utilisées par Jekyll dont le Layout.&lt;/p&gt;
+
+&lt;p&gt;Je pense que je vais conclure sur le fait que je suis vraiment satisfait des possibilités offertes par Jekyll. Il permet de facilement faire du code statique sans se casser la tête et surtout le rendu final est très performant puisqu’on n’a ni PHP ni Javascript pour faire tout ça. Mais après rien n’empêche de rajouter du PHP ou du Javascript! Par exemple sur ce site le bouton ‘Contact’ a une propriété HTML onclick qui lance une fonction Javascript pour afficher ou non la barre de Contact. J’ai aussi quelques lignes de PHP qui me permettent de gérer le formulaire d’envoi de commentaire, pour m’envoyer un mail avec le contenu et je n’ai plus qu’à rajouter ça au site (pas très pratique certes puisqu’il faut recopier le contenu du mail, le nom et l’article associé, dans le dossier _comments, mais apparemment il existe des ptits gars qui ont fait un script pour automatiser tout ça)&lt;/p&gt;
+
+&lt;p&gt;Si vous voulez vous lancer dans la création d’un blog et que vous êtes débutant comme moi, Jekyll est vraiment un très bon outil pour faire ça.&lt;/p&gt;
+
+&lt;p&gt;Gloire a Jekyll :3&lt;/p&gt;
+</description>
+				<pubDate>Fri, 04 Sep 2015 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html</guid>
+			</item>
+		
+			<item>
+				<title>Neobot un bot en ligne de commande pour les unix like</title>
+				
+					<description>&lt;p&gt;Salut tout le monde&lt;/p&gt;
+
+&lt;p&gt;Alors tout d’abord pour ceux qui ne le savent pas, qu’est-ce qu’un &lt;em&gt;bot&lt;/em&gt; en informatique? C’est un programme qui va se gérer tout seul pour accomplir une ou des tâches voulues par les développeurs du bot. Leurs utilisation est vaste, cela va du jeu vidéo (les ennemis d’un jeu de FPS contrôlés par l’ordinateur par exemple) à la gestion des salons de discussion IRC en passant par les bien connus spambots, vous savez les faux comptes inscris sur les forums de discussions simplement pour balancer de la pub en vrac… Pour en savoir plus, je vous invite à lire la page wikipédia sur les &lt;a href=&quot;https://fr.wikipedia.org/wiki/Bot_informatique&quot;&gt;bot informatique&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--break--&gt;
+&lt;p&gt;Il existe une catégorie de bot qui ont pour but de tenir une conversation en ayant l’air le plus possible humain, connu sous le nom de Chatbot. C’est sur cette catégorie de bot que l’on va s’attarder aujourd’hui avec &lt;a href=&quot;http://dcjtech.info/topic/neobot-v1-0b-release/&quot;&gt;Neobot&lt;/a&gt;. C’est un logiciel développé par Devyn C. Johnson (dont j’ai déjà parlé ici, rappelez-vous les articles sur le &lt;a href=&quot;http://mintic.blog4ever.com/blog/linux-kernel-introduction&quot;&gt;Kernel Linux&lt;/a&gt;), dont le coeur du programme est développé en Python3, pour quelque détails supplémentaires sur les outils utilisé, vous pouvez regarder &lt;a href=&quot;https://www.chatbots.org/chatbot/neo/&quot;&gt;ICI&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Neobot est portable, c’est-à-dire qu’il n’a pas besoin d’être installé pour être lancé. Une fois téléchargé et dezippé, vous pouvez lancer directement l’executable appelé Betabot. Il faut attendre quelques secondes pour que le Neobot soit totalement lancé. Lorsque que c’est le cas il devrait vous afficher un message de bonjour. Voilà vous pouvez commencer à discuter avec lui (uniquement en anglais pour le moment)&lt;/p&gt;
+
+&lt;p&gt;Je trouve ce bot particulièrement intéressant pour deux raisons principalement: la première est que, malgré le fait que ce soit écrit en python qui est un langage haut niveau, Neobot est assez performant. Il utilise un format de base de données crée spécialement pour cette catégorie de bot appelé Xaiml.&lt;/p&gt;
+
+&lt;p&gt;La deuxième est que vous pouvez poser des questions sur votre pc a Neobot et il pourra vous repondre. Par exemple si vous lui demandez de lancer Firefox et bien il ira chercher Firefox et le lancera pour vous. Vous pouvez aussi demander des inforomations sur votre système. Par exemple si vous lui demandez “Where am I” il vous repondra par le dossier courant dans lequel vous êtes dans votre temrinal.&lt;/p&gt;
+
+&lt;p&gt;Si vous souhaitez voir un peu les autres projets sur lesquels Devyn C.Johnson a travaillé ou même en discuter, vous pouvez aller jeter un coup d’oeil sur &lt;a href=&quot;http://dcjtech.info/&quot;&gt;http://dcjtech.info&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bonne journée à tous!&lt;/p&gt;
+
+</description>
+				<pubDate>Fri, 30 Jan 2015 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html</guid>
+			</item>
+		
+			<item>
+				<title>Premiers pas dans le développement de Firefox OS</title>
+				
+					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
+
+&lt;p&gt;Comme je le disais dans &lt;a href=&quot;/2015/01/22/changer-de-homescreen-dans-firefox-os.html&quot;&gt;mon précédent article&lt;/a&gt;, il existe plusieurs applications pour changer son homescreen, mais elles datent toutes
+ de plusieurs jour/mois et ne sont, pour la plupart, plus fonctionnelles. Je me suis donc dit que j’allais regarder l’un des projets que j’ai présenté et essayer de le patcher pour le faire fonctionner.
+&lt;!--break--&gt;
+J’ai choisi l’application &lt;a href=&quot;https://github.com/mgoodings/zwipe&quot;&gt;Zwipe&lt;/a&gt;, d’une part parce que les screenshots donnaient l’impression d’une application assez sympa ésthétiquement, et d’autre part car Zwipe
+ fonctionne à l’aide du framework AngularJS, sur lequel j’avais déjà essayé de travailler il y a quelques semaines mais sans résultat. Pour (ré-)apprendre à utiliser AngularJS, je me suis aidé de &lt;a href=&quot;http://www.grafikart.fr/formations/angularjs&quot;&gt;ce cours
+sur Graphikart &lt;/a&gt; qui explique vraiment très bien son fonctionnement&lt;img src=&quot;/images/zwipe1.png&quot; alt=&quot;Zwipe1&quot; style=&quot;float:right&quot; /&gt;.Je suppose que vous connaissez déjà
+AngularJS ou que vous venez de regarder le cours que je viens de mettre en lien, sinon il y aura plusieurs points dans cet article que vous risquez de ne pas comprendre.&lt;/p&gt;
+
+&lt;p&gt;Bon alors déjà première étape, ouvrir WebIDE. Pour ceux qui ne le savent pas WebIDE est un outil dans le navigateur Firefox pour le développement sous Firefox OS, il est mis par défaut dans Firefox
+Developper Edition. Une fois ouvert, il faut cliquer sur “Open Packaged app”, puis sélectionner le dossier de zwipe que l’on vient de télécharger. Ensuite on sélectionne comme runtime son téléphone et on
+installe l’application. On tombe sur ce qui est montré à sur l’image ci-contre. On voit…bah pas grand chose, mais l’oeil avisé aura remarqué le petit 1 dans son cadre rouge en bas à droite. Il faut donc
+maintenant aller dans WebIDE et faire “Debug App” (ou appuyer sur F12).&lt;/p&gt;
+
+&lt;p&gt;La Console nous donne ce message d’erreur “Error: $scope is undefined”, ce qui est un peu dommage vu qu’AngularJS fonctionne principalement à l’aide de cette variable. Donc on ouvre son éditeur de texte
+favori et on va ouvrir les fichiers qui nous intéressent: /index.html et /js/app.js. Le fichier index.html nous apprend trois choses importantes. Premièrement le Module est nommé dans la balise html et
+s’appelle &lt;u&gt;zwipe&lt;/u&gt;, deuxièmement le Controller dans lequel l’application travaille s’appelle &lt;u&gt;ZwipeCtrl&lt;/u&gt;, et enfin on sait qu’il existe un tableau de variables &lt;u&gt;apps&lt;/u&gt;, qui contient les applications et les
+informations qui leurs sont liées.&lt;/p&gt;
+
+&lt;p&gt;Bon maintenant regardons le fichier app.js. On a une première grosse fonction anonyme au début de ce fichier qui contient une fonction DashApplication, nous en reparlerons un peu plus tard, sachez simplement
+qu’elle s’occupe de récupérer les données des applications installées pour nous. Juste après on a ce qui nous intéresse, c’est-à-dire la création du module &lt;u&gt;zwipe&lt;/u&gt;.&lt;/p&gt;
+
+&lt;p&gt;Dedans on y distingue deux gros groupes plus une config:  une Factory qui s’appelle &lt;u&gt;AppService&lt;/u&gt;, et la définition du Controller &lt;u&gt;ZwipeCtrl&lt;/u&gt;. Dans ce dernier on a la définition de la function avec les variables
+qui vont bien en deuxième paramètre, et notamment la fameuse variable $scope! Donc on la met bien en paramètre, pourquoi est-elle marqué comme indéfinie alors???  Si vous venez tout juste de regarder le
+cours sur Graphikart, vous aurez peut-être une information essentielle enore fraîche dans votre esprit. Parfois le code d’une page web peut être amené à subir une opération de &lt;strong&gt;minimisation&lt;/strong&gt; afin d’optimiser
+l’application/la page. Problème: cela passe parfois par un renommage des variables! Ainsi notre variable en paramètre n’est probablement plus la bonne :/ Donc pour pouvoir pallier à ce problème, on change un
+peu le format du deuxième paramètre du Controller, pour le transformer en tableau!&lt;/p&gt;
+
+&lt;p&gt;Et donc dans ce tableau on va mettre d’une part 3 chaines de caractère dans lequel on va copier chacun des paramètres de la fonction (autant le faire pour les trois paramètres, vu que le problème risque
+d’être le même pour tout les paramètres ;) ), puis d’autre part en 4e paramètre la fonction en elle-même qui ne change pas. Au fait, nous avions aussi une Factory non? Peut-être doit-on lui faire subir la
+même opération? Et bien effectivement! Donc rebelote avec la Factory ZwipeCtrl, on fait un tableau pour contenir la variable $q. Et surtout on oublie pas de fermer les crochets à la fin de la Factory.&lt;/p&gt;
+
+&lt;p&gt;Si tout s’est passindex2.pngé comme il faut on se trouve avec ce qu’il y a à la capture d’écran à gauche. C’est déjà plutôt cool! Mais on voit apparaitre du coup un deuxième problème qui nous était invisible
+avant. La plupart des icones sont remplacées par une icone par défaut, alors qu’elle fonctionnaient bien sur le Homescreen de base (enfin, je le suppose, si ce n’est pas le cas chez vous c’est dommage ;) ).
+Bon, ça siginifie qu’on a un problème à la récupération des données des applications. Ça tombe bien on a une function qui s’en occupe: DashApplication! Quand on regarde son code dans le fichier app.js on
+voit qu’il y a tout un tas de “sous-fonctions” pour récupérer certaines données, notamment une pour les icones. S’il existe un objet &lt;u&gt;this.manifest.icons&lt;/u&gt; alors on récupère la case ‘60’ dans cet objet, qui
+contient le chemin vers l’image d’une taille de 60 pixel.&lt;/p&gt;
+
+&lt;p&gt;Or si on regarde les icones pour les autres applications, toutes n’ont pas une icone de taille 60. On va devoir changer légèrement ce code. On initialise une variable i à 60, et on va la faire travailler
+dans une boucle while, disons jusqu’à que i soit supérieur à 512. Pour chaque valeur jusqu’à 512 on va regarder si this.descriptor.icons[i] vaut quelque chose, si c’est le cas alors on a une icone et on le
+retourne, sinon on incrémente de 2 et on recommence. Si à 512 on a vraiment rien trouvé alors là on renvoie null. Cette petite boucle pourra nous permettre de recupérer à peu près toutes les icones, sauf
+celles qui pourraient être un peu exotique ( inférieure à 60 pixel ou supérieure à 512).&lt;/p&gt;
+
+&lt;p&gt;Une nouvelle capture pour voir ce que ça donne?  Pas tout de suite car voici que nous avons encore des problèmes! Même si déjà ça s’améliore grandement ^^ Le premier problème est un texte incompréhensible
+balancé en erreur dans la console, le deuxième est que certaines icones sont du coup sont plus
+petites que d’autre, et c’est moche. Pour le premier problème je vais l’expliquer en accéléré parce que je ne me souviens pas de ce qui m’avais permis de me rendre compte de ce problème. En fait il y a une
+application pour le thème par défaut de gaia, et elle ne dispose pas d’icone. Mais de toutes façon on n’en veut pas de cette “application” qui n’en est pas vraiment une. On retourne dans la Factory, et là on
+a une variable &lt;u&gt;hiddenRoles&lt;/u&gt;, dans laquelle on va rajouter le role “theme”. Le role dans une application Firefox OS sert à définir ce que fait en gros l’application, il n’existe pas beaucoup de role pour
+l’instant, alors beaucoup n’ont pas de rôles, et d’autres en ont pour un but bien précis, mais du coup ne sont pas des applications utilisable en tant que tel.
+Pour le deuxième problème &lt;img src=&quot;/images/zwipe2.png&quot; alt=&quot;Zwipe2&quot; style=&quot;float:left&quot; /&gt;, en fait on peut simplement ajouter un style à la balise html qui contient l’image, pour luindex3.png, fixer une taille. Donc dans
+index.html à la balise &lt;img /&gt; on rajoute un petit style=”width 70px; height: 70px”. C’est une valeur arbitraire on peut mettre ce que l’on veut ^^ À droite vous pouvez voir le résultat que l’on devrait
+obtenir une fois tous ce bazar corrigé.
+Victoire! Nous voilà avec une applications exploitable!&lt;/p&gt;
+
+&lt;p&gt;Avec un peu de travail, et d’acharnement on a donc pu corriger les petit soucis d’une application utilisant un framework, et qui utilise les fonctions de récupérations de données des applications Firefox OS.
+Bien sûr elle n’est pas encore parfaite, mais quelle applications pourrait se targuer de l’être ;)&lt;/p&gt;
+
+&lt;p&gt;J’espère que cet article vous a plu, et plus important encore vous aura montré que parfois il suffit de pas grand chose pour faire planter une application, mais qu’on peut tout à fait y corriger pour peu
+qu’on accepte d’y mettre le temps qu’il faut. J’ai personellement mis environ deux jours entier (du réveil au coucher à peu près) pour trouver et corriger ces bugs, et je suis un grand débutant dans le
+domaine. N’hésitez pas à fouiller cette application pour comprendre un peu comment elle fonctionne et comment exploiter certaines fonctionnalité des API Firefox OS. J’ai forké ce projet pour faire mes
+bidouilles mais aussi rajouter mes petits trucs, si ça intéresse quelqu’un mon fork est &lt;a href=&quot;https://github.com/Ilphrin/zwipe&quot;&gt;ICI&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Sur ce, je vous souhaite une agréable journée, pleine de bidouilles et de renards qui flambent.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 25 Jan 2015 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html</guid>
+			</item>
+		
+			<item>
+				<title>Changer de homescreen dans Firefox OS</title>
+				
+					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
+
+&lt;p&gt;En discutant hier soir soir sur le salon #BuildOpenCEu, dattaz m’expliquait qu’il est possible sur Firefox OS de changer de Homescreen, l’écran d’accueil en français, pour quelque chose d’entièrement différent, du menu vertical ou horizontal jusqu’au cercle d’application que l’on peut faire tourner avec un mouvement de doigt. J’en ai donc essayé plusieurs  sur mon Open C et voilà ce que ça m’a donné pour chacun d’eux. Je tiens à rappeler que je suis en version Nightly que je met à jour chaque matin, donc il se peut que certains marchent mieux sur votre version de Firefox OS que sur la mienne, le mieux étant d’avoir au moins un test pour chaque version majeure de l’OS. Je m’excuse d’avance pour le manque de Screenshot, d’un part je n’ai pas pensé à en faire et de l’autre étant en Nightly et n’ayant pas encore de carte microSD je ne peux pas enregistrer de capture d’écran sur le téléphone.
+&lt;!--break--&gt;&lt;/p&gt;
+
+&lt;p&gt;Les homescreen peuvent être trouvés &lt;a href=&quot;https://gist.github.com/xfausto/7c954f1b31cf086aff79&quot;&gt;ICI&lt;/a&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/mgoodings/zwipe&quot;&gt;Zwipe&lt;/a&gt;: Celui que je trouve le plus intéressant, il est censé afficher l’heure et la date au milieu de l’écran ainsi que les applications sous forme de cercle en bas. Il se lance mais n’affiche rien à part un bout de code en guise de titre. Dans le débugger on peut voir que la variable $scope est indéfinie, cette dernière est essentielle pour le framework AngularJS utilisé pour cette appli.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/xfausto/Grayscreen&quot;&gt;Grayscreen&lt;/a&gt;: Une interface simple et plutôt jolie, censé ne fonctionner que pour la 1.4 mais je l’ai testé quand même en 2.2 pour voir, et bien entendu elle ne fonctionnait pas vraiment. On a un fond blanc et la date et l’heure s’affichent correctement à droite mais c’est tout.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/yorikvanhavre/MARSScreen&quot;&gt;Marsscreen&lt;/a&gt;: J’accroche pas du tout à celle-ci, la police de caractère n’est pas top et cela semble un peu flou. Néanmoins elle fonctionne à peu près, on a simplement pas les icones du coup toutes les applications ne s’affichent que par leur nom ce qui n’est pas très pratique. Si ça peut en intéresser certains, il n’y a surement pas grand chose à modifier pour faire afficher les icones.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/Schoewilliam/Shyhome&quot;&gt;Shyhome&lt;/a&gt;: Cette application ne va pas révolutionner l’interface, mais au moins elle fonctionne à peu près et est agréable à l’oeil, avec un bon fond d’écran ça doit bien rendre.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/xfausto/betsuscreen&quot;&gt;Betsuscreen&lt;/a&gt;: Celle-ci est plutôt prometteuse si on en croit les screenshot, avec une interface qui revient à la mode horizontale des versions 1.x, mais sur mon téléphone je n’ai droit à rien d’autre qu’un écran blanc, dommage…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Voilà ce sont les principaux que j’ai essayé, n’hésitez pas à les essayer vous aussi  pour faire des retour, certaines fonctionneront peut-être mieux avec des version différentes.&lt;/p&gt;
+
+&lt;p&gt;Pour ceux qui se posent la question (comme moi ^^), pour tester ces homescreen il suffit de dezipper le paquet téléchargé sur la page github en question, et de faire “Open Packaged app” dans le WebIDE de Firefox, ensuite vous lui demandez de se connecter à votre téléphone (au moment de la sélection, Firefox OS vous demandera une confirmation pour cette connexion) et ensuite de faire “Install and run” avec le bouton en forme de flèche en haut de la fenêtre.&lt;/p&gt;
+
+&lt;p&gt;Voilà c’est tout pour aujourd’hui, si d’autres personnes ont des homescreen à proposer ou que vous auriez trouvé, n’hésitez pas à m’en faire part dans les commentaires!&lt;/p&gt;
+
+&lt;p&gt;Bonne journée à tous!&lt;/p&gt;
+
+&lt;p&gt;PS: J’ai cru comprendre qu’on pouvait demander à WebIDE de faire une capture d’écran, je modifierai l’article pour ajouter des captures à l’occasion ^^&lt;/p&gt;
+</description>
+				<pubDate>Thu, 22 Jan 2015 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2015/01/22/changer-de-homescreen-dans-firefox-os.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2015/01/22/changer-de-homescreen-dans-firefox-os.html</guid>
+			</item>
+		
+			<item>
+				<title>Firefox OS 4 mois après son utilisation</title>
+				
+					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
+
+&lt;p&gt;Depuis quelques temps sur diaspora* je demande un peu d’aide ou pose des questions par rapport à Firefox OS, car depuis le mois d’Aout j’ai fais la main base sur un Open C!&lt;/p&gt;
+
+&lt;p&gt;Il faut savoir que depuis mon arrivé au lycée, il y a 4 ans, je suis resté avec un Samsung à clapet gris. Il me convenait très bien pour ce que j’en faisais, c’est-à-dire du sms en masse et très vite (j’enverrais une tartelette à la fraise au gars qui à inventé le T9) et puis c’est tout. Je ne m’intéressais absolument pas aux smartphones pour plusieurs raisons. La principale était le manque d’utilité que je pouvais accorder à ces gadgets. Pourquoi avoir une application pour lire mes mails quand je peux les lire des chez moi sous Thunderbird avec un écran qui me fasse pas plisser les yeux?
+&lt;!--break--&gt;&lt;/p&gt;
+
+&lt;p&gt;La deuxième raison venait du prix, parce que un petit téléphone à 20€ que je garde 3 ans c’est plus rentable qu’un smartphone à 100€ que je change tous les 6 mois parce que l’OS à été mis à jour et le téléphone ne marche plus trop bien avec.&lt;/p&gt;
+
+&lt;p&gt;Mais mon avis à changé quand j’ai entendu parler de l’Open C l’été dernier. Bon je ne vais pas refaire tout le speech habituel sur le fait d’avoir la possibilité de faire du libre sur les téléphones etc… Donc pour résumer j’ai trouvé ça super cool. Je l’ai donc commandé. Première chose que j’ai fait: Me balader sur le net pour voir qu’est-ce qu’on pouvait bidouiller dessus. Une semaine après je suis passé sous Firefox OS 1.4, et encore une semaine après en version 2.1, version que j’ai toujours à l’heure où j’écris cet article.&lt;/p&gt;
+
+&lt;p&gt;En tant que tout premier smartphone, je suis clairement satisfait de l’Open C et de son OS! La première chose qui m’a plu c’est le fait que l’interface soit vraiment intuitive, avec un assistant d’utilisation qui explique tout ce  qu’il faut pour utiliser son téléphone correctement. Lorsque j’ai voulu comparer avec des téléphone sous Android ou iOS il y a quelque chose qui m’a marqué aussi et j’ai trouvé ça formidable: Pas besoin de se faire de compte pour aller sur le Marketplace. On veut une appli? On cherche, on trouve, on télécharge, point. Je me souviens avoir passé deux heures avec une amie pour l’aider à se faire un compte pour utiliser iOS comme elle le voulait, en ayant abandonné au final parce que ça me cassait les pieds.&lt;/p&gt;
+
+&lt;p&gt;Maintenant que j’ai pris un peu mes marques dans le monde des études supérieures, j’ai commencé à m’intégrer à diverses activités en rapport avec le Web pour pouvoir à terme développer des applications sous Firefox OS, car on est encore très loin des &lt;a href=&quot;http://fr.wikipedia.org/wiki/Google_Play&quot;&gt;800000 applications d’Android il y a deux ans&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mon objectif à court terme est d’arriver à développer des sites web qui respectent le responsive design pour pouvoir les tester dans le navigateur de Firefox OS et acquérir les bases du développement Web. J’ai réussi à convaincre un ami de ma promo autant intéressé que moi par Firefox OS à se prendre un Open C. (Le fait d’avoir cassé son HTC en voulant installer Firefox OS dessus l’a beaucoup aidé à passer le cap) Nous travaillons sur un projet que nous avions tenté de faire sans succès lors de l’événement de la &lt;a href=&quot;http://www.nuitdelinfo.com/&quot;&gt;Nuit de l’Info&lt;/a&gt;, et nous essayerons de faire une application lui correspondant pour Firefox OS.&lt;/p&gt;
+
+&lt;p&gt;À moyen et long terme j’espère pouvoir convaincre l’association de développement web de mon bahut de l’importance de cet OS, et pouvoir proposer et travailler sur divers projets d’application. On pourrait même organiser des évènements ouverts à la promo pour leur parler de nos idées et pour promouvoir Firefox OS.&lt;/p&gt;
+
+&lt;p&gt;Si tout ça est possible, je pense que je vais bien m’amuser. J’ai déjà noté deux trois petites choses dites sur le web concernant Firefox OS qu’il serait intéressant d’intégrer. Mais bon comme je le disais ce sont des objectifs, je n’arriverai peut-être pas à aller jusque là mais en tout cas ce sont ces buts finaux que je me fixe.&lt;/p&gt;
+
+&lt;p&gt;Sinon c’est dommage que tout ce qui n’est pas en rapport avec le code ne soit pas mis un peu plus en avant. Je veux dire au niveau de la communication. Même si il est possible de bidouiller cet OS et que parfois il faut chercher un bon moment dans la doc pour faire ce que l’on veut, il reste largement accessible pour un utilisateur “lambda”. Et je pense qu’il serait bien de viser les personnes n’ayant jamais eu de smartphone dans les mains puisque son gros avantage c’est la simplicité dans l’utilisation basique par rapport à ses concurrents. Quand je parle d’utilisation basique c’est: SMS, MMS, appels et pourquoi pas musique et vidéos. Pour en revenir à la communication ce serait bien d’organiser des journées de présentation, en plus de ce qui est déjà fait avec E.Leclerc. Je prends l’exemple de Lyon, je n’ai rien vu concernant Firefox OS dans le coin, pourtant il y aurait surement quelque chose à faire, en plus il me semble que sur Diaspora* il y a une bonne petite communauté Lyonnaise. Ou peut-être est-ce simplement parce que je n’ai pas su regarder du bon coté. A creuser.&lt;/p&gt;
+
+&lt;p&gt;Pour  conclure sur mon utilisation de ce téléphone, je dirais qu’il n’y a pas tellement de choses qui ont changées depuis mon Samsung à clapet. Il y a toujours 80% de l’utilisation de mon téléphone qui passe dans les SMS, 15% restant pour  la musique, chose que je ne faisais pas avant. Les 5% restant sont les jeux, que je teste plus qu’autre chose, pour me donner une idée de ce qu’il est possible de faire  en langage Web. À l’occasion j’irais chercher le code source de certaines applications pour voir comment ça fonctionne vraiment sous le capot.&lt;/p&gt;
+
+&lt;p&gt;Si il y a des personnes qui ont déjà développé sous Firefox OS je suis preneur d’infos sur le sujet! ;)&lt;/p&gt;
+</description>
+				<pubDate>Sun, 14 Dec 2014 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html</guid>
+			</item>
+		
+			<item>
+				<title>Tuxle Triad et Pygame: Avoir une main</title>
+				
+					<description>&lt;p&gt;Salut à tous!&lt;/p&gt;
+
+&lt;p&gt;Me voilà aujourd’hui pour un deuxième article sur Pygame. Je vais cette fois-ci vous expliquer comment créer une “main” remplie de cartes tirées aléatoirement, et positionner les cartes dans la main.&lt;/p&gt;
+
+&lt;p&gt;La dernière fois je vous avais expliqué comment fonctionnait un objet &lt;strong&gt;Card&lt;/strong&gt;. Mais pour pouvoir jouer il en faudra plus d’une (ça risque d’être quelque peu ennuyant sinon ;) ). Ceux qui ont essayé le jeu savent combien de carte il faut, c’est-à-dire 5 par joueur. Pour faire ça nous allons utiliser tout simplement une liste. Dans la fonction &lt;strong&gt;__init__&lt;/strong&gt; du fichier  game.py, on peut voir les deux lignes suivantes:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;self.player1Hand = self.randomHand(1)
+
+self.player2Hand = self.randomHand(-1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;!--break--&gt;
+&lt;p&gt;Je vais expliquer juste après ce qui est à gauche de chaque opérateur =. Je fais donc appel à une fonction r&lt;strong&gt;andomHand()&lt;/strong&gt;, qui appartient à la classe &lt;strong&gt;Application&lt;/strong&gt;. En descendant plus loin dans le fichier (dans les alentours de la ligne 500 à l’heure de l’écriture de cet article), on trouve la définition de cette fonction qui prend le paramètre &lt;strong&gt;player&lt;/strong&gt;. Ce paramètre doit valoir 1 ou -1.&lt;/p&gt;
+
+&lt;p&gt;La ligne la plus importante dans cette fonction est &lt;strong&gt;listCards = [card for card in range(len(allCards))]&lt;/strong&gt;. Cette ligne va répertorier toutes les cartes existantes par un numéro correspondant à leur position dans la liste &lt;strong&gt;allCards&lt;/strong&gt; (qui est créée dans le fichier &lt;u&gt;listOfCards.py&lt;/u&gt;). Ensuite avec la fonction &lt;strong&gt;random.shuffle(listCards)&lt;/strong&gt;, on va mélanger tous ces numéros.&lt;/p&gt;
+
+&lt;p&gt;La boucle &lt;strong&gt;for&lt;/strong&gt; de la fonction va passer 5 fois. A chaque fois, on va prendre le premier numéro de la liste, créer une carte correspondant au numéro de cette liste, l’ajouter à une liste de carte nommée &lt;strong&gt;Cards&lt;/strong&gt; (avec un ‘s’, ce n’est pas l’objet &lt;strong&gt;Card&lt;/strong&gt;) au début, puis supprimer le numéro qu’on a pioché de la liste de numéro. &lt;strong&gt;Cards&lt;/strong&gt; va donc contenir 5 cartes prises aléatoirement dans la liste. Enfin la fonction retourne un objet &lt;strong&gt;Hand&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;On va donc voir maintenant ce qu’est ce fameux objet &lt;strong&gt;Hand&lt;/strong&gt;. Pour cela on va changer de fichier et aller jeter un oeil du coté du fichier &lt;strong&gt;Hand.py&lt;/strong&gt;.  Bon déjà soulagement: il y a moins de 30 lignes de code à lire ;). Sinon, petite explication de l’utilité de cet objet &lt;strong&gt;Hand&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;p&gt;Tout d’abord on enregistre la liste de cartes dans l’instance d’objet &lt;strong&gt;Hand&lt;/strong&gt;. Ensuite on va faire une boucle pour parcourir chacune des cartes de cette liste, et on va à chacune donner des coordonnés pour la placer dans la fenêtre du jeu.&lt;/p&gt;
+
+&lt;p&gt;Petite piqûre de rappel, les coordonnés dans une fenêtre fonctionnent par paires. L’abscisse X et l’ordonnée Y, qui respectivement déterminent la colonne et la ligne du pixel indiqué. On va donc à chaque fois modifier la position du centre de l’objet &lt;strong&gt;Rect&lt;/strong&gt; de la carte (rappelez-vous j’en ai parlé dans &lt;a href=&quot;/2014/08/17/introduction-a-pygame.html&quot;&gt;l’article précédent&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/pygame01.png&quot; alt=&quot;Pygame01&quot; style=&quot;float:left&quot; /&gt;En abscisse X, il n’y a que deux valeur possible, selon si l’on est le joueur 1 ou 2 (ou plutôt en l’occurrence, -1 dans le code du jeu, c’est simplement plus facile à gérer d’appeler le joueur 2 par -1), 60 ou 740.&lt;/p&gt;
+
+&lt;p&gt;En ordonnée Y c’est un poil plus compliqué mais pas tant que ça, en fait on prend une position de base, et à chaque fois que l’on parcourt un tour de boucle on veut que la carte suivante soit affiché plus bas, donc on la décale de I*DELTA, I étant le numéro de la carte traitée et DELTA la différence de pixel entre chaque carte.
+L’avant dernière ligne est une petite subtilité pour la gestion d’évenement. En fait pour chaque carte on va recréer un objet &lt;strong&gt;Rect&lt;/strong&gt; avec les mêmes valeurs qu’avant SAUF pour la hauteur de l’objet rect qui sera fixé à la valeur DELTA. Pourquoi cela?&lt;/p&gt;
+
+&lt;p&gt;Je n’ai pas encore parlé de la gestion des clics mais c’est assez simple à se représenter. Imaginons que l’on garde les valeur de base, lorsque dans le jeu je vais vouloir cliquer sur une carte, le programme va comparer la position de la souris au moment du clic avec celle des cartes pour voir sur laquelle j’ai cliqué. Mais du coup les cartes se superposent partiellement, et donc si je clique en haut de la deuxième carte, du point de vue du programme j’aurais aussi cliqué sur la carte du dessus qui est légèrement cachée. Et ca va être un bazar pas possible à gérer à chaque fois qu’on voudra poser une carte car il risque de poser celle du dessus.&lt;/p&gt;
+
+&lt;p&gt;Donc pour palier a cela on réduit virtuellement la taille de l’objet &lt;strong&gt;Rect&lt;/strong&gt; de la carte pour qu’il ne s’occupe que d’une partie de la carte lorsque l’on clique. Cela implique un défaut: Si on clique en bas de la dernière carte il ne fera rien puisque ce n’est pas sur l’objet &lt;strong&gt;Rect&lt;/strong&gt;. Je n’ai pour le moment pas encore trouvé de solution convenable à cela. Mais si quelqu’un à une solution à me proposer qu’il se dévoue ;)&lt;/p&gt;
+
+&lt;p&gt;Nous avons donc fait le tour de la question concernant la création d’une main entière de cartes. Voilà tout ce qui se passe quand on lance dans le fichier &lt;u&gt;game.py&lt;/u&gt; les deux lignes de code indiquées en haut de l’article. &lt;strong&gt;self.player1Hand&lt;/strong&gt; et &lt;strong&gt;self.player2Hand&lt;/strong&gt; ne sont donc que des instance d’objet Hand correspondant respectivement au joueur 1 et 2.&lt;/p&gt;
+
+&lt;p&gt;Et vu que c’est la grosse mode du moment, j’ai rejoint Diaspora&lt;em&gt;! Et je dois avouer que je suis sous le charme, à un tel point que je n’utilise presque plus Facebook. Je vais essayer de mettre des news de mes articles à propos de Pygame et Tuxle Triad ainsi que son développement sur Diaspora&lt;/em&gt;, que vous pourrez donc suivre avec  #pygame, dont je suis le seul et unique participant pour l’instant! x) N’hésitez pas à me faire de remarques sur l’article ou même sur mon jeu, si vous l’avez essayé sous tout les angles et que vous avez des porpositions d’ajout et d’améliorations à me faire. ;)&lt;/p&gt;
+
+&lt;p&gt;Je ne sais pas encore sur quoi je vais partir pour le prochain article. Surement la gestion des cases sur le terrain. Mais mes cours ayant prit une grande partie de mon temps je ne sais pas encore quand est-ce que je pourrais l’écrire. Je vais aussi surement faire de légères modifications d’apparence des articles pour rendre plus visible  certaines choses, comme les lignes de code que je met entre balises de citation. Faites-moi savoir si vous avez des idées là-dessus parce que je suis pas très doué pour tout ce qui touche à l’apparence. ^^&lt;/p&gt;
+
+&lt;p&gt;Sur ce je vous souhaite bonne journée à tous et à la prochaine!&lt;/p&gt;
+
+</description>
+				<pubDate>Fri, 17 Oct 2014 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html</guid>
+			</item>
+		
+			<item>
+				<title>Introduction à Pygame</title>
+				
+					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
+
+&lt;p&gt;Cela fait un bon moment que j’étudie la programmation, j’ai d’abord commencé par le C pour le C++, et même les langages web. Mais ce n’était que de la théorie et je voulais essayer de créer mon propre petit programme, et j’ai découvert le langage Python il y a environ 1 an grâce au célèbre livre &lt;a href=&quot;http://python.developpez.com/cours/apprendre-python3/&quot;&gt;Apprendre à programmer avec Python 3&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Mais encore une fois je n’avais rien crée moi-même, je n’avais pendant longtemps fait que la théorie, même si ce livre propose tout un tas d’applications du cours, ce n’était pas de moi que venaient les idées ni le gros du code.  Il y a plusieurs semaines je me suis donc lancé dans une tentative de faire mon propre programme, et plus exactement un jeu, et pour cela j’ai dû apprendre à utiliser la bibliothèque &lt;a href=&quot;http://www.pygame.org/news.html&quot;&gt;Pygame&lt;/a&gt;.
+&lt;!--break--&gt;
+Petite présentation de la bibliothèque: Pygame est une surcouche pour Python à SDL. On y retrouve absolument toutes les fonctionnalités, ainsi si vous avez déjà travaillé avec SDL, par exemple en C, vous ne serez pas destabilisé. La communauté est très grande et avec le chat IRC ont peut très rapidement recevoir de l’aide. Vous pouvez même, une fois votre programmation entamée, faire une petite page sur le site de Pygame pour le faire découvrir aux autres programmeurs et avoir/donner de nouvelles idées.&lt;/p&gt;
+
+&lt;p&gt;Pygame est une librairie vraiment complète et puissante. Pour apprendre à l’utiliser la plupart des tutoriaux vont faire un pas-à-pas pour coder tel ou tel petit jeu, et avec une explication suffisante pour comprendre à quoi sert tel objet dans tel programme. (A ce propos je conseille la lecture de “Making Game with Python and Pygame”.)  Je n’ai pas la prétention de pouvoir faire mieux, ce que je veux essayer de faire avec cet/ces article c’est d’essayer d’expliquer certains mécanismes qui m’ont permis de coder mon jeu, comme par exemple la gestion du menu, les animations, etc… Au moins cela aura l’avantage d’être en français, parce qu’on peut dire ce que l’on veut, c’est quel que soit le niveau de maitrise on se sent bien plus à l’aise dans sa langue natale! (Enfin pour mon cas ;) )&lt;/p&gt;
+
+&lt;p&gt;Quelques petits liens de documentation sur Pygame:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://python.developpez.com/cours/apprendre-python3/&quot;&gt;Apprendre à programmer avec Python 3&lt;/a&gt;  comme je le disais quelques lignes plus haut, pour ceux qui n’ont pas de base en Python.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://inventwithpython.com/&quot;&gt;Invent With Python&lt;/a&gt; pour apprendre à utiliser PyGame (mais pas que!).&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.pygame.org/docs/&quot;&gt;La doc de Pygame&lt;/a&gt;, classique :) Ainsi que les &lt;a href=&quot;http://www.pygame.org/tags/&quot;&gt;projets publiés sur le site&lt;/a&gt;, donc des tonnes de code que l’on peut lire et lancer pour apprendre!&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=bMt47wvK6u0&quot;&gt;Une vidéo d’introduction à Pygame&lt;/a&gt;, faire lors de la PyCon. Je vous la conseille vivement même si c’est en anglais car c’est aussi tout un tas de mécanismes des jeux qui sont expliqués.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour commencer un petit mot ce le jeu en question. C’est un jeu de carte inspiré entièrement d’un mini-jeu proposé dans le jeu vidéo Final Fantasy VIII sur la Playstation (première du nom), appelé TripleTriad. Je vais essayer dans cet article d’expliquer d’une manière ou d’une autre comment je m’y suis pris pour coder ça. En rappellant que c’est mon premier vrai programme, et qu’il y a surement des choses à améliorer (ne serait-ce que les bugs que je n’arrive pas encore à résoudre x) ). Vous pouvez retrouver TuxleTriad ( je suis pas allé chercher bien loin pour le nom, pour ceux qui connaissent TripleTriad ;) ) &lt;a href=&quot;https://github.com/Ilphrin/TuxleTriad&quot;&gt;ICI&lt;/a&gt;. Pour le lancer il suffit d’utiliser python2.7 (Attention, pas une version 3.x!) sur le fichier &lt;strong&gt;Menu.py&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pour ce premier article, je vais commencer par expliquer comment on gère les cartes du joueurs, c’est-à-dire comment récupérer un fichier image pour une carte,. Dans le dossier du jeu, chaque fichier de carte possède un nom sous cette forme:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Nom + &quot;B&quot; ou &quot;R&quot; + &quot;.jpg&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On a ‘B’ pour bleu si c’est le joueur de gauche, et ‘R’ pour rouge si c’est le joueur 2. Chaque carte possède donc un propriétaire (selon la couleur), un nom, et 4 numéro indiqués sur la carte. Ensuite il nous faut une liste pour enregistrer, d’une part, le nom de la carte, et d’autre part ses caractéristique. Cette liste correspond au fichier &lt;u&gt;listOfCards.py&lt;/u&gt;. La deuxième liste contient les caractéristique. L’indice de la liste de caractéristique correspond exactement à la carte du même indice dans la liste de nom.
+La liste ‘value’ contient une sous-liste pour chaque carte. Les valeurs de cette liste sont:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Le numéro du haut&lt;/li&gt;
+  &lt;li&gt;Le numéro de droite&lt;/li&gt;
+  &lt;li&gt;Le numéro du bas&lt;/li&gt;
+  &lt;li&gt;Le numéro de gauche&lt;/li&gt;
+  &lt;li&gt;Les deux autres ne sont pas encore utilisé dans le jeu ne vous en préocuppez donc pas.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Avant d’aller plus loin il faut faire un petit point sur deux outils SUPER importants, tellement importants qu’il n’y a quasiment qu’eux dans mon jeu, et sont présent dans tout les programmes Pygame.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/pygame02.png&quot; alt=&quot;pygame02&quot; style=&quot;float:left&quot; /&gt;
+Dans Pygame, lorsque l’on veut afficher quelque chose, il faut créer deux objets: &lt;strong&gt;Surface&lt;/strong&gt; et &lt;strong&gt;Rect&lt;/strong&gt;. Les deux peuvent être représentés par un carré à l’écran. Voyez la Surface comme un calque que l’on viendrait poser sur la fenêtre, avec quelque chose déssiné dessus. Une Surface contient donc tout les éléments qui permettent de colorier des pixels. A l’inverse, l’objet Rect ne gère aucun affichage, mais on peut l’imaginer comme une punaise que l’on mettrait sur un calque pour qu’il tienne en place. Sous forme aussi de carré, il contient les coordonnées du calque à plusieurs endroits, et permet de gérer des événements comme des collisions (entre deux Surface, ou même avec avec la souris si elle se trouve dessus).&lt;/p&gt;
+
+&lt;p&gt;Maintenant vous avez tout ce qu’il faut pour comprendre le fichier &lt;u&gt;Card.py&lt;/u&gt;. Chaque carte sera une instance de la classe &lt;strong&gt;Card&lt;/strong&gt;. On enregistre donc dans cette classe:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;self.owner -&amp;gt; Le propriétaire de la carte&lt;/li&gt;
+  &lt;li&gt;self.number -&amp;gt; La position du nom de la carte dans listOfCards.py&lt;/li&gt;
+  &lt;li&gt;self.name -&amp;gt; le nom de la carte qu’on vient chercher directement dans la liste allCards de listOfCards.py&lt;/li&gt;
+  &lt;li&gt;self.top, self.right,…. -&amp;gt; Les 4 valeurs de la carte&lt;/li&gt;
+  &lt;li&gt;self.element, self.type, self.About -&amp;gt; Pas intéréssant pour le moment&lt;/li&gt;
+  &lt;li&gt;self.inHand -&amp;gt; On veut constamment savoir si la carte est encore dans la main du joueur&lt;/li&gt;
+  &lt;li&gt;self.image, self.rect -&amp;gt; La Surface et le Rect de la carte&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;self.image&lt;/strong&gt; vaut ‘None’ au début de la classe, mais on y met une Surface dans la fonction &lt;strong&gt;getCard(self)&lt;/strong&gt; du fichier &lt;u&gt;functions.py&lt;/u&gt;. Cette fonction va d’abord chercher le chemin du fichier carte en fonction du propriétaire, puis il va utiliser la fonction &lt;strong&gt;pygame.image.load&lt;/strong&gt; de Pygame. Cette fonction retourne une Surface remplie avec l’image envoyée en paramètre. Et pour finir, de retour dans la classe Card, on récupère le Rect correspondant à self.image avec une autre fonction de Pygame: &lt;strong&gt;self.image.get_rect()&lt;/strong&gt;. Cette fonction s’utlise uniquement sur une Surface, et va en extraire un objet Rect qui contient les information nécessaire à l’exploitation  de la Surface. (Sa largeur, sa hauteur, etc…).&lt;/p&gt;
+
+&lt;p&gt;Voilà il me semble que l’on a fait le tour de cette première partie. La fonction &lt;strong&gt;changeOwner&lt;/strong&gt; permet au jeu de gérer le changement de propriétaire (lorsque l’adversaire capture notre carte ou réciproquement), et la fonction &lt;strong&gt;__repr__&lt;/strong&gt; est propre à Python, et nous permet de faire un “print notreObjet” même si cet objet n’est pas une chaine de caractères.&lt;/p&gt;
+
+&lt;p&gt;C’est la première fois que je fais ce genre d’article, n’hésitez donc pas à me donner des retour, me dire ce qui vous a plu/déplu, ce qui aurait mérité plus d’éclaircissement etc… Et si quelqu’un lisant cet article s’y connait en Pygame et souhaite me corriger sur quelque chose, qu’il le fasse! Je ne voudrais pas dire de bêtises et être la cause du mal de crâne de plusieurs personnes ;)&lt;/p&gt;
+
+&lt;p&gt;Voilà amusez-vous bien et bonne programmation ;)&lt;/p&gt;
+</description>
+				<pubDate>Fri, 15 Aug 2014 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2014/08/15/introduction-a-pygame.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2014/08/15/introduction-a-pygame.html</guid>
+			</item>
+		
+			<item>
+				<title>Sunflower passe en version 0.2-59</title>
+				
+					<description>&lt;p&gt;Bonjour à tous!&lt;/p&gt;
+
+&lt;p&gt;Ce n’est pas la première fois que je parle de Sunflower. Petite piqûre de rappel, c’est un gestionnaire de fichier pour  GNU/Linux entièrement codé en Python, avec la bibliothèque GTK. La particularité de Sunflower réside dans le fait qu’il propose une vue en panneaux jumelés, c’est-à-dire que c’est comme si on avait deux onglets d’exploration d’ouvert simultanément, chacun des onglets prenant une portion de la largeur de la fenêtre.
+&lt;!--break--&gt;
+Récemment une version majeure pour Sunflower à été publiée, rajoutant plusieurs support et corrigeant quelques bugs. Voici une petite liste de ce qui a été modifié:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Configuration de la taille de police&lt;/li&gt;
+  &lt;li&gt;Support de l’interface DBus&lt;/li&gt;
+  &lt;li&gt;Verrouillage des onglets et menus&lt;/li&gt;
+  &lt;li&gt;Plusieurs traductions mises à jour (dont la française par votre humble serviteur :p)&lt;/li&gt;
+  &lt;li&gt;Amélioration des performances pour le chargement des répertoire&lt;/li&gt;
+  &lt;li&gt;Plusieurs corrections pour la liaison avec Git&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Et tout un tas d’autres ajouts et corrections que l’on peut retrouver en lisant le fichier &lt;a href=&quot;https://github.com/MeanEYE/Sunflower/blob/master/CHANGES&quot;&gt;CHANGES&lt;/a&gt;. (Vraiment, la liste est longue!)&lt;/p&gt;
+
+&lt;p&gt;Si on veut vraiment la toute dernière version on peut aller la chercher directement sur le dépot Github. Mais des paquets stables existent aussi pour les distributions les plus courantes (Ubuntu-like, Archlinux, etc…)&lt;/p&gt;
+
+&lt;p&gt;Voilà c’est tout pour cet article, j’en ai plusieurs autres en préparation que je vais essayer de sortir avant que les cours ne reprennent, notamment un article sur Pygame, et peut-être une liste des musiques ou livres libres que j’ai écoutées ou lus récemment.&lt;/p&gt;
+
+&lt;p&gt;À la prochaine!&lt;/p&gt;
+</description>
+				<pubDate>Sun, 10 Aug 2014 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2014/08/10/sunflower-pass-en-version-0-2-59.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2014/08/10/sunflower-pass-en-version-0-2-59.html</guid>
+			</item>
+		
+			<item>
+				<title>Linux Kernel: Sécurité et Configuration (1ère partie)</title>
+				
+					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
+
+&lt;p&gt;Je vous présente aujourd’hui la suite (qui s’est fait attendre) de traduction d’article sur le noyau Linux. Pour rappel vous pourrez retrouver ces articles sur &lt;a href=&quot;linux.org&quot;&gt;linux.org&lt;/a&gt;, ainsi que tout un tas d’autres articles et tutos vraiment super intéressants, je vous conseille vraiment d’y aller! ( Seul bémol: Faut aimer l’anglais. ^^) D’ailleurs on peut voir sur ce site qu’il y a une vingtaine d’articles qui continuent celui-ci sur le noyau Linux, pour vous dire à quel point j’ai pris du retard! Pour me rattraper j’ai fais deux articles en un ici ;)&lt;/p&gt;
+
+&lt;p&gt;Et petit détail que je n’avais pas dis au début, quand vous lisez le pronom “je” dans ces articles, ce n’est pas moi mais l’auteur véritable de l’article qui est ciblé (C’est-à-dire Devyn Collier Johnson).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/2013/07/22/Linux-Kernel-:-Code-Source.html&quot;&gt;Article précédent&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Le noyau Linux est le cœur de tous les systèmes GNU/Linux. Si du code malicieux endommage ou prend le contrôle d’un élément du noyau, le système entier peut être sévèrement endommagé, des fichiers peuvent être supprimés ou corrompus, des informations privées peuvent être volées, etc… Il est clairement dans le meilleur intérêt de l’utilisateur de garder un noyau sécurisé. Heureusement, Linux est un système très sûr grâce à son noyau et a sa sécurité. Il y a moins de virus sous Linux que sous Windows, même en proportion du nombre d’utilisateurs. (C’est pourquoi beaucoup d’entreprises utilisent Linux pour gérer leur serveur.) Cependant, ce n’est pas une excuse pour négliger la sécurité du noyau. Linux possède de nombreuses fonctionnalités et programmes, mais seuls les Linux Security Modules (LSM) et autres système de sécurité du noyau seront abordés dans cet article.
+&lt;!--break--&gt;
+&lt;a href=&quot;http://fr.wikipedia.org/wiki/AppArmor&quot;&gt;AppArmor&lt;/a&gt; (Application Armor) est un module de sécurité crée à l’origine par Immunix. Depuis 2009, Canonical maintient le développement du code ( Novell s’en est occupé après Immunix et avant Canonical). Ce module de sécurité à été dans le noyau principal depuis sa version 2.6.36. AppArmor restreint les possibilités des programmes. AppArmor utilises les chemins de fichiers pour vérifier les restrictions de programme. Beaucoup d’ administrateurs Linux affirment que AppArmor est le module de sécurité le plus facile à configurer. Cependant, plusieurs utilisateur Linux pensent que ce module est moins sécurisé que ses alternatives.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fr.wikipedia.org/wiki/SELinux&quot;&gt;Security-Enhanced Linux&lt;/a&gt; (SELinux) est une alternative à AppArmor, crée par la National Security Agency (NSA). SELinux à été ajouté au noyau depuis la version 2.6. Il opère sur les outils de l’espace utilisateur du noyau. SELinux donne aux programmes (principalement les démons et les applications de serveur). SELinux peut aussi être utilisé pour contrôler les droits de l’utilisateur. Il n’utilise pas les chemins de fichier comme AppArmor, à la place SELinux utilise le système de fichiers pour noter les exécutables quand il vérifie leurs permissions. C’est ce qui fait que SELinux ne peut pas apporter de protection partout, c’est-à-dire tous les systèmes de fichiers, tandis que AppArmor le peux.&lt;/p&gt;
+
+&lt;p&gt;Note: Un démon (ou daemon en anglais, prononcer day-mon) est un programme qui tourne en tâche de fond.&lt;/p&gt;
+
+&lt;p&gt;Note bis: Bien que AppArmor, SELinux, et d’autres soient dans le noyau, seulement un module peut être actif à la fois.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fr.wikipedia.org/wiki/Smack&quot;&gt;Smack&lt;/a&gt; est une autre possibilité de module de sécurité. Smack fait partie du noyau Linux depuis sa version 2.6.25. Il est supposé offrir plus de sécurité que AppArmor est être plus facile à configurer que SELinux.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/TOMOYO_Linux&quot;&gt;TOMOYO&lt;/a&gt;, un autre module de sécurité, a été intégré au noyau depuis la version 2.6.30. L’objectif principal de TOMOYO est d’analyser le système à la recherche de failles de sécurités.&lt;/p&gt;
+
+&lt;p&gt;AppArmor, SELinux, Smack et TOMOYO forment les quatre modules LSM standards. Les LSM ont une sorte de formulaire de listes d’entités et de ce qu’ils sont permit ou non de faire.&lt;/p&gt;
+
+&lt;p&gt;Yama est un nouveau module de sécurité du noyau Linux. Il n’est pas encore considéré comme un module standard LSM, mais il pourrait à l’avenir être le cinquième. Yama utilises les mêmes principes de fonctionnement que les autres modules.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://fr.wikipedia.org/wiki/Grsecurity&quot;&gt;“grsecurity”&lt;/a&gt; est un groupe de patchs de sécurité pour améliorer la sécurité du noyau Linux. La plupart de ces patchs sont liés aux connections à distances et aux dépassement de tampons. L’un des composant intéressant est PaX. PaX donne au code en mémoire le minimum de privilège possible. Par exemple, un programme en mémoire est marqué comme protégé en écriture. Ce qui est logique si on y pense, pourquoi un programme en train d’être exécuté aurait besoin d’être ré-écrit alors qu’il est toujours en mémoire? Maintenant, du mauvais code ne peut pas changé un programme en cours d’exécution. Un dépassement de mémoire s’effectue lorsqu’un programme écrit des données en mémoire et dépasse sa plage de mémoire pour aller écrire dans la mémoire d’autres applications. Quand PaX est actif, il aide à prévenir ces dépassements de tampon/mémoire car le programme n’aura pas le droit d’écrire dans l’espace des autres programmes.&lt;/p&gt;
+
+&lt;p&gt;Le Linux Intrusion Detection System LIDS) est un patch de sécurité de noyau qui ajoute les fonctionnalités du Mandatory Access Control (MAC). Ce patch agit que un module LSM.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Systrace&quot;&gt;Systrace&lt;/a&gt; est un outil qui réduit et contrôle les accès des application au système de fichier et aux appels systèmes. Les appels systèmes sont des requêtes faites au noyau. Par exemple, quand un éditeur de texte écrit sur le disque-dur, l’application crée un appel système au noyau pour écrire sur le disque-dur.&lt;/p&gt;
+
+&lt;p&gt;Ce sont des éléments très important dans le système de sécurité du noyau Linux. Ces modules et patchs permettent de se protéger de programmes malicieux voulant attaquer le noyau. Sans ces fonctionnalités, le système Linux serait un système d’exploitation peu sûr.&lt;/p&gt;
+
+&lt;p&gt;Maintenant que nous avons une meilleure compréhension du noyau, nous pouvons nous attaquer au plus gros: configurer et compiler le code. La configuration prend énormément de temps. Les outils de configuration posent beaucoup de questions et permettent aux développeurs de modifier chaque aspect du kernel. Si vous n’êtes pas sûr d’une de vos modification, mieux vaut laisser la valeur par défaut proposée par l’outil de configuration. Cette série de tutoriels permettra de comprendre l’ensemble du processus de configuration d’un noyau Linux.&lt;/p&gt;
+
+&lt;p&gt;Pour configurer le code, ouvrez un terminal et déplacez-vous dans le répertoire du code source du noyau. Il existe plusieurs moyen de configurer le code, selon la préférence pour l’interface de configuration:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;make config - Interface en mode texte (celle utilisée couramment).&lt;/li&gt;
+  &lt;li&gt;make menuconfig - Mode texte avec des menus colorés et des bouton radios. Cette option permet aux développeur de restaurer une configuration précédente. -ncurses (ncurses-devel) nécessite d’être installé.&lt;/li&gt;
+  &lt;li&gt;make nconfig - Un autre mode texte avec des menus colorés. curses (libcdk5-dev) doit être installé.&lt;/li&gt;
+  &lt;li&gt;make xconfig - Interface Qt/X-windows. Qt doit être installé.&lt;/li&gt;
+  &lt;li&gt;make gconfig - Interface Gtk/X-windows. Gtk doit être installé&lt;/li&gt;
+  &lt;li&gt;make oldconfig - Mode texte qui prend les réponses par défauts en fonction d’un fichier de configuration local.&lt;/li&gt;
+  &lt;li&gt;make silentoldconfig - Même chose que le mode ‘oldconfig’ mais les réponses du fichier de configuration ne sont pas montrées.&lt;/li&gt;
+  &lt;li&gt;make olddefconfig - Comme ‘silentoldconfig’ si ce n’est que plusieurs questions sont complétées automatiquement par leur valeur par défaut.&lt;/li&gt;
+  &lt;li&gt;make defconfig - Cette option créée un fichier de config en utilisant les paramètre de l’architecture du système présent.&lt;/li&gt;
+  &lt;li&gt;make ${PLATFORM}_defconfig - Crée un fichier de config en utilisant les valeurs de arch/$ARCH/configs/${PLATFORM}_defconfig.&lt;/li&gt;
+  &lt;li&gt;make allyesconfig - Cette option crée un fichier de config qui répond ‘yes’ à toutes les question possible.&lt;/li&gt;
+  &lt;li&gt;make allmodconfig - Cette option créée un fichier de configuration qui va prendre le plus possible chaque partie du kernel comme module.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;NOTE: Le code du noyau Linux peut être inséré dans le noyau lui-même ou être utilisé comme module. Par exemple, les utilisateurs voulant utiliser les drivers Bluetooth comme module (séparément du noyau), l’ajoutent au noyau, ou n’ajoutent rien du tout. Quand le code est ajouté au noyau, celui-ci nécessite plus de mémoire RAM et le temps de boot peut prendre plus de temps. Cependant, les performances du noyau seront plus grandes. Si le code est ajouté comme module, celui-ci restera sur le disque-dur jusqu’à ce qu’il soit nécessaire de l’utiliser. Ensuite seulement le module est chargé dans la RAM. Cela permet de réduire la consommation de RAM du noyau et de réduire le temps de démarrage, mais ses performances seront plus faible car le noyau et les modules seront repartis dans la RAM. L’autre possibilité est de ne pas ajouter de code. Par exemple, un développeur kernel sait que tout les systèmes n’utilisent pas les périphériques Bluetooth. Ainsi donc, le driver n’est pas ajouté au noyau. Cela améliore les performances du noyau. Cependant, si un utilisateur veut utiliser un périphérique Bluetooth plus tard, il aura besoin d’installer le module Bluetooth ou de mettre à jour tout le noyau.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;make allnoconfig - Cette option créée un fichier de configuration qui n’ajoute que l’essentiel du code, en répondant ‘no’ au plus de question possible. Ceci peut parfois rendre le noyau non fonctionnel pour le système sur lequel il a été compilé.&lt;/li&gt;
+  &lt;li&gt;make randconfig - Cette option prend des choix aléatoires pour le noyau.&lt;/li&gt;
+  &lt;li&gt;make localmodconfig - Cette option créée un fichier de configuration basé sur la liste courante de modules et la configuration du système.&lt;/li&gt;
+  &lt;li&gt;make localyesconfig - Cette commande met toutes les options des modules à ‘yes’, la majeure partie du kernel ne sera pas dans des modules.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Astuce: Il est préférable d’utiliser “make menuconfig” car l’utilisateur peut sauvegarder sa “progression” dans la configuration. “make config” ne permet pas cela.&lt;/p&gt;
+
+&lt;h1 id=&quot;configuration&quot;&gt;Configuration&lt;/h1&gt;
+
+&lt;p&gt;La plupart des développeurs choisissent “make menuconfig” ou l’un des menus graphique. Après avoir entré la commande voulue, la première question demande si le noyau qui va être construit sera en 64 bits ou non. Les choix sont “Y”, “n” et “?”. Le point d’interrogation permet de détailler la question, “n” de répondre non et “Y” de répondre oui. Nous choisirons oui ici. Entrez “Y” (attention à la casse, pensez bien à la majuscule).&lt;/p&gt;
+
+&lt;p&gt;NOTE : Au début de l’écriture de cette série d’article, j’ai utilisé “make config”. J’ai plus tard utilisé “make menuconfig” (ncurses). “make config” est linéaire et toutes les questions sont posées les unes après les autres pendant que l’interface ncuses est un menu dérivé. Si vous utilisé une interface de configuration qui utilise des menus, commencez au premier élément du menu et continuez en descendant dans chaque menu et sous-menu. Cela vous permettra de suivre ces articles correctement le long de la configuration de votre kernel.&lt;/p&gt;
+
+&lt;p&gt;NOTE BIS: Si le noyau est compilé sur un système 32 bits, l’outil de configuration vous demandera si le noyau devra être en 32 bits. La première question est différente sur d’autre processeurs.&lt;/p&gt;
+
+&lt;p&gt;La ligne suivante affiche “Cross-Compiler tool prefix (CROSS_COMPILE) [].” Si vous ne fait pas de Cross-Compiling, appuyez sur Enter. Si vous êtes en train de le faire, entrez quelque chose comme “arm-unknown-linux-gnu-“ pour les systèmes ARM ou “x86-64-pc-linux-gnu-“ pour un système 64 bit. Il y a de nombreuses autres commandes possibles pour les autres types de processeurs, mais la liste serait bien trop longue. Une fois que le développeur sait pour quel type de processeur il veut compiler, il pourra aisément chercher la commande nécessaire pour ce processeur.&lt;/p&gt;
+
+&lt;p&gt;NOTE: Le &lt;a href=&quot;http://en.wikipedia.org/wiki/Cross_compiler&quot;&gt;cross-compiling&lt;/a&gt; est le fait de compiler du code pour d’autres processeurs. Par exemple, un système Intel qui fait du  Cross-compiling de code le fera pour d’autres processeurs qu’ Intel. Donc ce système pourra compiler pour un processeur ARM ou AMD par exemple.&lt;/p&gt;
+
+&lt;p&gt;NOTE BIS: Chaque choix changera quelle questions viendront après et quand elles apparaitront. Je vais écrire chacun de mes choix pour que le lecteur potentiel de cet article pour suivre la méthode de configuration sur son propre système.&lt;/p&gt;
+
+&lt;p&gt;Ensuite, on peut voir “Local version - append to kernel release (LOCAL VERSION) []”. Ici on peut donner un numéro de version spécial ou un nom à son kernel personnalisé. Je vais entrer “LinuxDotOrg”. La version du noyau est maintenant “3.9.4-LinuxDotOrg”. Ensuite, l’outil de configuration demande “Automatically append version information to the version string (LOCAL VERSION_AUTO) [N/y/?]”. Si une arborescence de version git est trouvée, le numéro de révision sera ajouté. Dans cet exemple nous n’utilisons pas git, je réponds donc non. Vous vous souvenez de vmlinux et autres fichiers similaires? Et bien la question suivante demandera quel format de compression devra être utilisé. On peut choisir l’une des cinq propositions. Les choix sont:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Gzip (KERNEL_GZIP)&lt;/li&gt;
+  &lt;li&gt;Bzip2 (KERNEL_BZIP2)&lt;/li&gt;
+  &lt;li&gt;LZMA (KERNEL_LZMA)&lt;/li&gt;
+  &lt;li&gt;XZ (KERNEL_XZ)&lt;/li&gt;
+  &lt;li&gt;LZO (KERNEL_LZO)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Gzip est le format par défaut, j’entre “1” et je confirme. Chaque format de compression possède plus ou moins de taux de compression que ses concurrents. Un plus grand taux de compression signifie un fichier plus petit, mais plus de temps sera nécessaire pour le décompresser, et inversement.&lt;/p&gt;
+
+&lt;p&gt;Maintenant le logiciel nous affiche “Default hostname (DEFAULT_HOSTNAME) [(none)]”. Le nom d’hôte peut être configuré. Généralement ceci est laissé en blanc, ainsi c’est l’utilisateur final de Linux qui pourra configurer le sien.&lt;/p&gt;
+
+&lt;p&gt;Ensuite on peut activer ou désactiver l’utilisation de la mémoire swap. Linux utilise une partition séparée appelée “swap” qu’il utilise comme mémoire virtuelle. C’est équivalent à la mémoire paginée de Windows. Fréquemment on répond oui à cette question “Support for paging of anonymous memory (swap) (SWAP) [Y/n/?]”.&lt;/p&gt;
+
+&lt;p&gt;La ligne suivante “System V IPC (SYSVIPC) [Y/n/?]” demande si le kernel doit supporter IPC. IPC, qui signifie Inter Process Communication, permet aux processus de communiquer et de se synchroniser. Il est préférable d’activer IPC, sinon de nombreuses applications risquent de ne pas fonctionner. Répondre oui à cette question entrainera l’outil de configuration à demander ‘POSIX Message Queues (POSIX_MQUEUE) [Y/n/?]”. Cette question sera posée uniquement si vous avez activé IPC. Le POSIX Message Queues est une file de messages ( une sorte de communication inter-processus) où chaque message possède un niveau de priorité. Le choix par défaut est oui. Appuyer sur Entrée pour prendre le choix par défaut (indiqué par le caractère en majuscule).&lt;/p&gt;
+
+&lt;p&gt;Ensuite, “Open by fhandle syscalls (FHANDLE) [Y/n/?]” demande si les programmes pourront utiliser le gestionnaire de fichier plutôt que les noms de fichiers quand le système de fichiers aura besoin d’effectuer une opération. Par défaut la réponse est oui.&lt;/p&gt;
+
+&lt;p&gt;Parfois, selon les choix du développeur, certaines questions seront automatiquement complétées. Par exemple, la question suivante “Auditing support (AUDIT) [Y/?]”, est répondue par un oui sans demander à cause des choix précédents. Le support de l’audit permet de faire des logs sur les accès et les modifications de tous les fichiers. La question suivante parle aussi d’audit: “Enable system-call auditing support (AUDITSYSCALL) [Y/n/?]”. Si il est activé, tous les appels système sont enregistrés dans les logs. Si le développeur a besoin de performance, alors il vaudrait mieux désactiver le plus possible de fonctions d’audit et ne pas y ajouter au noyau. Certains peuvent activer ces option pour des questions de sécurité. Nous choisirons non pour cette question. Ensuite nous avons “Make audit loginuid immutable (AUDIT_LOGINUID_IMMUTABLE) [N/y/?]”, qui demande si les processus peuvent changer leur loginuid (LOGIN User ID). Si activée, les processus dans l’espace utilisateur ne pourront pas changer leur loginuid. Pour des questions de performances, nous désactiverons cette fonctionnalité.&lt;/p&gt;
+
+&lt;p&gt;NOTE: Si vous utilisez l’outil à l’aide de la commande “make config”, les questions dont les réponses ont été données automatiquement par l’outil de configuration seront affichées, mais leur réponses ne pourront être modifiées. Si vous utilisez “make menuconfig”, vous ne pourrez changer le choix quel que soit le bouton pressé. De toute façon, changer ces options ne servirait pas à grand chose car un choix précédent à fait qu’il est nécessaire que cette question-là soit répondue d’une manière précise.&lt;/p&gt;
+
+&lt;p&gt;Dans le prochain article, nous configurerons le sous-système IRQ et les choix qui suivent.&lt;/p&gt;
+</description>
+				<pubDate>Thu, 01 May 2014 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2014/05/01/linux-kernel-securite-et-configuration-partie-1.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2014/05/01/linux-kernel-securite-et-configuration-partie-1.html</guid>
+			</item>
+		
+			<item>
+				<title>Passage de Skype à Ekiga</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Ça faisait un moment que je n’avais pas écrit. La cause: Un manque de temps effroyable. Entre les cours, les activités extérieures et deux trois occupations je n’ai plus le temps de rien faire. Mais bon voilà après une longue absence je reviens pour vous parler d’une alternative à Skype qui est déjà bien connue, répondant au nom de &lt;a href=&quot;http://ekiga.org/&quot;&gt;Ekiga&lt;/a&gt;.
+&lt;!--break--&gt;
+Cela faisait un moment que je me disais qu’il fallait que j’enlève Skype de mon ordinateur. Il est un peu lourd, les notifications sonores sont vraiment moches sur mon pc, et tout récemment à l’acquisition de ma nouvelle webcam je me suis rendu compte que quand je voulais la configurer avec &lt;a href=&quot;http://doc.ubuntu-fr.org/guvcview&quot;&gt;guvcview&lt;/a&gt;, et bien Skype n’était pas content et faisait planter ma session. Ce qui est tout de même gênant car ma caméra permet de faire du 720p avec une luminosité et des couleurs plus qu’acceptable, et Skype me réduit tout ça à du 320x260 et des bandes de couleurs.&lt;/p&gt;
+
+&lt;p&gt;Soit, il ne me restait qu’à trouver un autre logiciel pouvant le remplacer, et essayer de faire venir mes contacts dessus, ce qui n’est pas chose aisée quand le monde entier est habitué à ce seul Skype. A bout d’environ 5 secondes de recherches je trouve mon bonheur. Ekiga est un logiciel de visioconférence sous licence GPLv2 et multiplateforme, qui permet de gérer l’appel Pc à Pc, Pc à téléphone, ainsi que la messagerie instantanée, exactement ce que je cherche somme toute.&lt;/p&gt;
+
+&lt;p&gt;Je lance donc l’installation avec le gestionnaire de logiciels de Linux Mint, et tout de suite un assistant de configuration apparait pour m’aider à configurer mon premier compte en 9 étapes. Ekiga nous demande d’abord de saisir Nom et Prénom, ou son pseudo si l’on veut apparaitre avec quelque chose d’un peu personnalisé aux autres contacts. Ensuite après une brève explication sur l’utilisation du &lt;a href=&quot;https://fr.wikipedia.org/wiki/Session_Initiation_Protocol&quot;&gt;SIP&lt;/a&gt; et du &lt;a href=&quot;https://fr.wikipedia.org/wiki/H.323&quot;&gt;H323&lt;/a&gt;, Ekiga nous invite à créer un compte SIP par le biais de son site, ce que j’ai fais dans mon cas mais l’on peut très bien sauter cette étape si l’on possède déjà un compte avec un autre service en cochant la case en bas de la fenêtre.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/ekiga1.png&quot; alt=&quot;Ekiga&quot; title=&quot;ekiga1.pnh&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;L’inscription sur le site ekiga.net se fait comme n’importe quel autre compte.  Si ce n’est qu’il y a l’adresse ekiga à prendre en compte (ce n’est pas celle-ci qui faut indiquer à la 4e étape de la configuration de compte). Je n’ai pas fait la configuration Pc-To-Phone parce que ce n’est pas pour ça que je l’ai installé, et je ne pense pas avoir à m’en servir donc je l’ai passée.  Pour ce qui est du type de connexion et des périphériques audio je conseille de laisser tout par défaut au début, et si ça ne marche vraiment pas à ce moment-là vous pourrez toujours revenir configurer tout cela. Pareil pour le périphérique d’entrée vidéo, ce n’est utile que si vous avez une caméra sinon cela ne sert à rien d’y toucher. (Note: Si vous en avez une de branché, sélectionnez-la maintenant sinon ce sera l’autre qui sera prit par défaut, qui est une icone mouvante qui se balade à la place du cadre de l’image de votre caméra)&lt;/p&gt;
+
+&lt;p&gt;Voilà après un récapitulatif des paramètres vous pouvez cliquer sur Appliquer pour terminer la configuration! Si tout s’est bien passé maintenant il vous reste à ajouter des contacts. C’est là que l’adresse Ekiga est utile! Car c’est elle qu’il faut indiquer dans la fenêtre d’ajout de contact. La case Nom peut être remplacé par ce que vous voulez, c’est vous qui choisissez le nom par lequel cette personne apparaitra dans votre liste de contact ou dans vos discussions!&lt;/p&gt;
+
+&lt;p&gt;Bon pour tout vous avouer certaines choses ne marchent pas encore correctement, mais il faudrait que j’essaie avec d’autre personnes pour être certain. Par exemple je reçoit bien la flux vidéo et audio de mon contact (moi sur un Linux Mint 16 et mon contact sur un Windows 8), le son de micro lui est bien envoyé et je me vois bien moi-même en petit avec ma caméra mais mon contact ne me voit pas.&lt;/p&gt;
+
+&lt;p&gt;Voilà j’espère que ce court article vous aura plu, n’hésitez pas à me dire si certaines explication sont incorrecte/incompréhensible/mal dite.&lt;/p&gt;
+
+&lt;p&gt;Sur ce, bonne journée et amusez-vous bien!&lt;/p&gt;
+</description>
+				<pubDate>Sat, 08 Mar 2014 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2014/03/08/passage-de-skype-a-ekiga.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2014/03/08/passage-de-skype-a-ekiga.html</guid>
+			</item>
+		
+	</channel>
+</rss>

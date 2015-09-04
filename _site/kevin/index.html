@@ -17,9 +17,10 @@
     <ul class="right shad-effect">
       <li><a href="/">Accueil</a></li>
       <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
       <li><a onclick="contact_popup()">Contact</a></li>
       <li><a href="/kevin/about.html">À propos</a></li>
-      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/feeds.xml">Flux RSS</a></li>
     </ul>
   </div>
 
@@ -33,6 +34,11 @@
     <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
     <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
   </ul>
+  <ul>
+    <h1>Des gens bien</h1>
+    <li><a href="http://schoewilliam.fr">Schoewilliam</a></li>
+    <li><a href="https://la-vache-libre.org">La vache libre</a></li>
+  </ul>
   <button class="quit_contact" onclick="contact_popup()">Fermer</button>
 </div>
 
@@ -42,18 +48,18 @@
         <div class="header_blog">
   
     
-      <div class="header_blog_title"  style="background-image: url('/images/header_articles/circuit.jpg');">
+      <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
         <div class="header_blog_title">
         <time datetime="">
           <div class="shad-effect">
-            <h1><a href="/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">Neobot un bot en ligne de commande pour les unix like</a></h1>
+            <h1><a href="/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">Un nouveau blog tout beau avec Jekyll</a></h1>
           </div>
           
   
-    30
+    4
 
 
-janvier
+septembre
   
 2015
 
@@ -105,6 +111,28 @@ janvier
   
     
       <div class="post">
+        <h2><a href="/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">Un nouveau blog tout beau avec Jekyll</a></h2>
+        <p>Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.</p>
+
+<p>Mais bon j’y suis finalement arrivé. Il manque encore quelques petite touches au site (je pense notamment aux commentaires, qui ne fonctionnenent pas du tout vous pouvez essayer vous ne verrez jamais votre commentaire s’afficher sur mon site, et aussi une petite liste des copains et autres sites a voir. Peut-être vais-je rajouter ça dans l’onglet Contact).</p>
+
+<p>Un peu de technique maintenant. Comme je l’ai mentionné, j’utilise Jekyll pour faire de la génération de code statique. Pour ceux qui ne savent pas, statique signifie (en gros) qu’il n’y a pas de code PHP, donc pas de gestion coté serveur. Vous avec de l’HTML, et du CSS. C’est quasiment tout ce qu’il y a sur ce site. Le gros avantage de Jekyll par rapport a ce que je voulais est qu’il est spécialisé pour la conception de Blogs, avec une gestion des articles qui sont écrit de mon coté en langage Markdown, puis sont transformé en page HTML/CSS par Jekyll selon un modèle que j’ai défini.</p>
+
+<p>Ah oui il faut en parler des ces modèles, ou plutôt appelé par Jekyll des Layouts. Pour générer du code avec Jekyll, on commence par écrire des pages qui serviront de modèles pour la génération, et en mettant dedans des commandes Jekyll pour lui donner des informations, comme lui dire a quel endroit insérer le contenu de la page qui utilise ce Layout. Un modèle peut être tout et n’importe quoi en HTML. Pour ce site j’utilise a peu près deux catégories de Layouts, d’un coté ceux qui contiennent le code de base d’une page HTML donc avec le DOCTYPE les balises &lt;head&gt; les lignes d’insertion de CSS etc… Agrémentés donc en plein milieu d’une ligne avec  pour placer le contenu de la page. Et d’un autre coté j’utilise des Layouts qui eux-mêmes sont derivés des Layouts de la première catégories.</p>
+
+<p>C’est le système que j’aime le plus avec Jekyll car ça permet de créer des modèles de pages au début, ce qui fait que pour la suite on a plus qu’à écrire le contenu qu’on veut et indiquer le modèle a utiliser. Non seulement ça simplifie la vie mais c’est en plus très facilement lisible quand on veut remettre les mains dans le cambouis. Par exemple quand j’écris cet article, j’écris un fichier de type Markdown, avec le contenu de mon article et le formattage que je veux faire (Jekyll s’occupe aussi de convertir le Markdown en HTML. Franchement, quel homme ce Jekyll!), et avec au début deux trois lignes d’information qui sont utilisées par Jekyll dont le Layout.</p>
+
+<p>Je pense que je vais conclure sur le fait que je suis vraiment satisfait des possibilités offertes par Jekyll. Il permet de facilement faire du code statique sans se casser la tête et surtout le rendu final est très performant puisqu’on n’a ni PHP ni Javascript pour faire tout ça. Mais après rien n’empêche de rajouter du PHP ou du Javascript! Par exemple sur ce site le bouton ‘Contact’ a une propriété HTML onclick qui lance une fonction Javascript pour afficher ou non la barre de Contact. J’ai aussi quelques lignes de PHP qui me permettent de gérer le formulaire d’envoi de commentaire, pour m’envoyer un mail avec le contenu et je n’ai plus qu’à rajouter ça au site (pas très pratique certes puisqu’il faut recopier le contenu du mail, le nom et l’article associé, dans le dossier _comments, mais apparemment il existe des ptits gars qui ont fait un script pour automatiser tout ça)</p>
+
+<p>Si vous voulez vous lancer dans la création d’un blog et que vous êtes débutant comme moi, Jekyll est vraiment un très bon outil pour faire ça.</p>
+
+<p>Gloire a Jekyll :3</p>
+
+      </div>
+    
+  
+    
+      <div class="post">
         <h2><a href="/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">Neobot un bot en ligne de commande pour les unix like</a></h2>
         <p>Salut tout le monde</p>
 
@@ -143,24 +171,6 @@ janvier
 <p>Depuis quelques temps sur diaspora* je demande un peu d’aide ou pose des questions par rapport à Firefox OS, car depuis le mois d’Aout j’ai fais la main base sur un Open C!</p>
 
 <p>Il faut savoir que depuis mon arrivé au lycée, il y a 4 ans, je suis resté avec un Samsung à clapet gris. Il me convenait très bien pour ce que j’en faisais, c’est-à-dire du sms en masse et très vite (j’enverrais une tartelette à la fraise au gars qui à inventé le T9) et puis c’est tout. Je ne m’intéressais absolument pas aux smartphones pour plusieurs raisons. La principale était le manque d’utilité que je pouvais accorder à ces gadgets. Pourquoi avoir une application pour lire mes mails quand je peux les lire des chez moi sous Thunderbird avec un écran qui me fasse pas plisser les yeux?
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html">Tuxle Triad et Pygame: Avoir une main</a></h2>
-        <p>Salut à tous!</p>
-
-<p>Me voilà aujourd’hui pour un deuxième article sur Pygame. Je vais cette fois-ci vous expliquer comment créer une “main” remplie de cartes tirées aléatoirement, et positionner les cartes dans la main.</p>
-
-<p>La dernière fois je vous avais expliqué comment fonctionnait un objet <strong>Card</strong>. Mais pour pouvoir jouer il en faudra plus d’une (ça risque d’être quelque peu ennuyant sinon ;) ). Ceux qui ont essayé le jeu savent combien de carte il faut, c’est-à-dire 5 par joueur. Pour faire ça nous allons utiliser tout simplement une liste. Dans la fonction <strong>__init__</strong> du fichier  game.py, on peut voir les deux lignes suivantes:</p>
-
-<pre><code>self.player1Hand = self.randomHand(1)
-
-self.player2Hand = self.randomHand(-1)
-</code></pre>
-
 
       </div>
     

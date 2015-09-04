@@ -25,7 +25,7 @@ $DATE_FORMAT = "Y-m-d H:i";
 // the From: address.  Whilst you could, in theory, change this to take the
 // address out of the form, it's *incredibly* highly recommended you don't,
 // because that turns you into an open relay, and that's not cool.
-$EMAIL_ADDRESS = "ilphrin@autistici.org";
+$EMAIL_ADDRESS = "nothing";
 
 // The subject of all blog comment e-mails.  If you're running lots of these,
 // you might want to customise it, or if you were running a generic comment
@@ -42,7 +42,6 @@ $COMMENT_RECEIVED = "comment_received.html";
  * HERE BE CODE
  ****************************************************************************/
 
-echo "Coucou";
 $post_id = $_POST["post_id"];
 unset($_POST["post_id"]);
 $msg = "post_id: $post_id\n";
