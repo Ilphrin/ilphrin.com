@@ -3,6 +3,7 @@ layout: post_kevin
 title: "Tuxle Triad et Pygame: Avoir une main"
 author: kevin
 cover: tuxletriad.jpg
+category: planet
 ---
 
 Salut à tous!
@@ -44,4 +45,3 @@ Et vu que c'est la grosse mode du moment, j'ai rejoint Diaspora*! Et je dois avo
 Je ne sais pas encore sur quoi je vais partir pour le prochain article. Surement la gestion des cases sur le terrain. Mais mes cours ayant prit une grande partie de mon temps je ne sais pas encore quand est-ce que je pourrais l'écrire. Je vais aussi surement faire de légères modifications d'apparence des articles pour rendre plus visible  certaines choses, comme les lignes de code que je met entre balises de citation. Faites-moi savoir si vous avez des idées là-dessus parce que je suis pas très doué pour tout ce qui touche à l'apparence. ^^
 
 Sur ce je vous souhaite bonne journée à tous et à la prochaine!
-

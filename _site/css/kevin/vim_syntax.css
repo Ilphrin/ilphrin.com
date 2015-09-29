@@ -1,0 +1,41 @@
+/* Add to css/syntax.css */
+
+ .highlight .lineno { color: #ccc; display:inline-block; padding: 0 5px; border-right:1px solid #ccc; }
+
+ .highlight pre code { display: block; white-space: pre; overflow-x: auto; word-wrap: normal; }
+
+.language-vim .k
+{
+  color: white;
+  font-weight: 900;
+}
+
+.language-vim .nb
+{
+  color: #46B;
+}
+
+.language-vim .p
+{
+  color: grey;
+}
+
+.language-vim .m
+{
+  color: #DCD288;
+}
+
+.language-vim .s2
+{
+  color: rgb(182, 78, 177);
+}
+
+.language-vim .s1
+{
+  color: rgb(216, 85, 85);
+}
+
+.language-vim .c
+{
+  color: rgb(38, 99, 95);
+}

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
   <script src="/js/nav.js"> </script>
   <title>
     Kevin / Ilphrin
@@ -30,14 +31,15 @@
   <ul>
     <li>Mail: ilphrin@autistici.org</li>
     <li>Lyon, France</li>
-    <li><a href="https://www.github.com/Ilphrin">Github</a>
-    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
-    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+    <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a>
+    <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
   </ul>
   <ul>
-    <h1>Des gens bien</h1>
-    <li><a href="http://schoewilliam.fr">Schoewilliam</a></li>
-    <li><a href="https://la-vache-libre.org">La vache libre</a></li>
+    <h1>Des sites cool</h1>
+    <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
+    <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
+    <li><a href="https://planet-libre.org">Planet Libre</a></li>
   </ul>
   <button class="quit_contact" onclick="contact_popup()">Fermer</button>
 </div>
@@ -52,11 +54,11 @@
         <div class="header_blog_title">
         <time datetime="">
           <div class="shad-effect">
-            <h1><a href="/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">Un nouveau blog tout beau avec Jekyll</a></h1>
+            <h1><a href="/planet/2015/09/24/des-news-en-tout-genres.html">Des news en tout genre</a></h1>
           </div>
           
   
-    4
+    24
 
 
 septembre
@@ -111,66 +113,54 @@ septembre
   
     
       <div class="post">
-        <h2><a href="/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">Un nouveau blog tout beau avec Jekyll</a></h2>
-        <p>Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.</p>
+        <h2><a href="/planet/2015/09/24/des-news-en-tout-genres.html">Des news en tout genre</a></h2>
+        <p>Depuis que j’ai mis en ligne le site, j’ai fait tout un tas de petites modifications mineures pour rendre le tout un peu plus joli/stable/fonctionnel, en voici une liste (non exhaustive puisque je ne me souviens pas de tout):</p>
 
-<p>Mais bon j’y suis finalement arrivé. Il manque encore quelques petite touches au site (je pense notamment aux commentaires, qui ne fonctionnenent pas du tout vous pouvez essayer vous ne verrez jamais votre commentaire s’afficher sur mon site, et aussi une petite liste des copains et autres sites a voir. Peut-être vais-je rajouter ça dans l’onglet Contact).</p>
-
-<p>Un peu de technique maintenant. Comme je l’ai mentionné, j’utilise Jekyll pour faire de la génération de code statique. Pour ceux qui ne savent pas, statique signifie (en gros) qu’il n’y a pas de code PHP, donc pas de gestion coté serveur. Vous avec de l’HTML, et du CSS. C’est quasiment tout ce qu’il y a sur ce site. Le gros avantage de Jekyll par rapport a ce que je voulais est qu’il est spécialisé pour la conception de Blogs, avec une gestion des articles qui sont écrit de mon coté en langage Markdown, puis sont transformé en page HTML/CSS par Jekyll selon un modèle que j’ai défini.</p>
-
-<p>Ah oui il faut en parler des ces modèles, ou plutôt appelé par Jekyll des Layouts. Pour générer du code avec Jekyll, on commence par écrire des pages qui serviront de modèles pour la génération, et en mettant dedans des commandes Jekyll pour lui donner des informations, comme lui dire a quel endroit insérer le contenu de la page qui utilise ce Layout. Un modèle peut être tout et n’importe quoi en HTML. Pour ce site j’utilise a peu près deux catégories de Layouts, d’un coté ceux qui contiennent le code de base d’une page HTML donc avec le DOCTYPE les balises &lt;head&gt; les lignes d’insertion de CSS etc… Agrémentés donc en plein milieu d’une ligne avec  pour placer le contenu de la page. Et d’un autre coté j’utilise des Layouts qui eux-mêmes sont derivés des Layouts de la première catégories.</p>
-
-<p>C’est le système que j’aime le plus avec Jekyll car ça permet de créer des modèles de pages au début, ce qui fait que pour la suite on a plus qu’à écrire le contenu qu’on veut et indiquer le modèle a utiliser. Non seulement ça simplifie la vie mais c’est en plus très facilement lisible quand on veut remettre les mains dans le cambouis. Par exemple quand j’écris cet article, j’écris un fichier de type Markdown, avec le contenu de mon article et le formattage que je veux faire (Jekyll s’occupe aussi de convertir le Markdown en HTML. Franchement, quel homme ce Jekyll!), et avec au début deux trois lignes d’information qui sont utilisées par Jekyll dont le Layout.</p>
-
-<p>Je pense que je vais conclure sur le fait que je suis vraiment satisfait des possibilités offertes par Jekyll. Il permet de facilement faire du code statique sans se casser la tête et surtout le rendu final est très performant puisqu’on n’a ni PHP ni Javascript pour faire tout ça. Mais après rien n’empêche de rajouter du PHP ou du Javascript! Par exemple sur ce site le bouton ‘Contact’ a une propriété HTML onclick qui lance une fonction Javascript pour afficher ou non la barre de Contact. J’ai aussi quelques lignes de PHP qui me permettent de gérer le formulaire d’envoi de commentaire, pour m’envoyer un mail avec le contenu et je n’ai plus qu’à rajouter ça au site (pas très pratique certes puisqu’il faut recopier le contenu du mail, le nom et l’article associé, dans le dossier _comments, mais apparemment il existe des ptits gars qui ont fait un script pour automatiser tout ça)</p>
-
-<p>Si vous voulez vous lancer dans la création d’un blog et que vous êtes débutant comme moi, Jekyll est vraiment un très bon outil pour faire ça.</p>
-
-<p>Gloire a Jekyll :3</p>
+<ul>
+  <li>Les commentaires fonctionnent maintenant! J’ai bidouillé pendant un bon moment à comprendre pourquoi quand je recevais un mail avec le contenu du commentaire à ajouter, ce n’était pas en utf-8. En fait il fallait rajouter \r\n a la fin de chaque informations de l’en-tête de requete de mail pour que ça passe correctement…</li>
+  <li>Je profite des articles sur Vim pour améliorer mon fichier CSS vim_syntax.css, puisque Jekyll peut faire de la mise en valeur de code avec {\% highlight %}, mais avec mes règles CSS la coloration était effacée pour ne laisser que du jaune ocre. Puisque Jekyll est bien fait il crée une classe pour chaque élément sémantique du langage mis en valeur, ce qui fait qu’il ne reste plus qu’à créer une règle CSS par classe pour avoir sa coloration personnalisée!</li>
+  <li>Toujours dans le CSS j’ai viré tous les ‘outline’ possible avec un brutal =&gt;  * {outline: none;}, de plus je me suis amusé avec les propriétés :focus pour le formulaire de commentaire pour rendre tout ça un peu plus vivant</li>
+  <li>Je pense ajouter une partie pour les news qui m’ont interressé ou mes pensées du moment, choses qui ne suffiraient pas à faire un article et n’ont donc pas leur place ici.</li>
+  <li>Le lien en bas pour le code du site sur Github dirige maintenant vers le dépot récemment crée. Je ne me suis pas vraiment cassé la tête a commenter les layouts ou a faire les choses de façon propre. Déjà parce que c’est la première fois que je fais un site complet donc je n’ai pas toutes les bonnes habitudes, et ensuite parce que ce n’est pas la peine je pense de détailler puisqu’il suffit de comprendre l’organisation de façon globale. (Et puis il y a beaucoup de choses qui sont inspirées de code trouvé sur l’Internet donc mieux documentés que par moi).</li>
+  <li>Si vous avez regardé le dépôt vous avez pu remarquer que mon CV est sur le site, mais que je n’ai mis aucun lien pour l’afficher. C’est volontaire. Si vous souhaitez vraiment le voir il est a http://ilphrin.com/kevin/CV_en.pdf, je compte ne faire que passer le lien sur mon compte Linkedin ou dans mes cartes de visite, je ne crois pas que ce soit la peine de prendre un bout de place sur le site pour ça.</li>
+</ul>
 
       </div>
     
   
     
       <div class="post">
-        <h2><a href="/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">Neobot un bot en ligne de commande pour les unix like</a></h2>
+        <h2><a href="/planet/2015/09/21/topo-de-mes-plugins-vim-02.html">Topo de mes plugins Vim - 02</a></h2>
+        <p>Les plugins c’est vraiment le top, alors dans Vim je vous en parle même pas, c’est comme rajouter des animations CSS, si je ne fait pas attention j’en rajoute un peu partout! Depuis la dernière fois j’ai rajouté quelque plugins qui ne révolutionnent pas mon utilisation de Vim, mais restent quand même un petit plus agréable. Du coup aujourd’hui ça va être plus court mais il y aura plus de monde ;)</p>
+
+
+      </div>
+    
+  
+    
+      <div class="post">
+        <h2><a href="/planet/2015/09/16/topo-des-plugins-vim-01.html">Topo de mes plugins Vim - 01</a></h2>
+        <p>Au fil des mois de mes utilisations de Vim, je finis par emmagasiner un bon paquet de plugins, dont je me sers plus ou moins souvent selon ma capacité à me souvenir de leur existence dans mes dossier. Et le gros problème que j’ai avec ces plugins c’est que je pour beaucoup je ne me souviens jamais de comment ils fonctionnent de A à Z, et j’aime avoir une documentation complète pour me rappeler tout ça.</p>
+
+
+      </div>
+    
+  
+    
+      <div class="post">
+        <h2><a href="/planet/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">Un nouveau blog tout beau avec Jekyll</a></h2>
+        <p>Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.
+
+      </div>
+    
+  
+    
+      <div class="post">
+        <h2><a href="/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">Neobot un bot en ligne de commande pour les unix like</a></h2>
         <p>Salut tout le monde</p>
 
 <p>Alors tout d’abord pour ceux qui ne le savent pas, qu’est-ce qu’un <em>bot</em> en informatique? C’est un programme qui va se gérer tout seul pour accomplir une ou des tâches voulues par les développeurs du bot. Leurs utilisation est vaste, cela va du jeu vidéo (les ennemis d’un jeu de FPS contrôlés par l’ordinateur par exemple) à la gestion des salons de discussion IRC en passant par les bien connus spambots, vous savez les faux comptes inscris sur les forums de discussions simplement pour balancer de la pub en vrac… Pour en savoir plus, je vous invite à lire la page wikipédia sur les <a href="https://fr.wikipedia.org/wiki/Bot_informatique">bot informatique</a>.</p>
 
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html">Premiers pas dans le développement de Firefox OS</a></h2>
-        <p>Salut tout le monde!</p>
-
-<p>Comme je le disais dans <a href="/2015/01/22/changer-de-homescreen-dans-firefox-os.html">mon précédent article</a>, il existe plusieurs applications pour changer son homescreen, mais elles datent toutes
- de plusieurs jour/mois et ne sont, pour la plupart, plus fonctionnelles. Je me suis donc dit que j’allais regarder l’un des projets que j’ai présenté et essayer de le patcher pour le faire fonctionner.
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2015/01/22/changer-de-homescreen-dans-firefox-os.html">Changer de homescreen dans Firefox OS</a></h2>
-        <p>Salut tout le monde!</p>
-
-<p>En discutant hier soir soir sur le salon #BuildOpenCEu, dattaz m’expliquait qu’il est possible sur Firefox OS de changer de Homescreen, l’écran d’accueil en français, pour quelque chose d’entièrement différent, du menu vertical ou horizontal jusqu’au cercle d’application que l’on peut faire tourner avec un mouvement de doigt. J’en ai donc essayé plusieurs  sur mon Open C et voilà ce que ça m’a donné pour chacun d’eux. Je tiens à rappeler que je suis en version Nightly que je met à jour chaque matin, donc il se peut que certains marchent mieux sur votre version de Firefox OS que sur la mienne, le mieux étant d’avoir au moins un test pour chaque version majeure de l’OS. Je m’excuse d’avance pour le manque de Screenshot, d’un part je n’ai pas pensé à en faire et de l’autre étant en Nightly et n’ayant pas encore de carte microSD je ne peux pas enregistrer de capture d’écran sur le téléphone.
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html">Firefox OS 4 mois après son utilisation</a></h2>
-        <p>Salut tout le monde!</p>
-
-<p>Depuis quelques temps sur diaspora* je demande un peu d’aide ou pose des questions par rapport à Firefox OS, car depuis le mois d’Aout j’ai fais la main base sur un Open C!</p>
-
-<p>Il faut savoir que depuis mon arrivé au lycée, il y a 4 ans, je suis resté avec un Samsung à clapet gris. Il me convenait très bien pour ce que j’en faisais, c’est-à-dire du sms en masse et très vite (j’enverrais une tartelette à la fraise au gars qui à inventé le T9) et puis c’est tout. Je ne m’intéressais absolument pas aux smartphones pour plusieurs raisons. La principale était le manque d’utilité que je pouvais accorder à ces gadgets. Pourquoi avoir une application pour lire mes mails quand je peux les lire des chez moi sous Thunderbird avec un écran qui me fasse pas plisser les yeux?
 
       </div>
     

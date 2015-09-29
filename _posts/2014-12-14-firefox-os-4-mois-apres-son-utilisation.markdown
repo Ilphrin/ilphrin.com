@@ -3,6 +3,7 @@ layout: post_kevin
 title: Firefox OS 4 mois après son utilisation
 author: kevin
 cover: firefox.jpg
+category: planet
 ---
 
 Salut tout le monde!

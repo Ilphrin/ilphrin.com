@@ -3,6 +3,7 @@ layout: post_kevin
 title: Premiers pas dans le développement de Firefox OS
 author: kevin
 cover: firefox.jpg
+category: planet
 ---
 
 Salut tout le monde!

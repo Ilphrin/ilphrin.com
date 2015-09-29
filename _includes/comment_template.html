@@ -1,6 +1,7 @@
 <div id="comments">
 	{% case page.comment_count %}
 		{% when 0 %}
+		<h1>Aucun commentaire</h1>
 		{% when 1 %}
 			<h1>1 Commentaire</h1>
 		{% else %}
@@ -17,7 +18,8 @@
 				<br />
 				<span class="comment_date">{{c.date}}</span>
 			</p>
-			<p>
+			<hr>
+			<p class="comment_content">
 				{{c.comment | newline_to_br}}
 			</p>
 		</div>
@@ -26,9 +28,9 @@
 	<p style="font-style: italic">
         Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
 	</p>
-	<form id="commentform" method="POST" action="{{site.url}}/commentsubmit.php">
+	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
 		<input type="hidden" name="post_id" value="{{page.id}}" />
-		<input type="hidden" name="return_url" value="{{site.url}}{{page.url}}" />
+		<input type="hidden" name="return_url" value="http://ilphrin.com{{page.url}}" />
 		<div id="form_info">
 			<div id="title_form">
 				<p>Nom:</p>
@@ -36,12 +38,12 @@
 				<p>Site Web:</p>
 			</div>
 			<div id="content_form">
-				<p><input type="text" size="25" name="name" /> (requis)</p>
-				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
-				<p><input type="text" size="25" name="link" /> (optionel)</p>
+				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
 			</div>
 		</div>
-		<textarea name="comment" rows="10" cols="60" ></textarea>
-		<input type="submit" name="submit" value="Envoyer" />
+		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+		<input type="submit" name="submit" value="Envoyer ✔"/>
 	</form>
 </div>

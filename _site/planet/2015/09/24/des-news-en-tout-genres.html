@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a onclick="contact_popup()">Contact</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/feeds.xml">Flux RSS</a></li>
+    </ul>
+  </div>
+
+</div>
+
+<div class="contact">
+  <ul>
+    <li>Mail: ilphrin@autistici.org</li>
+    <li>Lyon, France</li>
+    <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a>
+    <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+  </ul>
+  <ul>
+    <h1>Des sites cool</h1>
+    <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
+    <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
+    <li><a href="https://planet-libre.org">Planet Libre</a></li>
+  </ul>
+  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
+</div>
+
+
+<body>
+    <div class="main">
+      <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/');">
+        <time datetime="24 September 2015">
+          <h1> Des news en tout genre </h1>
+          <p>
+            
+  
+    24
+
+
+septembre
+  
+2015
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Depuis que j’ai mis en ligne le site, j’ai fait tout un tas de petites modifications mineures pour rendre le tout un peu plus joli/stable/fonctionnel, en voici une liste (non exhaustive puisque je ne me souviens pas de tout):</p>
+
+<ul>
+  <li>Les commentaires fonctionnent maintenant! J’ai bidouillé pendant un bon moment à comprendre pourquoi quand je recevais un mail avec le contenu du commentaire à ajouter, ce n’était pas en utf-8. En fait il fallait rajouter \r\n a la fin de chaque informations de l’en-tête de requete de mail pour que ça passe correctement…</li>
+  <li>Je profite des articles sur Vim pour améliorer mon fichier CSS vim_syntax.css, puisque Jekyll peut faire de la mise en valeur de code avec {\% highlight %}, mais avec mes règles CSS la coloration était effacée pour ne laisser que du jaune ocre. Puisque Jekyll est bien fait il crée une classe pour chaque élément sémantique du langage mis en valeur, ce qui fait qu’il ne reste plus qu’à créer une règle CSS par classe pour avoir sa coloration personnalisée!</li>
+  <li>Toujours dans le CSS j’ai viré tous les ‘outline’ possible avec un brutal =&gt;  * {outline: none;}, de plus je me suis amusé avec les propriétés :focus pour le formulaire de commentaire pour rendre tout ça un peu plus vivant</li>
+  <li>Je pense ajouter une partie pour les news qui m’ont interressé ou mes pensées du moment, choses qui ne suffiraient pas à faire un article et n’ont donc pas leur place ici.</li>
+  <li>Le lien en bas pour le code du site sur Github dirige maintenant vers le dépot récemment crée. Je ne me suis pas vraiment cassé la tête a commenter les layouts ou a faire les choses de façon propre. Déjà parce que c’est la première fois que je fais un site complet donc je n’ai pas toutes les bonnes habitudes, et ensuite parce que ce n’est pas la peine je pense de détailler puisqu’il suffit de comprendre l’organisation de façon globale. (Et puis il y a beaucoup de choses qui sont inspirées de code trouvé sur l’Internet donc mieux documentés que par moi).</li>
+  <li>Si vous avez regardé le dépôt vous avez pu remarquer que mon CV est sur le site, mais que je n’ai mis aucun lien pour l’afficher. C’est volontaire. Si vous souhaitez vraiment le voir il est a http://ilphrin.com/kevin/CV_en.pdf, je compte ne faire que passer le lien sur mon compte Linkedin ou dans mes cartes de visite, je ne crois pas que ce soit la peine de prendre un bout de place sur le site pour ça.</li>
+</ul>
+
+  <div id="comments">
+	
+		<h1>Aucun commentaire</h1>
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/planet/2015/09/24/des-news-en-tout-genres" />
+		<input type="hidden" name="return_url" value="http://ilphrin.com/planet/2015/09/24/des-news-en-tout-genres.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+		<input type="submit" name="submit" value="Envoyer ✔"/>
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Des news en tout genre&url=/planet/2015/09/24/des-news-en-tout-genres.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+<footer>
+<ul>
+  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
+  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+</ul>
+</footer>
+
+</body>
+</html>

@@ -3,6 +3,7 @@ layout: post_kevin
 title: Changer de homescreen dans Firefox OS
 author: kevin
 cover: firefox.jpg
+category: planet
 ---
 
 Salut tout le monde!

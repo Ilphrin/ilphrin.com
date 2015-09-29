@@ -3,6 +3,7 @@ layout: post_kevin
 title: Introduction à Pygame
 author: kevin
 cover: tuxletriad.jpg
+category: planet
 ---
 
 Salut tout le monde!

@@ -1,21 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
 	<channel>
-		<title>Ilphrin's website</title>
+		<title>Kevin / Ilphrin</title>
 		<description>A blog about IT, free software and stuff like that</description>
 		<link>http://ilphrin.com</link>
 		<atom:link href="http://ilphrin.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Des news en tout genre</title>
+				
+					<description>&lt;p&gt;Depuis que j’ai mis en ligne le site, j’ai fait tout un tas de petites modifications mineures pour rendre le tout un peu plus joli/stable/fonctionnel, en voici une liste (non exhaustive puisque je ne me souviens pas de tout):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Les commentaires fonctionnent maintenant! J’ai bidouillé pendant un bon moment à comprendre pourquoi quand je recevais un mail avec le contenu du commentaire à ajouter, ce n’était pas en utf-8. En fait il fallait rajouter \r\n a la fin de chaque informations de l’en-tête de requete de mail pour que ça passe correctement…&lt;/li&gt;
+  &lt;li&gt;Je profite des articles sur Vim pour améliorer mon fichier CSS vim_syntax.css, puisque Jekyll peut faire de la mise en valeur de code avec {\% highlight %}, mais avec mes règles CSS la coloration était effacée pour ne laisser que du jaune ocre. Puisque Jekyll est bien fait il crée une classe pour chaque élément sémantique du langage mis en valeur, ce qui fait qu’il ne reste plus qu’à créer une règle CSS par classe pour avoir sa coloration personnalisée!&lt;/li&gt;
+  &lt;li&gt;Toujours dans le CSS j’ai viré tous les ‘outline’ possible avec un brutal =&amp;gt;  * {outline: none;}, de plus je me suis amusé avec les propriétés :focus pour le formulaire de commentaire pour rendre tout ça un peu plus vivant&lt;/li&gt;
+  &lt;li&gt;Je pense ajouter une partie pour les news qui m’ont interressé ou mes pensées du moment, choses qui ne suffiraient pas à faire un article et n’ont donc pas leur place ici.&lt;/li&gt;
+  &lt;li&gt;Le lien en bas pour le code du site sur Github dirige maintenant vers le dépot récemment crée. Je ne me suis pas vraiment cassé la tête a commenter les layouts ou a faire les choses de façon propre. Déjà parce que c’est la première fois que je fais un site complet donc je n’ai pas toutes les bonnes habitudes, et ensuite parce que ce n’est pas la peine je pense de détailler puisqu’il suffit de comprendre l’organisation de façon globale. (Et puis il y a beaucoup de choses qui sont inspirées de code trouvé sur l’Internet donc mieux documentés que par moi).&lt;/li&gt;
+  &lt;li&gt;Si vous avez regardé le dépôt vous avez pu remarquer que mon CV est sur le site, mais que je n’ai mis aucun lien pour l’afficher. C’est volontaire. Si vous souhaitez vraiment le voir il est a http://ilphrin.com/kevin/CV_en.pdf, je compte ne faire que passer le lien sur mon compte Linkedin ou dans mes cartes de visite, je ne crois pas que ce soit la peine de prendre un bout de place sur le site pour ça.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Thu, 24 Sep 2015 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/planet/2015/09/24/des-news-en-tout-genres.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/09/24/des-news-en-tout-genres.html</guid>
+			</item>
+		
+			<item>
+				<title>Topo de mes plugins Vim - 02</title>
+				
+					<description>&lt;p&gt;Les plugins c’est vraiment le top, alors dans Vim je vous en parle même pas, c’est comme rajouter des animations CSS, si je ne fait pas attention j’en rajoute un peu partout! Depuis la dernière fois j’ai rajouté quelque plugins qui ne révolutionnent pas mon utilisation de Vim, mais restent quand même un petit plus agréable. Du coup aujourd’hui ça va être plus court mais il y aura plus de monde ;)&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h2 id=&quot;rustvim&quot;&gt;rust.vim&lt;/h2&gt;
+
+&lt;h4 id=&quot;pour-grer-le-langage-de-mozilla&quot;&gt;Pour gérer le langage de Mozilla&lt;/h4&gt;
+
+&lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/rust-vim-love-story&quot;&gt;http://vimawesome.com/plugin/rust-vim-love-story&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Je pense que tout est dans le titre, si vous vous lancez dans l’apprentissage de Rust ce plugin est incontournable pour avoir une coloration syntaxique et quelques outils de completion (comme pour la documentation de code avec ///), et quelques actions supplémentaires (mais je n’utilise que la coloration syntaxique personnellement).
+Note intéressante sur ce plugin: Apparemment il se synchronise de façon journalière au dépot github de Rust (le dépot du plugin pas le plugin en lui-même hein!)
+Il n’y a pas besoin de configuration précise pour fonctionner correctement, vous faites un git clone dans votre dossier de plugins et le tour est joué!&lt;/p&gt;
+
+&lt;h2 id=&quot;indentline&quot;&gt;indentLine&lt;/h2&gt;
+
+&lt;h4 id=&quot;savoir-o-en-est-lindentation&quot;&gt;Savoir où en est l’indentation&lt;/h4&gt;
+
+&lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/indentline&quot;&gt;http://vimawesome.com/plugin/indentline&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est un plugin que j’ai découvert cette semaine. Il permet d’afficher des guides pour les nieaux d’indentation dans le fichier. Je trouve ça assez pratique surtout quand des fois j’ai de mauvaises indentation (genre une espace après avoir indenté d’un niveau).
+Avec ce plugin on peut notamment configurer le caractère a afficher en fond comme guide, et aussi la couleur de ce caractère. Respectivement avec les commandes dans le vimrc:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;:indentLine_char &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;¦&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;quot;Je ne sais pas comment on obtiens ce caractère au clavier, je l&amp;#39;ai récuperé avec un Copier-Coller&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;:indentLine_color_term &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;quot;Pour avoir une couleur noir&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;nerdcommenter&quot;&gt;NERDCommenter&lt;/h2&gt;
+
+&lt;h4 id=&quot;les-commentaires-faciles&quot;&gt;Les commentaires faciles&lt;/h4&gt;
+
+&lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/the-nerd-commenter&quot;&gt;http://vimawesome.com/plugin/the-nerd-commenter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Je l’utilise souvent pour écrire un pavé de texte dans du code, puis le mettre en commentaire en sélectionnant le tout et en faisant ensuite \cc ou \cs. Il dispose de tout un tas de commandes pour aller un peu plus loin dans la gestion des commentaires mais son utilisation basique me suffit amplement. Il ne lui manque plus qu’à ajouter la gestion pour Rust et ce serait parfait :D (j’ai posté une Issue sur la page Github à ce sujet, je mettrai à jour l’article si il y a du nouveau de ce coté là!)&lt;/p&gt;
+
+&lt;h2 id=&quot;vim-cargo&quot;&gt;vim-cargo&lt;/h2&gt;
+
+&lt;h4 id=&quot;quelques-commandes-pour-cargo&quot;&gt;Quelques commandes pour Cargo&lt;/h4&gt;
+
+&lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/vim-cargo&quot;&gt;http://vimawesome.com/plugin/vim-cargo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Fork plus complet: &lt;a href=&quot;https://github.com/shmup/vim-cargo&quot;&gt;https://github.com/shmup/vim-cargo&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tant qu’on parle de Rust autant parler de ce plugin. Ce petit plugin très simple rajoute 4 (à ce jour, et 8 dans le Fork que j’ai mis en lien) petites commandes classiques pour manipuler Cargo le gestionnaire de projet qui va de pair avec Rust. Le code semble très court et simple je pense que je vais essayer de l’étoffer un peu, ça me permettra d’apprendre a écrire du VimScript!&lt;/p&gt;
+
+&lt;h2 id=&quot;colorizer&quot;&gt;Colorizer&lt;/h2&gt;
+
+&lt;h4 id=&quot;avoir-un-surlignage-selon-les-couleurs&quot;&gt;Avoir un surlignage selon les couleurs&lt;/h4&gt;
+
+&lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/color-highlight&quot;&gt;http://vimawesome.com/plugin/color-highlight&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Tout est dans le titre encore une fois. Colorizer va analyser votre texte/code, et si il reconnait des écritures de format de couleur il va surligner le texte de la couleur correspondante, par exemple avec “red” il va surligner red en rouge, il sait reconnaitre aussi des modèles plus complexes comme notamment les format utilisés en CSS. #FF0000, rgb(255, 0, 0), rgba(255, 0, 0, 255) et hsl(120%, 70%, 820%) par exemple seront tous surligné en une teinte de rouge.&lt;/p&gt;
+
+&lt;h2 id=&quot;mru-most-recently-used&quot;&gt;MRU (Most Recently Used)&lt;/h2&gt;
+
+&lt;h4 id=&quot;voir-les-fichiers-rcemments-ouverts&quot;&gt;Voir les fichiers récemments ouverts&lt;/h4&gt;
+
+&lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/mru-vim&quot;&gt;http://vimawesome.com/plugin/mru-vim&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;MRU permet par le biais de la commande eponyme (:MRU, on sait jamais) de voir la liste des fichiers récemments ouverts, d’en sélectionner un, et de l’ouvrir avec la touche Enter. C’est une fonctionalité classique mais j’avoue que je n’y pensais plus quand j’utilisais Vim, maintenant je lance vim dans mon terminal où que je sois avec j’ouvre le fichier sur lequel je bosse en ce moment avec le :MRU. Je me suis meme permis de rajouter ces quelque petites lignes dans mon vimrc:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; bufname&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;&amp;#39;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;autocmd&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;VimEnter&lt;/span&gt; * MRU
+&lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;autocmd&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;BufNewFile&lt;/span&gt; * MRU&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Comme ça MRU se lance si j’ai ouvert vim sans aucun fichier en paramètre, et lorsque que je crée un nouveau buffer vide. Néanmoins il ne s’ouvre pas lorsque je crée un nouvel Onglet vide (j’y travaille j’y travaille!)&lt;/p&gt;
+</description>
+				<pubDate>Mon, 21 Sep 2015 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/planet/2015/09/21/topo-de-mes-plugins-vim-02.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/09/21/topo-de-mes-plugins-vim-02.html</guid>
+			</item>
+		
+			<item>
+				<title>Topo de mes plugins Vim - 01</title>
+				
+					<description>&lt;p&gt;Au fil des mois de mes utilisations de Vim, je finis par emmagasiner un bon paquet de plugins, dont je me sers plus ou moins souvent selon ma capacité à me souvenir de leur existence dans mes dossier. Et le gros problème que j’ai avec ces plugins c’est que je pour beaucoup je ne me souviens jamais de comment ils fonctionnent de A à Z, et j’aime avoir une documentation complète pour me rappeler tout ça.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Or, autant Vim en lui même est très bien documenté avec non seulement des documents de référence pour le :help mais aussi par le biais de tutoriaux très bien fait tels que VimTutor ainsi qu’un jeu web pour apprendre les bases de vim. (Sans parler de VimGolf, tiens j’irais y jouer après la rédaction de cet article.) Mais pour les plugins je manque généralement de ressources, et la documentation de référence fournie avec le :help ne me suffit pas pour me souvenir de la configuration précise d’un plugin quand je veux modifier quelque chose de précis, ou parfois c’est (je l’avoue) simplement dû a ma flemme de lire la langue de Shakespeare.&lt;/p&gt;
+
+&lt;p&gt;Du coup je vais écrire ici toutes mes notes sur l’utilisation des mes plugins vim, comment je peux configurer etc… et j’aurais peut-être au bout d’un moment une bonne base de connaissances qu’il deviendra intéréssant d’utiliser (c’est pour ça que j’ai mis - 01 dans le titre c’est que je pense découper en plusieurs articles pour ne pas que ça fasse trop gros d’un seul coup)&lt;/p&gt;
+
+&lt;h2 id=&quot;ultisnips&quot;&gt;Ultisnips&lt;/h2&gt;
+
+&lt;h3 id=&quot;faire-des-snippets-comme-dans-atom-ou-sublimetext&quot;&gt;Faire des snippets comme dans Atom ou SublimeText&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;www.sirver.net&quot;&gt;Site de l’auteur&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Installation&lt;/strong&gt;: http://vimawesome.com/plugin/ultisnips-forever-and-always&lt;/p&gt;
+
+&lt;p&gt;C’est sûrement l’outil le plus abouti à ce jour pour ce qui est de l’écriture de snippets. Mais j’ai eu énormément de mal à le faire fonctionner, si j’ai bien compris d’ou venait le souci, c’est dû a une incompatibilité avec autre plugin.
+Donc pour éviter ce genre de problèmes il faut mettre ses snippets dans un autre dossier que ~/.vim/snippets. Moi j’ai simplement mis ~/.vim/Ultisnips/ et modifié le paramètre dans mon vimrc:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;:UltiSnipsSnippetsDir &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;~/.vim/Ultisnips/&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Une fois cela fait on va pouvoir commencer a écrire des snippets! Et pour cela il existe plusieurs vidéos qui sont très bien faites dans le domaine. Je ne puis que conseiller les liens donné dans la documentation d’Ultisnips:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sirver.net/blog/2011/12/30/first-episode-of-ultisnips-screencast/&quot;&gt;http://www.sirver.net/blog/2011/12/30/first-episode-of-ultisnips-screencast/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sirver.net/blog/2012/01/08/second-episode-of-ultisnips-screencast/&quot;&gt;http://www.sirver.net/blog/2012/01/08/second-episode-of-ultisnips-screencast/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sirver.net/blog/2012/02/05/third-episode-of-ultisnips-screencast/&quot;&gt;http://www.sirver.net/blog/2012/02/05/third-episode-of-ultisnips-screencast/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sirver.net/blog/2012/03/31/fourth-episode-of-ultisnips-screencast/&quot;&gt;http://www.sirver.net/blog/2012/03/31/fourth-episode-of-ultisnips-screencast/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ainsi que:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://vimcasts.org/episodes/meet-ultisnips/&quot;&gt;http://vimcasts.org/episodes/meet-ultisnips/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://vimcasts.org/episodes/ultisnips-python-interpolation/&quot;&gt;http://vimcasts.org/episodes/ultisnips-python-interpolation/&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://vimcasts.org/episodes/ultisnips-visual-placeholder/&quot;&gt;http://vimcasts.org/episodes/ultisnips-visual-placeholder/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Écrire un snippet avec Ultisnips est assez similaire a la façon qu’ont les autres éditeurs de texte de le faire. Par exemple, a chaque fois que j’écris un article sur ce blog je remplis d’abord trois informations YAML puis un paragrapge, un tags de découpage pour la première page du site, et la suite de l’article, je peux donc écrire un snippet pour accélérer un tout petit peu les chose:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;snippet post&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;${1:post_kevin}&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;$2&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;kevin&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;$3&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;&amp;lt;!--break--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;$4&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;On peut utiliser des petits bout de codes en Python, VimL ou Bash pour des utilisations plus complexes. Par exemple si je veut choisir un layout différent parmis ceux que j’ai sur mon site en utilisant une autocomplétion personnalisée je peux améliorer le snippet précédent:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;lineno&quot;&gt; 1&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;global !p&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 2&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;def complete(t, opts)&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 3&lt;/span&gt;   &lt;span class=&quot;l-Scalar-Plain&quot;&gt;if t&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 4&lt;/span&gt;     &lt;span class=&quot;l-Scalar-Plain&quot;&gt;opts = [m[len(t):] for m in opts if m.startswith(t)]&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 5&lt;/span&gt;   &lt;span class=&quot;l-Scalar-Plain&quot;&gt;if len(opts) == 1&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 6&lt;/span&gt;     &lt;span class=&quot;l-Scalar-Plain&quot;&gt;return opts[0]&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 7&lt;/span&gt;   &lt;span class=&quot;l-Scalar-Plain&quot;&gt;return opts&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt; 8&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt; 9&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;snippet post&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;10&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;11&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;$1 `!p snip.rv = complete(t[1], [&amp;#39;post_kevin&amp;#39;, &amp;#39;index&amp;#39;, &amp;#39;autre_layout&amp;#39;, &amp;#39;etc...&amp;#39;])`&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;12&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;$2&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;13&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;kevin&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;14&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;15&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;16&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;$3&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;17&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;18&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;&amp;lt;!--break--&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;lineno&quot;&gt;19&lt;/span&gt; 
+&lt;span class=&quot;lineno&quot;&gt;20&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;$4&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;(code python honteusement piqué su site de l’auteur du plugin)&lt;/p&gt;
+
+&lt;p&gt;Maintenant que j’ai réussi a l’installer je pense que je vais m’amuser à écrire des tonnes de snippets dans tous les sens et pour tout et n’importe quoi!&lt;/p&gt;
+
+&lt;h2 id=&quot;vim-airline&quot;&gt;Vim-airline&lt;/h2&gt;
+
+&lt;h4 id=&quot;ou-comment-rendre-linterface-de-vim-badass&quot;&gt;Ou comment rendre l’interface de Vim badass&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://bling.github.io/&quot;&gt;Site de l’auteur&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Installation&lt;/strong&gt;: &lt;a href=&quot;http://vimawesome.com/plugin/vim-airline-sad-beautiful-tragic&quot;&gt;http://vimawesome.com/plugin/vim-airline-sad-beautiful-tragic&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;J’aime beaucoup ce plugin, mais j’ai eu aussi pas mal de difficultés à le faire marcher vraiment correctement jusqu’à récemment ou je me suis replongé dessus.
+Le principal problème que  j’avais etait…qu’il ne m’obéissait pas du tout en fait! Le premier problème que j’avais venat du fait qu’il ne s’affciahait que lorsque j’avais au moins deux fenêtres Vim. Or en me baladant sur superuser.com j’ai trouvé cette commande a rajouter dans le vimrc:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;laststatus&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Si on regarde la documentation Vim correspondant à ce paramètre, on comprend que ça gère les cas dans lesquels la statusline doit s’afficher ou non, en mettant la valeur 2 on lui demande de s’afficher tout le temps, alors qu’avec la valeur 1 on lui demande de ne s’afficher que lorsqu’il y a au moins deux fenêtres.&lt;/p&gt;
+
+&lt;p&gt;On peut ensuite configurer l’apparence de cette statusbar de deux façons. Soit en choisissant manuellement chacun des composants et leur apparence, soit en choisissant un thème avec la commande suivant:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;AirlineTheme&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Et en faisant défiler a l’aide de la commande Tab.
+On peut déjà choisir les informations qui sont affichées dans la statusbar, pour ça vim-airline découpe la barre en &lt;strong&gt;Section&lt;/strong&gt;, qui sont nommées de a,b,c,x,y,z. Voici ma configuration:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; lastsatus&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;:airline_powerline_fonts&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;:airline_section_x&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;%{strftime(&amp;quot;%H:%M&amp;quot;)}&amp;#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;:airline_section_y&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;%{char2nr(getline(&amp;quot;.&amp;quot;)[col(&amp;quot;.&amp;quot;)-1])}&amp;#39;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;&amp;quot;Pour obtenir la valeur ascii du caractère a la position du curseur&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;:airline_section_z&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Line:%l Col:%c&amp;#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Pour avoir les jolis affichages en flèches de vim-airline. il faut installer les polices de caractères de powerline. Pourquoi? Parce que ce sont des caractères en forme de flèche ou de branche ou tout un tas d’autres choses qui en fait ne vont pas servir à écrire du texte mais a affiner l’affichage. Pour l’installer il suffit d’aller sur la page &lt;a href=&quot;https://github.com/powerline/fonts&quot;&gt;Github de powerline&lt;/a&gt; et de lancer le install.sh du .zip téléchargé.&lt;/p&gt;
+
+&lt;p&gt;Pour changer le thème de base:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;g&lt;/span&gt;:airline_theme&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;murmur&amp;quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Lorsque j’ai voulu pour la première fois changer de thème, je me suis rendu compte que je n’obtenais absolument pas les même résultats que sur les screenshots de Vim-airline. Avant de modifier les couleurs il fallait donc déjà qu’elles soient fonctionnelles! A force de farfouiller sur le net, j’ai compris qu’il y avait une variable liée a la gestion du nombre de couleurs dans Vim qui s’appelle t_Co, j’ai rajouté donc cette ligne dans mon vimrc:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;t_Co&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;256&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Et victoire ça marche! En fait avant cette ligne ma valeur pour t_Co était de 8! Si cette variable est le nombre de couleurs de la fenêtre Vim, alors avant j’avais encore moins de couleur que Mario Bros sur arcade!(Et j’ai vérifié)&lt;/p&gt;
+
+&lt;p&gt;Il me reste encore un bon paquet de plugins a traiter, mais au moins juste écrire cet article m’a permis de revoir pas mal de choses sur la configuration de Vim-airline et Ultisnips ce qui n’est pas plus mal (Pour l’histoire du lastsatus a 1 par défaut, je ne l’ai appris qu’hier)&lt;/p&gt;
+
+&lt;p&gt;Si certaines personnes lisant cet article trouvent des choses à redire ou a rajouter n’hésitez pas mon adresse mail est dans l’onglet Contact, en attendant que les commentaires fonctionnent sur le site!&lt;/p&gt;
+
+&lt;p&gt;@pluche&lt;/p&gt;
+</description>
+				<pubDate>Wed, 16 Sep 2015 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/planet/2015/09/16/topo-des-plugins-vim-01.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/09/16/topo-des-plugins-vim-01.html</guid>
+			</item>
+		
+			<item>
 				<title>Un nouveau blog tout beau avec Jekyll</title>
 				
-					<description>&lt;p&gt;Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.&lt;/p&gt;
+					<description>&lt;p&gt;Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.
+&lt;!--break--&gt;&lt;/p&gt;
 
 &lt;p&gt;Mais bon j’y suis finalement arrivé. Il manque encore quelques petite touches au site (je pense notamment aux commentaires, qui ne fonctionnenent pas du tout vous pouvez essayer vous ne verrez jamais votre commentaire s’afficher sur mon site, et aussi une petite liste des copains et autres sites a voir. Peut-être vais-je rajouter ça dans l’onglet Contact).&lt;/p&gt;
 
 &lt;p&gt;Un peu de technique maintenant. Comme je l’ai mentionné, j’utilise Jekyll pour faire de la génération de code statique. Pour ceux qui ne savent pas, statique signifie (en gros) qu’il n’y a pas de code PHP, donc pas de gestion coté serveur. Vous avec de l’HTML, et du CSS. C’est quasiment tout ce qu’il y a sur ce site. Le gros avantage de Jekyll par rapport a ce que je voulais est qu’il est spécialisé pour la conception de Blogs, avec une gestion des articles qui sont écrit de mon coté en langage Markdown, puis sont transformé en page HTML/CSS par Jekyll selon un modèle que j’ai défini.&lt;/p&gt;
 
-&lt;p&gt;Ah oui il faut en parler des ces modèles, ou plutôt appelé par Jekyll des Layouts. Pour générer du code avec Jekyll, on commence par écrire des pages qui serviront de modèles pour la génération, et en mettant dedans des commandes Jekyll pour lui donner des informations, comme lui dire a quel endroit insérer le contenu de la page qui utilise ce Layout. Un modèle peut être tout et n’importe quoi en HTML. Pour ce site j’utilise a peu près deux catégories de Layouts, d’un coté ceux qui contiennent le code de base d’une page HTML donc avec le DOCTYPE les balises &amp;lt;head&amp;gt; les lignes d’insertion de CSS etc… Agrémentés donc en plein milieu d’une ligne avec  pour placer le contenu de la page. Et d’un autre coté j’utilise des Layouts qui eux-mêmes sont derivés des Layouts de la première catégories.&lt;/p&gt;
+&lt;p&gt;Ah oui il faut en parler de ces modèles, ou plutôt appelé par Jekyll des Layouts. Pour générer du code avec Jekyll, on commence par écrire des pages qui serviront de modèles pour la génération, et en mettant dedans des commandes Jekyll pour lui donner des informations, comme lui dire a quel endroit insérer le contenu de la page qui utilise ce Layout. Un modèle peut être tout et n’importe quoi en HTML. Pour ce site j’utilise a peu près deux catégories de Layouts, d’un coté ceux qui contiennent le code de base d’une page HTML donc avec le DOCTYPE les balises &amp;lt;head&amp;gt; les lignes d’insertion de CSS etc… Agrémentés donc en plein milieu d’une ligne avec  pour placer le contenu de la page. Et d’un autre coté j’utilise des Layouts qui eux-mêmes sont derivés des Layouts de la première catégories.&lt;/p&gt;
 
 &lt;p&gt;C’est le système que j’aime le plus avec Jekyll car ça permet de créer des modèles de pages au début, ce qui fait que pour la suite on a plus qu’à écrire le contenu qu’on veut et indiquer le modèle a utiliser. Non seulement ça simplifie la vie mais c’est en plus très facilement lisible quand on veut remettre les mains dans le cambouis. Par exemple quand j’écris cet article, j’écris un fichier de type Markdown, avec le contenu de mon article et le formattage que je veux faire (Jekyll s’occupe aussi de convertir le Markdown en HTML. Franchement, quel homme ce Jekyll!), et avec au début deux trois lignes d’information qui sont utilisées par Jekyll dont le Layout.&lt;/p&gt;
 
@@ -26,8 +254,8 @@
 &lt;p&gt;Gloire a Jekyll :3&lt;/p&gt;
 </description>
 				<pubDate>Fri, 04 Sep 2015 00:00:00 +0200</pubDate>
-				<link>http://ilphrin.com/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html</guid>
+				<link>http://ilphrin.com/planet/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html</guid>
 			</item>
 		
 			<item>
@@ -49,11 +277,10 @@
 &lt;p&gt;Si vous souhaitez voir un peu les autres projets sur lesquels Devyn C.Johnson a travaillé ou même en discuter, vous pouvez aller jeter un coup d’oeil sur &lt;a href=&quot;http://dcjtech.info/&quot;&gt;http://dcjtech.info&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Bonne journée à tous!&lt;/p&gt;
-
 </description>
 				<pubDate>Fri, 30 Jan 2015 00:00:00 +0100</pubDate>
-				<link>http://ilphrin.com/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html</guid>
+				<link>http://ilphrin.com/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html</guid>
 			</item>
 		
 			<item>
@@ -125,8 +352,8 @@ bidouilles mais aussi rajouter mes petits trucs, si ça intéresse quelqu’un m
 &lt;p&gt;Sur ce, je vous souhaite une agréable journée, pleine de bidouilles et de renards qui flambent.&lt;/p&gt;
 </description>
 				<pubDate>Sun, 25 Jan 2015 00:00:00 +0100</pubDate>
-				<link>http://ilphrin.com/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html</guid>
+				<link>http://ilphrin.com/planet/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html</guid>
 			</item>
 		
 			<item>
@@ -158,8 +385,8 @@ bidouilles mais aussi rajouter mes petits trucs, si ça intéresse quelqu’un m
 &lt;p&gt;PS: J’ai cru comprendre qu’on pouvait demander à WebIDE de faire une capture d’écran, je modifierai l’article pour ajouter des captures à l’occasion ^^&lt;/p&gt;
 </description>
 				<pubDate>Thu, 22 Jan 2015 00:00:00 +0100</pubDate>
-				<link>http://ilphrin.com/2015/01/22/changer-de-homescreen-dans-firefox-os.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2015/01/22/changer-de-homescreen-dans-firefox-os.html</guid>
+				<link>http://ilphrin.com/planet/2015/01/22/changer-de-homescreen-dans-firefox-os.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/01/22/changer-de-homescreen-dans-firefox-os.html</guid>
 			</item>
 		
 			<item>
@@ -193,8 +420,8 @@ bidouilles mais aussi rajouter mes petits trucs, si ça intéresse quelqu’un m
 &lt;p&gt;Si il y a des personnes qui ont déjà développé sous Firefox OS je suis preneur d’infos sur le sujet! ;)&lt;/p&gt;
 </description>
 				<pubDate>Sun, 14 Dec 2014 00:00:00 +0100</pubDate>
-				<link>http://ilphrin.com/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html</guid>
+				<link>http://ilphrin.com/planet/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html</guid>
 			</item>
 		
 			<item>
@@ -240,11 +467,10 @@ L’avant dernière ligne est une petite subtilité pour la gestion d’éveneme
 &lt;p&gt;Je ne sais pas encore sur quoi je vais partir pour le prochain article. Surement la gestion des cases sur le terrain. Mais mes cours ayant prit une grande partie de mon temps je ne sais pas encore quand est-ce que je pourrais l’écrire. Je vais aussi surement faire de légères modifications d’apparence des articles pour rendre plus visible  certaines choses, comme les lignes de code que je met entre balises de citation. Faites-moi savoir si vous avez des idées là-dessus parce que je suis pas très doué pour tout ce qui touche à l’apparence. ^^&lt;/p&gt;
 
 &lt;p&gt;Sur ce je vous souhaite bonne journée à tous et à la prochaine!&lt;/p&gt;
-
 </description>
 				<pubDate>Fri, 17 Oct 2014 00:00:00 +0200</pubDate>
-				<link>http://ilphrin.com/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html</guid>
+				<link>http://ilphrin.com/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html</guid>
 			</item>
 		
 			<item>
@@ -313,8 +539,8 @@ Dans Pygame, lorsque l’on veut afficher quelque chose, il faut créer deux obj
 &lt;p&gt;Voilà amusez-vous bien et bonne programmation ;)&lt;/p&gt;
 </description>
 				<pubDate>Fri, 15 Aug 2014 00:00:00 +0200</pubDate>
-				<link>http://ilphrin.com/2014/08/15/introduction-a-pygame.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2014/08/15/introduction-a-pygame.html</guid>
+				<link>http://ilphrin.com/planet/2014/08/15/introduction-a-pygame.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2014/08/15/introduction-a-pygame.html</guid>
 			</item>
 		
 			<item>
@@ -488,6 +714,1063 @@ Cela faisait un moment que je me disais qu’il fallait que j’enlève Skype de
 				<pubDate>Sat, 08 Mar 2014 00:00:00 +0100</pubDate>
 				<link>http://ilphrin.com/2014/03/08/passage-de-skype-a-ekiga.html</link>
 				<guid isPermaLink="true">http://ilphrin.com/2014/03/08/passage-de-skype-a-ekiga.html</guid>
+			</item>
+		
+			<item>
+				<title>Dungeon Crawl Stone soup: La perle à avoir</title>
+				
+					<description>&lt;p&gt;Si il y a bien un domaine auquel personne n’ayant une vie sociale ne peut se souscrire ou au moins en entendre des ragots, c’est bien celui du jeu vidéo. Mais revenons quelques années en arrière. Pas tout à fait à ses débuts, mais à une époque ou les graphismes n’importaient pas tant que ça et, du fait de leurs nombre encore restreint à ce moment-là, l’accent était mis sur le temps de jeu et l’intérêt, et c’était bien visible pour les jeux de rôles notamment (pour ceux qui ont un peu de culture à ce niveau-là, rappelez-vous des Might &amp;amp; Magic et The Eye of the Beholder).
+&lt;!--break--&gt;
+Pourquoi je parle de ça? Et bien c’est parce que l’on peut classer Dungeon Crawl: Stone soup dans cette catégorie de jeux de rôle “old-school” et pourtant si prenant, si intéressant. Ce jeu se veut d’une simplicité poussée à l’extrême en terme de graphisme, si bien qu’il pourrait tourner sur n’importe quelle machine et autre ordinausore. Si l’on se tourne du coté du ‘background’, l’histoire et l’univers, il n’y a rien. Nous incarnons un aventurier dont la quête est de retrouver l’Orbe de Zot dans un dangereux donjon, et pour ce faire on doit récupérer un certains nombre de runes. Ce n’est pas quelque chose de gênant en soi d’avoir peu d’information car il y a déjà fort à faire avec ce qui est présent!&lt;/p&gt;
+
+&lt;p&gt;Vous pouvez retrouver le jeu et toutes les infos utiles à cette ici: &lt;a href=&quot;http://crawl.develz.org/wordpress/&quot;&gt;Dungeon Crawl&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Avant de vous donner un aperçu du jeu et de l’interface, j’aimerais parler des points positifs et négatifs (très peu pour lui) de ce jeu. Tout d’abord l’objectif est de faire des parties “courtes”, c’est-à-dire pas plus de quelques heures. Pour y parvenir il y a trois ingrédients : Une création de personnage qui permette de faire a peu près tout ce que l’on veut ( 24 races et 26 classes pour l’instant), une difficulté plutôt élevé (je n’ai jamais réussi à gagner de parties, mais ça vient probablement aussi de mon coté boulet :) ), et enfin une génération aléatoire de donjon très au point puisque aucun problème de construction n’est apparu de mon coté, du genre salle inatteignable ou monstre surpuissant devant l’entrée du donjon. On peut faire deux milles parties ça ne sera jamais pareil et ça c’est quand même un gros bon point.&lt;/p&gt;
+
+&lt;p&gt;Ensuite sa facilité d’utilisation malgré les nombreuses possibilités et actions qui nous sont offertes. On peut utiliser tout un armadas d’objet allant de la lance à l’arbalète en passant par la fronde, des potions, des parchemins de sorts, des armures de tout types, etc… Avec en plus le système de gestion de nourriture, d’empoisonnement, de fatigue, de contamination magique et tous les autres que j’ai oublié. Et enfin le système de religion qui propose de vénérer tout une palette de dieux en tout genres dont j’ai oublié les noms, déesse de la magie, dieu du chaos, et de à peu près tout et n’importe quoi. A noter que l’importance des dieux peut être tantôt faible tantôt absolument géniale ou mortelle. (Je parle par expérience personnelle, le dieu du chaos qui me fait téléporter au milieu des monstres c’est pas vraiment la joie!).&lt;/p&gt;
+
+&lt;p&gt;J’ai un peu bâclé les points positifs mais je vous laisse le plaisir de découvrir le reste. Je n’aurais que deux choses à reprocher au jeu pour l’instant:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Il n’ existe qu’ en anglais. N’ étant qu’en version 0.13 cela peut se comprendre et de ce que j’en sais plusieurs projets de traductions sont en cours donc ce n’ est qu’ une question de temps.&lt;/li&gt;
+  &lt;li&gt;Sa difficulté est un point tout aussi positif que négatif. Il permet un vrai challenge comme je les aime, mais là j’en suis à très exactement 26 parties et je n’ai encore jamais vu de rune!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bon allez assez bavardé regardons un petit peu à quoi ressemble l’ interface du jeu:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/dungeoncrawl01.png&quot; alt=&quot;dungeon&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;a) La vue du donjon. On peut voir au centre le personnage, dont l’équipement est la majeur partie du temps très bien visible sur l’avatar, que ce soit une cape, une armure ou des gants. On voit aussi qu’à partir d’un certain nombre de case de mon personnage, les cases découvertes du donjon sont plus sombres pour représenter la portée de vue, qui peut être diminuée ou augmentée selon les situations.&lt;/p&gt;
+
+&lt;p&gt;b) La boite de dialogue. Tous les messages du jeu, les objets et monstres qui apparaissent, les événements, les informations systèmes, les textes de tutoriel, les actions des dieux, etc…&lt;/p&gt;
+
+&lt;p&gt;c) Tout ce qui compose votre personnage sous forme d’onglet et de cases. Tout en haut nous avons les ‘abilities’, actions offertes par la vénération d’un dieu. Plus en dessous il y a les principales actions à utiliser (Attaquer le monstre le plus proche, se reposer, prier, attendre un tour etc…). Ensuite dans l’ordre d’affichage on a ces onglets:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Inventory: L’inventaire, pas grand chose à dire là dessus je pense ;)
+  Spells: Les sorts mémorisés par votre personnage, ils en existe bien assez pour assouvir votre soif de destruction!&lt;/li&gt;
+  &lt;li&gt;Memorisation: Les sorts que vous pouvez apprendre grâce aux livres contenus dans votre inventaire.&lt;/li&gt;
+  &lt;li&gt;Skills: Les compétences, c’est ce qui détermine si vous êtes un bon bagarreur, un assassin aguerri ou un mage puissant.&lt;/li&gt;
+  &lt;li&gt;System commands: Divers outils d’information, notamment celui qui à mon sens est le plus important, la liste des mutations qu’à subi votre personnage, je vous laisse la surprise de les découvrir!&lt;/li&gt;
+  &lt;li&gt;Navigation: L’onglet de navigation. Pratique pour se déplacer rapidement.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;d) Les monstres qui sont a votre portée de vue peuvent être attaqués directement en cliquant sur l’icône correspondante.&lt;/p&gt;
+
+&lt;p&gt;e) La mini carte est très pratique pour se repérer et aller rapidement vers des points précis, il suffit de cliquer sur l’endroit ou vous voulez aller et votre personnage s’y rendra immédiatement! La plupart des informations sont dessus comme les escaliers menant à l’étage supérieur ou inférieur, les cadavres ou les portes.&lt;/p&gt;
+
+&lt;p&gt;f) Et enfin les caractéristiques principales de votre personnage. Votre nom, vos barres de santé et de mana, les stats’ telles que le niveau, la Force la Dextérité et l’Intelligence, la classe d’armure, votre arme, etc…&lt;/p&gt;
+
+&lt;p&gt;Si vous voulez l’installer il suffit sous Archlinux il suffit de lancer la commande:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;yaourt -S crawl
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Sous Mint il faudra quelques manipulations de plus, mais rien de bien méchant:&lt;/p&gt;
+
+&lt;p&gt;1) Aller dans le centre de contrôle&amp;gt;sources de logiciels et ajouter le dépôt:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;deb http://crawl.develz.org/debian crawl 0.13
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2) Ajouter la clé de signature du dépôt:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget http://crawl.develz.org/debian/pubkey -O - | sudo apt-key add -
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3) Installer le paquet en lançant:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install crawl crawl-tiles
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Et vous voilà en possession de ce jeu! J’espère que vous vous amuserez bien, bonne journée à tous! ;)&lt;/p&gt;
+</description>
+				<pubDate>Fri, 25 Oct 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/10/25/dungeon-craw-stone-soup-la-perle-a-avoir.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/10/25/dungeon-craw-stone-soup-la-perle-a-avoir.html</guid>
+			</item>
+		
+			<item>
+				<title>Arrivee D Octopi 2 0</title>
+				
+					<description>&lt;hr /&gt;
+&lt;p&gt;layout: post_kevin
+title: “Arrivée de Octopi 0.2.0”
+author: kevin
+cover: octopi.jpg
+—-&lt;/p&gt;
+
+&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Ça fait un moment que je n’ai pas manifesté ma présence sur le blog, mais je continue de faire les traductions des articles sur le noyau Linux, qui sont longs,  et le prochain ne devrait pas tarder à arriver.&lt;/p&gt;
+
+&lt;p&gt;Aujourd’hui vient de sortir la nouvelle version de Octopi, j’ avais parlé il y a quelque temps de ce gestionnaire de logiciel pour Arch Linux. Cette nouvelle version apporte plusieurs modifications dont de nombreuses traductions (comme le lituanien, le norvégien, l’allemand, le russe, le vietnamien, et plusieurs autres). Voici un aperçu des modifications apportées:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Séparation du projet “octopi” et “octopi-notifier”.&lt;/li&gt;
+  &lt;li&gt;Yaourt ne se lance plus avec les permissions root.&lt;/li&gt;
+  &lt;li&gt;Ajout du support du terminal Xterm.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vous pouvez voir en détails les modifications &lt;a href=&quot;http://octopiproject.wordpress.com/2013/08/26/octopi-0-2-0-hits-the-wild/&quot;&gt;ICI&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Voilà, à la prochaine et profitez bien de ces derniers jours d’été! ;)&lt;/p&gt;
+</description>
+				<pubDate>Mon, 26 Aug 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/08/26/arrivee-d-octopi-2-0.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/08/26/arrivee-d-octopi-2-0.html</guid>
+			</item>
+		
+			<item>
+				<title>Arrivée de Octopi 0.2.0</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Ça fait un moment que je n’ai pas manifesté ma présence sur le blog, mais je continue de faire les traductions des articles sur le noyau Linux, qui sont longs,  et le prochain ne devrait pas tarder à arriver.
+&lt;!--break--&gt;
+Aujourd’hui vient de sortir la nouvelle version de Octopi, j’ avais parlé il y a quelque temps de ce gestionnaire de logiciel pour Arch Linux. Cette nouvelle version apporte plusieurs modifications dont de nombreuses traductions (comme le lituanien, le norvégien, l’allemand, le russe, le vietnamien, et plusieurs autres). Voici un aperçu des modifications apportées:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Séparation du projet “octopi” et “octopi-notifier”.&lt;/li&gt;
+  &lt;li&gt;Yaourt ne se lance plus avec les permissions root.&lt;/li&gt;
+  &lt;li&gt;Ajout du support du terminal Xterm.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vous pouvez voir en détails les modifications &lt;a href=&quot;http://octopiproject.wordpress.com/2013/08/26/octopi-0-2-0-hits-the-wild/&quot;&gt;ICI&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Voilà, à la prochaine et profitez bien de ces derniers jours d’été! ;)&lt;/p&gt;
+</description>
+				<pubDate>Mon, 26 Aug 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/08/26/arrivee-d'octopi-2-0.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/08/26/arrivee-d'octopi-2-0.html</guid>
+			</item>
+		
+			<item>
+				<title>Linux Kernel: Code source</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Comme promis voici un nouvel article sur le noyau Linux. Comme le précédent ceci est une traduction d’un autre article sur linux.org. Disponible à cette &lt;a href=&quot;http://www.linux.org/threads/the-linux-kernel-the-source-code.4204/&quot;&gt;adresse&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Après que le code source du noyau soit téléchargé et décompressé, les utilisateurs peuvent voir de nombreux dossiers et fichiers. Il peut être d’une grande difficulté de trouver un fichier en particulier. Heureusement, le code source est trié d’une façon spécifique. Cela permet  aux développeurs de retrouver un fichier ou un élément du noyau.
+&lt;!--break--&gt;
+La racine du code source du noyau contient les dossiers suivants:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;arch
+blockcrypto
+Documentation
+drivers
+firmware
+fs
+include
+init
+ipc
+kernel
+lib
+mm
+net
+samples
+scripts
+security
+sound
+tools
+usr
+virt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Il y a aussi quelques fichiers dans la racine du code source, listés ci-dessous :&lt;/p&gt;
+
+&lt;p&gt;COPYING - Informations à propos de la licence et des droits. Le noyau Linux est sous licence&lt;/p&gt;
+
+&lt;p&gt;GPLv2. Cette licence autorise toute personne à utiliser, modifier, distribuer, et partager le code source et à le compiler librement. Cependant, vous ne pouvez pas revendre le code source.&lt;/p&gt;
+
+&lt;p&gt;CREDITS - Liste des contributeurs&lt;/p&gt;
+
+&lt;p&gt;Kbuild - Ceci est un script qui configure plusieurs paramètres pour le noyau. Par exemple, ce script configure la variable ARCH qui est le type de processeur que le développeur veut que le noyau supporte.&lt;/p&gt;
+
+&lt;p&gt;Kconfig - Ce script est utiliser quand un développeur configure le noyau, nous en reparlerons dans un prochain article.&lt;/p&gt;
+
+&lt;p&gt;MAINTAINERS - Ceci est une liste ces mainteneurs, leurs adresses mail, site web, et le fichier ou la partie de code du noyau qu’ils développent ou réparent. C’est assez utile lorsqu’un développeur trouve un bug dans le noyau et veut le rapporter à un mainteneur qui pourra s’occuper du problème.&lt;/p&gt;
+
+&lt;p&gt;Makefile - Ce script est le fichier principal utilisé pour compiler le noyau. Ce fichier passe es paramètres au compilateur comme une liste de fichiers à compiler ainsi que tout autre information nécessaire.&lt;/p&gt;
+
+&lt;p&gt;README - Ce fichier texte fourni des information aux développeur savoir comment compiler le noyau.&lt;/p&gt;
+
+&lt;p&gt;REPORTING-BUGS - Ce fichier texte fourni les informations pour rapporter un bug.Le code du noyau se trouve dans des fichiers portant l’extension “.c” ou “.h”. L’extension “.c” indique que le noyau est écrit en langage C, l’un des nombreux langages de programmation. Les fichiers en “.h” sont des fichiers d’en-tête, et sont aussi écrit en C. Les fichiers d’en-tête (aussi appelé “header” en anglais) contiennent du code fréquemment utilisé dans les fichiers “.c”. Cela permet d’économiser le temps des programmeurs car ils peuvent utiliser ces codes au lieu de ré-écrire le code à chaque fois. Autrement, un morceau de code qui fait la même action serait présent dans tous les fichiers “.c”. Ce qui gaspillerait de l’espace sur le disque-dur.&lt;/p&gt;
+
+&lt;p&gt;Tous les fichiers contenus dans les dossiers cités ci-dessus sont bien organisés. Le nom des dossiers aident les développeurs pour au moins avoir une vision correcte du contenu. L’arbre des répertoires et leurs descriptions sont données ci-dessous.&lt;/p&gt;
+
+&lt;p&gt;arch - Ce dossier contient un Kconfig qui permet de configurer certains paramètres pour compiler le code contenu dans ce dossier. Chaque architecture de processeur dans son dossier correspondant. Par exemple, le code source pour les processeurs Alpha est présent dans le dossier alpha.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;alpha
+arc
+arm
+arm64
+avr32
+blackfin
+c6x
+cris
+frv
+h8300
+hexagon
+ia64
+m32r
+m68k
+metag
+microblaze
+mips
+mn10300
+openrisc
+parisc
+powerpc
+s390
+score
+sh
+sparc
+tile
+um
+unicore32
+x86
+xtensa
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;block - Ce dossier contient les codes des drivers des dispositifs blocks. Les dispositifs block acceptent et envoient des données dans des blocs. Les blocs de données sont des extraits de donnés plutôt qu’un flux continu.&lt;/p&gt;
+
+&lt;p&gt;crypto - Ce dossier contient le code source de nombreux algorithmes de chiffrement. Par exemple, “sha1_generic.c’ est le fichier contenant le code pour l’algorithme de chiffrement sha1.&lt;/p&gt;
+
+&lt;p&gt;Documentation - Ce dossier contient des documents texte qui fournissent des informations sur le noyau et la plupart des fichiers. Si un développeur a besoin d’information, celle-ci peuvent être trouvées ici.&lt;/p&gt;
+
+&lt;p&gt;drivers - Ce répertoire contient les codes source des drivers. Un driver est un logiciel controlant un élément du matériel. Par exemple, pour qu’un ordinateur comprenne un clavier et le rende utilisable, il a besoin d’un driver. Il y a de nombreux dossiers dans celui-ci. Chaque sous-dossier est nommé d’après un morceau ou un type de matériel. Par exemple, le dossier bluetooth contient les codes des drivers pour le bluetooth. Parmi d’autres drivers évidents se trouvent les scsi, usb et firewire. D’autres sont plus difficiles à trouver. Par exemple, les drivers de joystick ne se trouvent pas dans le dossier joystick. Cependant, ils sont dans ./drivers/input/joystick. Les souris et claviers se trouvent aussi dans le dossier input. Les dossiers Macintosh contiennent les codes pour le matériel Apple. Les dossiers Xen contiennent les codes pour l’hyperviseur Xen. Un hyperviseur est un logiciel ou un matériel permettant à un utilisateur de faire fonctionner plusieurs systèmes d’exploitation sur un seul ordinateur en même temps. Ainsi, l’utilisateur peut faire fonctionner Windows, Solaris, FreeBSD ou un autre système avec le système Linux. Il y a de nombreux dossiers par driver, mais ils sont trop nombreux pour tous les nommer ici, cependant, ils le seront dans un prochain article.&lt;/p&gt;
+
+&lt;p&gt;firmware - Le dossier des firmware contient le code qui permet à l’ordinateur de lire et comprendre les signaux des périphériques. Par exemple, une webcam gère son propre matériel, mais l’ordinateur doit comprendre les signaux que la webcam lui envoie. Le système Linux utilisera le firmware vicam pour comprendre la webcam. Autrement, sans firmware, le système Linux ne saurait gérer les information que la webcam lui envoie. En outre, les firmware permettent au système Linux d’envoyer des messages aux périphériques. Linux peut donc dire par, exemple, à la webcam de se recadrer ou de s’éteindre.&lt;/p&gt;
+
+&lt;p&gt;fs - Ceci est le dossier FileSystem. Tout le code nécessaire à la compréhension et l’utilisation des système de fichiers est contenu ici. Dans ce dossier, le code de chaque système de fichier est dans son dossier. Par exemple, le code du système de fichier ext4 est dans le dossier ext4. Dans le dossier fs, les développeurs pour voir que certains fichiers ne sont pas dans des dossiers. Ces fichiers permettent de gérer de façon globale les systèmes de fichiers. Par exemple, mount.h contient le code pour monter un système de fichier. Un système de fichier est une façon structurée de stocker et gérer des fichier et des dossiers dans un système de stockage. Chaque système de fichier possède ses propres avantages et désavantages. Ceci est dû à la programmation du système de fichier. Pour prendre un exemple, le système de fichier NTFS supporte la compression transparente (quand activé, les fichiers sont automatiquement compressés sans que l’utilisateur n’en soit informé). La plupart des systèmes de fichiers n’ont pas cette fonction, ils ne pourraient obtenir cela qu’en le programmant sur les fichiers dans le dossier fs.&lt;/p&gt;
+
+&lt;p&gt;include - Le dossier include contient divers fichiers importants utilisés par le noyau. Le nom du dossier vient de la commande en C “include” utilisée pour importer un fichier important en C dans la compilation.&lt;/p&gt;
+
+&lt;p&gt;init - Le dossier init possède les codes pour le démarrage du noyau (INITialisation). Le fichier principal en .c est le cœur du noyau. C’est le fichier de code source principal connecté avec tous les autres fichiers.&lt;/p&gt;
+
+&lt;p&gt;ipc - IPC signifie Inter-Process Communication (communication à l’intérieur du processus). Ce dossier contient le code pour les communications entre le noyau et les processus. Le noyau contrôle le matériel et les programmes ne peuvent que demander au noyau d’effectuer un tâche. Mettons qu’un utilisateur a un programme permettant d’ouvrir le lecteur DVD. Le programme n’ouvre pas le lecteur lui-même. En revanche, il informe le noyau que le lecteur doit être ouvert. Ensuite, le noyau ouvre le lecteur en envoyant un signal au matériel. Ce code s’occupe aussi des signaux de mort. Par exemple, lorsqu’un système administrateur ouvre un gestionnaire de processus pour fermer un programme qui a vérrouillé le signal pour le fermer est appelé un signal de mort. Le noyau reçoit le signal et (en fonction du type de signal) va demander au programme de s’arrêter ou va simplement enlever le processus de la mémoire et du CPU.&lt;/p&gt;
+
+&lt;p&gt;kernel - Le code dans ce dossier contrôle de noyau lui-même. Par exemple, si un débogueur a besoin de tracer un problème, le noyau peut utiliser le code provenant des fichiers sources de ce dossier pour informer les débogueur de toutes les actions du noyau. Il y aussi du code pour la gestion du temps. Dans le dossier kernel se trouve un autre dossier nommé “power”. Du code dans ce dossier donne la possibilité à l’ordinateur de redémarrer, s’arrêter, et se mettre en veille.&lt;/p&gt;
+
+&lt;p&gt;lib - Le dossier library (librairie) contient le code pour les librairies du noyau, qui est un regroupement de fichiers dont le noyau aura besoin d’utiliser.&lt;/p&gt;
+
+&lt;p&gt;mm - Le dossier Memory Management (gestion de la mémoire) contient le code source pour gérer la mémoire. La mémoire n’est pas aléatoirement placé dans la RAM. Au lieu de cela, le noyau place les données soigneusement dans la RAM. Le noyau ne ré-écrit jamais de morceau de mémoire déjà utilisé ou qui contient des données importantes.&lt;/p&gt;
+
+&lt;p&gt;net - Le dossier réseau contient le code pour les protocoles réseaux. Ceci inclut du code pour IPv6 et Appletalk mais aussi le protocole Ethernet, wifi, bluethoot, etc… Aussi, le code pour gérer les pont réseaux et la résolution des nom DNS est dans ce dossier.&lt;/p&gt;
+
+&lt;p&gt;samples - Ce dossier contient des modèles de projets de modules en cours de développement. Mettons que l’on a besoin d’un nouveau module avec une caractéristique particulière, mais qu’aucun programmateur n’a annoncé vouloir travailler dessus. Et bien, ce genre de module va dans ce dossier. Cela permet aux nouveaux développeurs de noyau de piocher dedans un module qu’il voudrait développer.&lt;/p&gt;
+
+&lt;p&gt;scripts - Ce dossier contient les scripts nécessaires pour compiler le noyau. Il est plus raisonnable de ne rien changer dans ce dossier. Sinon il se pourrait que vous ne puissiez plus configurer ou construire le noyau.&lt;/p&gt;
+
+&lt;p&gt;security - Ce dossier contient le code pour les sécurité du noyau. Il est important de protéger le noyau des virus et des hackers(pirates?). Sinon le système Linux pourrait être endommagé. La sécurité du noyau sera le sujet d’un prochain article.&lt;/p&gt;
+
+&lt;p&gt;son - Ce répertoire contient le code des drivers son pour les carte audio.&lt;/p&gt;
+
+&lt;p&gt;tools - Ce répertoire contient des outils pour interagir avec le noyau&lt;/p&gt;
+
+&lt;p&gt;usr - Vous souvenez-vous que le fichier vmlinuz et d’autres fichiers similaires avaient été mentionnés dans l’article précédent ? Le code dans ces dossiers créé les fichiers après la compilation du noyau.&lt;/p&gt;
+
+&lt;p&gt;virt - Ce dossier contient les codes de virtualisation permettant aux utilisateurs de faire fonctionner plus d’un système. Il est différent de Xen (voir ci-dessus). Avec la virtualisation, le système d’exploitation “invité” agit comme n’importe quelle autre application dans le système d’exploitation Linux (système hôte). Avec un hyperviseur comme Xen, les deux systèmes d’exploitations gèrent le matériel ensemble et en même temps. Dans une virtualisation, le système fonctionne par-dessus du noyau Linux tandis qu’avec un hyperviseur, il n’y a pas de système “invité” et aucun des systèmes ne dépend du ou des autres.&lt;/p&gt;
+
+&lt;p&gt;Note: Ne jamais déplacer un fichier dans le dossier du noyau sauf si vous êtes certain de savoir ce que vous faites. Sinon la compilation pourrait se terminer par une erreur du genre “missing file”.&lt;/p&gt;
+
+&lt;p&gt;La structure du dossier du noyau Linux est toujours restée relativement constante. Les développeurs du noyau ont fait quelque modifications, mais dans l’ensemble, cette organisation est la même dans toutes les versions du noyau. Le dossier des drivers garde aussi la même disposition. Nous parlerons des drivers du noyau prochainement.&lt;/p&gt;
+
+&lt;p&gt;Voilà voilà. Le prochain article devrait être fait soit d’ici la fin de la semaine soit la semaine prochaine.&lt;/p&gt;
+
+&lt;p&gt;Et je remercie énormément Yunero Kisapsodos de m’avoir grandement aidé dans la rédaction/traduction de cet article!&lt;/p&gt;
+</description>
+				<pubDate>Mon, 22 Jul 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/07/22/Linux-Kernel-:-Code-Source.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/07/22/Linux-Kernel-:-Code-Source.html</guid>
+			</item>
+		
+			<item>
+				<title>Parcellite: la version 1.1.5 est sortie</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Alors tout d’abord brève présentation de ce logiciel qu’est Parcellite. C’est ou outils qui sert de presse-papier (pour le copier-coller). Il permet d’enregistrer facilement une quinzaine d’éléments copiés, allant de la simple phrase jusqu’au fichier en passant par les blocs de textes. Au lancement il affiche une petite icône dans la barre des tâches qui permet de gérer et choisir quel élément on veut coller. Et récemment est sortie la version 1.1.5 de ce logiciel, qui contient surtout des corrections de bugs, comme par exemple:
+&lt;!--break--&gt;
+* Mise à jour de la traduction allemande
+* Correction du bug 79 qui était provoqué lors de l’inversion de la liste d’éléments
+* Correction du bug 73, le Ctrl + c/v ne fonctionnait pas avec Blender.&lt;/p&gt;
+
+&lt;p&gt;Et plusieurs dizaines d’autres! Vous pouvez voir la liste complète des modifications sur le &lt;a href=&quot;http://parcellite.sourceforge.net/&quot;&gt;site&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Voilà c’était tout pour aujourd’hui! (le prochain article sur le noyau linux arrive bientôt, c’est juste que j’ai fait parti des “chanceux” de framapad à avoir perdu des données à cause des récents problèmes sur le site.^^”)&lt;/p&gt;
+</description>
+				<pubDate>Sun, 21 Jul 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/07/21/Parcellite:-la-version-1.1.5-est-sortie.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/07/21/Parcellite:-la-version-1.1.5-est-sortie.html</guid>
+			</item>
+		
+			<item>
+				<title>Linux Kernel: Introduction</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Aujourd’hui on va parler du noyau linux (au cas où vous n’auriez pas lu le titre… :p), et cet article est le premier d’une suite sur le sujet, qui proviennent du site linux.org que je me permet de vous retranscrire en français ici.
+&lt;!--break--&gt;
+En 1991, un étudiant Finlandais du nom de Linus Benedict Torvalds crée  le noyau du système d’exploitation tel qu’on le connaît aujourd’hui. En  septembre 1991 sort la version 0.01 de Linux, et en Février 1992, il  passe sous licence GPL.  La licence  GNU General Public License (GPL) autorise les utilisateurs à utiliser, récupérer, modifier et  distribuer le code source légalement. Ceci a permit au noyau de devenir très populaire car tout le monde pouvait le télécharger gratuitement. Maintenant que tout le monde peut construire son propre noyau, il peut être utile de savoir comment obtenir, éditer, configurer, compiler et installer un noyau Linux.&lt;/p&gt;
+
+&lt;p&gt;Le noyau  est le cœur du système d’exploitation. Le système d’exploitation regroupe tous les programmes qui s’occupent du matériel et autorise l’utilisateur à lancer des applications sur un ordinateur. Le noyau contrôle le matériel et les applications. Les applications ne communiquent pas directement avec le matériel, au lieu de cela ils vont demander au noyau. Pour faire simple, le logiciel s’exécute à partir du noyau et celui-ci agit sur le matériel. Sans noyau, un ordinateur n’est qu’un objet sans utilité.&lt;/p&gt;
+
+&lt;p&gt;Il y a de nombreuses raisons pour qu’un utilisateur veuille faire son propre noyau. De nombreux utilisateurs veulent faire un noyau qui ne contient que le code nécessaire pour faire tourner leur système. Par exemple, un noyau contient des drivers pour des outils FireWire, mais mon ordinateur n’a pas ces ports. Quand le système se “boot”, du temps et de la RAM sont gaspillés sur des drivers pour les outils que mon système n’a pas d’installé. Si je voulais modifier mon noyau, je pourrais faire mon propre noyau qui n’aurai pas les drivers FireWire. Il y a une autre raison : un outil pourrait appartenir à un utilisateur avec un hardware particulier, mais le noyau qui vint avec la dernière version d’Ubuntu ne contient pas le driver nécessaire. Cet utilisateur pourrait donc télécharger le dernier noyau (qui a quelques versions d’avance sur les noyaux Linux Ubuntu) et faire leur propre noyau qui a le driver nécessaire. Cependant, ces deux raisons sont les plus communes pour les utilisateurs qui veulent faire leur propre noyau.&lt;/p&gt;
+
+&lt;p&gt;Avant de télécharger un noyau, nous devrions discuter de quelques faits et définitions importantes. Le noyau Linux est un noyau monolithique. Cela veut dire que le système d’opérant entier est sur la RAM réservée comme espace pour le noyau. Pour être plus clair, le noyau est mis sur la RAM. L’espace utilisé par le noyau est révervé pour le noyau. Le noyau seul peut utiliser cet espace réservé. Le noyau s’approprie cet espace sur la RAM jusqu’à ce que le système soit éteint. En contraste avec l’espace du noyau, il y a l’espace de l’utilisateur. L’espace d’utilisateur est l’espace sur la RAM auquel appartient l’utilisateur des programmes. Des applications comme les navigateurs web, les jeux vidéos, les processeurs word, media players, fond d’écran, thèmes, etc, sont tous sur l’espace d’utilisateur sur la RAM. Quand une application est fermée, n’importe quel programme peut utiliser l’espace nouvellement disponible. Avec l’espace du noyau, une fois que l’espace sur la RAM est prise, rien d’autre ne peut avoir cet espace.&lt;/p&gt;
+
+&lt;p&gt;Le noyau  Linux est aussi un noyau multi-tâches. Cela signifie que le noyau met en pause certaines taches afin de s’assurer que chaque application puisse utiliser un peu de charge CPU pour sa propre utilisation. Par exemple, si une application est exécutée mais attend de recevoir des données, le noyau mettra cette application en attente et autorisera un autre programme à utiliser les nouvelles ressources CPU disponible jusqu’à ce que les données arrivent. Sinon, le système gaspillerait des ressources pour les tâches qui attendent des données ou qu’un autre programme s’exécute. Le noyau va forcer le programme à attendre pour utiliser du CPU ou arrêtera d’utiliser de la charge CPU. Les applications de peuvent pas sortir de leur pauses ou utiliser des ressources CPU sans l’accord du noyau.&lt;/p&gt;
+
+&lt;p&gt;Le noyau  Linux fait apparaître les périphériques comme des fichiers dans le dossier /dev . Les ports USB, par exemple, sont situés dans /dev/bus/usb. Les partitions du disque-dur peuvent être trouvées dans /dev/disk/by-label. C’est parce que Linux agit ainsi que beaucoup de gens disent que “Sous Linux, tout est fichier”. Si un utilisateur voulait accéder aux données de sa carte mémoire par exemple, il ne pourraient pas y avoir accès directement par le biais de ces fichiers.&lt;/p&gt;
+
+&lt;p&gt;Le noyau Linux est portable. La portablité est une des principales caractéristique qui rends Linux si populaire. La portabilité est la capacité du noyau à fonctionner sur une grande variété de processeurs et de systèmes. Cela inclut donc de nombre supports de processeurs tels que Alpha, AMD, ARM, C6X, Intel, x86, Microblaze, MIPS, PowerPC, SPARC, UltraSPARC, etc… Ceci n’est pas une liste exhaustive.&lt;/p&gt;
+
+&lt;p&gt;Dans le dossier de démarrage (/boot), les utilisateurs peuvent voir un fichier “vmlinux” ou “vmlinuz”. Ces deux fichier sont des noyaux Linux compilés. Celui que finit par “z” est compressé. Le “vm” signifie mémoire virtuelle. Sur les systèmes avec un/des processeurs SPARC, les utilisateurs peuvent voir un fichier zImage à la place. Un petit nombre peuvent trouver aussi un fichier bzImage; c’est aussi un noyau Linux compressé. Cela ne change rien de savoir de quel type est celui de l’utilisateur, ce sont tous des fichiers exécutables qui ne devraient pas être modifiés tant que l’utilisateur ne sait pas ce qu’il fait. Sinon leur système pourraient ne pour être démarré, et le système de fonctionnerai plus.&lt;/p&gt;
+
+&lt;p&gt;Le code source est le codage du programme. Avec le code source, les programmeurs peuvent faire des changements au noyau et  voir comment il fonctionne.&lt;/p&gt;
+
+&lt;p&gt;Maintenant que nous comprenons un peu plus le fonctionnement du noyau, il est temps de télécharger le code source. Allez sur &lt;a href=&quot;https://www.kernel.org/&quot;&gt;kernel.org&lt;/a&gt; et cliquez sur le gros bouton “download”. Une fois que le téléchargement est fini, décompressez le fichier téléchargé.&lt;/p&gt;
+
+&lt;p&gt;Voilà, à une prochaine fois pour de nouvelle infos! ;) Vous pouvez trouver l’article original &lt;a href=&quot;http://www.linux.org/threads/%EF%BB%BFthe-linux-kernel-introduction.4203/&quot;&gt;ICI&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Un grand merci à &lt;a href=&quot;http://riku-paradise-finder.deviantart.com/&quot;&gt;Octopussy&lt;/a&gt; qui a fait la moitié du boulot pour cette traduction! (en plus de m’avoir encore corrigée un article ;) )&lt;/p&gt;
+</description>
+				<pubDate>Sat, 13 Jul 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/07/13/Linux-Kernel:-Introduction.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/07/13/Linux-Kernel:-Introduction.html</guid>
+			</item>
+		
+			<item>
+				<title>Faire de la traduction avec gettext : Exemple avec Sunflower</title>
+				
+					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
+
+&lt;p&gt;J’ai plusieurs fois eu affaire à des logiciels que je trouvais vraiment sympa, mais qui n’étaient pas disponibles en français, ce qui m’empêchait de bien l’utiliser, ou de le montrer à d’autres personnes qui n’y connaissent rien à l’anglais.  Ne connaissant pas encore bien la programmation, j’ai eu l’idée de faire un peu de traduction pour contribuer un peu aux logiciels que j’utilise. Je me suis donc tourné vers Sunflower, dont le site dispose d’un lien expliquant comment lui préparer une traduction. En fait on utilise un logiciel libre qui apparemment est très utilisé dans le monde de la traduction de logiciels.
+&lt;!--break--&gt;
+Le principe de base de ce logiciel n’est pas très compliqué à comprendre. Il va regarder le code source du logiciel et noter toutes les chaînes de caractères que l’utilisateur final pourrait voir d’une façon ou d’une autre, et les stocker dans un fichier avec l’extension .pot qui servira de base pour toutes les traductions que l’on peut faire du logiciel. Lorsque l’on décide de faire une traduction, on crée un dossier dans le répertoire où se trouve le fichier .pot avec comme nom l’indicatif de la langue (français -&amp;gt; fr, espagnol -&amp;gt; es, etc…). Dedans on crée un fichier avec l’extension .po qui sera une copie de l’autre fichier.&lt;/p&gt;
+
+&lt;p&gt;Sunflower dispose déjà de son fichier sunflower.pot situé dans  /usr/share/sunflower/translations/  (pour ma distribution Arch Linux) ainsi que quelques dossiers de traduction. J’ai donc crée un répertoire fr/LC_MESSAGES/   avec dedans un fichier sunflower.po qui est l’exacte copie du sunflower.pot.  Lorsque l’on ouvre le fichier on tombe sur quelque chose comme ça :&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/home/pellet_k/Perso/Site web/_site/images/sunflower01.png&quot; alt=&quot;Sunflower&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Au début on a quelques commentaires de descriptions, puis quelques lignes de texte qui rajoutent de la description (où vous pouvez , notamment, indiquer la langue dans laquelle vous souhaitez traduire et quelques informations comme votre nom et votre mail qui pourront être utile, par exemple pour l’auteur du logiciel pour vous contacter).  Ensuite et bien on a l’utile: les blocs de traduction. Il sont composés de trois éléments.&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Un commentaire qui indique le fichier et la ligne dans laquelle se trouve la chaîne de caractère&lt;/li&gt;
+  &lt;li&gt;Le msgid suivit d’une ligne en Anglais ( enfin qui est dans la langue source du logiciel, c’est quand même généralement l’Anglais!)&lt;/li&gt;
+  &lt;li&gt;le msgstr qui est simplement composé de deux guillemets. C’est entre ces guillemets que vous mettrez votre traduction de la ligne du dessus.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;(Pour y avoir fait, il y a environ 500 termes à traduire pour Sunflower, mais avec un peu de boulot, d’aide et de google traduction on en vient à bout en quelques jours ^^). Quand vous pensez avoir fini ou fait la majeure partie de la traduction, il va falloir transformer ceci en un fichier binaire que Sunflower utilisera pour charger les traductions. Pour ce faire on utilise la commande suivante :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;msgfmt sunflower.po
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Et voilà un fichier .mo qui est crée. Si votre système est configuré pour le français, Sunflower devrait par la suite charger le fichier généré ainsi (Note: Cela nécessite que le fichier crée soit appelé sunflower.mo  mais il est de  base nommé messages.mo, il suffit de le renommer pour que tout rentre en ordre). Et vous voilà avec un beau logiciel en français! Gettext est capable de bien des choses, j’ai mis un lien vers la documentation un peu en dessous.  Sur ce bonne journée à tous et bonne traduction!&lt;/p&gt;
+
+&lt;p&gt;&lt;u&gt;Sources:&lt;/u&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://code.google.com/p/sunflower-fm/&quot;&gt;Sunflower&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.gnu.org/software/gettext/&quot;&gt;Documentation Gettext&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Sun, 23 Jun 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower.html</guid>
+			</item>
+		
+			<item>
+				<title>Sunflower version 0.1a-56</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Dans un article précédent je vous avais parlé de Sunflower, un gestionnaire de fichiers qui avait l’air prometteur. Aujourd’hui est sortie la version 0.1a-56 qui apporte quelques nouvelles fonctionnalités mais surtout des corrections de bug parmi lesquelles:
+&lt;!--break--&gt;
+* Possibilité de faire des liens symboliques et des liens en dur
+* Séparation de Support.LINK en deux options HARD_LINK et SYMBOLIC_LINK.
+* Mise à jour de la traduction en Czech
+* Correction d’une erreur avec la méthode get_selection_list&lt;/p&gt;
+
+&lt;p&gt;Et quelques autres encore. Vous pouvez voir tout cela sur la page du projet à cette adresse:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mintic.blog4ever.com/code.google.com/p/sunflower-fm/downloads/detail?name=Sunflower-0.1a-56.tgz&quot;&gt;Sunflower 0.1a-76&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Thu, 13 Jun 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/06/13/sunflower-version-0.1a-56.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/06/13/sunflower-version-0.1a-56.html</guid>
+			</item>
+		
+			<item>
+				<title>Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Cela commence à faire quelque mois que je tourne sous Archlinux, et mis à part un plantage Xorg qui m’a forcé à faire une petite ré-installation, je me plais vraiment avec cette distribution! Notamment grâce au dépôt communautaire AUR qui, jusqu’à maintenant, m’a permis d’installation tous les soft dont j’avais envie, et que je ne trouvais pas dans les gestionnaire de paquet des autres distributions.
+&lt;!--break--&gt;
+Aujourd’hui je vais vous parler d’un logiciel fournissant un frontend comme on dit à l’outil de gestion de paquet Pacman (ou Yaourt) : Octopi. C’est un projet d’un monsieur Alexandre Albuquerque Arnt (auprès duquel je m’excuse déjà si j’ai écorché son nom ^^”), il est sous licence GPL2 et est écrit en C++ avec Qt4. Mr Arnt est aussi la créateur de  &lt;a href=&quot;http://qtgzmanager.wordpress.com/&quot;&gt;QTgzManager&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Pas de temps à perdre, voyons comment l’installer avec ses dépendances:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacman -S octopi-git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Note : Il est préférable d’installer aussi un frontend pour sudo, tel que gksu, kdsu, etc… car Pacman/Yaourt nécessite les droit d’administrateur pour agir.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/octopi01.png.png&quot; alt=&quot;octopi&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Comme vous pouvez le voir dans la capture ci-dessus, il se présente comme un gestionnaire de paquet classique:  (Dé-)Installation, mise à jour système, etc…. Mais il présente aussi certaines fonctionnalités sympas, comme l’affichage des news sur Archlinux dans “Actualités, ou l’onglet “Utilisation” qui donne tout ce qu’il faut pour savoir utiliser correctement ce logiciel, où l’on peut voir notamment qu’un bon nombre de raccourcis en facilitent l’utilisation.&lt;/p&gt;
+</description>
+				<pubDate>Sun, 02 Jun 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html</guid>
+			</item>
+		
+			<item>
+				<title>Réinstallation forcée --&gt; Point sur Arch Linux</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Bon comme l’indique le titre de l’article, j’ai été obligé de faire un ré-installation de mon pc. En effet la moitié de mes applications ne voulaient plus s’ouvrir et j’avais d’autres problèmes important, et j’ai jamais réussi à comprendre pourquoi ça faisait ça tout d’un coup. Alors après quelques jours de combat j’ai finalement abandonné et ai télechargé une image iso d’archlinux. Malheureusement je ne pourrai donc pas continuer l’article pour détailler l’installation, mais si vous êtes intéressés je vous conseille vivement le wiki d’archlinux anglais et français.
+&lt;!--break--&gt;
+Bon, tout le monde ne connait pas forcément Arch Linux, j’vais donc faire une petite intro pour vous présenter le contexte. Arch est une distribution sortie en 2002, qui se veut basée sur la simplicité, au sens sans “option” rajoutée. Lorsque l’on se procure une Arch linux, on dispose du strict nécessaire pour avoir un système, le reste c’est à l’utilisateur de choisir ce qu’il veut avoir. Et bien sur je ne peux pas parler du fonctionnement d’Arch Linux sans mentionner le principe &lt;a href=&quot;http://wiki.archlinux.fr/kiss&quot;&gt;KISS&lt;/a&gt;! Pour faire court, il s’agit de laisser un éventail d’action maximum pour l’utilisateur afin qui puisse prendre sons système en main dans sa totalité. On trouvera rarement des GUI aux outils fourni par Archlinux car généralement un programme en interface graphique offre moins de contrôle sur le programme, alors qu’en ligne de commande on peut savoir précisément ce que l’on fait.&lt;/p&gt;
+
+&lt;p&gt;Cela signifie que l’on peut choisir la quasi-totalité des logiciels qui vont composer notre système. Du gestionnaire de réseaux au dock du bureau en passant par votre lecteur vidéo. Les avantages de cette procédure sont juste énormes à mon sens. L’utilisation de la RAM et de la mémoire CPU seront moins importants puisque vous n’aurez pas tous les logiciels lancés au démarrage sur les autres distributions. Et pour les disques durs qui ne font pas quinze millions de terra-octets vous aurez plus de place pour vos données après l’installation ^^ ( moi personellement avec mes 20Go ça m’aide plutôt bien…)&lt;/p&gt;
+
+&lt;p&gt;Bon en tout cas, j’ai fini de l’installer il y a de cela plusieurs semaines déjà et j’en suis plus que content. Les principaux logiciels que j’utilisais avant sous Linux Mint fonctionnent plus la plus grande majorité, comme sunflower, vlc, xchat, gimp etc… Pareil pour ce qui est de la composition de mon bureau Openbox avec conky, nitrogen,tint2 et wbar principalement. Le démarrage de ma session donne l’impression d’être plus rapide mais pas de beaucoup. Mais surtout ce que j’apprécie le plus avec cette distribution, c’est la gestion des paquêts qui est grandement améliorée avec l’&lt;a href=&quot;https://wiki.archlinux.org/index.php/AUR_User_Guidelines&quot;&gt;AUR&lt;/a&gt;, qui est en gros un dépôt ou chaque utilisateur peut venir rajouter son paquet, le tout géré par le système de PKGBUILD sur lequel je ne m’attarderais pas car je ne suis pas encore assez connaisseur là-dedans…&lt;/p&gt;
+
+&lt;p&gt;Néanmoins il me reste encore pas mal de choses à corriger, même si je pense que certaines sont dues à l’âge avancé de mon ordinateur.  Je mets ici la liste des choses que j’ai à corriger; plus pour servir de pense-bête qu’autre chose:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Comportement D-Bus étrange&lt;/li&gt;
+  &lt;li&gt;Gestion du wifi non-fonctionnelle&lt;/li&gt;
+  &lt;li&gt;Slim  ne veut pas se lancer parfois quand je me déconnecte simplement de ma session&lt;/li&gt;
+  &lt;li&gt;Gestion du son avec Alsa vraiment bizarre.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En tout cas je vous conseille vivement cette distribution si vous n’avez pas froid aux yeux en voyant que vous devez commencer par du mode texte pendant un bon moment et lire un peu de documentation pour comprendre le fonctionnement. Pour vous aider je vous renvoie aux liens que j’ai donné dans mon ancien article Test Archlinux en Virtualbox (1/2)&lt;/p&gt;
+
+&lt;p&gt;Sur ce je vous souhaite une bonne journée et à bientôt! ;)&lt;/p&gt;
+</description>
+				<pubDate>Fri, 26 Apr 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/04/26/reinstallation-forcee-point-sur-archlinux.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/04/26/reinstallation-forcee-point-sur-archlinux.html</guid>
+			</item>
+		
+			<item>
+				<title>Jouer tout en apprenant Python</title>
+				
+					<description>&lt;p&gt;Salut à toutes et à tous,&lt;/p&gt;
+
+&lt;p&gt;Aujourd’hui je tiens à vous présenter un site internet fort sympathique, répondant au nom de Chekio. Ce site est destiné à toute personnes voulant apprendre/s’améliorer avec Python, mais un peu sous forme de jeu flash en ligne. Vous commencez sur une petite ile et pour vous balader sur d’autres iles il vous faudra avoir accompli un certain nombre de “missions”, qui sont en fait des exercices à résoudre sous forme de code Python.
+&lt;!--break--&gt;
+&lt;img src=&quot;/images/checkio01.png&quot; alt=&quot;checkio&quot; /&gt; 
+Toutefois le site est entièrement en Anglais (mais bon si vous voulez faire de la programmation ce sera un passage obligatoire par l’anglais ;) ) et en guise de “captcha” principal à l’inscription, on vous demande de résoudre un petit exercice tout simple. J’y ai quand même passé un quart d’heure mais bon ^^&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.checkio.org/&quot;&gt;Chekio&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Si vous avez des problèmes pour choisir un itinéraire, réousdre un exercice ou quoi que ce soit,  surtout ne me demandez pas j’en suis toujours à essayer de résoudre le premier!&lt;/p&gt;
+
+&lt;p&gt;Bonne fin de semaine et amusez-vous bien ;)&lt;/p&gt;
+</description>
+				<pubDate>Thu, 11 Apr 2013 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2013/04/11/jouer-tout-en-apprenant-python.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/04/11/jouer-tout-en-apprenant-python.html</guid>
+			</item>
+		
+			<item>
+				<title>Faire son propre écran de login MDM en HTML</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://blog.linuxmint.com/?p=2327&quot;&gt;The Linux Mint Blog&lt;/a&gt; à publié récemment un article concernant MDM expliquant qu’il gère maintenant les thèmes HTML5.  Si vous n’aimez pas l’Anglais, voici comment avoir la dernière version de mdm:
+&lt;!--break--&gt;
+- Télécharger et installer l’archive ici : &lt;a href=&quot;http://build.linuxmint.com/automate/www/instances/linuxmint/ubuntu/pool/main/m/mdm/&quot;&gt;archive&lt;/a&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;Enlever les “ajustements de Mint” (je met entre guillemet car je ne sais pas vraiment à quoi cela correspond) :&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  rm -f /etc/linuxmint/adjustments/15-mdm.overwrite 
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Redémarrer son pc&lt;/li&gt;
+  &lt;li&gt;Ensuite vous pouvez configurer MDM par deux façons:&lt;/li&gt;
+  &lt;li&gt;Par le menu du panel   :  Menu-&amp;gt;Administration-&amp;gt;Ecran de démarrage (Login Window)&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Ou en ligne de commande avec:&lt;/p&gt;
+
+    &lt;pre&gt;&lt;code&gt;  sudo mdmsetup 
+&lt;/code&gt;&lt;/pre&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Dans l’onglet “Locale”, mettez “Style” sur HTML&lt;/li&gt;
+  &lt;li&gt;Faites une copie du répertoire /usr/share/mdm/html-themes/mdm dans votre dossier personnel, ce sera ce dossier là avec lequel vous ferez mumuse ;)&lt;/li&gt;
+  &lt;li&gt;Quand vous avez fini vous pouvez nommer votre thème comme bon vous semble puis le copier dans le répertoire /usr/share/mdm/html-themes/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vous pouvez avoir un aperçu de votre résultat en entrant la commande&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mdm-theme-emulator 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Et en ouvrant le fichier &lt;strong&gt;index.html&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Et voilà vous avez de quoi vous occuper un bon moment! Moi je ne peux pas encore faire  grand chose vu qu’il faut connaitre l’html/css et le javascript pour faire de joli trucs, du coup je me suis contenté de celui proposé de base.&lt;/p&gt;
+
+&lt;p&gt;Bonne journée à tous! _o/&lt;/p&gt;
+</description>
+				<pubDate>Fri, 01 Mar 2013 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html.html</guid>
+			</item>
+		
+			<item>
+				<title>Encore du jeu à l'ancienne - PS1 &amp; Chromium-bsu</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Aujourd’hui je vais aborder deux choses dont voici tout de suite la première:&lt;/p&gt;
+
+&lt;p&gt;Jusqu’à récemment sur mon ordinateur se trouvait l’émulateur Epsxe, qui me permettait d’émuler une console de Playstation 1 et d’y faire tourner tout les jeux de cette console qui à fait mon enfance. Néanmoins en voulant le montrer à une amie il ne voulait plus marcher. En fait c’est comme si le plugin qui permet de gérer les commandes n’existait plus.
+&lt;!--break--&gt;
+En cherchant de l’aide sur le net je suis tombé sur cette page de doc Ubuntu. Ce Pcsx-reloaded serait un fork de Pcsx en version libre et dont le développement continue contrairement à Pcsx (epsxe à l’air de continuer à être développer mais pas pour Linux qui en est toujours à une version 1.6 alros que la 1.8 est sortie récemment pour Windows).&lt;/p&gt;
+
+&lt;p&gt;Je l’ai donc testé, pour le téléchargement et l’installation rien de plus simple il suffit d’installer pcsxr qui est disponible dans les dépôts.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/pcsxr.png&quot; alt=&quot;pcsxr&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;L’interface a l’air d’être exactement la même que pour Pcsx, mais plusieurs plugins libre sont déjà présent. Vous pouvez rajouter des plugins, notamment si vous aviez déjà epsxe ou pcsx avant vous pouvez copier les fichiers de plugins dans le répertoire plugin. D’ailleurs pour information, à l’installation un répertoire  .pcsx/ a dû être crée, c’est là-dedans que se trouvent tous les fichiers de configuration et de plugins ainsi que les sauvegardes et les cartes-mémoire.&lt;/p&gt;
+
+&lt;p&gt;Mais pour ce qui est de configurer cet engin, je ne pourrais pas vous aider. En effet ce type de logiciel est assez spécial, cela ne prend pas seulement en compte les capacités de votre machine pour tourner mais tout un tas d’autres paramètres, du coup pour trouver la bonne configuration il faut essayer tous les boutons jusqu’à ce qu’il y ai quelque chose de convenable…&lt;/p&gt;
+
+&lt;p&gt;Pour trouver un bios et des jeux vous pouvez aller sur mondemul.net. Néanmoins je vous conseille d’y aller avec au moins adblock plus pour les pubs…&lt;/p&gt;
+
+&lt;p&gt;Voilà maintenant passons au deuxième sujet qui sera un peu plus court. Il s’agit du jeu Chromium-bsu, dont j’ai entendu parler auprès du poadcast Parole de Tux (que je conseille d’ailleurs grandement ;) ).&lt;/p&gt;
+
+&lt;p&gt;C’est un jeu de type Shoot-them Up, vous avez un vaisseau que vous bougez avec les flèches et le but est de casser les autres vaisseaux jusqu’à ce que vous finissiez le jeu ou que mort s’en suive (à la faon Raptor sur Dos ^^ ). Je ne sais pas vraiment quoi dire dessus, je ne l’ai essayé qu’une petite demi-heure, et je le trouve particulièrement difficile, et au début je ne comprenais pas vraiment pourquoi je perdais mes vies, c’est qu’en fait il ne faut laisser passer aucun vaisseaux! Vous avez aussi d’après le poadcast une touche qui vous permet de vous suicider et je n’ai pas écouté de ce fait je ne sais toujours pas quelle touche c’est… Enfin bref, un bon petit jeu sympa ^^&lt;/p&gt;
+
+&lt;p&gt;Voilà sur ce amusez-vous bien avec vos nouveaux jouet et bonne journée à tous! _o/&lt;/p&gt;
+</description>
+				<pubDate>Fri, 01 Mar 2013 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2013/03/01/encore-du-jeu-a-l-ancienne-ps1-&-chromium-bsu.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/03/01/encore-du-jeu-a-l-ancienne-ps1-&-chromium-bsu.html</guid>
+			</item>
+		
+			<item>
+				<title>Un nouveau guide fait son arrivée chez les manchots verts</title>
+				
+					<description>&lt;p&gt;Salut à tous!&lt;/p&gt;
+
+&lt;p&gt;Aujourd’hui je suis particulièrement content. Pourquoi? Parce qu’il existe dorénavant un nouveau petit guide d’introduction en français pour Linux, et plus particulièrement adapté à Linux Mint.&lt;/p&gt;
+
+&lt;p&gt;Le guide est disponible à cette adresse :
+&lt;a href=&quot;http://ubuntuone.com/11lU9gJUgcCNsx1yednwlT&quot;&gt;GUIDE&lt;/a&gt;
+&lt;!--break--&gt;
+Pour moi ce guide est juste superbe. Il est relativement court, très agréable à lire sur un ordinateur (déjà il est en format paysage c’est plus pratique pour les écrans…), et il introduit aux principes de Linux, des paquets, des environnement de bureau et de tout un tas d’autres choses de façon rapide et concise.&lt;/p&gt;
+
+&lt;p&gt;Enfin voilà, je recommande vivement ce guide à tout néophyte de Linux, et si vous voulez faire venir quelqu’un sur notre système préféré, vous pourrez lui faire lire sans problèmes.&lt;/p&gt;
+
+&lt;p&gt;Pour finir, je pense que l’on peut faire un grand bravo et un grand remerciement à killinjoe du forum LinuxMint - Fr pour avoir réalisé ce guide. En suivant le lien que je vous ais donné précédemment, vous pourrez télécharger le pdf avec le petit bouton en haut à droite correspondant.&lt;/p&gt;
+
+&lt;p&gt;Sur ce, bonne lecture et bonne fin de soirée! _o/&lt;/p&gt;
+</description>
+				<pubDate>Wed, 20 Feb 2013 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2013/02/20/un-nouveau-guide-fait-son-arrivee-chez-les-manchots-verts.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/02/20/un-nouveau-guide-fait-son-arrivee-chez-les-manchots-verts.html</guid>
+			</item>
+		
+			<item>
+				<title>GridWars: Combien de temps tiendrez vous?</title>
+				
+					<description>&lt;p&gt;Salut à tous! J’espère que vous allez bien. Moi en tout cas je pète la forme!&lt;/p&gt;
+
+&lt;p&gt;Allez trêves de bavardages. Aujourd’hui je vais vous présenter un jeu que j’ai découvert en farfouillant sur le site de jeuxlinux.fr. Ce jeu c’est : Gridwars!&lt;/p&gt;
+
+&lt;p&gt;Vous vous souvenez de mon article sur M.A.R.S ? Prenez un petit peu le même style psychédélique du genre dans un jeu de tir brut où l’objectif est de survivre le plus longtemps possible. En guise de décors on se retrouve avec une grille simple. L’intérêt de cette grille est qu’elle se déforme selon les mouvement que vous faites et vos tirs! Voilà ce que ça donne en situation:
+&lt;!--break--&gt;
+&lt;img src=&quot;/images/gridwars01.png&quot; alt=&quot;gridwars01&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Oui ça part un peu dans tout les sens je l’admets. Mais c’est ce qui fait tout son charme ;)&lt;/p&gt;
+
+&lt;p&gt;Pour l’installer il faut le télécharger à l’adresse suivante:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;gridwars.marune.de&quot;&gt;gridwars.marune.de&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Ensuite il vous suffit de choisir la version qui convient selon votre OS, car il est disponible aussi sous Windows et Mac. Vous vous retrouvez ensuite avec une archive zip qu’il faut extraire. Il n’y a pas d’installation. Le jeu se lance directement par le biais de l’exécutable!&lt;/p&gt;
+
+&lt;p&gt;Petite information: Si comme moi vous n’avez pas de son, il faut lancer cet exécutable avec la commande suivante:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;aoss ./gridwars
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Après avoir lancé le jeu, vous vous retrouvez devant un écran d’accueil qui vous demande d’appuyer sur la touche “Bomb”. C’est en théorie le clic-droit. Mais avant peut-être devriez-vous configurer un peu le jeu. Libre à vous de configurer tout ça comme bon vous semble mais surtout faites attention, bien qu’il n’en ai pas l’air ce jeu peux vite prendre beaucoup de ressources. Alors ne mettez pas une grille de 5000 par 3000! (oui j’ai essayé, et mon ordi était pas d’accord…)&lt;/p&gt;
+
+&lt;p&gt;Pour jouer, si vous avez gardé les configuration de base, tout ce joue à la souris. Clic gauche pour activer le tir automatique dans la dernière direction du vaisseau, et clic-droit pour lancer une méga-bombe qui casse toute la grille!&lt;/p&gt;
+
+&lt;p&gt;Votre objectif? Survivre le plus longtemps possible. Ma meilleure partie en moyen à durée 13 minutes, et on les voit pas passer je vous assure. Petite astuce: Il y a 3 décors pour ce jeu, le premier est très jolie mais est un peu gourmand, vous pouvez en changer en pleine partie avec la touche F3&lt;/p&gt;
+
+&lt;p&gt;Voilà sur ce je vous laisse faire mumuse, manifestement il n’y a plus l’air d’avoir de support pour ce jeu c’est dommage, donc on peut abandonner l’idée de mises à jour rajoutant du contenu, sauf si quelqu’une reprend la main (peut-être l’un d’entre vous…).&lt;/p&gt;
+
+&lt;p&gt;N’hésitez pas à me donner votre score en commentaire ;)&lt;/p&gt;
+</description>
+				<pubDate>Sun, 17 Feb 2013 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2013/02/17/gridwars-combien-de-temps-tiendrez-vous.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/02/17/gridwars-combien-de-temps-tiendrez-vous.html</guid>
+			</item>
+		
+			<item>
+				<title>Les vieux jeux sont toujours d'actualité</title>
+				
+					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
+
+&lt;p&gt;En ce moment je passe mon temps à fouiller le web à la découverte de nouveaux logiciels libre, et en me baladant sur un forum, quelqu’un posait la question: “Est-ce qu’il existe un jeux de casse-brique cool sous Linux? Un peu à la DxBall2
+&lt;!--break--&gt;
+DxBall2 pour ceux qui ne connaissent pas est un jeu de casse-brique qui commence à avoir une bonne paire d’années. Ce qui fait tout son charme est, à mes souvenirs, le nombre d’objets que l’on peut récupérer en cours de partie, tels que les missiles, les billes explosives, la bonus de raquette etc…&lt;/p&gt;
+
+&lt;p&gt;Alors en cherchant de ce coté-là je suis allé faire un tour sur Framasoft et j’y ai trouvé Lbreakout2. Il est téléchargeable sur ce site –&amp;gt; &lt;a href=&quot;http://lgames.sourceforge.net/index.php?project=LBreakout2&quot;&gt;ICI&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Pour l’installation, il suffit d’ouvrir un terminal et le fichier texte README dans le dossier du jeu téléchargé, dans lequel toutes les commandes à entrer y sont indiquées.&lt;/p&gt;
+
+&lt;p&gt;Après avoir suivi toutes ces étapes, si tout s’est bien passé, vous pouvez lancer la commande lbreakout2 dans un terminal. Vous voilà donc normalement dans le menu du jeu. On peut voir qu’un mode de jeu en réseau est disponible. Mais en voulant le tester j’ai donné en paramètre l’adresse de base, et il m’a dit que le serveur ne répondait pas. Bon soit, je n’ai pas voulu creuser plus loin.&lt;/p&gt;
+
+&lt;p&gt;Je pense que je vais arrêter mon explication ici, je vous laisse la joie de découvrir toutes les petites merveilles de ce jeu, grâce à son système d’objets qui est contient à ma connaissance plus d’objets que DxBall2 (et qui peuvent d’ailleurs avoir des effets…désarmant!)&lt;/p&gt;
+
+&lt;p&gt;Sur ce bonne partie a vous et amusez-vous bien! ;)&lt;/p&gt;
+</description>
+				<pubDate>Sun, 20 Jan 2013 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2013/01/20/les-vieux-jeux-sont-toujours-d-actualite.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/01/20/les-vieux-jeux-sont-toujours-d-actualite.html</guid>
+			</item>
+		
+			<item>
+				<title>Test ArchLinux en VirtualBox ( 1/2 )</title>
+				
+					<description>&lt;p&gt;Récemment je me suis décidé à apprendre à utiliser et à comprendre le fonctionnement de Linux. Du coup j’ai voulu me tourner vers une distribution qui m’offrirait cette possibilité dès son installation. Je me suis rapidement laissé dire que ArchLinux conviendrait à mes besoins. Mais comme mon laptop ne possède pas une capacité de stockage extraordinaire (20 Go…) je l’ai mis sur un disque dur externe sous virtualbox. En lui accordant une place de 20Go, ce qui devrait largement suffire étant donné que je ne vais rien installer de superflu sur cette machine virtuelle. Je me suis aussi dit que ça pourrait en intéresser quelques-uns si je décrivais tout ce que j’avais fait dans un article. Néanmoins il y a trop de choses à faire, et je serais obligé de découper cet article en deux (sinon ça fait quand même un peu gros et lourd à la fin…)
+&lt;!--break--&gt;
+Voilà la majorité des sites sur lesquels je me suis basé pour cette installation:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mintic.blog4ever.com/wiki.archlinux.fr/Installation&quot;&gt;Wiki Archlinux&lt;/a&gt;  &amp;lt;– Surtout celui-ci, en fait cet article ne fera que détailler cette page la plupart du temps&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://mintic.blog4ever.com/wiki.archlinux.fr/Xorg&quot;&gt;Wiki ArchLinux - Xorg&lt;/a&gt;  &amp;lt;– Pour la suite (la deuxième partie de l’article)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://wiki.archlinux.org/index.php/VirtualBox#Arch_Linux_guests&quot;&gt;ArchLinux Virtualbox&lt;/a&gt; &amp;lt;– Les additions invités de virtualbox&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour cet exemple j’ai téléchargé le dernier iso d’ArchLinux 32bits et j’ai suivi les étapes sur le wiki pour le mettre sur une clé USB bootable.&lt;/p&gt;
+
+&lt;p&gt;Pour tous les fichier à créer/éditer, j’utilise le logiciel nano, qui est mon préferé quand il s’agit de s’occuper des fichiers en ligne de commande.&lt;/p&gt;
+
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;On lance la machine virtuelle (je ne décris pas ici la création d’une machine virtuelle, normalement une rapide recherche sur le net vous permet d’en savoir largement sur l’utilisation de Virtualbox).&lt;/p&gt;
+
+&lt;p&gt;Au démarrage on appuie sur F12 pour sélectionner un démarrage précis (j’ai eu un moment de doute et je ne sais plus si j’ai démarré sur floppy ou sur CD/DVD désolé…)&lt;/p&gt;
+
+&lt;p&gt;Ensuite normalement arrive le menu de démarrage Live. On prend : BOOT ArchLinux
+Là on à un défilement de message incompréhensibles… Puis on arrive sur une invite de commande connecté sous root.
+Commencez par mettre un clavier français:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;loadkeys fr-pc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;partitionnement&quot;&gt;Partitionnement&lt;/h2&gt;
+
+&lt;p&gt;D’après ArchlinuxFR on devrait faire 4 partitions, mais j’omets celle correspondante au swap, ce qui m’en fait seulement 3.&lt;/p&gt;
+
+&lt;p&gt;Partitionemement grâce à fdisk avec:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;fdisk /dev/sda
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Faites ensuite comme je l’ai fait (avec vos valeur pour la taille des différentes partitions si vous en avez fais des différentes):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Command(m for help) : n              
+Parition type:                                
+p  primary                                  
+e  extended                                
+Select(default p): p                       
+Partition number(1-4, default1): 1
+First sector (default 2048): 2048  
+End sector: +100M                      
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Puis par le même procédé on entre pour chacune des partitions:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;p              
+2              
+206848    
++12288M             (12Go)
+
+p              
+3              
+25372672
+(laisser vide pour prendre toute la place restante)
+Command(m for help): w  (Pour quitter et enregistrer les modifications)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;formatage&quot;&gt;Formatage&lt;/h2&gt;
+
+&lt;p&gt;On devrait donc avoir maintenant nos 3 partitions, on va les formater pour qu’elle soient en ext4 (sauf /dev/sda1 qu’on mettra en ext2). Donc pour formater tout ça on va faire :&lt;/p&gt;
+
+&lt;p&gt;mkfs.ext2 /dev/sda1 
+mkfs.ext4 /dev/sda2 
+mkfs.ext4 /dev/sda3&lt;/p&gt;
+
+&lt;p&gt;Attendre que chacune des commandes se termine avant de faire quoi que ce soit/passer à la suivante.&lt;/p&gt;
+
+&lt;h2 id=&quot;montage-des-partitions&quot;&gt;Montage des partitions&lt;/h2&gt;
+
+&lt;p&gt;On monte maintenant toutes les partitions pour qu’elles correspondent au dossier que l’on veut, c’est-à-dire:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mount /dev/sda2 /mnt                  # Racine
+mkdir /mnt/{boot,home}              # Création des deux répertoires pour les points de montages restants
+mount /dev/sda1 /mnt/boot          # Répertoire de boot
+mount /dev/sda3 /mnt/home        # Répertoire perso
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Au final au devrait donc avoir des partitions ressemblant à ça:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;/home : ~8Go --&amp;gt; /dev/sda3        ext4 Monté dans /mnt/home
+/ : 12Go --&amp;gt; /dev/sda2                 ext4 Monté dans /mnt   
+/boot: 100Mo --&amp;gt; /dev/sda1         ext2 Monté dans /mnt/boot  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;connexion-rseau&quot;&gt;Connexion réseau&lt;/h2&gt;
+
+&lt;p&gt;Normalement si on est en connexion filiairele pc est automatiquement connecté au réseau. Cependant étant donné que nous sommes sous une machine Virtualbox ce n’est pas toujours le cas.
+Il faut lancer la commande suivante afin de démarrer le démon qui gère la connexion filiaire au réseau eth0:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;dhcpd etho0         (A lancer avec &quot;sh&quot; et non &quot;bash&quot; !) 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&quot;installation-du-systme-de-base&quot;&gt;Installation du système de base&lt;/h2&gt;
+
+&lt;p&gt;On peut changer le fichier /etc/pacman.d/mirrorlist pour obtenir le miroir le plus proche mais ce n’est pas obligatoire. Donc on va lancer l’installation
+directement même si ça prend un peu plus de temps. On fait ça grâce à la commande:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacstrap /mnt base
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Là il faut laisser faire quelques minutes/heures selon votre connexion. Il se peut qu’il y ait une demande de confirmation de la part de l’utilisateur.&lt;/p&gt;
+
+&lt;p&gt;Ensuite il faut installer base-devel pour l’utilisation des dépôts d’utilisateur d’Arch avec la commande;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacstrap /mnt base-devel
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Là aussi il faut attendre quelques minutes que le téléchargement/installation se fasse, j’ai eu droit à une demande de confirmation qui s’est…confirmée toute seul O_ô. Bon passons l’éponge pour cette fois-ci…&lt;/p&gt;
+
+&lt;p&gt;Enfin, pour terminer avec ces installations dans tous les sens, il faut installer le chargeur de démarrage. La plupart du temps on choisit GRUB ou LILO, mais la documentation se base sur l’installation de syslinux. On va donc suivre leur exemple avec:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pacstrap /mnt syslinux
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;L’installation devrait être beaucoup plus rapide. Et bien entendu…une auto-confirmation de la part de pacstrap! Faudrait que je pose la question sur les forums quand même.&lt;/p&gt;
+
+&lt;h2 id=&quot;configuration&quot;&gt;Configuration&lt;/h2&gt;
+
+&lt;p&gt;Il faut générer un fichier de configuration /etc/fstab. Il contiendra toutes les informations concernant le partitionnement du/des disque(s) et leur arborescence.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;genfstab -U -p /mnt &amp;gt;&amp;gt; /mnt/etc/fstab
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Je ne suis pas sûr de la signification des paramètres envoyés à genfstab (-U  et -p). Vous pouvez lancer un genfstab -h pour voir leur signification si vous arrivez à mieux comprendre que moi ^^”
+Le symbole de flux » permet d’enregistrer la sortie de la commande dans un fichier spécifié (ici /mnt/etc/fstab,  il y aura donc un fichier nommé fstab avec comme contenu la sortie de la commande à gauche du symbole de flux). Si le fichier existe déjà le contenu sera ajouté à la fin.&lt;/p&gt;
+
+&lt;p&gt;Ensuite on va démarrer dans un nouveau système, on appelle cela Chrooter. On utilise la commande suivante:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;arch-chroot /mnt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On démarre un nouveau système avec comme racine l’argument spécifié après la commande arch-chroot. De ce fait on “enferme” un système dans un autre, le premier n’ayant donc plus accès aux dossiers supérieurs (on peut pas aller au-dessus de la racine /).&lt;/p&gt;
+
+&lt;p&gt;Donc ici on démarre un nouveau système dans /mnt qui contient tout ce dont on a besoin pour la suite de la configuration (puisque le(s) disque(s) et leur(s) partitions sont dans ce dossier).&lt;/p&gt;
+
+&lt;p&gt;On va ensuite donner un nom à la machine. Pour cela on va modifier le fichier /etc/hostname avec par exemple la commande nano (voir la documentation pour l’utilisation de cet outil). A ma connaissance on peut donner celui que l’on veut.&lt;/p&gt;
+
+&lt;p&gt;Le fichier étant vide, et vu qu’il n’y a aucune information spécifique sur le wiki d’ArchLinux, j’en déduis qu’il suffit simplement d’écrire le nom que l’on veut. Pour ma part je me contente d’un “archiso”.&lt;/p&gt;
+
+&lt;p&gt;Ensuite petite modification du fichier /etc/locale.gen pour définir la langue du système à utiliser et sous quel format. Pour le choisir il faut dé-commenter (enlever le #) la ligne que l’on veut. J’ai enlevé celui de la ligne “fr_FR.UTF-8 UTF-8”. Puis on lance la commande “locale-gen” pour enregistrer ce paramètre et générer le locale correspondant.
+Puis on créé le fichier /etc/locale.conf et on y met:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;LANG=&quot;fr_FR.UTF-8&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pour que le paramètre soit celui enregistré par défaut. Il se peut que ce paramètre ne soit pris en compte qu’au redémarrage de la machine. Pour le faire pour la session courante on lance la commande:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;export LANG=fr_FR.UTF-8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On édite ensuite le fichier /etc/vconsole.conf pour la configuration du type de clavier et l’on y met:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;KEYMAP=fr-pc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;On règle maintenant l’heure locale avec un lien à /etc/localtime vers le fuseau horaire correspondant. Ici:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si le votre est différent, je vous conseille de fouiller le répertoire zoneinfo pour y trouver le votre.&lt;/p&gt;
+
+&lt;p&gt;On va ensuite créer les ramdisks. Ne me demandez pas une définition je ne sais pas encore exactement ce que c’est, simplement qu’il sert pour l’image du noyau linux.
+On configure ensuite le chargeur de démarrage pour qu’il…démarre x) Plus exactement on lance l’installation automatique sur le MBR (Master Boot Record) :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;syslinux-install_update -iam
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ça devrait se faire assez rapidement en théorie.&lt;br /&gt;
+Allez on à presque terminé! Maintenant on va définir un mot de passe pour le compte root avec la commande “passwd” (sans les guillemets”), et l’on entre ensuite le mot de passe que l’on veut (Deux fois pour vérification).
+Pour finir, on va démonter toutes les partitions avec un :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;umount /mnt/boot /mnt/home /mnt
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Vous pouvez maintenant redémarrer/éteindre votre ordinateur (virtuel) en toute tranquillité!&lt;/p&gt;
+
+&lt;p&gt;Et voilà on à terminé! Terminé? En fait pas exactement, mais ceci est la fin de la première partie de cet article. Vous pouvez continuer par-vous même par le biais du site ArchLinux. Notamment pour la création d’un utilisateur dont je ne donnerais pas d’explication ici.
+Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg et d’un environnement graphique.&lt;/p&gt;
+
+&lt;p&gt;Merci d’avoir pris le temps de lire cet article,  n’hésitez pas à me dire si vous avez des problème ou des suggestions. Sur ce je vous dis à bientôt et bonne fin de journée!&lt;/p&gt;
+</description>
+				<pubDate>Fri, 04 Jan 2013 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/2013/01/04/test-archlinux-en-virtualbox-(1-2).html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/01/04/test-archlinux-en-virtualbox-(1-2).html</guid>
+			</item>
+		
+			<item>
+				<title>Conky et Lua pour les non-angolophobes</title>
+				
+					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
+
+&lt;p&gt;Aujourd’hui je ne vais pas vraiment faire d’article réellement complet. J’aimerais juste partager un lien très utile quand a l’utilisation du langage Lua et la bibliothèque Cairo avec Conky.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://crunchbanglinux.org/forums/post/180798/#p180798&quot;&gt;Ici le lien sera&lt;/a&gt;
+&lt;!--break--&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est un gars qui a fait un cours absolument génial sur Conky et Lua. Seulement voilà: C’est entièrement en Anglais.&lt;/p&gt;
+
+&lt;p&gt;Mais il permet de faire pleins de choses sympa comme une barre d’affichage du taux d’utilisation de CPU ou même une petite horloge.&lt;/p&gt;
+
+&lt;p&gt;Par exemple voilà mon Conky en suivant ce tutos avec quelques petite touche persos:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/conky_01.png&quot; alt=&quot;conky&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Je me suis notamment permis de rajouter les numéros pour l’horloge et de mettre en cercle autour mes utilisation CPU et RAM. Après en dessous ce n’est qu’une utilisation basique des commandes de Conky.&lt;/p&gt;
+
+&lt;p&gt;Si vous êtes vraiment intéressé par Conky vous pouvez aussi aller du coté du forums Ubuntu qui recense des centaines de centaines de Conky:  &lt;a href=&quot;http://forum.ubuntu-fr.org/viewtopic.php?id=426625&amp;amp;p=1&quot;&gt;(4) Conky : Postez vos conkyrc&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Et surtout n’hésitez pas à poster les vôtre en commentaires.&lt;/p&gt;
+
+&lt;p&gt;Sur ce bonne journée a tous et à bientôt!&lt;/p&gt;
+</description>
+				<pubDate>Sat, 13 Oct 2012 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2012/10/13/conky-et-lua-pour-les-non-anglophones.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2012/10/13/conky-et-lua-pour-les-non-anglophones.html</guid>
+			</item>
+		
+			<item>
+				<title>Un jeu de dessin basé sur les lois de la physique</title>
+				
+					<description>&lt;p&gt;Caph est un petit jeu extrêmement sympathique dont le but est de faire se coller un objet A sur un objet B. Basé sur deux principes : Primo tout est a base de dessins. Pour parvenir a votre objectif, vous n’avez que votre souris qui vous permet de dessiner des formes sur lesquelles vont venir se construire vos techniques pour faire avances l’objet A. Secundo la difficulté la plus importante, est que ce jeu est basé sur les lois de la physique ! En effet selon ce que vous dessinez il y aura des effet de gravité et d’énergie mécanique variable.
+&lt;!--break--&gt;
+##Installation&lt;/p&gt;
+
+&lt;p&gt;Pour installer ce jeu il faut aller télécharger a partir de → &lt;a href=&quot;http://caphgame.sourceforge.net/&quot;&gt;Caph&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Normalement une commande par le terminal et apt-get permettrai de l’installer. Mais depuis peu il y a des problèmes avec le fichier deb. Mais pour les autres version il n’y a manifestement pas de problème, vous pouvez donc continuer à utiliser ces version du jeux. Pour le reste il faut suivre le lien précédent et dans la catégorie “Downloads” cliquer sur le lien et télécharger la dernière version. Ensuite dans le répertoire où vous l’avez téléchargé vous faites une extraction d’un contenu de l’archive avec votre gestionnaire d’archive préféré. Ensuite ça se complique légèrement. Il faut aller dans le dossier caph/src/ puis vous ouvrez un terminal dans ce répertoire. vous lancez ensuite les commandes suivante:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./config                           
+./build                            
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ne faites pas attention aux quelques messages apparaissant, maintenant vous pouvez exécuter le fichier caph avec un simple ./caph . Le jeu se lance alors!&lt;/p&gt;
+
+&lt;p&gt;A partir de là libre à vous de créer les raccourcis que vous voulez pour lancer le jeu plus rapidement. (Par exemple en exécutant une commande avec Gnome-Pie!)&lt;/p&gt;
+
+&lt;p&gt;Si vous voulez plus d’infos sur le jeu, il y a un répertoire doc dans le jeu avec un fichier README qui fournit pas mal d’informations.&lt;/p&gt;
+
+&lt;h2 id=&quot;comment-jouer&quot;&gt;Comment jouer&lt;/h2&gt;
+
+&lt;p&gt;Voici les commande de base a connaître :&lt;/p&gt;
+
+&lt;p&gt;La souris vous permet de dessiner toutes les formes qui vous passent par la tête pour arriver au bout du niveau. Le clic-droit vous permet de changer de types de matériaux (Noir : Solide , Vert:Solide déformable et Bleu :Corde flexible).&lt;/p&gt;
+
+&lt;p&gt;Echap permet de faire un retour arrière dans les objets crées. Il est surtout a combiner avec la touche T qui permet de stopper les temps.&lt;/p&gt;
+
+&lt;p&gt;La touche R permet de recommencer le niveau&lt;/p&gt;
+
+&lt;p&gt;La touche N permet de passer au niveau suivant (n’ayant pas de système de sauvegarde vous pouvez retourner a votre niveau de cette façon)&lt;/p&gt;
+
+&lt;p&gt;Et enfin la touche Q vous permet de quitter le jeu.&lt;/p&gt;
+
+&lt;p&gt;Voilà j’espère que vous vous amuserez bien avec ce petit jeu, en tout cas au début c’est un peu difficile a prendre en main mais après ça va mieux. Bien sur les niveau vont en difficulté crescendo ! (je ne sais pas encore combien de niveau il existe, je vous le dirais quand je l’aurais fini x) ). Sur ce bonne fin de journée a tous et amusez-vous bien !&lt;/p&gt;
+</description>
+				<pubDate>Mon, 08 Oct 2012 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html</guid>
+			</item>
+		
+			<item>
+				<title>Mirage - Voir ses images simplement et rapidement</title>
+				
+					<description>&lt;p&gt;Mirage est un logiciel qui permet de visualiser des images. Tout simplement. Je pense qu’une image vaut mieux que de longs discours:
+&lt;!--break--&gt;
+&lt;img src=&quot;/images/mirage01.jpg&quot; alt=&quot;mirage&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Je trouve l’apparence de Mirage particulièrement agréable. On voit rapidement une liste des images du dossier que l’on regarde sur la gauche (configurable dans le menu Edit&amp;gt;Preferences). Et l’affichage se fait rapidement, même pour de grosses images.&lt;/p&gt;
+
+&lt;p&gt;Pour l’installer, rien de plus simple. Mirage est disponible dans la quasi-totalité des distributions. De ce fait il suffit d’aller dans son gestionnaire de logiciel préféré et d’entrer Mirage, et de l’installer.&lt;/p&gt;
+
+&lt;p&gt;Si vous êtes un adepte de la ligne de commande, sous Ubuntu et ses derivées ils suffit d’un:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install mirage                  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Si vous l’appréciez, vous pouvez même le définir comme logiciels a utiliser par défaut. Sous Linux Mint il faut aller dans:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Menu &amp;gt; Préférences &amp;gt; Details &amp;gt; Applications par défaut &amp;gt; Photos : Mirage.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Et voilà, vous avez un nouveau petit logiciel pour afficher vos images.&lt;/p&gt;
+
+&lt;p&gt;Sur ce je vous souhaite une bonne fin de semaine et a bientôt pour un prochain article!&lt;/p&gt;
+</description>
+				<pubDate>Sat, 22 Sep 2012 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2012/09/22/mirage-voir-ses-images-simplement-et-rapidement.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2012/09/22/mirage-voir-ses-images-simplement-et-rapidement.html</guid>
+			</item>
+		
+			<item>
+				<title>Présentation de Gnome-pie</title>
+				
+					<description>&lt;p&gt;Gnome-pie est un petit logiciel fort sympathique. Il permet, par le biais d’un raccourcis tapé au clavier, de faire apparaître un disque de ses logiciels.&lt;/p&gt;
+
+&lt;p&gt;En fait le terme exact devrait être une « tarte » de logiciels. Puisque ‘Pie’ en anglais veut dire aussi bien disque que tarte. Mais d’après le développeur on parle plus généralement de tartes. (je le soupçonne d’être fondateur d’une multinationale alimentaire…)
+&lt;!--break--&gt;
+Bon voici clairement a quoi ressemble les tartes :&lt;/p&gt;
+
+&lt;p&gt;&amp;lt;iframe width:”420” height:”360” src=”https://vimeo.com/30618179” frameborder=”0”&amp;gt;&amp;lt;/iframe&amp;gt;
+(Vidéo officielle de Simon Schneegans, le développeur).&lt;/p&gt;
+
+&lt;p&gt;Pour l’installation, je vais honteusement recopier le tuto du site de Mr Schneegans ^_^ :&lt;/p&gt;
+
+&lt;h2 id=&quot;installation-par-pparecommand&quot;&gt;Installation par PPA(recommandé)&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo add-apt-repository ppa:simonschneegans/testing
+sudo apt-get update
+sudo apt-get install gnome-pie
+Installation par les sources
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Avec gtk2 :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get install git build-essential libgtk2.0-dev libcairo2-dev libappindicator-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-dev valac cmake libunique-dev libbamf-dev libwnck-dev bamfdaemon
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Avec gtk3 :&lt;/p&gt;
+
+&lt;p&gt;sudo apt-get install git build-essential libgtk-3-dev libcairo2-dev libappindicator3-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-3-dev valac cmake libunique-3.0-dev libbamf3-dev libwnck-3-dev bamfdaemon&lt;/p&gt;
+
+&lt;p&gt;Ensuite pour les deux cas vous n’avez plus qu’à télécharger Gnome-pie, le compiler et l’installer comme ceci :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone git://github.com/Simmesimme/Gnome-Pie.git
+cd Gnome-Pie &amp;amp;&amp;amp; ./make.sh
+cd build &amp;amp;&amp;amp; sudo make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Ensuite, quelle que soit votre méthode d’installation, je vous recommande de le faire lancer au démarrage de votre session.&lt;/p&gt;
+
+&lt;h2 id=&quot;configurationpossibilits-de-base&quot;&gt;Configuration/Possibilités de base&lt;/h2&gt;
+
+&lt;p&gt;Au premier lancement plusieurs tartes sont déjà disponibles. Donc notamment les raccourcis clavier qui vont avec, voici plus ou moins ce que donnent ces raccourcis :&lt;/p&gt;
+
+&lt;p&gt;-Ctrl+Alt+A : 6 objets ; Redémarrer Déconnecter Arrêter ainsi que trois logiciel qui sont sur votre ordinateur (je ne me souviens plus desquels je les ais changés depuis longtemps).&lt;/p&gt;
+
+&lt;p&gt;-Ctrl+Alt+B : x objets ; Tous les dossier de votre répertoire personnel ainsi que les différents volumes montés.&lt;/p&gt;
+
+&lt;p&gt;-Ctrl+Alt+Espace ; Représente les différents types de logiciels présents sur votre ordinateur ( Ceux qui sont dans votre menu de bureau par exemple Accessoire Internet Préférence Administration etc…)&lt;/p&gt;
+
+&lt;p&gt;-Ctrl+Alt+W : Les différentes options de fenêtre c’est-à-dire Réduire Agrandir Restaurer Fermer.&lt;/p&gt;
+
+&lt;p&gt;-Ctrl+Alt+M : Celui que j’utilise le plus fréquemment. Il correspond aux boutons de base de votre lecteur de musique. Lecture/Pause Précédant Suivant Stop.&lt;/p&gt;
+
+&lt;p&gt;-Ctrl+Alt+Q : Redémarrer Arrêter Déconnecter.&lt;/p&gt;
+
+&lt;p&gt;Il y a deux moyens pour créer/éditer ses propres tartes :&lt;/p&gt;
+
+&lt;p&gt;-Le mode graphique : Dans le menu préférence de gnome-pie. Vous pouvez sélectionner les tartes existantes en cliquant sur l’un de ceux de la liste de gauche, puis en cliquant dans le vide sur la tarte montrée a droite pour en ajouter une. Là il ne vous reste plus qu’à taper la commande a lancer et a vous choisir un nom ainsi qu’une icône.&lt;/p&gt;
+
+&lt;p&gt;Vous pouvez aussi ajouter une tarte en cliquant sur l’icône + en bas a gauche de la fenêtre. Là il vous est demandé d’entrer un nom ainsi que d’appuyer sur la combinaison de touche nécessaire a l’ouverture de cette tarte. Vous pouvez dès lors y ajouter des applications.&lt;/p&gt;
+
+&lt;p&gt;Attention : Sur mon ordinateur la sélection d’icône provoque un crash du logiciel, peut-être que vous aurez plus de chances que moi, en attendant si c’est votre cas vous pourrez choisir l’icône avec la deuxième méthode que je vais vous présenter.&lt;/p&gt;
+
+&lt;p&gt;-Le mode texte : Vous pouvez aussi tout écrire a la main, en allant directement dans le fichier de config. L’avantage ? Si comme moi vous avez un problème avec les icône, vous pouvez les choisir en donnant le chemin de l’icône.&lt;/p&gt;
+
+&lt;p&gt;Chez moi le fichier de config se trouve dans : /home/chezmoi/.conf/gnome-pie/pies.conf&lt;/p&gt;
+
+&lt;p&gt;Vous devez normalement vous retrouver devant un fichier de type texte xml. Vous pouvez créer une tarte de la façon suivante :&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;pie name=&quot;Multimédia&quot; id=&quot;831&quot; icon=&quot;stock_media-play&quot; hotkey=&quot;Control+Alt+m&quot;&amp;gt;&amp;lt;/pie&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Vous avez plusieurs choses bizarres dans ces lignes, je vais vous y décrire ce que fait chaque attribut :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&amp;lt; pie&amp;gt; &amp;lt; /pie&amp;gt; Correspond a la création d’une tarte avec une balise ouvrante et une fermante.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;name= ‘‘Multimédia ‘’ Correspond au nom donné a la tarte, ici c’est Multimédia (plus quelques caractères pour gérer l’accent du ‘‘é’’ ).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;'’id=831’’ Bon alors celui-ci je dois avouer que je ne saurais l’utiliser correctement. Je ne sais non plus comment il fonctionne (si quelqu’un peut me le dire d’ailleurs ce serait cool x) ).&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;icon=’‘stock_media-play’’ Là il vous est possible de choisir votre icône. Soit c’est une icône système auquel cas vous pouvez directement entrer son nom, ou alors vous écrivez le chemin (de préférence le chemin absolu) pour y accéder.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;hotkey=”Control+Alt+m” Là il s’agit du raccourcis sur lequel appuyer pour ouvrir la tarte, je ne saurais expliquer comment savoir a quoi correspondent les caractères qu’il y a entre chacune des touches a entrer.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vous pouvez aussi a l’intérieur d’une tarte mettre une nouvelle application. Les lignes ressemblent a ceci : (j’ai pris une icône de la tarte Multimédia)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;slice type=&quot;key&quot; name=&quot;Piste Suivante&quot; icon=&quot;stock_media-next&quot; command=&quot;XF86AudioNext&quot; quickAction=&quot;true&quot;/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Alors là à l’inverse des balises &lt;pie&gt; et &amp;lt; /pie&amp;gt; la balise &amp;lt; slice /&amp;gt; est dite orpheline, car elle se termine sur la même balise qui l'à commencé (on peut le voir notamment avec le '/' a la fin). Littéralement slice en français veut dire 'part' comme...part de tarte ! C'est bien fait n'est-ce pas ^^&lt;/pie&gt;&lt;/p&gt;
+
+&lt;p&gt;Bon passons au découpage de cette balise :&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;type=’‘key’’ signifie que c’est une commande un peu spéciale. Généralement quand vous voudrez ajouter une part de tarte cela sera plutôt : type=’‘app’’ .&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;name= ‘‘Piste suivante’’ Est le nom qui va s’afficher pour le bouton.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;icone=’‘stock_media-next’’ Est la même chose que pour la balise &lt;pie&gt; .&lt;/pie&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;command=’’ XF86AudioNext’’ Est la commande qui va être lancée. Vous pouvez écrire une commande comme vous le feriez dans un terminal.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;quickAction=’true’’ Bon je dois avouer ne pas connaître grand chose non plus sur l’utilité de cet attribut, mais toutes les applications que j’ai ajouté se sont vues mettre l’attribut : quickAction=”false” .&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Personnellement je n’ai crée qu’un seule tarte nommée ‘Jeux’ dans laquelle j’ai mis….mes jeux !&lt;/p&gt;
+
+&lt;p&gt;Voici le lien sur site de Mr Schneegans: &lt;a href=&quot;http://www.simonschneegans.de&quot;&gt;http://www.simonschneegans.de&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Bon et bien voilà je crois que j’ai fait le tour. Sur ce je vais vous souhaiter une bonne fin de journée, tout en espérant en avoir amadoué quelques uns ;P&lt;/p&gt;
+</description>
+				<pubDate>Sun, 16 Sep 2012 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/2012/09/16/presentation-de-gnome-pie.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2012/09/16/presentation-de-gnome-pie.html</guid>
 			</item>
 		
 	</channel>

@@ -3,6 +3,7 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
   <script src="/js/nav.js"> </script>
   <title>
     Kevin / Ilphrin
@@ -30,14 +31,15 @@
   <ul>
     <li>Mail: ilphrin@autistici.org</li>
     <li>Lyon, France</li>
-    <li><a href="https://www.github.com/Ilphrin">Github</a>
-    <li><a href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
-    <li><a href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+    <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a>
+    <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
+    <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
   </ul>
   <ul>
-    <h1>Des gens bien</h1>
-    <li><a href="http://schoewilliam.fr">Schoewilliam</a></li>
-    <li><a href="https://la-vache-libre.org">La vache libre</a></li>
+    <h1>Des sites cool</h1>
+    <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
+    <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
+    <li><a href="https://planet-libre.org">Planet Libre</a></li>
   </ul>
   <button class="quit_contact" onclick="contact_popup()">Fermer</button>
 </div>
@@ -199,6 +201,7 @@ xtensa
 
   <div id="comments">
 	
+		<h1>Aucun commentaire</h1>
 		
 	
 	<h1>Commenter</h1>
@@ -215,13 +218,13 @@ xtensa
 				<p>Site Web:</p>
 			</div>
 			<div id="content_form">
-				<p><input type="text" size="25" name="name" /> (requis)</p>
-				<p><input type="text" size="25" name="email" /> (requis, non publié)</p>
-				<p><input type="text" size="25" name="link" /> (optionel)</p>
+				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
 			</div>
 		</div>
-		<textarea name="comment" rows="10" cols="60" ></textarea>
-		<input type="submit" name="submit" value="Envoyer" />
+		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+		<input type="submit" name="submit" value="Envoyer ✔"/>
 	</form>
 </div>
 

@@ -3,6 +3,7 @@ layout: post_kevin
 title: Neobot un bot en ligne de commande pour les unix like
 author: kevin
 cover: circuit.jpg
+category: planet
 ---
 
 Salut tout le monde
@@ -21,4 +22,3 @@ La deuxième est que vous pouvez poser des questions sur votre pc a Neobot et il
 Si vous souhaitez voir un peu les autres projets sur lesquels Devyn C.Johnson a travaillé ou même en discuter, vous pouvez aller jeter un coup d'oeil sur [http://dcjtech.info](http://dcjtech.info/).
 
 Bonne journée à tous!
-

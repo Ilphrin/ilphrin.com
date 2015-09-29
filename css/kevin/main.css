@@ -1,3 +1,8 @@
+*, *:focus
+{
+  outline: none;
+}
+
 html
 {
   font-size: 18px;
@@ -150,11 +155,6 @@ a, a:visited
   margin-bottom: 5px;
 }
 
-.contact li a
-{
-  color:
-}
-
 .main
 {
   line-height: 150%;
@@ -241,8 +241,8 @@ a, a:visited
   width: 60%;
   height: 20em;
   color: #EEE;
-  background-color: #F2F2F2;
-  background-size: cover;
+  background-size: 100% auto;
+  background-color: black;
 }
 
 .post_home .content
@@ -326,6 +326,8 @@ footer li
 pre
 {
   background-color: #222;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px #000;
   color: #DCD288;
 }
 
@@ -342,6 +344,7 @@ pre
   font-size: 90%;
   transition: all 0.3s;
   margin-bottom: 3%;
+  background-size: contain;
 }
 
 .header_blog_title:hover
@@ -417,6 +420,73 @@ textarea, input
 {
   display: flex;
   flex-direction: row;
+}
+
+
+.comment
+{
+  padding: 1px 10px 5px 10px;
+  margin-top: 5px;
+  border-radius: 15px;
+}
+.even
+{
+  background-color: rgb(33, 33, 33);
+  border: 3px solid rgba(255, 255, 255, 0.2)
+}
+
+.odd
+{
+  background-color: rgb(60, 60, 60);
+  border: 3px solid rgba(0, 0, 0, 0.4)
+}
+
+hr
+{
+  color: #008292;
+}
+
+#name:invalid, #email:invalid
+{
+  box-shadow: 1px 1px 2px red, -1px -1px 2px red, 1px -1px 2px red, -1px 1px 2px red;
+  background-color: red;
+}
+
+textarea, input
+{
+  border: 1px solid white;
+  font-size: 80%;
+  box-shadow: 1px 1px 2px white, -1px -1px 2px white, 1px -1px 2px white, -1px 1px 2px white;
+  transition: all .3s;
+  border: none;
+}
+
+input[type="submit"]
+{
+  display: block;
+  cursor: pointer;
+  margin: 30px;
+  margin-left: 0px;
+  font-size: 120%;
+}
+
+input[type="submit"]:hover
+{
+  background-color: green;
+  box-shadow: 1px 1px 2px green, -1px -1px 2px green, 1px -1px 2px green, -1px 1px 2px green;
+}
+
+#email, #name, #link
+{
+  margin-left: 10px;
+}
+
+
+#email:focus, #name:focus, #link:focus, #comment:focus
+{
+  background-color: #555;
+  box-shadow: 1px 1px 2px #555, -1px -1px 2px #555, 1px -1px 2px #555, -1px 1px 2px #555;
+  color: white;
 }
 
 @media (max-width: 1210px) {
