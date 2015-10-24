@@ -1,11 +1,11 @@
 function contact_popup(nyah) {
   var plop = document.querySelector('body');
-  var child = document.querySelector('.contact');
-  if (getComputedStyle(child).right === "-500px") {
-    child.style.right = "0px";
+  var child = document.querySelector('.contact_pop');
+  if (getComputedStyle(child).marginLeft === "-350px") {
+    child.style.marginLeft = "0px";
   }
   else
   {
-    child.style.right = "-500px";
+    child.style.marginLeft = "-350px";
   }
 }

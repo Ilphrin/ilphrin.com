@@ -19,7 +19,6 @@
       <li><a href="/">Accueil</a></li>
       <li><a href="/kevin/index.html">Blog</a></li>
       <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a onclick="contact_popup()">Contact</a></li>
       <li><a href="/kevin/about.html">À propos</a></li>
       <li><a href="/feeds.xml">Flux RSS</a></li>
     </ul>
@@ -27,27 +26,39 @@
 
 </div>
 
-<div class="contact">
-  <ul>
-    <li>Mail: ilphrin@autistici.org</li>
-    <li>Lyon, France</li>
-    <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a>
-    <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
-    <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
-  </ul>
-  <ul>
-    <h1>Des sites cool</h1>
-    <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
-    <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
-    <li><a href="https://planet-libre.org">Planet Libre</a></li>
-  </ul>
-  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
-</div>
-
 
 <body>
+    <div class="contact_pop">
+  <div class="contact">
+    <ul>
+      <h1>Contact</h1>
+      <li>Mail: ilphrin@autistici.org</li>
+      <li>Lyon, France</li>
+      <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a></li>
+      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin</a></li>
+      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+    </ul>
+    <ul>
+      <h1>D'autres sites</h1>
+      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam <iframe src="//schoewilliam.fr" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre <iframe src="//la-vache-libre.org" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://planet-libre.org">Planet Libre <iframe sandbox="" src="//planet-libre.org" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR <iframe src="//firefoxos.mozfr.org/" scrolling="no"></iframe></a></li>
+    </ul>
+    <ul>
+      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
+      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+    </ul>
+  </div>
+  <div class="contact_arrow" onclick="contact_popup()">
+  <p>
+    Liens
+  </p>
+  </div>
+</div>
+
     <div class="main">
-      <div class="post_home">
+        <div class="post_home">
       <div class="title" style="background-image: url('/images/header_articles/firefox.jpg');">
         <time datetime="25 January 2015">
           <h1> Premiers pas dans le développement de Firefox OS </h1>
@@ -171,12 +182,5 @@ bidouilles mais aussi rajouter mes petits trucs, si ça intéresse quelqu’un m
 </div>
 
     </div>
-<footer>
-<ul>
-  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
-  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
-</ul>
-</footer>
-
 </body>
 </html>

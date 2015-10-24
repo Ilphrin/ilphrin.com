@@ -19,7 +19,6 @@
       <li><a href="/">Accueil</a></li>
       <li><a href="/kevin/index.html">Blog</a></li>
       <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a onclick="contact_popup()">Contact</a></li>
       <li><a href="/kevin/about.html">À propos</a></li>
       <li><a href="/feeds.xml">Flux RSS</a></li>
     </ul>
@@ -27,41 +26,53 @@
 
 </div>
 
-<div class="contact">
-  <ul>
-    <li>Mail: ilphrin@autistici.org</li>
-    <li>Lyon, France</li>
-    <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a>
-    <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
-    <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
-  </ul>
-  <ul>
-    <h1>Des sites cool</h1>
-    <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
-    <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
-    <li><a href="https://planet-libre.org">Planet Libre</a></li>
-  </ul>
-  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
-</div>
-
 
 <body>
+    <div class="contact_pop">
+  <div class="contact">
+    <ul>
+      <h1>Contact</h1>
+      <li>Mail: ilphrin@autistici.org</li>
+      <li>Lyon, France</li>
+      <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a></li>
+      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin</a></li>
+      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+    </ul>
+    <ul>
+      <h1>D'autres sites</h1>
+      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam <iframe src="//schoewilliam.fr" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre <iframe src="//la-vache-libre.org" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://planet-libre.org">Planet Libre <iframe sandbox="" src="//planet-libre.org" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR <iframe src="//firefoxos.mozfr.org/" scrolling="no"></iframe></a></li>
+    </ul>
+    <ul>
+      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
+      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+    </ul>
+  </div>
+  <div class="contact_arrow" onclick="contact_popup()">
+  <p>
+    Liens
+  </p>
+  </div>
+</div>
+
     <div class="main">
-        <div class="header_blog">
+          <div class="header_blog">
   
     
-      <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
+      <div class="header_blog_title"  style="background-image: url('/images/header_articles/firefox.jpg');">
         <div class="header_blog_title">
         <time datetime="">
           <div class="shad-effect">
-            <h1><a href="/planet/2015/09/24/des-news-en-tout-genres.html">Des news en tout genre</a></h1>
+            <h1><a href="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">Premiers pas avec Gaia (FirefoxOS)</a></h1>
           </div>
           
   
-    24
+    16
 
 
-septembre
+octobre
   
 2015
 
@@ -117,6 +128,17 @@ septembre
   
     
       <div class="post">
+        <h2><a href="/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">Neobot un bot en ligne de commande pour les unix like</a></h2>
+        <p>Salut tout le monde</p>
+
+<p>Alors tout d’abord pour ceux qui ne le savent pas, qu’est-ce qu’un <em>bot</em> en informatique? C’est un programme qui va se gérer tout seul pour accomplir une ou des tâches voulues par les développeurs du bot. Leurs utilisation est vaste, cela va du jeu vidéo (les ennemis d’un jeu de FPS contrôlés par l’ordinateur par exemple) à la gestion des salons de discussion IRC en passant par les bien connus spambots, vous savez les faux comptes inscris sur les forums de discussions simplement pour balancer de la pub en vrac… Pour en savoir plus, je vous invite à lire la page wikipédia sur les <a href="https://fr.wikipedia.org/wiki/Bot_informatique">bot informatique</a>.</p>
+
+
+      </div>
+    
+  
+    
+      <div class="post">
         <h2><a href="/planet/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html">Premiers pas dans le développement de Firefox OS</a></h2>
         <p>Salut tout le monde!</p>
 
@@ -166,27 +188,8 @@ self.player2Hand = self.randomHand(-1)
       </div>
     
   
-    
-      <div class="post">
-        <h2><a href="/planet/2014/08/15/introduction-a-pygame.html">Introduction à Pygame</a></h2>
-        <p>Salut tout le monde!</p>
-
-<p>Cela fait un bon moment que j’étudie la programmation, j’ai d’abord commencé par le C pour le C++, et même les langages web. Mais ce n’était que de la théorie et je voulais essayer de créer mon propre petit programme, et j’ai découvert le langage Python il y a environ 1 an grâce au célèbre livre <a href="http://python.developpez.com/cours/apprendre-python3/">Apprendre à programmer avec Python 3</a>.</p>
-
-<p>Mais encore une fois je n’avais rien crée moi-même, je n’avais pendant longtemps fait que la théorie, même si ce livre propose tout un tas d’applications du cours, ce n’était pas de moi que venaient les idées ni le gros du code.  Il y a plusieurs semaines je me suis donc lancé dans une tentative de faire mon propre programme, et plus exactement un jeu, et pour cela j’ai dû apprendre à utiliser la bibliothèque <a href="http://www.pygame.org/news.html">Pygame</a>.
-
-      </div>
-    
-  
   </div>
 
     </div>
-<footer>
-<ul>
-  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
-  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
-</ul>
-</footer>
-
 </body>
 </html>

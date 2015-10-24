@@ -19,7 +19,6 @@
       <li><a href="/">Accueil</a></li>
       <li><a href="/kevin/index.html">Blog</a></li>
       <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a onclick="contact_popup()">Contact</a></li>
       <li><a href="/kevin/about.html">À propos</a></li>
       <li><a href="/feeds.xml">Flux RSS</a></li>
     </ul>
@@ -27,41 +26,53 @@
 
 </div>
 
-<div class="contact">
-  <ul>
-    <li>Mail: ilphrin@autistici.org</li>
-    <li>Lyon, France</li>
-    <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a>
-    <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin </a></li>
-    <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
-  </ul>
-  <ul>
-    <h1>Des sites cool</h1>
-    <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
-    <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
-    <li><a href="https://planet-libre.org">Planet Libre</a></li>
-  </ul>
-  <button class="quit_contact" onclick="contact_popup()">Fermer</button>
-</div>
-
 
 <body>
+    <div class="contact_pop">
+  <div class="contact">
+    <ul>
+      <h1>Contact</h1>
+      <li>Mail: ilphrin@autistici.org</li>
+      <li>Lyon, France</li>
+      <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a></li>
+      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin</a></li>
+      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+    </ul>
+    <ul>
+      <h1>D'autres sites</h1>
+      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam <iframe src="//schoewilliam.fr" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre <iframe src="//la-vache-libre.org" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://planet-libre.org">Planet Libre <iframe sandbox="" src="//planet-libre.org" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR <iframe src="//firefoxos.mozfr.org/" scrolling="no"></iframe></a></li>
+    </ul>
+    <ul>
+      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
+      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+    </ul>
+  </div>
+  <div class="contact_arrow" onclick="contact_popup()">
+  <p>
+    Liens
+  </p>
+  </div>
+</div>
+
     <div class="main">
-        <div class="header_blog">
+          <div class="header_blog">
   
     
-      <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
+      <div class="header_blog_title"  style="background-image: url('/images/header_articles/firefox.jpg');">
         <div class="header_blog_title">
         <time datetime="">
           <div class="shad-effect">
-            <h1><a href="/planet/2015/09/24/des-news-en-tout-genres.html">Des news en tout genre</a></h1>
+            <h1><a href="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">Premiers pas avec Gaia (FirefoxOS)</a></h1>
           </div>
           
   
-    24
+    16
 
 
-septembre
+octobre
   
 2015
 
@@ -120,6 +131,8 @@ septembre
   <div class="posts">
   
     
+  
+    
       <div class="post">
         <h2><a href="/2013/08/26/arrivee-d'octopi-2-0.html">Arrivée de Octopi 0.2.0</a></h2>
         <p>Salut tout l’monde!</p>
@@ -161,25 +174,8 @@ septembre
       </div>
     
   
-    
-      <div class="post">
-        <h2><a href="/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower.html">Faire de la traduction avec gettext : Exemple avec Sunflower</a></h2>
-        <p>Salut tout le monde!</p>
-
-<p>J’ai plusieurs fois eu affaire à des logiciels que je trouvais vraiment sympa, mais qui n’étaient pas disponibles en français, ce qui m’empêchait de bien l’utiliser, ou de le montrer à d’autres personnes qui n’y connaissent rien à l’anglais.  Ne connaissant pas encore bien la programmation, j’ai eu l’idée de faire un peu de traduction pour contribuer un peu aux logiciels que j’utilise. Je me suis donc tourné vers Sunflower, dont le site dispose d’un lien expliquant comment lui préparer une traduction. En fait on utilise un logiciel libre qui apparemment est très utilisé dans le monde de la traduction de logiciels.
-
-      </div>
-    
-  
   </div>
 
     </div>
-<footer>
-<ul>
-  <li><a href="https://github.com/Ilphrin">Code Source</a></li>
-  <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
-</ul>
-</footer>
-
 </body>
 </html>
