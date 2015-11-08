@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/bash_syntax.css">
   <script src="/js/nav.js"> </script>
   <title>
     Kevin / Ilphrin
@@ -61,18 +63,18 @@
           <div class="header_blog">
   
     
-      <div class="header_blog_title"  style="background-image: url('/images/header_articles/firefox.jpg');">
+      <div class="header_blog_title"  style="background-image: url('/images/header_articles/web.jpg');">
         <div class="header_blog_title">
         <time datetime="">
           <div class="shad-effect">
-            <h1><a href="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">Premiers pas avec Gaia (FirefoxOS)</a></h1>
+            <h1><a href="/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html">Mes premiers tests unitaires en Web</a></h1>
           </div>
           
   
-    16
+    8
 
 
-octobre
+novembre
   
 2015
 
@@ -132,6 +134,24 @@ octobre
   
     
       <div class="post">
+        <h2><a href="/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html">Tuxle Triad et Pygame: Avoir une main</a></h2>
+        <p>Salut à tous!</p>
+
+<p>Me voilà aujourd’hui pour un deuxième article sur Pygame. Je vais cette fois-ci vous expliquer comment créer une “main” remplie de cartes tirées aléatoirement, et positionner les cartes dans la main.</p>
+
+<p>La dernière fois je vous avais expliqué comment fonctionnait un objet <strong>Card</strong>. Mais pour pouvoir jouer il en faudra plus d’une (ça risque d’être quelque peu ennuyant sinon ;) ). Ceux qui ont essayé le jeu savent combien de carte il faut, c’est-à-dire 5 par joueur. Pour faire ça nous allons utiliser tout simplement une liste. Dans la fonction <strong>__init__</strong> du fichier  game.py, on peut voir les deux lignes suivantes:</p>
+
+<pre><code>self.player1Hand = self.randomHand(1)
+
+self.player2Hand = self.randomHand(-1)
+</code></pre>
+
+
+      </div>
+    
+  
+    
+      <div class="post">
         <h2><a href="/planet/2014/08/15/introduction-a-pygame.html">Introduction à Pygame</a></h2>
         <p>Salut tout le monde!</p>
 
@@ -174,14 +194,6 @@ octobre
         <p>Salut tout l’monde!</p>
 
 <p>Ça faisait un moment que je n’avais pas écrit. La cause: Un manque de temps effroyable. Entre les cours, les activités extérieures et deux trois occupations je n’ai plus le temps de rien faire. Mais bon voilà après une longue absence je reviens pour vous parler d’une alternative à Skype qui est déjà bien connue, répondant au nom de <a href="http://ekiga.org/">Ekiga</a>.
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2013/10/25/dungeon-craw-stone-soup-la-perle-a-avoir.html">Dungeon Crawl Stone soup: La perle à avoir</a></h2>
-        <p>Si il y a bien un domaine auquel personne n’ayant une vie sociale ne peut se souscrire ou au moins en entendre des ragots, c’est bien celui du jeu vidéo. Mais revenons quelques années en arrière. Pas tout à fait à ses débuts, mais à une époque ou les graphismes n’importaient pas tant que ça et, du fait de leurs nombre encore restreint à ce moment-là, l’accent était mis sur le temps de jeu et l’intérêt, et c’était bien visible pour les jeux de rôles notamment (pour ceux qui ont un peu de culture à ce niveau-là, rappelez-vous des Might &amp; Magic et The Eye of the Beholder).
 
       </div>
     

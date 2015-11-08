@@ -7,6 +7,79 @@
 		<atom:link href="http://ilphrin.com/feed.category.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Mes premiers tests unitaires en Web</title>
+				<description>&lt;p&gt;Dans le cadre de mon stage, je dois faire un outil de monitoring en Web pour afficher des statistiques sur des bases de données ElasticSearch. Nous avions carte blanche pour les technos à utiliser, l’organisation de l’outil, etc… L’outil en lui-même fonctionne, mais puisqu’il s’agit d’un stage (mon premier en plus), il y a tout interêt à solidifer cet outil et en profiter pour apprendre le plus de technos possibles.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Dans cette optique, je me suis lancé dans l’idée de rajouter des tests unitaires pour aider au développement futur de notre outil de monitoring. Je n’ai jamais fait de tests unitaires (je suis étudiant ne me jetez pas de pierres tout de suite ;) ), c’était donc l’occasion d’apprendre à en faire. Après avoir regardé à droite et à gauche sur le net, mon attention s’est fixé sur la combinaison PhantomJS + Mocha + Chai. Donc pour ceux qui ne connaissent pas:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://phantomjs.org&quot;&gt;PhantomJS&lt;/a&gt; est un moteur de rendu web basé sur WebKit, et se comporte comme un navigateur web. A la différence qu’il servira non pas à aller regarder les derniers gifs sur 9gag mais à lancer du code Javascript. Le site web donne un aperçu de ce qu’il est possible de faire avec.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://mochajs.org&quot;&gt;Mocha&lt;/a&gt; est un framework de test unitaires en Javascript. Il semble avoir toutes les fonctionalités qu’on peut éspérer pour un framework de test et il est largement utilisé donc dispose d’une bonne communauté pour répondre à la plupart des questions que l’on pourrait se poser.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://chaijs.com&quot;&gt;Chai&lt;/a&gt; est une librairie d’assertion. On pourrait penser que Mocha en aurait une mais ce n’est pas le cas, en fait Mocha va servir pour tout ce qui n’est pas une assertion, et nous laissont ce dernier aux mains de Chai.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour information, l’outil web utilise le Framework AngularJS. Donc il faut que tout ce gros bazar fonctionne pour tester mes controlleurs, mes services, etc… Et je puis vous dire que ça a été un beau gros casse tête, c’est un point que je déteste dans le web c’est cet éparpillement d’outils dans tous les sens et pour tout et n’importe quel utilisation. Et plus il y a d’outils plus c’est difficile de mettre de l’ordre dans ce qu’on fait et de maitriser ce qu’il se passe. M’enfin c’est un autre sujet.&lt;/p&gt;
+
+&lt;p&gt;Et donc pour que les trois outils, cités plus haut, fonctionnent avec une application AngularJS, il faut rajouter à la liste Angular Mocks, qui permet d’injecter des modules/services et autres pour des tests unitaires.&lt;/p&gt;
+
+&lt;p&gt;Dans un fichier html, on inclu tout ça comme ci-dessous (et dans cet ordre, sinon tout se casse):&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./node_modules/mocha/mocha.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;./node_modules/chai/chai.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;mocha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;bdd&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;mocha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reporter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;html&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;angular-mock.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;test/tests.js&amp;quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;mochaPhantomJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;mochaPhantomJS&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;mocha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;run&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;J’ai installé Mocha et Chai par le biais de Node Package Manager (npm), PhantomJS a été compilé à la main (c’est super long je vous préviens), et avec npm toujours j’ai installé mocha-phantomjs, qui permet de faire fonctionner les deux ensembles.&lt;/p&gt;
+
+&lt;p&gt;Une fois tout cela en place on va pouvoir commencer à écrire les tests unitaires dans le fichier tests.js. Mon but est de tester les fonctionalités de mon Service AngularJS, qui contient la quasi-totalité des fonctions de mon applications. J’appelle ici mon module ‘monitoring’ et mon service ‘totalService’.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;chai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;chai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;monitoring&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;totalService&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;monitoring&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+    &lt;span class=&quot;nx&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_totalService_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_$resource_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_$location_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;totalService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_totalService_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;$resource&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_$resource_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;$location&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_$location_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;On initialise ici Chai et on injecte le module d’abord en lançant angular.module(‘monitoring’), puis dans le beforeEach avec module(‘monitoring’), ainsi que le service TotalService avec la méthode inject(). Il ne reste plus qu’à le tester en lançant la commande:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;mocha-phantomjs -p chemin/vers/phantomjs/bin/phantomjs &lt;span class=&quot;nb&quot;&gt;test&lt;/span&gt;/TestRunner.html&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Ensuite le reste dépend de l’application, et tout est expliqué correctement sur les docs respectives de Mocha, Chai et PhantomJS. Je suis content d’y être finalement arrivé après plusieurs jours à me casser la tête pour faire marcher tout ça. J’ai notamment passé deux jours avec un ‘undefined is not a function’ de angular-mock. Je pense que si je dois me lancer dans un gros projet Web ce serait de faire une bibliothèque qui simplifie tout ça, par exemple un pack qui comprend Mocha, Chai, PhantomJS, et Angular Mock, avec une simple commande pour lancer tout ça, et avec de base un dossier d’exemple qu’il ne reste plus qu’à reprendre et modifier pour travailler.&lt;/p&gt;
+
+</description>
+				<pubDate>Sun, 08 Nov 2015 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html</guid>
+			</item>
+		
+			<item>
 				<title>Premiers pas avec Gaia (FirefoxOS)</title>
 				<description>&lt;p&gt;J’utilise tous les jours mon Open C avec Firefox OS dessus, depuis deux ans maintenant (plus ou moins).
 J’ai vu passer l’OS de la version 1.2 jusqu’à la version 3.0 d’aujourd’hui, si on omet la “nouvelle” branche 2.5 que je n’ai pas encore pu observer par moi-même.

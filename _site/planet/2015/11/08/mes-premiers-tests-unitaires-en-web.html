@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/bash_syntax.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/feeds.xml">Flux RSS</a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+<body>
+    <div class="contact_pop">
+  <div class="contact">
+    <ul>
+      <h1>Contact</h1>
+      <li>Mail: ilphrin@autistici.org</li>
+      <li>Lyon, France</li>
+      <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a></li>
+      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin</a></li>
+      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+    </ul>
+    <ul>
+      <h1>D'autres sites</h1>
+      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam <iframe src="//schoewilliam.fr" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre <iframe src="//la-vache-libre.org" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://planet-libre.org">Planet Libre <iframe sandbox="" src="//planet-libre.org" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR <iframe src="//firefoxos.mozfr.org/" scrolling="no"></iframe></a></li>
+    </ul>
+    <ul>
+      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
+      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+    </ul>
+  </div>
+  <div class="contact_arrow" onclick="contact_popup()">
+  <p>
+    Liens
+  </p>
+  </div>
+</div>
+
+    <div class="main">
+        <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/web.jpg');">
+        <time datetime="8 November 2015">
+          <h1> Mes premiers tests unitaires en Web </h1>
+          <p>
+            
+  
+    8
+
+
+novembre
+  
+2015
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>Dans le cadre de mon stage, je dois faire un outil de monitoring en Web pour afficher des statistiques sur des bases de données ElasticSearch. Nous avions carte blanche pour les technos à utiliser, l’organisation de l’outil, etc… L’outil en lui-même fonctionne, mais puisqu’il s’agit d’un stage (mon premier en plus), il y a tout interêt à solidifer cet outil et en profiter pour apprendre le plus de technos possibles.</p>
+
+<!--break-->
+
+<p>Dans cette optique, je me suis lancé dans l’idée de rajouter des tests unitaires pour aider au développement futur de notre outil de monitoring. Je n’ai jamais fait de tests unitaires (je suis étudiant ne me jetez pas de pierres tout de suite ;) ), c’était donc l’occasion d’apprendre à en faire. Après avoir regardé à droite et à gauche sur le net, mon attention s’est fixé sur la combinaison PhantomJS + Mocha + Chai. Donc pour ceux qui ne connaissent pas:</p>
+
+<ul>
+  <li><a href="http://phantomjs.org">PhantomJS</a> est un moteur de rendu web basé sur WebKit, et se comporte comme un navigateur web. A la différence qu’il servira non pas à aller regarder les derniers gifs sur 9gag mais à lancer du code Javascript. Le site web donne un aperçu de ce qu’il est possible de faire avec.</li>
+  <li><a href="https://mochajs.org">Mocha</a> est un framework de test unitaires en Javascript. Il semble avoir toutes les fonctionalités qu’on peut éspérer pour un framework de test et il est largement utilisé donc dispose d’une bonne communauté pour répondre à la plupart des questions que l’on pourrait se poser.</li>
+  <li><a href="http://chaijs.com">Chai</a> est une librairie d’assertion. On pourrait penser que Mocha en aurait une mais ce n’est pas le cas, en fait Mocha va servir pour tout ce qui n’est pas une assertion, et nous laissont ce dernier aux mains de Chai.</li>
+</ul>
+
+<p>Pour information, l’outil web utilise le Framework AngularJS. Donc il faut que tout ce gros bazar fonctionne pour tester mes controlleurs, mes services, etc… Et je puis vous dire que ça a été un beau gros casse tête, c’est un point que je déteste dans le web c’est cet éparpillement d’outils dans tous les sens et pour tout et n’importe quel utilisation. Et plus il y a d’outils plus c’est difficile de mettre de l’ordre dans ce qu’on fait et de maitriser ce qu’il se passe. M’enfin c’est un autre sujet.</p>
+
+<p>Et donc pour que les trois outils, cités plus haut, fonctionnent avec une application AngularJS, il faut rajouter à la liste Angular Mocks, qui permet d’injecter des modules/services et autres pour des tests unitaires.</p>
+
+<p>Dans un fichier html, on inclu tout ça comme ci-dessous (et dans cet ordre, sinon tout se casse):</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./node_modules/mocha/mocha.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./node_modules/chai/chai.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="nx">mocha</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="s1">&#39;bdd&#39;</span><span class="p">);</span>
+  <span class="nx">mocha</span><span class="p">.</span><span class="nx">reporter</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">);</span>
+<span class="nt">&lt;/script&gt;</span>
+
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;angular-mock.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;test/tests.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="nt">&lt;script&gt;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">mochaPhantomJS</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">mochaPhantomJS</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+  <span class="p">}</span>
+  <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">mocha</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+  <span class="p">}</span>
+<span class="nt">&lt;/script&gt;</span></code></pre></div>
+
+<p>J’ai installé Mocha et Chai par le biais de Node Package Manager (npm), PhantomJS a été compilé à la main (c’est super long je vous préviens), et avec npm toujours j’ai installé mocha-phantomjs, qui permet de faire fonctionner les deux ensembles.</p>
+
+<p>Une fois tout cela en place on va pouvoir commencer à écrire les tests unitaires dans le fichier tests.js. Mon but est de tester les fonctionalités de mon Service AngularJS, qui contient la quasi-totalité des fonctions de mon applications. J’appelle ici mon module ‘monitoring’ et mon service ‘totalService’.</p>
+
+<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">expect</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">expect</span><span class="p">;</span>
+<span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">assert</span><span class="p">;</span>
+
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;monitoring&#39;</span><span class="p">);</span>
+
+<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;totalService&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="nx">module</span><span class="p">(</span><span class="s1">&#39;monitoring&#39;</span><span class="p">);</span>
+
+    <span class="nx">inject</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">_totalService_</span><span class="p">,</span> <span class="nx">_$resource_</span><span class="p">,</span> <span class="nx">_$location_</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">totalService</span> <span class="o">=</span> <span class="nx">_totalService_</span><span class="p">;</span>
+      <span class="nx">$resource</span> <span class="o">=</span> <span class="nx">_$resource_</span><span class="p">;</span>
+      <span class="nx">$location</span> <span class="o">=</span> <span class="nx">_$location_</span><span class="p">;</span>
+    <span class="p">});</span>
+  <span class="p">});</span>
+<span class="p">});</span></code></pre></div>
+
+<p>On initialise ici Chai et on injecte le module d’abord en lançant angular.module(‘monitoring’), puis dans le beforeEach avec module(‘monitoring’), ainsi que le service TotalService avec la méthode inject(). Il ne reste plus qu’à le tester en lançant la commande:</p>
+
+<div class="highlight"><pre><code class="language-sh" data-lang="sh">mocha-phantomjs -p chemin/vers/phantomjs/bin/phantomjs <span class="nb">test</span>/TestRunner.html</code></pre></div>
+
+<p>Ensuite le reste dépend de l’application, et tout est expliqué correctement sur les docs respectives de Mocha, Chai et PhantomJS. Je suis content d’y être finalement arrivé après plusieurs jours à me casser la tête pour faire marcher tout ça. J’ai notamment passé deux jours avec un ‘undefined is not a function’ de angular-mock. Je pense que si je dois me lancer dans un gros projet Web ce serait de faire une bibliothèque qui simplifie tout ça, par exemple un pack qui comprend Mocha, Chai, PhantomJS, et Angular Mock, avec une simple commande pour lancer tout ça, et avec de base un dossier d’exemple qu’il ne reste plus qu’à reprendre et modifier pour travailler.</p>
+
+
+  <div id="comments">
+	
+		<h1>Aucun commentaire</h1>
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/planet/2015/11/08/mes-premiers-tests-unitaires-en-web" />
+		<input type="hidden" name="return_url" value="http://ilphrin.com/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+		<input type="submit" name="submit" value="Envoyer ✔"/>
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Mes premiers tests unitaires en Web&url=/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+</body>
+</html>
