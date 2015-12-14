@@ -22,7 +22,7 @@
       <li><a href="/kevin/index.html">Blog</a></li>
       <li><a href="/kevin/project.html">Projets</a></li>
       <li><a href="/kevin/about.html">À propos</a></li>
-      <li><a href="/feeds.xml">Flux RSS</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
     </ul>
   </div>
 
@@ -33,15 +33,15 @@
     <div class="contact_pop">
   <div class="contact">
     <ul>
-      <h1>Contact</h1>
       <li>Mail: ilphrin@autistici.org</li>
       <li>Lyon, France</li>
-      <li><a target="_blank" href="https://www.github.com/Ilphrin">Github</a></li>
-      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'>Linkedin</a></li>
-      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/">Mozillian</a></li>
+    </ul>
+    <ul id="accounts">
+      <li><a target="_blank" href="https://www.github.com/Ilphrin"><img src="/images/links/github.png"></img></a></li>
+      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'><img src="/images/links/linkedin-icon.png"></img></a></li>
+      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/"><img src="/images/links/firefoxos.png"></img></a></li>
     </ul>
     <ul>
-      <h1>D'autres sites</h1>
       <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam <iframe src="//schoewilliam.fr" scrolling="no"></iframe></a></li>
       <li><a target="_blank" href="http://la-vache-libre.org">La vache libre <iframe src="//la-vache-libre.org" scrolling="no"></iframe></a></li>
       <li><a target="_blank" href="http://planet-libre.org">Planet Libre <iframe sandbox="" src="//planet-libre.org" scrolling="no"></iframe></a></li>
@@ -63,19 +63,19 @@
           <div class="header_blog">
   
     
-      <div class="header_blog_title"  style="background-image: url('/images/header_articles/web.jpg');">
+      <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
         <div class="header_blog_title">
         <time datetime="">
-          <div class="shad-effect">
-            <h1><a href="/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html">Mes premiers tests unitaires en Web</a></h1>
+          <div>
+            <h1><a href="/2015/12/14/pourquoi-je-ne-veux-pas-feter-noel.html">Pourquoi je ne veux pas fêter Noël...</a></h1>
           </div>
           
   
-    8
+    14
 
 
-novembre
-  
+décembre
+
 2015
 
          </time>
@@ -126,6 +126,26 @@ novembre
   
     
       <div class="post">
+        <h2><a href="/2015/12/14/pourquoi-je-ne-veux-pas-feter-noel.html">Pourquoi je ne veux pas fêter Noël...</a></h2>
+        <p>…comme tout le monde. Qu’est-ce que Noël à la base? Alors je vais pas me lancer dans une prose explicative sur le pourquoi du comment, mais pour le minimum de contexte je vais en parler un peu. Noël est une fëte chrétienne pour célébrer la naissance de Jésus. À cette occasion, en occident principalement, il est coutume de faire preuve de générosité, d’empathie, de bonté, etc. Bref, c’est Noël soyez cool!</p>
+
+
+      </div>
+    
+  
+    
+      <div class="post">
+        <h2><a href="/planet/2015/12/08/livres-et-musiques-libres.html">Livres et musiques libres</a></h2>
+        <p>La musique et les livres font partie de mon quotidien depuis très longtemps, je ne peux pas faire quelque chose sans écouter un peu de musique dans mon casque ou prendre les transports en commun sans me balader avec quelque chose à lire.</p>
+
+<p>Et depuis que je connais la licence Creative Commons, je cherche ce qu’il se fait dans le domaine de la licence libre à ce sujet, du coup je me suis dit que la moindre des choses était de parler autour de moi de ceux qui m’ont plu et marqués</p>
+
+
+      </div>
+    
+  
+    
+      <div class="post">
         <h2><a href="/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html">Mes premiers tests unitaires en Web</a></h2>
         <p>Dans le cadre de mon stage, je dois faire un outil de monitoring en Web pour afficher des statistiques sur des bases de données ElasticSearch. Nous avions carte blanche pour les technos à utiliser, l’organisation de l’outil, etc… L’outil en lui-même fonctionne, mais puisqu’il s’agit d’un stage (mon premier en plus), il y a tout interêt à solidifer cet outil et en profiter pour apprendre le plus de technos possibles.</p>
 
@@ -157,24 +177,6 @@ Je met fréquemment a jour mon téléphone grâce au travail considérable de la
   <li>Le lien en bas pour le code du site sur Github dirige maintenant vers le dépot récemment crée. Je ne me suis pas vraiment cassé la tête a commenter les layouts ou a faire les choses de façon propre. Déjà parce que c’est la première fois que je fais un site complet donc je n’ai pas toutes les bonnes habitudes, et ensuite parce que ce n’est pas la peine je pense de détailler puisqu’il suffit de comprendre l’organisation de façon globale. (Et puis il y a beaucoup de choses qui sont inspirées de code trouvé sur l’Internet donc mieux documentés que par moi).</li>
   <li>Si vous avez regardé le dépôt vous avez pu remarquer que mon CV est sur le site, mais que je n’ai mis aucun lien pour l’afficher. C’est volontaire. Si vous souhaitez vraiment le voir il est a http://ilphrin.com/kevin/CV_en.pdf, je compte ne faire que passer le lien sur mon compte Linkedin ou dans mes cartes de visite, je ne crois pas que ce soit la peine de prendre un bout de place sur le site pour ça.</li>
 </ul>
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/planet/2015/09/21/topo-de-mes-plugins-vim-02.html">Topo de mes plugins Vim - 02</a></h2>
-        <p>Les plugins c’est vraiment le top, alors dans Vim je vous en parle même pas, c’est comme rajouter des animations CSS, si je ne fait pas attention j’en rajoute un peu partout! Depuis la dernière fois j’ai rajouté quelque plugins qui ne révolutionnent pas mon utilisation de Vim, mais restent quand même un petit plus agréable. Du coup aujourd’hui ça va être plus court mais il y aura plus de monde ;)</p>
-
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/planet/2015/09/16/topo-des-plugins-vim-01.html">Topo de mes plugins Vim - 01</a></h2>
-        <p>Au fil des mois de mes utilisations de Vim, je finis par emmagasiner un bon paquet de plugins, dont je me sers plus ou moins souvent selon ma capacité à me souvenir de leur existence dans mes dossier. Et le gros problème que j’ai avec ces plugins c’est que je pour beaucoup je ne me souviens jamais de comment ils fonctionnent de A à Z, et j’aime avoir une documentation complète pour me rappeler tout ça.</p>
-
 
       </div>
     
