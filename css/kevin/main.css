@@ -29,7 +29,7 @@ body a
   padding-left: 10%;
   padding-right: 10%;
   width: 80%;
-  font-size: 172%;
+  font-size: 147%;
   font-family: "Ubuntu", sans-serif;
   display: flex;
   flex-direction: column;
@@ -468,7 +468,6 @@ textarea, input
 {
   padding: 1px 10px 5px 10px;
   margin-top: 5px;
-  border-radius: 15px;
 }
 .even
 {
@@ -638,6 +637,11 @@ iframe {
     margin-right: 0px;
   }
 
+  .navigation
+  {
+    height: 60px;
+  }
+
   .post_home .title, .post_home .content
   {
     margin-left: 0px;
@@ -678,7 +682,13 @@ iframe {
 @media (max-width: 590px) {
   html
   {
-    font-size: 11px;
+    font-size: 13px;
+  }
+
+  .main
+  {
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .contact_arrow
