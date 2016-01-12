@@ -46,3 +46,57 @@ Si cete condition est elle aussi vérifiée, alors je change le contenu pour met
 J'aime vraiment cette capacité à faire rapidement des snippet dont le comportement n'est pas fixe, ça ouvre des possibilités pour se faciliter la vie qui sont très intéressante, si vous avez écrit des super snippet faites le moi savoir je suis toujours à l'affût de perles rares de ce genre ;)
 
 Bonne journée!
+
+###EDIT
+J'ai modifié grandement mon snippet, afin de gérer le niveau
+ d'indentation et le saut de ligne en cas de balise de bloc (comme \<body>). Pour cela j'ai changé l'expression régulière pour prendre tous les caractères avant la balise, pour les réutiliser.
+
+J'ai découpé un peu mon code python avec 3 fonctions supplémentaires:
+
+* needNewLine: Qui regarde si la balise que l'on veut taper fait parti d'un tableau, si c'est le cas c'est qu'il faudra faire des saut de ligne et mettre le cursor sur la ligne vide entre la balise ouvrante et la balise fermante.
+* makeBegTag: Me permet d'écrire la balise ouvrante, en prenant en mettant un saut de ligne si needNewLine renvoie 1. Dans ce cas là on rajoute une indentation correspondant à celle récupérée avec le match.group(1)
+* makeEndTag: Idem pour la balise fermante
+
+Du coup le code final ressemble maintenant à ça:
+{% highlight python %}
+
+global !p
+def notUniqueTag(value):
+  if value not in ["br", "link", "meta", "img", "hr"]:
+    return 1
+  return 0
+
+def needNewLine(value):
+  if value in ["body", "html", "head", "p", "section", "article", "style", "aside"]:
+    return 1
+  return 0
+
+def makeBegTag(a, b, indent):
+  if needNewLine(a):
+    return indent + "<" + a + b + ">\n" + indent + "  "
+  else:
+    return "<" + a + b + ">"
+
+def makeEndTag(a, indent):
+  if needNewLine(a):
+    return "\n" + indent + "<" + a + "/>"
+  else:
+    return "<" + a + "/>"
+endglobal
+
+snippet "(.*)<([a-z]+)(.*)>" "Tag" rA
+`!p
+a = match.group(2)
+b = match.group(3)
+indent = match.group(1)
+if not snip.c and notUniqueTag(a) and not b == "/":
+  snip.rv = makeBegTag(a, b, indent)
+elif not snip.c:
+  snip.rv = makeBegTag(a, b, indent)
+`$1`!p
+if not snip.c and notUniqueTag(a) and not b == "/":
+  snip.rv = makeEndTag(a, indent)
+`
+endsnippet
+
+{% endhighlight %}

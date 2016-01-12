@@ -42,10 +42,10 @@
       <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/"><img src="/images/links/firefoxos.png"></img></a></li>
     </ul>
     <ul>
-      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam <iframe src="//schoewilliam.fr" scrolling="no"></iframe></a></li>
-      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre <iframe src="//la-vache-libre.org" scrolling="no"></iframe></a></li>
-      <li><a target="_blank" href="http://planet-libre.org">Planet Libre <iframe sandbox="" src="//planet-libre.org" scrolling="no"></iframe></a></li>
-      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR <iframe src="//firefoxos.mozfr.org/" scrolling="no"></iframe></a></li>
+      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
+      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
+      <li><a target="_blank" href="http://planet-libre.org">Planet Libre </a></li>
+      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR</a></li>
     </ul>
     <ul>
       <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
@@ -116,6 +116,60 @@ décembre
 <p>J’aime vraiment cette capacité à faire rapidement des snippet dont le comportement n’est pas fixe, ça ouvre des possibilités pour se faciliter la vie qui sont très intéressante, si vous avez écrit des super snippet faites le moi savoir je suis toujours à l’affût de perles rares de ce genre ;)</p>
 
 <p>Bonne journée!</p>
+
+<h3 id="edit">EDIT</h3>
+<p>J’ai modifié grandement mon snippet, afin de gérer le niveau
+ d’indentation et le saut de ligne en cas de balise de bloc (comme &lt;body&gt;). Pour cela j’ai changé l’expression régulière pour prendre tous les caractères avant la balise, pour les réutiliser.</p>
+
+<p>J’ai découpé un peu mon code python avec 3 fonctions supplémentaires:</p>
+
+<ul>
+  <li>needNewLine: Qui regarde si la balise que l’on veut taper fait parti d’un tableau, si c’est le cas c’est qu’il faudra faire des saut de ligne et mettre le cursor sur la ligne vide entre la balise ouvrante et la balise fermante.</li>
+  <li>makeBegTag: Me permet d’écrire la balise ouvrante, en prenant en mettant un saut de ligne si needNewLine renvoie 1. Dans ce cas là on rajoute une indentation correspondant à celle récupérée avec le match.group(1)</li>
+  <li>makeEndTag: Idem pour la balise fermante</li>
+</ul>
+
+<p>Du coup le code final ressemble maintenant à ça:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="k">global</span> <span class="err">!</span><span class="n">p</span>
+<span class="k">def</span> <span class="nf">notUniqueTag</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">value</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;br&quot;</span><span class="p">,</span> <span class="s">&quot;link&quot;</span><span class="p">,</span> <span class="s">&quot;meta&quot;</span><span class="p">,</span> <span class="s">&quot;img&quot;</span><span class="p">,</span> <span class="s">&quot;hr&quot;</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">needNewLine</span><span class="p">(</span><span class="n">value</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">value</span> <span class="ow">in</span> <span class="p">[</span><span class="s">&quot;body&quot;</span><span class="p">,</span> <span class="s">&quot;html&quot;</span><span class="p">,</span> <span class="s">&quot;head&quot;</span><span class="p">,</span> <span class="s">&quot;p&quot;</span><span class="p">,</span> <span class="s">&quot;section&quot;</span><span class="p">,</span> <span class="s">&quot;article&quot;</span><span class="p">,</span> <span class="s">&quot;style&quot;</span><span class="p">,</span> <span class="s">&quot;aside&quot;</span><span class="p">]:</span>
+    <span class="k">return</span> <span class="mi">1</span>
+  <span class="k">return</span> <span class="mi">0</span>
+
+<span class="k">def</span> <span class="nf">makeBegTag</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">needNewLine</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">indent</span> <span class="o">+</span> <span class="s">&quot;&lt;&quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="s">&quot;&gt;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">+</span> <span class="n">indent</span> <span class="o">+</span> <span class="s">&quot;  &quot;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">&quot;&lt;&quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="s">&quot;&gt;&quot;</span>
+
+<span class="k">def</span> <span class="nf">makeEndTag</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">indent</span><span class="p">):</span>
+  <span class="k">if</span> <span class="n">needNewLine</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span> <span class="s">&quot;</span><span class="se">\n</span><span class="s">&quot;</span> <span class="o">+</span> <span class="n">indent</span> <span class="o">+</span> <span class="s">&quot;&lt;&quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot;/&gt;&quot;</span>
+  <span class="k">else</span><span class="p">:</span>
+    <span class="k">return</span> <span class="s">&quot;&lt;&quot;</span> <span class="o">+</span> <span class="n">a</span> <span class="o">+</span> <span class="s">&quot;/&gt;&quot;</span>
+<span class="n">endglobal</span>
+
+<span class="n">snippet</span> <span class="s">&quot;(.*)&lt;([a-z]+)(.*)&gt;&quot;</span> <span class="s">&quot;Tag&quot;</span> <span class="n">rA</span>
+<span class="err">`!</span><span class="n">p</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">indent</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">snip</span><span class="o">.</span><span class="n">c</span> <span class="ow">and</span> <span class="n">notUniqueTag</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">b</span> <span class="o">==</span> <span class="s">&quot;/&quot;</span><span class="p">:</span>
+  <span class="n">snip</span><span class="o">.</span><span class="n">rv</span> <span class="o">=</span> <span class="n">makeBegTag</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">indent</span><span class="p">)</span>
+<span class="k">elif</span> <span class="ow">not</span> <span class="n">snip</span><span class="o">.</span><span class="n">c</span><span class="p">:</span>
+  <span class="n">snip</span><span class="o">.</span><span class="n">rv</span> <span class="o">=</span> <span class="n">makeBegTag</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">indent</span><span class="p">)</span>
+<span class="sb">`$1`</span><span class="err">!</span><span class="n">p</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">snip</span><span class="o">.</span><span class="n">c</span> <span class="ow">and</span> <span class="n">notUniqueTag</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">b</span> <span class="o">==</span> <span class="s">&quot;/&quot;</span><span class="p">:</span>
+  <span class="n">snip</span><span class="o">.</span><span class="n">rv</span> <span class="o">=</span> <span class="n">makeEndTag</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">indent</span><span class="p">)</span>
+<span class="err">`</span>
+<span class="n">endsnippet</span></code></pre></div>
+
 
   <div id="comments">
 	

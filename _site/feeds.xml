@@ -7,6 +7,40 @@
 		<atom:link href="http://ilphrin.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Ce que j&#39;ai appris avec Gaia</title>
+				
+					<description>&lt;p&gt;Cela fait un moment que je n’ai pas parlé de Gaia, depuis la dernière fois où j’expliquais mon envie de bosser sur FirefoxOS, et ce que j’ai entrepris pour y contribuer au niveau du code. Je viens de finir de corriger mon premier bug, et il a été ajouté au code de la branche principale de FirefoxOS. Je me suis donc dit qu’un petit debrief sur ce que j’ai appris me permettrai de revoir un peu tout ça et notamment de réfléchir à la suite.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Si je devais résumer en deux mots ce que j’ai appris ce qui me viendrais là tout de suite à l’esprit c’est: Git et Tests.&lt;/p&gt;
+
+&lt;p&gt;La plus grande difficulté quand on corrige un bug ce n’est pas tant la correction en elle-même pour des bugs de cette catégorie. Mais plutôt de se poser la question suivante: “Est-ce que ce que j’ai rajouté ou enlevé à un impact sur le code qui nécessite une modification ailleurs?”. Et dans mon cas la réponse à été un grand OUI (sinon je n’écrirais pas cet article ;) ). La correction du bug à été très simple, je vous montre le code espacé par deux lignes avant et après la modif:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NotificationHelper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getIconURI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;?titleID=&amp;#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;
+
+
+&lt;span class=&quot;nx&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NotificationHelper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getIconURI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Jusque là, rien de bien compliqué. En fait là où des modifications devenaient nécessaire, c’est au niveau des tests unitaires. Il fallait modifier la façon dont les tests étaient fait pour ces variables, ce qui à conduit à modifer d’autres éléments, et ainsi de suite.&lt;/p&gt;
+
+&lt;p&gt;Et sans l’aide du système de mentoring je n’aurais jamais vu qu’il fallait faire ces changements!&lt;/p&gt;
+
+&lt;p&gt;Du coup j’ai dû apprendre à utiliser l’outil de tests unitaires de Gaia pour vérifier à chacune de mes modifications si les tests étaient fonctionnels. Cela peut paraître normal pour un développeur affirmé quelle que soit la catégorie, mais je ne suis qu’un jeune étudiant. Ce bug est ma toute première véritable contribution à du code dans le monde du logiciel libre. Du coup j’ai perdu un bon paquet de temps à comprendre ça 8)&lt;/p&gt;
+
+&lt;p&gt;Ensuite est survenu un deuxième problème bien plus long et embêtant: Ma faible connaissance dans Git. Alors oui je l’utilise constamment pour tous les projets à rendre à Epitech, mais ça ne fait pas de moi un utilisateur avancé bien au contraire! Je ne suis jamais allé plus loin qu’un git commit -am “coucou” suivi d’un git push!&lt;/p&gt;
+
+&lt;p&gt;Il a fallu donc tout que j’apprenne sur le système de branche, de merge, et autres joyeusetés qui forment ce CVS. Et c’est surement de ce coté-là que j’ai le plus appris car c’est là que j’ai fais le plus d’erreurs! (qui m’ont obligé d’ailleurs à faire 3 Pull Request sur Github avant que tout soit fonctionnel)&lt;/p&gt;
+
+&lt;p&gt;Problème ou pas problème, je vais m’y remettre dès que la période de piscine de C++ d’Epitech est terminée. Car avec le système de mentoring de bug pour les débutants comme moi, on peut facilement s’intégrer et se faire aider par un mentor de bug, dans mon cas  azasypkin (qui à fait preuve d’une grande patience avec moi x) ), et ça m’a beaucoup motivé et donné envie de continuer!&lt;/p&gt;
+</description>
+				<pubDate>Sat, 02 Jan 2016 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2016/01/02/ce-que-j-ai-appris-avec-gaia.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/01/02/ce-que-j-ai-appris-avec-gaia.html</guid>
+			</item>
+		
+			<item>
 				<title>Ultisnips: Autocomplétion HTML</title>
 				
 					<description>&lt;p&gt;Pour ceux qui ne le savent pas, Ultisnips est un plugin pour Vim/NeoVim qui permet de créer des snippets. C’est l’outil le plus puissant de création de snippet que j’ai pu voir jusque maintenant, tout éditeur confondu. Les possibilités offertes par ce plugin sont immense, alors qu’il est très simple d’utilisation, a partir du moment où l’on sait exactement ce que l’on veut faire.&lt;/p&gt;
@@ -47,44 +81,64 @@
 &lt;p&gt;J’aime vraiment cette capacité à faire rapidement des snippet dont le comportement n’est pas fixe, ça ouvre des possibilités pour se faciliter la vie qui sont très intéressante, si vous avez écrit des super snippet faites le moi savoir je suis toujours à l’affût de perles rares de ce genre ;)&lt;/p&gt;
 
 &lt;p&gt;Bonne journée!&lt;/p&gt;
+
+&lt;h3 id=&quot;edit&quot;&gt;EDIT&lt;/h3&gt;
+&lt;p&gt;J’ai modifié grandement mon snippet, afin de gérer le niveau
+ d’indentation et le saut de ligne en cas de balise de bloc (comme &amp;lt;body&amp;gt;). Pour cela j’ai changé l’expression régulière pour prendre tous les caractères avant la balise, pour les réutiliser.&lt;/p&gt;
+
+&lt;p&gt;J’ai découpé un peu mon code python avec 3 fonctions supplémentaires:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;needNewLine: Qui regarde si la balise que l’on veut taper fait parti d’un tableau, si c’est le cas c’est qu’il faudra faire des saut de ligne et mettre le cursor sur la ligne vide entre la balise ouvrante et la balise fermante.&lt;/li&gt;
+  &lt;li&gt;makeBegTag: Me permet d’écrire la balise ouvrante, en prenant en mettant un saut de ligne si needNewLine renvoie 1. Dans ce cas là on rajoute une indentation correspondant à celle récupérée avec le match.group(1)&lt;/li&gt;
+  &lt;li&gt;makeEndTag: Idem pour la balise fermante&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Du coup le code final ressemble maintenant à ça:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;global&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;notUniqueTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;br&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;link&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;meta&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;img&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;hr&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;needNewLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;value&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;body&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;html&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;head&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;p&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;section&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;article&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;style&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;aside&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makeBegTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needNewLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;gt;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;  &amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;gt;&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;makeEndTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;needNewLine&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/&amp;gt;&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;&amp;lt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/&amp;gt;&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;endglobal&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;snippet&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;(.*)&amp;lt;([a-z]+)(.*)&amp;gt;&amp;quot;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Tag&amp;quot;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rA&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;`!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;match&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;snip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;notUniqueTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;snip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;makeBegTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;elif&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;snip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;snip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;makeBegTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;sb&quot;&gt;`$1`&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;!&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;snip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;notUniqueTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;not&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;/&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;n&quot;&gt;snip&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rv&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;makeEndTag&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;indent&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;`&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;endsnippet&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
 </description>
 				<pubDate>Wed, 16 Dec 2015 00:00:00 +0100</pubDate>
 				<link>http://ilphrin.com/planet/2015/12/16/ultisnips-autocompletion-html.html</link>
 				<guid isPermaLink="true">http://ilphrin.com/planet/2015/12/16/ultisnips-autocompletion-html.html</guid>
-			</item>
-		
-			<item>
-				<title>Pourquoi je ne veux pas fêter Noël...</title>
-				
-					<description>&lt;p&gt;…comme tout le monde. Qu’est-ce que Noël à la base? Alors je vais pas me lancer dans une prose explicative sur le pourquoi du comment, mais pour le minimum de contexte je vais en parler un peu. Noël est une fëte chrétienne pour célébrer la naissance de Jésus. À cette occasion, en occident principalement, il est coutume de faire preuve de générosité, d’empathie, de bonté, etc. Bref, c’est Noël soyez cool!&lt;/p&gt;
-
-&lt;!--break--&gt;
-
-&lt;p&gt;Sauf que voilà, moi j’en ai un peu marre chaque année de fêter Noël. En disant ça on m’a donné tous les argument possibles et imaginables: “Oh mais arrête toi, tu racontes encore des bêtises de jeune, on offrira juste des sous comme ça t’en fera ce que tu veux”, “Bah attends Kevin c’est la base c’est Noël on le fête en famille on s’offre des choses c’est tout c’est comme ça”, etc, etc. Il y a un point commun dans toutes les phrases que l’on m’a dites, on me parle toujours de cadeau.&lt;/p&gt;
-
-&lt;p&gt;Mais vraiment tout le temps en fait. De nos jours tous les français râlent parce qu’ils n’ont plus d’argent, que leur pouvoir d’achat baisse, mais a Noêl tu doit te faire offrir un nouveau casque audio, des nouveaux livres, tu dois penser aux enfants les pauvres ils vont pas comprendre s’ils n’ont pas de jouets pendant que les adultes ouvrent leur cadeaux.&lt;/p&gt;
-
-&lt;p&gt;Et quand ce ne sont pas les proches qui rabachent sans arrêt ce genre de réponse, j’en prends plein les yeux dès que je sors boire un verre à Lyon ou même en chemin pour mon trajet quotidien. “Vous voulez faire plaisir a vos proches? Offrez-leur le dernier…”. En fait si on n’offre rien on nous culpabilise, d’une part par toutes les ensignes qui nous font du bourrage de cräne, et si ce n’est pas assez, par la famille et/ou les amis pour être un egoiste.&lt;/p&gt;
-
-&lt;p&gt;On pourrait dire que je trouve tout ça juste trop commercial, mais ça va plus loin que ça. C’est devenu malsain. Ou est le plaisir d’avoir un cadeau? Les plus beaux cadeaux que j’ai reçu de ma vie, sont ceux qui m’ont été fait par surprise, par une personne qui me connaissait bien et qui voulait sincèrement me faire plaisir, et ce en dehors de toute occasion spéciale, juste comme ça. A Noël il n’y a rien de tout ça, on demande avidement avec sa liste de Noël ce qu’on aimerait avoir, et à Noël oh tiens! Surprise! C’est ce que je t’avais demandé il y a une semaine quand tu m’as appelé pour savoir ce que je voulais pour Noël!&lt;/p&gt;
-
-&lt;p&gt;Et le pire c’est que je suis loin d’être le seul a râler à cause de Noël, on entends souvent que tel ou tel ami arrête pas de courir parce qu’il s’y est pris au dernier moment, que maman ou mamie arrête pas de faire les courses pour le banquet de Noël, que c’est la galère pour faire ses courses normalement à Carrefour parce qu’il y a pleins de gens qui sont là pour leur cadeaux, plus de place dans les parkings, les files d’attentes, etc.&lt;/p&gt;
-
-&lt;p&gt;Mais, personne ne va se dire “tiens on va pas un peu trop loin?”, généralement pour Noël je passe deux fêtes, une avec la famille “du coté de ma mère”, et l’autre avec la famille “du coté de mon père”. Et bien autant ce dernier j’y prends plaisir, autant le premier beaucoup moins. Je ne vois qu’une fois l’an la famille du coté de mon père, tantes, cousins, &amp;amp; co. Et quand on se voit la fête est très centrée sur l’esprit de Noël, il y a une petite crèche, on met des chants de Noël doucement en fond, on mange une dinde, et on se raconte les nouvelles depuis l’année dernières.&lt;/p&gt;
-
-&lt;p&gt;Ensuite vient le moment d’ouvrir les cadeaux, il y a peu de cadeaux mais ils sont souvent sympa (ou très bizarres :D), comme la ceinture qu’on m’avait offert, que je porte toujours car elle est géniale. La famille du coté de ma mère, plutôt frangins, frangine, &amp;amp; co toujours (mais qui est ce co?!), et généralement on se pose, on commence grignoter tout un tas de choses, on dépose rapidement les cadeaux de Noël en faisant croire aux petits que le papa Noël est passé pendant qu’ils jouaient dans la chambre.&lt;/p&gt;
-
-&lt;p&gt;Ensuite on ouvre les cadeaux, on fais mumuse. Ça dure une demi heure, et on retourne manger. Une année sur deux ça finit en engueulade, agrementée d’un trop d’alcool, moi je qui me retrouve à essayer de contenir les enfants le temps que ça se tasse, et en plus j’ai souvent trop mangé (même si j’avoue que je mange très bien généralement). Grosse ambiance. Et les cadeaux dans tout ça? Les jouets amuseront les enfants pendants 6 mois, de préférence des jouets bruyant. Et souvent très sexistes, les poupées pour les filles, et les voiture et camion de policier pour les garçons, mais ne parlons pas de choses qui fâchent. Les autres cadeaux a part de rares exceptions ne dureront pas bien longtemps.&lt;/p&gt;
-
-&lt;p&gt;Pour la simple et bonne raison qu’il y a trop de cadeaux à faire à tout le monde, alors il faut faire des petits cadeaux, des petits gadgets qui dureront pas bien longtemps mais qui vont faire marrer cinq minutes. Ça vaut vraiment la peine de passer des jours dans les supermarchés pour 5 minute de rigolade? Moi je n’ai jamais aimé faire les courses de Noël, et je ne pense pas être le seul.&lt;/p&gt;
-
-&lt;p&gt;Enfin bon, fallait que ça sorte ;) Voilà pourquoi je ne veux pas fêter Noël comme tout le monde, en fait je vais surement le fêter encore cette année, mais les années prochaines il n’en sera rien, je pensais déjà cette année aller donner un coup de main aux restos du coeur, ça me trotte toujours dans la tête d’ailleurs, mais les prochaines années je ne réfléchit même pas j’irais donner des coups de mains à chaque Noël. En tout cas ce qui est sûr c’est que:&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/fk_yeah.jpg&quot; alt=&quot;Fk yeah!&quot; /&gt;&lt;/p&gt;
-</description>
-				<pubDate>Mon, 14 Dec 2015 00:00:00 +0100</pubDate>
-				<link>http://ilphrin.com/2015/12/14/pourquoi-je-ne-veux-pas-feter-noel.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2015/12/14/pourquoi-je-ne-veux-pas-feter-noel.html</guid>
 			</item>
 		
 			<item>
@@ -1459,7 +1513,7 @@ Toutefois le site est entièrement en Anglais (mais bon si vous voulez faire de 
 			</item>
 		
 			<item>
-				<title>Encore du jeu à l'ancienne - PS1 &amp; Chromium-bsu</title>
+				<title>Encore du jeu à l&#39;ancienne - PS1 &amp; Chromium-bsu</title>
 				
 					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
 
@@ -1553,7 +1607,7 @@ Pour moi ce guide est juste superbe. Il est relativement court, très agréable 
 			</item>
 		
 			<item>
-				<title>Les vieux jeux sont toujours d'actualité</title>
+				<title>Les vieux jeux sont toujours d&#39;actualité</title>
 				
 					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
 
@@ -1957,7 +2011,7 @@ cd build &amp;amp;&amp;amp; sudo make install
     &lt;p&gt;name= ‘‘Multimédia ‘’ Correspond au nom donné a la tarte, ici c’est Multimédia (plus quelques caractères pour gérer l’accent du ‘‘é’’ ).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;'’id=831’’ Bon alors celui-ci je dois avouer que je ne saurais l’utiliser correctement. Je ne sais non plus comment il fonctionne (si quelqu’un peut me le dire d’ailleurs ce serait cool x) ).&lt;/p&gt;
+    &lt;p&gt;&#39;’id=831’’ Bon alors celui-ci je dois avouer que je ne saurais l’utiliser correctement. Je ne sais non plus comment il fonctionne (si quelqu’un peut me le dire d’ailleurs ce serait cool x) ).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;icon=’‘stock_media-play’’ Là il vous est possible de choisir votre icône. Soit c’est une icône système auquel cas vous pouvez directement entrer son nom, ou alors vous écrivez le chemin (de préférence le chemin absolu) pour y accéder.&lt;/p&gt;
@@ -1972,7 +2026,7 @@ cd build &amp;amp;&amp;amp; sudo make install
 &lt;pre&gt;&lt;code&gt;&amp;lt;slice type=&quot;key&quot; name=&quot;Piste Suivante&quot; icon=&quot;stock_media-next&quot; command=&quot;XF86AudioNext&quot; quickAction=&quot;true&quot;/&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;p&gt;Alors là à l’inverse des balises &lt;pie&gt; et &amp;lt; /pie&amp;gt; la balise &amp;lt; slice /&amp;gt; est dite orpheline, car elle se termine sur la même balise qui l'à commencé (on peut le voir notamment avec le '/' a la fin). Littéralement slice en français veut dire 'part' comme...part de tarte ! C'est bien fait n'est-ce pas ^^&lt;/pie&gt;&lt;/p&gt;
+&lt;p&gt;Alors là à l’inverse des balises &lt;pie&gt; et &amp;lt; /pie&amp;gt; la balise &amp;lt; slice /&amp;gt; est dite orpheline, car elle se termine sur la même balise qui l&#39;à commencé (on peut le voir notamment avec le &#39;/&#39; a la fin). Littéralement slice en français veut dire &#39;part&#39; comme...part de tarte ! C&#39;est bien fait n&#39;est-ce pas ^^&lt;/pie&gt;&lt;/p&gt;
 
 &lt;p&gt;Bon passons au découpage de cette balise :&lt;/p&gt;
 

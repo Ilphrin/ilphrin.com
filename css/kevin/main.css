@@ -189,12 +189,12 @@ a, a:visited
 .main
 {
   line-height: 150%;
-  width: 84%;
+  width: 75%;
   padding-top: 4%;
   padding-bottom: 20px;
   padding-left: 3%;
   padding-right: 3%;
-  margin-left: 5%;
+  margin-left: 15%;
   margin-bottom: -20px;
   text-align: justify;
   font-family: "Open", sans-serif;
@@ -404,10 +404,6 @@ pre
   margin-right: auto;
   text-shadow: 4px 4px 2px black;
   transition: text-shadow .3s;
-}
-
-.header_blog_title:hover h1 {
-  text-shadow: none;
 }
 
 .slash
@@ -628,6 +624,12 @@ iframe {
     width: 100%;
   }
 
+  .main
+  {
+    margin-left: 3%;
+    width: 84%;
+  }
+
   .header_blog_title h1 {
     width: 90%;
   }
@@ -705,5 +707,9 @@ iframe {
   {
     border-top: 40px solid transparent;
     border-bottom: 40px solid transparent;
+  }
+
+  #rss {
+    display: none;
   }
 }
