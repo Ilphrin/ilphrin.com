@@ -7,6 +7,32 @@
 		<atom:link href="http://ilphrin.com/feed.category.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Nouvelle version de Sunflower (0.3)</title>
+				<description>&lt;p&gt;J’avais déjà parlé de Sunflower il y a bien longtemps. Pour rappel, Sunflower est un logiciel de gestion de fichiers qui a la particularité de se concentrer sur une vue “jumelée”. C’est-à-dire avec deux panneaux de navigation. Le tout dans une interface sympatique et configurable à souhait.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Aujourd’hui est sortie une nouvelle version majeure: La 0.3! Parmi une très grande liste de nouveautés il y a celles-ci que je pourrait citer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ajout d’un bouton “Skip all” sur les fenêtres de dialogue.&lt;/li&gt;
+  &lt;li&gt;Ajout des raccourcis pour les menus.&lt;/li&gt;
+  &lt;li&gt;Gestion des fichiers .hidden pour les fichiers cachés.&lt;/li&gt;
+  &lt;li&gt;Support de la corbeille.&lt;/li&gt;
+  &lt;li&gt;Gestion de file d’attentes pour les opérations.&lt;/li&gt;
+  &lt;li&gt;Meilleure gestion des liens symboliques.&lt;/li&gt;
+  &lt;li&gt;Support de la séparation verticale.&lt;/li&gt;
+  &lt;li&gt;Plusieurs corrections de bugs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Et j’en passe un bon nombre. Toutes ces modifications sont visibles sur la page &lt;a href=&quot;https://github.com/MeanEYE/Sunflower/releases/tag/0.3-60&quot;&gt;Github du projet.&lt;/a&gt; Allez voir un peu ce que ça vaut, ce projet mérite vraiment le coup d’oeil ;)&lt;/p&gt;
+</description>
+				<pubDate>Mon, 18 Jan 2016 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2016/01/18/nouvelle-version-de-sunflower.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/01/18/nouvelle-version-de-sunflower.html</guid>
+			</item>
+		
+			<item>
 				<title>Ce que j&#39;ai appris avec Gaia</title>
 				<description>&lt;p&gt;Cela fait un moment que je n’ai pas parlé de Gaia, depuis la dernière fois où j’expliquais mon envie de bosser sur FirefoxOS, et ce que j’ai entrepris pour y contribuer au niveau du code. Je viens de finir de corriger mon premier bug, et il a été ajouté au code de la branche principale de FirefoxOS. Je me suis donc dit qu’un petit debrief sur ce que j’ai appris me permettrai de revoir un peu tout ça et notamment de réfléchir à la suite.&lt;/p&gt;
 

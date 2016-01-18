@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/bash_syntax.css">
+  <script src="/js/nav.js"> </script>
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="right shad-effect">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">À propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
+    </ul>
+  </div>
+
+</div>
+
+
+<body>
+    <div class="contact_pop">
+  <div class="contact">
+    <ul>
+      <li>Mail: ilphrin@autistici.org</li>
+      <li>Lyon, France</li>
+    </ul>
+    <ul id="accounts">
+      <li><a target="_blank" href="https://www.github.com/Ilphrin"><img src="/images/links/github.png"></img></a></li>
+      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'><img src="/images/links/linkedin-icon.png"></img></a></li>
+      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/"><img src="/images/links/firefoxos.png"></img></a></li>
+    </ul>
+    <ul>
+      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
+      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
+      <li><a target="_blank" href="http://planet-libre.org">Planet Libre </a></li>
+      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR</a></li>
+    </ul>
+    <ul>
+      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
+      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
+    </ul>
+  </div>
+  <div class="contact_arrow" onclick="contact_popup()">
+  <p>
+    Liens
+  </p>
+  </div>
+</div>
+
+    <div class="main">
+        <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/sunflower.jpg');">
+        <time datetime="18 January 2016">
+          <h1> Nouvelle version de Sunflower (0.3) </h1>
+          <p>
+            
+  
+    18
+
+
+janvier
+  
+2016
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <p>J’avais déjà parlé de Sunflower il y a bien longtemps. Pour rappel, Sunflower est un logiciel de gestion de fichiers qui a la particularité de se concentrer sur une vue “jumelée”. C’est-à-dire avec deux panneaux de navigation. Le tout dans une interface sympatique et configurable à souhait.</p>
+
+<!--break-->
+
+<p>Aujourd’hui est sortie une nouvelle version majeure: La 0.3! Parmi une très grande liste de nouveautés il y a celles-ci que je pourrait citer:</p>
+
+<ul>
+  <li>Ajout d’un bouton “Skip all” sur les fenêtres de dialogue.</li>
+  <li>Ajout des raccourcis pour les menus.</li>
+  <li>Gestion des fichiers .hidden pour les fichiers cachés.</li>
+  <li>Support de la corbeille.</li>
+  <li>Gestion de file d’attentes pour les opérations.</li>
+  <li>Meilleure gestion des liens symboliques.</li>
+  <li>Support de la séparation verticale.</li>
+  <li>Plusieurs corrections de bugs.</li>
+</ul>
+
+<p>Et j’en passe un bon nombre. Toutes ces modifications sont visibles sur la page <a href="https://github.com/MeanEYE/Sunflower/releases/tag/0.3-60">Github du projet.</a> Allez voir un peu ce que ça vaut, ce projet mérite vraiment le coup d’oeil ;)</p>
+
+  <div id="comments">
+	
+		<h1>Aucun commentaire</h1>
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/planet/2016/01/18/nouvelle-version-de-sunflower" />
+		<input type="hidden" name="return_url" value="http://ilphrin.com/planet/2016/01/18/nouvelle-version-de-sunflower.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+		<input type="submit" name="submit" value="Envoyer ✔"/>
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+  <h3>Share</h3>
+  <a href="http://sharetodiaspora.github.io/?title=Nouvelle version de Sunflower (0.3)&url=/planet/2016/01/18/nouvelle-version-de-sunflower.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+  </div>
+</div>
+
+    </div>
+</body>
+</html>
