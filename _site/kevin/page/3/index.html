@@ -5,7 +5,8 @@
   <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/bash_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
   <script src="/js/nav.js"> </script>
   <title>
     Kevin / Ilphrin
@@ -63,15 +64,15 @@
           <div class="header_blog">
   
     
-      <div class="header_blog_title"  style="background-image: url('/images/header_articles/sunflower.jpg');">
+      <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
         <div class="header_blog_title">
         <time datetime="">
           <div>
-            <h1><a href="/planet/2016/01/18/nouvelle-version-de-sunflower.html">Nouvelle version de Sunflower (0.3)</a></h1>
+            <h1><a href="/planet/2016/01/28/generation-de-c++-en-plugin-neovim-avec-clang.html">Génération de code C++ en plugin Neovim avec CLang</a></h1>
           </div>
           
   
-    18
+    28
 
 
 janvier
@@ -134,6 +135,14 @@ janvier
   
     
       <div class="post">
+        <h2><a href="/planet/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">Un nouveau blog tout beau avec Jekyll</a></h2>
+        <p>Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.
+
+      </div>
+    
+  
+    
+      <div class="post">
         <h2><a href="/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">Neobot un bot en ligne de commande pour les unix like</a></h2>
         <p>Salut tout le monde</p>
 
@@ -172,24 +181,6 @@ janvier
 <p>Depuis quelques temps sur diaspora* je demande un peu d’aide ou pose des questions par rapport à Firefox OS, car depuis le mois d’Aout j’ai fais la main base sur un Open C!</p>
 
 <p>Il faut savoir que depuis mon arrivé au lycée, il y a 4 ans, je suis resté avec un Samsung à clapet gris. Il me convenait très bien pour ce que j’en faisais, c’est-à-dire du sms en masse et très vite (j’enverrais une tartelette à la fraise au gars qui à inventé le T9) et puis c’est tout. Je ne m’intéressais absolument pas aux smartphones pour plusieurs raisons. La principale était le manque d’utilité que je pouvais accorder à ces gadgets. Pourquoi avoir une application pour lire mes mails quand je peux les lire des chez moi sous Thunderbird avec un écran qui me fasse pas plisser les yeux?
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html">Tuxle Triad et Pygame: Avoir une main</a></h2>
-        <p>Salut à tous!</p>
-
-<p>Me voilà aujourd’hui pour un deuxième article sur Pygame. Je vais cette fois-ci vous expliquer comment créer une “main” remplie de cartes tirées aléatoirement, et positionner les cartes dans la main.</p>
-
-<p>La dernière fois je vous avais expliqué comment fonctionnait un objet <strong>Card</strong>. Mais pour pouvoir jouer il en faudra plus d’une (ça risque d’être quelque peu ennuyant sinon ;) ). Ceux qui ont essayé le jeu savent combien de carte il faut, c’est-à-dire 5 par joueur. Pour faire ça nous allons utiliser tout simplement une liste. Dans la fonction <strong>__init__</strong> du fichier  game.py, on peut voir les deux lignes suivantes:</p>
-
-<pre><code>self.player1Hand = self.randomHand(1)
-
-self.player2Hand = self.randomHand(-1)
-</code></pre>
-
 
       </div>
     
