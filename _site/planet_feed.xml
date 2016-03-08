@@ -7,6 +7,43 @@
 		<atom:link href="http://ilphrin.com/feed.category.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Nyaovim le GUI Neovim avec Electron</title>
+				<description>&lt;p&gt;Voilà un projet dont j’avais plusieurs fois entendu parler mais sans jamais réellement me pencher dessus. Le seul défaut que je trouvais à Neovim c’est de ne pas avoir de GUI associé vraiment digne de ce nom, ce que je cherche est quelque chose de joli principalement mais aussi qui permette vraiment de profiter d’une interface graphique: prévisualisation, barre de défilement, bulle d’information et autre, etc…&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Et bien il s’avère qu’il existe un projet qui semble s’approcher pas mal de ce que je cherche dans l’architecture! Et ce projet s’appelle &lt;a href=&quot;https://github.com/rhysd/NyaoVim&quot;&gt;Nyaovim&lt;/a&gt; (Nya est l’équivalent de Miaou au Japon). C’est une interface graphique web pour Neovim, qui est utilisé comme application pc grâce à Electron.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;electron.atom.io&quot;&gt;Electron&lt;/a&gt; permet de créer des logiciels “desktop” avec des technos web, et à été développé notamment par Github pour créer leur petit nouveau: &lt;a href=&quot;atom.io&quot;&gt;Atom&lt;/a&gt;. Electron part du moteur de rendu web Chromium avec un outil coté serveur très connu qui est &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;NodeJS&lt;/a&gt;, et permet donc de créer des logiciels en HTML/CSS Javascript.&lt;/p&gt;
+
+&lt;p&gt;L’avantage de ce système c’est qu’avec Nyaovim on va pourvoir d’une part créer des plugins dédiés à ce GUI en créant des &lt;a href=&quot;https://github.com/rhysd/neovim-component&quot;&gt;WebComponent&lt;/a&gt;, comme les deux que le développeur de Nyaovim à déjà codé: &lt;a href=&quot;https://github.com/rhysd/nyaovim-markdown-preview&quot;&gt;markdown-preview&lt;/a&gt; et &lt;a href=&quot;https://github.com/rhysd/nyaovim-popup-tooltip&quot;&gt;popup-tooltip&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Bon du coup comment profiter de cet outil? C’est très simple, il faut disposer du gestionnaire de package de NodeJS appelé &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;NPM&lt;/a&gt;, disponible dans la plupart des dépôt des grandes distribution de ce monde, qui est fourni lorsqu’on installe NodeJS sur son pc. Ensuite la commande a lancer pour installer Nyaovim est la suivante:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo npm install -g nyaovim
+
+nyaovim&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Et voilà votre GUI est maintenant installé et lancé!&lt;/p&gt;
+
+&lt;p&gt;Ce projet est indiqué comme instable sur son dépôt Github donc je ne serais pas vindicateur vis à vis du résultat. Mais il y a quand même de nombreux bugs qui me chagrine encore un peu:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Les bugs graphiques sont souvent présents, j’ai souvent ma barre vim-airline qui apparait en plein milieu de mon buffer, ou un caractère fantome qui se superpose à mon curseur, etc…&lt;/li&gt;
+  &lt;li&gt;La bulle de complétion ne s’affiche plus, ou parfois apparait par clignotement, c’est qui est un peu dommage, surtout pour moi qui utilise les snippet Ultisnips à foison…&lt;/li&gt;
+  &lt;li&gt;Quelques boutons dans la barre de menu pour ouvrir un buffer de certains fichiers de config’ ne serait pas un mal, comme nyaovimrc.html (le fichier de configuration de l’interface de nyaovim), ou tout simplement du vimrc&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Malgré ces soucis je ne peux que conseiller d’aller voir ce projet qui à le mérite d’essayer quelque chose de nouveau et qui part sur une base très solide pour de futurs plugins ou améliorations très sympathique!&lt;/p&gt;
+
+&lt;p&gt;Sur ce j’ai finit pour aujourd’hui, mais j’ai encore deux trois articles dans la poche en ce moment, notamment toujours a propos de Vim/Neovim qui risque de plaire à certains ;)&lt;/p&gt;
+</description>
+				<pubDate>Tue, 08 Mar 2016 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html</guid>
+			</item>
+		
+			<item>
 				<title>Génération de code C++ en plugin Neovim avec CLang</title>
 				<description>&lt;p&gt;La Piscine de C++ qui marque le début de notre deuxième année à Epitech vient de se terminer. Durant ces deux semaines on étudie à fond la quasi-totalité des concepts liés à la POO.&lt;/p&gt;
 
