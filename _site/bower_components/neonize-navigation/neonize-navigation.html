@@ -1,0 +1,76 @@
+<link rel="import" href="/bower_components/polymer/polymer.html">
+
+<dom-module id="neonize-navigation-container">
+  <template>
+    <style>
+      ul {
+        display: flex;
+        align-items: center;
+      }
+      :host ::content ul > * {
+        padding-right: 1%;
+        padding-left: 1%;
+      }
+    </style>
+    <ul>
+      <content></content>
+    </ul>
+  </template>
+  <script>
+    Polymer({
+      is: "neonize-navigation-container"
+    });
+  </script>
+</dom-module>
+
+<dom-module id="neonize-navigation">
+  <template>
+    <style>
+      li {
+        display: inline;
+      }
+      a {
+        color: #666;
+        transition: all .5s;
+        text-decoration: none;
+        font-size: 140%;
+      }
+      a:hover {
+        cursor: pointer;
+        color: #EEF;
+        text-shadow: 0 0 5px #005DAB, 0 0 10px #005DAB, 0 0 15px #068DFF
+      }
+      a::before, a::after {
+        content: "";
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+        display: block;
+        height: 1px;
+        background-color: #00B0FF;
+        transition: all .5s;
+      }
+      a:hover::before, a:hover::after {
+        width: 0px;
+      }
+    </style>
+
+    <li><a href="{{link}}">{{text}}</a></li>
+
+  </template>
+  <script>
+    Polymer({
+      is: "neonize-navigation",
+      properties: {
+        link: {
+          type: String,
+          value: "https://google.com"
+        },
+        text: {
+          type: String,
+          value:"GOOGLE"
+        }
+      }
+    });
+  </script>
+</dom-module>

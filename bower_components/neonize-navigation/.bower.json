@@ -1,0 +1,38 @@
+{
+  "name": "neonize-navigation",
+  "authors": [
+    "Kevin Pellet \"Ilphrin\" <ilphrin@autistici.org>"
+  ],
+  "description": "Add some to links and a navigation container",
+  "main": [
+    "./proto-element.html"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Ilphrin/neonize-navigation",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.3.1"
+  },
+  "keywords": [
+    "web-components",
+    "navigation"
+  ],
+  "_release": "6c7906bff8",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "6c7906bff87c7f1773a78d653829693e98d14419"
+  },
+  "_source": "git://github.com/Ilphrin/neonize-navigation.git",
+  "_target": "*",
+  "_originalSource": "neonize-navigation",
+  "_direct": true
+}

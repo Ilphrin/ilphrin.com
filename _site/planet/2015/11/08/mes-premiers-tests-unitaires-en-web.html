@@ -7,7 +7,11 @@
   <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
+
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
   <script src="/js/nav.js"> </script>
+
+  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
@@ -18,13 +22,13 @@
     <div class="title">
       <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <ul class="right shad-effect">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/kevin/index.html">Blog</a></li>
-      <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a href="/kevin/about.html">À propos</a></li>
+    <neonize-navigation-container class="right">
+      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
+      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
+      <neonize-navigation link="/kevin/project" text="Projets"></neonize-navigation>
+      <neonize-navigation link="/kevin/about" text="A propos"></neonize-navigation>
       <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </ul>
+    </neonize-navigation-container>
   </div>
 
 </div>

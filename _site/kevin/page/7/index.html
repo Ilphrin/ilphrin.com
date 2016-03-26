@@ -7,7 +7,11 @@
   <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
+
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
   <script src="/js/nav.js"> </script>
+
+  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
@@ -18,13 +22,13 @@
     <div class="title">
       <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <ul class="right shad-effect">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/kevin/index.html">Blog</a></li>
-      <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a href="/kevin/about.html">À propos</a></li>
+    <neonize-navigation-container class="right">
+      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
+      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
+      <neonize-navigation link="/kevin/project" text="Projets"></neonize-navigation>
+      <neonize-navigation link="/kevin/about" text="A propos"></neonize-navigation>
       <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </ul>
+    </neonize-navigation-container>
   </div>
 
 </div>
@@ -69,11 +73,11 @@
         <div class="header_blog_title">
         <time datetime="">
           <div>
-            <h1><a href="/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html">Nyaovim le GUI Neovim avec Electron</a></h1>
+            <h1><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h1>
           </div>
           
   
-    8
+    26
 
 
 mars
@@ -136,6 +140,16 @@ mars
   
     
       <div class="post">
+        <h2><a href="/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html">Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi</a></h2>
+        <p>Salut tout l’monde!</p>
+
+<p>Cela commence à faire quelque mois que je tourne sous Archlinux, et mis à part un plantage Xorg qui m’a forcé à faire une petite ré-installation, je me plais vraiment avec cette distribution! Notamment grâce au dépôt communautaire AUR qui, jusqu’à maintenant, m’a permis d’installation tous les soft dont j’avais envie, et que je ne trouvais pas dans les gestionnaire de paquet des autres distributions.
+
+      </div>
+    
+  
+    
+      <div class="post">
         <h2><a href="/2013/04/26/reinstallation-forcee-point-sur-archlinux.html">Réinstallation forcée --> Point sur Arch Linux</a></h2>
         <p>Salut tout l’monde!</p>
 
@@ -172,19 +186,6 @@ mars
 <p>Aujourd’hui je vais aborder deux choses dont voici tout de suite la première:</p>
 
 <p>Jusqu’à récemment sur mon ordinateur se trouvait l’émulateur Epsxe, qui me permettait d’émuler une console de Playstation 1 et d’y faire tourner tout les jeux de cette console qui à fait mon enfance. Néanmoins en voulant le montrer à une amie il ne voulait plus marcher. En fait c’est comme si le plugin qui permet de gérer les commandes n’existait plus.
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2013/02/20/un-nouveau-guide-fait-son-arrivee-chez-les-manchots-verts.html">Un nouveau guide fait son arrivée chez les manchots verts</a></h2>
-        <p>Salut à tous!</p>
-
-<p>Aujourd’hui je suis particulièrement content. Pourquoi? Parce qu’il existe dorénavant un nouveau petit guide d’introduction en français pour Linux, et plus particulièrement adapté à Linux Mint.</p>
-
-<p>Le guide est disponible à cette adresse :
-<a href="http://ubuntuone.com/11lU9gJUgcCNsx1yednwlT">GUIDE</a>
 
       </div>
     

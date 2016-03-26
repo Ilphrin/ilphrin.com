@@ -7,7 +7,11 @@
   <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
+
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
   <script src="/js/nav.js"> </script>
+
+  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
@@ -18,13 +22,13 @@
     <div class="title">
       <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <ul class="right shad-effect">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/kevin/index.html">Blog</a></li>
-      <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a href="/kevin/about.html">À propos</a></li>
+    <neonize-navigation-container class="right">
+      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
+      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
+      <neonize-navigation link="/kevin/project" text="Projets"></neonize-navigation>
+      <neonize-navigation link="/kevin/about" text="A propos"></neonize-navigation>
       <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </ul>
+    </neonize-navigation-container>
   </div>
 
 </div>
@@ -69,11 +73,11 @@
         <div class="header_blog_title">
         <time datetime="">
           <div>
-            <h1><a href="/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html">Nyaovim le GUI Neovim avec Electron</a></h1>
+            <h1><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h1>
           </div>
           
   
-    8
+    26
 
 
 mars
@@ -132,6 +136,15 @@ mars
   
     
       <div class="post">
+        <h2><a href="/planet/2015/12/16/ultisnips-autocompletion-html.html">Ultisnips: Autocomplétion HTML</a></h2>
+        <p>Pour ceux qui ne le savent pas, Ultisnips est un plugin pour Vim/NeoVim qui permet de créer des snippets. C’est l’outil le plus puissant de création de snippet que j’ai pu voir jusque maintenant, tout éditeur confondu. Les possibilités offertes par ce plugin sont immense, alors qu’il est très simple d’utilisation, a partir du moment où l’on sait exactement ce que l’on veut faire.</p>
+
+
+      </div>
+    
+  
+    
+      <div class="post">
         <h2><a href="/planet/2015/12/08/livres-et-musiques-libres.html">Livres et musiques libres</a></h2>
         <p>La musique et les livres font partie de mon quotidien depuis très longtemps, je ne peux pas faire quelque chose sans écouter un peu de musique dans mon casque ou prendre les transports en commun sans me balader avec quelque chose à lire.</p>
 
@@ -174,15 +187,6 @@ Je met fréquemment a jour mon téléphone grâce au travail considérable de la
   <li>Le lien en bas pour le code du site sur Github dirige maintenant vers le dépot récemment crée. Je ne me suis pas vraiment cassé la tête a commenter les layouts ou a faire les choses de façon propre. Déjà parce que c’est la première fois que je fais un site complet donc je n’ai pas toutes les bonnes habitudes, et ensuite parce que ce n’est pas la peine je pense de détailler puisqu’il suffit de comprendre l’organisation de façon globale. (Et puis il y a beaucoup de choses qui sont inspirées de code trouvé sur l’Internet donc mieux documentés que par moi).</li>
   <li>Si vous avez regardé le dépôt vous avez pu remarquer que mon CV est sur le site, mais que je n’ai mis aucun lien pour l’afficher. C’est volontaire. Si vous souhaitez vraiment le voir il est a http://ilphrin.com/kevin/CV_en.pdf, je compte ne faire que passer le lien sur mon compte Linkedin ou dans mes cartes de visite, je ne crois pas que ce soit la peine de prendre un bout de place sur le site pour ça.</li>
 </ul>
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/planet/2015/09/21/topo-de-mes-plugins-vim-02.html">Topo de mes plugins Vim - 02</a></h2>
-        <p>Les plugins c’est vraiment le top, alors dans Vim je vous en parle même pas, c’est comme rajouter des animations CSS, si je ne fait pas attention j’en rajoute un peu partout! Depuis la dernière fois j’ai rajouté quelque plugins qui ne révolutionnent pas mon utilisation de Vim, mais restent quand même un petit plus agréable. Du coup aujourd’hui ça va être plus court mais il y aura plus de monde ;)</p>
-
 
       </div>
     

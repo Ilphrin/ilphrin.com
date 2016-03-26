@@ -1,0 +1,26 @@
+{
+  "name": "neonize-navigation",
+  "authors": [
+    "Kevin Pellet \"Ilphrin\" <ilphrin@autistici.org>"
+  ],
+  "description": "Add some to links and a navigation container",
+  "main": [
+    "./proto-element.html"
+  ],
+  "moduleType": ["globals"],
+  "license": "MIT",
+  "homepage": "",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.3.1"
+  },
+  "keywords": [
+    "web-components",
+    "navigation"
+  ]
+}

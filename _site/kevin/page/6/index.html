@@ -7,7 +7,11 @@
   <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
   <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
+
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
   <script src="/js/nav.js"> </script>
+
+  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
@@ -18,13 +22,13 @@
     <div class="title">
       <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <ul class="right shad-effect">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/kevin/index.html">Blog</a></li>
-      <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a href="/kevin/about.html">À propos</a></li>
+    <neonize-navigation-container class="right">
+      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
+      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
+      <neonize-navigation link="/kevin/project" text="Projets"></neonize-navigation>
+      <neonize-navigation link="/kevin/about" text="A propos"></neonize-navigation>
       <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </ul>
+    </neonize-navigation-container>
   </div>
 
 </div>
@@ -69,11 +73,11 @@
         <div class="header_blog_title">
         <time datetime="">
           <div>
-            <h1><a href="/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html">Nyaovim le GUI Neovim avec Electron</a></h1>
+            <h1><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h1>
           </div>
           
   
-    8
+    26
 
 
 mars
@@ -136,6 +140,18 @@ mars
   
     
       <div class="post">
+        <h2><a href="/2013/07/22/Linux-Kernel-:-Code-Source.html">Linux Kernel: Code source</a></h2>
+        <p>Salut tout l’monde!</p>
+
+<p>Comme promis voici un nouvel article sur le noyau Linux. Comme le précédent ceci est une traduction d’un autre article sur linux.org. Disponible à cette <a href="http://www.linux.org/threads/the-linux-kernel-the-source-code.4204/">adresse</a>.</p>
+
+<p>Après que le code source du noyau soit téléchargé et décompressé, les utilisateurs peuvent voir de nombreux dossiers et fichiers. Il peut être d’une grande difficulté de trouver un fichier en particulier. Heureusement, le code source est trié d’une façon spécifique. Cela permet  aux développeurs de retrouver un fichier ou un élément du noyau.
+
+      </div>
+    
+  
+    
+      <div class="post">
         <h2><a href="/2013/07/21/Parcellite:-la-version-1.1.5-est-sortie.html">Parcellite: la version 1.1.5 est sortie</a></h2>
         <p>Salut tout l’monde!</p>
 
@@ -170,16 +186,6 @@ mars
         <p>Salut tout l’monde!</p>
 
 <p>Dans un article précédent je vous avais parlé de Sunflower, un gestionnaire de fichiers qui avait l’air prometteur. Aujourd’hui est sortie la version 0.1a-56 qui apporte quelques nouvelles fonctionnalités mais surtout des corrections de bug parmi lesquelles:
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html">Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi</a></h2>
-        <p>Salut tout l’monde!</p>
-
-<p>Cela commence à faire quelque mois que je tourne sous Archlinux, et mis à part un plantage Xorg qui m’a forcé à faire une petite ré-installation, je me plais vraiment avec cette distribution! Notamment grâce au dépôt communautaire AUR qui, jusqu’à maintenant, m’a permis d’installation tous les soft dont j’avais envie, et que je ne trouvais pas dans les gestionnaire de paquet des autres distributions.
 
       </div>
     
