@@ -48,7 +48,7 @@ Plusieurs choses étaient visible: d'abord des squelettes de personnes qui avaie
 
 Ils n'avaient d'autre choix que de continuer en suivant les traces baveuses qu'il y avait par terre. Et ils ne tardèrent pas à en découvrir l'origine lorsque cinq énorme et immonde limace furent visible devant eux dans une grande salle qui leur servait apparemment de nid.
 
-Le premier reflexe d'Oriana et de Shedinn fut de congeler l'eau des égouts autour de ces limaces pour les empêcher de bouger. Mais ce n'était pas suffisant pour les empêcher d'agir et de leur cracher à la figure une bqve similaire mais qui semblait acide en plus de cela. Oriana s'en prit rapidement sur la jambe droite et bien que la douleur n'était pas insupportable elle restait conséquente.
+Le premier reflexe d'Oriana et de Shedinn fut de congeler l'eau des égouts autour de ces limaces pour les empêcher de bouger. Mais ce n'était pas suffisant pour les empêcher d'agir et de leur cracher à la figure une bave similaire mais qui semblait acide en plus de cela. Oriana s'en prit rapidement sur la jambe droite et bien que la douleur n'était pas insupportable elle restait conséquente.
 
 > **Shedinn**: Bon ça je vais m'en charger!
 
