@@ -5,13 +5,29 @@ lang: fr
 <div class="post_home">
       <div class="title" style="background-image: url('/images/header_articles/{{ page.cover }}');">
         <time datetime="{{ page.date | date: '%-d %B %Y'}}">
-          <h1> {{ page.title }} </h1>
+          <h1> {{ page.title }}</h1>
           <p>
             {% include date.html date=page.date %}
           </p>
          </time>
       </div>
   <div class="content">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        {% for post in site.posts reversed %}
+          {% if post.serie == page.serie and post.serie %}
+            {% if post.title == page.title %}
+            <li class="current_post">
+            {% else %}
+            <li>
+            {% endif %}
+                <a href="{{post.url}}">{{post.title}}: <time datetime="{{page.date | date: '%-d %B %Y'}}">{% include date.html date=post.date %}</time></a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
     {{ content }}
   {% include comment_template.html %}
   </div>
@@ -26,3 +42,4 @@ lang: fr
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
   </div>
 </div>
+

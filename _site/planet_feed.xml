@@ -7,6 +7,228 @@
 		<atom:link href="http://ilphrin.com/feed.category.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Des jeux Web avec Superpowers</title>
+				<description>&lt;p&gt;Quand il s’agit de développer des jeux vidéos sur base d’HTML5, il existe de nombreux cours et librairies sur Internet relatif à ce sujet, et on peut maintenant trouver facilement des ressources pour apprendre à développer des jeux avec telles ou telle technologie (jetez un oeil &lt;a href=&quot;https://hacks.mozilla.org/2016/02/html-5-game-development-video-series/&quot;&gt;ICI&lt;/a&gt;, ça veut le coup d’oeil ;)). Dans la continuité de ce boum technologique, et né &lt;strong&gt;Superpowers&lt;/strong&gt;: Un IDE pour développer des Jeux Web de façon collaborative.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h3 id=&quot;le-concept&quot;&gt;Le concept&lt;/h3&gt;
+
+&lt;p&gt;Superpowers est un projet libre, qui tourne sur une base d’&lt;a href=&quot;http://electron.atom.io/&quot;&gt;Electron&lt;/a&gt; donc le logiciel lui-même est fait avec des technologies Web, et il est multiplateforme donc vous pouvez l’essayer sous Windows, Mac OS ou Linux, mais aussi directement depuis le navigateur Web!&lt;/p&gt;
+
+&lt;p&gt;Superpowers fonctionne par système de client&amp;lt;-&amp;gt;serveur, le serveur s’occupe de gérer les différents projets, et l’accès par les clients à ceux-ci. Lorsque vous lancez le serveur il se lance par défaut en &lt;em&gt;localhost&lt;/em&gt; sur un port pré-défini. Une fois le serveur lancé vous pouvez vous y connecter avec un client, avec potentiellement un mot de passe et/ou un nom d’utilisateur à fournir.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/superpowers_01.png&quot; alt=&quot;superpowers_01&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;on-peut-commencer--travailler&quot;&gt;On peut commencer à travailler…&lt;/h3&gt;
+
+&lt;p&gt;Tout est faisable à l’intérieur de cet environnement de développement. Que ce soit sur les graphismes, le code, le son, etc… Le site officiel fourni un &lt;a href=&quot;http://docs.superpowers-html5.com/fr/bien-demarrer/a-propos-de-superpowers&quot;&gt;très bon tutoriel&lt;/a&gt; pour débuter avec Superpowers.&lt;/p&gt;
+
+&lt;p&gt;Lorsque l’on travaille avec Superpowers sur l’aspect du code, on ne travaille pas directement avec l’HTML, le CSS, ou même le Javascript. Ici tout est en &lt;a href=&quot;http://www.typescriptlang.org/&quot;&gt;TypeScript&lt;/a&gt;, un langage de surcouche à Javascript, qui peut ensuite être compilé vers ce dernier. Pour apprendre à utiliser Superpowers il faut apprendre le langage TypeScript, qui est vraiment très simple, mais aussi à la fois puissant. Je laisse la parole à d’autres personnes plus compétentes pour parler de celui-ci quelque part sur le Net, mais vraiment l’essayer c’est l’adopter. ;)&lt;/p&gt;
+
+&lt;h3 id=&quot;en-collaboration&quot;&gt;…En collaboration!&lt;/h3&gt;
+
+&lt;p&gt;Le gros point qui est à mettre en avant à mon avis, et le fait que Superpowers permet aux créateurs de Jeux Vidéos de travailler ensemble, et simultanément sur un projet. Chaque changement se voit en temps réel auprès des autres clients connectés: L’un peut coder pendant qu’un autre prépare des TileSets, et qu’un autre construit une Scène de jeu.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/superpowers_02.png&quot; alt=&quot;superpowers_02&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ce logiciel est encore en Bêta officiellement, il a donc encore quelques soucis, et manque de deux/trois fonctionalités qui pourraient être utiles (des notifications de modifications sur une partie du projet, un moyen de communication, pourquoi pas intégrer un client IRC directement à l’intérieur), mais cela n’assombrit pas ses nombreuses qualités.&lt;/p&gt;
+
+&lt;p&gt;Il est rare en ce moment d’avoir un projet libre qui prend les devant et qui innove dans un domaine. Quand aujourd’hui la tendance est à la copie de fonctionalités en comparaison d’autres outils payants et/ou propriétaires, Superpowers apporte une nouvelle pierre à l’édifice des jeux vidéos en Web, et je suis impatient de démarrer un projet sérieux avec (Surement un Shoot ‘em up, bien sûr libre cela va de soi, si il y a des intéressés ;) ).&lt;/p&gt;
+
+&lt;p&gt;Pour finir, un petit lien vers un dépot Github qui contient de gros tutoriaux sur Superpowers en créant de A à Z des petits jeux d’arcade: &lt;a href=&quot;https://github.com/mseyne/superpowers-tutorials&quot;&gt;ICI&lt;/a&gt;&lt;/p&gt;
+</description>
+				<pubDate>Thu, 30 Jun 2016 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/planet/2016/06/30/des-jeux-web-avec-superpowers.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/06/30/des-jeux-web-avec-superpowers.html</guid>
+			</item>
+		
+			<item>
+				<title>Dev&#39; d&#39;un Gauntlet: La conclusion d&#39;un jeu qui ne s&#39;est pas fini</title>
+				<description>&lt;p&gt;La date de rendu de notre projet de Gauntlet, qui est l’un des deux gros projet de fin de deuxième année, s’est terminée il y a à peu près une semaine maintenant. Il y a du bon et du moins bon, et je me suis dit que mettre sur papier numérique ce qu’il faut en retirer peut être un exercice utile, déjà pour moi pour avoir des notes pour plus tard, et peut-être que nos erreurs serviront à ce que quelqu’un ne refasse pas les mêmes =D.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Pour avoir un peu de contexte, je vous envoie vers mon précédent article (&lt;a href=&quot;/planet/2016/05/02/dev-dun-gauntlet-la-programmation-telle-qu-ecrite-par-satan.html&quot;&gt;Ici, là oui ici!&lt;/a&gt;
+Ce Gauntlet-like est le deuxième jeu sur lequel je travaille, après TuxleTriad. Il y a de nombreux paramètres qui ont changé par rapport au développement de ce dernier:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;C’est un travail de groupe, donc il faut penser le code pour qu’il soit compréhensible par ceux qui vont potentiellement l’exploiter.&lt;/li&gt;
+  &lt;li&gt;Nous avons dû passer un temps conséquent en début à nous organiser et nous distribuer les tâches, notamment par le biais d’un diagramme des principaux objets C++. (Merci &lt;a href=&quot;https://framasoft.org/article1057.html&quot;&gt;Dia!&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;C’est un jeu en 3D et non pas en 2D, et donc beaucoup de choses changent ne serait-ce que pour la gestion des coordonnées, mais aussi des collisions (qui fut l’une des parties de notre projet dont je suis le moins fier).&lt;/li&gt;
+  &lt;li&gt;C’est un projet en C++, et non en Python, donc beaucoup plus bas niveau et avec une philosophie bien différente.&lt;/li&gt;
+  &lt;li&gt;Nous avons utilisé la librairie Irrlicht qui nous était totalement inconnus (jusqu’à ce que je me souvienne qu’elle est utilisée dans &lt;a href=&quot;http://www.minetest.net/&quot;&gt;Minetest&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;Et j’oublie sûrement d’autres choses mais bon tout le monde est déjà parti de mon article maintenant donc c’est pas bien grave.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il y a donc pas mal de challenges à relever là-dedans, mais rien d’insurmontable à première vue pour peu qu’on y passe le temps nécessaire.&lt;/p&gt;
+
+&lt;p&gt;Je vais surtout me concentrer sur deux choses dans cet article: L’architecture de notre code dans sa globalité, et les outils dont je me suis occupé.&lt;/p&gt;
+
+&lt;p&gt;Nous avons passé plusieurs heures avec Dia pour concevoir l’architecture de notre jeu. Il fallait une structure qui nous permet d’implémenter les composants d’Irrlicht, mais surtout de les surcharger pour y appliquer nos propres traitements. Pour cela nous avons conçu une classe IrrlichtEngine, qui contiendrait les principaux objets d’Irrlicht dans ses attributs, et qui s’occuperait en outre de la boucle de jeu principale.&lt;/p&gt;
+
+&lt;p&gt;À cette classe, nous viendront lui ajouter les différents éléments nécessaires que nous concevons. Dans mon cas ce fut la classe Camera, qui s’occupe de gérer le déplacement et le zoom automatiques de la caméra en fonction de la position des joueurs, et la classe CollisionManager qui permet de dire si oui ou non en est en train de se taper contre quelque chose, et si oui contre quoi on se tape.&lt;/p&gt;
+
+&lt;p&gt;En dehors de mon travail, nous avions aussi une classe pour gérer les entrées provenant du clavier et de manettes d’XBox branchées en USB, des classes pour gérer les objets 3D en jeu, et des sous-classe de celle-ci pour des éléments comme les Joueurs, les Ennemis, etc… Une classe pour les IA, une pour les objets en jeu (je parle là des objets qu’on utilise en jeu tels qu’une potion ou du poulet).&lt;/p&gt;
+
+&lt;p&gt;Plus nous ajoutions de fonctionnalités et de classes, plus nous nous rendions compte que le concept de cette classe IrrlichtEngine était tout simplement bloquant dans chacun de nos développements. Un exemple des plus parlants est mon CollisionManager (bien qu’il me semble que les IA ont eu leurs doses de souffrance aussi):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Un Joueur veut taper un ennemi. On rajoute une condition si la touche d’attaque est appuyée. Si oui, on veut pouvoir baisser les points de vie de la personne en face. Problème: Le Joueur ne peut savoir qui il tape, car la liste des Personnages en jeu sont dans IrrlichtEngine, et qu’il n’est pas accessible aux autres classes.&lt;/li&gt;
+  &lt;li&gt;C’est là qu’intervient mon IrrlichtEngine, une classe codée à part et qui sera un attribut de l’IrrlichtEngine qui peut retourner le Personnage qui est en face.&lt;/li&gt;
+  &lt;li&gt;Pour être initialisé il a besoin d’un composant d’Irrlicht, le SceneManager. On ne peut pas le lui donner dans le constructeur, donc je dois créer une fonction initCollisionMgr() qui sera appelée dans le constructeur de l’IrrlichtEngine avec son attrbut SceneManager.&lt;/li&gt;
+  &lt;li&gt;Enfin mes fonctions utiles doivent prendre en paramètre un pointeur vers le Personnage qui veut savoir qui il a en face de lui, et faire joujou avec ses attributs et des fonctions d’Irrlicht pour voir s’il collisionne avec quelqu’un d’autre (Question: Le verbe collisionner existe?)&lt;/li&gt;
+  &lt;li&gt;…Et en plus mes collisions ne fonctionent même pas correctement =D (Téléportations, bloquages, glissements sur le mur, et j’en passe).&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;En fait le souci principal au coeur de notre IrrlichtEngine c’est qu’on a pris chacun des composants d’Irrlicht qui étaient bien séparés dans leur coins pour les centraliser et bloquer l’accès à ceux-ci. Et lorsque nous nous sommes rendu compte de cela il était déjà trop tard, et pas question de rechanger l’architecture à 2 jours du rendu du projet! Nous avons donc fait avec tant bien que mal.&lt;/p&gt;
+
+&lt;p&gt;Je ne dis pas que le code d’IrrlichtEngine était mauvais, loin de là. Au contraire il était justement très bien par rapport à ce qu’on voulait de lui, et ça nous a bloqué d’autant plus. Ce fut notre plus grande leçon je pense dans ce projet. Mais c’était la première fois, pour la plupart, pour un développement de jeu vidéo. Et même moi qui en ai féja fait un dont je suis pas peu fier, je n’était absolument pas dans mon environnement naturel.&lt;/p&gt;
+
+&lt;p&gt;Mais il y a quand même plusieurs choses qui ont fonctionné très très bien dans ce projet, et vu que je n’ai pas tout fait du tout je ne parlerais que de mes “inventions”. Tout d’abord il y a la création des niveaux. Pour cela j’ai utilisé IrrEdit.&lt;/p&gt;
+
+&lt;p&gt;IrrEdit est une extension au logiciel propriétaire et payant CopperCube, “un éditeur pour créer des jeux en 3D, des applications et des sites 3D sans programmer (cf le &lt;a href=&quot;http://www.ambiera.com/coppercube/&quot;&gt;site officiel&lt;/a&gt;)”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/irredit_01.png&quot; alt=&quot;irredit_1&quot; style=&quot;float:left&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Voilà le premier niveau que j’ai fait avec celui-ci. J’ai dû passer 30 h à apprendre à l’utiliser, et 2h à faire vraiment les niveaux. Son interface est pas mal du tout et je n’ai même pas encore exploité un centième de ses capacités.&lt;/p&gt;
+
+&lt;p&gt;J’ai eu un souci, car il est exclusivement sous Windows, et j’avais pas de Windows fonctionnel sous la main (en fait si, mais je l’ai jamais démarré et j’avais pas envie de commencer =D). Donc j’ai fais chauffer Wine, et sous réserve de configurer CopperCube pour utiliser OpenGL plutôt que DirectX, tout fonctionnait au poil.&lt;/p&gt;
+
+&lt;p&gt;Seul hic, lorsque j’exporte des scènes irrlicht, je ne peux les utiliser dans mon jeu à cause de chemins absolus dans les fichiers XML générés par IrrEdit. Déjà c’est moche en absolu, et en plus c’était des chemins Windows donc pour le Multi-OS c’est dur…&lt;/p&gt;
+
+&lt;p&gt;J’ai donc dû passer un bon moment à développer un script en Bash qui va convertir les chemins absolus en chemins relatif, et avec des / plutôt que des \. Je vais mettre prochainement ce script avec sa doc sur un dépôt Github &lt;a href=&quot;https://github.com/Ilphrin/irredit_relative&quot;&gt;ICI&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;J’ai déjà parlé du CollisionManager plus tôt, donc je n’en dirais pas plus j’ai fait un grand tour de ce qu’il faisait ;)&lt;/p&gt;
+
+&lt;p&gt;Je me suis occupé aussi de la caméra! Avec la classe… Camera, bien deviné! Ici il n’y a rien de compliqué, je voulais une caméra qui aie un peu le même comportement que dans Super Smash Browl sur Wii/Wii U.&lt;/p&gt;
+
+&lt;p&gt;Pour ceux qui ne voient pas, la caméra suit les différents joueurs, qu’ils soient 2 ou 8, et effectuent un ou zoom en fonction de la plus grande distance qu’il y a entre les joueurs.&lt;/p&gt;
+
+&lt;p&gt;Du coup ma Caméra fait deux choses à chaque frame de jeu: Elle calcule le centre sur 2 dimensions entre les joueurs et se positionne en hauteur pour fixer ce centre, et elle zoom en fonction de la plus grande distance entre les joueurs. Ça permet d’avoir une caméra dynamique plutôt cool et sans difficulté. Il faut juste récupérer les positions de tous les joueurs.&lt;/p&gt;
+
+&lt;p&gt;Dans l’ensemble ce projet aura été très intéressant, malgré une certaine fatigue ressentie pour ma part dû à un gros manque de repos.&lt;/p&gt;
+
+&lt;p&gt;Pour finir, j’ai trouvé qu’Irrlicht à été un moteur 3D largement suffisant pour ce qu’on voulait faire avec, et je n’ai pas compté le nombre de fois qu’on a cherché à faire une action dans notre code, avant que quelqu’un vienne nous dire “Non mais faut pas vous embêter, ya des fonctions déjà dans Irrlicht pour faire ça automatiquement!”.&lt;/p&gt;
+
+&lt;p&gt;Ce que je regrette au final c’est qu’il a le même souci que beaucoup d’autres projets, souvent pour les logiciels libres d’ailleurs, c’est qu’il a une documentation qui commence à se faire vieille, et j’ai l’impression que le forum l’est encore plus (pour nous aider on a dû regarder des posts qui datent de 2005!).&lt;/p&gt;
+
+&lt;p&gt;Mais si vous avez des connaissances en C++, un ou deux gaillards sous la main et du temps libre, je vous conseille d’y jeter un coup d’oeil il possède de nombreuses fonctionnalités et surprises, et à l’avantage de fournir un moteur vraiment léger par rapport à la plupart de ses concurrents, pour un lot de fonctionalités largement suffisant (a mon goût).&lt;/p&gt;
+
+&lt;p&gt;Je n’écrirai pas d’autres articles sur le sujet puisque je ne pense pas que j’aurais à re-travailler avec sauf pour un projet personnel à la limite. Sur ce, bonne soirée et félicitations pour m’avoir lu jusqu’au bout! =D J’vous donnerai un cookie si on se croise.&lt;/p&gt;
+</description>
+				<pubDate>Fri, 10 Jun 2016 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit.html</guid>
+			</item>
+		
+			<item>
+				<title>Dev&#39; d&#39;un Gauntlet: La programmation telle que l&#39;a écrit Satan</title>
+				<description>&lt;p&gt;Mettons un peu de contexte derrière ce titre étrange… Nous approchons de la fin de 2e année à Epitech, et l’un des plus gros projet de C++ a commencé: Indie Studio.&lt;/p&gt;
+
+&lt;p&gt;Nous sommes 6 sur ce projet, avec 1 mois et demi devant nous pour développer 1 jeu dans une petite liste:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://en.wikipedia.org/wiki/Gran_Trak_10&quot;&gt;Sprint&lt;/a&gt;: Un jeu de courses de voitures avec l’ajout de power-ups façon Mario-Kart&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Lemming&quot;&gt;Lemmings&lt;/a&gt;: Un jeu de reflexion où l’on doit gérer des petites bestioles un peu débiles. (Mais on connait non?)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Worms_(s%C3%A9rie://fr.wikipedia.org/wiki/Worms_(s%C3%A9rie))&quot;&gt;Worms&lt;/a&gt;: Nan celui-là vous êtes obligé de le connaitre, allez y jouer avant de continuer cet article.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Bomberman&quot;&gt;Bomberman&lt;/a&gt;: Un jeu multijoueur dont le but est de poser des bombes pour tuer le plus d’ennemis. (Je vais me faire censurer par le gouvernement avec des phrase comme ça)&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Gauntlet&quot;&gt;Gauntlet&lt;/a&gt;: Un jeu d’action dans un donjon en vue de dessus, avec multijoueur jusque 4 sur le même pc! &lt;strong&gt;On a pris celui-ci&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Nous avons quelques restrictions dont deux d’entres elles qui sont: Un jeu 3D, et un jeu multijoueur. Une fois le jeu choisi on va prendre un moteur 3D en piochant l’un de ces deux-là:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Irrlicht&quot;&gt;Irrlicht&lt;/a&gt;: Simple est bien foutu, et à décidé de parti sur celui-ci.&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://fr.wikipedia.org/wiki/Ogre_3D&quot;&gt;Ogre 3D&lt;/a&gt;: Plus connu, il est apparemment beaucoup plus puissant et performant, mais nous n’avons pas réussi à le faire marcher, et vu que le temps presse nous avons dû trancher.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Mon but est d’écrire un article chaque fois que nous nous réunissons tous pour bosser une journée entière dessus, afin de noter notre avancée et partager un peu nos démarches, idées, et pourquoi pas quelques bouts de codes. Mais nous ne pourrons pas diffuser le code du jeu réalisé puisqu’il sera au nom et à la licence d’Epitech.&lt;/p&gt;
+
+&lt;p&gt;Je dirais que nous avons travaillé principalement sur 2 aspects aujourd’hui:&lt;/p&gt;
+
+&lt;h3&gt;1) La documentation/L&#39;organisation&lt;/h3&gt;
+
+&lt;p&gt;Nous avons commencé a nous répartir les tâches, en fonction des envies et des capacités. Moi et mon binome dans ce groupe, Nathanael, devons nous occuper de tout ce qui attrait à l’environnement de jeu et l’interface. C’est-à-dire un menu principal pour commencer.&lt;/p&gt;
+
+&lt;p&gt;Mais aussi la gestion des cartes dans lesquelles les joueurs vont jouer avec notamment une possible génération aléatoire de carte, et les mécanismes pour ajuster le niveau de jeu: Le nombre de monstres, la force de ceuxi-ci, l’adaptation au nombre de joueurs, etc…&lt;/p&gt;
+
+&lt;p&gt;J’avais fait un peu de lecture à l’époque ou j’ai codé &lt;a href=&quot;https://github.com/Ilphrin/TuxleTriad&quot;&gt;TuxleTriad&lt;/a&gt; sur la façon de gérer la difficulté dans un jeu du type de Gauntlet, et j’en avais retenu un “algo” que je pense utilise pour notre jeu.&lt;/p&gt;
+
+&lt;p&gt;Chaque acteur - monstre, boss, héros, pnj - possède un ‘poids’ qu’il lui est attribué préalablement par le biais d’un fichier de configuration et qui détermine un peu sa force globale. Un héros aura un grand poids, et le but est qu’une fois le niveau crée, le total des poids des ennemis soit supérieur ou égal au poids des joueurs. Viennent par dessus s’ajouter des modificateurs externes pour ajuster la difficulté selon une situation ou un événement.&lt;/p&gt;
+
+&lt;p&gt;Il y a plusieurs avantages à ce principe:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Les cartes&lt;/strong&gt;: On va pouvoir créer des cartes aléatoirement assez facilement si on construit bien ce système.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;La modularité&lt;/strong&gt;: On possède une grande modularité sur la façon de créer un niveau. On peut par exemple facilement imaginer une courbe de croissance….croissante, du modificateur de difficulté au fil de l’avancée dans les différents niveau. Ou faire des niveaux secrets avec pleins de trésors, mais aussi beaucoup d’ennemis puissants.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Je vois par contre un défaut à ce système: La mise en place. Nous allons avoir besoin de beaucoup de données de configurations pour générer tout ça, un fichier par niveau par exemple.&lt;/p&gt;
+
+&lt;p&gt;Sinon nous en avons profité pour lire la Doc’ d’Irrlicht, et la chose la plus importante: Ça vient de l’Allemand et ça signifie Feu Follet! Quand même, je me devais de le dire ;)&lt;/p&gt;
+
+&lt;p&gt;On sais donc que l’on peut utiliser OpenGL facilement sur Windows et sous Linux avec Irrlicht, qu’il possède un module de gestion des controlleur de types manettes, et qu’il possède un gestionnaire de fichier XML integré, dont nous nous servirons surement pour décrire les stats’ des monstres, des joueurs, et de tout le reste.&lt;/p&gt;
+
+&lt;h3&gt;2) L&#39;enfer&lt;/h3&gt;
+
+&lt;p&gt;Voilà on y arrive. En fait j’ai oublié de mentionner une restrictions de taille tout à l’heure: Nous devons créer un installateur pour Linux ET Windows.&lt;/p&gt;
+
+&lt;p&gt;2 problèmes: De 1 personne n’aime coder sous Windows dans notre groupe, et de 2 on a jamais eu de projet à faire sous Windows avec Epitech, et là on va devoir tout apprendre sur le système de compilation et de linkage sous Windows.&lt;/p&gt;
+
+&lt;p&gt;Et croyez-moi, maintenant que nous avons frolé le museau de la bête, on a pas envie de sentir ses poils! (J’espère que vous avez bien l’image en tete maintenant).&lt;/p&gt;
+
+&lt;p&gt;Je vais vous épargnez les détails, mais dans le gros de notre processus d’apprentissage voici ce qu’il s’est passé:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;On a voulu compiler avec GCC, on a compris qu’il fallait installer MinGW.&lt;/li&gt;
+  &lt;li&gt;Mingw était pas trouvé dans le CMD (sérieux, Windows ose appeler ça la ligne de commande…)&lt;/li&gt;
+  &lt;li&gt;J’ai réussi à lancer un tout petit fichier C avec MinGW.&lt;/li&gt;
+  &lt;li&gt;On a quitté de rage, et regardé comment faire de la cross-compilation pour Windows à partir de notre chère patrie Linux. Après facilement 200Mo de paquets installés, on a quitté de rage.&lt;/li&gt;
+  &lt;li&gt;On est retourné sous Windows, Rémi, happé par le désespoir, à installé Visual Studio pour créer un fichier de projet Irrlicht pour avoir une DLL de notre moteur.&lt;/li&gt;
+  &lt;li&gt;Après 3/4h de travail acharné. Le Saint Graal apparait: “Compilation finished, 1 Build created, 0 errors” \o/&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Ce qu’il reste à faire donc:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Faire un .BAT pour automatiser cette compilation.&lt;/li&gt;
+  &lt;li&gt;Avoir un .exe de notre jeu&lt;/li&gt;
+  &lt;li&gt;Utiliser un outil comme Inno Setup pour lancer ce .BAT, générer noter .exe, et installer notre jeu correctement sous Windows.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Je peux vous dire que les insultes contre Windows ont été nombreuses (surtout venant de moi :D).&lt;/p&gt;
+
+&lt;p&gt;Bon maintenant qu’on vois à peu près comment ça marche ça devrait le faire, mais plusieurs choses me gênent énormément dans ce que l’on a fait, mais que l’on ne peut pas faire grand chose contre par manque de temps:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pourquoi faut-il un IDE obèse come Visual Studio pour compiler du code C?&lt;/li&gt;
+  &lt;li&gt;Quitte à avoir un OS qui fait tout seul ce qu’il faut, pourquoi c’est si compliqué de compiler un printf(“Coucou\n”); ?&lt;/li&gt;
+  &lt;li&gt;Pourquoi l’installateur de MinGW est aussi moche?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Et enfin, pouquoi c’est si mal documenté? J’veux dire, la comilation c’est quand même l’essence même de l’informatique, pourquoi une chose aussi triviale est un tel calvaire à réaliser? Je sais que Windows se veut un OS pour le grand public, mais il y a bien des gens qui codent dessus? Sinon GNU/Linux n’aurait pas de soucis de popularité.&lt;/p&gt;
+
+&lt;p&gt;Je ne veux que deux possibilités pour que quelqu’un développe de son plein gré (c’est-à-dire en dehors de son travail et tout) sous Windows: Soit il le fait depuis des années et connait le workflow Windows, dans ce cas ce serait sympa de la part de ce mec de populariser le MSDN ou de nous faire un ptit Wiki (j’offre des cookies =D), ou alors c’est que la lobotomie commerciale de Windows fait des merveilles, et que les gens ne codent sous Windows que parce qu’ils pensent que c’est ce qu’il se fait de mieux.&lt;/p&gt;
+
+&lt;p&gt;Alors que franchement, entre nous, au final c’est pas si mal notre petit:&lt;/p&gt;
+
+&lt;pre&gt;
+&lt;code class=&quot;bash&quot;&gt;
+./configure
+make
+make install
+&lt;/code&gt;
+&lt;/pre&gt;
+</description>
+				<pubDate>Mon, 02 May 2016 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/planet/2016/05/02/dev-dun-gauntlet-la-programmation-telle-qu-ecrite-par-satan.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/05/02/dev-dun-gauntlet-la-programmation-telle-qu-ecrite-par-satan.html</guid>
+			</item>
+		
+			<item>
 				<title>Nyaovim le GUI Neovim avec Electron</title>
 				<description>&lt;p&gt;Voilà un projet dont j’avais plusieurs fois entendu parler mais sans jamais réellement me pencher dessus. Le seul défaut que je trouvais à Neovim c’est de ne pas avoir de GUI associé vraiment digne de ce nom, ce que je cherche est quelque chose de joli principalement mais aussi qui permette vraiment de profiter d’une interface graphique: prévisualisation, barre de défilement, bulle d’information et autre, etc…&lt;/p&gt;
 
@@ -20,9 +242,13 @@
 
 &lt;p&gt;Bon du coup comment profiter de cet outil? C’est très simple, il faut disposer du gestionnaire de package de NodeJS appelé &lt;a href=&quot;https://www.npmjs.com/&quot;&gt;NPM&lt;/a&gt;, disponible dans la plupart des dépôt des grandes distribution de ce monde, qui est fourni lorsqu’on installe NodeJS sur son pc. Ensuite la commande a lancer pour installer Nyaovim est la suivante:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;sudo npm install -g nyaovim
+&lt;pre&gt;&lt;code class=&quot;bash&quot;&gt;
 
-nyaovim&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+sudo npm install -g nyaovim
+
+nyaovim
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Et voilà votre GUI est maintenant installé et lancé!&lt;/p&gt;
 
@@ -86,15 +312,19 @@ nyaovim&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
 &lt;p&gt;Allons ensuite maintenant dans ce fichier &lt;strong&gt;init&lt;/strong&gt;.py. Il contient principalement une classe avec un décorateur de neovim pour indiquer que cette classe dirige le plugin. Cette classe est initialisée avec un paramètre qui est le client de vim en lui-même. Cet objet va servir à faire toute l’interaction avec notre éditeur de texte préferé.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;nd&quot;&gt;@neovim.plugin&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Easy&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;vim&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
+&lt;pre&gt;&lt;code class=&quot;python&quot;&gt;
 
-  &lt;span class=&quot;nd&quot;&gt;@neovim.command&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;#39;EasyGenerate&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;generate&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+@neovim.plugin
+class Easy(object):
+  def __init__(self, vim):
+    self.vim = vim
+    ...
+
+  @neovim.command(&#39;EasyGenerate&#39;)
+  def generate(self):
+    ...
+
+&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;On voit ici que j’ai utilisé deux décorateurs liés à neovim. @neovim.plugin permet donc de marquer votre classe comme étant celle qui gère le plugin comme je l’ai déjà dit. @neovim.command est à placer sur une méthode de votre classe.&lt;/p&gt;
 

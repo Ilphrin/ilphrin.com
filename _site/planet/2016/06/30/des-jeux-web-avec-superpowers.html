@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
+  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
+
+  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+  <script src="/js/nav.js"> </script>
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
+  <!--<script>hljs.initHighlightingOnLoad();</script>-->
+
+  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <neonize-navigation-container class="right">
+      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
+      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
+      <neonize-navigation link="/kevin/project.html" text="Projets"></neonize-navigation>
+      <neonize-navigation link="/kevin/about.html" text="A propos"></neonize-navigation>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
+    </neonize-navigation-container>
+  </div>
+
+</div>
+
+
+<body>
+    <div class="main">
+        <div class="post_home">
+      <div class="title" style="background-image: url('/images/header_articles/');">
+        <time datetime="30 June 2016">
+          <h1> Des jeux Web avec Superpowers</h1>
+          <p>
+            
+  
+    30
+
+
+juin
+  
+2016
+
+          </p>
+         </time>
+      </div>
+  <div class="content">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            <li class="current_post">
+            
+                <a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">Des jeux Web avec Superpowers: <time datetime="30 June 2016">
+  
+    30
+
+
+juin
+  
+2016
+</time></a>
+            </li>
+          
+        
+      </ul>
+    </div>
+    <p>Quand il s’agit de développer des jeux vidéos sur base d’HTML5, il existe de nombreux cours et librairies sur Internet relatif à ce sujet, et on peut maintenant trouver facilement des ressources pour apprendre à développer des jeux avec telles ou telle technologie (jetez un oeil <a href="https://hacks.mozilla.org/2016/02/html-5-game-development-video-series/">ICI</a>, ça veut le coup d’oeil ;)). Dans la continuité de ce boum technologique, et né <strong>Superpowers</strong>: Un IDE pour développer des Jeux Web de façon collaborative.</p>
+
+<!--break-->
+
+<h3 id="le-concept">Le concept</h3>
+
+<p>Superpowers est un projet libre, qui tourne sur une base d’<a href="http://electron.atom.io/">Electron</a> donc le logiciel lui-même est fait avec des technologies Web, et il est multiplateforme donc vous pouvez l’essayer sous Windows, Mac OS ou Linux, mais aussi directement depuis le navigateur Web!</p>
+
+<p>Superpowers fonctionne par système de client&lt;-&gt;serveur, le serveur s’occupe de gérer les différents projets, et l’accès par les clients à ceux-ci. Lorsque vous lancez le serveur il se lance par défaut en <em>localhost</em> sur un port pré-défini. Une fois le serveur lancé vous pouvez vous y connecter avec un client, avec potentiellement un mot de passe et/ou un nom d’utilisateur à fournir.</p>
+
+<p><img src="/images/superpowers_01.png" alt="superpowers_01" /></p>
+
+<h3 id="on-peut-commencer--travailler">On peut commencer à travailler…</h3>
+
+<p>Tout est faisable à l’intérieur de cet environnement de développement. Que ce soit sur les graphismes, le code, le son, etc… Le site officiel fourni un <a href="http://docs.superpowers-html5.com/fr/bien-demarrer/a-propos-de-superpowers">très bon tutoriel</a> pour débuter avec Superpowers.</p>
+
+<p>Lorsque l’on travaille avec Superpowers sur l’aspect du code, on ne travaille pas directement avec l’HTML, le CSS, ou même le Javascript. Ici tout est en <a href="http://www.typescriptlang.org/">TypeScript</a>, un langage de surcouche à Javascript, qui peut ensuite être compilé vers ce dernier. Pour apprendre à utiliser Superpowers il faut apprendre le langage TypeScript, qui est vraiment très simple, mais aussi à la fois puissant. Je laisse la parole à d’autres personnes plus compétentes pour parler de celui-ci quelque part sur le Net, mais vraiment l’essayer c’est l’adopter. ;)</p>
+
+<h3 id="en-collaboration">…En collaboration!</h3>
+
+<p>Le gros point qui est à mettre en avant à mon avis, et le fait que Superpowers permet aux créateurs de Jeux Vidéos de travailler ensemble, et simultanément sur un projet. Chaque changement se voit en temps réel auprès des autres clients connectés: L’un peut coder pendant qu’un autre prépare des TileSets, et qu’un autre construit une Scène de jeu.</p>
+
+<p><img src="/images/superpowers_02.png" alt="superpowers_02" /></p>
+
+<p>Ce logiciel est encore en Bêta officiellement, il a donc encore quelques soucis, et manque de deux/trois fonctionalités qui pourraient être utiles (des notifications de modifications sur une partie du projet, un moyen de communication, pourquoi pas intégrer un client IRC directement à l’intérieur), mais cela n’assombrit pas ses nombreuses qualités.</p>
+
+<p>Il est rare en ce moment d’avoir un projet libre qui prend les devant et qui innove dans un domaine. Quand aujourd’hui la tendance est à la copie de fonctionalités en comparaison d’autres outils payants et/ou propriétaires, Superpowers apporte une nouvelle pierre à l’édifice des jeux vidéos en Web, et je suis impatient de démarrer un projet sérieux avec (Surement un Shoot ‘em up, bien sûr libre cela va de soi, si il y a des intéressés ;) ).</p>
+
+<p>Pour finir, un petit lien vers un dépot Github qui contient de gros tutoriaux sur Superpowers en créant de A à Z des petits jeux d’arcade: <a href="https://github.com/mseyne/superpowers-tutorials">ICI</a></p>
+
+  <div id="comments">
+	
+		<h1>Aucun commentaire</h1>
+		
+	
+	<h1>Commenter</h1>
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/planet/2016/06/30/des-jeux-web-avec-superpowers" />
+		<input type="hidden" name="return_url" value="http://ilphrin.com/planet/2016/06/30/des-jeux-web-avec-superpowers.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+		<input type="submit" name="submit" value="Envoyer ✔"/>
+	</form>
+</div>
+
+  </div>
+
+
+  <div class="share">
+    <h3>Partager</h3>
+    <a href="http://sharetodiaspora.github.io/?title=Des jeux Web avec Superpowers&url=/planet/2016/06/30/des-jeux-web-avec-superpowers.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+    </a>
+    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+  </div>
+</div>
+
+
+    </div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.ilphrin.com"]]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ilphrin.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>

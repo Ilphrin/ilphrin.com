@@ -17,13 +17,13 @@ L'avantage de ce système c'est qu'avec Nyaovim on va pourvoir d'une part créer
 
 Bon du coup comment profiter de cet outil? C'est très simple, il faut disposer du gestionnaire de package de NodeJS appelé [NPM](https://www.npmjs.com/), disponible dans la plupart des dépôt des grandes distribution de ce monde, qui est fourni lorsqu'on installe NodeJS sur son pc. Ensuite la commande a lancer pour installer Nyaovim est la suivante:
 
-{% highlight bash %}
+<pre><code class="bash">
 
 sudo npm install -g nyaovim
 
 nyaovim
 
-{% endhighlight %}
+</code></pre>
 
 Et voilà votre GUI est maintenant installé et lancé!
 

@@ -46,7 +46,7 @@ Ce dossier est lui-même composé du:
 
 Allons ensuite maintenant dans ce fichier __init__.py. Il contient principalement une classe avec un décorateur de neovim pour indiquer que cette classe dirige le plugin. Cette classe est initialisée avec un paramètre qui est le client de vim en lui-même. Cet objet va servir à faire toute l'interaction avec notre éditeur de texte préferé.
 
-{% highlight python %}
+<pre><code class="python">
 
 @neovim.plugin
 class Easy(object):
@@ -58,7 +58,7 @@ class Easy(object):
   def generate(self):
     ...
 
-{% endhighlight %}
+</code></pre>
 
 On voit ici que j'ai utilisé deux décorateurs liés à neovim. @neovim.plugin permet donc de marquer votre classe comme étant celle qui gère le plugin comme je l'ai déjà dit. @neovim.command est à placer sur une méthode de votre classe.
 

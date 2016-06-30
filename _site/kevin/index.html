@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
   <script src="/js/nav.js"> </script>
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
+  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
   <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
@@ -35,58 +35,30 @@
 
 
 <body>
-    <div class="contact_pop">
-  <div class="contact">
-    <ul>
-      <li>Mail: ilphrin@autistici.org</li>
-      <li>Lyon, France</li>
-    </ul>
-    <ul id="accounts">
-      <li><a target="_blank" href="https://www.github.com/Ilphrin"><img src="/images/links/github.png"></img></a></li>
-      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'><img src="/images/links/linkedin-icon.png"></img></a></li>
-      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/"><img src="/images/links/firefoxos.png"></img></a></li>
-    </ul>
-    <ul>
-      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
-      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
-      <li><a target="_blank" href="http://planet-libre.org">Planet Libre </a></li>
-      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR</a></li>
-      <li><a target="_black" href="http://natbergez.wix.com/natbergez">Natacha gameart</a></li>
-    </ul>
-    <ul>
-      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
-      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
-    </ul>
-  </div>
-  <div class="contact_arrow" onclick="contact_popup()">
-  <p>
-    Liens
-  </p>
-  </div>
-</div>
-
     <div class="main">
           <div class="header_blog">
   
     
-      <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
-        <div class="header_blog_title">
-        <time datetime="">
-          <div>
-            <h1><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h1>
-          </div>
-          
+      <a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">
+        <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
+            <div class="header_blog_title">
+            <time datetime="">
+              <div>
+                <h1>Des jeux Web avec Superpowers</h1>
+              </div>
+              
   
-    26
+    30
 
 
-mars
+juin
   
 2016
 
-         </time>
+             </time>
+            </div>
         </div>
-      </div>
+      </a>
       
   </div>
 
@@ -123,66 +95,77 @@ mars
   </div>
   <div class="next">
     
-      <a rel="next" href="/kevin/page/2">Next</a>
+      <a rel="next" href="/kevin/page/2">Suiv</a>
     
   </div>
 </div>
 
   <div class="posts">
   
-    
-      <div class="post">
-        <h2><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h2>
-        <p>Partie jouée avec trois joueurs: Oriana une Nécrosi, Skamos un bio-ingénieur, et Shedinn un Survivant. Première partie de test des règles et en tant que maitre de jeu pour ma part. J’ai décidé de mettre le compte-rendu sous forme narrative, sans autre raison que “J’avais envie” =D</p>
+    <div class="post">
+      <h2><a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">Des jeux Web avec Superpowers</a></h2>
+      <p>Quand il s’agit de développer des jeux vidéos sur base d’HTML5, il existe de nombreux cours et librairies sur Internet relatif à ce sujet, et on peut maintenant trouver facilement des ressources pour apprendre à développer des jeux avec telles ou telle technologie (jetez un oeil <a href="https://hacks.mozilla.org/2016/02/html-5-game-development-video-series/">ICI</a>, ça veut le coup d’oeil ;)). Dans la continuité de ce boum technologique, et né <strong>Superpowers</strong>: Un IDE pour développer des Jeux Web de façon collaborative.</p>
 
 
-      </div>
-    
+    </div>
   
-    
-      <div class="post">
-        <h2><a href="/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html">Nyaovim le GUI Neovim avec Electron</a></h2>
-        <p>Voilà un projet dont j’avais plusieurs fois entendu parler mais sans jamais réellement me pencher dessus. Le seul défaut que je trouvais à Neovim c’est de ne pas avoir de GUI associé vraiment digne de ce nom, ce que je cherche est quelque chose de joli principalement mais aussi qui permette vraiment de profiter d’une interface graphique: prévisualisation, barre de défilement, bulle d’information et autre, etc…</p>
+    <div class="post">
+      <h2><a href="/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit.html">Dev' d'un Gauntlet: La conclusion d'un jeu qui ne s'est pas fini</a></h2>
+      <p>La date de rendu de notre projet de Gauntlet, qui est l’un des deux gros projet de fin de deuxième année, s’est terminée il y a à peu près une semaine maintenant. Il y a du bon et du moins bon, et je me suis dit que mettre sur papier numérique ce qu’il faut en retirer peut être un exercice utile, déjà pour moi pour avoir des notes pour plus tard, et peut-être que nos erreurs serviront à ce que quelqu’un ne refasse pas les mêmes =D.</p>
 
 
-      </div>
-    
+    </div>
   
-    
-      <div class="post">
-        <h2><a href="/planet/2016/01/28/generation-de-c++-en-plugin-neovim-avec-clang.html">Génération de code C++ en plugin Neovim avec CLang</a></h2>
-        <p>La Piscine de C++ qui marque le début de notre deuxième année à Epitech vient de se terminer. Durant ces deux semaines on étudie à fond la quasi-totalité des concepts liés à la POO.</p>
+    <div class="post">
+      <h2><a href="/planet/2016/05/02/dev-dun-gauntlet-la-programmation-telle-qu-ecrite-par-satan.html">Dev' d'un Gauntlet: La programmation telle que l'a écrit Satan</a></h2>
+      <p>Mettons un peu de contexte derrière ce titre étrange… Nous approchons de la fin de 2e année à Epitech, et l’un des plus gros projet de C++ a commencé: Indie Studio.</p>
 
-<p>Rapidement tout le monde a commencé à chercher tout ce qui pouvait nous faciliter la vie pour coder, et de nombreux étudiants se sont tournés vers des IDE très puissants, mais aussi très lourds. Moi je suis du genre à rester sur mon Neovim même si j’ai moins de fonctionalités, au moins ça marche et je sais ce que je code.</p>
+<p>Nous sommes 6 sur ce projet, avec 1 mois et demi devant nous pour développer 1 jeu dans une petite liste:</p>
 
-<p>Mais mon égo en a pris un coup au vu de toutes les fonctionnalités de ces IDE et j’ai eu envie de développer un plugin qui puisse faire, à défaut de complètement, certaines choses de façon équivalentes à ces IDE. Pour ça j’ai dû apprendre à utiliser l’API Python de Neovim, et la librairie de parsing CLang.</p>
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Gran_Trak_10">Sprint</a>: Un jeu de courses de voitures avec l’ajout de power-ups façon Mario-Kart</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Lemming">Lemmings</a>: Un jeu de reflexion où l’on doit gérer des petites bestioles un peu débiles. (Mais on connait non?)</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Worms_(s%C3%A9rie://fr.wikipedia.org/wiki/Worms_(s%C3%A9rie))">Worms</a>: Nan celui-là vous êtes obligé de le connaitre, allez y jouer avant de continuer cet article.</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Bomberman">Bomberman</a>: Un jeu multijoueur dont le but est de poser des bombes pour tuer le plus d’ennemis. (Je vais me faire censurer par le gouvernement avec des phrase comme ça)</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Gauntlet">Gauntlet</a>: Un jeu d’action dans un donjon en vue de dessus, avec multijoueur jusque 4 sur le même pc! <strong>On a pris celui-ci</strong>.</li>
+</ul>
 
-<p>Mon plugin en est à ses balbutiements mais je compte bien l’améliorer au fil du temps. Je vais commencer par parler un peu de la création d’un plugin dans Neovim, puis du fonctionnement de CLang. Dans un prochain article je rentrerais un peu plus dans les détails sur la façon dont j’ai fait fonctionner les deux ensembles, mais cet article est déjà bien assez long ;)</p>
 
-
-      </div>
-    
+    </div>
   
-    
-      <div class="post">
-        <h2><a href="/planet/2016/01/18/nouvelle-version-de-sunflower.html">Nouvelle version de Sunflower (0.3)</a></h2>
-        <p>J’avais déjà parlé de Sunflower il y a bien longtemps. Pour rappel, Sunflower est un logiciel de gestion de fichiers qui a la particularité de se concentrer sur une vue “jumelée”. C’est-à-dire avec deux panneaux de navigation. Le tout dans une interface sympatique et configurable à souhait.</p>
+    <div class="post">
+      <h2><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h2>
+      <p>Partie jouée avec trois joueurs: Oriana une Nécrosi, Skamos un bio-ingénieur, et Shedinn un Survivant. Première partie de test des règles et en tant que maitre de jeu pour ma part. J’ai décidé de mettre le compte-rendu sous forme narrative, sans autre raison que “J’avais envie” =D</p>
 
 
-      </div>
-    
+    </div>
   
-    
-      <div class="post">
-        <h2><a href="/planet/2016/01/02/ce-que-j-ai-appris-avec-gaia.html">Ce que j'ai appris avec Gaia</a></h2>
-        <p>Cela fait un moment que je n’ai pas parlé de Gaia, depuis la dernière fois où j’expliquais mon envie de bosser sur FirefoxOS, et ce que j’ai entrepris pour y contribuer au niveau du code. Je viens de finir de corriger mon premier bug, et il a été ajouté au code de la branche principale de FirefoxOS. Je me suis donc dit qu’un petit debrief sur ce que j’ai appris me permettrai de revoir un peu tout ça et notamment de réfléchir à la suite.</p>
+    <div class="post">
+      <h2><a href="/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html">Nyaovim le GUI Neovim avec Electron</a></h2>
+      <p>Voilà un projet dont j’avais plusieurs fois entendu parler mais sans jamais réellement me pencher dessus. Le seul défaut que je trouvais à Neovim c’est de ne pas avoir de GUI associé vraiment digne de ce nom, ce que je cherche est quelque chose de joli principalement mais aussi qui permette vraiment de profiter d’une interface graphique: prévisualisation, barre de défilement, bulle d’information et autre, etc…</p>
 
 
-      </div>
-    
+    </div>
   
   </div>
 
     </div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.ilphrin.com"]]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ilphrin.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body>
 </html>

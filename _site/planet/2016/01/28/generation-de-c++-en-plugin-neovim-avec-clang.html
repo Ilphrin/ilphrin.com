@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
   <script src="/js/nav.js"> </script>
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
+  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
   <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
@@ -35,41 +35,11 @@
 
 
 <body>
-    <div class="contact_pop">
-  <div class="contact">
-    <ul>
-      <li>Mail: ilphrin@autistici.org</li>
-      <li>Lyon, France</li>
-    </ul>
-    <ul id="accounts">
-      <li><a target="_blank" href="https://www.github.com/Ilphrin"><img src="/images/links/github.png"></img></a></li>
-      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'><img src="/images/links/linkedin-icon.png"></img></a></li>
-      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/"><img src="/images/links/firefoxos.png"></img></a></li>
-    </ul>
-    <ul>
-      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
-      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
-      <li><a target="_blank" href="http://planet-libre.org">Planet Libre </a></li>
-      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR</a></li>
-      <li><a target="_black" href="http://natbergez.wix.com/natbergez">Natacha gameart</a></li>
-    </ul>
-    <ul>
-      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
-      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
-    </ul>
-  </div>
-  <div class="contact_arrow" onclick="contact_popup()">
-  <p>
-    Liens
-  </p>
-  </div>
-</div>
-
     <div class="main">
         <div class="post_home">
       <div class="title" style="background-image: url('/images/header_articles/');">
         <time datetime="28 January 2016">
-          <h1> Génération de code C++ en plugin Neovim avec CLang </h1>
+          <h1> Génération de code C++ en plugin Neovim avec CLang</h1>
           <p>
             
   
@@ -84,6 +54,104 @@ janvier
          </time>
       </div>
   <div class="content">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
     <p>La Piscine de C++ qui marque le début de notre deuxième année à Epitech vient de se terminer. Durant ces deux semaines on étudie à fond la quasi-totalité des concepts liés à la POO.</p>
 
 <p>Rapidement tout le monde a commencé à chercher tout ce qui pouvait nous faciliter la vie pour coder, et de nombreux étudiants se sont tournés vers des IDE très puissants, mais aussi très lourds. Moi je suis du genre à rester sur mon Neovim même si j’ai moins de fonctionalités, au moins ça marche et je sais ce que je code.</p>
@@ -125,15 +193,19 @@ janvier
 
 <p>Allons ensuite maintenant dans ce fichier <strong>init</strong>.py. Il contient principalement une classe avec un décorateur de neovim pour indiquer que cette classe dirige le plugin. Cette classe est initialisée avec un paramètre qui est le client de vim en lui-même. Cet objet va servir à faire toute l’interaction avec notre éditeur de texte préferé.</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="nd">@neovim.plugin</span>
-<span class="k">class</span> <span class="nc">Easy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-  <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vim</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">vim</span> <span class="o">=</span> <span class="n">vim</span>
-    <span class="o">...</span>
+<pre><code class="python">
 
-  <span class="nd">@neovim.command</span><span class="p">(</span><span class="s">&#39;EasyGenerate&#39;</span><span class="p">)</span>
-  <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="o">...</span></code></pre></div>
+@neovim.plugin
+class Easy(object):
+  def __init__(self, vim):
+    self.vim = vim
+    ...
+
+  @neovim.command('EasyGenerate')
+  def generate(self):
+    ...
+
+</code></pre>
 
 <p>On voit ici que j’ai utilisé deux décorateurs liés à neovim. @neovim.plugin permet donc de marquer votre classe comme étant celle qui gère le plugin comme je l’ai déjà dit. @neovim.command est à placer sur une méthode de votre classe.</p>
 
@@ -336,6 +408,24 @@ janvier
   </div>
 </div>
 
+
     </div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.ilphrin.com"]]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ilphrin.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body>
 </html>

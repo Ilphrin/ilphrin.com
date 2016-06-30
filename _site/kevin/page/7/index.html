@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
   <script src="/js/nav.js"> </script>
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
+  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
   <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
@@ -35,58 +35,30 @@
 
 
 <body>
-    <div class="contact_pop">
-  <div class="contact">
-    <ul>
-      <li>Mail: ilphrin@autistici.org</li>
-      <li>Lyon, France</li>
-    </ul>
-    <ul id="accounts">
-      <li><a target="_blank" href="https://www.github.com/Ilphrin"><img src="/images/links/github.png"></img></a></li>
-      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'><img src="/images/links/linkedin-icon.png"></img></a></li>
-      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/"><img src="/images/links/firefoxos.png"></img></a></li>
-    </ul>
-    <ul>
-      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
-      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
-      <li><a target="_blank" href="http://planet-libre.org">Planet Libre </a></li>
-      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR</a></li>
-      <li><a target="_black" href="http://natbergez.wix.com/natbergez">Natacha gameart</a></li>
-    </ul>
-    <ul>
-      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
-      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
-    </ul>
-  </div>
-  <div class="contact_arrow" onclick="contact_popup()">
-  <p>
-    Liens
-  </p>
-  </div>
-</div>
-
     <div class="main">
           <div class="header_blog">
   
     
-      <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
-        <div class="header_blog_title">
-        <time datetime="">
-          <div>
-            <h1><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h1>
-          </div>
-          
+      <a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">
+        <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
+            <div class="header_blog_title">
+            <time datetime="">
+              <div>
+                <h1>Des jeux Web avec Superpowers</h1>
+              </div>
+              
   
-    26
+    30
 
 
-mars
+juin
   
 2016
 
-         </time>
+             </time>
+            </div>
         </div>
-      </div>
+      </a>
       
   </div>
 
@@ -131,67 +103,72 @@ mars
   </div>
   <div class="next">
     
-      <a rel="next" href="/kevin/page/8">Next</a>
+      <a rel="next" href="/kevin/page/8">Suiv</a>
     
   </div>
 </div>
 
   <div class="posts">
   
-    
-      <div class="post">
-        <h2><a href="/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html">Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi</a></h2>
-        <p>Salut tout l’monde!</p>
+    <div class="post">
+      <h2><a href="/2013/07/13/Linux-Kernel:-Introduction.html">Linux Kernel: Introduction</a></h2>
+      <p>Salut tout l’monde!</p>
+
+<p>Aujourd’hui on va parler du noyau linux (au cas où vous n’auriez pas lu le titre… :p), et cet article est le premier d’une suite sur le sujet, qui proviennent du site linux.org que je me permet de vous retranscrire en français ici.
+
+    </div>
+  
+    <div class="post">
+      <h2><a href="/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower.html">Faire de la traduction avec gettext : Exemple avec Sunflower</a></h2>
+      <p>Salut tout le monde!</p>
+
+<p>J’ai plusieurs fois eu affaire à des logiciels que je trouvais vraiment sympa, mais qui n’étaient pas disponibles en français, ce qui m’empêchait de bien l’utiliser, ou de le montrer à d’autres personnes qui n’y connaissent rien à l’anglais.  Ne connaissant pas encore bien la programmation, j’ai eu l’idée de faire un peu de traduction pour contribuer un peu aux logiciels que j’utilise. Je me suis donc tourné vers Sunflower, dont le site dispose d’un lien expliquant comment lui préparer une traduction. En fait on utilise un logiciel libre qui apparemment est très utilisé dans le monde de la traduction de logiciels.
+
+    </div>
+  
+    <div class="post">
+      <h2><a href="/2013/06/13/sunflower-version-0.1a-56.html">Sunflower version 0.1a-56</a></h2>
+      <p>Salut tout l’monde!</p>
+
+<p>Dans un article précédent je vous avais parlé de Sunflower, un gestionnaire de fichiers qui avait l’air prometteur. Aujourd’hui est sortie la version 0.1a-56 qui apporte quelques nouvelles fonctionnalités mais surtout des corrections de bug parmi lesquelles:
+
+    </div>
+  
+    <div class="post">
+      <h2><a href="/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html">Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi</a></h2>
+      <p>Salut tout l’monde!</p>
 
 <p>Cela commence à faire quelque mois que je tourne sous Archlinux, et mis à part un plantage Xorg qui m’a forcé à faire une petite ré-installation, je me plais vraiment avec cette distribution! Notamment grâce au dépôt communautaire AUR qui, jusqu’à maintenant, m’a permis d’installation tous les soft dont j’avais envie, et que je ne trouvais pas dans les gestionnaire de paquet des autres distributions.
 
-      </div>
-    
+    </div>
   
-    
-      <div class="post">
-        <h2><a href="/2013/04/26/reinstallation-forcee-point-sur-archlinux.html">Réinstallation forcée --> Point sur Arch Linux</a></h2>
-        <p>Salut tout l’monde!</p>
+    <div class="post">
+      <h2><a href="/2013/04/26/reinstallation-forcee-point-sur-archlinux.html">Réinstallation forcée --> Point sur Arch Linux</a></h2>
+      <p>Salut tout l’monde!</p>
 
 <p>Bon comme l’indique le titre de l’article, j’ai été obligé de faire un ré-installation de mon pc. En effet la moitié de mes applications ne voulaient plus s’ouvrir et j’avais d’autres problèmes important, et j’ai jamais réussi à comprendre pourquoi ça faisait ça tout d’un coup. Alors après quelques jours de combat j’ai finalement abandonné et ai télechargé une image iso d’archlinux. Malheureusement je ne pourrai donc pas continuer l’article pour détailler l’installation, mais si vous êtes intéressés je vous conseille vivement le wiki d’archlinux anglais et français.
 
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2013/04/11/jouer-tout-en-apprenant-python.html">Jouer tout en apprenant Python</a></h2>
-        <p>Salut à toutes et à tous,</p>
-
-<p>Aujourd’hui je tiens à vous présenter un site internet fort sympathique, répondant au nom de Chekio. Ce site est destiné à toute personnes voulant apprendre/s’améliorer avec Python, mais un peu sous forme de jeu flash en ligne. Vous commencez sur une petite ile et pour vous balader sur d’autres iles il vous faudra avoir accompli un certain nombre de “missions”, qui sont en fait des exercices à résoudre sous forme de code Python.
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html.html">Faire son propre écran de login MDM en HTML</a></h2>
-        <p>Salut tout l’monde!</p>
-
-<p><a href="http://blog.linuxmint.com/?p=2327">The Linux Mint Blog</a> à publié récemment un article concernant MDM expliquant qu’il gère maintenant les thèmes HTML5.  Si vous n’aimez pas l’Anglais, voici comment avoir la dernière version de mdm:
-
-      </div>
-    
-  
-    
-      <div class="post">
-        <h2><a href="/2013/03/01/encore-du-jeu-a-l-ancienne-ps1-&-chromium-bsu.html">Encore du jeu à l'ancienne - PS1 & Chromium-bsu</a></h2>
-        <p>Salut tout l’monde!</p>
-
-<p>Aujourd’hui je vais aborder deux choses dont voici tout de suite la première:</p>
-
-<p>Jusqu’à récemment sur mon ordinateur se trouvait l’émulateur Epsxe, qui me permettait d’émuler une console de Playstation 1 et d’y faire tourner tout les jeux de cette console qui à fait mon enfance. Néanmoins en voulant le montrer à une amie il ne voulait plus marcher. En fait c’est comme si le plugin qui permet de gérer les commandes n’existait plus.
-
-      </div>
-    
+    </div>
   
   </div>
 
     </div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.ilphrin.com"]]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ilphrin.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body>
 </html>

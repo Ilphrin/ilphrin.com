@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/vim_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/javascript_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/python_syntax.css">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/cpp_syntax.css">
+  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
   <script src="/js/nav.js"> </script>
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
+  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
   <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
@@ -35,41 +35,11 @@
 
 
 <body>
-    <div class="contact_pop">
-  <div class="contact">
-    <ul>
-      <li>Mail: ilphrin@autistici.org</li>
-      <li>Lyon, France</li>
-    </ul>
-    <ul id="accounts">
-      <li><a target="_blank" href="https://www.github.com/Ilphrin"><img src="/images/links/github.png"></img></a></li>
-      <li><a target="_blank" href='https://www.linkedin.com/profile/view?id=385771657&authType=NAME_SEARCH&authToken=ohOf&locale=fr_FR&srchid=3857716571426951551179&srchindex=1&srchtotal=3&trk=vsrp_people_res_name&trkInfo=VSRPsearchId%3A3857716571426951551179%2CVSRPtargetId%3A385771657%2CVSRPcmpt%3Aprimary%2CVSRPnm%3A()'><img src="/images/links/linkedin-icon.png"></img></a></li>
-      <li><a target="_blank" href="https://mozillians.org/en-US/u/ilphrin/"><img src="/images/links/firefoxos.png"></img></a></li>
-    </ul>
-    <ul>
-      <li><a target="_blank" href="http://schoewilliam.fr">Schoewilliam</a></li>
-      <li><a target="_blank" href="http://la-vache-libre.org">La vache libre</a></li>
-      <li><a target="_blank" href="http://planet-libre.org">Planet Libre </a></li>
-      <li><a target="_blank" href="https://firefoxos.mozfr.org/">Blog FirefoxOS FR</a></li>
-      <li><a target="_black" href="http://natbergez.wix.com/natbergez">Natacha gameart</a></li>
-    </ul>
-    <ul>
-      <li><a href="https://github.com/Ilphrin/ilphrin.com">Code du site</a></li>
-      <li>Site et contenus sous licence <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/fr/legalcode">Creative Commons BY-NC-SA</a></li>
-    </ul>
-  </div>
-  <div class="contact_arrow" onclick="contact_popup()">
-  <p>
-    Liens
-  </p>
-  </div>
-</div>
-
     <div class="main">
         <div class="post_home">
       <div class="title" style="background-image: url('/images/header_articles/tuxletriad.jpg');">
         <time datetime="17 October 2014">
-          <h1> Tuxle Triad et Pygame: Avoir une main </h1>
+          <h1> Tuxle Triad et Pygame: Avoir une main</h1>
           <p>
             
   
@@ -84,6 +54,104 @@ octobre
          </time>
       </div>
   <div class="content">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
     <p>Salut à tous!</p>
 
 <p>Me voilà aujourd’hui pour un deuxième article sur Pygame. Je vais cette fois-ci vous expliquer comment créer une “main” remplie de cartes tirées aléatoirement, et positionner les cartes dans la main.</p>
@@ -167,6 +235,24 @@ L’avant dernière ligne est une petite subtilité pour la gestion d’éveneme
   </div>
 </div>
 
+
     </div>
+<!-- Piwik -->
+<script type="text/javascript">
+  var _paq = _paq || [];
+  _paq.push(["setDomains", ["*.ilphrin.com"]]);
+  _paq.push(["setDoNotTrack", true]);
+  _paq.push(['trackPageView']);
+  _paq.push(['enableLinkTracking']);
+  (function() {
+    var u="//ilphrin.com/analytics/";
+    _paq.push(['setTrackerUrl', u+'piwik.php']);
+    _paq.push(['setSiteId', 1]);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+  })();
+</script>
+<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+<!-- End Piwik Code -->
 </body>
 </html>
