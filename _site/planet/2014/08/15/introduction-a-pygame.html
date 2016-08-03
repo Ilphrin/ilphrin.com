@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -175,8 +174,9 @@ Petite présentation de la bibliothèque: Pygame est une surcouche pour Python �
 
 <p>Pour ce premier article, je vais commencer par expliquer comment on gère les cartes du joueurs, c’est-à-dire comment récupérer un fichier image pour une carte,. Dans le dossier du jeu, chaque fichier de carte possède un nom sous cette forme:</p>
 
-<pre><code>Nom + "B" ou "R" + ".jpg"
+<div class="highlighter-rouge"><pre class="highlight"><code>Nom + "B" ou "R" + ".jpg"
 </code></pre>
+</div>
 
 <p>On a ‘B’ pour bleu si c’est le joueur de gauche, et ‘R’ pour rouge si c’est le joueur 2. Chaque carte possède donc un propriétaire (selon la couleur), un nom, et 4 numéro indiqués sur la carte. Ensuite il nous faut une liste pour enregistrer, d’une part, le nom de la carte, et d’autre part ses caractéristique. Cette liste correspond au fichier <u>listOfCards.py</u>. La deuxième liste contient les caractéristique. L’indice de la liste de caractéristique correspond exactement à la carte du même indice dans la liste de nom.
 La liste ‘value’ contient une sous-liste pour chaque carte. Les valeurs de cette liste sont:</p>
@@ -216,8 +216,8 @@ Dans Pygame, lorsque l’on veut afficher quelque chose, il faut créer deux obj
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">

@@ -1,12 +1,13 @@
 #Globals
 source: .
 destination: ./_site
-plugins: ./_plugins
-layouts: ./_layouts
+plugins_dir: ./plugins
+layouts_dir: ./_layouts
 collection: null
 name: Kevin / Ilphrin
 description: A blog about IT, free software and stuff like that
 url: http://ilphrin.com
+gems: ['jekyll-paginate']
 
 #Handling reading
 encoding: "utf-8"

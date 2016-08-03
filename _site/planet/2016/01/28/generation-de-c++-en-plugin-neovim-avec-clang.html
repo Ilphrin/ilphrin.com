@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -162,7 +161,7 @@ janvier
 
 <!--break-->
 
-<h2 id="neovim">Neovim</h2>
+<p>##Neovim</p>
 
 <p>Neovim a totalement changé son API pour les plugin par rapport à Vim, en utilisant <a href="http://msgpack.org/">msgpack</a> pour pouvoir créer des clients comme on veut dans le langage qu’on veut pour faire une API, un GUI, etc…</p>
 
@@ -172,7 +171,7 @@ janvier
 
 <p>Bon assez parlé place à l’action, comment ça fonctionne un plugin Neovim avec Python? Déjà il faut installer cette API, cela se fait par le biais de la commande suivante:</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh">sudo pip install neovim</code></pre></div>
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo pip install neovim</code></pre></figure>
 
 <p>J’ai appelé mon plugin <a href="https://github.com/Ilphrin/easy-cpp.nvim">easy-cpp.nvim</a>, je met dans un dossier éponyme le contenu de mon plugin, qui se résume par:</p>
 
@@ -217,7 +216,7 @@ class Easy(object):
 
 <p>Pour ajouter à la fin d’un buffer il y a deux possibilités: soit on veut ajouter à la fin et dans ce cas on fait buffers.append(maChaineOuMonTableau), soit on veut intercaler une ou des lignes entre deux autres, par exemple si je veux insérer du texte à la ligne 42 je fais buffers.append(maChainOuMonTableau, 42). Au final c’est comme un tableau classique en Python :)</p>
 
-<h2 id="clang">CLang</h2>
+<p>##CLang</p>
 
 <p>CLang est extrêmement puissant, mais il n’y a malheureusement que peu de ressources documentaires sur le sujet, et encore moins pour la librairie en Python. Ayant réussi à faire deux trois chose avec je me suis dit que partager avec tout le monde ce que j’ai appris pourrait en pousser d’autres à faire le pas ;) (et m’apprendre des choses en retour!)</p>
 
@@ -227,11 +226,11 @@ class Easy(object):
 
 <p>Je m’explique, j’ai fait un fichier de header pour mes tests, et un fichier de source pour comparer le résultat final que je veux:</p>
 
-<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#ifndef TEXTCOMPONENT_H</span>
-<span class="cp"># define TEXTCOMPONENT_H</span>
-
-<span class="cp">#include &lt;string&gt;</span>
-
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#ifndef TEXTCOMPONENT_H
+# define TEXTCOMPONENT_H
+</span>
+<span class="cp">#include &lt;string&gt;
+</span>
 <span class="k">namespace</span> <span class="n">Test</span>
 <span class="p">{</span>
   <span class="k">namespace</span> <span class="n">inerTest</span>
@@ -242,7 +241,7 @@ class Easy(object):
           <span class="n">TextComponent</span><span class="p">();</span>
 
           <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">text</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
-          <span class="kt">void</span> <span class="nf">setText</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">);</span>
+          <span class="kt">void</span> <span class="n">setText</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span> <span class="n">value</span><span class="p">);</span>
 
       <span class="k">private</span><span class="o">:</span>
           <span class="kt">void</span> <span class="n">superSecretFunction</span><span class="p">();</span>
@@ -267,14 +266,14 @@ class Easy(object):
     <span class="n">OutText</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="n">OutText</span> <span class="k">const</span><span class="o">&amp;</span><span class="p">);</span>
 <span class="p">};</span>
 
-<span class="kt">void</span> <span class="nf">outputsmthing</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
+<span class="kt">void</span> <span class="n">outputsmthing</span><span class="p">(</span><span class="kt">int</span><span class="p">,</span> <span class="kt">int</span><span class="p">);</span>
 
-<span class="cp">#endif </span><span class="cm">/* TEXTCOMPONENT_H */</span><span class="cp"></span></code></pre></div>
+<span class="cp">#endif </span><span class="cm">/* TEXTCOMPONENT_H */</span></code></pre></figure>
 
 <p>Et ce que je veux obtenir:</p>
 
-<div class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include &quot;textcomponent.h&quot;</span>
-
+<figure class="highlight"><pre><code class="language-cpp" data-lang="cpp"><span class="cp">#include "textcomponent.h"
+</span>
 <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">Test</span><span class="o">::</span><span class="n">inerTest</span><span class="o">::</span><span class="n">TextComponent</span><span class="o">::</span><span class="n">text</span><span class="p">()</span> <span class="k">const</span>
 <span class="p">{</span>
 
@@ -303,22 +302,22 @@ class Easy(object):
 <span class="n">OutText</span> <span class="o">&amp;</span> <span class="n">OutText</span><span class="o">::</span><span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">OutText</span> <span class="o">&amp;</span><span class="p">)</span>
 <span class="p">{</span>
 
-<span class="p">}</span></code></pre></div>
+<span class="p">}</span></code></pre></figure>
 
 <p>J’ai volontairement fait un cas pas très joli d’encapsulation dans des espaces de noms, mais bon au moins si là ça fonctionne c’est que je suis sur une bonne base!</p>
 
 <p>Donc pour générer ça, on va avoir besoin d’installer clang pour python, pour ça rien de tel qu’un:</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh">sudo pip install clang</code></pre></div>
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo pip install clang</code></pre></figure>
 
 <p>Ensuite on ouvre un fichier python à coté de notre fichier header (je ne parle pas du fichier <strong>init</strong>.py de tout à l’heure là on se met dans un autre dossier pour travailler sur autre chose sans le lier au plugin). On commence ce fichier en initialisant clang, lui demandant de créer un index, et de parser un fichier donné en paramètre avec sys.argv[]. Enfin, on va utiliser la sortie pour génerer la liste des fonctions du fichier de header:</p>
 
-<div class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">clang</span> <span class="kn">import</span> <span class="o">*</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">clang</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">cindex</span><span class="o">.</span><span class="n">Config</span><span class="o">.</span><span class="n">set_library_file</span><span class="p">(</span><span class="s">&#39;/usr/lib/llvm-3.4/lib/libclang.so.1&#39;</span><span class="p">)</span>
+<span class="n">cindex</span><span class="o">.</span><span class="n">Config</span><span class="o">.</span><span class="n">set_library_file</span><span class="p">(</span><span class="s">'/usr/lib/llvm-3.4/lib/libclang.so.1'</span><span class="p">)</span>
 <span class="n">index</span> <span class="o">=</span> <span class="n">cindex</span><span class="o">.</span><span class="n">Index</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-<span class="n">translation_unit</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;-x&#39;</span><span class="p">,</span> <span class="s">&#39;c++&#39;</span><span class="p">,</span> <span class="s">&#39;-std=c++11&#39;</span><span class="p">,</span> <span class="s">&#39;-D__CODE_GENERATOR__&#39;</span><span class="p">])</span>
+<span class="n">translation_unit</span> <span class="o">=</span> <span class="n">index</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="s">'-x'</span><span class="p">,</span> <span class="s">'c++'</span><span class="p">,</span> <span class="s">'-std=c++11'</span><span class="p">,</span> <span class="s">'-D__CODE_GENERATOR__'</span><span class="p">])</span>
 
 <span class="k">def</span> <span class="nf">get_methods</span><span class="p">(</span><span class="n">cursor</span><span class="p">):</span>
     <span class="n">name</span> <span class="o">=</span> <span class="n">cursor</span><span class="o">.</span><span class="n">spelling</span>
@@ -332,17 +331,17 @@ class Easy(object):
 <span class="k">def</span> <span class="nf">get_all_public_functions</span><span class="p">(</span><span class="n">cursor</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">cursor</span><span class="o">.</span><span class="n">get_children</span><span class="p">():</span>
-        <span class="k">if</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">cindex</span><span class="o">.</span><span class="n">CursorKind</span><span class="o">.</span><span class="n">CLASS_DECL</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">cindex</span><span class="o">.</span><span class="n">CursorKind</span><span class="o">.</span><span class="n">CLASS_DECL</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="nb">file</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
             <span class="n">a_class</span> <span class="o">=</span> <span class="n">get_methods</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
             <span class="n">result</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">spelling</span><span class="p">]</span> <span class="o">=</span> <span class="n">a_class</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">cindex</span><span class="o">.</span><span class="n">CursorKind</span><span class="o">.</span><span class="n">NAMESPACE</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">cindex</span><span class="o">.</span><span class="n">CursorKind</span><span class="o">.</span><span class="n">NAMESPACE</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="nb">file</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
             <span class="n">child_classes</span> <span class="o">=</span> <span class="n">get_all_public_functions</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
             <span class="n">result</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">spelling</span><span class="p">]</span> <span class="o">=</span> <span class="n">child_classes</span>
-        <span class="k">elif</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">cindex</span><span class="o">.</span><span class="n">CursorKind</span><span class="o">.</span><span class="n">FUNCTION_DECL</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="k">elif</span> <span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">kind</span> <span class="o">==</span> <span class="n">cindex</span><span class="o">.</span><span class="n">CursorKind</span><span class="o">.</span><span class="n">FUNCTION_DECL</span><span class="p">)</span> <span class="ow">and</span> <span class="n">c</span><span class="o">.</span><span class="n">location</span><span class="o">.</span><span class="nb">file</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
             <span class="n">result</span><span class="p">[</span><span class="n">c</span><span class="o">.</span><span class="n">spelling</span><span class="p">]</span> <span class="o">=</span> <span class="n">c</span>
     <span class="k">return</span> <span class="n">result</span>
 
-<span class="n">classes</span> <span class="o">=</span> <span class="n">get_all_public_functions</span><span class="p">(</span><span class="n">translation_unit</span><span class="o">.</span><span class="n">cursor</span><span class="p">)</span></code></pre></div>
+<span class="n">classes</span> <span class="o">=</span> <span class="n">get_all_public_functions</span><span class="p">(</span><span class="n">translation_unit</span><span class="o">.</span><span class="n">cursor</span><span class="p">)</span></code></pre></figure>
 
 <p>Pas de panique je vais tout expliquer!</p>
 
@@ -368,8 +367,8 @@ class Easy(object):
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">

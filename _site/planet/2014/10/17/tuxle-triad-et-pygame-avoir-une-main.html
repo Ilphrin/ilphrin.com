@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -158,10 +157,11 @@ octobre
 
 <p>La dernière fois je vous avais expliqué comment fonctionnait un objet <strong>Card</strong>. Mais pour pouvoir jouer il en faudra plus d’une (ça risque d’être quelque peu ennuyant sinon ;) ). Ceux qui ont essayé le jeu savent combien de carte il faut, c’est-à-dire 5 par joueur. Pour faire ça nous allons utiliser tout simplement une liste. Dans la fonction <strong>__init__</strong> du fichier  game.py, on peut voir les deux lignes suivantes:</p>
 
-<pre><code>self.player1Hand = self.randomHand(1)
+<div class="highlighter-rouge"><pre class="highlight"><code>self.player1Hand = self.randomHand(1)
 
 self.player2Hand = self.randomHand(-1)
 </code></pre>
+</div>
 
 <!--break-->
 <p>Je vais expliquer juste après ce qui est à gauche de chaque opérateur =. Je fais donc appel à une fonction r<strong>andomHand()</strong>, qui appartient à la classe <strong>Application</strong>. En descendant plus loin dans le fichier (dans les alentours de la ligne 500 à l’heure de l’écriture de cet article), on trouve la définition de cette fonction qui prend le paramètre <strong>player</strong>. Ce paramètre doit valoir 1 ou -1.</p>
@@ -195,8 +195,8 @@ L’avant dernière ligne est une petite subtilité pour la gestion d’éveneme
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">

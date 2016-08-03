@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -166,7 +165,7 @@ Voilà la majorité des sites sur lesquels je me suis basé pour cette installat
 
 <p>Pour tous les fichier à créer/éditer, j’utilise le logiciel nano, qui est mon préferé quand il s’agit de s’occuper des fichiers en ligne de commande.</p>
 
-<h2 id="installation">Installation</h2>
+<p>##Installation</p>
 
 <p>On lance la machine virtuelle (je ne décris pas ici la création d’une machine virtuelle, normalement une rapide recherche sur le net vous permet d’en savoir largement sur l’utilisation de Virtualbox).</p>
 
@@ -176,21 +175,23 @@ Voilà la majorité des sites sur lesquels je me suis basé pour cette installat
 Là on à un défilement de message incompréhensibles… Puis on arrive sur une invite de commande connecté sous root.
 Commencez par mettre un clavier français:</p>
 
-<pre><code>loadkeys fr-pc
+<div class="highlighter-rouge"><pre class="highlight"><code>loadkeys fr-pc
 </code></pre>
+</div>
 
-<h2 id="partitionnement">Partitionnement</h2>
+<p>##Partitionnement</p>
 
 <p>D’après ArchlinuxFR on devrait faire 4 partitions, mais j’omets celle correspondante au swap, ce qui m’en fait seulement 3.</p>
 
 <p>Partitionemement grâce à fdisk avec:</p>
 
-<pre><code>fdisk /dev/sda
+<div class="highlighter-rouge"><pre class="highlight"><code>fdisk /dev/sda
 </code></pre>
+</div>
 
 <p>Faites ensuite comme je l’ai fait (avec vos valeur pour la taille des différentes partitions si vous en avez fais des différentes):</p>
 
-<pre><code>Command(m for help) : n              
+<div class="highlighter-rouge"><pre class="highlight"><code>Command(m for help) : n              
 Parition type:                                
 p  primary                                  
 e  extended                                
@@ -199,10 +200,11 @@ Partition number(1-4, default1): 1
 First sector (default 2048): 2048  
 End sector: +100M                      
 </code></pre>
+</div>
 
 <p>Puis par le même procédé on entre pour chacune des partitions:</p>
 
-<pre><code>p              
+<div class="highlighter-rouge"><pre class="highlight"><code>p              
 2              
 206848    
 +12288M             (12Go)
@@ -213,8 +215,9 @@ p
 (laisser vide pour prendre toute la place restante)
 Command(m for help): w  (Pour quitter et enregistrer les modifications)
 </code></pre>
+</div>
 
-<h2 id="formatage">Formatage</h2>
+<p>##Formatage</p>
 
 <p>On devrait donc avoir maintenant nos 3 partitions, on va les formater pour qu’elle soient en ext4 (sauf /dev/sda1 qu’on mettra en ext2). Donc pour formater tout ça on va faire :</p>
 
@@ -224,69 +227,77 @@ mkfs.ext4 /dev/sda3</p>
 
 <p>Attendre que chacune des commandes se termine avant de faire quoi que ce soit/passer à la suivante.</p>
 
-<h2 id="montage-des-partitions">Montage des partitions</h2>
+<p>##Montage des partitions</p>
 
 <p>On monte maintenant toutes les partitions pour qu’elles correspondent au dossier que l’on veut, c’est-à-dire:</p>
 
-<pre><code>mount /dev/sda2 /mnt                  # Racine
+<div class="highlighter-rouge"><pre class="highlight"><code>mount /dev/sda2 /mnt                  # Racine
 mkdir /mnt/{boot,home}              # Création des deux répertoires pour les points de montages restants
 mount /dev/sda1 /mnt/boot          # Répertoire de boot
 mount /dev/sda3 /mnt/home        # Répertoire perso
 </code></pre>
+</div>
 
 <p>Au final au devrait donc avoir des partitions ressemblant à ça:</p>
 
-<pre><code>/home : ~8Go --&gt; /dev/sda3        ext4 Monté dans /mnt/home
+<div class="highlighter-rouge"><pre class="highlight"><code>/home : ~8Go --&gt; /dev/sda3        ext4 Monté dans /mnt/home
 / : 12Go --&gt; /dev/sda2                 ext4 Monté dans /mnt   
 /boot: 100Mo --&gt; /dev/sda1         ext2 Monté dans /mnt/boot  
 </code></pre>
+</div>
 
-<h2 id="connexion-rseau">Connexion réseau</h2>
+<p>##Connexion réseau</p>
 
 <p>Normalement si on est en connexion filiairele pc est automatiquement connecté au réseau. Cependant étant donné que nous sommes sous une machine Virtualbox ce n’est pas toujours le cas.
 Il faut lancer la commande suivante afin de démarrer le démon qui gère la connexion filiaire au réseau eth0:</p>
 
-<pre><code>dhcpd etho0         (A lancer avec "sh" et non "bash" !) 
+<div class="highlighter-rouge"><pre class="highlight"><code>dhcpd etho0         (A lancer avec "sh" et non "bash" !) 
 </code></pre>
+</div>
 
-<h2 id="installation-du-systme-de-base">Installation du système de base</h2>
+<p>##Installation du système de base</p>
 
 <p>On peut changer le fichier /etc/pacman.d/mirrorlist pour obtenir le miroir le plus proche mais ce n’est pas obligatoire. Donc on va lancer l’installation
 directement même si ça prend un peu plus de temps. On fait ça grâce à la commande:</p>
 
-<pre><code>pacstrap /mnt base
+<div class="highlighter-rouge"><pre class="highlight"><code>pacstrap /mnt base
 </code></pre>
+</div>
 
 <p>Là il faut laisser faire quelques minutes/heures selon votre connexion. Il se peut qu’il y ait une demande de confirmation de la part de l’utilisateur.</p>
 
 <p>Ensuite il faut installer base-devel pour l’utilisation des dépôts d’utilisateur d’Arch avec la commande;</p>
 
-<pre><code>pacstrap /mnt base-devel
+<div class="highlighter-rouge"><pre class="highlight"><code>pacstrap /mnt base-devel
 </code></pre>
+</div>
 
 <p>Là aussi il faut attendre quelques minutes que le téléchargement/installation se fasse, j’ai eu droit à une demande de confirmation qui s’est…confirmée toute seul O_ô. Bon passons l’éponge pour cette fois-ci…</p>
 
 <p>Enfin, pour terminer avec ces installations dans tous les sens, il faut installer le chargeur de démarrage. La plupart du temps on choisit GRUB ou LILO, mais la documentation se base sur l’installation de syslinux. On va donc suivre leur exemple avec:</p>
 
-<pre><code>pacstrap /mnt syslinux
+<div class="highlighter-rouge"><pre class="highlight"><code>pacstrap /mnt syslinux
 </code></pre>
+</div>
 
 <p>L’installation devrait être beaucoup plus rapide. Et bien entendu…une auto-confirmation de la part de pacstrap! Faudrait que je pose la question sur les forums quand même.</p>
 
-<h2 id="configuration">Configuration</h2>
+<p>##Configuration</p>
 
 <p>Il faut générer un fichier de configuration /etc/fstab. Il contiendra toutes les informations concernant le partitionnement du/des disque(s) et leur arborescence.</p>
 
-<pre><code>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
+<div class="highlighter-rouge"><pre class="highlight"><code>genfstab -U -p /mnt &gt;&gt; /mnt/etc/fstab
 </code></pre>
+</div>
 
 <p>Je ne suis pas sûr de la signification des paramètres envoyés à genfstab (-U  et -p). Vous pouvez lancer un genfstab -h pour voir leur signification si vous arrivez à mieux comprendre que moi ^^”
 Le symbole de flux » permet d’enregistrer la sortie de la commande dans un fichier spécifié (ici /mnt/etc/fstab,  il y aura donc un fichier nommé fstab avec comme contenu la sortie de la commande à gauche du symbole de flux). Si le fichier existe déjà le contenu sera ajouté à la fin.</p>
 
 <p>Ensuite on va démarrer dans un nouveau système, on appelle cela Chrooter. On utilise la commande suivante:</p>
 
-<pre><code>arch-chroot /mnt
+<div class="highlighter-rouge"><pre class="highlight"><code>arch-chroot /mnt
 </code></pre>
+</div>
 
 <p>On démarre un nouveau système avec comme racine l’argument spécifié après la commande arch-chroot. De ce fait on “enferme” un système dans un autre, le premier n’ayant donc plus accès aux dossiers supérieurs (on peut pas aller au-dessus de la racine /).</p>
 
@@ -299,38 +310,44 @@ Le symbole de flux » permet d’enregistrer la sortie de la commande dans un f
 <p>Ensuite petite modification du fichier /etc/locale.gen pour définir la langue du système à utiliser et sous quel format. Pour le choisir il faut dé-commenter (enlever le #) la ligne que l’on veut. J’ai enlevé celui de la ligne “fr_FR.UTF-8 UTF-8”. Puis on lance la commande “locale-gen” pour enregistrer ce paramètre et générer le locale correspondant.
 Puis on créé le fichier /etc/locale.conf et on y met:</p>
 
-<pre><code>LANG="fr_FR.UTF-8"
+<div class="highlighter-rouge"><pre class="highlight"><code>LANG="fr_FR.UTF-8"
 </code></pre>
+</div>
 
 <p>Pour que le paramètre soit celui enregistré par défaut. Il se peut que ce paramètre ne soit pris en compte qu’au redémarrage de la machine. Pour le faire pour la session courante on lance la commande:</p>
 
-<pre><code>export LANG=fr_FR.UTF-8
+<div class="highlighter-rouge"><pre class="highlight"><code>export LANG=fr_FR.UTF-8
 </code></pre>
+</div>
 
 <p>On édite ensuite le fichier /etc/vconsole.conf pour la configuration du type de clavier et l’on y met:</p>
 
-<pre><code>KEYMAP=fr-pc
+<div class="highlighter-rouge"><pre class="highlight"><code>KEYMAP=fr-pc
 </code></pre>
+</div>
 
 <p>On règle maintenant l’heure locale avec un lien à /etc/localtime vers le fuseau horaire correspondant. Ici:</p>
 
-<pre><code>ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
+<div class="highlighter-rouge"><pre class="highlight"><code>ln -s /usr/share/zoneinfo/Europe/Paris /etc/localtime
 </code></pre>
+</div>
 
 <p>Si le votre est différent, je vous conseille de fouiller le répertoire zoneinfo pour y trouver le votre.</p>
 
 <p>On va ensuite créer les ramdisks. Ne me demandez pas une définition je ne sais pas encore exactement ce que c’est, simplement qu’il sert pour l’image du noyau linux.
 On configure ensuite le chargeur de démarrage pour qu’il…démarre x) Plus exactement on lance l’installation automatique sur le MBR (Master Boot Record) :</p>
 
-<pre><code>syslinux-install_update -iam
+<div class="highlighter-rouge"><pre class="highlight"><code>syslinux-install_update -iam
 </code></pre>
+</div>
 
 <p>Ça devrait se faire assez rapidement en théorie.<br />
 Allez on à presque terminé! Maintenant on va définir un mot de passe pour le compte root avec la commande “passwd” (sans les guillemets”), et l’on entre ensuite le mot de passe que l’on veut (Deux fois pour vérification).
 Pour finir, on va démonter toutes les partitions avec un :</p>
 
-<pre><code>umount /mnt/boot /mnt/home /mnt
+<div class="highlighter-rouge"><pre class="highlight"><code>umount /mnt/boot /mnt/home /mnt
 </code></pre>
+</div>
 
 <p>Vous pouvez maintenant redémarrer/éteindre votre ordinateur (virtuel) en toute tranquillité!</p>
 
@@ -341,8 +358,8 @@ Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg e
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">

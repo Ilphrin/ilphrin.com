@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -156,9 +155,9 @@ septembre
 
 <!--break-->
 
-<h2 id="rustvim">rust.vim</h2>
+<p>##rust.vim</p>
 
-<h4 id="pour-grer-le-langage-de-mozilla">Pour gérer le langage de Mozilla</h4>
+<p>####Pour gérer le langage de Mozilla</p>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/rust-vim-love-story">http://vimawesome.com/plugin/rust-vim-love-story</a></p>
 
@@ -166,29 +165,29 @@ septembre
 Note intéressante sur ce plugin: Apparemment il se synchronise de façon journalière au dépot github de Rust (le dépot du plugin pas le plugin en lui-même hein!)
 Il n’y a pas besoin de configuration précise pour fonctionner correctement, vous faites un git clone dans votre dossier de plugins et le tour est joué!</p>
 
-<h2 id="indentline">indentLine</h2>
+<p>##indentLine</p>
 
-<h4 id="savoir-o-en-est-lindentation">Savoir où en est l’indentation</h4>
+<p>####Savoir où en est l’indentation</p>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/indentline">http://vimawesome.com/plugin/indentline</a></p>
 
 <p>C’est un plugin que j’ai découvert cette semaine. Il permet d’afficher des guides pour les nieaux d’indentation dans le fichier. Je trouve ça assez pratique surtout quand des fois j’ai de mauvaises indentation (genre une espace après avoir indenté d’un niveau).
 Avec ce plugin on peut notamment configurer le caractère a afficher en fond comme guide, et aussi la couleur de ce caractère. Respectivement avec les commandes dans le vimrc:</p>
 
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">let</span> <span class="k">g</span>:indentLine_char <span class="p">=</span> <span class="s1">&#39;¦&#39;</span> <span class="c">&quot;Je ne sais pas comment on obtiens ce caractère au clavier, je l&#39;ai récuperé avec un Copier-Coller</span>
-<span class="k">let</span> <span class="k">g</span>:indentLine_color_term <span class="p">=</span> <span class="m">0</span> <span class="c">&quot;Pour avoir une couleur noir</span></code></pre></div>
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">let</span> <span class="nv">g:indentLine_char</span> <span class="p">=</span> <span class="s1">'¦'</span> "Je <span class="k">ne</span> sais pas comment <span class="k">on</span> obtiens <span class="k">ce</span> caractè<span class="k">re</span> <span class="k">au</span> clavier<span class="p">,</span> je <span class="k">l</span>'ai récuperé avec <span class="k">un</span> Copier<span class="p">-</span>Coller
+<span class="k">let</span> <span class="nv">g:indentLine_color_term</span> <span class="p">=</span> <span class="m">0</span> "Pour avoir une couleur noir</code></pre></figure>
 
-<h2 id="nerdcommenter">NERDCommenter</h2>
+<p>##NERDCommenter</p>
 
-<h4 id="les-commentaires-faciles">Les commentaires faciles</h4>
+<p>####Les commentaires faciles</p>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/the-nerd-commenter">http://vimawesome.com/plugin/the-nerd-commenter</a></p>
 
 <p>Je l’utilise souvent pour écrire un pavé de texte dans du code, puis le mettre en commentaire en sélectionnant le tout et en faisant ensuite \cc ou \cs. Il dispose de tout un tas de commandes pour aller un peu plus loin dans la gestion des commentaires mais son utilisation basique me suffit amplement. Il ne lui manque plus qu’à ajouter la gestion pour Rust et ce serait parfait :D (j’ai posté une Issue sur la page Github à ce sujet, je mettrai à jour l’article si il y a du nouveau de ce coté là!)</p>
 
-<h2 id="vim-cargo">vim-cargo</h2>
+<p>##vim-cargo</p>
 
-<h4 id="quelques-commandes-pour-cargo">Quelques commandes pour Cargo</h4>
+<p>####Quelques commandes pour Cargo</p>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/vim-cargo">http://vimawesome.com/plugin/vim-cargo</a></p>
 
@@ -196,33 +195,33 @@ Avec ce plugin on peut notamment configurer le caractère a afficher en fond com
 
 <p>Tant qu’on parle de Rust autant parler de ce plugin. Ce petit plugin très simple rajoute 4 (à ce jour, et 8 dans le Fork que j’ai mis en lien) petites commandes classiques pour manipuler Cargo le gestionnaire de projet qui va de pair avec Rust. Le code semble très court et simple je pense que je vais essayer de l’étoffer un peu, ça me permettra d’apprendre a écrire du VimScript!</p>
 
-<h2 id="colorizer">Colorizer</h2>
+<p>##Colorizer</p>
 
-<h4 id="avoir-un-surlignage-selon-les-couleurs">Avoir un surlignage selon les couleurs</h4>
+<p>####Avoir un surlignage selon les couleurs</p>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/color-highlight">http://vimawesome.com/plugin/color-highlight</a></p>
 
 <p>Tout est dans le titre encore une fois. Colorizer va analyser votre texte/code, et si il reconnait des écritures de format de couleur il va surligner le texte de la couleur correspondante, par exemple avec “red” il va surligner red en rouge, il sait reconnaitre aussi des modèles plus complexes comme notamment les format utilisés en CSS. #FF0000, rgb(255, 0, 0), rgba(255, 0, 0, 255) et hsl(120%, 70%, 820%) par exemple seront tous surligné en une teinte de rouge.</p>
 
-<h2 id="mru-most-recently-used">MRU (Most Recently Used)</h2>
+<p>##MRU (Most Recently Used)</p>
 
-<h4 id="voir-les-fichiers-rcemments-ouverts">Voir les fichiers récemments ouverts</h4>
+<p>####Voir les fichiers récemments ouverts</p>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/mru-vim">http://vimawesome.com/plugin/mru-vim</a></p>
 
 <p>MRU permet par le biais de la commande eponyme (:MRU, on sait jamais) de voir la liste des fichiers récemments ouverts, d’en sélectionner un, et de l’ouvrir avec la touche Enter. C’est une fonctionalité classique mais j’avoue que je n’y pensais plus quand j’utilisais Vim, maintenant je lance vim dans mon terminal où que je sois avec j’ouvre le fichier sur lequel je bosse en ce moment avec le :MRU. Je me suis meme permis de rajouter ces quelque petites lignes dans mon vimrc:</p>
 
-<div class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">if</span> bufname<span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="p">==</span> <span class="s1">&#39;&#39;</span>
-  <span class="k">autocmd</span> <span class="nb">VimEnter</span> * MRU
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">if</span> bufname<span class="p">(</span><span class="s1">''</span><span class="p">)</span> <span class="p">==</span> <span class="s1">''</span>
+  autocmd <span class="nb">VimEnter</span> * MRU
 <span class="k">endif</span>
-<span class="k">autocmd</span> <span class="nb">BufNewFile</span> * MRU</code></pre></div>
+autocmd <span class="nb">BufNewFile</span> * MRU</code></pre></figure>
 
 <p>Comme ça MRU se lance si j’ai ouvert vim sans aucun fichier en paramètre, et lorsque que je crée un nouveau buffer vide. Néanmoins il ne s’ouvre pas lorsque je crée un nouvel Onglet vide (j’y travaille j’y travaille!)</p>
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">

@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -170,16 +169,16 @@ novembre
 
 <p>Dans un fichier html, on inclu tout ça comme ci-dessous (et dans cet ordre, sinon tout se casse):</p>
 
-<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./node_modules/mocha/mocha.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;./node_modules/chai/chai.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./node_modules/mocha/mocha.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"./node_modules/chai/chai.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
-  <span class="nx">mocha</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="s1">&#39;bdd&#39;</span><span class="p">);</span>
-  <span class="nx">mocha</span><span class="p">.</span><span class="nx">reporter</span><span class="p">(</span><span class="s1">&#39;html&#39;</span><span class="p">);</span>
+  <span class="nx">mocha</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="s1">'bdd'</span><span class="p">);</span>
+  <span class="nx">mocha</span><span class="p">.</span><span class="nx">reporter</span><span class="p">(</span><span class="s1">'html'</span><span class="p">);</span>
 <span class="nt">&lt;/script&gt;</span>
 
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;angular-mock.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;test/tests.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"angular-mock.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"test/tests.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="nt">&lt;script&gt;</span>
   <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">mochaPhantomJS</span><span class="p">)</span> <span class="p">{</span>
@@ -188,20 +187,20 @@ novembre
   <span class="k">else</span> <span class="p">{</span>
     <span class="nx">mocha</span><span class="p">.</span><span class="nx">run</span><span class="p">();</span>
   <span class="p">}</span>
-<span class="nt">&lt;/script&gt;</span></code></pre></div>
+<span class="nt">&lt;/script&gt;</span></code></pre></figure>
 
 <p>J’ai installé Mocha et Chai par le biais de Node Package Manager (npm), PhantomJS a été compilé à la main (c’est super long je vous préviens), et avec npm toujours j’ai installé mocha-phantomjs, qui permet de faire fonctionner les deux ensembles.</p>
 
 <p>Une fois tout cela en place on va pouvoir commencer à écrire les tests unitaires dans le fichier tests.js. Mon but est de tester les fonctionalités de mon Service AngularJS, qui contient la quasi-totalité des fonctions de mon applications. J’appelle ici mon module ‘monitoring’ et mon service ‘totalService’.</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">expect</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">expect</span><span class="p">;</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">expect</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">expect</span><span class="p">;</span>
 <span class="kd">var</span> <span class="nx">assert</span> <span class="o">=</span> <span class="nx">chai</span><span class="p">.</span><span class="nx">assert</span><span class="p">;</span>
 
-<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">&#39;monitoring&#39;</span><span class="p">);</span>
+<span class="nx">angular</span><span class="p">.</span><span class="nx">module</span><span class="p">(</span><span class="s1">'monitoring'</span><span class="p">);</span>
 
-<span class="nx">describe</span><span class="p">(</span><span class="s2">&quot;totalService&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+<span class="nx">describe</span><span class="p">(</span><span class="s2">"totalService"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
   <span class="nx">beforeEach</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
-    <span class="nx">module</span><span class="p">(</span><span class="s1">&#39;monitoring&#39;</span><span class="p">);</span>
+    <span class="nx">module</span><span class="p">(</span><span class="s1">'monitoring'</span><span class="p">);</span>
 
     <span class="nx">inject</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">_totalService_</span><span class="p">,</span> <span class="nx">_$resource_</span><span class="p">,</span> <span class="nx">_$location_</span><span class="p">)</span> <span class="p">{</span>
       <span class="nx">totalService</span> <span class="o">=</span> <span class="nx">_totalService_</span><span class="p">;</span>
@@ -209,19 +208,19 @@ novembre
       <span class="nx">$location</span> <span class="o">=</span> <span class="nx">_$location_</span><span class="p">;</span>
     <span class="p">});</span>
   <span class="p">});</span>
-<span class="p">});</span></code></pre></div>
+<span class="p">});</span></code></pre></figure>
 
 <p>On initialise ici Chai et on injecte le module d’abord en lançant angular.module(‘monitoring’), puis dans le beforeEach avec module(‘monitoring’), ainsi que le service TotalService avec la méthode inject(). Il ne reste plus qu’à le tester en lançant la commande:</p>
 
-<div class="highlight"><pre><code class="language-sh" data-lang="sh">mocha-phantomjs -p chemin/vers/phantomjs/bin/phantomjs <span class="nb">test</span>/TestRunner.html</code></pre></div>
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">mocha-phantomjs -p chemin/vers/phantomjs/bin/phantomjs <span class="nb">test</span>/TestRunner.html</code></pre></figure>
 
 <p>Ensuite le reste dépend de l’application, et tout est expliqué correctement sur les docs respectives de Mocha, Chai et PhantomJS. Je suis content d’y être finalement arrivé après plusieurs jours à me casser la tête pour faire marcher tout ça. J’ai notamment passé deux jours avec un ‘undefined is not a function’ de angular-mock. Je pense que si je dois me lancer dans un gros projet Web ce serait de faire une bibliothèque qui simplifie tout ça, par exemple un pack qui comprend Mocha, Chai, PhantomJS, et Angular Mock, avec une simple commande pour lancer tout ça, et avec de base un dossier d’exemple qu’il ne reste plus qu’à reprendre et modifier pour travailler.</p>
 
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">

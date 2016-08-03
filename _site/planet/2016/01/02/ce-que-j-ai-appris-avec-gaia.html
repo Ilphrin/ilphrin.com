@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -160,11 +159,11 @@ janvier
 
 <p>La plus grande difficulté quand on corrige un bug ce n’est pas tant la correction en elle-même pour des bugs de cette catégorie. Mais plutôt de se poser la question suivante: “Est-ce que ce que j’ai rajouté ou enlevé à un impact sur le code qui nécessite une modification ailleurs?”. Et dans mon cas la réponse à été un grand OUI (sinon je n’écrirais pas cet article ;) ). La correction du bug à été très simple, je vous montre le code espacé par deux lignes avant et après la modif:</p>
 
-<div class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="o">:</span> <span class="nx">NotificationHelper</span><span class="p">.</span><span class="nx">getIconURI</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;?titleID=&#39;</span> <span class="o">+</span> <span class="nx">title</span>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="err">:</span> <span class="nx">NotificationHelper</span><span class="p">.</span><span class="nx">getIconURI</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'?titleID='</span> <span class="o">+</span> <span class="nx">title</span>
 
 
-<span class="nx">icon</span><span class="o">:</span> <span class="nx">NotificationHelper</span><span class="p">.</span><span class="nx">getIconURI</span><span class="p">(</span><span class="nx">app</span><span class="p">),</span>
-<span class="nx">data</span><span class="o">:</span> <span class="p">{</span> <span class="nx">title</span> <span class="p">}</span></code></pre></div>
+<span class="nl">icon</span><span class="p">:</span> <span class="nx">NotificationHelper</span><span class="p">.</span><span class="nx">getIconURI</span><span class="p">(</span><span class="nx">app</span><span class="p">),</span>
+<span class="nx">data</span><span class="err">:</span> <span class="p">{</span> <span class="nx">title</span> <span class="p">}</span></code></pre></figure>
 
 <p>Jusque là, rien de bien compliqué. En fait là où des modifications devenaient nécessaire, c’est au niveau des tests unitaires. Il fallait modifier la façon dont les tests étaient fait pour ces variables, ce qui à conduit à modifer d’autres éléments, et ainsi de suite.</p>
 
@@ -180,8 +179,8 @@ janvier
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">

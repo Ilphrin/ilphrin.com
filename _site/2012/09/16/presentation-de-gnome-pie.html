@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -163,18 +162,20 @@ Bon voici clairement a quoi ressemble les tartes :</p>
 
 <p>Pour l’installation, je vais honteusement recopier le tuto du site de Mr Schneegans ^_^ :</p>
 
-<h2 id="installation-par-pparecommand">Installation par PPA(recommandé)</h2>
+<p>##Installation par PPA(recommandé)</p>
 
-<pre><code>sudo add-apt-repository ppa:simonschneegans/testing
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo add-apt-repository ppa:simonschneegans/testing
 sudo apt-get update
 sudo apt-get install gnome-pie
 Installation par les sources
 </code></pre>
+</div>
 
 <p>Avec gtk2 :</p>
 
-<pre><code>sudo apt-get install git build-essential libgtk2.0-dev libcairo2-dev libappindicator-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-dev valac cmake libunique-dev libbamf-dev libwnck-dev bamfdaemon
+<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install git build-essential libgtk2.0-dev libcairo2-dev libappindicator-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-dev valac cmake libunique-dev libbamf-dev libwnck-dev bamfdaemon
 </code></pre>
+</div>
 
 <p>Avec gtk3 :</p>
 
@@ -182,14 +183,15 @@ Installation par les sources
 
 <p>Ensuite pour les deux cas vous n’avez plus qu’à télécharger Gnome-pie, le compiler et l’installer comme ceci :</p>
 
-<pre><code>git clone git://github.com/Simmesimme/Gnome-Pie.git
+<div class="highlighter-rouge"><pre class="highlight"><code>git clone git://github.com/Simmesimme/Gnome-Pie.git
 cd Gnome-Pie &amp;&amp; ./make.sh
 cd build &amp;&amp; sudo make install
 </code></pre>
+</div>
 
 <p>Ensuite, quelle que soit votre méthode d’installation, je vous recommande de le faire lancer au démarrage de votre session.</p>
 
-<h2 id="configurationpossibilits-de-base">Configuration/Possibilités de base</h2>
+<p>##Configuration/Possibilités de base</p>
 
 <p>Au premier lancement plusieurs tartes sont déjà disponibles. Donc notamment les raccourcis clavier qui vont avec, voici plus ou moins ce que donnent ces raccourcis :</p>
 
@@ -219,8 +221,9 @@ cd build &amp;&amp; sudo make install
 
 <p>Vous devez normalement vous retrouver devant un fichier de type texte xml. Vous pouvez créer une tarte de la façon suivante :</p>
 
-<pre><code>&lt;pie name="Multimédia" id="831" icon="stock_media-play" hotkey="Control+Alt+m"&gt;&lt;/pie&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;pie name="Multimédia" id="831" icon="stock_media-play" hotkey="Control+Alt+m"&gt;&lt;/pie&gt;
 </code></pre>
+</div>
 
 <p>Vous avez plusieurs choses bizarres dans ces lignes, je vais vous y décrire ce que fait chaque attribut :</p>
 
@@ -244,8 +247,9 @@ cd build &amp;&amp; sudo make install
 
 <p>Vous pouvez aussi a l’intérieur d’une tarte mettre une nouvelle application. Les lignes ressemblent a ceci : (j’ai pris une icône de la tarte Multimédia)</p>
 
-<pre><code>&lt;slice type="key" name="Piste Suivante" icon="stock_media-next" command="XF86AudioNext" quickAction="true"/&gt;
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;slice type="key" name="Piste Suivante" icon="stock_media-next" command="XF86AudioNext" quickAction="true"/&gt;
 </code></pre>
+</div>
 
 <p>Alors là à l’inverse des balises <pie> et &lt; /pie&gt; la balise &lt; slice /&gt; est dite orpheline, car elle se termine sur la même balise qui l'à commencé (on peut le voir notamment avec le '/' a la fin). Littéralement slice en français veut dire 'part' comme...part de tarte ! C'est bien fait n'est-ce pas ^^</pie></p>
 
@@ -277,8 +281,8 @@ cd build &amp;&amp; sudo make install
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">

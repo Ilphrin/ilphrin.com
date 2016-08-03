@@ -6,7 +6,6 @@
   <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
 
   <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
-  <script src="/js/nav.js"> </script>
   <script src="/js/previous.js" charset="utf-8"></script>
   <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
   <!--<script>hljs.initHighlightingOnLoad();</script>-->
@@ -172,8 +171,9 @@ Le principe de base de ce logiciel n’est pas très compliqué à comprendre. I
 
 <p>(Pour y avoir fait, il y a environ 500 termes à traduire pour Sunflower, mais avec un peu de boulot, d’aide et de google traduction on en vient à bout en quelques jours ^^). Quand vous pensez avoir fini ou fait la majeure partie de la traduction, il va falloir transformer ceci en un fichier binaire que Sunflower utilisera pour charger les traductions. Pour ce faire on utilise la commande suivante :</p>
 
-<pre><code>msgfmt sunflower.po
+<div class="highlighter-rouge"><pre class="highlight"><code>msgfmt sunflower.po
 </code></pre>
+</div>
 
 <p>Et voilà un fichier .mo qui est crée. Si votre système est configuré pour le français, Sunflower devrait par la suite charger le fichier généré ainsi (Note: Cela nécessite que le fichier crée soit appelé sunflower.mo  mais il est de  base nommé messages.mo, il suffit de le renommer pour que tout rentre en ordre). Et vous voilà avec un beau logiciel en français! Gettext est capable de bien des choses, j’ai mis un lien vers la documentation un peu en dessous.  Sur ce bonne journée à tous et bonne traduction!</p>
 
@@ -185,8 +185,8 @@ Le principe de base de ce logiciel n’est pas très compliqué à comprendre. I
 
   <div id="comments">
 	
-		<h1>Aucun commentaire</h1>
-		
+			<h1> Commentaires</h1>
+	
 	
 	<h1>Commenter</h1>
 	<p style="font-style: italic">
@@ -194,7 +194,7 @@ Le principe de base de ce logiciel n’est pas très compliqué à comprendre. I
 	</p>
 	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
 		<input type="hidden" name="post_id" value="/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower" />
-		<input type="hidden" name="return_url" value="http://ilphrin.com/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower.html" />
+		<input type="hidden" name="return_url" value="http://ilphrin.com/2013/06/23/faire-de-la-traduction-avec-gettext-exemple-avec-sunflower.html" />
 		<div id="form_info">
 			<div id="title_form">
 				<p>Nom:</p>
@@ -217,7 +217,7 @@ Le principe de base de ce logiciel n’est pas très compliqué à comprendre. I
 
   <div class="share">
     <h3>Partager</h3>
-    <a href="http://sharetodiaspora.github.io/?title=Faire de la traduction avec gettext : Exemple avec Sunflower&url=/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower.html" target="_blank">
+    <a href="http://sharetodiaspora.github.io/?title=Faire de la traduction avec gettext : Exemple avec Sunflower&url=/2013/06/23/faire-de-la-traduction-avec-gettext-exemple-avec-sunflower.html" target="_blank">
       <img src="http://sharetodiaspora.github.io/favicon.png"/>
     </a>
     <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
