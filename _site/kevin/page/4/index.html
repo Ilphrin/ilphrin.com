@@ -2,64 +2,57 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
-
-  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
   <script src="/js/previous.js" charset="utf-8"></script>
-  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
-  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
-  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
 </head>
 
-<div class="header">
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
   <div class="navigation">
     <div class="title">
-      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <neonize-navigation-container class="right">
-      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
-      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
-      <neonize-navigation link="/kevin/project.html" text="Projets"></neonize-navigation>
-      <neonize-navigation link="/kevin/about.html" text="A propos"></neonize-navigation>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </neonize-navigation-container>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
   </div>
 
 </div>
 
-
-<body>
     <div class="main">
-          <div class="header_blog">
-  
-    
-      <a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">
-        <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
-            <div class="header_blog_title">
-            <time datetime="">
-              <div>
-                <h1>Des jeux Web avec Superpowers</h1>
-              </div>
-              
+        <div class="header_blog">
+
+  <a href="/planet/2016/08/30/superpowers-version-2-0.html">
+    <div class="header_blog_title"  >
+        <div class="header_blog_title">
+        <time datetime="">
+          <div>
+            <h1>Superpowers passe en 2.0, revenons dessus</h1>
+          </div>
+          
   
     30
 
 
-juin
+août
   
 2016
 
-             </time>
-            </div>
+         </time>
         </div>
-      </a>
-      
-  </div>
+    </div>
+  </a>
+  
+</div>
 
 <div class="pagination">
   <div class="prev">
@@ -103,69 +96,54 @@ juin
   </div>
 </div>
 
-  <div class="posts">
-  
-    <div class="post">
-      <h2><a href="/planet/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">Un nouveau blog tout beau avec Jekyll</a></h2>
-      <p>Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.
+<div class="posts">
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">Neobot un bot en ligne de commande pour les unix like</a></h2>
-      <p>Salut tout le monde</p>
+  <div class="post">
+    <h2><a href="/planet/2015/09/16/topo-des-plugins-vim-01.html">Topo de mes plugins Vim - 01</a></h2>
+    <p>Au fil des mois de mes utilisations de Vim, je finis par emmagasiner un bon paquet de plugins, dont je me sers plus ou moins souvent selon ma capacité à me souvenir de leur existence dans mes dossier. Et le gros problème que j’ai avec ces plugins c’est que je pour beaucoup je ne me souviens jamais de comment ils fonctionnent de A à Z, et j’aime avoir une documentation complète pour me rappeler tout ça.</p>
+
+
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">Un nouveau blog tout beau avec Jekyll</a></h2>
+    <p>Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.
+
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">Neobot un bot en ligne de commande pour les unix like</a></h2>
+    <p>Salut tout le monde</p>
 
 <p>Alors tout d’abord pour ceux qui ne le savent pas, qu’est-ce qu’un <em>bot</em> en informatique? C’est un programme qui va se gérer tout seul pour accomplir une ou des tâches voulues par les développeurs du bot. Leurs utilisation est vaste, cela va du jeu vidéo (les ennemis d’un jeu de FPS contrôlés par l’ordinateur par exemple) à la gestion des salons de discussion IRC en passant par les bien connus spambots, vous savez les faux comptes inscris sur les forums de discussions simplement pour balancer de la pub en vrac… Pour en savoir plus, je vous invite à lire la page wikipédia sur les <a href="https://fr.wikipedia.org/wiki/Bot_informatique">bot informatique</a>.</p>
 
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html">Premiers pas dans le développement de Firefox OS</a></h2>
-      <p>Salut tout le monde!</p>
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html">Premiers pas dans le développement de Firefox OS</a></h2>
+    <p>Salut tout le monde!</p>
 
 <p>Comme je le disais dans <a href="/2015/01/22/changer-de-homescreen-dans-firefox-os.html">mon précédent article</a>, il existe plusieurs applications pour changer son homescreen, mais elles datent toutes
  de plusieurs jour/mois et ne sont, pour la plupart, plus fonctionnelles. Je me suis donc dit que j’allais regarder l’un des projets que j’ai présenté et essayer de le patcher pour le faire fonctionner.
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2015/01/22/changer-de-homescreen-dans-firefox-os.html">Changer de homescreen dans Firefox OS</a></h2>
-      <p>Salut tout le monde!</p>
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2015/01/22/changer-de-homescreen-dans-firefox-os.html">Changer de homescreen dans Firefox OS</a></h2>
+    <p>Salut tout le monde!</p>
 
 <p>En discutant hier soir soir sur le salon #BuildOpenCEu, dattaz m’expliquait qu’il est possible sur Firefox OS de changer de Homescreen, l’écran d’accueil en français, pour quelque chose d’entièrement différent, du menu vertical ou horizontal jusqu’au cercle d’application que l’on peut faire tourner avec un mouvement de doigt. J’en ai donc essayé plusieurs  sur mon Open C et voilà ce que ça m’a donné pour chacun d’eux. Je tiens à rappeler que je suis en version Nightly que je met à jour chaque matin, donc il se peut que certains marchent mieux sur votre version de Firefox OS que sur la mienne, le mieux étant d’avoir au moins un test pour chaque version majeure de l’OS. Je m’excuse d’avance pour le manque de Screenshot, d’un part je n’ai pas pensé à en faire et de l’autre étant en Nightly et n’ayant pas encore de carte microSD je ne peux pas enregistrer de capture d’écran sur le téléphone.
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html">Firefox OS 4 mois après son utilisation</a></h2>
-      <p>Salut tout le monde!</p>
-
-<p>Depuis quelques temps sur diaspora* je demande un peu d’aide ou pose des questions par rapport à Firefox OS, car depuis le mois d’Aout j’ai fais la main base sur un Open C!</p>
-
-<p>Il faut savoir que depuis mon arrivé au lycée, il y a 4 ans, je suis resté avec un Samsung à clapet gris. Il me convenait très bien pour ce que j’en faisais, c’est-à-dire du sms en masse et très vite (j’enverrais une tartelette à la fraise au gars qui à inventé le T9) et puis c’est tout. Je ne m’intéressais absolument pas aux smartphones pour plusieurs raisons. La principale était le manque d’utilité que je pouvais accorder à ces gadgets. Pourquoi avoir une application pour lire mes mails quand je peux les lire des chez moi sous Thunderbird avec un écran qui me fasse pas plisser les yeux?
-
-    </div>
-  
   </div>
 
+</div>
+
     </div>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.ilphrin.com"]]);
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//ilphrin.com/analytics/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
 </body>
 </html>

@@ -2,44 +2,38 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
-
-  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
   <script src="/js/previous.js" charset="utf-8"></script>
-  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
-  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
-  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
 </head>
 
-<div class="header">
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
   <div class="navigation">
     <div class="title">
-      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <neonize-navigation-container class="right">
-      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
-      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
-      <neonize-navigation link="/kevin/project.html" text="Projets"></neonize-navigation>
-      <neonize-navigation link="/kevin/about.html" text="A propos"></neonize-navigation>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </neonize-navigation-container>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
   </div>
 
 </div>
 
-
-<body>
     <div class="main">
-        <div class="post_home">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
       <div class="title" style="background-image: url('/images/header_articles/tuxletriad.jpg');">
         <time datetime="17 October 2014">
-          <h1> Tuxle Triad et Pygame: Avoir une main</h1>
-          <p>
+          <h1 itemprop="name"> Tuxle Triad et Pygame: Avoir une main</h1>
+          <p itemprop="datePublished">
             
   
     17
@@ -52,10 +46,12 @@ octobre
           </p>
          </time>
       </div>
-  <div class="content">
+  <div class="content" itemprop="articleBody">
     <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
     <div class="previously">
       <ul class="previous_articles">
+        
+          
         
           
         
@@ -193,12 +189,11 @@ L’avant dernière ligne est une petite subtilité pour la gestion d’éveneme
 
 <p>Sur ce je vous souhaite bonne journée à tous et à la prochaine!</p>
 
-  <div id="comments">
+  <div id="comments" itemprop="comment">
 	
-			<h1> Commentaires</h1>
+                <h2><span itemprop="commentCount"></span> Commentaires</h2>
 	
 	
-	<h1>Commenter</h1>
 	<p style="font-style: italic">
         Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
 	</p>
@@ -224,35 +219,22 @@ L’avant dernière ligne est une petite subtilité pour la gestion d’éveneme
 
   </div>
 
-
   <div class="share">
     <h3>Partager</h3>
     <a href="http://sharetodiaspora.github.io/?title=Tuxle Triad et Pygame: Avoir une main&url=/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html" target="_blank">
-      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+      <img src="http://sharetodiaspora.github.io/favicon.png" alt="Partage Diaspora"/>
     </a>
     <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script src="/js/twitter.js"></script>
   </div>
 </div>
 
 
     </div>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.ilphrin.com"]]);
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//ilphrin.com/analytics/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
 </body>
 </html>

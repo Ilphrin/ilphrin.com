@@ -1,11 +1,11 @@
-<div id="comments">
+<div id="comments" itemprop="comment">
 	{% case page.comment_count %}
 		{% when 0 %}
-		<h1>Aucun commentaire</h1>
+		<h2>Aucun commentaire</h2>
 		{% when 1 %}
-			<h1>1 Commentaire</h1>
+                <h2><span itemprop="commentCount">1</span> Commentaire</h2>
 		{% else %}
-			<h1>{{page.comment_count}} Commentaires</h1>
+                <h2><span itemprop="commentCount">{{page.comment_count}}</span> Commentaires</h2>
 	{% endcase %}
 	{% for c in page.comments reversed %}
 		<div class="comment {% cycle 'odd', 'even' %}">
@@ -24,7 +24,6 @@
 			</p>
 		</div>
 	{% endfor %}
-	<h1>Commenter</h1>
 	<p style="font-style: italic">
         Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
 	</p>

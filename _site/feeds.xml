@@ -7,6 +7,53 @@
 		<atom:link href="http://ilphrin.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Superpowers passe en 2.0, revenons dessus</title>
+				
+					<description>&lt;p&gt;Je vous avais déjà parlé de Superpowers dans l’article précédent. Ce logiciel sert pour “la création de jeux 2D+3D pour tous”, et il est gratuit en entièrement Open Source!&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Une nouvelle version est sortie il y a quelques jours, l’occasion pour moi de revenir parler un peu de ce logiciel, les deux/trois trucs que j’ai découvert dessus, et mon premier jeu de découverte de l’outil. Mais d’abord les nouveautés apportées par cete version:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mise à jour des traduction en Russe.&lt;/li&gt;
+  &lt;li&gt;Ajout d’une traduction en Italien.&lt;/li&gt;
+  &lt;li&gt;Utilisation d’une version de NodeJS plus récente.&lt;/li&gt;
+  &lt;li&gt;Correction d’un crash lors du déplacement d’un dossier.&lt;/li&gt;
+  &lt;li&gt;Ajout de la possibilité de choisir le nom du serveur.&lt;/li&gt;
+  &lt;li&gt;Suppression du paramètre inutile “port” dans le fichier config.json.&lt;/li&gt;
+  &lt;li&gt;Gestion d’erreur lors du téléchargement du registre.&lt;/li&gt;
+  &lt;li&gt;D’autres petites correction dans les différentes parties du projet.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Le développement de Superpowers avance constamment et ça fait plaisir à voir. Il y a encore peu de contributeurs au code principal, mais il y a une bonne communauté qui se forme que ce soit sur &lt;a href=&quot;itch.io&quot;&gt;itch.io&lt;/a&gt; ou sur le chat Discord, et de plus en plus de gens se mettent à créer des jeux avec cet IDE.&lt;/p&gt;
+
+&lt;p&gt;J’aimerais parler d’une fonctionalité qui m’intéresse particulièrement, qui est l’ajout de Shaders. Pour une petite définition de ce qu’est un Shader je vous invite à lire l’article sur &lt;a href=&quot;https://en.wikipedia.org/wiki/Shader&quot;&gt;wikipedia&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/superpowers_03.jpg&quot; alt=&quot;superpowers_03&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Lorsque l’on édite un Shader, on arrive sur une page découpé en 4 zones. En haut à gauche la définition des &lt;em&gt;uniforms&lt;/em&gt; et des &lt;em&gt;attributes&lt;/em&gt;, en haut à droite on a une prévsualisation du Shader sur la surface que l’on veut (Un plan, une image, une sphere, ou un cube), en bas a gauche l’éditeur de Shader Vertex, et en bas à droite l’éditeur de Shader Fragments.&lt;/p&gt;
+
+&lt;p&gt;J’ai commencé à apprendre à faire des Shader en découvrant cet outil (je ne savais même pas ce qu’était un Shader avant!), et depuis j’utilise Superpowers pour apprendre à utiliser et créer des Shader car il permet de rapidement voir le résultat sur des element de notre jeu et de les incorporer dans une scène.&lt;/p&gt;
+
+&lt;p&gt;Il existe déjà des outils très puissant en ligne pour les shaders (comme ShaderToy, bien que le site fasse ramer à mort mon ordinateur…), mais l’avoir directement dans son logiciel de développement de jeu rajoute un plus intéressant. Il ne manque plus qu’une auto-complétion pour divers elements: variables OpengL, Attributes/Uniforms/Varying, fonctions GLSL, etc… Dans l’editeur de code Vertex ou Fragment.&lt;/p&gt;
+
+&lt;p&gt;Pas de rapport ave les Shaders, mais je me suis lancé dans la création d’un petit jeu sans ambition pour apprendre à manipuler Superpowers. Vous pouvez le voir dans la partie “Projet” de mon site, il s’appelle Dodgell.&lt;/p&gt;
+
+&lt;p&gt;Dans ce jeu, vous jouez un petit bonhomme qui avance tout seul dans l’espace (on voit les planètes et les étoiles qui défilent en arrière-plan c’est pour ça =D), et vous devez esquiver le plus longtemps possible les ennemis qui arrivent du haut de l’écran. A chaque ennemis qui sort de l’écran par le bas, vous gagnez 5 points. Le meilleur score sur le même ordinateur est enregistré.&lt;/p&gt;
+
+&lt;p&gt;Faire ce petit jeu m’a permis d’apprendre les bases des bases avec Superpowers, c’est-à-dire l’utilisation des scènes, des behaviors, des tilemap, tilesets, etc… Et surtout de manipuler l’API &lt;a href=&quot;https://www.typescriptlang.org/&quot;&gt;TypeScript&lt;/a&gt;. Je ne compte pas le continuer bien longtemps, je pense rajouter des choses comme un menu, peut-être des niveaux différents, des ennemis différents (plus gros, plus rapides, avec des mouvements non-linéaires!). J’aimerais surtout me lancer dans un &lt;a href=&quot;https://fr.wikipedia.org/wiki/Shoot_%27em_up&quot;&gt;Shoot’em up&lt;/a&gt;, ça fait un moment que ça me trotte dans la tête (d’ailleurs on peut voir Dodgell comme un croquis de Shoot’em up, mais où on tire pas).&lt;/p&gt;
+
+&lt;p&gt;Surtout depuis que je me suis mis à des jeux comme &lt;a href=&quot;https://en.wikipedia.org/wiki/Touhou_Project&quot;&gt;Touhou Project&lt;/a&gt;, ou même d’autres jeux qui n’ont aucun rapport dans le principe mais qui m’ont donné beaucoup d’idées pour faire un jeu sympa, comme &lt;a href=&quot;http://typemoon.wikia.com/wiki/Fate/Grand_Order&quot;&gt;Fate Grand Order&lt;/a&gt; ou &lt;a href=&quot;https://www.pathofexile.com/&quot;&gt;Path of Exile&lt;/a&gt;. Le premier ayant des fonctionalités telle que les événements ou les combats qu’on pourrait qualifier de collaboratifs (un boss avec X milliars de PV, chaque joueurs qui le combat peut faire tomber un certain nombre de millions de PV, si toute la communauté bat le boss dans le temps imparti ils gagnent des trucs). Dans le deuxième ce sont surtout les effets des mob qui sont intéressants, et qu’on peut appliquer dans un Shoot’em up (des ennemis qui vous tirent dessus, et qui en plus ont un lien de plasma qui les relient et qui sont mortels si vous passez au travers).&lt;/p&gt;
+
+&lt;p&gt;Enfin voilà tout ça pour dire que je vais bien m’amuser dans les temps qui viennent avec Superpowers, même si j’ai d’autres projets à faire en même temps (je me lance dans un lecteur de flux RSS entièrement en Rust :D) et que ma troisième année à Epitech va commencer, je vais essayer de prendre du temps pour avancer Dodgell, et faire d’autres jeux avec Superpowers, notamment avec d’autres gens pour ENFIN voir ce que valent ces fameuses fonctionalités collaboratives promises avec Superpowers. Ca intéresse quelqu’un dans le public de faire des jeux tous ensemble? ;)&lt;/p&gt;
+</description>
+				<pubDate>Tue, 30 Aug 2016 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/planet/2016/08/30/superpowers-version-2-0.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/08/30/superpowers-version-2-0.html</guid>
+			</item>
+		
+			<item>
 				<title>Des jeux Web avec Superpowers</title>
 				
 					<description>&lt;p&gt;Quand il s’agit de développer des jeux vidéos sur base d’HTML5, il existe de nombreux cours et librairies sur Internet relatif à ce sujet, et on peut maintenant trouver facilement des ressources pour apprendre à développer des jeux avec telles ou telle technologie (jetez un oeil &lt;a href=&quot;https://hacks.mozilla.org/2016/02/html-5-game-development-video-series/&quot;&gt;ICI&lt;/a&gt;, ça veut le coup d’oeil ;)). Dans la continuité de ce boum technologique, et né &lt;strong&gt;Superpowers&lt;/strong&gt;: Un IDE pour développer des Jeux Web de façon collaborative.&lt;/p&gt;
@@ -45,7 +92,7 @@
 			</item>
 		
 			<item>
-				<title>Dev' d'un Gauntlet: La conclusion d'un jeu qui ne s'est pas fini</title>
+				<title>Dev&#39; d&#39;un Gauntlet: La conclusion d&#39;un jeu qui ne s&#39;est pas fini</title>
 				
 					<description>&lt;p&gt;La date de rendu de notre projet de Gauntlet, qui est l’un des deux gros projet de fin de deuxième année, s’est terminée il y a à peu près une semaine maintenant. Il y a du bon et du moins bon, et je me suis dit que mettre sur papier numérique ce qu’il faut en retirer peut être un exercice utile, déjà pour moi pour avoir des notes pour plus tard, et peut-être que nos erreurs serviront à ce que quelqu’un ne refasse pas les mêmes =D.&lt;/p&gt;
 
@@ -125,7 +172,7 @@ Ce Gauntlet-like est le deuxième jeu sur lequel je travaille, après TuxleTriad
 			</item>
 		
 			<item>
-				<title>Dev' d'un Gauntlet: La programmation telle que l'a écrit Satan</title>
+				<title>Dev&#39; d&#39;un Gauntlet: La programmation telle que l&#39;a écrit Satan</title>
 				
 					<description>&lt;p&gt;Mettons un peu de contexte derrière ce titre étrange… Nous approchons de la fin de 2e année à Epitech, et l’un des plus gros projet de C++ a commencé: Indie Studio.&lt;/p&gt;
 
@@ -152,7 +199,7 @@ Ce Gauntlet-like est le deuxième jeu sur lequel je travaille, après TuxleTriad
 
 &lt;p&gt;Je dirais que nous avons travaillé principalement sur 2 aspects aujourd’hui:&lt;/p&gt;
 
-&lt;h3&gt;1) La documentation/L'organisation&lt;/h3&gt;
+&lt;h3&gt;1) La documentation/L&#39;organisation&lt;/h3&gt;
 
 &lt;p&gt;Nous avons commencé a nous répartir les tâches, en fonction des envies et des capacités. Moi et mon binome dans ce groupe, Nathanael, devons nous occuper de tout ce qui attrait à l’environnement de jeu et l’interface. C’est-à-dire un menu principal pour commencer.&lt;/p&gt;
 
@@ -175,7 +222,7 @@ Ce Gauntlet-like est le deuxième jeu sur lequel je travaille, après TuxleTriad
 
 &lt;p&gt;On sais donc que l’on peut utiliser OpenGL facilement sur Windows et sous Linux avec Irrlicht, qu’il possède un module de gestion des controlleur de types manettes, et qu’il possède un gestionnaire de fichier XML integré, dont nous nous servirons surement pour décrire les stats’ des monstres, des joueurs, et de tout le reste.&lt;/p&gt;
 
-&lt;h3&gt;2) L'enfer&lt;/h3&gt;
+&lt;h3&gt;2) L&#39;enfer&lt;/h3&gt;
 
 &lt;p&gt;Voilà on y arrive. En fait j’ai oublié de mentionner une restrictions de taille tout à l’heure: Nous devons créer un installateur pour Linux ET Windows.&lt;/p&gt;
 
@@ -394,7 +441,7 @@ nyaovim
 
 &lt;!--break--&gt;
 
-&lt;p&gt;##Neovim&lt;/p&gt;
+&lt;h2 id=&quot;neovim&quot;&gt;Neovim&lt;/h2&gt;
 
 &lt;p&gt;Neovim a totalement changé son API pour les plugin par rapport à Vim, en utilisant &lt;a href=&quot;http://msgpack.org/&quot;&gt;msgpack&lt;/a&gt; pour pouvoir créer des clients comme on veut dans le langage qu’on veut pour faire une API, un GUI, etc…&lt;/p&gt;
 
@@ -433,7 +480,7 @@ class Easy(object):
     self.vim = vim
     ...
 
-  @neovim.command('EasyGenerate')
+  @neovim.command(&#39;EasyGenerate&#39;)
   def generate(self):
     ...
 
@@ -449,7 +496,7 @@ class Easy(object):
 
 &lt;p&gt;Pour ajouter à la fin d’un buffer il y a deux possibilités: soit on veut ajouter à la fin et dans ce cas on fait buffers.append(maChaineOuMonTableau), soit on veut intercaler une ou des lignes entre deux autres, par exemple si je veux insérer du texte à la ligne 42 je fais buffers.append(maChainOuMonTableau, 42). Au final c’est comme un tableau classique en Python :)&lt;/p&gt;
 
-&lt;p&gt;##CLang&lt;/p&gt;
+&lt;h2 id=&quot;clang&quot;&gt;CLang&lt;/h2&gt;
 
 &lt;p&gt;CLang est extrêmement puissant, mais il n’y a malheureusement que peu de ressources documentaires sur le sujet, et encore moins pour la librairie en Python. Ayant réussi à faire deux trois chose avec je me suis dit que partager avec tout le monde ce que j’ai appris pourrait en pousser d’autres à faire le pas ;) (et m’apprendre des choses en retour!)&lt;/p&gt;
 
@@ -548,9 +595,9 @@ class Easy(object):
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;clang&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sys&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;cindex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_library_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'/usr/lib/llvm-3.4/lib/libclang.so.1'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;cindex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Config&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_library_file&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;/usr/lib/llvm-3.4/lib/libclang.so.1&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cindex&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;translation_unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'-x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'c++'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'-std=c++11'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'-D__CODE_GENERATOR__'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;translation_unit&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sys&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;argv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&#39;-x&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;c++&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;-std=c++11&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;-D__CODE_GENERATOR__&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;get_methods&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;cursor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;spelling&lt;/span&gt;
@@ -631,7 +678,7 @@ class Easy(object):
 			</item>
 		
 			<item>
-				<title>Ce que j'ai appris avec Gaia</title>
+				<title>Ce que j&#39;ai appris avec Gaia</title>
 				
 					<description>&lt;p&gt;Cela fait un moment que je n’ai pas parlé de Gaia, depuis la dernière fois où j’expliquais mon envie de bosser sur FirefoxOS, et ce que j’ai entrepris pour y contribuer au niveau du code. Je viens de finir de corriger mon premier bug, et il a été ajouté au code de la branche principale de FirefoxOS. Je me suis donc dit qu’un petit debrief sur ce que j’ai appris me permettrai de revoir un peu tout ça et notamment de réfléchir à la suite.&lt;/p&gt;
 
@@ -641,7 +688,7 @@ class Easy(object):
 
 &lt;p&gt;La plus grande difficulté quand on corrige un bug ce n’est pas tant la correction en elle-même pour des bugs de cette catégorie. Mais plutôt de se poser la question suivante: “Est-ce que ce que j’ai rajouté ou enlevé à un impact sur le code qui nécessite une modification ailleurs?”. Et dans mon cas la réponse à été un grand OUI (sinon je n’écrirais pas cet article ;) ). La correction du bug à été très simple, je vous montre le code espacé par deux lignes avant et après la modif:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NotificationHelper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getIconURI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'?titleID='&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NotificationHelper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getIconURI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;?titleID=&#39;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;title&lt;/span&gt;
 
 
 &lt;span class=&quot;nl&quot;&gt;icon&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;NotificationHelper&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;getIconURI&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;
@@ -700,14 +747,14 @@ class Easy(object):
 
 &lt;p&gt;J’ai besoin de vérifier que ce n’est pas une balise unique que j’utilise, tel que &lt;br /&gt; ou &lt;meta /&gt;. Pour cela j’ai crée une fonction qui prend en paramètre le premier modèle de l’expression régulière ( ([a-z]+) soit le premier mot), et qui vérifie si le mot contenu ne fait pas partie de la liste écrite dans la fonction notUniqueTag().&lt;/p&gt;
 
-&lt;p&gt;Si cete condition est elle aussi vérifiée, alors je change le contenu pour mettre &lt;maBalise&gt;$1&lt;/maBalise&gt;, avec $1 qui correspond à la position du curseur. Une fois qu’on a tapé le contenu, puisque c’est un snippet il suffit d’appuyer sur le raccourci pour aller à la position de curseur d’après (pour moi c’est Ctrl+J) pour aller à la fin de la balise fermante.&lt;/p&gt;
+&lt;p&gt;Si cete condition est elle aussi vérifiée, alors je change le contenu pour mettre &lt;mabalise&gt;$1&lt;/mabalise&gt;, avec $1 qui correspond à la position du curseur. Une fois qu’on a tapé le contenu, puisque c’est un snippet il suffit d’appuyer sur le raccourci pour aller à la position de curseur d’après (pour moi c’est Ctrl+J) pour aller à la fin de la balise fermante.&lt;/p&gt;
 
 &lt;p&gt;J’aime vraiment cette capacité à faire rapidement des snippet dont le comportement n’est pas fixe, ça ouvre des possibilités pour se faciliter la vie qui sont très intéressante, si vous avez écrit des super snippet faites le moi savoir je suis toujours à l’affût de perles rares de ce genre ;)&lt;/p&gt;
 
 &lt;p&gt;Bonne journée!&lt;/p&gt;
 
-&lt;p&gt;###EDIT
-J’ai modifié grandement mon snippet, afin de gérer le niveau
+&lt;h3 id=&quot;edit&quot;&gt;EDIT&lt;/h3&gt;
+&lt;p&gt;J’ai modifié grandement mon snippet, afin de gérer le niveau
  d’indentation et le saut de ligne en cas de balise de bloc (comme &amp;lt;body&amp;gt;). Pour cela j’ai changé l’expression régulière pour prendre tous les caractères avant la balise, pour les réutiliser.&lt;/p&gt;
 
 &lt;p&gt;J’ai découpé un peu mon code python avec 3 fonctions supplémentaires:&lt;/p&gt;
@@ -826,8 +873,8 @@ J’ai modifié grandement mon snippet, afin de gérer le niveau
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;./node_modules/chai/chai.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;script&amp;gt;&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;mocha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'bdd'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
-  &lt;span class=&quot;nx&quot;&gt;mocha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reporter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'html'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;mocha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;setup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;bdd&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;mocha&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reporter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;html&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
 
 &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;angular-mock.js&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
@@ -849,11 +896,11 @@ J’ai modifié grandement mon snippet, afin de gérer le niveau
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;chai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;expect&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;chai&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;assert&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
 
-&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'monitoring'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;angular&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;monitoring&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
 &lt;span class=&quot;nx&quot;&gt;describe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;totalService&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;nx&quot;&gt;beforeEach&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'monitoring'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;monitoring&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 
     &lt;span class=&quot;nx&quot;&gt;inject&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;_totalService_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_$resource_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_$location_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
       &lt;span class=&quot;nx&quot;&gt;totalService&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;_totalService_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
@@ -912,8 +959,8 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
 &lt;p&gt;Avant de finir, vous avez vu ce que l’on peut faire avec Spark (Firefox OS 2.5)? Avec une recherche sur Lilo/DuckDuckGo/Tonton Roger, on peut trouver des exemple de deux/trois add-ons qui ont l’air vachement cool! Notamment un gars qui a rajouté une dizaine d’icones en bas du menu des notifications (le menu qu’on fait descendre avec un glissement de doigt du bord haut vers le bas). Malheureusement maintenant que j’écris cet article je n’arrive plus a retrouver où est-ce que j’ai vu cet add-on, mais bon tant pis il re-fera bien son apparition!&lt;/p&gt;
 </description>
 				<pubDate>Fri, 16 Oct 2015 00:00:00 +0200</pubDate>
-				<link>http://ilphrin.com/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html</guid>
+				<link>http://ilphrin.com/planet/2015/10/16/coder-pour-firefoxos-c&#39;est-cool.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2015/10/16/coder-pour-firefoxos-c&#39;est-cool.html</guid>
 			</item>
 		
 			<item>
@@ -942,9 +989,9 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
 
 &lt;!--break--&gt;
 
-&lt;p&gt;##rust.vim&lt;/p&gt;
+&lt;h2 id=&quot;rustvim&quot;&gt;rust.vim&lt;/h2&gt;
 
-&lt;p&gt;####Pour gérer le langage de Mozilla&lt;/p&gt;
+&lt;h4 id=&quot;pour-grer-le-langage-de-mozilla&quot;&gt;Pour gérer le langage de Mozilla&lt;/h4&gt;
 
 &lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/rust-vim-love-story&quot;&gt;http://vimawesome.com/plugin/rust-vim-love-story&lt;/a&gt;&lt;/p&gt;
 
@@ -952,29 +999,29 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
 Note intéressante sur ce plugin: Apparemment il se synchronise de façon journalière au dépot github de Rust (le dépot du plugin pas le plugin en lui-même hein!)
 Il n’y a pas besoin de configuration précise pour fonctionner correctement, vous faites un git clone dans votre dossier de plugins et le tour est joué!&lt;/p&gt;
 
-&lt;p&gt;##indentLine&lt;/p&gt;
+&lt;h2 id=&quot;indentline&quot;&gt;indentLine&lt;/h2&gt;
 
-&lt;p&gt;####Savoir où en est l’indentation&lt;/p&gt;
+&lt;h4 id=&quot;savoir-o-en-est-lindentation&quot;&gt;Savoir où en est l’indentation&lt;/h4&gt;
 
 &lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/indentline&quot;&gt;http://vimawesome.com/plugin/indentline&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;C’est un plugin que j’ai découvert cette semaine. Il permet d’afficher des guides pour les nieaux d’indentation dans le fichier. Je trouve ça assez pratique surtout quand des fois j’ai de mauvaises indentation (genre une espace après avoir indenté d’un niveau).
 Avec ce plugin on peut notamment configurer le caractère a afficher en fond comme guide, et aussi la couleur de ce caractère. Respectivement avec les commandes dans le vimrc:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:indentLine_char&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'¦'&lt;/span&gt; &quot;Je &lt;span class=&quot;k&quot;&gt;ne&lt;/span&gt; sais pas comment &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt; obtiens &lt;span class=&quot;k&quot;&gt;ce&lt;/span&gt; caractè&lt;span class=&quot;k&quot;&gt;re&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;au&lt;/span&gt; clavier&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; je &lt;span class=&quot;k&quot;&gt;l&lt;/span&gt;'ai récuperé avec &lt;span class=&quot;k&quot;&gt;un&lt;/span&gt; Copier&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;Coller
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:indentLine_char&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;¦&#39;&lt;/span&gt; &quot;Je &lt;span class=&quot;k&quot;&gt;ne&lt;/span&gt; sais pas comment &lt;span class=&quot;k&quot;&gt;on&lt;/span&gt; obtiens &lt;span class=&quot;k&quot;&gt;ce&lt;/span&gt; caractè&lt;span class=&quot;k&quot;&gt;re&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;au&lt;/span&gt; clavier&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; je &lt;span class=&quot;k&quot;&gt;l&lt;/span&gt;&#39;ai récuperé avec &lt;span class=&quot;k&quot;&gt;un&lt;/span&gt; Copier&lt;span class=&quot;p&quot;&gt;-&lt;/span&gt;Coller
 &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:indentLine_color_term&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &quot;Pour avoir une couleur noir&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;##NERDCommenter&lt;/p&gt;
+&lt;h2 id=&quot;nerdcommenter&quot;&gt;NERDCommenter&lt;/h2&gt;
 
-&lt;p&gt;####Les commentaires faciles&lt;/p&gt;
+&lt;h4 id=&quot;les-commentaires-faciles&quot;&gt;Les commentaires faciles&lt;/h4&gt;
 
 &lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/the-nerd-commenter&quot;&gt;http://vimawesome.com/plugin/the-nerd-commenter&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Je l’utilise souvent pour écrire un pavé de texte dans du code, puis le mettre en commentaire en sélectionnant le tout et en faisant ensuite \cc ou \cs. Il dispose de tout un tas de commandes pour aller un peu plus loin dans la gestion des commentaires mais son utilisation basique me suffit amplement. Il ne lui manque plus qu’à ajouter la gestion pour Rust et ce serait parfait :D (j’ai posté une Issue sur la page Github à ce sujet, je mettrai à jour l’article si il y a du nouveau de ce coté là!)&lt;/p&gt;
 
-&lt;p&gt;##vim-cargo&lt;/p&gt;
+&lt;h2 id=&quot;vim-cargo&quot;&gt;vim-cargo&lt;/h2&gt;
 
-&lt;p&gt;####Quelques commandes pour Cargo&lt;/p&gt;
+&lt;h4 id=&quot;quelques-commandes-pour-cargo&quot;&gt;Quelques commandes pour Cargo&lt;/h4&gt;
 
 &lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/vim-cargo&quot;&gt;http://vimawesome.com/plugin/vim-cargo&lt;/a&gt;&lt;/p&gt;
 
@@ -982,23 +1029,23 @@ Avec ce plugin on peut notamment configurer le caractère a afficher en fond com
 
 &lt;p&gt;Tant qu’on parle de Rust autant parler de ce plugin. Ce petit plugin très simple rajoute 4 (à ce jour, et 8 dans le Fork que j’ai mis en lien) petites commandes classiques pour manipuler Cargo le gestionnaire de projet qui va de pair avec Rust. Le code semble très court et simple je pense que je vais essayer de l’étoffer un peu, ça me permettra d’apprendre a écrire du VimScript!&lt;/p&gt;
 
-&lt;p&gt;##Colorizer&lt;/p&gt;
+&lt;h2 id=&quot;colorizer&quot;&gt;Colorizer&lt;/h2&gt;
 
-&lt;p&gt;####Avoir un surlignage selon les couleurs&lt;/p&gt;
+&lt;h4 id=&quot;avoir-un-surlignage-selon-les-couleurs&quot;&gt;Avoir un surlignage selon les couleurs&lt;/h4&gt;
 
 &lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/color-highlight&quot;&gt;http://vimawesome.com/plugin/color-highlight&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Tout est dans le titre encore une fois. Colorizer va analyser votre texte/code, et si il reconnait des écritures de format de couleur il va surligner le texte de la couleur correspondante, par exemple avec “red” il va surligner red en rouge, il sait reconnaitre aussi des modèles plus complexes comme notamment les format utilisés en CSS. #FF0000, rgb(255, 0, 0), rgba(255, 0, 0, 255) et hsl(120%, 70%, 820%) par exemple seront tous surligné en une teinte de rouge.&lt;/p&gt;
 
-&lt;p&gt;##MRU (Most Recently Used)&lt;/p&gt;
+&lt;h2 id=&quot;mru-most-recently-used&quot;&gt;MRU (Most Recently Used)&lt;/h2&gt;
 
-&lt;p&gt;####Voir les fichiers récemments ouverts&lt;/p&gt;
+&lt;h4 id=&quot;voir-les-fichiers-rcemments-ouverts&quot;&gt;Voir les fichiers récemments ouverts&lt;/h4&gt;
 
 &lt;p&gt;Installation: &lt;a href=&quot;http://vimawesome.com/plugin/mru-vim&quot;&gt;http://vimawesome.com/plugin/mru-vim&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;MRU permet par le biais de la commande eponyme (:MRU, on sait jamais) de voir la liste des fichiers récemments ouverts, d’en sélectionner un, et de l’ouvrir avec la touche Enter. C’est une fonctionalité classique mais j’avoue que je n’y pensais plus quand j’utilisais Vim, maintenant je lance vim dans mon terminal où que je sois avec j’ouvre le fichier sur lequel je bosse en ce moment avec le :MRU. Je me suis meme permis de rajouter ces quelque petites lignes dans mon vimrc:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; bufname&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;''&lt;/span&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; bufname&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;&#39;&lt;/span&gt;
   autocmd &lt;span class=&quot;nb&quot;&gt;VimEnter&lt;/span&gt; * MRU
 &lt;span class=&quot;k&quot;&gt;endif&lt;/span&gt;
 autocmd &lt;span class=&quot;nb&quot;&gt;BufNewFile&lt;/span&gt; * MRU&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -1021,10 +1068,10 @@ autocmd &lt;span class=&quot;nb&quot;&gt;BufNewFile&lt;/span&gt; * MRU&lt;/code&
 
 &lt;p&gt;Du coup je vais écrire ici toutes mes notes sur l’utilisation des mes plugins vim, comment je peux configurer etc… et j’aurais peut-être au bout d’un moment une bonne base de connaissances qu’il deviendra intéréssant d’utiliser (c’est pour ça que j’ai mis - 01 dans le titre c’est que je pense découper en plusieurs articles pour ne pas que ça fasse trop gros d’un seul coup)&lt;/p&gt;
 
-&lt;p&gt;##Ultisnips&lt;/p&gt;
+&lt;h2 id=&quot;ultisnips&quot;&gt;Ultisnips&lt;/h2&gt;
 
-&lt;p&gt;###Faire des snippets comme dans Atom ou SublimeText
-&lt;a href=&quot;www.sirver.net&quot;&gt;Site de l’auteur&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;faire-des-snippets-comme-dans-atom-ou-sublimetext&quot;&gt;Faire des snippets comme dans Atom ou SublimeText&lt;/h3&gt;
+&lt;p&gt;&lt;a href=&quot;www.sirver.net&quot;&gt;Site de l’auteur&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Installation&lt;/strong&gt;: http://vimawesome.com/plugin/ultisnips-forever-and-always&lt;/p&gt;
 
@@ -1108,7 +1155,7 @@ Donc pour éviter ce genre de problèmes il faut mettre ses snippets dans un aut
 
 &lt;span class=&quot;s&quot;&gt;snippet post&lt;/span&gt;
 &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$1 `!p snip.rv = complete(t[1], ['post_kevin', 'index', 'autre_layout', 'etc...'])`&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$1 `!p snip.rv = complete(t[1], [&#39;post_kevin&#39;, &#39;index&#39;, &#39;autre_layout&#39;, &#39;etc...&#39;])`&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$2&lt;/span&gt;
 &lt;span class=&quot;s&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;kevin&lt;/span&gt;
 &lt;span class=&quot;nn&quot;&gt;---&lt;/span&gt;
@@ -1124,9 +1171,9 @@ Donc pour éviter ce genre de problèmes il faut mettre ses snippets dans un aut
 
 &lt;p&gt;Maintenant que j’ai réussi a l’installer je pense que je vais m’amuser à écrire des tonnes de snippets dans tous les sens et pour tout et n’importe quoi!&lt;/p&gt;
 
-&lt;p&gt;##Vim-airline&lt;/p&gt;
+&lt;h2 id=&quot;vim-airline&quot;&gt;Vim-airline&lt;/h2&gt;
 
-&lt;p&gt;####Ou comment rendre l’interface de Vim badass&lt;/p&gt;
+&lt;h4 id=&quot;ou-comment-rendre-linterface-de-vim-badass&quot;&gt;Ou comment rendre l’interface de Vim badass&lt;/h4&gt;
 
 &lt;p&gt;&lt;a href=&quot;http://bling.github.io/&quot;&gt;Site de l’auteur&lt;/a&gt;&lt;/p&gt;
 
@@ -1148,9 +1195,9 @@ On peut déjà choisir les informations qui sont affichées dans la statusbar, p
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-vim&quot; data-lang=&quot;vim&quot;&gt;&lt;span class=&quot;k&quot;&gt;set&lt;/span&gt; lastsatus&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:airline_powerline_fonts&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:airline_section_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%{strftime(&quot;%H:%M&quot;)}'&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:airline_section_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'%{char2nr(getline(&quot;.&quot;)[col(&quot;.&quot;)-1])}'&lt;/span&gt; &quot;Pour obtenir &lt;span class=&quot;k&quot;&gt;la&lt;/span&gt; valeur &lt;span class=&quot;k&quot;&gt;ascii&lt;/span&gt; du caractè&lt;span class=&quot;k&quot;&gt;re&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;la&lt;/span&gt; position du curseur
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:airline_section_z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Line:%l Col:%c'&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:airline_section_x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;%{strftime(&quot;%H:%M&quot;)}&#39;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:airline_section_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;%{char2nr(getline(&quot;.&quot;)[col(&quot;.&quot;)-1])}&#39;&lt;/span&gt; &quot;Pour obtenir &lt;span class=&quot;k&quot;&gt;la&lt;/span&gt; valeur &lt;span class=&quot;k&quot;&gt;ascii&lt;/span&gt; du caractè&lt;span class=&quot;k&quot;&gt;re&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;la&lt;/span&gt; position du curseur
+&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;g:airline_section_z&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;Line:%l Col:%c&#39;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Pour avoir les jolis affichages en flèches de vim-airline. il faut installer les polices de caractères de powerline. Pourquoi? Parce que ce sont des caractères en forme de flèche ou de branche ou tout un tas d’autres choses qui en fait ne vont pas servir à écrire du texte mais a affiner l’affichage. Pour l’installer il suffit d’aller sur la page &lt;a href=&quot;https://github.com/powerline/fonts&quot;&gt;Github de powerline&lt;/a&gt; et de lancer le install.sh du .zip téléchargé.&lt;/p&gt;
 
@@ -1185,183 +1232,7 @@ On peut déjà choisir les informations qui sont affichées dans la statusbar, p
 
 &lt;p&gt;Un peu de technique maintenant. Comme je l’ai mentionné, j’utilise Jekyll pour faire de la génération de code statique. Pour ceux qui ne savent pas, statique signifie (en gros) qu’il n’y a pas de code PHP, donc pas de gestion coté serveur. Vous avec de l’HTML, et du CSS. C’est quasiment tout ce qu’il y a sur ce site. Le gros avantage de Jekyll par rapport a ce que je voulais est qu’il est spécialisé pour la conception de Blogs, avec une gestion des articles qui sont écrit de mon coté en langage Markdown, puis sont transformé en page HTML/CSS par Jekyll selon un modèle que j’ai défini.&lt;/p&gt;
 
-&lt;p&gt;Ah oui il faut en parler de ces modèles, ou plutôt appelé par Jekyll des Layouts. Pour générer du code avec Jekyll, on commence par écrire des pages qui serviront de modèles pour la génération, et en mettant dedans des commandes Jekyll pour lui donner des informations, comme lui dire a quel endroit insérer le contenu de la page qui utilise ce Layout. Un modèle peut être tout et n’importe quoi en HTML. Pour ce site j’utilise a peu près deux catégories de Layouts, d’un coté ceux qui contiennent le code de base d’une page HTML donc avec le DOCTYPE les balises &amp;lt;head&amp;gt; les lignes d’insertion de CSS etc… Agrémentés donc en plein milieu d’une ligne avec &amp;lt;div class=&quot;post_home&quot;&amp;gt;
-      &amp;lt;div class=&quot;title&quot; style=&quot;background-image: url('/images/header_articles/circuit.jpg');&quot;&amp;gt;
-        &lt;time datetime=&quot;30 January 2015&quot;&gt;
-          &amp;lt;h1&amp;gt; Neobot un bot en ligne de commande pour les unix like&amp;lt;/h1&amp;gt;
-          &amp;lt;p&amp;gt;&lt;/time&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;30
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;janvier&lt;/p&gt;
-
-&lt;p&gt;2015&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;      &amp;lt;/p&amp;gt;
-     &amp;lt;/time&amp;gt;
-  &amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-&lt;div class=&quot;content&quot;&gt;
-    &lt;h3 id=&quot;see_previous&quot; onclick=&quot;see_previous()&quot;&gt;Voir les articles sur le même sujet&lt;/h3&gt;
-    &lt;div class=&quot;previously&quot;&gt;
-      &lt;ul class=&quot;previous_articles&quot;&gt;
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;p&gt;Salut tout le monde&lt;/p&gt;
-
-&lt;p&gt;Alors tout d’abord pour ceux qui ne le savent pas, qu’est-ce qu’un &lt;em&gt;bot&lt;/em&gt; en informatique? C’est un programme qui va se gérer tout seul pour accomplir une ou des tâches voulues par les développeurs du bot. Leurs utilisation est vaste, cela va du jeu vidéo (les ennemis d’un jeu de FPS contrôlés par l’ordinateur par exemple) à la gestion des salons de discussion IRC en passant par les bien connus spambots, vous savez les faux comptes inscris sur les forums de discussions simplement pour balancer de la pub en vrac… Pour en savoir plus, je vous invite à lire la page wikipédia sur les &lt;a href=&quot;https://fr.wikipedia.org/wiki/Bot_informatique&quot;&gt;bot informatique&lt;/a&gt;.&lt;/p&gt;
-
-&lt;!--break--&gt;
-&lt;p&gt;Il existe une catégorie de bot qui ont pour but de tenir une conversation en ayant l’air le plus possible humain, connu sous le nom de Chatbot. C’est sur cette catégorie de bot que l’on va s’attarder aujourd’hui avec &lt;a href=&quot;http://dcjtech.info/topic/neobot-v1-0b-release/&quot;&gt;Neobot&lt;/a&gt;. C’est un logiciel développé par Devyn C. Johnson (dont j’ai déjà parlé ici, rappelez-vous les articles sur le &lt;a href=&quot;http://mintic.blog4ever.com/blog/linux-kernel-introduction&quot;&gt;Kernel Linux&lt;/a&gt;), dont le coeur du programme est développé en Python3, pour quelque détails supplémentaires sur les outils utilisé, vous pouvez regarder &lt;a href=&quot;https://www.chatbots.org/chatbot/neo/&quot;&gt;ICI&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Neobot est portable, c’est-à-dire qu’il n’a pas besoin d’être installé pour être lancé. Une fois téléchargé et dezippé, vous pouvez lancer directement l’executable appelé Betabot. Il faut attendre quelques secondes pour que le Neobot soit totalement lancé. Lorsque que c’est le cas il devrait vous afficher un message de bonjour. Voilà vous pouvez commencer à discuter avec lui (uniquement en anglais pour le moment)&lt;/p&gt;
-
-&lt;p&gt;Je trouve ce bot particulièrement intéressant pour deux raisons principalement: la première est que, malgré le fait que ce soit écrit en python qui est un langage haut niveau, Neobot est assez performant. Il utilise un format de base de données crée spécialement pour cette catégorie de bot appelé Xaiml.&lt;/p&gt;
-
-&lt;p&gt;La deuxième est que vous pouvez poser des questions sur votre pc a Neobot et il pourra vous repondre. Par exemple si vous lui demandez de lancer Firefox et bien il ira chercher Firefox et le lancera pour vous. Vous pouvez aussi demander des inforomations sur votre système. Par exemple si vous lui demandez “Where am I” il vous repondra par le dossier courant dans lequel vous êtes dans votre temrinal.&lt;/p&gt;
-
-&lt;p&gt;Si vous souhaitez voir un peu les autres projets sur lesquels Devyn C.Johnson a travaillé ou même en discuter, vous pouvez aller jeter un coup d’oeil sur &lt;a href=&quot;http://dcjtech.info/&quot;&gt;http://dcjtech.info&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Bonne journée à tous!&lt;/p&gt;
-
-  &lt;div id=&quot;comments&quot;&gt;
-	
-			&lt;h1&gt; Commentaires&lt;/h1&gt;
-	
-	
-	&lt;h1&gt;Commenter&lt;/h1&gt;
-	&lt;p style=&quot;font-style: italic&quot;&gt;
-        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
-	&lt;/p&gt;
-	&lt;form id=&quot;commentform&quot; method=&quot;POST&quot; action=&quot;http://ilphrin.com/commentsubmit.php&quot;&gt;
-		&lt;input type=&quot;hidden&quot; name=&quot;post_id&quot; value=&quot;/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like&quot; /&gt;
-		&lt;input type=&quot;hidden&quot; name=&quot;return_url&quot; value=&quot;http://ilphrin.com/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html&quot; /&gt;
-		&lt;div id=&quot;form_info&quot;&gt;
-			&lt;div id=&quot;title_form&quot;&gt;
-				&lt;p&gt;Nom:&lt;/p&gt;
-				&lt;p&gt;E-mail:&lt;/p&gt;
-				&lt;p&gt;Site Web:&lt;/p&gt;
-			&lt;/div&gt;
-			&lt;div id=&quot;content_form&quot;&gt;
-				&lt;p&gt;&lt;input type=&quot;text&quot; size=&quot;25&quot; name=&quot;name&quot; id=&quot;name&quot; required=&quot;&quot; /&gt; (requis)&lt;/p&gt;
-				&lt;p&gt;&lt;input type=&quot;text&quot; size=&quot;25&quot; name=&quot;email&quot; id=&quot;email&quot; required=&quot;&quot; /&gt; (requis, non publié)&lt;/p&gt;
-				&lt;p&gt;&lt;input type=&quot;text&quot; size=&quot;25&quot; name=&quot;link&quot; id=&quot;link&quot; /&gt; (optionel)&lt;/p&gt;
-			&lt;/div&gt;
-		&lt;/div&gt;
-		&lt;textarea name=&quot;comment&quot; rows=&quot;10&quot; cols=&quot;60&quot; id=&quot;comment&quot;&gt;&lt;/textarea&gt;
-		&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Envoyer ✔&quot; /&gt;
-	&lt;/form&gt;
-&lt;/div&gt;
-
-  &lt;/div&gt;
-
-&lt;div class=&quot;share&quot;&gt;
-    &lt;h3&gt;Partager&lt;/h3&gt;
-    &lt;a href=&quot;http://sharetodiaspora.github.io/?title=Neobot un bot en ligne de commande pour les unix like&amp;amp;url=/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html&quot; target=&quot;_blank&quot;&gt;
-      &lt;img src=&quot;http://sharetodiaspora.github.io/favicon.png&quot; /&gt;
-    &lt;/a&gt;
-    &lt;a href=&quot;https://twitter.com/share&quot; class=&quot;twitter-share-button&quot;&gt;Tweet&lt;/a&gt;
-    &lt;script&gt;!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');&lt;/script&gt;
-  &lt;/div&gt;
-&lt;p&gt;&amp;lt;/div&amp;gt;&lt;/p&gt;
-
-&lt;p&gt;pour placer le contenu de la page. Et d’un autre coté j’utilise des Layouts qui eux-mêmes sont derivés des Layouts de la première catégories.&lt;/p&gt;
+&lt;p&gt;Ah oui il faut en parler de ces modèles, ou plutôt appelé par Jekyll des Layouts. Pour générer du code avec Jekyll, on commence par écrire des pages qui serviront de modèles pour la génération, et en mettant dedans des commandes Jekyll pour lui donner des informations, comme lui dire a quel endroit insérer le contenu de la page qui utilise ce Layout. Un modèle peut être tout et n’importe quoi en HTML. Pour ce site j’utilise a peu près deux catégories de Layouts, d’un coté ceux qui contiennent le code de base d’une page HTML donc avec le DOCTYPE les balises &amp;lt;head&amp;gt; les lignes d’insertion de CSS etc… Agrémentés donc en plein milieu d’une ligne avec  pour placer le contenu de la page. Et d’un autre coté j’utilise des Layouts qui eux-mêmes sont derivés des Layouts de la première catégories.&lt;/p&gt;
 
 &lt;p&gt;C’est le système que j’aime le plus avec Jekyll car ça permet de créer des modèles de pages au début, ce qui fait que pour la suite on a plus qu’à écrire le contenu qu’on veut et indiquer le modèle a utiliser. Non seulement ça simplifie la vie mais c’est en plus très facilement lisible quand on veut remettre les mains dans le cambouis. Par exemple quand j’écris cet article, j’écris un fichier de type Markdown, avec le contenu de mon article et le formattage que je veux faire (Jekyll s’occupe aussi de convertir le Markdown en HTML. Franchement, quel homme ce Jekyll!), et avec au début deux trois lignes d’information qui sont utilisées par Jekyll dont le Layout.&lt;/p&gt;
 
@@ -1761,7 +1632,7 @@ Récemment une version majeure pour Sunflower à été publiée, rajoutant plusi
 
 &lt;p&gt;Astuce: Il est préférable d’utiliser “make menuconfig” car l’utilisateur peut sauvegarder sa “progression” dans la configuration. “make config” ne permet pas cela.&lt;/p&gt;
 
-&lt;p&gt;#Configuration&lt;/p&gt;
+&lt;h1 id=&quot;configuration&quot;&gt;Configuration&lt;/h1&gt;
 
 &lt;p&gt;La plupart des développeurs choisissent “make menuconfig” ou l’un des menus graphique. Après avoir entré la commande voulue, la première question demande si le noyau qui va être construit sera en 64 bits ou non. Les choix sont “Y”, “n” et “?”. Le point d’interrogation permet de détailler la question, “n” de répondre non et “Y” de répondre oui. Nous choisirons oui ici. Entrez “Y” (attention à la casse, pensez bien à la majuscule).&lt;/p&gt;
 
@@ -1965,8 +1836,8 @@ Aujourd’hui vient de sortir la nouvelle version de Octopi, j’ avais parlé i
 &lt;p&gt;Voilà, à la prochaine et profitez bien de ces derniers jours d’été! ;)&lt;/p&gt;
 </description>
 				<pubDate>Mon, 26 Aug 2013 00:00:00 +0200</pubDate>
-				<link>http://ilphrin.com/2013/08/26/arrivee-d'octopi-2-0.html</link>
-				<guid isPermaLink="true">http://ilphrin.com/2013/08/26/arrivee-d'octopi-2-0.html</guid>
+				<link>http://ilphrin.com/2013/08/26/arrivee-d&#39;octopi-2-0.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/2013/08/26/arrivee-d&#39;octopi-2-0.html</guid>
 			</item>
 		
 			<item>
@@ -2358,7 +2229,7 @@ Toutefois le site est entièrement en Anglais (mais bon si vous voulez faire de 
 			</item>
 		
 			<item>
-				<title>Encore du jeu à l'ancienne - PS1 &amp; Chromium-bsu</title>
+				<title>Encore du jeu à l&#39;ancienne - PS1 &amp; Chromium-bsu</title>
 				
 					<description>&lt;p&gt;Salut tout l’monde!&lt;/p&gt;
 
@@ -2453,7 +2324,7 @@ Pour moi ce guide est juste superbe. Il est relativement court, très agréable 
 			</item>
 		
 			<item>
-				<title>Les vieux jeux sont toujours d'actualité</title>
+				<title>Les vieux jeux sont toujours d&#39;actualité</title>
 				
 					<description>&lt;p&gt;Salut tout le monde!&lt;/p&gt;
 
@@ -2493,7 +2364,7 @@ Voilà la majorité des sites sur lesquels je me suis basé pour cette installat
 
 &lt;p&gt;Pour tous les fichier à créer/éditer, j’utilise le logiciel nano, qui est mon préferé quand il s’agit de s’occuper des fichiers en ligne de commande.&lt;/p&gt;
 
-&lt;p&gt;##Installation&lt;/p&gt;
+&lt;h2 id=&quot;installation&quot;&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;On lance la machine virtuelle (je ne décris pas ici la création d’une machine virtuelle, normalement une rapide recherche sur le net vous permet d’en savoir largement sur l’utilisation de Virtualbox).&lt;/p&gt;
 
@@ -2507,7 +2378,7 @@ Commencez par mettre un clavier français:&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;##Partitionnement&lt;/p&gt;
+&lt;h2 id=&quot;partitionnement&quot;&gt;Partitionnement&lt;/h2&gt;
 
 &lt;p&gt;D’après ArchlinuxFR on devrait faire 4 partitions, mais j’omets celle correspondante au swap, ce qui m’en fait seulement 3.&lt;/p&gt;
 
@@ -2545,7 +2416,7 @@ Command(m for help): w  (Pour quitter et enregistrer les modifications)
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;##Formatage&lt;/p&gt;
+&lt;h2 id=&quot;formatage&quot;&gt;Formatage&lt;/h2&gt;
 
 &lt;p&gt;On devrait donc avoir maintenant nos 3 partitions, on va les formater pour qu’elle soient en ext4 (sauf /dev/sda1 qu’on mettra en ext2). Donc pour formater tout ça on va faire :&lt;/p&gt;
 
@@ -2555,7 +2426,7 @@ mkfs.ext4 /dev/sda3&lt;/p&gt;
 
 &lt;p&gt;Attendre que chacune des commandes se termine avant de faire quoi que ce soit/passer à la suivante.&lt;/p&gt;
 
-&lt;p&gt;##Montage des partitions&lt;/p&gt;
+&lt;h2 id=&quot;montage-des-partitions&quot;&gt;Montage des partitions&lt;/h2&gt;
 
 &lt;p&gt;On monte maintenant toutes les partitions pour qu’elles correspondent au dossier que l’on veut, c’est-à-dire:&lt;/p&gt;
 
@@ -2574,7 +2445,7 @@ mount /dev/sda3 /mnt/home        # Répertoire perso
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;##Connexion réseau&lt;/p&gt;
+&lt;h2 id=&quot;connexion-rseau&quot;&gt;Connexion réseau&lt;/h2&gt;
 
 &lt;p&gt;Normalement si on est en connexion filiairele pc est automatiquement connecté au réseau. Cependant étant donné que nous sommes sous une machine Virtualbox ce n’est pas toujours le cas.
 Il faut lancer la commande suivante afin de démarrer le démon qui gère la connexion filiaire au réseau eth0:&lt;/p&gt;
@@ -2583,7 +2454,7 @@ Il faut lancer la commande suivante afin de démarrer le démon qui gère la con
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;##Installation du système de base&lt;/p&gt;
+&lt;h2 id=&quot;installation-du-systme-de-base&quot;&gt;Installation du système de base&lt;/h2&gt;
 
 &lt;p&gt;On peut changer le fichier /etc/pacman.d/mirrorlist pour obtenir le miroir le plus proche mais ce n’est pas obligatoire. Donc on va lancer l’installation
 directement même si ça prend un peu plus de temps. On fait ça grâce à la commande:&lt;/p&gt;
@@ -2610,7 +2481,7 @@ directement même si ça prend un peu plus de temps. On fait ça grâce à la co
 
 &lt;p&gt;L’installation devrait être beaucoup plus rapide. Et bien entendu…une auto-confirmation de la part de pacstrap! Faudrait que je pose la question sur les forums quand même.&lt;/p&gt;
 
-&lt;p&gt;##Configuration&lt;/p&gt;
+&lt;h2 id=&quot;configuration&quot;&gt;Configuration&lt;/h2&gt;
 
 &lt;p&gt;Il faut générer un fichier de configuration /etc/fstab. Il contiendra toutes les informations concernant le partitionnement du/des disque(s) et leur arborescence.&lt;/p&gt;
 
@@ -2742,7 +2613,7 @@ Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg e
 
 &lt;p&gt;Si vous voulez plus d’infos sur le jeu, il y a un répertoire doc dans le jeu avec un fichier README qui fournit pas mal d’informations.&lt;/p&gt;
 
-&lt;p&gt;##Comment jouer&lt;/p&gt;
+&lt;h2 id=&quot;comment-jouer&quot;&gt;Comment jouer&lt;/h2&gt;
 
 &lt;p&gt;Voici les commande de base a connaître :&lt;/p&gt;
 
@@ -2809,7 +2680,7 @@ Bon voici clairement a quoi ressemble les tartes :&lt;/p&gt;
 
 &lt;p&gt;Pour l’installation, je vais honteusement recopier le tuto du site de Mr Schneegans ^_^ :&lt;/p&gt;
 
-&lt;p&gt;##Installation par PPA(recommandé)&lt;/p&gt;
+&lt;h2 id=&quot;installation-par-pparecommand&quot;&gt;Installation par PPA(recommandé)&lt;/h2&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo add-apt-repository ppa:simonschneegans/testing
 sudo apt-get update
@@ -2838,7 +2709,7 @@ cd build &amp;amp;&amp;amp; sudo make install
 
 &lt;p&gt;Ensuite, quelle que soit votre méthode d’installation, je vous recommande de le faire lancer au démarrage de votre session.&lt;/p&gt;
 
-&lt;p&gt;##Configuration/Possibilités de base&lt;/p&gt;
+&lt;h2 id=&quot;configurationpossibilits-de-base&quot;&gt;Configuration/Possibilités de base&lt;/h2&gt;
 
 &lt;p&gt;Au premier lancement plusieurs tartes sont déjà disponibles. Donc notamment les raccourcis clavier qui vont avec, voici plus ou moins ce que donnent ces raccourcis :&lt;/p&gt;
 
@@ -2882,7 +2753,7 @@ cd build &amp;amp;&amp;amp; sudo make install
     &lt;p&gt;name= ‘‘Multimédia ‘’ Correspond au nom donné a la tarte, ici c’est Multimédia (plus quelques caractères pour gérer l’accent du ‘‘é’’ ).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;'’id=831’’ Bon alors celui-ci je dois avouer que je ne saurais l’utiliser correctement. Je ne sais non plus comment il fonctionne (si quelqu’un peut me le dire d’ailleurs ce serait cool x) ).&lt;/p&gt;
+    &lt;p&gt;&#39;’id=831’’ Bon alors celui-ci je dois avouer que je ne saurais l’utiliser correctement. Je ne sais non plus comment il fonctionne (si quelqu’un peut me le dire d’ailleurs ce serait cool x) ).&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;icon=’‘stock_media-play’’ Là il vous est possible de choisir votre icône. Soit c’est une icône système auquel cas vous pouvez directement entrer son nom, ou alors vous écrivez le chemin (de préférence le chemin absolu) pour y accéder.&lt;/p&gt;
@@ -2898,7 +2769,7 @@ cd build &amp;amp;&amp;amp; sudo make install
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
-&lt;p&gt;Alors là à l’inverse des balises &lt;pie&gt; et &amp;lt; /pie&amp;gt; la balise &amp;lt; slice /&amp;gt; est dite orpheline, car elle se termine sur la même balise qui l'à commencé (on peut le voir notamment avec le '/' a la fin). Littéralement slice en français veut dire 'part' comme...part de tarte ! C'est bien fait n'est-ce pas ^^&lt;/pie&gt;&lt;/p&gt;
+&lt;p&gt;Alors là à l’inverse des balises &lt;pie&gt; et &amp;lt; /pie&amp;gt; la balise &amp;lt; slice /&amp;gt; est dite orpheline, car elle se termine sur la même balise qui l&#39;à commencé (on peut le voir notamment avec le &#39;/&#39; a la fin). Littéralement slice en français veut dire &#39;part&#39; comme...part de tarte ! C&#39;est bien fait n&#39;est-ce pas ^^&lt;/pie&gt;&lt;/p&gt;
 
 &lt;p&gt;Bon passons au découpage de cette balise :&lt;/p&gt;
 

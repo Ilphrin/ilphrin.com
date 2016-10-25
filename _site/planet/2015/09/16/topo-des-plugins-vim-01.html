@@ -2,44 +2,38 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
-
-  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
   <script src="/js/previous.js" charset="utf-8"></script>
-  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
-  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
-  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
 </head>
 
-<div class="header">
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
   <div class="navigation">
     <div class="title">
-      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <neonize-navigation-container class="right">
-      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
-      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
-      <neonize-navigation link="/kevin/project.html" text="Projets"></neonize-navigation>
-      <neonize-navigation link="/kevin/about.html" text="A propos"></neonize-navigation>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </neonize-navigation-container>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
   </div>
 
 </div>
 
-
-<body>
     <div class="main">
-        <div class="post_home">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
       <div class="title" style="background-image: url('/images/header_articles/vim_nvim.png');">
         <time datetime="16 September 2015">
-          <h1> Topo de mes plugins Vim - 01</h1>
-          <p>
+          <h1 itemprop="name"> Topo de mes plugins Vim - 01</h1>
+          <p itemprop="datePublished">
             
   
     16
@@ -52,10 +46,12 @@ septembre
           </p>
          </time>
       </div>
-  <div class="content">
+  <div class="content" itemprop="articleBody">
     <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
     <div class="previously">
       <ul class="previous_articles">
+        
+          
         
           
         
@@ -159,10 +155,10 @@ septembre
 
 <p>Du coup je vais écrire ici toutes mes notes sur l’utilisation des mes plugins vim, comment je peux configurer etc… et j’aurais peut-être au bout d’un moment une bonne base de connaissances qu’il deviendra intéréssant d’utiliser (c’est pour ça que j’ai mis - 01 dans le titre c’est que je pense découper en plusieurs articles pour ne pas que ça fasse trop gros d’un seul coup)</p>
 
-<p>##Ultisnips</p>
+<h2 id="ultisnips">Ultisnips</h2>
 
-<p>###Faire des snippets comme dans Atom ou SublimeText
-<a href="www.sirver.net">Site de l’auteur</a></p>
+<h3 id="faire-des-snippets-comme-dans-atom-ou-sublimetext">Faire des snippets comme dans Atom ou SublimeText</h3>
+<p><a href="www.sirver.net">Site de l’auteur</a></p>
 
 <p><strong>Installation</strong>: http://vimawesome.com/plugin/ultisnips-forever-and-always</p>
 
@@ -262,9 +258,9 @@ Donc pour éviter ce genre de problèmes il faut mettre ses snippets dans un aut
 
 <p>Maintenant que j’ai réussi a l’installer je pense que je vais m’amuser à écrire des tonnes de snippets dans tous les sens et pour tout et n’importe quoi!</p>
 
-<p>##Vim-airline</p>
+<h2 id="vim-airline">Vim-airline</h2>
 
-<p>####Ou comment rendre l’interface de Vim badass</p>
+<h4 id="ou-comment-rendre-linterface-de-vim-badass">Ou comment rendre l’interface de Vim badass</h4>
 
 <p><a href="http://bling.github.io/">Site de l’auteur</a></p>
 
@@ -308,12 +304,11 @@ On peut déjà choisir les informations qui sont affichées dans la statusbar, p
 
 <p>@pluche</p>
 
-  <div id="comments">
+  <div id="comments" itemprop="comment">
 	
-			<h1> Commentaires</h1>
+                <h2><span itemprop="commentCount"></span> Commentaires</h2>
 	
 	
-	<h1>Commenter</h1>
 	<p style="font-style: italic">
         Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
 	</p>
@@ -339,35 +334,22 @@ On peut déjà choisir les informations qui sont affichées dans la statusbar, p
 
   </div>
 
-
   <div class="share">
     <h3>Partager</h3>
     <a href="http://sharetodiaspora.github.io/?title=Topo de mes plugins Vim - 01&url=/planet/2015/09/16/topo-des-plugins-vim-01.html" target="_blank">
-      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+      <img src="http://sharetodiaspora.github.io/favicon.png" alt="Partage Diaspora"/>
     </a>
     <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script src="/js/twitter.js"></script>
   </div>
 </div>
 
 
     </div>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.ilphrin.com"]]);
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//ilphrin.com/analytics/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
 </body>
 </html>

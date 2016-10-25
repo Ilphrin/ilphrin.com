@@ -2,44 +2,38 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
-
-  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
   <script src="/js/previous.js" charset="utf-8"></script>
-  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
-  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
-  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
 </head>
 
-<div class="header">
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
   <div class="navigation">
     <div class="title">
-      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <neonize-navigation-container class="right">
-      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
-      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
-      <neonize-navigation link="/kevin/project.html" text="Projets"></neonize-navigation>
-      <neonize-navigation link="/kevin/about.html" text="A propos"></neonize-navigation>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </neonize-navigation-container>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
   </div>
 
 </div>
 
-
-<body>
     <div class="main">
-        <div class="post_home">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
       <div class="title" style="background-image: url('/images/header_articles/archlinux.png');">
         <time datetime="4 January 2013">
-          <h1> Test ArchLinux en VirtualBox ( 1/2 )</h1>
-          <p>
+          <h1 itemprop="name"> Test ArchLinux en VirtualBox ( 1/2 )</h1>
+          <p itemprop="datePublished">
             
   
     4
@@ -52,10 +46,12 @@ janvier
           </p>
          </time>
       </div>
-  <div class="content">
+  <div class="content" itemprop="articleBody">
     <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
     <div class="previously">
       <ul class="previous_articles">
+        
+          
         
           
         
@@ -165,7 +161,7 @@ Voilà la majorité des sites sur lesquels je me suis basé pour cette installat
 
 <p>Pour tous les fichier à créer/éditer, j’utilise le logiciel nano, qui est mon préferé quand il s’agit de s’occuper des fichiers en ligne de commande.</p>
 
-<p>##Installation</p>
+<h2 id="installation">Installation</h2>
 
 <p>On lance la machine virtuelle (je ne décris pas ici la création d’une machine virtuelle, normalement une rapide recherche sur le net vous permet d’en savoir largement sur l’utilisation de Virtualbox).</p>
 
@@ -179,7 +175,7 @@ Commencez par mettre un clavier français:</p>
 </code></pre>
 </div>
 
-<p>##Partitionnement</p>
+<h2 id="partitionnement">Partitionnement</h2>
 
 <p>D’après ArchlinuxFR on devrait faire 4 partitions, mais j’omets celle correspondante au swap, ce qui m’en fait seulement 3.</p>
 
@@ -217,7 +213,7 @@ Command(m for help): w  (Pour quitter et enregistrer les modifications)
 </code></pre>
 </div>
 
-<p>##Formatage</p>
+<h2 id="formatage">Formatage</h2>
 
 <p>On devrait donc avoir maintenant nos 3 partitions, on va les formater pour qu’elle soient en ext4 (sauf /dev/sda1 qu’on mettra en ext2). Donc pour formater tout ça on va faire :</p>
 
@@ -227,7 +223,7 @@ mkfs.ext4 /dev/sda3</p>
 
 <p>Attendre que chacune des commandes se termine avant de faire quoi que ce soit/passer à la suivante.</p>
 
-<p>##Montage des partitions</p>
+<h2 id="montage-des-partitions">Montage des partitions</h2>
 
 <p>On monte maintenant toutes les partitions pour qu’elles correspondent au dossier que l’on veut, c’est-à-dire:</p>
 
@@ -246,7 +242,7 @@ mount /dev/sda3 /mnt/home        # Répertoire perso
 </code></pre>
 </div>
 
-<p>##Connexion réseau</p>
+<h2 id="connexion-rseau">Connexion réseau</h2>
 
 <p>Normalement si on est en connexion filiairele pc est automatiquement connecté au réseau. Cependant étant donné que nous sommes sous une machine Virtualbox ce n’est pas toujours le cas.
 Il faut lancer la commande suivante afin de démarrer le démon qui gère la connexion filiaire au réseau eth0:</p>
@@ -255,7 +251,7 @@ Il faut lancer la commande suivante afin de démarrer le démon qui gère la con
 </code></pre>
 </div>
 
-<p>##Installation du système de base</p>
+<h2 id="installation-du-systme-de-base">Installation du système de base</h2>
 
 <p>On peut changer le fichier /etc/pacman.d/mirrorlist pour obtenir le miroir le plus proche mais ce n’est pas obligatoire. Donc on va lancer l’installation
 directement même si ça prend un peu plus de temps. On fait ça grâce à la commande:</p>
@@ -282,7 +278,7 @@ directement même si ça prend un peu plus de temps. On fait ça grâce à la co
 
 <p>L’installation devrait être beaucoup plus rapide. Et bien entendu…une auto-confirmation de la part de pacstrap! Faudrait que je pose la question sur les forums quand même.</p>
 
-<p>##Configuration</p>
+<h2 id="configuration">Configuration</h2>
 
 <p>Il faut générer un fichier de configuration /etc/fstab. Il contiendra toutes les informations concernant le partitionnement du/des disque(s) et leur arborescence.</p>
 
@@ -356,12 +352,11 @@ Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg e
 
 <p>Merci d’avoir pris le temps de lire cet article,  n’hésitez pas à me dire si vous avez des problème ou des suggestions. Sur ce je vous dis à bientôt et bonne fin de journée!</p>
 
-  <div id="comments">
+  <div id="comments" itemprop="comment">
 	
-			<h1> Commentaires</h1>
+                <h2><span itemprop="commentCount"></span> Commentaires</h2>
 	
 	
-	<h1>Commenter</h1>
 	<p style="font-style: italic">
         Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
 	</p>
@@ -387,35 +382,22 @@ Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg e
 
   </div>
 
-
   <div class="share">
     <h3>Partager</h3>
     <a href="http://sharetodiaspora.github.io/?title=Test ArchLinux en VirtualBox ( 1/2 )&url=/2013/01/04/test-archlinux-en-virtualbox-(1-2).html" target="_blank">
-      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+      <img src="http://sharetodiaspora.github.io/favicon.png" alt="Partage Diaspora"/>
     </a>
     <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script src="/js/twitter.js"></script>
   </div>
 </div>
 
 
     </div>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.ilphrin.com"]]);
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//ilphrin.com/analytics/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
 </body>
 </html>

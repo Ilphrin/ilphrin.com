@@ -2,16 +2,16 @@
 layout: index
 lang: fr
 ---
-<div class="post_home">
+<div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
       <div class="title" style="background-image: url('/images/header_articles/{{ page.cover }}');">
         <time datetime="{{ page.date | date: '%-d %B %Y'}}">
-          <h1> {{ page.title }}</h1>
-          <p>
+          <h1 itemprop="name"> {{ page.title }}</h1>
+          <p itemprop="datePublished">
             {% include date.html date=page.date %}
           </p>
          </time>
       </div>
-  <div class="content">
+  <div class="content" itemprop="articleBody">
     <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
     <div class="previously">
       <ul class="previous_articles">
@@ -32,14 +32,13 @@ lang: fr
   {% include comment_template.html %}
   </div>
 
-
   <div class="share">
     <h3>Partager</h3>
     <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank">
-      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+      <img src="http://sharetodiaspora.github.io/favicon.png" alt="Partage Diaspora"/>
     </a>
     <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script src="/js/twitter.js"></script>
   </div>
 </div>
 

@@ -2,44 +2,38 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
-
-  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
   <script src="/js/previous.js" charset="utf-8"></script>
-  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
-  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
-  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
 </head>
 
-<div class="header">
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
   <div class="navigation">
     <div class="title">
-      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <neonize-navigation-container class="right">
-      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
-      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
-      <neonize-navigation link="/kevin/project.html" text="Projets"></neonize-navigation>
-      <neonize-navigation link="/kevin/about.html" text="A propos"></neonize-navigation>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </neonize-navigation-container>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
   </div>
 
 </div>
 
-
-<body>
     <div class="main">
-        <div class="post_home">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
       <div class="title" style="background-image: url('/images/header_articles/vim_nvim.png');">
         <time datetime="21 September 2015">
-          <h1> Topo de mes plugins Vim - 02</h1>
-          <p>
+          <h1 itemprop="name"> Topo de mes plugins Vim - 02</h1>
+          <p itemprop="datePublished">
             
   
     21
@@ -52,10 +46,12 @@ septembre
           </p>
          </time>
       </div>
-  <div class="content">
+  <div class="content" itemprop="articleBody">
     <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
     <div class="previously">
       <ul class="previous_articles">
+        
+          
         
           
         
@@ -155,9 +151,9 @@ septembre
 
 <!--break-->
 
-<p>##rust.vim</p>
+<h2 id="rustvim">rust.vim</h2>
 
-<p>####Pour gérer le langage de Mozilla</p>
+<h4 id="pour-grer-le-langage-de-mozilla">Pour gérer le langage de Mozilla</h4>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/rust-vim-love-story">http://vimawesome.com/plugin/rust-vim-love-story</a></p>
 
@@ -165,9 +161,9 @@ septembre
 Note intéressante sur ce plugin: Apparemment il se synchronise de façon journalière au dépot github de Rust (le dépot du plugin pas le plugin en lui-même hein!)
 Il n’y a pas besoin de configuration précise pour fonctionner correctement, vous faites un git clone dans votre dossier de plugins et le tour est joué!</p>
 
-<p>##indentLine</p>
+<h2 id="indentline">indentLine</h2>
 
-<p>####Savoir où en est l’indentation</p>
+<h4 id="savoir-o-en-est-lindentation">Savoir où en est l’indentation</h4>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/indentline">http://vimawesome.com/plugin/indentline</a></p>
 
@@ -177,17 +173,17 @@ Avec ce plugin on peut notamment configurer le caractère a afficher en fond com
 <figure class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">let</span> <span class="nv">g:indentLine_char</span> <span class="p">=</span> <span class="s1">'¦'</span> "Je <span class="k">ne</span> sais pas comment <span class="k">on</span> obtiens <span class="k">ce</span> caractè<span class="k">re</span> <span class="k">au</span> clavier<span class="p">,</span> je <span class="k">l</span>'ai récuperé avec <span class="k">un</span> Copier<span class="p">-</span>Coller
 <span class="k">let</span> <span class="nv">g:indentLine_color_term</span> <span class="p">=</span> <span class="m">0</span> "Pour avoir une couleur noir</code></pre></figure>
 
-<p>##NERDCommenter</p>
+<h2 id="nerdcommenter">NERDCommenter</h2>
 
-<p>####Les commentaires faciles</p>
+<h4 id="les-commentaires-faciles">Les commentaires faciles</h4>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/the-nerd-commenter">http://vimawesome.com/plugin/the-nerd-commenter</a></p>
 
 <p>Je l’utilise souvent pour écrire un pavé de texte dans du code, puis le mettre en commentaire en sélectionnant le tout et en faisant ensuite \cc ou \cs. Il dispose de tout un tas de commandes pour aller un peu plus loin dans la gestion des commentaires mais son utilisation basique me suffit amplement. Il ne lui manque plus qu’à ajouter la gestion pour Rust et ce serait parfait :D (j’ai posté une Issue sur la page Github à ce sujet, je mettrai à jour l’article si il y a du nouveau de ce coté là!)</p>
 
-<p>##vim-cargo</p>
+<h2 id="vim-cargo">vim-cargo</h2>
 
-<p>####Quelques commandes pour Cargo</p>
+<h4 id="quelques-commandes-pour-cargo">Quelques commandes pour Cargo</h4>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/vim-cargo">http://vimawesome.com/plugin/vim-cargo</a></p>
 
@@ -195,17 +191,17 @@ Avec ce plugin on peut notamment configurer le caractère a afficher en fond com
 
 <p>Tant qu’on parle de Rust autant parler de ce plugin. Ce petit plugin très simple rajoute 4 (à ce jour, et 8 dans le Fork que j’ai mis en lien) petites commandes classiques pour manipuler Cargo le gestionnaire de projet qui va de pair avec Rust. Le code semble très court et simple je pense que je vais essayer de l’étoffer un peu, ça me permettra d’apprendre a écrire du VimScript!</p>
 
-<p>##Colorizer</p>
+<h2 id="colorizer">Colorizer</h2>
 
-<p>####Avoir un surlignage selon les couleurs</p>
+<h4 id="avoir-un-surlignage-selon-les-couleurs">Avoir un surlignage selon les couleurs</h4>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/color-highlight">http://vimawesome.com/plugin/color-highlight</a></p>
 
 <p>Tout est dans le titre encore une fois. Colorizer va analyser votre texte/code, et si il reconnait des écritures de format de couleur il va surligner le texte de la couleur correspondante, par exemple avec “red” il va surligner red en rouge, il sait reconnaitre aussi des modèles plus complexes comme notamment les format utilisés en CSS. #FF0000, rgb(255, 0, 0), rgba(255, 0, 0, 255) et hsl(120%, 70%, 820%) par exemple seront tous surligné en une teinte de rouge.</p>
 
-<p>##MRU (Most Recently Used)</p>
+<h2 id="mru-most-recently-used">MRU (Most Recently Used)</h2>
 
-<p>####Voir les fichiers récemments ouverts</p>
+<h4 id="voir-les-fichiers-rcemments-ouverts">Voir les fichiers récemments ouverts</h4>
 
 <p>Installation: <a href="http://vimawesome.com/plugin/mru-vim">http://vimawesome.com/plugin/mru-vim</a></p>
 
@@ -218,12 +214,11 @@ autocmd <span class="nb">BufNewFile</span> * MRU</code></pre></figure>
 
 <p>Comme ça MRU se lance si j’ai ouvert vim sans aucun fichier en paramètre, et lorsque que je crée un nouveau buffer vide. Néanmoins il ne s’ouvre pas lorsque je crée un nouvel Onglet vide (j’y travaille j’y travaille!)</p>
 
-  <div id="comments">
+  <div id="comments" itemprop="comment">
 	
-			<h1> Commentaires</h1>
+                <h2><span itemprop="commentCount"></span> Commentaires</h2>
 	
 	
-	<h1>Commenter</h1>
 	<p style="font-style: italic">
         Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
 	</p>
@@ -249,35 +244,22 @@ autocmd <span class="nb">BufNewFile</span> * MRU</code></pre></figure>
 
   </div>
 
-
   <div class="share">
     <h3>Partager</h3>
     <a href="http://sharetodiaspora.github.io/?title=Topo de mes plugins Vim - 02&url=/planet/2015/09/21/topo-de-mes-plugins-vim-02.html" target="_blank">
-      <img src="http://sharetodiaspora.github.io/favicon.png"/>
+      <img src="http://sharetodiaspora.github.io/favicon.png" alt="Partage Diaspora"/>
     </a>
     <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    <script src="/js/twitter.js"></script>
   </div>
 </div>
 
 
     </div>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.ilphrin.com"]]);
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//ilphrin.com/analytics/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
 </body>
 </html>

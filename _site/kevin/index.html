@@ -2,64 +2,57 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
-
-  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
   <script src="/js/previous.js" charset="utf-8"></script>
-  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
-  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
-  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
 </head>
 
-<div class="header">
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
   <div class="navigation">
     <div class="title">
-      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <neonize-navigation-container class="right">
-      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
-      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
-      <neonize-navigation link="/kevin/project.html" text="Projets"></neonize-navigation>
-      <neonize-navigation link="/kevin/about.html" text="A propos"></neonize-navigation>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </neonize-navigation-container>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
   </div>
 
 </div>
 
-
-<body>
     <div class="main">
-          <div class="header_blog">
-  
-    
-      <a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">
-        <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
-            <div class="header_blog_title">
-            <time datetime="">
-              <div>
-                <h1>Des jeux Web avec Superpowers</h1>
-              </div>
-              
+        <div class="header_blog">
+
+  <a href="/planet/2016/08/30/superpowers-version-2-0.html">
+    <div class="header_blog_title"  >
+        <div class="header_blog_title">
+        <time datetime="">
+          <div>
+            <h1>Superpowers passe en 2.0, revenons dessus</h1>
+          </div>
+          
   
     30
 
 
-juin
+août
   
 2016
 
-             </time>
-            </div>
+         </time>
         </div>
-      </a>
-      
-  </div>
+    </div>
+  </a>
+  
+</div>
 
 <div class="pagination">
   <div class="prev">
@@ -95,25 +88,32 @@ juin
   </div>
 </div>
 
-  <div class="posts">
-  
-    <div class="post">
-      <h2><a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">Des jeux Web avec Superpowers</a></h2>
-      <p>Quand il s’agit de développer des jeux vidéos sur base d’HTML5, il existe de nombreux cours et librairies sur Internet relatif à ce sujet, et on peut maintenant trouver facilement des ressources pour apprendre à développer des jeux avec telles ou telle technologie (jetez un oeil <a href="https://hacks.mozilla.org/2016/02/html-5-game-development-video-series/">ICI</a>, ça veut le coup d’oeil ;)). Dans la continuité de ce boum technologique, et né <strong>Superpowers</strong>: Un IDE pour développer des Jeux Web de façon collaborative.</p>
+<div class="posts">
+
+  <div class="post">
+    <h2><a href="/planet/2016/08/30/superpowers-version-2-0.html">Superpowers passe en 2.0, revenons dessus</a></h2>
+    <p>Je vous avais déjà parlé de Superpowers dans l’article précédent. Ce logiciel sert pour “la création de jeux 2D+3D pour tous”, et il est gratuit en entièrement Open Source!</p>
 
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit.html">Dev' d'un Gauntlet: La conclusion d'un jeu qui ne s'est pas fini</a></h2>
-      <p>La date de rendu de notre projet de Gauntlet, qui est l’un des deux gros projet de fin de deuxième année, s’est terminée il y a à peu près une semaine maintenant. Il y a du bon et du moins bon, et je me suis dit que mettre sur papier numérique ce qu’il faut en retirer peut être un exercice utile, déjà pour moi pour avoir des notes pour plus tard, et peut-être que nos erreurs serviront à ce que quelqu’un ne refasse pas les mêmes =D.</p>
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">Des jeux Web avec Superpowers</a></h2>
+    <p>Quand il s’agit de développer des jeux vidéos sur base d’HTML5, il existe de nombreux cours et librairies sur Internet relatif à ce sujet, et on peut maintenant trouver facilement des ressources pour apprendre à développer des jeux avec telles ou telle technologie (jetez un oeil <a href="https://hacks.mozilla.org/2016/02/html-5-game-development-video-series/">ICI</a>, ça veut le coup d’oeil ;)). Dans la continuité de ce boum technologique, et né <strong>Superpowers</strong>: Un IDE pour développer des Jeux Web de façon collaborative.</p>
 
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2016/05/02/dev-dun-gauntlet-la-programmation-telle-qu-ecrite-par-satan.html">Dev' d'un Gauntlet: La programmation telle que l'a écrit Satan</a></h2>
-      <p>Mettons un peu de contexte derrière ce titre étrange… Nous approchons de la fin de 2e année à Epitech, et l’un des plus gros projet de C++ a commencé: Indie Studio.</p>
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit.html">Dev' d'un Gauntlet: La conclusion d'un jeu qui ne s'est pas fini</a></h2>
+    <p>La date de rendu de notre projet de Gauntlet, qui est l’un des deux gros projet de fin de deuxième année, s’est terminée il y a à peu près une semaine maintenant. Il y a du bon et du moins bon, et je me suis dit que mettre sur papier numérique ce qu’il faut en retirer peut être un exercice utile, déjà pour moi pour avoir des notes pour plus tard, et peut-être que nos erreurs serviront à ce que quelqu’un ne refasse pas les mêmes =D.</p>
+
+
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2016/05/02/dev-dun-gauntlet-la-programmation-telle-qu-ecrite-par-satan.html">Dev' d'un Gauntlet: La programmation telle que l'a écrit Satan</a></h2>
+    <p>Mettons un peu de contexte derrière ce titre étrange… Nous approchons de la fin de 2e année à Epitech, et l’un des plus gros projet de C++ a commencé: Indie Studio.</p>
 
 <p>Nous sommes 6 sur ce projet, avec 1 mois et demi devant nous pour développer 1 jeu dans une petite liste:</p>
 
@@ -126,41 +126,22 @@ juin
 </ul>
 
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h2>
-      <p>Partie jouée avec trois joueurs: Oriana une Nécrosi, Skamos un bio-ingénieur, et Shedinn un Survivant. Première partie de test des règles et en tant que maitre de jeu pour ma part. J’ai décidé de mettre le compte-rendu sous forme narrative, sans autre raison que “J’avais envie” =D</p>
-
-
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html">Nyaovim le GUI Neovim avec Electron</a></h2>
-      <p>Voilà un projet dont j’avais plusieurs fois entendu parler mais sans jamais réellement me pencher dessus. Le seul défaut que je trouvais à Neovim c’est de ne pas avoir de GUI associé vraiment digne de ce nom, ce que je cherche est quelque chose de joli principalement mais aussi qui permette vraiment de profiter d’une interface graphique: prévisualisation, barre de défilement, bulle d’information et autre, etc…</p>
-
-
-    </div>
-  
   </div>
 
+  <div class="post">
+    <h2><a href="/2016/03/26/alpha-omega-extermination.html">Alpha Omega: Extermination</a></h2>
+    <p>Partie jouée avec trois joueurs: Oriana une Nécrosi, Skamos un bio-ingénieur, et Shedinn un Survivant. Première partie de test des règles et en tant que maitre de jeu pour ma part. J’ai décidé de mettre le compte-rendu sous forme narrative, sans autre raison que “J’avais envie” =D</p>
+
+
+  </div>
+
+</div>
+
     </div>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.ilphrin.com"]]);
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//ilphrin.com/analytics/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
 </body>
 </html>

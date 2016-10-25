@@ -1,25 +1,24 @@
 ---
 layout: index
 ---
-  <div class="header_blog">
-  {% for post in site.posts %}
-    {% if post.author == "kevin" %}
-      <a href="{{ post.url  }}">
-        <div class="header_blog_title"  style="background-image: url('/images/header_articles/{{ post.cover }}');">
-            <div class="header_blog_title">
-            <time datetime="{{ page.date | date: '%-d %B %Y'}}">
-              <div>
-                <h1>{{ post.title }}</h1>
-              </div>
-              {% include date.html date=post.date %}
-             </time>
-            </div>
+
+<div class="header_blog">
+{% for post in site.posts %}
+  <a href="{{ post.url }}">
+    <div class="header_blog_title"  {% if post.cover %}style="background-image: url('/images/header_articles/{{ post.cover }}');"{% endif %}>
+        <div class="header_blog_title">
+        <time datetime="{{ page.date | date: '%-d %B %Y'}}">
+          <div>
+            <h1>{{ post.title }}</h1>
+          </div>
+          {% include date.html date=post.date %}
+         </time>
         </div>
-      </a>
-      {% break %}
-    {% endif %}
-  {% endfor %}
-  </div>
+    </div>
+  </a>
+  {% break %}
+{% endfor %}
+</div>
 
 <div class="pagination">
   <div class="prev">
@@ -63,11 +62,11 @@ layout: index
   </div>
 </div>
 
-  <div class="posts">
-  {% for post in paginator.posts %}
-    <div class="post">
-      <h2><a href="{{ post.url }}">{{post.title}}</a></h2>
-      {{ post.content | split:'<!--break-->' | first }}
-    </div>
-  {% endfor %}
+<div class="posts">
+{% for post in paginator.posts %}
+  <div class="post">
+    <h2><a href="{{ post.url }}">{{post.title}}</a></h2>
+    {{ post.content | split:'<!--break-->' | first }}
   </div>
+{% endfor %}
+</div>

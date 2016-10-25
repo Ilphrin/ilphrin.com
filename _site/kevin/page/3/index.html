@@ -2,64 +2,57 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="/css/kevin/main.css">
-  <link rel="stylesheet" type="text/css" href="/css/highlight/hopscotch.css">
-
-  <script src="/bower_components/webcomponentsjs/webcomponents-lite.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
   <script src="/js/previous.js" charset="utf-8"></script>
-  <!--<script src="/js/highlight.pack.js" charset="utf-8"></script>-->
-  <!--<script>hljs.initHighlightingOnLoad();</script>-->
 
-  <link rel="import" href="/bower_components/neonize-navigation/neonize-navigation.html" />
   <title>
     Kevin / Ilphrin
   </title>
 </head>
 
-<div class="header">
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
   <div class="navigation">
     <div class="title">
-      <h1 style="color: #B9EFFF;">Kevin <span class="slash">/</span> Ilphrin</h1>
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
     </div>
-    <neonize-navigation-container class="right">
-      <neonize-navigation link="/" text="Accueil"></neonize-navigation>
-      <neonize-navigation link="/kevin/index.html" text="Blog"></neonize-navigation>
-      <neonize-navigation link="/kevin/project.html" text="Projets"></neonize-navigation>
-      <neonize-navigation link="/kevin/about.html" text="A propos"></neonize-navigation>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png"></img></a></li>
-    </neonize-navigation-container>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
   </div>
 
 </div>
 
-
-<body>
     <div class="main">
-          <div class="header_blog">
-  
-    
-      <a href="/planet/2016/06/30/des-jeux-web-avec-superpowers.html">
-        <div class="header_blog_title"  style="background-image: url('/images/header_articles/');">
-            <div class="header_blog_title">
-            <time datetime="">
-              <div>
-                <h1>Des jeux Web avec Superpowers</h1>
-              </div>
-              
+        <div class="header_blog">
+
+  <a href="/planet/2016/08/30/superpowers-version-2-0.html">
+    <div class="header_blog_title"  >
+        <div class="header_blog_title">
+        <time datetime="">
+          <div>
+            <h1>Superpowers passe en 2.0, revenons dessus</h1>
+          </div>
+          
   
     30
 
 
-juin
+août
   
 2016
 
-             </time>
-            </div>
+         </time>
         </div>
-      </a>
-      
-  </div>
+    </div>
+  </a>
+  
+</div>
 
 <div class="pagination">
   <div class="prev">
@@ -103,27 +96,36 @@ juin
   </div>
 </div>
 
-  <div class="posts">
-  
-    <div class="post">
-      <h2><a href="/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html">Mes premiers tests unitaires en Web</a></h2>
-      <p>Dans le cadre de mon stage, je dois faire un outil de monitoring en Web pour afficher des statistiques sur des bases de données ElasticSearch. Nous avions carte blanche pour les technos à utiliser, l’organisation de l’outil, etc… L’outil en lui-même fonctionne, mais puisqu’il s’agit d’un stage (mon premier en plus), il y a tout interêt à solidifer cet outil et en profiter pour apprendre le plus de technos possibles.</p>
+<div class="posts">
+
+  <div class="post">
+    <h2><a href="/planet/2015/12/08/livres-et-musiques-libres.html">Livres et musiques libres</a></h2>
+    <p>La musique et les livres font partie de mon quotidien depuis très longtemps, je ne peux pas faire quelque chose sans écouter un peu de musique dans mon casque ou prendre les transports en commun sans me balader avec quelque chose à lire.</p>
+
+<p>Et depuis que je connais la licence Creative Commons, je cherche ce qu’il se fait dans le domaine de la licence libre à ce sujet, du coup je me suis dit que la moindre des choses était de parler autour de moi de ceux qui m’ont plu et marqués</p>
 
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">Premiers pas avec Gaia (FirefoxOS)</a></h2>
-      <p>J’utilise tous les jours mon Open C avec Firefox OS dessus, depuis deux ans maintenant (plus ou moins).
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2015/11/08/mes-premiers-tests-unitaires-en-web.html">Mes premiers tests unitaires en Web</a></h2>
+    <p>Dans le cadre de mon stage, je dois faire un outil de monitoring en Web pour afficher des statistiques sur des bases de données ElasticSearch. Nous avions carte blanche pour les technos à utiliser, l’organisation de l’outil, etc… L’outil en lui-même fonctionne, mais puisqu’il s’agit d’un stage (mon premier en plus), il y a tout interêt à solidifer cet outil et en profiter pour apprendre le plus de technos possibles.</p>
+
+
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">Premiers pas avec Gaia (FirefoxOS)</a></h2>
+    <p>J’utilise tous les jours mon Open C avec Firefox OS dessus, depuis deux ans maintenant (plus ou moins).
 J’ai vu passer l’OS de la version 1.2 jusqu’à la version 3.0 d’aujourd’hui, si on omet la “nouvelle” branche 2.5 que je n’ai pas encore pu observer par moi-même.
 Je met fréquemment a jour mon téléphone grâce au travail considérable de la communauté francophone pour Firefox OS qui a travaillé dur pour fournir un système automatisé de construction de builds installable sur les Open C vendu sur Ebay et dans les magasin en France, et ce avec différentes branches (la Beta, la Aurora, la Nightly, et Spark en 2.5), tout est expliqué en détail sur le site <a href="http://builds.firefoxos.mozfr.org/doc/fr/devices/zte-open-c">http://builds.firefoxos.mozfr.org/doc/fr/devices/zte-open-c</a></p>
 
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/2015/09/24/des-news-en-tout-genres.html">Des news en tout genre</a></h2>
-      <p>Depuis que j’ai mis en ligne le site, j’ai fait tout un tas de petites modifications mineures pour rendre le tout un peu plus joli/stable/fonctionnel, en voici une liste (non exhaustive puisque je ne me souviens pas de tout):</p>
+  </div>
+
+  <div class="post">
+    <h2><a href="/2015/09/24/des-news-en-tout-genres.html">Des news en tout genre</a></h2>
+    <p>Depuis que j’ai mis en ligne le site, j’ai fait tout un tas de petites modifications mineures pour rendre le tout un peu plus joli/stable/fonctionnel, en voici une liste (non exhaustive puisque je ne me souviens pas de tout):</p>
 
 <ul>
   <li>Les commentaires fonctionnent maintenant! J’ai bidouillé pendant un bon moment à comprendre pourquoi quand je recevais un mail avec le contenu du commentaire à ajouter, ce n’était pas en utf-8. En fait il fallait rajouter \r\n a la fin de chaque informations de l’en-tête de requete de mail pour que ça passe correctement…</li>
@@ -134,41 +136,22 @@ Je met fréquemment a jour mon téléphone grâce au travail considérable de la
   <li>Si vous avez regardé le dépôt vous avez pu remarquer que mon CV est sur le site, mais que je n’ai mis aucun lien pour l’afficher. C’est volontaire. Si vous souhaitez vraiment le voir il est a http://ilphrin.com/kevin/CV_en.pdf, je compte ne faire que passer le lien sur mon compte Linkedin ou dans mes cartes de visite, je ne crois pas que ce soit la peine de prendre un bout de place sur le site pour ça.</li>
 </ul>
 
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2015/09/21/topo-de-mes-plugins-vim-02.html">Topo de mes plugins Vim - 02</a></h2>
-      <p>Les plugins c’est vraiment le top, alors dans Vim je vous en parle même pas, c’est comme rajouter des animations CSS, si je ne fait pas attention j’en rajoute un peu partout! Depuis la dernière fois j’ai rajouté quelque plugins qui ne révolutionnent pas mon utilisation de Vim, mais restent quand même un petit plus agréable. Du coup aujourd’hui ça va être plus court mais il y aura plus de monde ;)</p>
-
-
-    </div>
-  
-    <div class="post">
-      <h2><a href="/planet/2015/09/16/topo-des-plugins-vim-01.html">Topo de mes plugins Vim - 01</a></h2>
-      <p>Au fil des mois de mes utilisations de Vim, je finis par emmagasiner un bon paquet de plugins, dont je me sers plus ou moins souvent selon ma capacité à me souvenir de leur existence dans mes dossier. Et le gros problème que j’ai avec ces plugins c’est que je pour beaucoup je ne me souviens jamais de comment ils fonctionnent de A à Z, et j’aime avoir une documentation complète pour me rappeler tout ça.</p>
-
-
-    </div>
-  
   </div>
 
+  <div class="post">
+    <h2><a href="/planet/2015/09/21/topo-de-mes-plugins-vim-02.html">Topo de mes plugins Vim - 02</a></h2>
+    <p>Les plugins c’est vraiment le top, alors dans Vim je vous en parle même pas, c’est comme rajouter des animations CSS, si je ne fait pas attention j’en rajoute un peu partout! Depuis la dernière fois j’ai rajouté quelque plugins qui ne révolutionnent pas mon utilisation de Vim, mais restent quand même un petit plus agréable. Du coup aujourd’hui ça va être plus court mais il y aura plus de monde ;)</p>
+
+
+  </div>
+
+</div>
+
     </div>
-<!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDomains", ["*.ilphrin.com"]]);
-  _paq.push(["setDoNotTrack", true]);
-  _paq.push(['trackPageView']);
-  _paq.push(['enableLinkTracking']);
-  (function() {
-    var u="//ilphrin.com/analytics/";
-    _paq.push(['setTrackerUrl', u+'piwik.php']);
-    _paq.push(['setSiteId', 1]);
-    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-    g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-  })();
-</script>
-<noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-<!-- End Piwik Code -->
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
 </body>
 </html>
