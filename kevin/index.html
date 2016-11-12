@@ -2,23 +2,16 @@
 layout: index
 ---
 
-<div class="header_blog">
 {% for post in site.posts %}
-  <a href="{{ post.url }}">
-    <div class="header_blog_title"  {% if post.cover %}style="background-image: url('/images/header_articles/{{ post.cover }}');"{% endif %}>
-        <div class="header_blog_title">
-        <time datetime="{{ page.date | date: '%-d %B %Y'}}">
-          <div>
-            <h1>{{ post.title }}</h1>
-          </div>
-          {% include date.html date=post.date %}
-         </time>
-        </div>
-    </div>
+<div class="header_blog" {% if post.cover %}style="background-image: url('/images/header_articles/{{ post.cover }}');"{% endif %}>
+  <a href="{{post.url}}">
+    <h1>{{post.title}}</h1>
+    <h2>{% include date.html date=post.date %}</h2>
+    <span>{{ post.content | split:'<!--break-->' | first }}</span>
   </a>
-  {% break %}
-{% endfor %}
 </div>
+{% break %}
+{% endfor %}
 
 <div class="pagination">
   <div class="prev">
