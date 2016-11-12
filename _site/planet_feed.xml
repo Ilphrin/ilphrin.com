@@ -7,6 +7,255 @@
 		<atom:link href="http://ilphrin.com/feed.category.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Un peu de SEO facile avec Jekyll</title>
+				<description>&lt;p&gt;Quand on se balade sur Internet on en vient forcément à taper quelque chose sur son moteur de recherche préféré, la magie opère, et on se retrouve avec des tonnes des liens correspondant à ce que l’on cherchait, selon le titre du site, de l’article, de la page, ou du contenu. Mais pour que cela se fasse il faut indiquer au moteur de recherche à quoi sert chaque élément de notre page et quel est son role afin d’être référencé correctement. C’est le but de la SEO que je vais expliquer sans rentrer dans les détails&lt;/p&gt;
+
+&lt;!--break--&gt;
+&lt;p&gt;La SEO (pour Search Engine Optimization si vous avez envie de crâner en soirée mondaine web), “est un ensemble de techniques visant à optimiser la visibilité d’un site web dans les pages de résultats de recherche” (cf &lt;a href=&quot;https://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_de_recherche&quot;&gt;Wikipédia&lt;/a&gt;). Lorsque vous créez une page Web basiqe, vous utilisez du HTML pour baliser les différents types de contenu qui composent votre page. Par exemple pour la page que vous lisez ça donne un truc dans ce genre:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/css/main.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;
+    Kevin / Ilphrin
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Kevin/Ilphrin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Accueil&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    ...
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Un peu de SEO facile avec Jekyll&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Quand on se balade sur internet on en vient forcément...&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Enfin bref, vous avez compris l’idée. Dans ce bout de code on va identifier quelque éléments auxquels nous pouvons attribuer un rôle. Je ne parle pas encore de SEO mais juste de “Que fait tel élément?”:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;La balise &lt;em&gt;body&lt;/em&gt; qui sert à indiquer le contenu d’une page de ce blog&lt;/li&gt;
+  &lt;li&gt;Le &lt;em&gt;titre&lt;/em&gt; en h1 du blog dans la div ‘title’&lt;/li&gt;
+  &lt;li&gt;Le &lt;em&gt;contenu&lt;/em&gt; de l’article, dans la balise div ‘content’&lt;/li&gt;
+  &lt;li&gt;Le &lt;em&gt;titre de l’article&lt;/em&gt; avec la balise h1 dans la div ‘content’&lt;/li&gt;
+  &lt;li&gt;etc.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Et bien avec le travail de la SEO, on va pouvoir dire tout ça à Google, Bing, DuckDuckGo, Lilo, Qwant, (rajouter ici votre moteur de recherche favori). Et ceci vient d’un travail de sémantique, c’est-à-dire qu’au même titre qu’en langage humain nous rajoutons des adjectifs pour décrire des objets, nous allons rajouter des mots-clés à nos balises HTML pour décrire ces “objets”.&lt;/p&gt;
+
+&lt;p&gt;Il y a trois mots-clés que je vais vous apprendre ici pour faire ça:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;itemscope:&lt;/em&gt; Permet de dire au MDR (Moteur De Recherche) qu’un bloc concerne un objet spécifique.&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;itemtype:&lt;/em&gt; Définit le type d’un élémént. En français on aurait quelque chose comme: Ceci est un &lt;em&gt;caillou&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;itemprop:&lt;/em&gt; Ajoute une propriété au type pour le définir précisément. En français: Ceci est un caillou &lt;em&gt;rose&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour le premier il est assez simple de savoir où on va le place. Dans mon exemple du dessus on placerait l’attribut itemscope aux balises &amp;lt;body&amp;gt; et &amp;lt;div class=&quot;content&quot;&amp;gt;. 
+Pour les deuxièmes et troisièmes ça va être un poil plus complexe. Nous allons avoir besoin de &lt;a href=&quot;https://schema.org&quot;&gt;schema.org&lt;/a&gt;!&lt;/p&gt;
+
+&lt;p&gt;Schema.org est le standard sur le web pour la classification de contenu structuré, comme des flux de données, des pages web, ou même des emails. Ce site est un énorme annuaire de tous les types et propriété de types qui existent et qui sont utilisé par les moteurs de recherche. Chaque fois que vous voudrez définir un élément de votre page, c’est sur ce site qu’il vous faudra aller pour trouver le type correspondant à ce que vous voulez, ainsi que les propriétés qui lui sont associés.&lt;/p&gt;
+
+&lt;p&gt;La totalité de ces types forme un hiérarchie ordonné et logique. Par exemple le type Blog descend du type CreativeWork dont descend le type Thing (tout le monde descend de lui si je ne dis pas de bêtises). Sur une page de type, vous avez la liste des propriétés qui lui sont accessible.&lt;/p&gt;
+
+&lt;p&gt;Assez de blabla mettons en place tout ça. On regarde les quelques schemas qui nous concerne, on prend des propriétés à balancer en miam miam au code, et on applique tout ça. Pour l’exemple si dessus nous obtenons:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/css/main.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;
+    Ilphin / Kevin
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemscope&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemtype=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schema.org/Blog&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;navigation&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;h1&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;author&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Ilphrin/Kevin&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;ul&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemscope&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemtype=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schema.org/SiteNavigationElement&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class=&quot;nt&quot;&gt;&amp;lt;li&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Sortie&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&amp;lt;/li&amp;gt;&lt;/span&gt;
+    ...
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/ul&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;content&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemprop=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;articleBody&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;h1&amp;gt;&lt;/span&gt;Un peu de SEO difficile avec Hide&lt;span class=&quot;nt&quot;&gt;&amp;lt;/h1&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;Quand on se balade IRL on en vient forcément...&lt;span class=&quot;nt&quot;&gt;&amp;lt;p&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Si vous avez l’oeil vif, vous aurez remarqué que le choix d’un type de schéma est très simple, il suffit d’indiquer l’URL du schéma voulu. Le moteur de recherche n’aura qu’à faire le lien lui-même ;). On se retrouve donc avec:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Pour &lt;em&gt;body:&lt;/em&gt; Un itemscope, et un itemtype qui vaut Blog&lt;/li&gt;
+  &lt;li&gt;Pour &lt;em&gt;‘title’:&lt;/em&gt; Un itemprop “author”&lt;/li&gt;
+  &lt;li&gt;Pour le &lt;em&gt;ul:&lt;/em&gt; Un itemscope aussi et un itemtype qui vaut SiteNavigationElement&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Au final ça reste assez logique, mais le plus long va être de trouver les types que vous voulez pour vos pages. Pour ma part je n’en ai pas mis beaucoup, mais ça à suffit à ce que je sois plus facilement trouvable sur Google comme l’ont indiqués mes analytics ovh et piwik (j’ai plus les chiffres piwik parce que je l’ai supprimé malencontreusement, mais d’après les graph d’OVH, j’ai eu environ 1500 visites le jour de la sortie de mon article sur Terminix, contre 300 environ avant pour les autres articles). Et je suis presque sûr que j’ai dû mettre un itemtype ou un itemprop au mauvais endroit sur mon site x)&lt;/p&gt;
+
+&lt;p&gt;Finalement, pourquoi est-ce que je parle de Jekyll? (Pour rappel, c’est ce que j’utilise comme outil pour faire mon site, c’est un CMS de site statique) Et bien c’est qu’avec le système de layouts il est assez facile de placer ses attributs dans ses modèles et de laisser Jekyll les placer ensuite quand il génère les pages.&lt;/p&gt;
+
+&lt;p&gt;Un petit exemple de code encore avec mon template de base pour chaque page du site:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;cp&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;html&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;lang=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;fr&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;head&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;meta&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;stylesheet&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/css/main.css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;link&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;rel=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;icon&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/images/LogoV1.png&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;script &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;src=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;/js/previous.js&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;charset=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;utf-8&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/script&amp;gt;&lt;/span&gt;
+
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;title&amp;gt;&lt;/span&gt;
+    Kevin / Ilphrin
+  &lt;span class=&quot;nt&quot;&gt;&amp;lt;/title&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/head&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;body&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemscope&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;itemtype=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;http://schema.org/Blog&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+...
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/body&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/html&amp;gt;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Maintenant que ma balise&lt;/p&gt;
+
+&lt;p&gt;est mise en place, chacune de mes pages aura son itemscope et son type “Blog”. C’est un exemple stupide mais au moins vous voyez l’idée.
+On peut aussi imaginer pouvoir mettre en place des itemtype specifique à chaque article, en mettant une variable dans le YAML du post, et lors du traitement et de la génération des pages Jekyll placerait l’itemtype adéquat.&lt;/p&gt;
+
+&lt;p&gt;Bon pour ça je suppose que le plus propre et modulaire serait de faire un plugin Jekyll, mais vu que j’aime pas le Ruby c’est pas prévu dans mon emploi du temps. Par contre si ça intéresse quelqu’un… :D&lt;/p&gt;
+
+</description>
+				<pubDate>Sun, 06 Nov 2016 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2016/11/06/un-peu-de-seo-facile-avec-jekyll.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/11/06/un-peu-de-seo-facile-avec-jekyll.html</guid>
+			</item>
+		
+			<item>
+				<title>Terminix en version 1.30</title>
+				<description>&lt;p&gt;Il ne me semble pas avoir déjà parlé de Terminix jusqu’à présent donc je vais brièvement expliquer ce qu’est ce super projet.&lt;/p&gt;
+
+&lt;p&gt;Terminix est un émulateur de terminal en tuiles( tiling) pour Linux avec GTK3. C’est la description officielle du projet. Avec ce logiciel on dispose d’un terminal qu’on peut séparer de plusieurs façons: vertical, horizontal, ou avec des onglets. Son utilisation de GTK3 est plutôt cool puisqu’on se retrouve avec une interface très clean et agréable a l’oeil (et des petites animations, comme j’en raffole!)&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Si on regarde la page &lt;a href=&quot;https://github.com/gnunn1/terminix&quot;&gt;Github du projet&lt;/a&gt; on a une liste assez longue de fonctionnalités toutes plus sympa les unes que les autres. On peut citer:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Le ré-arrangement des tuiles de terminal avec du &lt;strong&gt;drag n drop&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;Le mode &lt;a href=&quot;https://github.com/gnunn1/terminix/wiki/Quake-Mode&quot;&gt;Quake&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Les notifications lors de la fin d’une tâche&lt;/li&gt;
+  &lt;li&gt;La sauvegarde de la sortie du terminal&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pour ce qui est du mode Quake ce n’est pas une fonctionnalité que j’utilise très souvent, mais avec l’ergonomie de Terminix c’est assez agréable à utiliser. On peut installer ce logiciel sur à peu près toutes les principales distributions GNU/Linux.&lt;/p&gt;
+
+&lt;p&gt;Il y a plusieurs semaines la nouvelle version de Terminix est sortie, rajoutant notamment:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Le mode Quake cité précédemment&lt;/li&gt;
+  &lt;li&gt;Un gestionnaire de mot de passe qui utilise Gnome Keyring&lt;/li&gt;
+  &lt;li&gt;Les liens personnalisés&lt;/li&gt;
+  &lt;li&gt;Un gestionnaire de presse-papiers avancé&lt;/li&gt;
+  &lt;li&gt;Un nom de session par défaut&lt;/li&gt;
+  &lt;li&gt;Le changement de session rapide&lt;/li&gt;
+  &lt;li&gt;Le support expérimental pour les Trigger en installant un patch VTE&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il y a deux changements qui pour moi sont très intéressants et peuvent donner à réfléchir sur les possibilités qu’ils offrent.&lt;/p&gt;
+
+&lt;p&gt;Tout d’abord il y a les liens personnalisés, qui nous permettent de lancer une commande lorsque l’on clique sur un bout de phrase sur la sortie standard qui rentre dans la condition d’une expression régulière. Dans une &lt;a href=&quot;https://www.youtube.com/watch?v=8qvZ37ojE0c&quot;&gt;vidéo de présentation&lt;/a&gt; on peut voir un exemple de ça pour lancer gedit si on a un fichier suivi d’un numéro de ligne dans la sortie standard. C’est un exemple assez simple, mais je pense que c’est vraiment une fonctionnalité qui à du sens, avec peut-être des gens qui vont commencer à partager leur regexp respectifs qui sait :D Je ne l’ai pas encore utilisé parce que je fais tout dans neovim en ce moment, mais je vais me pencher dessus&lt;/p&gt;
+
+&lt;p&gt;La deuxième fonctionnalité qui m’a marqué c’est le changement de session rapide. Je n’ai pas réussi à le faire marcher sur mon pc (il faut un peu bidouiller pour l’instant de ce que j’ai compris). En gros en fonction de l’utilisateur sur lequel vous êtes identifié et sur quelle machine (si vous êtes en SSH sur un autre pc par exemple), vous allez avoir un profil de thème spécifique qui sera affiché, et lorsque vous changerez d’utilisateur ou de machine, vous passerez au nouveau profil de thème correspondant. Encore une fois dans la vidéo de présentation il y a un exemple de ça qui est utilisé. C’est une fonctionnalité plus esthétique qu’autre chose, mais je trouve ça très sympa aussi =D&lt;/p&gt;
+
+&lt;p&gt;Reste à voir s’il y aura des patchs pour mettre à jour VTE de GTK et ne plus avoir à bidouiller avec Terminix pour avoir ces fonctionnalités.&lt;/p&gt;
+
+</description>
+				<pubDate>Sat, 29 Oct 2016 00:00:00 +0200</pubDate>
+				<link>http://ilphrin.com/planet/2016/10/29/terminix-en-version-1-30.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/10/29/terminix-en-version-1-30.html</guid>
+			</item>
+		
+			<item>
 				<title>Superpowers passe en 2.0, revenons dessus</title>
 				<description>&lt;p&gt;Je vous avais déjà parlé de Superpowers dans l’article précédent. Ce logiciel sert pour “la création de jeux 2D+3D pour tous”, et il est gratuit en entièrement Open Source!&lt;/p&gt;
 

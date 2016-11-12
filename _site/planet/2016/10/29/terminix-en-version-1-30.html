@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <script src="/js/previous.js" charset="utf-8"></script>
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+      <div class="title" style="background-image: url('/images/header_articles/');">
+        <time datetime="29 October 2016">
+          <h1 itemprop="name"> Terminix en version 1.30</h1>
+          <p itemprop="datePublished">
+            
+  
+    29
+
+
+octobre
+  
+2016
+
+          </p>
+         </time>
+      </div>
+  <div class="content" itemprop="articleBody">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            <li class="current_post">
+            
+                <a href="/planet/2016/10/29/terminix-en-version-1-30.html">Terminix en version 1.30: <time datetime="29 October 2016">
+  
+    29
+
+
+octobre
+  
+2016
+</time></a>
+            </li>
+          
+        
+          
+        
+      </ul>
+    </div>
+    <p>Il ne me semble pas avoir déjà parlé de Terminix jusqu’à présent donc je vais brièvement expliquer ce qu’est ce super projet.</p>
+
+<p>Terminix est un émulateur de terminal en tuiles( tiling) pour Linux avec GTK3. C’est la description officielle du projet. Avec ce logiciel on dispose d’un terminal qu’on peut séparer de plusieurs façons: vertical, horizontal, ou avec des onglets. Son utilisation de GTK3 est plutôt cool puisqu’on se retrouve avec une interface très clean et agréable a l’oeil (et des petites animations, comme j’en raffole!)</p>
+
+<!--break-->
+
+<p>Si on regarde la page <a href="https://github.com/gnunn1/terminix">Github du projet</a> on a une liste assez longue de fonctionnalités toutes plus sympa les unes que les autres. On peut citer:</p>
+
+<ul>
+  <li>Le ré-arrangement des tuiles de terminal avec du <strong>drag n drop</strong></li>
+  <li>Le mode <a href="https://github.com/gnunn1/terminix/wiki/Quake-Mode">Quake</a></li>
+  <li>Les notifications lors de la fin d’une tâche</li>
+  <li>La sauvegarde de la sortie du terminal</li>
+</ul>
+
+<p>Pour ce qui est du mode Quake ce n’est pas une fonctionnalité que j’utilise très souvent, mais avec l’ergonomie de Terminix c’est assez agréable à utiliser. On peut installer ce logiciel sur à peu près toutes les principales distributions GNU/Linux.</p>
+
+<p>Il y a plusieurs semaines la nouvelle version de Terminix est sortie, rajoutant notamment:</p>
+
+<ul>
+  <li>Le mode Quake cité précédemment</li>
+  <li>Un gestionnaire de mot de passe qui utilise Gnome Keyring</li>
+  <li>Les liens personnalisés</li>
+  <li>Un gestionnaire de presse-papiers avancé</li>
+  <li>Un nom de session par défaut</li>
+  <li>Le changement de session rapide</li>
+  <li>Le support expérimental pour les Trigger en installant un patch VTE</li>
+</ul>
+
+<p>Il y a deux changements qui pour moi sont très intéressants et peuvent donner à réfléchir sur les possibilités qu’ils offrent.</p>
+
+<p>Tout d’abord il y a les liens personnalisés, qui nous permettent de lancer une commande lorsque l’on clique sur un bout de phrase sur la sortie standard qui rentre dans la condition d’une expression régulière. Dans une <a href="https://www.youtube.com/watch?v=8qvZ37ojE0c">vidéo de présentation</a> on peut voir un exemple de ça pour lancer gedit si on a un fichier suivi d’un numéro de ligne dans la sortie standard. C’est un exemple assez simple, mais je pense que c’est vraiment une fonctionnalité qui à du sens, avec peut-être des gens qui vont commencer à partager leur regexp respectifs qui sait :D Je ne l’ai pas encore utilisé parce que je fais tout dans neovim en ce moment, mais je vais me pencher dessus</p>
+
+<p>La deuxième fonctionnalité qui m’a marqué c’est le changement de session rapide. Je n’ai pas réussi à le faire marcher sur mon pc (il faut un peu bidouiller pour l’instant de ce que j’ai compris). En gros en fonction de l’utilisateur sur lequel vous êtes identifié et sur quelle machine (si vous êtes en SSH sur un autre pc par exemple), vous allez avoir un profil de thème spécifique qui sera affiché, et lorsque vous changerez d’utilisateur ou de machine, vous passerez au nouveau profil de thème correspondant. Encore une fois dans la vidéo de présentation il y a un exemple de ça qui est utilisé. C’est une fonctionnalité plus esthétique qu’autre chose, mais je trouve ça très sympa aussi =D</p>
+
+<p>Reste à voir s’il y aura des patchs pour mettre à jour VTE de GTK et ne plus avoir à bidouiller avec Terminix pour avoir ces fonctionnalités.</p>
+
+
+  <div id="comments" itemprop="comment">
+	
+                <h2><span itemprop="commentCount"></span> Commentaires</h2>
+	
+	
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/planet/2016/10/29/terminix-en-version-1-30" />
+		<input type="hidden" name="return_url" value="http://ilphrin.com/planet/2016/10/29/terminix-en-version-1-30.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+		<input type="submit" name="submit" value="Envoyer ✔"/>
+	</form>
+</div>
+
+  </div>
+
+  <div class="share">
+    <h3>Partager</h3>
+    <a href="http://sharetodiaspora.github.io/?title=Terminix en version 1.30&url=/planet/2016/10/29/terminix-en-version-1-30.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png" alt="Partage Diaspora"/>
+    </a>
+    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    <script src="/js/twitter.js"></script>
+  </div>
+</div>
+
+
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>
