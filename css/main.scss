@@ -79,7 +79,7 @@ h2, h1
   font-family: "Ubuntu", sans-serif;
   @include flex-column();
   background-color: lighten($base-color, 5%);
-  filter: blur(4px);
+  filter: blur(2px);
   transition: filter .2s;
   &:hover {
     filter: none;
@@ -370,7 +370,7 @@ pre
     span {
       position: absolute;
       bottom: -110px;
-      max-height: 120px;
+      max-height: 130px;
       overflow: hidden;
       @include padding-both(10px);
       transition: all .3s;

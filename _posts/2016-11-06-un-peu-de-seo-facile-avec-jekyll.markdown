@@ -4,6 +4,7 @@ title: Un peu de SEO facile avec Jekyll
 author: kevin
 category: planet
 serie: jekyll
+cover: jekyll.png
 ---
 
 Quand on se balade sur Internet on en vient forcément à taper quelque chose sur son moteur de recherche préféré, la magie opère, et on se retrouve avec des tonnes des liens correspondant à ce que l’on cherchait, selon le titre du site, de l’article, de la page, ou du contenu. Mais pour que cela se fasse il faut indiquer au moteur de recherche à quoi sert chaque élément de notre page et quel est son role afin d’être référencé correctement. C’est le but de la SEO que je vais expliquer sans rentrer dans les détails
