@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <script src="/js/previous.js" charset="utf-8"></script>
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+      <div class="title" style="background-image: url('/images/header_articles/');">
+        <time datetime="13 November 2016">
+          <h1 itemprop="name"> Umbrello: Un outil pour faire de l'UML</h1>
+          <p itemprop="datePublished">
+            
+  
+    13
+
+
+novembre
+  
+2016
+
+          </p>
+         </time>
+      </div>
+  <div class="content" itemprop="articleBody">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+            
+            <li class="current_post">
+            
+                <a href="/planet/2016/11/13/umbrello-un-outil-pour-faire-de-l-uml.html">Umbrello: Un outil pour faire de l'UML: <time datetime="13 November 2016">
+  
+    13
+
+
+novembre
+  
+2016
+</time></a>
+            </li>
+          
+        
+      </ul>
+    </div>
+    <p>Pour nos projets a Epitech on doit de plus en plus travailler la partie conception plutôt que le projet en lui-même. Déjà parce que nos projets se complexifient: On passe d’un simple bash/sh à recoder à un équivalent de Mumble avec un client et un serveur tous les deux multi-plateforme. Et aussi bah… parce que ya pas que le code dans le dév, il faut réfléchir consciencieusement à l’architecture de son projet, aux différents composants que l’on va créer/coder et comment on va lier tout ce bazar.</p>
+
+<!--break-->
+
+<h3 id="luml">L’UML</h3>
+
+<p>L’un des moyens les plus courant, les plus utilisés, de nos jours c’est l’UML pour <em>Unified Modelling Language</em>. Il faut voir l’UML comme une RFC, une normalisation de la conception de systèmes. Ce n’est pas le nom d’un logiciel, mais d’un protocole à utiliser dans son logiciel ou son bout de papier, pour concevoir son programme.</p>
+
+<p>Avant de vous parler d’ Umbrello, je vais parler un peu plus en détail du fonctionnement de l’UML et comment en faire. Si vous connaissez déjà vous pouvez défiler la page pour voir directement le moment ou je parle d’Umbrello ;) (je mets un petit titre)</p>
+
+<p>En programmation, l’UML est particulièrement adapté lorsqu’on utilise un paradigme Orienté Objet type C++, Java, Python, etc. Mais rien n’empêche de l’utiliser pour d’autres choses! Lorsque l’on conçoit son programme, on passe par une phase d’abstraction. C’est-à-dire que l’on prend les éléments de ce qu’on veut obtenir, et on regarde s’il n’existe pas des caractéristiques communes entre ces éléments.</p>
+
+<p>On va prendre un exemple assez simple pour imager tout ça. Imaginez que vous êtes en train de développer un outil de simulation de téléviseurs, pour avoir une vue 3D, faire des tests, voir le fonctionnement ou n’importe quoi d’autre on s’en fiche. Votre programme permet de représenter des téléviseurs existants.</p>
+
+<p>On peut donc dire qu’on aura beaucoup de types de téléviseurs, avec tout un tas de marques, et de caractéristiques propres à chacun. Mais dans tous les cas ce sont les TV donc on doit pouvoir en déduire un certain nombre de propriétés communes:</p>
+
+<ul>
+  <li>Toutes les TV ont une marque, des haut-parleurs, des câbles, etc.</li>
+  <li>Toutes les TV doivent pouvoir s’allumer, s’éteindre, changer de chaine, monter/descendre le volume, etc.</li>
+  <li>Toutes les TV ne fonctionnent que selon certains critères, par exemple seulement si la prise est branchée et s’il y a le câble ou l’antenne</li>
+</ul>
+
+<p>Lorsque l’on va représenter ceci, on va avoir une classe dite “abstraite” mère appelé AbstractTV qui va contenir des cases et des fonctions vides pour chacun de ces attributs. Ensuite toutes les autres classes de TV vont découler de celle-ci, elles vont en <em>hériter</em>, et devront donc s’appuyer sur le modèle d’AbstractTV.</p>
+
+<p>Et on peut donc représenter tout ça avec l’UML, je ne vais pas faire un schéma, je vous laisse le soin de trouver des tutos bien mieux que ce que je pourrais faire ;) Comme <a href="http://www.tutorialspoint.com/uml/">celui-ci</a> ou <a href="http://laurent-piechocki.developpez.com/uml/tutoriel/lp/cours/">celui-là</a></p>
+
+<h3 id="umbrello">Umbrello</h3>
+
+<p>J’ai découvert donc récemment un logiciel sous KDE pour faire de l’UML rapidement et simplement qui s’appelle… <a href="https://umbrello.kde.org/">Umbrello</a> (vous l’auriez pas deviné hein?) Je n’ai utilisé pour l’instant que l’outil pour faire des diagrammes de classe, mais bien sûr la plupart des types de diagrammes pour l’UML sont réalisables.</p>
+
+<p>Ce logiciel est en développement et une version mineure sors tous les 4 mois à peu près. Une petite capture pour présenter la bête:</p>
+
+<p><img src="/images/umbrello01.png" alt="umbrello interface" /></p>
+
+<p>En haut on a la barre d’outils pour faire la plupart des opérations nécessaires: création d’une interface, d’une classe, flèche de composition, d’agrégation, etc. Sur la gauche on a un panneau de détails sur les boites qu’on a crée sous forme d’arborescence et d’autres petits outils que je vous laisserais découvrir ;)</p>
+
+<p>On l’a utilisé tout le long de notre projet de ces deux dernières semaines et nous sommes relativement satisfaits. Il y a deux soucis assez désagréable dans Umbrello que je trouve dommage:</p>
+
+<ul>
+  <li>La molette fait un zoom/dezoom plutôt qu’un défilement vertical/horizontal, et c’est assez contre-intuitif en plus de n’être absolument pas pratique, ni utile puisqu’il y a une petite barre de réglage du zoom en bas à droite largement suffisante.</li>
+  <li>Pas de Ctrl-Z ou de Ctrl-Y pour revenir dans l’historique des actions, en fait le seul moyen d’annuler ce qu’on vient de faire consiste soit à refaire manuellement nos mouvements en sens inverse, soit on peut utiliser “l’historique de commandes”, et on clique sur l’état auquel on veut revenir. L’historique est donc déjà implémenté mais pas moyen d’y accéder rapidement comme dans presque n’importe quel logiciel avec des raccourcis clavier.</li>
+</ul>
+
+<p>J’espère qu’il y aura des modifications faites sur ce sujet d’ici les prochaines versions, j’irais jeter un oeil sur leur liste de bugs pour essayer d’en parler. Sinon je vous conseille de l’essayer il est tout de même pratique et support quelques fonctionnalités avancés telles que l’import/export de code vers/depuis l’UML.</p>
+
+  <div id="comments" itemprop="comment">
+	
+                <h2><span itemprop="commentCount"></span> Commentaires</h2>
+	
+	
+	<p style="font-style: italic">
+        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+	</p>
+	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
+		<input type="hidden" name="post_id" value="/planet/2016/11/13/umbrello-un-outil-pour-faire-de-l-uml" />
+		<input type="hidden" name="return_url" value="http://ilphrin.com/planet/2016/11/13/umbrello-un-outil-pour-faire-de-l-uml.html" />
+		<div id="form_info">
+			<div id="title_form">
+				<p>Nom:</p>
+				<p>E-mail:</p>
+				<p>Site Web:</p>
+			</div>
+			<div id="content_form">
+				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
+			</div>
+		</div>
+		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+		<input type="submit" name="submit" value="Envoyer ✔"/>
+	</form>
+</div>
+
+  </div>
+
+  <div class="share">
+    <h3>Partager</h3>
+    <a href="http://sharetodiaspora.github.io/?title=Umbrello: Un outil pour faire de l'UML&url=/planet/2016/11/13/umbrello-un-outil-pour-faire-de-l-uml.html" target="_blank">
+      <img src="http://sharetodiaspora.github.io/favicon.png" alt="Partage Diaspora"/>
+    </a>
+    <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+    <script src="/js/twitter.js"></script>
+  </div>
+</div>
+
+
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>
