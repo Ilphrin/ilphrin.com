@@ -153,6 +153,17 @@ janvier
         
       </ul>
     </div>
+
+    <script type="text/javascript">
+      ( function() {
+        if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+        var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+        var placement_id = window.CHITIKA.units.length;
+        window.CHITIKA.units.push(unit);
+        document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+    }());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     <p>Récemment je me suis décidé à apprendre à utiliser et à comprendre le fonctionnement de Linux. Du coup j’ai voulu me tourner vers une distribution qui m’offrirait cette possibilité dès son installation. Je me suis rapidement laissé dire que ArchLinux conviendrait à mes besoins. Mais comme mon laptop ne possède pas une capacité de stockage extraordinaire (20 Go…) je l’ai mis sur un disque dur externe sous virtualbox. En lui accordant une place de 20Go, ce qui devrait largement suffire étant donné que je ne vais rien installer de superflu sur cette machine virtuelle. Je me suis aussi dit que ça pourrait en intéresser quelques-uns si je décrivais tout ce que j’avais fait dans un article. Néanmoins il y a trop de choses à faire, et je serais obligé de découper cet article en deux (sinon ça fait quand même un peu gros et lourd à la fin…)
 <!--break-->
 Voilà la majorité des sites sur lesquels je me suis basé pour cette installation:</p>
@@ -358,19 +369,7 @@ Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg e
 
 <p>Merci d’avoir pris le temps de lire cet article,  n’hésitez pas à me dire si vous avez des problème ou des suggestions. Sur ce je vous dis à bientôt et bonne fin de journée!</p>
 
-
-<script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-
-  <div id="comments" itemprop="comment">
+    <div id="comments" itemprop="comment">
 	
                 <h2><span itemprop="commentCount"></span> Commentaires</h2>
 	

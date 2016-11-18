@@ -167,6 +167,17 @@ novembre
         
       </ul>
     </div>
+
+    <script type="text/javascript">
+      ( function() {
+        if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+        var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+        var placement_id = window.CHITIKA.units.length;
+        window.CHITIKA.units.push(unit);
+        document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+    }());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     <p>Quand on se balade sur Internet on en vient forcément à taper quelque chose sur son moteur de recherche préféré, la magie opère, et on se retrouve avec des tonnes des liens correspondant à ce que l’on cherchait, selon le titre du site, de l’article, de la page, ou du contenu. Mais pour que cela se fasse il faut indiquer au moteur de recherche à quoi sert chaque élément de notre page et quel est son role afin d’être référencé correctement. C’est le but de la SEO que je vais expliquer sans rentrer dans les détails</p>
 
 <!--break-->
@@ -364,19 +375,7 @@ On peut aussi imaginer pouvoir mettre en place des itemtype specifique à chaque
 <p>Bon pour ça je suppose que le plus propre et modulaire serait de faire un plugin Jekyll, mais vu que j’aime pas le Ruby c’est pas prévu dans mon emploi du temps. Par contre si ça intéresse quelqu’un… :D</p>
 
 
-
-<script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-
-  <div id="comments" itemprop="comment">
+    <div id="comments" itemprop="comment">
 	
                 <h2><span itemprop="commentCount"></span> Commentaires</h2>
 	

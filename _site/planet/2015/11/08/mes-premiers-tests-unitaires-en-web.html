@@ -153,6 +153,17 @@ novembre
         
       </ul>
     </div>
+
+    <script type="text/javascript">
+      ( function() {
+        if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+        var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+        var placement_id = window.CHITIKA.units.length;
+        window.CHITIKA.units.push(unit);
+        document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+    }());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     <p>Dans le cadre de mon stage, je dois faire un outil de monitoring en Web pour afficher des statistiques sur des bases de données ElasticSearch. Nous avions carte blanche pour les technos à utiliser, l’organisation de l’outil, etc… L’outil en lui-même fonctionne, mais puisqu’il s’agit d’un stage (mon premier en plus), il y a tout interêt à solidifer cet outil et en profiter pour apprendre le plus de technos possibles.</p>
 
 <!--break-->
@@ -219,19 +230,7 @@ novembre
 <p>Ensuite le reste dépend de l’application, et tout est expliqué correctement sur les docs respectives de Mocha, Chai et PhantomJS. Je suis content d’y être finalement arrivé après plusieurs jours à me casser la tête pour faire marcher tout ça. J’ai notamment passé deux jours avec un ‘undefined is not a function’ de angular-mock. Je pense que si je dois me lancer dans un gros projet Web ce serait de faire une bibliothèque qui simplifie tout ça, par exemple un pack qui comprend Mocha, Chai, PhantomJS, et Angular Mock, avec une simple commande pour lancer tout ça, et avec de base un dossier d’exemple qu’il ne reste plus qu’à reprendre et modifier pour travailler.</p>
 
 
-
-<script type="text/javascript">
-  ( function() {
-    if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-    var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
-    var placement_id = window.CHITIKA.units.length;
-    window.CHITIKA.units.push(unit);
-    document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-</script>
-<script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-
-  <div id="comments" itemprop="comment">
+    <div id="comments" itemprop="comment">
 	
                 <h2><span itemprop="commentCount"></span> Commentaires</h2>
 	
