@@ -265,6 +265,18 @@ a, a:visited
       @include margin-both(auto);
       max-width: 100%;
     }
+    .note {
+      background-color: #337aca;
+      border-radius: 20px;
+      @include padding-both(8px);
+      padding-top: 8px;
+      padding-bottom: 8px;
+      box-shadow: inset 1px 1px 6px #002d67;
+      p::before {
+        content: "Note:";
+        font-weight: bolder;
+      }
+    }
   }
   a
   {
