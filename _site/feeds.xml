@@ -49,6 +49,12 @@
 &lt;p&gt;Je pense qu’on a un exemple typique de différences que l’on peut retrouver entre un logiciel entièrement gratuit et libre et un autre logiciel qui dispose d’un business model pour assurer son développement. Je pense qu’on peut faire un logiciel libre et même gratuit tout en ayant un moyen de financer son projet. Que ce soit un Kickstarter, un Tipee, des partenariats commerciaux, la publicité, les “bonus” payants, ou que sais-je encore.&lt;/p&gt;
 
 &lt;p&gt;Il y a aussi la façon dont on exploite les ressources d’une communauté (je sais pas si exploiter est un très joli mot dans cette situation). Par exemple le fait de fournir une API et une documentation bien faite pour développer des extensions à son logiciel est un excellent moyen de booster un projet (Dois-je parler de Vim/Neovim, Firefox, LibreOffice, et d’autres?).&lt;/p&gt;
+
+&lt;div class=&quot;note&quot;&gt;
+&lt;p&gt;
+Je pense bientot refaire le système de commentaire de mon site, ce truc codé à la main ne fonctionne pas du tout et je ne reçois jamais les commentaires correctement. J&#39;ai entendu parler de HashOver pour les sites statiques je vais voir ce que ça donne!
+&lt;/p&gt;
+&lt;/div&gt;
 </description>
 				<pubDate>Thu, 24 Nov 2016 00:00:00 +0100</pubDate>
 				<link>http://ilphrin.com/planet/2016/11/24/encore-de-l-uml-avec-staruml.html</link>
