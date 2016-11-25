@@ -1,7 +1,7 @@
 #Globals
 source: .
 destination: ./_site
-plugins_dir: ./plugins
+plugins_dir: ./_plugins
 layouts_dir: ./_layouts
 collection: null
 name: Kevin / Ilphrin
@@ -28,7 +28,6 @@ relative_permalinks: false
 
 #Outputting
 permalink: date
-timezone:
 
 #Markdown processors
 maruku:

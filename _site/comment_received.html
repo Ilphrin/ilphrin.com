@@ -1,9 +1,10 @@
-  <h1>Comment Received</h1>
-  	<p>Thank you for your comment. It will be reviewed and published as shortly as possible.</p>
-  	<?php if (isset($return_url))
-  	        {
-      	    	echo '<p>You are now returning to the page you were on.
-                   Click the link if you are not redirected automatically.</p>';
-      	    	echo '<p><a href="'.$return_url.'">'.$return_url.'</a></p>';
-      	    }
-      ?>
+<h1>Comment Received</h1>
+<p>Thank you for your comment. It will be reviewed and published as shortly as possible.</p>
+<?php 
+if (isset($return_url))
+{
+  echo '<p>You are now returning to the page you were on.
+  Click the link if you are not redirected automatically.</p>';
+  echo '<p><a href="'.$return_url.'">'.$return_url.'</a></p>';
+}
+?>

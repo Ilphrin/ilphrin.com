@@ -185,6 +185,17 @@ novembre
         
       </ul>
     </div>
+
+    <script type="text/javascript">
+      ( function() {
+        if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+        var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+        var placement_id = window.CHITIKA.units.length;
+        window.CHITIKA.units.push(unit);
+        document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+    }());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     <p>Oui je parle encore d’UML et de conception, mais promis après cet article ma période UML et maquette est finie ;) (quoique j’ai bien envie de continuer avec Figma, mais on a le temps avant ça!). Après l’essai de Umbrello, moi et un ami avons cherché un autre logiciel pour faire de l’UML et nous sommes tombés sur StarUML</p>
 
 <!--break-->
@@ -232,32 +243,32 @@ Je pense bientot refaire le système de commentaire de mon site, ce truc codé �
 </p>
 </div>
 
-  <div id="comments" itemprop="comment">
-	
-                <h2><span itemprop="commentCount"></span> Commentaires</h2>
-	
-	
-	<p style="font-style: italic">
-        Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
-	</p>
-	<form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
-		<input type="hidden" name="post_id" value="/planet/2016/11/24/encore-de-l-uml-avec-staruml" />
-		<input type="hidden" name="return_url" value="http://ilphrin.com/planet/2016/11/24/encore-de-l-uml-avec-staruml.html" />
-		<div id="form_info">
-			<div id="title_form">
-				<p>Nom:</p>
-				<p>E-mail:</p>
-				<p>Site Web:</p>
-			</div>
-			<div id="content_form">
-				<p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
-				<p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
-				<p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
-			</div>
-		</div>
-		<textarea name="comment" rows="10" cols="60" id="comment"></textarea>
-		<input type="submit" name="submit" value="Envoyer ✔"/>
-	</form>
+    <div id="comments" itemprop="comment">
+  
+      <h2><span itemprop="commentCount"></span> Commentaires</h2>
+  
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
+    <input type="hidden" name="post_id" value="/planet/2016/11/24/encore-de-l-uml-avec-staruml" />
+    <input type="hidden" name="return_url" value="http://ilphrin.com/planet/2016/11/24/encore-de-l-uml-avec-staruml.html" />
+    <div id="form_info">
+      <div id="title_form">
+        <p>Nom:</p>
+        <p>E-mail:</p>
+        <p>Site Web:</p>
+      </div>
+      <div id="content_form">
+        <p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
+        <p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
+        <p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
+      </div>
+    </div>
+    <textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+    <input type="submit" name="submit" value="Envoyer ✔"/>
+  </form>
 </div>
 
   </div>
