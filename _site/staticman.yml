@@ -1,4 +1,4 @@
-staticman:
+comments:
   allowedFields: ["name", "email", "url", "message", "post_id"]
   allowedOrigins: ["localhost", "ilphrin.com"]
   branch: "master"
