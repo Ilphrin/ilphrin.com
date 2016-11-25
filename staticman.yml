@@ -1,6 +1,6 @@
 comments:
   allowedFields: ["name", "email", "url", "message", "post_id"]
-  allowedOrigins: ["localhost", "ilphrin.com"]
+  allowedOrigins: ["ilphrin.com"]
   branch: "master"
   filename: "{fields.name}_{@timestamp}"
   format: "yml"
