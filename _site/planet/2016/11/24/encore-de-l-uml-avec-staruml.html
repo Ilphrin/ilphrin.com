@@ -251,9 +251,10 @@ Je pense bientot refaire le système de commentaire de mon site, ce truc codé �
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="http://ilphrin.com/commentsubmit.php">
-    <input type="hidden" name="post_id" value="/planet/2016/11/24/encore-de-l-uml-avec-staruml" />
-    <input type="hidden" name="return_url" value="http://ilphrin.com/planet/2016/11/24/encore-de-l-uml-avec-staruml.html" />
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master">
+    <input name="options[slug]" type="hidden" value="encore-de-l-uml-avec-staruml">
+    <input name="options[redirect]" type="hidden" value="http://ilphrin.com/planet/2016/11/24/encore-de-l-uml-avec-staruml.html">
+    <input type="hidden" name="fields[post_id]" value="/planet/2016/11/24/encore-de-l-uml-avec-staruml" />
     <div id="form_info">
       <div id="title_form">
         <p>Nom:</p>
@@ -261,12 +262,12 @@ Je pense bientot refaire le système de commentaire de mon site, ce truc codé �
         <p>Site Web:</p>
       </div>
       <div id="content_form">
-        <p><input type="text" size="25" name="name" id="name" required/> (requis)</p>
-        <p><input type="text" size="25" name="email" id="email" required/> (requis, non publié)</p>
-        <p><input type="text" size="25" name="link" id="link" /> (optionel)</p>
+        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
+        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
+        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
       </div>
     </div>
-    <textarea name="comment" rows="10" cols="60" id="comment"></textarea>
+    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
     <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
