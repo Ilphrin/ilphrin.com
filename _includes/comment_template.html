@@ -1,26 +1,23 @@
 <div id="comments" itemprop="comment">
-  {% case page.comment_count %}
-    {% when 0 %}
-      <h2>Aucun commentaire</h2>
-    {% when 1 %}
-      <h2><span itemprop="commentCount">1</span> Commentaire</h2>
-    {% else %}
-      <h2><span itemprop="commentCount">{{page.comment_count}}</span> Commentaires</h2>
-  {% endcase %}
-  {% for c in page.comments reversed %}
+  <h2>Commentaires</h2>
+  {% assign comments = site.data.comments | sort %}
+  {% for comment in comments reversed %}
+    {% assign c = comment[1] %}
     <div class="comment {% cycle 'odd', 'even' %}">
       <p class="comment_header">
-      De: {% if c.link and c.link != '' %}
-      <a href="{{c.link}}">{{c.name}}</a>
+      De: {% if c.url and c.url != '' %}
+      <a href="{{c.url}}">{{c.name}}</a>
       {% else %}
       {{c.name}}
       {% endif %}
       <br />
-      <span class="comment_date">{{c.date}}</span>
+      <span class="comment_date">
+        {% include date.html value=c.date %}
+      </span>
       </p>
       <hr>
       <p class="comment_content">
-      {{c.comment | newline_to_br}}
+      {{c.message | newline_to_br}}
       </p>
     </div>
   {% endfor %}
@@ -29,7 +26,8 @@
   </p>
   <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="{{ page.slug }}">
-    <input name="options[redirect]" type="hidden" value="http://ilphrin.com{{page.url}}">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com{{page.url}}">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="{{page.id}}" />
     <div id="form_info">
       <div id="title_form">

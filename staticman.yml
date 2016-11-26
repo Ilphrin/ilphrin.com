@@ -14,7 +14,4 @@ comments:
   path: "_data/comments/{options.slug}"
   requiredFields: ["name", "email", "message", "post_id"]
   commitMessage: "New comment on the blog"
-  transforms:
-    email: md5
-
 
