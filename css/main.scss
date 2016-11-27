@@ -237,20 +237,35 @@ a, a:visited
 {
   @include flex-column();
   margin-left: 5%;
-  .title
-  {
+  #post_header {
     display: flex;
-    align-items: flex-end;
-    width: 70%;
-    height: 20em;
-    color: #EEE;
-    background-size: cover;
-    background-color: black;
-    time
+    #title
     {
-      border-top: 1px solid black;
-      background-color: rgba(0, 0, 0, 0.6);
-      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      width: 70%;
+      height: 20em;
+      color: #EEE;
+      background-size: cover;
+      background-color: black;
+      margin-right: 15px;
+      div
+      {
+        border-top: 1px solid black;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+      }
+    }
+    #details {
+      p {
+        display: flex;
+        font-size: 120%;
+        object {
+          width: 32px;
+          height: 32px;
+          margin-right: 4px;
+        }
+      }
     }
   }
   .content
