@@ -15,8 +15,12 @@ lang: fr
         <span>{% include date.html date=page.date %}</span>
       </p>
       <p>
-        <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-        <script src="/js/twitter.js"></script>
+        <a href="https://twitter.com/share?text='{{page.title}}'" class="twitter-share-button" target="_blank"></a>
+        <span>Twitter</span>
+      </p>
+      <p>
+        <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank" class="diaspora-share-button"></a>
+        <span>Diaspora*</span>
       </p>
     </div>
   </div>
@@ -50,13 +54,6 @@ lang: fr
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     {{ content }}
     {% include comment_template.html %}
-  </div>
-
-  <div class="share">
-    <h3>Partager</h3>
-    <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank">
-      <img src="http://sharetodiaspora.github.io/favicon.png" alt="Partage Diaspora"/>
-    </a>
   </div>
 </div>
 

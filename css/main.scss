@@ -259,11 +259,24 @@ a, a:visited
     #details {
       p {
         display: flex;
-        font-size: 120%;
+        font-size: 100%;
         object {
           width: 32px;
           height: 32px;
           margin-right: 4px;
+        }
+        a {
+          width: 38px;
+          height: 32px;
+          margin-right: 10px;
+        }
+        .twitter-share-button {
+          background: url(/images/twitter.svg) center;
+          background-size: 100% 100%;
+        }
+        .diaspora-share-button {
+          background: url(/images/diaspora.svg) center;
+          background-size: 100% 100%;
         }
       }
     }
