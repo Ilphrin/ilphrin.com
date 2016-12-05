@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <script src="/js/previous.js" charset="utf-8"></script>
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/');">
+      <div>
+        <h1 itemprop="name"> Nyaovim le GUI Neovim avec Electron</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <span>8
+
+Mars
+  
+2016
+</span>
+      </p>
+      <p>
+        <a href="https://twitter.com/share?text='Nyaovim le GUI Neovim avec Electron'" class="twitter-share-button" target="_blank"></a>
+        <span>Twitter</span>
+      </p>
+      <p>
+        <a href="http://sharetodiaspora.github.io/?title=Nyaovim le GUI Neovim avec Electron&url=/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html" target="_blank" class="diaspora-share-button"></a>
+        <span>Diaspora*</span>
+      </p>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <p>Voilà un projet dont j’avais plusieurs fois entendu parler mais sans jamais réellement me pencher dessus. Le seul défaut que je trouvais à Neovim c’est de ne pas avoir de GUI associé vraiment digne de ce nom, ce que je cherche est quelque chose de joli principalement mais aussi qui permette vraiment de profiter d’une interface graphique: prévisualisation, barre de défilement, bulle d’information et autre, etc…</p>
+
+<!--break-->
+
+<p>Et bien il s’avère qu’il existe un projet qui semble s’approcher pas mal de ce que je cherche dans l’architecture! Et ce projet s’appelle <a href="https://github.com/rhysd/NyaoVim">Nyaovim</a> (Nya est l’équivalent de Miaou au Japon). C’est une interface graphique web pour Neovim, qui est utilisé comme application pc grâce à Electron.</p>
+
+<p><a href="electron.atom.io">Electron</a> permet de créer des logiciels “desktop” avec des technos web, et à été développé notamment par Github pour créer leur petit nouveau: <a href="atom.io">Atom</a>. Electron part du moteur de rendu web Chromium avec un outil coté serveur très connu qui est <a href="https://nodejs.org/en/">NodeJS</a>, et permet donc de créer des logiciels en HTML/CSS Javascript.</p>
+
+<p>L’avantage de ce système c’est qu’avec Nyaovim on va pourvoir d’une part créer des plugins dédiés à ce GUI en créant des <a href="https://github.com/rhysd/neovim-component">WebComponent</a>, comme les deux que le développeur de Nyaovim à déjà codé: <a href="https://github.com/rhysd/nyaovim-markdown-preview">markdown-preview</a> et <a href="https://github.com/rhysd/nyaovim-popup-tooltip">popup-tooltip</a>.</p>
+
+<p>Bon du coup comment profiter de cet outil? C’est très simple, il faut disposer du gestionnaire de package de NodeJS appelé <a href="https://www.npmjs.com/">NPM</a>, disponible dans la plupart des dépôt des grandes distribution de ce monde, qui est fourni lorsqu’on installe NodeJS sur son pc. Ensuite la commande a lancer pour installer Nyaovim est la suivante:</p>
+
+<pre><code class="bash">
+
+sudo npm install -g nyaovim
+
+nyaovim
+
+</code></pre>
+
+<p>Et voilà votre GUI est maintenant installé et lancé!</p>
+
+<p>Ce projet est indiqué comme instable sur son dépôt Github donc je ne serais pas vindicateur vis à vis du résultat. Mais il y a quand même de nombreux bugs qui me chagrine encore un peu:</p>
+
+<ul>
+  <li>Les bugs graphiques sont souvent présents, j’ai souvent ma barre vim-airline qui apparait en plein milieu de mon buffer, ou un caractère fantome qui se superpose à mon curseur, etc…</li>
+  <li>La bulle de complétion ne s’affiche plus, ou parfois apparait par clignotement, c’est qui est un peu dommage, surtout pour moi qui utilise les snippet Ultisnips à foison…</li>
+  <li>Quelques boutons dans la barre de menu pour ouvrir un buffer de certains fichiers de config’ ne serait pas un mal, comme nyaovimrc.html (le fichier de configuration de l’interface de nyaovim), ou tout simplement du vimrc</li>
+</ul>
+
+<p>Malgré ces soucis je ne peux que conseiller d’aller voir ce projet qui à le mérite d’essayer quelque chose de nouveau et qui part sur une base très solide pour de futurs plugins ou améliorations très sympathique!</p>
+
+<p>Sur ce j’ai finit pour aujourd’hui, mais j’ai encore deux trois articles dans la poche en ce moment, notamment toujours a propos de Vim/Neovim qui risque de plaire à certains ;)</p>
+
+    <div id="comments" itemprop="comment">
+  <h2>Commentaires</h2>
+  
+  
+      
+      
+  
+      
+      
+  
+      
+      
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="nyaovim-le-gui-neovim-avec-electron">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2016/03/08/nyaovim-le-gui-neovim-avec-electron" />
+    <div id="form_info">
+      <div id="title_form">
+        <p>Nom:</p>
+        <p>E-mail:</p>
+        <p>Site Web:</p>
+      </div>
+      <div id="content_form">
+        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
+        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
+        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      </div>
+    </div>
+    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
+    <input type="submit" name="submit" value="Envoyer ✔"/>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>

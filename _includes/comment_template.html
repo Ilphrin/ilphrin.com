@@ -2,24 +2,26 @@
   <h2>Commentaires</h2>
   {% assign comments = site.data.comments | sort %}
   {% for comment in comments reversed %}
-    {% assign c = comment[1] %}
-    <div class="comment {% cycle 'odd', 'even' %}">
-      <p class="comment_header">
-      De: {% if c.url and c.url != '' %}
-      <a href="{{c.url}}">{{c.name}}</a>
-      {% else %}
-      {{c.name}}
+      {% assign c = comment[1] %}
+      {% if c.post_id == include.post.id %}
+      <div class="comment {% cycle 'odd', 'even' %}">
+        <p class="comment_header">
+        De: {% if c.url and c.url != '' %}
+        <a href="{{c.url}}">{{c.name}}</a>
+        {% else %}
+        {{c.name}}
+        {% endif %}
+        <br />
+        <span class="comment_date">
+          {% include date.html date=c.date %}
+        </span>
+        </p>
+        <hr>
+        <p class="comment_content">
+        {{c.message | newline_to_br}}
+        </p>
+      </div>
       {% endif %}
-      <br />
-      <span class="comment_date">
-        {% include date.html date=c.date %}
-      </span>
-      </p>
-      <hr>
-      <p class="comment_content">
-      {{c.message | newline_to_br}}
-      </p>
-    </div>
   {% endfor %}
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <script src="/js/previous.js" charset="utf-8"></script>
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/tuxletriad.jpg');">
+      <div>
+        <h1 itemprop="name"> Introduction à Pygame</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <span>15
+
+Août
+  
+2014
+</span>
+      </p>
+      <p>
+        <a href="https://twitter.com/share?text='Introduction à Pygame'" class="twitter-share-button" target="_blank"></a>
+        <span>Twitter</span>
+      </p>
+      <p>
+        <a href="http://sharetodiaspora.github.io/?title=Introduction à Pygame&url=/planet/2014/08/15/introduction-a-pygame.html" target="_blank" class="diaspora-share-button"></a>
+        <span>Diaspora*</span>
+      </p>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <p>Salut tout le monde!</p>
+
+<p>Cela fait un bon moment que j’étudie la programmation, j’ai d’abord commencé par le C pour le C++, et même les langages web. Mais ce n’était que de la théorie et je voulais essayer de créer mon propre petit programme, et j’ai découvert le langage Python il y a environ 1 an grâce au célèbre livre <a href="http://python.developpez.com/cours/apprendre-python3/">Apprendre à programmer avec Python 3</a>.</p>
+
+<p>Mais encore une fois je n’avais rien crée moi-même, je n’avais pendant longtemps fait que la théorie, même si ce livre propose tout un tas d’applications du cours, ce n’était pas de moi que venaient les idées ni le gros du code.  Il y a plusieurs semaines je me suis donc lancé dans une tentative de faire mon propre programme, et plus exactement un jeu, et pour cela j’ai dû apprendre à utiliser la bibliothèque <a href="http://www.pygame.org/news.html">Pygame</a>.
+<!--break-->
+Petite présentation de la bibliothèque: Pygame est une surcouche pour Python à SDL. On y retrouve absolument toutes les fonctionnalités, ainsi si vous avez déjà travaillé avec SDL, par exemple en C, vous ne serez pas destabilisé. La communauté est très grande et avec le chat IRC ont peut très rapidement recevoir de l’aide. Vous pouvez même, une fois votre programmation entamée, faire une petite page sur le site de Pygame pour le faire découvrir aux autres programmeurs et avoir/donner de nouvelles idées.</p>
+
+<p>Pygame est une librairie vraiment complète et puissante. Pour apprendre à l’utiliser la plupart des tutoriaux vont faire un pas-à-pas pour coder tel ou tel petit jeu, et avec une explication suffisante pour comprendre à quoi sert tel objet dans tel programme. (A ce propos je conseille la lecture de “Making Game with Python and Pygame”.)  Je n’ai pas la prétention de pouvoir faire mieux, ce que je veux essayer de faire avec cet/ces article c’est d’essayer d’expliquer certains mécanismes qui m’ont permis de coder mon jeu, comme par exemple la gestion du menu, les animations, etc… Au moins cela aura l’avantage d’être en français, parce qu’on peut dire ce que l’on veut, c’est quel que soit le niveau de maitrise on se sent bien plus à l’aise dans sa langue natale! (Enfin pour mon cas ;) )</p>
+
+<p>Quelques petits liens de documentation sur Pygame:</p>
+
+<ul>
+  <li><a href="http://python.developpez.com/cours/apprendre-python3/">Apprendre à programmer avec Python 3</a>  comme je le disais quelques lignes plus haut, pour ceux qui n’ont pas de base en Python.</li>
+  <li><a href="http://inventwithpython.com/">Invent With Python</a> pour apprendre à utiliser PyGame (mais pas que!).</li>
+  <li><a href="http://www.pygame.org/docs/">La doc de Pygame</a>, classique :) Ainsi que les <a href="http://www.pygame.org/tags/">projets publiés sur le site</a>, donc des tonnes de code que l’on peut lire et lancer pour apprendre!</li>
+  <li><a href="https://www.youtube.com/watch?v=bMt47wvK6u0">Une vidéo d’introduction à Pygame</a>, faire lors de la PyCon. Je vous la conseille vivement même si c’est en anglais car c’est aussi tout un tas de mécanismes des jeux qui sont expliqués.</li>
+</ul>
+
+<p>Pour commencer un petit mot ce le jeu en question. C’est un jeu de carte inspiré entièrement d’un mini-jeu proposé dans le jeu vidéo Final Fantasy VIII sur la Playstation (première du nom), appelé TripleTriad. Je vais essayer dans cet article d’expliquer d’une manière ou d’une autre comment je m’y suis pris pour coder ça. En rappellant que c’est mon premier vrai programme, et qu’il y a surement des choses à améliorer (ne serait-ce que les bugs que je n’arrive pas encore à résoudre x) ). Vous pouvez retrouver TuxleTriad ( je suis pas allé chercher bien loin pour le nom, pour ceux qui connaissent TripleTriad ;) ) <a href="https://github.com/Ilphrin/TuxleTriad">ICI</a>. Pour le lancer il suffit d’utiliser python2.7 (Attention, pas une version 3.x!) sur le fichier <strong>Menu.py</strong>.</p>
+
+<p>Pour ce premier article, je vais commencer par expliquer comment on gère les cartes du joueurs, c’est-à-dire comment récupérer un fichier image pour une carte,. Dans le dossier du jeu, chaque fichier de carte possède un nom sous cette forme:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>Nom + "B" ou "R" + ".jpg"
+</code></pre>
+</div>
+
+<p>On a ‘B’ pour bleu si c’est le joueur de gauche, et ‘R’ pour rouge si c’est le joueur 2. Chaque carte possède donc un propriétaire (selon la couleur), un nom, et 4 numéro indiqués sur la carte. Ensuite il nous faut une liste pour enregistrer, d’une part, le nom de la carte, et d’autre part ses caractéristique. Cette liste correspond au fichier <u>listOfCards.py</u>. La deuxième liste contient les caractéristique. L’indice de la liste de caractéristique correspond exactement à la carte du même indice dans la liste de nom.
+La liste ‘value’ contient une sous-liste pour chaque carte. Les valeurs de cette liste sont:</p>
+
+<ul>
+  <li>Le numéro du haut</li>
+  <li>Le numéro de droite</li>
+  <li>Le numéro du bas</li>
+  <li>Le numéro de gauche</li>
+  <li>Les deux autres ne sont pas encore utilisé dans le jeu ne vous en préocuppez donc pas.</li>
+</ul>
+
+<p>Avant d’aller plus loin il faut faire un petit point sur deux outils SUPER importants, tellement importants qu’il n’y a quasiment qu’eux dans mon jeu, et sont présent dans tout les programmes Pygame.</p>
+
+<p><img src="/images/pygame02.png" alt="pygame02" style="float:left" />
+Dans Pygame, lorsque l’on veut afficher quelque chose, il faut créer deux objets: <strong>Surface</strong> et <strong>Rect</strong>. Les deux peuvent être représentés par un carré à l’écran. Voyez la Surface comme un calque que l’on viendrait poser sur la fenêtre, avec quelque chose déssiné dessus. Une Surface contient donc tout les éléments qui permettent de colorier des pixels. A l’inverse, l’objet Rect ne gère aucun affichage, mais on peut l’imaginer comme une punaise que l’on mettrait sur un calque pour qu’il tienne en place. Sous forme aussi de carré, il contient les coordonnées du calque à plusieurs endroits, et permet de gérer des événements comme des collisions (entre deux Surface, ou même avec avec la souris si elle se trouve dessus).</p>
+
+<p>Maintenant vous avez tout ce qu’il faut pour comprendre le fichier <u>Card.py</u>. Chaque carte sera une instance de la classe <strong>Card</strong>. On enregistre donc dans cette classe:</p>
+
+<ul>
+  <li>self.owner -&gt; Le propriétaire de la carte</li>
+  <li>self.number -&gt; La position du nom de la carte dans listOfCards.py</li>
+  <li>self.name -&gt; le nom de la carte qu’on vient chercher directement dans la liste allCards de listOfCards.py</li>
+  <li>self.top, self.right,…. -&gt; Les 4 valeurs de la carte</li>
+  <li>self.element, self.type, self.About -&gt; Pas intéréssant pour le moment</li>
+  <li>self.inHand -&gt; On veut constamment savoir si la carte est encore dans la main du joueur</li>
+  <li>self.image, self.rect -&gt; La Surface et le Rect de la carte</li>
+</ul>
+
+<p><strong>self.image</strong> vaut ‘None’ au début de la classe, mais on y met une Surface dans la fonction <strong>getCard(self)</strong> du fichier <u>functions.py</u>. Cette fonction va d’abord chercher le chemin du fichier carte en fonction du propriétaire, puis il va utiliser la fonction <strong>pygame.image.load</strong> de Pygame. Cette fonction retourne une Surface remplie avec l’image envoyée en paramètre. Et pour finir, de retour dans la classe Card, on récupère le Rect correspondant à self.image avec une autre fonction de Pygame: <strong>self.image.get_rect()</strong>. Cette fonction s’utlise uniquement sur une Surface, et va en extraire un objet Rect qui contient les information nécessaire à l’exploitation  de la Surface. (Sa largeur, sa hauteur, etc…).</p>
+
+<p>Voilà il me semble que l’on a fait le tour de cette première partie. La fonction <strong>changeOwner</strong> permet au jeu de gérer le changement de propriétaire (lorsque l’adversaire capture notre carte ou réciproquement), et la fonction <strong>__repr__</strong> est propre à Python, et nous permet de faire un “print notreObjet” même si cet objet n’est pas une chaine de caractères.</p>
+
+<p>C’est la première fois que je fais ce genre d’article, n’hésitez donc pas à me donner des retour, me dire ce qui vous a plu/déplu, ce qui aurait mérité plus d’éclaircissement etc… Et si quelqu’un lisant cet article s’y connait en Pygame et souhaite me corriger sur quelque chose, qu’il le fasse! Je ne voudrais pas dire de bêtises et être la cause du mal de crâne de plusieurs personnes ;)</p>
+
+<p>Voilà amusez-vous bien et bonne programmation ;)</p>
+
+    <div id="comments" itemprop="comment">
+  <h2>Commentaires</h2>
+  
+  
+      
+      
+  
+      
+      
+  
+      
+      
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="introduction-a-pygame">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2014/08/15/introduction-a-pygame.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2014/08/15/introduction-a-pygame" />
+    <div id="form_info">
+      <div id="title_form">
+        <p>Nom:</p>
+        <p>E-mail:</p>
+        <p>Site Web:</p>
+      </div>
+      <div id="content_form">
+        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
+        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
+        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      </div>
+    </div>
+    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
+    <input type="submit" name="submit" value="Envoyer ✔"/>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>
