@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <script src="/js/previous.js" charset="utf-8"></script>
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/tuxletriad.jpg');">
+      <div>
+        <h1 itemprop="name"> Tuxle Triad et Pygame: Avoir une main</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <span>17
+
+Octobre
+  
+2014
+</span>
+      </p>
+      <p>
+        <a href="https://twitter.com/share?text='Tuxle Triad et Pygame: Avoir une main'" class="twitter-share-button" target="_blank"></a>
+        <span>Twitter</span>
+      </p>
+      <p>
+        <a href="http://sharetodiaspora.github.io/?title=Tuxle Triad et Pygame: Avoir une main&url=/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html" target="_blank" class="diaspora-share-button"></a>
+        <span>Diaspora*</span>
+      </p>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <p>Salut à tous!</p>
+
+<p>Me voilà aujourd’hui pour un deuxième article sur Pygame. Je vais cette fois-ci vous expliquer comment créer une “main” remplie de cartes tirées aléatoirement, et positionner les cartes dans la main.</p>
+
+<p>La dernière fois je vous avais expliqué comment fonctionnait un objet <strong>Card</strong>. Mais pour pouvoir jouer il en faudra plus d’une (ça risque d’être quelque peu ennuyant sinon ;) ). Ceux qui ont essayé le jeu savent combien de carte il faut, c’est-à-dire 5 par joueur. Pour faire ça nous allons utiliser tout simplement une liste. Dans la fonction <strong>__init__</strong> du fichier  game.py, on peut voir les deux lignes suivantes:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>self.player1Hand = self.randomHand(1)
+
+self.player2Hand = self.randomHand(-1)
+</code></pre>
+</div>
+
+<!--break-->
+<p>Je vais expliquer juste après ce qui est à gauche de chaque opérateur =. Je fais donc appel à une fonction r<strong>andomHand()</strong>, qui appartient à la classe <strong>Application</strong>. En descendant plus loin dans le fichier (dans les alentours de la ligne 500 à l’heure de l’écriture de cet article), on trouve la définition de cette fonction qui prend le paramètre <strong>player</strong>. Ce paramètre doit valoir 1 ou -1.</p>
+
+<p>La ligne la plus importante dans cette fonction est <strong>listCards = [card for card in range(len(allCards))]</strong>. Cette ligne va répertorier toutes les cartes existantes par un numéro correspondant à leur position dans la liste <strong>allCards</strong> (qui est créée dans le fichier <u>listOfCards.py</u>). Ensuite avec la fonction <strong>random.shuffle(listCards)</strong>, on va mélanger tous ces numéros.</p>
+
+<p>La boucle <strong>for</strong> de la fonction va passer 5 fois. A chaque fois, on va prendre le premier numéro de la liste, créer une carte correspondant au numéro de cette liste, l’ajouter à une liste de carte nommée <strong>Cards</strong> (avec un ‘s’, ce n’est pas l’objet <strong>Card</strong>) au début, puis supprimer le numéro qu’on a pioché de la liste de numéro. <strong>Cards</strong> va donc contenir 5 cartes prises aléatoirement dans la liste. Enfin la fonction retourne un objet <strong>Hand</strong>.</p>
+
+<p>On va donc voir maintenant ce qu’est ce fameux objet <strong>Hand</strong>. Pour cela on va changer de fichier et aller jeter un oeil du coté du fichier <strong>Hand.py</strong>.  Bon déjà soulagement: il y a moins de 30 lignes de code à lire ;). Sinon, petite explication de l’utilité de cet objet <strong>Hand</strong>:</p>
+
+<p>Tout d’abord on enregistre la liste de cartes dans l’instance d’objet <strong>Hand</strong>. Ensuite on va faire une boucle pour parcourir chacune des cartes de cette liste, et on va à chacune donner des coordonnés pour la placer dans la fenêtre du jeu.</p>
+
+<p>Petite piqûre de rappel, les coordonnés dans une fenêtre fonctionnent par paires. L’abscisse X et l’ordonnée Y, qui respectivement déterminent la colonne et la ligne du pixel indiqué. On va donc à chaque fois modifier la position du centre de l’objet <strong>Rect</strong> de la carte (rappelez-vous j’en ai parlé dans <a href="/2014/08/17/introduction-a-pygame.html">l’article précédent</a>.</p>
+
+<p><img src="/images/pygame01.png" alt="Pygame01" style="float:left" />En abscisse X, il n’y a que deux valeur possible, selon si l’on est le joueur 1 ou 2 (ou plutôt en l’occurrence, -1 dans le code du jeu, c’est simplement plus facile à gérer d’appeler le joueur 2 par -1), 60 ou 740.</p>
+
+<p>En ordonnée Y c’est un poil plus compliqué mais pas tant que ça, en fait on prend une position de base, et à chaque fois que l’on parcourt un tour de boucle on veut que la carte suivante soit affiché plus bas, donc on la décale de I*DELTA, I étant le numéro de la carte traitée et DELTA la différence de pixel entre chaque carte.
+L’avant dernière ligne est une petite subtilité pour la gestion d’évenement. En fait pour chaque carte on va recréer un objet <strong>Rect</strong> avec les mêmes valeurs qu’avant SAUF pour la hauteur de l’objet rect qui sera fixé à la valeur DELTA. Pourquoi cela?</p>
+
+<p>Je n’ai pas encore parlé de la gestion des clics mais c’est assez simple à se représenter. Imaginons que l’on garde les valeur de base, lorsque dans le jeu je vais vouloir cliquer sur une carte, le programme va comparer la position de la souris au moment du clic avec celle des cartes pour voir sur laquelle j’ai cliqué. Mais du coup les cartes se superposent partiellement, et donc si je clique en haut de la deuxième carte, du point de vue du programme j’aurais aussi cliqué sur la carte du dessus qui est légèrement cachée. Et ca va être un bazar pas possible à gérer à chaque fois qu’on voudra poser une carte car il risque de poser celle du dessus.</p>
+
+<p>Donc pour palier a cela on réduit virtuellement la taille de l’objet <strong>Rect</strong> de la carte pour qu’il ne s’occupe que d’une partie de la carte lorsque l’on clique. Cela implique un défaut: Si on clique en bas de la dernière carte il ne fera rien puisque ce n’est pas sur l’objet <strong>Rect</strong>. Je n’ai pour le moment pas encore trouvé de solution convenable à cela. Mais si quelqu’un à une solution à me proposer qu’il se dévoue ;)</p>
+
+<p>Nous avons donc fait le tour de la question concernant la création d’une main entière de cartes. Voilà tout ce qui se passe quand on lance dans le fichier <u>game.py</u> les deux lignes de code indiquées en haut de l’article. <strong>self.player1Hand</strong> et <strong>self.player2Hand</strong> ne sont donc que des instance d’objet Hand correspondant respectivement au joueur 1 et 2.</p>
+
+<p>Et vu que c’est la grosse mode du moment, j’ai rejoint Diaspora<em>! Et je dois avouer que je suis sous le charme, à un tel point que je n’utilise presque plus Facebook. Je vais essayer de mettre des news de mes articles à propos de Pygame et Tuxle Triad ainsi que son développement sur Diaspora</em>, que vous pourrez donc suivre avec  #pygame, dont je suis le seul et unique participant pour l’instant! x) N’hésitez pas à me faire de remarques sur l’article ou même sur mon jeu, si vous l’avez essayé sous tout les angles et que vous avez des porpositions d’ajout et d’améliorations à me faire. ;)</p>
+
+<p>Je ne sais pas encore sur quoi je vais partir pour le prochain article. Surement la gestion des cases sur le terrain. Mais mes cours ayant prit une grande partie de mon temps je ne sais pas encore quand est-ce que je pourrais l’écrire. Je vais aussi surement faire de légères modifications d’apparence des articles pour rendre plus visible  certaines choses, comme les lignes de code que je met entre balises de citation. Faites-moi savoir si vous avez des idées là-dessus parce que je suis pas très doué pour tout ce qui touche à l’apparence. ^^</p>
+
+<p>Sur ce je vous souhaite bonne journée à tous et à la prochaine!</p>
+
+    <div id="comments" itemprop="comment">
+  <h2>Commentaires</h2>
+  
+  
+    
+    <div class="comment odd">
+      <p class="comment_header">
+      De: 
+      <a href="https://www.deblan.io">Simon</a>
+      
+      <br />
+      <span class="comment_date">
+        24
+
+Novembre
+  
+2016
+
+      </span>
+      </p>
+      <hr>
+      <p class="comment_content">
+      Pour réaliser de l'UML, tu peux également t'intéresser à umlet. Il vraiment très bien et rempli tout ce qu'on attends d'un éditeur UML avec la particularité de configurer par une forme de code chacun des éléments graphiques.
+      </p>
+    </div>
+  
+    
+    <div class="comment even">
+      <p class="comment_header">
+      De: 
+      PapsOu
+      
+      <br />
+      <span class="comment_date">
+        24
+
+Novembre
+  
+2016
+
+      </span>
+      </p>
+      <hr>
+      <p class="comment_content">
+      Il y a aussi UMLet, plutôt basique mais tres riche en terme de diagrammes. http://www.umlet.com Il permet de se concentrer sur le fond plutôt que la forme. Il est ecrit en Java donc par définition cross platform. Et il est publié sous licence GPL. C''est mon outils de modélisation UML préféré.
+      </p>
+    </div>
+  
+    
+    <div class="comment odd">
+      <p class="comment_header">
+      De: 
+      Ilphrin
+      
+      <br />
+      <span class="comment_date">
+        29
+
+Novembre
+  
+2016
+
+      </span>
+      </p>
+      <hr>
+      <p class="comment_content">
+      Oh, je vais essayer UMLet alors, j'en ai absolument pas entendu parler. Merci a vous :D
+      </p>
+    </div>
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="tuxle-triad-et-pygame-avoir-une-main">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main" />
+    <div id="form_info">
+      <div id="title_form">
+        <p>Nom:</p>
+        <p>E-mail:</p>
+        <p>Site Web:</p>
+      </div>
+      <div id="content_form">
+        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
+        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
+        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      </div>
+    </div>
+    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
+    <input type="submit" name="submit" value="Envoyer ✔"/>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>

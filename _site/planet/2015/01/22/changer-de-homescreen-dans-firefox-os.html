@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <script src="/js/previous.js" charset="utf-8"></script>
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/firefox.jpg');">
+      <div>
+        <h1 itemprop="name"> Changer de homescreen dans Firefox OS</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <span>22
+
+Janvier
+  
+2015
+</span>
+      </p>
+      <p>
+        <a href="https://twitter.com/share?text='Changer de homescreen dans Firefox OS'" class="twitter-share-button" target="_blank"></a>
+        <span>Twitter</span>
+      </p>
+      <p>
+        <a href="http://sharetodiaspora.github.io/?title=Changer de homescreen dans Firefox OS&url=/planet/2015/01/22/changer-de-homescreen-dans-firefox-os.html" target="_blank" class="diaspora-share-button"></a>
+        <span>Diaspora*</span>
+      </p>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <p>Salut tout le monde!</p>
+
+<p>En discutant hier soir soir sur le salon #BuildOpenCEu, dattaz m’expliquait qu’il est possible sur Firefox OS de changer de Homescreen, l’écran d’accueil en français, pour quelque chose d’entièrement différent, du menu vertical ou horizontal jusqu’au cercle d’application que l’on peut faire tourner avec un mouvement de doigt. J’en ai donc essayé plusieurs  sur mon Open C et voilà ce que ça m’a donné pour chacun d’eux. Je tiens à rappeler que je suis en version Nightly que je met à jour chaque matin, donc il se peut que certains marchent mieux sur votre version de Firefox OS que sur la mienne, le mieux étant d’avoir au moins un test pour chaque version majeure de l’OS. Je m’excuse d’avance pour le manque de Screenshot, d’un part je n’ai pas pensé à en faire et de l’autre étant en Nightly et n’ayant pas encore de carte microSD je ne peux pas enregistrer de capture d’écran sur le téléphone.
+<!--break--></p>
+
+<p>Les homescreen peuvent être trouvés <a href="https://gist.github.com/xfausto/7c954f1b31cf086aff79">ICI</a>:</p>
+
+<ul>
+  <li><a href="https://github.com/mgoodings/zwipe">Zwipe</a>: Celui que je trouve le plus intéressant, il est censé afficher l’heure et la date au milieu de l’écran ainsi que les applications sous forme de cercle en bas. Il se lance mais n’affiche rien à part un bout de code en guise de titre. Dans le débugger on peut voir que la variable $scope est indéfinie, cette dernière est essentielle pour le framework AngularJS utilisé pour cette appli.</li>
+  <li><a href="https://github.com/xfausto/Grayscreen">Grayscreen</a>: Une interface simple et plutôt jolie, censé ne fonctionner que pour la 1.4 mais je l’ai testé quand même en 2.2 pour voir, et bien entendu elle ne fonctionnait pas vraiment. On a un fond blanc et la date et l’heure s’affichent correctement à droite mais c’est tout.</li>
+  <li><a href="https://github.com/yorikvanhavre/MARSScreen">Marsscreen</a>: J’accroche pas du tout à celle-ci, la police de caractère n’est pas top et cela semble un peu flou. Néanmoins elle fonctionne à peu près, on a simplement pas les icones du coup toutes les applications ne s’affichent que par leur nom ce qui n’est pas très pratique. Si ça peut en intéresser certains, il n’y a surement pas grand chose à modifier pour faire afficher les icones.</li>
+  <li><a href="https://github.com/Schoewilliam/Shyhome">Shyhome</a>: Cette application ne va pas révolutionner l’interface, mais au moins elle fonctionne à peu près et est agréable à l’oeil, avec un bon fond d’écran ça doit bien rendre.</li>
+  <li><a href="https://github.com/xfausto/betsuscreen">Betsuscreen</a>: Celle-ci est plutôt prometteuse si on en croit les screenshot, avec une interface qui revient à la mode horizontale des versions 1.x, mais sur mon téléphone je n’ai droit à rien d’autre qu’un écran blanc, dommage…</li>
+</ul>
+
+<p>Voilà ce sont les principaux que j’ai essayé, n’hésitez pas à les essayer vous aussi  pour faire des retour, certaines fonctionneront peut-être mieux avec des version différentes.</p>
+
+<p>Pour ceux qui se posent la question (comme moi ^^), pour tester ces homescreen il suffit de dezipper le paquet téléchargé sur la page github en question, et de faire “Open Packaged app” dans le WebIDE de Firefox, ensuite vous lui demandez de se connecter à votre téléphone (au moment de la sélection, Firefox OS vous demandera une confirmation pour cette connexion) et ensuite de faire “Install and run” avec le bouton en forme de flèche en haut de la fenêtre.</p>
+
+<p>Voilà c’est tout pour aujourd’hui, si d’autres personnes ont des homescreen à proposer ou que vous auriez trouvé, n’hésitez pas à m’en faire part dans les commentaires!</p>
+
+<p>Bonne journée à tous!</p>
+
+<p>PS: J’ai cru comprendre qu’on pouvait demander à WebIDE de faire une capture d’écran, je modifierai l’article pour ajouter des captures à l’occasion ^^</p>
+
+    <div id="comments" itemprop="comment">
+  <h2>Commentaires</h2>
+  
+  
+    
+    <div class="comment odd">
+      <p class="comment_header">
+      De: 
+      <a href="https://www.deblan.io">Simon</a>
+      
+      <br />
+      <span class="comment_date">
+        24
+
+Novembre
+  
+2016
+
+      </span>
+      </p>
+      <hr>
+      <p class="comment_content">
+      Pour réaliser de l'UML, tu peux également t'intéresser à umlet. Il vraiment très bien et rempli tout ce qu'on attends d'un éditeur UML avec la particularité de configurer par une forme de code chacun des éléments graphiques.
+      </p>
+    </div>
+  
+    
+    <div class="comment even">
+      <p class="comment_header">
+      De: 
+      PapsOu
+      
+      <br />
+      <span class="comment_date">
+        24
+
+Novembre
+  
+2016
+
+      </span>
+      </p>
+      <hr>
+      <p class="comment_content">
+      Il y a aussi UMLet, plutôt basique mais tres riche en terme de diagrammes. http://www.umlet.com Il permet de se concentrer sur le fond plutôt que la forme. Il est ecrit en Java donc par définition cross platform. Et il est publié sous licence GPL. C''est mon outils de modélisation UML préféré.
+      </p>
+    </div>
+  
+    
+    <div class="comment odd">
+      <p class="comment_header">
+      De: 
+      Ilphrin
+      
+      <br />
+      <span class="comment_date">
+        29
+
+Novembre
+  
+2016
+
+      </span>
+      </p>
+      <hr>
+      <p class="comment_content">
+      Oh, je vais essayer UMLet alors, j'en ai absolument pas entendu parler. Merci a vous :D
+      </p>
+    </div>
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="changer-de-homescreen-dans-firefox-os">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2015/01/22/changer-de-homescreen-dans-firefox-os.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2015/01/22/changer-de-homescreen-dans-firefox-os" />
+    <div id="form_info">
+      <div id="title_form">
+        <p>Nom:</p>
+        <p>E-mail:</p>
+        <p>Site Web:</p>
+      </div>
+      <div id="content_form">
+        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
+        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
+        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      </div>
+    </div>
+    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
+    <input type="submit" name="submit" value="Envoyer ✔"/>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>
