@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <script src="/js/previous.js" charset="utf-8"></script>
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/archlinux.png');">
+      <div>
+        <h1 itemprop="name"> Réinstallation forcée --> Point sur Arch Linux</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <span>26
+
+Avril
+  
+2013
+</span>
+      </p>
+      <p>
+        <a href="https://twitter.com/share?text='Réinstallation forcée --> Point sur Arch Linux'" class="twitter-share-button" target="_blank"></a>
+        <span>Twitter</span>
+      </p>
+      <p>
+        <a href="http://sharetodiaspora.github.io/?title=Réinstallation forcée --> Point sur Arch Linux&url=/2013/04/26/reinstallation-forcee-point-sur-archlinux.html" target="_blank" class="diaspora-share-button"></a>
+        <span>Diaspora*</span>
+      </p>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <p>Salut tout l’monde!</p>
+
+<p>Bon comme l’indique le titre de l’article, j’ai été obligé de faire un ré-installation de mon pc. En effet la moitié de mes applications ne voulaient plus s’ouvrir et j’avais d’autres problèmes important, et j’ai jamais réussi à comprendre pourquoi ça faisait ça tout d’un coup. Alors après quelques jours de combat j’ai finalement abandonné et ai télechargé une image iso d’archlinux. Malheureusement je ne pourrai donc pas continuer l’article pour détailler l’installation, mais si vous êtes intéressés je vous conseille vivement le wiki d’archlinux anglais et français.
+<!--break-->
+Bon, tout le monde ne connait pas forcément Arch Linux, j’vais donc faire une petite intro pour vous présenter le contexte. Arch est une distribution sortie en 2002, qui se veut basée sur la simplicité, au sens sans “option” rajoutée. Lorsque l’on se procure une Arch linux, on dispose du strict nécessaire pour avoir un système, le reste c’est à l’utilisateur de choisir ce qu’il veut avoir. Et bien sur je ne peux pas parler du fonctionnement d’Arch Linux sans mentionner le principe <a href="http://wiki.archlinux.fr/kiss">KISS</a>! Pour faire court, il s’agit de laisser un éventail d’action maximum pour l’utilisateur afin qui puisse prendre sons système en main dans sa totalité. On trouvera rarement des GUI aux outils fourni par Archlinux car généralement un programme en interface graphique offre moins de contrôle sur le programme, alors qu’en ligne de commande on peut savoir précisément ce que l’on fait.</p>
+
+<p>Cela signifie que l’on peut choisir la quasi-totalité des logiciels qui vont composer notre système. Du gestionnaire de réseaux au dock du bureau en passant par votre lecteur vidéo. Les avantages de cette procédure sont juste énormes à mon sens. L’utilisation de la RAM et de la mémoire CPU seront moins importants puisque vous n’aurez pas tous les logiciels lancés au démarrage sur les autres distributions. Et pour les disques durs qui ne font pas quinze millions de terra-octets vous aurez plus de place pour vos données après l’installation ^^ ( moi personellement avec mes 20Go ça m’aide plutôt bien…)</p>
+
+<p>Bon en tout cas, j’ai fini de l’installer il y a de cela plusieurs semaines déjà et j’en suis plus que content. Les principaux logiciels que j’utilisais avant sous Linux Mint fonctionnent plus la plus grande majorité, comme sunflower, vlc, xchat, gimp etc… Pareil pour ce qui est de la composition de mon bureau Openbox avec conky, nitrogen,tint2 et wbar principalement. Le démarrage de ma session donne l’impression d’être plus rapide mais pas de beaucoup. Mais surtout ce que j’apprécie le plus avec cette distribution, c’est la gestion des paquêts qui est grandement améliorée avec l’<a href="https://wiki.archlinux.org/index.php/AUR_User_Guidelines">AUR</a>, qui est en gros un dépôt ou chaque utilisateur peut venir rajouter son paquet, le tout géré par le système de PKGBUILD sur lequel je ne m’attarderais pas car je ne suis pas encore assez connaisseur là-dedans…</p>
+
+<p>Néanmoins il me reste encore pas mal de choses à corriger, même si je pense que certaines sont dues à l’âge avancé de mon ordinateur.  Je mets ici la liste des choses que j’ai à corriger; plus pour servir de pense-bête qu’autre chose:</p>
+
+<ul>
+  <li>Comportement D-Bus étrange</li>
+  <li>Gestion du wifi non-fonctionnelle</li>
+  <li>Slim  ne veut pas se lancer parfois quand je me déconnecte simplement de ma session</li>
+  <li>Gestion du son avec Alsa vraiment bizarre.</li>
+</ul>
+
+<p>En tout cas je vous conseille vivement cette distribution si vous n’avez pas froid aux yeux en voyant que vous devez commencer par du mode texte pendant un bon moment et lire un peu de documentation pour comprendre le fonctionnement. Pour vous aider je vous renvoie aux liens que j’ai donné dans mon ancien article Test Archlinux en Virtualbox (1/2)</p>
+
+<p>Sur ce je vous souhaite une bonne journée et à bientôt! ;)</p>
+
+    <div id="comments" itemprop="comment">
+  <h2>Commentaires</h2>
+  
+  
+      
+      
+  
+      
+      
+  
+      
+      
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="reinstallation-forcee-point-sur-archlinux">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2013/04/26/reinstallation-forcee-point-sur-archlinux.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/2013/04/26/reinstallation-forcee-point-sur-archlinux" />
+    <div id="form_info">
+      <div id="title_form">
+        <p>Nom:</p>
+        <p>E-mail:</p>
+        <p>Site Web:</p>
+      </div>
+      <div id="content_form">
+        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
+        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
+        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      </div>
+    </div>
+    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
+    <input type="submit" name="submit" value="Envoyer ✔"/>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>
