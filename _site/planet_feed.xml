@@ -16,8 +16,18 @@
 
 &lt;ul&gt;
   &lt;li&gt;En 0.1.7 nous avons maintenant le &lt;strong&gt;inccommand&lt;/strong&gt;, successeur au &lt;em&gt;incsub&lt;/em&gt;, nous permet d’avoir un aperçu temps-réel des modifs sur du texte, par le biais par example d’une substitution comme :%s/coucou/plop/g (une exemple &lt;a href=&quot;https://asciinema.org/a/92207&quot;&gt;ICI&lt;/a&gt;)&lt;/li&gt;
-  &lt;li&gt;&lt;/li&gt;
+  &lt;li&gt;La Newsletter #7 est sortie, et dedans un il y un retour sur ce qui a été fait&lt;/li&gt;
+  &lt;li&gt;La commande &lt;em&gt;:tchdir&lt;/em&gt; qui permet de changer de répertoire localement à un ‘tab’&lt;/li&gt;
+  &lt;li&gt;La ‘statusline’ peut maintenant aligner un nombre indéfini d’élements&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://github.com/extr0py/oni&quot;&gt;oni&lt;/a&gt; est un GUI pour Mac, mais le support de Linux est en cours (chez moi il se lance mais n’affiche rien d’autre qu’une barre et une page blanche), il peut réussir là ou NyaoVim à été un peu décevant à mon goût&lt;/li&gt;
+  &lt;li&gt;La commande &lt;em&gt;:CheckHealth&lt;/em&gt; qui permet d’avoir des rapports d’erreurs sur la configuration, le statut des plugins, et diverses informations comme le statut de la gestion du clipboard sur votre système&lt;/li&gt;
+  &lt;li&gt;Les utilisateurs de Debian seront heureux d’apprendre que Neovim sera dans la &lt;a href=&quot;https://packages.debian.org/stretch/neovim&quot;&gt;prochaine version de Debian&lt;/a&gt; ;)&lt;/li&gt;
+  &lt;li&gt;Le transcompileur VimL vers Lua fait des progès intéressants, mais sont développement est mis en arrière-plan par rapport au support de Windows.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;Bien sûr ce n’est pas une liste complète, pour cela je vous invite à aller voir &lt;a href=&quot;https://neovim.io/news/&quot;&gt;CECI&lt;/a&gt; et &lt;a href=&quot;https://github.com/neovim/neovim/releases/tag/v0.1.7&quot;&gt;CELA&lt;/a&gt; pour beaucoup plus de détails.&lt;/p&gt;
+
+&lt;p&gt;Désolé pour cet article un peu court, et en retard par rapport a mon planning hebdomadaire mais je dois avoue que j’ai pas mal de boulot en ce moment, mais promis je reviendrais assez rapidement, probablement pour parler des commentaires sur mon blog qui sont maintenant fonctionnel et ce grâce à Staticman!&lt;/p&gt;
 </description>
 				<pubDate>Mon, 12 Dec 2016 00:00:00 +0100</pubDate>
 				<link>http://ilphrin.com/planet/2016/12/12/update-neovim-1-7-tour-des-fonctionalites.html</link>
