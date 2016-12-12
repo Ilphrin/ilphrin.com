@@ -3,6 +3,7 @@ layout: post_kevin
 title: Génération de code C++ en plugin Neovim avec CLang
 author: kevin
 category: planet
+serie: vim
 ---
 
 La Piscine de C++ qui marque le début de notre deuxième année à Epitech vient de se terminer. Durant ces deux semaines on étudie à fond la quasi-totalité des concepts liés à la POO.

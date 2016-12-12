@@ -4,6 +4,7 @@ title: Topo de mes plugins Vim - 01
 author: kevin
 cover: vim_nvim.png
 category: planet
+serie: vim
 ---
 
 Au fil des mois de mes utilisations de Vim, je finis par emmagasiner un bon paquet de plugins, dont je me sers plus ou moins souvent selon ma capacité à me souvenir de leur existence dans mes dossier. Et le gros problème que j'ai avec ces plugins c'est que je pour beaucoup je ne me souviens jamais de comment ils fonctionnent de A à Z, et j'aime avoir une documentation complète pour me rappeler tout ça.

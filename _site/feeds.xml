@@ -7,6 +7,25 @@
 		<atom:link href="http://ilphrin.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Update: Neovim 0.1.7, petit tour</title>
+				
+					<description>&lt;p&gt;Ca y est, une nouvelle version de Neovim vient de sortir! Et avec elle sont lot de fonctionalités et de corrections bien sympa (voire même plus que sympa vous allez voir ;) ), profitons-en pour revoir les fonctionalités cool de Neovim&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Neovim est en développement depuis une paire d’années maintenant et, avec le soutien de nombreux contributeurs, rajoute un interêt non negligeable à ce bon vieux Vim qui sort une version toutes les décennies. Voici une liste non-exhaustives des nouveautés non seulement dans la 0.1.7 mais aussi dans le travail antérieur:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;En 0.1.7 nous avons maintenant le &lt;strong&gt;inccommand&lt;/strong&gt;, successeur au &lt;em&gt;incsub&lt;/em&gt;, nous permet d’avoir un aperçu temps-réel des modifs sur du texte, par le biais par example d’une substitution comme :%s/coucou/plop/g (une exemple &lt;a href=&quot;https://asciinema.org/a/92207&quot;&gt;ICI&lt;/a&gt;)&lt;/li&gt;
+  &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+				<pubDate>Mon, 12 Dec 2016 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2016/12/12/update-neovim-1-7-tour-des-fonctionalites.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/12/12/update-neovim-1-7-tour-des-fonctionalites.html</guid>
+			</item>
+		
+			<item>
 				<title>C&#39;était: Le Hackaton MesInfos à Lyon</title>
 				
 					<description>&lt;p&gt;Bon pour commencer l’explication il faudrait parler de &lt;a href=&quot;cozycloud.cc&quot;&gt;CozyCloud&lt;/a&gt;. Pour ceux qui ne savent pas, CozyCloud est un outil de cloud (j’ai l’impression de rien dire) personnel. Il fonctionne comme un serveur sur lequel on utilise des applications. Applications qui sont trouvable soit sur le marketplace officiel, et qui contient une vingtaine d’applications, soit sur un dépot Github quelconque. Ces applications peuvent être sur tout et n’importe quoi. Mais l’interêt consiste surtout à pouvoir être le seul à posséder ses données, car CozyCloud est fait pour être auto-hébergé.&lt;/p&gt;

@@ -4,6 +4,7 @@ title: "Ultisnips: Autocomplétion HTML"
 author: kevin
 cover: vim_nvim.png
 category: planet
+serie: vim
 ---
 
 Pour ceux qui ne le savent pas, Ultisnips est un plugin pour Vim/NeoVim qui permet de créer des snippets. C'est l'outil le plus puissant de création de snippet que j'ai pu voir jusque maintenant, tout éditeur confondu. Les possibilités offertes par ce plugin sont immense, alors qu'il est très simple d'utilisation, a partir du moment où l'on sait exactement ce que l'on veut faire.
