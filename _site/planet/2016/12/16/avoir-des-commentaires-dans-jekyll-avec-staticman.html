@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <script src="/js/previous.js" charset="utf-8"></script>
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/staticman.png');">
+      <div>
+        <h1 itemprop="name"> Avoir des commentaires sur un site Jekyll avec Staticman</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <span>16
+
+Décembre
+
+2016
+</span>
+      </p>
+      <p>
+        <a href="https://twitter.com/share?text='Avoir des commentaires sur un site Jekyll avec Staticman'" class="twitter-share-button" target="_blank"></a>
+        <span>Twitter</span>
+      </p>
+      <p>
+        <a href="http://sharetodiaspora.github.io/?title=Avoir des commentaires sur un site Jekyll avec Staticman&url=/planet/2016/12/16/avoir-des-commentaires-dans-jekyll-avec-staticman.html" target="_blank" class="diaspora-share-button"></a>
+        <span>Diaspora*</span>
+      </p>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h3 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h3>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+          <li>
+            
+            <a href="/planet/2016/11/06/un-peu-de-seo-facile-avec-jekyll.html">Un peu de SEO facile avec Jekyll: <time datetime="16 December 2016">6
+
+Novembre
+  
+2016
+</time></a>
+          </li>
+          
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <li class="current_post">
+          
+            <a href="/planet/2016/12/16/avoir-des-commentaires-dans-jekyll-avec-staticman.html">Avoir des commentaires sur un site Jekyll avec Staticman: <time datetime="16 December 2016">16
+
+Décembre
+
+2016
+</time></a>
+          </li>
+          
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <p>Ça y est! Après maintenant 2 ans d’acharnement, j’ai enfin un système de commentaires fonctionnel et cool sur mon site! Pourquoi fut-ce si long? Eh bien pour deux raisons, la première c’est que je maintiens de site web avec le <a href="https://jekyllrb.com/">CMS Jekyll</a>, qui permet de faire des sites uniquement statiques. L’avantage c’est que c’est très simple à mettre en place et à développer (je m’embête pas avec des bases de données ou du PHP pour avoir du back-end). L’inconvénient, c’est que je peux difficilement profiter des avantages d’un site dynamique, et notamment les commentaires. Mais ça c’était avant qu’on me parle de <a href="https://staticman.net/">Staticman</a></p>
+
+<!--break-->
+
+<p>Lorsque j’ai posé la question sur le chat <a href="irc:irc.freenode.net/jekyll">IRC</a> de jekyll pour savoir par quel moyen je pouvais faire marcher les commentaires sur mon site, tout de suite après on m’a redirigé vers le site de Staticman. L’idée de cet outil est d’apporter des possibilités de traitement de données sur des sites statique. Le site donne des exemples comme les commentaires, les reviews, ou les votes. En plus il est fait pour fonctionner avec un dépôt Github.</p>
+
+<p>En lisant la description détaillée sur le site et sur le <a href="https://github.com/eduardoboucas/staticman">dépôt Github du projet</a>, on en apprend un peu plus sur son fonctionnement, par exemple pour un commentaire:</p>
+
+<ul>
+  <li>Un utilisateur va vouloir rédiger un commentaire sur un site X, et cliquer sur “Envoyer”</li>
+  <li>Le formulaire envoie une requête au serveur NodeJS de Staticman, qui va recevoir la donnée, la traiter selon le fichier de configuration que vous écrivez sur le dépôt de votre site, et vous envoyer le contenu formaté sous forme de Pull Request sur votre dépôt pour ajouter un fichier dans le dossier _data/ de Jekyll</li>
+  <li>Vous acceptez la merge request, et il ne vous reste plus qu’à build votre site jekyll et à l’envoyer sur votre serveur pour voir votre joli commentaire.</li>
+</ul>
+
+<p>Le fonctionnement de Staticman est vraiment aussi simple que ça. Le <a href="https://staticman.net/docs">site</a> explique comment faire pour l’intégrer à son site. J’ai eu toutefois des petites difficultés notamment sur le fichier de configuration. Je vais donc vous poster ici le contenu de mon fichier et de mon template pour que vous voyiez comment ça marche en pratique:</p>
+
+<figure class="highlight"><pre><code class="language-yml" data-lang="yml"><span class="s">comments</span><span class="pi">:</span>
+  <span class="s">allowedFields</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">name"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">email"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">url"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">message"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">post_id"</span><span class="pi">]</span>
+  <span class="s">allowedOrigins</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">ilphrin.com"</span><span class="pi">]</span>
+  <span class="s">branch</span><span class="pi">:</span> <span class="s2">"</span><span class="s">master"</span>
+  <span class="s">filename</span><span class="pi">:</span> <span class="s2">"</span><span class="s">{fields.name}_{@timestamp}"</span>
+  <span class="s">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">yml"</span>
+  <span class="s">generatedFields</span><span class="pi">:</span>
+    <span class="s">date</span><span class="pi">:</span>
+      <span class="s">type</span><span class="pi">:</span> <span class="s">date</span>
+      <span class="s">options</span><span class="pi">:</span>
+        <span class="s">format</span><span class="pi">:</span> <span class="s2">"</span><span class="s">timestamp-seconds"</span>
+  <span class="s">moderation</span><span class="pi">:</span> <span class="s">true</span>
+  <span class="s">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">ilphrin.com"</span>
+  <span class="s">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">_data/comments/"</span>
+  <span class="s">requiredFields</span><span class="pi">:</span> <span class="pi">[</span><span class="s2">"</span><span class="s">name"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">email"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">message"</span><span class="pi">,</span> <span class="s2">"</span><span class="s">post_id"</span><span class="pi">]</span>
+  <span class="s">commitMessage</span><span class="pi">:</span> <span class="s2">"</span><span class="s">New</span><span class="nv"> </span><span class="s">comment</span><span class="nv"> </span><span class="s">on</span><span class="nv"> </span><span class="s">the</span><span class="nv"> </span><span class="s">blog"</span></code></pre></figure>
+
+<p>Il n’y a pas grand-chose à dire sur ce fichier-là il parle de lui-même à mon avis. Vous devez placer ce fichier à la racine de votre dépôt pour que Staticman le lise correctement. Voici ensuite la partie de la page HTML pour les formulaires sur mon site:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">  <span class="nt">&lt;form</span> <span class="na">id=</span><span class="s">"commentform"</span> <span class="na">method=</span><span class="s">"POST"</span> <span class="na">action=</span><span class="s">"https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"options[slug]"</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">value=</span><span class="s">"avoir-des-commentaires-dans-jekyll-avec-staticman"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"options[redirect]"</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">value=</span><span class="s">"https://ilphrin.com/planet/2016/12/16/avoir-des-commentaires-dans-jekyll-avec-staticman.html"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">name=</span><span class="s">"options[origin]"</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">value=</span><span class="s">"https://ilphrin.com"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"hidden"</span> <span class="na">name=</span><span class="s">"fields[post_id]"</span> <span class="na">value=</span><span class="s">"/planet/2016/12/16/avoir-des-commentaires-dans-jekyll-avec-staticman"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"form_info"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"title_form"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Nom:<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>E-mail:<span class="nt">&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;</span>Site Web:<span class="nt">&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+      <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"content_form"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">size=</span><span class="s">"25"</span> <span class="na">name=</span><span class="s">"fields[name]"</span> <span class="na">id=</span><span class="s">"name"</span> <span class="na">placeholder=</span><span class="s">"(Requis)"</span> <span class="na">required</span><span class="nt">/&gt;&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;input</span> <span class="na">type=</span><span class="s">"email"</span> <span class="na">size=</span><span class="s">"25"</span> <span class="na">name=</span><span class="s">"fields[email]"</span> <span class="na">id=</span><span class="s">"email"</span> <span class="na">placeholder=</span><span class="s">"(Requis, non publié)"</span> <span class="na">required</span><span class="nt">/&gt;&lt;/p&gt;</span>
+        <span class="nt">&lt;p&gt;&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">size=</span><span class="s">"25"</span> <span class="na">name=</span><span class="s">"fields[url]"</span> <span class="na">id=</span><span class="s">"link"</span> <span class="na">placeholder=</span><span class="s">"(Optionnel)"</span><span class="nt">/&gt;&lt;/p&gt;</span>
+      <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;textarea</span> <span class="na">name=</span><span class="s">"fields[message]"</span> <span class="na">rows=</span><span class="s">"10"</span> <span class="na">cols=</span><span class="s">"60"</span> <span class="na">id=</span><span class="s">"comment"</span> <span class="na">placheolder=</span><span class="s">"(Requis)"</span> <span class="na">required</span><span class="nt">&gt;&lt;/textarea&gt;</span>
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"submit"</span> <span class="na">name=</span><span class="s">"submit"</span> <span class="na">value=</span><span class="s">"Envoyer ✔"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/form&gt;</span></code></pre></figure>
+
+<p>Là il ne faut surtout pas oublier deux choses: la première c’est l’action du formulaire à indiquer dans la balise <strong>&lt;form&gt;</strong>, et la deuxième c’est que les différents champs que vous voulez renseigner sont dans des objets. Pour ajouter une option vous aurez <strong>&lt;input name=”option[MonOption]”&gt;</strong> et pour un champ à traiter se sera <strong>&lt;input name=”fields[MonChamp]”&gt;</strong></p>
+
+<p>Voilà vous avez maintenant les outils pour mettre en place des commentaires facilement et rapidement pour votre site, vous n’aurez plus d’excuses ;)</p>
+
+<div class="note">
+<p> Pour plus de lecture sur le sujet je vous conseille aussi ce très bon article (en anglais) <a href="https://mademistakes.com/articles/jekyll-static-comments/">SUR CE LIEN</a></p>
+</div>
+
+    <div id="comments" itemprop="comment">
+  <h2>Commentaires</h2>
+  
+  
+      
+      
+  
+      
+      
+  
+      
+      
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="avoir-des-commentaires-dans-jekyll-avec-staticman">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2016/12/16/avoir-des-commentaires-dans-jekyll-avec-staticman.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2016/12/16/avoir-des-commentaires-dans-jekyll-avec-staticman" />
+    <div id="form_info">
+      <div id="title_form">
+        <p>Nom:</p>
+        <p>E-mail:</p>
+        <p>Site Web:</p>
+      </div>
+      <div id="content_form">
+        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
+        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
+        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      </div>
+    </div>
+    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
+    <input type="submit" name="submit" value="Envoyer ✔"/>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <!-- Piwik -->
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+</body>
+</html>

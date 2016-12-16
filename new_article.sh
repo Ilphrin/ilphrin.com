@@ -6,4 +6,4 @@ if [ "$#" -ne 1 ]; then
 fi
 file=_posts/`date +"%Y-%m-%d"`-$1.markdown
 touch $file
-nvim $file
+oni $file
