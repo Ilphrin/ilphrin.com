@@ -74,16 +74,14 @@ h2, h1
 .header
 {
   @include padding-both(10%);
+  height: 120px;
   width: 80%;
   font-size: 130%;
   font-family: "Ubuntu", sans-serif;
   @include flex-column();
   background-color: lighten($base-color, 5%);
-  filter: blur(2px);
-  transition: filter .2s;
-  &:hover {
-    filter: none;
-  }
+  transition: margin-top .3s ease-in;
+  margin-top: 0px;
   a, a:visited
   {
     transition: color .5s;
@@ -96,6 +94,18 @@ h2, h1
   {
     align-self: center;
     align-items: center;
+  }
+  .headerCursor {
+    position: absolute;
+    transition: top .3s ease-in;
+    left: 10%;
+    top: 74px;
+    img {
+      transition: transform .2s ease-out;
+      width: 80px;
+      height: 111px;
+      transform-origin: 60% 42%;
+    }
   }
 }
 
@@ -378,6 +388,7 @@ pre
   border-radius: 5px;
   box-shadow: 5px 5px 15px #000;
   color: #DCD288;
+  overflow-x: scroll;
 }
 
 .header_blog {
@@ -564,9 +575,8 @@ input[type="submit"] {
 }
 
 #rss img {
-  width: 64px;
-  height: 64px;
-  filter: grayscale(40%);
+  width: 52px;
+  height: 52px;
 }
 
 #rss::before, #rss::after {
