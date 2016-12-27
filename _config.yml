@@ -7,7 +7,7 @@ collection: null
 name: Kevin / Ilphrin
 description: A blog about IT, free software and stuff like that
 url: http://ilphrin.com
-gems: ['jekyll-paginate']
+gems: ['jekyll-paginate', 'jekyll-mermaid']
 
 #Handling reading
 encoding: "utf-8"
@@ -40,3 +40,13 @@ maruku:
 sass:
   style: compressed
 
+mermaid:
+  src: "http://www.sveido.com/mermaid/dist/mermaid.full.js"
+
+sitemap:
+  file: "/sitemap.xml"
+  exclude:
+    - "feeds.xml"
+    - "planet_feed.xml"
+  include_posts:
+    - "/kevin/index.html"
