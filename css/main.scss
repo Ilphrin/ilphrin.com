@@ -325,11 +325,22 @@ a, a:visited
       color: white;
     }
   }
+  h3 {
+    border-top: 1px solid grey;
+  }
   .medium {
     height: 300px;
   }
   .small {
     height: 150px;
+  }
+  .leftImg {
+    float: left;
+    padding-right: 10px;
+  }
+  .rightImg {
+    float: right;
+    padding-left: 10px;
   }
 }
 

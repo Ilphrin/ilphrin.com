@@ -7,7 +7,7 @@ layout: index
     <a href="{{post.url}}">
       <h1>{{post.title}}</h1>
       <h2>{% include date.html date=post.date %}</h2>
-      <span>{{ post.content | split:'<!--break-->' | first }}</span>
+      <span>{{ post.excerpt }}</span>
     </a>
   </div>
 {% break %}
@@ -63,3 +63,4 @@ layout: index
   </div>
 {% endfor %}
 </div>
+
