@@ -71,6 +71,10 @@ html {
  * Remove default margin.
  */
 
+body {
+  margin: 0;
+}
+
 /* HTML5 display definitions
    ========================================================================== */
 
@@ -303,6 +307,7 @@ input,
 optgroup,
 select,
 textarea {
+  color: inherit;
   /* 1 */
   font: inherit;
   /* 2 */
@@ -501,6 +506,17 @@ th {
 html,
 body {
   height: 100%;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  min-width: 320px;
+  font-family: 'Lato', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  line-height: 1.4285em;
+  color: rgba(0, 0, 0, 0.87);
+  font-smoothing: antialiased;
 }
 
 /*******************************
