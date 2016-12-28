@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>23
 
 Juin
@@ -63,14 +64,18 @@ Juin
 2013
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Faire de la traduction avec gettext : Exemple avec Sunflower'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Faire de la traduction avec gettext : Exemple avec Sunflower&url=/2013/06/23/faire-de-la-traduction-avec-gettext-exemple-avec-sunflower.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Faire de la traduction avec gettext : Exemple avec Sunflower'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Faire de la traduction avec gettext : Exemple avec Sunflower&url=/2013/06/23/faire-de-la-traduction-avec-gettext-exemple-avec-sunflower.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -203,7 +208,8 @@ Juin
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Salut tout le monde!</p>
+    <article>
+      <p>Salut tout le monde!</p>
 
 <p>J’ai plusieurs fois eu affaire à des logiciels que je trouvais vraiment sympa, mais qui n’étaient pas disponibles en français, ce qui m’empêchait de bien l’utiliser, ou de le montrer à d’autres personnes qui n’y connaissent rien à l’anglais.  Ne connaissant pas encore bien la programmation, j’ai eu l’idée de faire un peu de traduction pour contribuer un peu aux logiciels que j’utilise. Je me suis donc tourné vers Sunflower, dont le site dispose d’un lien expliquant comment lui préparer une traduction. En fait on utilise un logiciel libre qui apparemment est très utilisé dans le monde de la traduction de logiciels.
 <!--break-->
@@ -235,8 +241,9 @@ Le principe de base de ce logiciel n’est pas très compliqué à comprendre. I
 
 <p><a href="http://www.gnu.org/software/gettext/">Documentation Gettext</a></p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -251,25 +258,35 @@ Le principe de base de ce logiciel n’est pas très compliqué à comprendre. I
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2013/06/23/faire-de-la-traduction-avec-gettext-exemple-avec-sunflower.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/2013/06/23/faire-de-la-traduction-avec-gettext:-exemple-avec-sunflower" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -281,11 +298,12 @@ Le principe de base de ce logiciel n’est pas très compliqué à comprendre. I
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

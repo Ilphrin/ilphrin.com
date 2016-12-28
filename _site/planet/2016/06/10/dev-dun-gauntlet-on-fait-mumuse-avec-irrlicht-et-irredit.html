@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>10
 
 Juin
@@ -63,14 +64,18 @@ Juin
 2016
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Dev' d'un Gauntlet: La conclusion d'un jeu qui ne s'est pas fini'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Dev' d'un Gauntlet: La conclusion d'un jeu qui ne s'est pas fini&url=/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Dev' d'un Gauntlet: La conclusion d'un jeu qui ne s'est pas fini'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Dev' d'un Gauntlet: La conclusion d'un jeu qui ne s'est pas fini&url=/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -225,7 +230,8 @@ Juin
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>La date de rendu de notre projet de Gauntlet, qui est l’un des deux gros projet de fin de deuxième année, s’est terminée il y a à peu près une semaine maintenant. Il y a du bon et du moins bon, et je me suis dit que mettre sur papier numérique ce qu’il faut en retirer peut être un exercice utile, déjà pour moi pour avoir des notes pour plus tard, et peut-être que nos erreurs serviront à ce que quelqu’un ne refasse pas les mêmes =D.</p>
+    <article>
+      <p>La date de rendu de notre projet de Gauntlet, qui est l’un des deux gros projet de fin de deuxième année, s’est terminée il y a à peu près une semaine maintenant. Il y a du bon et du moins bon, et je me suis dit que mettre sur papier numérique ce qu’il faut en retirer peut être un exercice utile, déjà pour moi pour avoir des notes pour plus tard, et peut-être que nos erreurs serviront à ce que quelqu’un ne refasse pas les mêmes =D.</p>
 
 <!--break-->
 
@@ -297,8 +303,9 @@ Ce Gauntlet-like est le deuxième jeu sur lequel je travaille, après TuxleTriad
 
 <p>Je n’écrirai pas d’autres articles sur le sujet puisque je ne pense pas que j’aurais à re-travailler avec sauf pour un projet personnel à la limite. Sur ce, bonne soirée et félicitations pour m’avoir lu jusqu’au bout! =D J’vous donnerai un cookie si on se croise.</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -313,25 +320,35 @@ Ce Gauntlet-like est le deuxième jeu sur lequel je travaille, après TuxleTriad
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/planet/2016/06/10/dev-dun-gauntlet-on-fait-mumuse-avec-irrlicht-et-irredit" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -343,11 +360,12 @@ Ce Gauntlet-like est le deuxième jeu sur lequel je travaille, après TuxleTriad
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

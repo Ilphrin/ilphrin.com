@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>1
 
 Mai
@@ -63,14 +64,18 @@ Mai
 2014
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Linux Kernel: Sécurité et Configuration (1ère partie)'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Linux Kernel: Sécurité et Configuration (1ère partie)&url=/2014/05/01/linux-kernel-securite-et-configuration-partie-1.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Linux Kernel: Sécurité et Configuration (1ère partie)'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Linux Kernel: Sécurité et Configuration (1ère partie)&url=/2014/05/01/linux-kernel-securite-et-configuration-partie-1.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -203,7 +208,8 @@ Mai
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Salut tout le monde!</p>
+    <article>
+      <p>Salut tout le monde!</p>
 
 <p>Je vous présente aujourd’hui la suite (qui s’est fait attendre) de traduction d’article sur le noyau Linux. Pour rappel vous pourrez retrouver ces articles sur <a href="linux.org">linux.org</a>, ainsi que tout un tas d’autres articles et tutos vraiment super intéressants, je vous conseille vraiment d’y aller! ( Seul bémol: Faut aimer l’anglais. ^^) D’ailleurs on peut voir sur ce site qu’il y a une vingtaine d’articles qui continuent celui-ci sur le noyau Linux, pour vous dire à quel point j’ai pris du retard! Pour me rattraper j’ai fais deux articles en un ici ;)</p>
 
@@ -307,8 +313,9 @@ Mai
 
 <p>Dans le prochain article, nous configurerons le sous-système IRQ et les choix qui suivent.</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -323,25 +330,35 @@ Mai
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="linux-kernel-securite-et-configuration-partie-1">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2014/05/01/linux-kernel-securite-et-configuration-partie-1.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/2014/05/01/linux-kernel-securite-et-configuration-partie-1" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -353,11 +370,12 @@ Mai
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

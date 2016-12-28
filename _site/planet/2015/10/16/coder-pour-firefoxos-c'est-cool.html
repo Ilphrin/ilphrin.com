@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>16
 
 Octobre
@@ -63,14 +64,18 @@ Octobre
 2015
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Premiers pas avec Gaia (FirefoxOS)'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Premiers pas avec Gaia (FirefoxOS)&url=/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Premiers pas avec Gaia (FirefoxOS)'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Premiers pas avec Gaia (FirefoxOS)&url=/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -203,7 +208,8 @@ Octobre
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>J’utilise tous les jours mon Open C avec Firefox OS dessus, depuis deux ans maintenant (plus ou moins).
+    <article>
+      <p>J’utilise tous les jours mon Open C avec Firefox OS dessus, depuis deux ans maintenant (plus ou moins).
 J’ai vu passer l’OS de la version 1.2 jusqu’à la version 3.0 d’aujourd’hui, si on omet la “nouvelle” branche 2.5 que je n’ai pas encore pu observer par moi-même.
 Je met fréquemment a jour mon téléphone grâce au travail considérable de la communauté francophone pour Firefox OS qui a travaillé dur pour fournir un système automatisé de construction de builds installable sur les Open C vendu sur Ebay et dans les magasin en France, et ce avec différentes branches (la Beta, la Aurora, la Nightly, et Spark en 2.5), tout est expliqué en détail sur le site <a href="http://builds.firefoxos.mozfr.org/doc/fr/devices/zte-open-c">http://builds.firefoxos.mozfr.org/doc/fr/devices/zte-open-c</a></p>
 
@@ -236,8 +242,9 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
 
 <p>Avant de finir, vous avez vu ce que l’on peut faire avec Spark (Firefox OS 2.5)? Avec une recherche sur Lilo/DuckDuckGo/Tonton Roger, on peut trouver des exemple de deux/trois add-ons qui ont l’air vachement cool! Notamment un gars qui a rajouté une dizaine d’icones en bas du menu des notifications (le menu qu’on fait descendre avec un glissement de doigt du bord haut vers le bas). Malheureusement maintenant que j’écris cet article je n’arrive plus a retrouver où est-ce que j’ai vu cet add-on, mais bon tant pis il re-fera bien son apparition!</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -252,25 +259,35 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="coder-pour-firefoxos-c'est-cool">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -282,11 +299,12 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

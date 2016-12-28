@@ -42,8 +42,8 @@ Je pense qu'on a un exemple typique de différences que l'on peut retrouver entr
 
 Il y a aussi la façon dont on exploite les ressources d'une communauté (je sais pas si exploiter est un très joli mot dans cette situation). Par exemple le fait de fournir une API et une documentation bien faite pour développer des extensions à son logiciel est un excellent moyen de booster un projet (Dois-je parler de Vim/Neovim, Firefox, LibreOffice, et d'autres?). 
 
-<div class="note">
-<p>
-Je pense bientot refaire le système de commentaire de mon site, ce truc codé à la main ne fonctionne pas du tout et je ne reçois jamais les commentaires correctement. J'ai entendu parler de HashOver pour les sites statiques je vais voir ce que ça donne!
-</p>
+<div class="ui icon message inverted">
+<i class="icon sticky note"></i>
+<div class="content">Je pense bientot refaire le système de commentaire de mon site, ce truc codé à la main ne fonctionne pas du tout et je ne reçois jamais les commentaires correctement. J'ai entendu parler de HashOver pour les sites statiques je vais voir ce que ça donne!
+</div>
 </div>

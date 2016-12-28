@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>27
 
 Décembre
@@ -63,14 +64,18 @@ Décembre
 2016
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Un nouveau stock de musiques en libre écoute'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Un nouveau stock de musiques en libre écoute&url=/planet/2016/12/27/un-nouveau-stock-de-musiques-libres.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Un nouveau stock de musiques en libre écoute'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Un nouveau stock de musiques en libre écoute&url=/planet/2016/12/27/un-nouveau-stock-de-musiques-libres.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -203,7 +208,8 @@ Décembre
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Je n’en parle pas beaucoup, mais je suis un grand féru de musique et, bien que je ne sois pas un connaisseur technique dans le domaine, j’apprécie énormément la découverte de nouveaux groupes et de nouveaux genres. Je vais régulièrement sur le site de <a href="https://jamendo.com">Jamendo</a>, qui présente un paquet d’artistes très hétérogènes, le tout sous écoute libre pour un usage personnel. Pour changer un peu du thème de l’informatique je me suis dit que j’allais faire un premier pack des derniers groupes que j’ai écouté sur le site.</p>
+    <article>
+      <p>Je n’en parle pas beaucoup, mais je suis un grand féru de musique et, bien que je ne sois pas un connaisseur technique dans le domaine, j’apprécie énormément la découverte de nouveaux groupes et de nouveaux genres. Je vais régulièrement sur le site de <a href="https://jamendo.com">Jamendo</a>, qui présente un paquet d’artistes très hétérogènes, le tout sous écoute libre pour un usage personnel. Pour changer un peu du thème de l’informatique je me suis dit que j’allais faire un premier pack des derniers groupes que j’ai écouté sur le site.</p>
 
 <!--break-->
 
@@ -216,6 +222,9 @@ Décembre
 <p>C’est pas courant que j’en écoute alors je vais commencer par un peu de musique électronique. DJ Spooky est un compositeur, éditeur et auteur américain, et a sorti dernièrement un projet nommé <a href="http://djspooky.com/antarctica/">Book of Ice</a> qui parle de l’Antarctique. Dans ce projet on retrouve un album composé par lui-même dans un style électro qui s’appelle <a href="https://www.jamendo.com/album/122759/of-water-and-ice">Of Water And Ice</a>.</p>
 
 <p>La musique qui m’a le plus marqué est la musique éponyme de l’album, qui reflète beaucoup ce continent glacé notamment avec l’écho de la voix qui donne une impression de vasteté. À écouter pour les amateurs d’électro ;)</p>
+
+<p>&lt;/div&gt;
+&lt;/div&gt;</p>
 
 <p><span class="rightImg"><img src="/images/alumno.jpg" alt="Alumno" /></span></p>
 
@@ -241,8 +250,9 @@ Décembre
 
 <p>Si je devais parler de tous les groupes que j’écoute sur Jamendo on ne s’en sortirait pas donc je vais m’arrêter là pour le moment, je sortirais peut-être une deuxième article sur le sujet si l’envie s’en fait ressentir ;)</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -257,25 +267,35 @@ Décembre
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="un-nouveau-stock-de-musiques-libres">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2016/12/27/un-nouveau-stock-de-musiques-libres.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/planet/2016/12/27/un-nouveau-stock-de-musiques-libres" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -287,11 +307,12 @@ Décembre
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

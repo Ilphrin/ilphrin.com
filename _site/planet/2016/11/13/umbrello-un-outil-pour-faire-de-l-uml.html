@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>13
 
 Novembre
@@ -63,14 +64,18 @@ Novembre
 2016
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Umbrello: Un outil pour faire de l'UML'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Umbrello: Un outil pour faire de l'UML&url=/planet/2016/11/13/umbrello-un-outil-pour-faire-de-l-uml.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Umbrello: Un outil pour faire de l'UML'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Umbrello: Un outil pour faire de l'UML&url=/planet/2016/11/13/umbrello-un-outil-pour-faire-de-l-uml.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -225,7 +230,8 @@ Novembre
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Pour nos projets a Epitech on doit de plus en plus travailler la partie conception plutôt que le projet en lui-même. Déjà parce que nos projets se complexifient: On passe d’un simple bash/sh à recoder à un équivalent de Mumble avec un client et un serveur tous les deux multi-plateforme. Et aussi bah… parce que ya pas que le code dans le dév, il faut réfléchir consciencieusement à l’architecture de son projet, aux différents composants que l’on va créer/coder et comment on va lier tout ce bazar.</p>
+    <article>
+      <p>Pour nos projets a Epitech on doit de plus en plus travailler la partie conception plutôt que le projet en lui-même. Déjà parce que nos projets se complexifient: On passe d’un simple bash/sh à recoder à un équivalent de Mumble avec un client et un serveur tous les deux multi-plateforme. Et aussi bah… parce que ya pas que le code dans le dév, il faut réfléchir consciencieusement à l’architecture de son projet, aux différents composants que l’on va créer/coder et comment on va lier tout ce bazar.</p>
 
 <!--break-->
 
@@ -270,8 +276,9 @@ Novembre
 
 <p>J’espère qu’il y aura des modifications faites sur ce sujet d’ici les prochaines versions, j’irais jeter un oeil sur leur liste de bugs pour essayer d’en parler. Sinon je vous conseille de l’essayer il est tout de même pratique et support quelques fonctionnalités avancés telles que l’import/export de code vers/depuis l’UML.</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -286,25 +293,35 @@ Novembre
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="umbrello-un-outil-pour-faire-de-l-uml">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2016/11/13/umbrello-un-outil-pour-faire-de-l-uml.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/planet/2016/11/13/umbrello-un-outil-pour-faire-de-l-uml" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -316,11 +333,12 @@ Novembre
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

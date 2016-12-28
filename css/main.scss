@@ -53,7 +53,7 @@ $secondary_color: #283A48;
 
 html
 {
-  font-size: 19px;
+  font-size: 17px;
 }
 
 body
@@ -71,7 +71,7 @@ h2, h1
   font-size: 160%;
 }
 
-.header
+body > .header
 {
   @include padding-both(10%);
   height: 120px;
@@ -267,27 +267,23 @@ a, a:visited
       }
     }
     #details {
-      p {
-        display: flex;
-        font-size: 100%;
-        object {
-          width: 32px;
-          height: 32px;
-          margin-right: 4px;
-        }
-        a {
-          width: 38px;
-          height: 32px;
-          margin-right: 10px;
-        }
-        .twitter-share-button {
-          background: url(/images/twitter.svg) center;
-          background-size: 100% 100%;
-        }
-        .diaspora-share-button {
-          background: url(/images/diaspora.svg) center;
-          background-size: 100% 100%;
-        }
+      object {
+        width: 32px;
+        height: 32px;
+        margin-right: 4px;
+      }
+      a {
+        width: 38px;
+        height: 32px;
+        margin-right: 10px;
+      }
+      .twitter-share-button {
+        background: url(/images/twitter.svg) center;
+        background-size: 100% 100%;
+      }
+      .diaspora-share-button {
+        background: url(/images/diaspora.svg) center;
+        background-size: 100% 100%;
       }
     }
   }
@@ -302,18 +298,6 @@ a, a:visited
       @include margin-height(1%);
       @include margin-both(auto);
       max-width: 100%;
-    }
-    .note {
-      background-color: #337aca;
-      border-radius: 20px;
-      @include padding-both(8px);
-      padding-top: 8px;
-      padding-bottom: 8px;
-      box-shadow: inset 1px 1px 6px #002d67;
-      p::before {
-        content: "Note:";
-        font-weight: bolder;
-      }
     }
   }
   a
@@ -341,6 +325,12 @@ a, a:visited
   .rightImg {
     float: right;
     padding-left: 10px;
+  }
+  #comments {
+    box-sizing: border-box;
+  }
+  #comments *{
+    box-sizing: inherit;
   }
 }
 
@@ -526,43 +516,6 @@ pre
 
 hr {
   color: #008292;
-}
-
-#name:invalid, #email:invalid {
-  @include shadow-four(red);
-  background-color: red;
-}
-
-textarea, input {
-  background-color: white;
-  border: 1px solid white;
-  font-size: 95%;
-  @include shadow-four(white);
-  transition: all .3s;
-  border: none;
-}
-
-input[type="submit"] {
-  display: block;
-  cursor: pointer;
-  margin: 30px;
-  margin-left: 0px;
-  font-size: 120%;
-  &:hover
-  {
-    background-color: green;
-    @include shadow-four(green);
-  }
-}
-
-#email, #name, #link {
-  margin-left: 10px;
-  &:focus
-  {
-    background-color: #555;
-    @include shadow-four(#555);
-    color: white;
-  }
 }
 
 #accounts {

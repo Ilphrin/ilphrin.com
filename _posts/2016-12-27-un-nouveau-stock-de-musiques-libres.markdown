@@ -11,13 +11,16 @@ Je n'en parle pas beaucoup, mais je suis un grand féru de musique et, bien que 
 
 Pour chaque artiste, groupe, ou album le titre est un lien vers l'une des musiques qui lui est lié.
 
-<span class="leftImg">![DJ Spooky](/images/djspooky.jpg)</span>
+  <span class="leftImg">![DJ Spooky](/images/djspooky.jpg)</span>
 
 ### [DJ Spooky](http://ilphrin.com/kevin/projects/dodgell.html)
 
 C'est pas courant que j'en écoute alors je vais commencer par un peu de musique électronique. DJ Spooky est un compositeur, éditeur et auteur américain, et a sorti dernièrement un projet nommé [Book of Ice](http://djspooky.com/antarctica/) qui parle de l'Antarctique. Dans ce projet on retrouve un album composé par lui-même dans un style électro qui s'appelle [Of Water And Ice](https://www.jamendo.com/album/122759/of-water-and-ice).
 
 La musique qui m'a le plus marqué est la musique éponyme de l'album, qui reflète beaucoup ce continent glacé notamment avec l'écho de la voix qui donne une impression de vasteté. À écouter pour les amateurs d'électro ;)
+
+</div>
+</div>
 
 <span class="rightImg">![Alumno](/images/alumno.jpg)</span>
 

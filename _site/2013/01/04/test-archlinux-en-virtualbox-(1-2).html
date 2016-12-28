@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>4
 
 Janvier
@@ -63,14 +64,18 @@ Janvier
 2013
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Test ArchLinux en VirtualBox ( 1/2 )'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Test ArchLinux en VirtualBox ( 1/2 )&url=/2013/01/04/test-archlinux-en-virtualbox-(1-2).html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Test ArchLinux en VirtualBox ( 1/2 )'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Test ArchLinux en VirtualBox ( 1/2 )&url=/2013/01/04/test-archlinux-en-virtualbox-(1-2).html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -203,7 +208,8 @@ Janvier
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Récemment je me suis décidé à apprendre à utiliser et à comprendre le fonctionnement de Linux. Du coup j’ai voulu me tourner vers une distribution qui m’offrirait cette possibilité dès son installation. Je me suis rapidement laissé dire que ArchLinux conviendrait à mes besoins. Mais comme mon laptop ne possède pas une capacité de stockage extraordinaire (20 Go…) je l’ai mis sur un disque dur externe sous virtualbox. En lui accordant une place de 20Go, ce qui devrait largement suffire étant donné que je ne vais rien installer de superflu sur cette machine virtuelle. Je me suis aussi dit que ça pourrait en intéresser quelques-uns si je décrivais tout ce que j’avais fait dans un article. Néanmoins il y a trop de choses à faire, et je serais obligé de découper cet article en deux (sinon ça fait quand même un peu gros et lourd à la fin…)
+    <article>
+      <p>Récemment je me suis décidé à apprendre à utiliser et à comprendre le fonctionnement de Linux. Du coup j’ai voulu me tourner vers une distribution qui m’offrirait cette possibilité dès son installation. Je me suis rapidement laissé dire que ArchLinux conviendrait à mes besoins. Mais comme mon laptop ne possède pas une capacité de stockage extraordinaire (20 Go…) je l’ai mis sur un disque dur externe sous virtualbox. En lui accordant une place de 20Go, ce qui devrait largement suffire étant donné que je ne vais rien installer de superflu sur cette machine virtuelle. Je me suis aussi dit que ça pourrait en intéresser quelques-uns si je décrivais tout ce que j’avais fait dans un article. Néanmoins il y a trop de choses à faire, et je serais obligé de découper cet article en deux (sinon ça fait quand même un peu gros et lourd à la fin…)
 <!--break-->
 Voilà la majorité des sites sur lesquels je me suis basé pour cette installation:</p>
 
@@ -408,8 +414,9 @@ Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg e
 
 <p>Merci d’avoir pris le temps de lire cet article,  n’hésitez pas à me dire si vous avez des problème ou des suggestions. Sur ce je vous dis à bientôt et bonne fin de journée!</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -424,25 +431,35 @@ Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg e
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="test-archlinux-en-virtualbox-(1-2)">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2013/01/04/test-archlinux-en-virtualbox-(1-2).html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/2013/01/04/test-archlinux-en-virtualbox-(1-2)" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -454,11 +471,12 @@ Dans la deuxième partie je m’occuperais de l’installation du serveur Xorg e
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>8
 
 Octobre
@@ -63,14 +64,18 @@ Octobre
 2012
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Un jeu de dessin basé sur les lois de la physique'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Un jeu de dessin basé sur les lois de la physique&url=/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Un jeu de dessin basé sur les lois de la physique'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Un jeu de dessin basé sur les lois de la physique&url=/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -203,7 +208,8 @@ Octobre
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Caph est un petit jeu extrêmement sympathique dont le but est de faire se coller un objet A sur un objet B. Basé sur deux principes : Primo tout est a base de dessins. Pour parvenir a votre objectif, vous n’avez que votre souris qui vous permet de dessiner des formes sur lesquelles vont venir se construire vos techniques pour faire avances l’objet A. Secundo la difficulté la plus importante, est que ce jeu est basé sur les lois de la physique ! En effet selon ce que vous dessinez il y aura des effet de gravité et d’énergie mécanique variable.
+    <article>
+      <p>Caph est un petit jeu extrêmement sympathique dont le but est de faire se coller un objet A sur un objet B. Basé sur deux principes : Primo tout est a base de dessins. Pour parvenir a votre objectif, vous n’avez que votre souris qui vous permet de dessiner des formes sur lesquelles vont venir se construire vos techniques pour faire avances l’objet A. Secundo la difficulté la plus importante, est que ce jeu est basé sur les lois de la physique ! En effet selon ce que vous dessinez il y aura des effet de gravité et d’énergie mécanique variable.
 <!--break-->
 ##Installation</p>
 
@@ -238,8 +244,9 @@ Octobre
 
 <p>Voilà j’espère que vous vous amuserez bien avec ce petit jeu, en tout cas au début c’est un peu difficile a prendre en main mais après ça va mieux. Bien sur les niveau vont en difficulté crescendo ! (je ne sais pas encore combien de niveau il existe, je vous le dirais quand je l’aurais fini x) ). Sur ce bonne fin de journée a tous et amusez-vous bien !</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -254,25 +261,35 @@ Octobre
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="un-jeu-de-dessin-base-sur-les-lois-de-la-physiques">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -284,11 +301,12 @@ Octobre
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

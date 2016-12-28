@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>6
 
 Novembre
@@ -63,14 +64,18 @@ Novembre
 2016
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Un peu de SEO facile avec Jekyll'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Un peu de SEO facile avec Jekyll&url=/planet/2016/11/06/un-peu-de-seo-facile-avec-jekyll.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Un peu de SEO facile avec Jekyll'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Un peu de SEO facile avec Jekyll&url=/planet/2016/11/06/un-peu-de-seo-facile-avec-jekyll.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -225,7 +230,8 @@ Décembre
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Quand on se balade sur Internet on en vient forcément à taper quelque chose sur son moteur de recherche préféré, la magie opère, et on se retrouve avec des tonnes des liens correspondant à ce que l’on cherchait, selon le titre du site, de l’article, de la page, ou du contenu. Mais pour que cela se fasse il faut indiquer au moteur de recherche à quoi sert chaque élément de notre page et quel est son role afin d’être référencé correctement. C’est le but de la SEO que je vais expliquer sans rentrer dans les détails</p>
+    <article>
+      <p>Quand on se balade sur Internet on en vient forcément à taper quelque chose sur son moteur de recherche préféré, la magie opère, et on se retrouve avec des tonnes des liens correspondant à ce que l’on cherchait, selon le titre du site, de l’article, de la page, ou du contenu. Mais pour que cela se fasse il faut indiquer au moteur de recherche à quoi sert chaque élément de notre page et quel est son role afin d’être référencé correctement. C’est le but de la SEO que je vais expliquer sans rentrer dans les détails</p>
 
 <!--break-->
 <p>La SEO (pour Search Engine Optimization si vous avez envie de crâner en soirée mondaine web), “est un ensemble de techniques visant à optimiser la visibilité d’un site web dans les pages de résultats de recherche” (cf <a href="https://fr.wikipedia.org/wiki/Optimisation_pour_les_moteurs_de_recherche">Wikipédia</a>). Lorsque vous créez une page Web basiqe, vous utilisez du HTML pour baliser les différents types de contenu qui composent votre page. Par exemple pour la page que vous lisez ça donne un truc dans ce genre:</p>
@@ -422,8 +428,9 @@ On peut aussi imaginer pouvoir mettre en place des itemtype specifique à chaque
 <p>Bon pour ça je suppose que le plus propre et modulaire serait de faire un plugin Jekyll, mais vu que j’aime pas le Ruby c’est pas prévu dans mon emploi du temps. Par contre si ça intéresse quelqu’un… :D</p>
 
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -438,25 +445,35 @@ On peut aussi imaginer pouvoir mettre en place des itemtype specifique à chaque
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="un-peu-de-seo-facile-avec-jekyll">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2016/11/06/un-peu-de-seo-facile-avec-jekyll.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/planet/2016/11/06/un-peu-de-seo-facile-avec-jekyll" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -468,11 +485,12 @@ On peut aussi imaginer pouvoir mettre en place des itemtype specifique à chaque
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

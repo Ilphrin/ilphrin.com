@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>2
 
 Juin
@@ -63,14 +64,18 @@ Juin
 2013
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi&url=/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Pour Les Nostalgiques Du Graphique Installez Sous Arch Avec Octopi&url=/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -203,7 +208,8 @@ Juin
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Salut tout l’monde!</p>
+    <article>
+      <p>Salut tout l’monde!</p>
 
 <p>Cela commence à faire quelque mois que je tourne sous Archlinux, et mis à part un plantage Xorg qui m’a forcé à faire une petite ré-installation, je me plais vraiment avec cette distribution! Notamment grâce au dépôt communautaire AUR qui, jusqu’à maintenant, m’a permis d’installation tous les soft dont j’avais envie, et que je ne trouvais pas dans les gestionnaire de paquet des autres distributions.
 <!--break-->
@@ -221,8 +227,9 @@ Aujourd’hui je vais vous parler d’un logiciel fournissant un frontend comme 
 
 <p>Comme vous pouvez le voir dans la capture ci-dessus, il se présente comme un gestionnaire de paquet classique:  (Dé-)Installation, mise à jour système, etc…. Mais il présente aussi certaines fonctionnalités sympas, comme l’affichage des news sur Archlinux dans “Actualités, ou l’onglet “Utilisation” qui donne tout ce qu’il faut pour savoir utiliser correctement ce logiciel, où l’on peut voir notamment qu’un bon nombre de raccourcis en facilitent l’utilisation.</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -237,25 +244,35 @@ Aujourd’hui je vais vous parler d’un logiciel fournissant un frontend comme 
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/2013/06/02/pour-les-nostalgiques-du-graphique-installez-sous-arch-avec-octopi" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -267,11 +284,12 @@ Aujourd’hui je vais vous parler d’un logiciel fournissant un frontend comme 
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

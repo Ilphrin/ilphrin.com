@@ -5,6 +5,7 @@
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
   <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
   <title>
     Kevin / Ilphrin
@@ -55,7 +56,7 @@
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>25
 
 Octobre
@@ -63,14 +64,18 @@ Octobre
 2013
 </span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='Dungeon Crawl Stone soup: La perle à avoir'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title=Dungeon Crawl Stone soup: La perle à avoir&url=/2013/10/25/dungeon-craw-stone-soup-la-perle-a-avoir.html" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Dungeon Crawl Stone soup: La perle à avoir'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Dungeon Crawl Stone soup: La perle à avoir&url=/2013/10/25/dungeon-craw-stone-soup-la-perle-a-avoir.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -203,7 +208,8 @@ Octobre
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <p>Si il y a bien un domaine auquel personne n’ayant une vie sociale ne peut se souscrire ou au moins en entendre des ragots, c’est bien celui du jeu vidéo. Mais revenons quelques années en arrière. Pas tout à fait à ses débuts, mais à une époque ou les graphismes n’importaient pas tant que ça et, du fait de leurs nombre encore restreint à ce moment-là, l’accent était mis sur le temps de jeu et l’intérêt, et c’était bien visible pour les jeux de rôles notamment (pour ceux qui ont un peu de culture à ce niveau-là, rappelez-vous des Might &amp; Magic et The Eye of the Beholder).
+    <article>
+      <p>Si il y a bien un domaine auquel personne n’ayant une vie sociale ne peut se souscrire ou au moins en entendre des ragots, c’est bien celui du jeu vidéo. Mais revenons quelques années en arrière. Pas tout à fait à ses débuts, mais à une époque ou les graphismes n’importaient pas tant que ça et, du fait de leurs nombre encore restreint à ce moment-là, l’accent était mis sur le temps de jeu et l’intérêt, et c’était bien visible pour les jeux de rôles notamment (pour ceux qui ont un peu de culture à ce niveau-là, rappelez-vous des Might &amp; Magic et The Eye of the Beholder).
 <!--break-->
 Pourquoi je parle de ça? Et bien c’est parce que l’on peut classer Dungeon Crawl: Stone soup dans cette catégorie de jeux de rôle “old-school” et pourtant si prenant, si intéressant. Ce jeu se veut d’une simplicité poussée à l’extrême en terme de graphisme, si bien qu’il pourrait tourner sur n’importe quelle machine et autre ordinausore. Si l’on se tourne du coté du ‘background’, l’histoire et l’univers, il n’y a rien. Nous incarnons un aventurier dont la quête est de retrouver l’Orbe de Zot dans un dangereux donjon, et pour ce faire on doit récupérer un certains nombre de runes. Ce n’est pas quelque chose de gênant en soi d’avoir peu d’information car il y a déjà fort à faire avec ce qui est présent!</p>
 
@@ -273,8 +279,9 @@ Pourquoi je parle de ça? Et bien c’est parce que l’on peut classer Dungeon 
 
 <p>Et vous voilà en possession de ce jeu! J’espère que vous vous amuserez bien, bonne journée à tous! ;)</p>
 
+    </article>
     <div id="comments" itemprop="comment">
-  <h2>Commentaires</h2>
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   
   
       
@@ -289,25 +296,35 @@ Pourquoi je parle de ça? Et bien c’est parce que l’on peut classer Dungeon 
   <p style="font-style: italic">
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
-  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="dungeon-craw-stone-soup-la-perle-a-avoir">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2013/10/25/dungeon-craw-stone-soup-la-perle-a-avoir.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
     <input type="hidden" name="fields[post_id]" value="/2013/10/25/dungeon-craw-stone-soup-la-perle-a-avoir" />
-    <div id="form_info">
-      <div id="title_form">
-        <p>Nom:</p>
-        <p>E-mail:</p>
-        <p>Site Web:</p>
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
       </div>
-      <div id="content_form">
-        <p><input type="text" size="25" name="fields[name]" id="name" placeholder="(Requis)" required/></p>
-        <p><input type="email" size="25" name="fields[email]" id="email" placeholder="(Requis, non publié)" required/></p>
-        <p><input type="text" size="25" name="fields[url]" id="link" placeholder="(Optionnel)"/></p>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
       </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
     </div>
-    <textarea name="fields[message]" rows="10" cols="60" id="comment" placheolder="(Requis)" required></textarea>
-    <input type="submit" name="submit" value="Envoyer ✔"/>
   </form>
 </div>
 
@@ -319,11 +336,12 @@ Pourquoi je parle de ça? Et bien c’est parce que l’on peut classer Dungeon 
 
   <script src="/js/previous.js" charset="utf-8"></script>
   <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
 
   <!-- Piwik -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

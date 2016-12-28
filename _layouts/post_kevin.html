@@ -11,17 +11,21 @@ lang: fr
     </div>
     <div id="details">
       <p itemprop="datePublished">
-        <object data="/images/calendar-icon.svg" type="image/svg_xml"></object>
+        <i class="big calendar icon"></i>
         <span>{% include date.html date=page.date %}</span>
       </p>
-      <p>
-        <a href="https://twitter.com/share?text='{{page.title}}'" class="twitter-share-button" target="_blank"></a>
-        <span>Twitter</span>
-      </p>
-      <p>
-        <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank" class="diaspora-share-button"></a>
-        <span>Diaspora*</span>
-      </p>
+      <div>
+        <a href="https://twitter.com/share?text='{{page.title}}'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
     </div>
   </div>
   <div class="content" itemprop="articleBody">
@@ -52,7 +56,9 @@ lang: fr
 }());
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    {{ content }}
+    <article>
+      {{ content }}
+    </article>
     {% include comment_template.html post=page %}
   </div>
 </div>

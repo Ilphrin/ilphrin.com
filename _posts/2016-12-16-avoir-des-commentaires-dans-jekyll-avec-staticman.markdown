@@ -69,6 +69,8 @@ Là il ne faut surtout pas oublier deux choses: la première c'est l'action du f
 
 Voilà vous avez maintenant les outils pour mettre en place des commentaires facilement et rapidement pour votre site, vous n'aurez plus d'excuses ;)
 
-<div class="note">
-<p> Pour plus de lecture sur le sujet je vous conseille aussi ce très bon article (en anglais) <a href="https://mademistakes.com/articles/jekyll-static-comments/">SUR CE LIEN</a></p>
+<div class="ui icon message inverted">
+<i class="icon sticky note"></i>
+<div class="content"> Pour plus de lecture sur le sujet je vous conseille aussi ce très bon article (en anglais) <a href="https://mademistakes.com/articles/jekyll-static-comments/">SUR CE LIEN</a></content>
+</div>
 </div>
