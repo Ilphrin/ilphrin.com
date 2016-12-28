@@ -3,6 +3,7 @@ layout: post_kevin
 title: "Un nouveau stock de musiques en libre écoute"
 author: kevin
 category: planet
+serie: music
 ---
 
 Je n'en parle pas beaucoup, mais je suis un grand féru de musique et, bien que je ne sois pas un connaisseur technique dans le domaine, j'apprécie énormément la découverte de nouveaux groupes et de nouveaux genres. Je vais régulièrement sur le site de [Jamendo](https://jamendo.com), qui présente un paquet d'artistes très hétérogènes, le tout sous écoute libre pour un usage personnel. Pour changer un peu du thème de l'informatique je me suis dit que j'allais faire un premier pack des derniers groupes que j'ai écouté sur le site.
