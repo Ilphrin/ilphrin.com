@@ -50,7 +50,11 @@ D'ailleurs la jaquette est un spartiate tel qu'on peut le voir dans le film 300 
 On termine en douceur avec un compositeur italien du nom de [Mattia Vlad Morleo](http://nuke.morleoeditore.com/), il fait presque exclusivement de la musique classique avec comme instrument principal du piano. C'est le style le plus calme des 4 groupes/compositeurs que je présente ici, j'utilise notamment [Fiore D'Inchiostro](https://www.jamendo.com/track/1305561/fiore-d-inchiostro) pour le menu de mon jeu vidéo [Dodgell](http://ilphrin.com/kevin/projects/dodgell.html)
 {% endrow %}
 
+<<<<<<< HEAD
 
 {% row full %}
 Si je devais parler de tous les groupes que j'écoute sur Jamendo on ne s'en sortirait pas donc je vais m'arrêter là pour le moment, je sortirais peut-être une deuxième article sur le sujet si l'envie s'en fait ressentir ;)
 {% endrow %}
+=======
+Si je devais parler de tous les groupes que j'écoute sur Jamendo on ne s'en sortirait pas donc je vais m'arrêter là pour le moment, je sortirais peut-être un deuxième article sur le sujet si l'envie s'en fait ressentir ;)
+>>>>>>> articles
