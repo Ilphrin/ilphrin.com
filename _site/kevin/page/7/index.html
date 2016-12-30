@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
+
+  <title>
+    Kevin / Ilphrin
+  </title>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//ilphrin.com/piwik/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+  <div class="headerCursor">
+    <img src="/images/decoration/header_01.svg" />
+  </div>
+</div>
+
+    <div class="main">
+        
+  <div class="header_blog" style="background-image: url('/images/header_articles/vim_nvim.png');">
+    <a href="/planet/2016/12/30/oni-un-gui-pour-neovim.html">
+      <h1>Oni: Un GUI sympa pour Neovim</h1>
+      <h2>30
+
+Décembre
+
+2016
+</h2>
+      <span><p>Ca faisait longtemps que je n’avais pas parlé de <a href="https://neovim.io/">Neovim</a> hein? Eh bien pour la peine je vais présenter un GUI fait avec Electron pour Neovim qui claque</p>
+
+</span>
+    </a>
+  </div>
+
+
+<div class="pagination">
+  <div class="prev">
+    
+      <a rel="prev" href="/kevin/page/6">&laquo; Prev</a>
+    
+  </div>
+  <div class="page_counter">
+    <!-- badass navigation pages handler 8) -->
+    
+    
+    
+
+      
+        
+          <a href="/kevin//page/5">5</a>
+        
+      
+        
+          <a href="/kevin//page/6">6</a>
+        
+      
+        
+          <em>7</em>
+        
+      
+        
+          <a href="/kevin//page/8">8</a>
+        
+      
+        
+          <a href="/kevin//page/9">9</a>
+        
+      
+
+  </div>
+  <div class="next">
+    
+      <a rel="next" href="/kevin/page/8">Suiv</a>
+    
+  </div>
+</div>
+
+<div class="posts">
+
+  <div class="post">
+    <h2><a href="/planet/2014/12/14/firefox-os-4-mois-apres-son-utilisation.html">Firefox OS 4 mois après son utilisation</a></h2>
+    <p>Salut tout le monde!</p>
+
+<p>Depuis quelques temps sur diaspora* je demande un peu d’aide ou pose des questions par rapport à Firefox OS, car depuis le mois d’Aout j’ai fais la main base sur un Open C!</p>
+
+<p>Il faut savoir que depuis mon arrivé au lycée, il y a 4 ans, je suis resté avec un Samsung à clapet gris. Il me convenait très bien pour ce que j’en faisais, c’est-à-dire du sms en masse et très vite (j’enverrais une tartelette à la fraise au gars qui à inventé le T9) et puis c’est tout. Je ne m’intéressais absolument pas aux smartphones pour plusieurs raisons. La principale était le manque d’utilité que je pouvais accorder à ces gadgets. Pourquoi avoir une application pour lire mes mails quand je peux les lire des chez moi sous Thunderbird avec un écran qui me fasse pas plisser les yeux?
+
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2014/10/17/tuxle-triad-et-pygame-avoir-une-main.html">Tuxle Triad et Pygame: Avoir une main</a></h2>
+    <p>Salut à tous!</p>
+
+<p>Me voilà aujourd’hui pour un deuxième article sur Pygame. Je vais cette fois-ci vous expliquer comment créer une “main” remplie de cartes tirées aléatoirement, et positionner les cartes dans la main.</p>
+
+<p>La dernière fois je vous avais expliqué comment fonctionnait un objet <strong>Card</strong>. Mais pour pouvoir jouer il en faudra plus d’une (ça risque d’être quelque peu ennuyant sinon ;) ). Ceux qui ont essayé le jeu savent combien de carte il faut, c’est-à-dire 5 par joueur. Pour faire ça nous allons utiliser tout simplement une liste. Dans la fonction <strong>__init__</strong> du fichier  game.py, on peut voir les deux lignes suivantes:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>self.player1Hand = self.randomHand(1)
+
+self.player2Hand = self.randomHand(-1)
+</code></pre>
+</div>
+
+
+  </div>
+
+  <div class="post">
+    <h2><a href="/planet/2014/08/15/introduction-a-pygame.html">Introduction à Pygame</a></h2>
+    <p>Salut tout le monde!</p>
+
+<p>Cela fait un bon moment que j’étudie la programmation, j’ai d’abord commencé par le C pour le C++, et même les langages web. Mais ce n’était que de la théorie et je voulais essayer de créer mon propre petit programme, et j’ai découvert le langage Python il y a environ 1 an grâce au célèbre livre <a href="http://python.developpez.com/cours/apprendre-python3/">Apprendre à programmer avec Python 3</a>.</p>
+
+<p>Mais encore une fois je n’avais rien crée moi-même, je n’avais pendant longtemps fait que la théorie, même si ce livre propose tout un tas d’applications du cours, ce n’était pas de moi que venaient les idées ni le gros du code.  Il y a plusieurs semaines je me suis donc lancé dans une tentative de faire mon propre programme, et plus exactement un jeu, et pour cela j’ai dû apprendre à utiliser la bibliothèque <a href="http://www.pygame.org/news.html">Pygame</a>.
+
+  </div>
+
+  <div class="post">
+    <h2><a href="/2014/08/10/sunflower-pass-en-version-0-2-59.html">Sunflower passe en version 0.2-59</a></h2>
+    <p>Bonjour à tous!</p>
+
+<p>Ce n’est pas la première fois que je parle de Sunflower. Petite piqûre de rappel, c’est un gestionnaire de fichier pour  GNU/Linux entièrement codé en Python, avec la bibliothèque GTK. La particularité de Sunflower réside dans le fait qu’il propose une vue en panneaux jumelés, c’est-à-dire que c’est comme si on avait deux onglets d’exploration d’ouvert simultanément, chacun des onglets prenant une portion de la largeur de la fenêtre.
+
+  </div>
+
+  <div class="post">
+    <h2><a href="/2014/05/01/linux-kernel-securite-et-configuration-partie-1.html">Linux Kernel: Sécurité et Configuration (1ère partie)</a></h2>
+    <p>Salut tout le monde!</p>
+
+<p>Je vous présente aujourd’hui la suite (qui s’est fait attendre) de traduction d’article sur le noyau Linux. Pour rappel vous pourrez retrouver ces articles sur <a href="linux.org">linux.org</a>, ainsi que tout un tas d’autres articles et tutos vraiment super intéressants, je vous conseille vraiment d’y aller! ( Seul bémol: Faut aimer l’anglais. ^^) D’ailleurs on peut voir sur ce site qu’il y a une vingtaine d’articles qui continuent celui-ci sur le noyau Linux, pour vous dire à quel point j’ai pris du retard! Pour me rattraper j’ai fais deux articles en un ici ;)</p>
+
+<p>Et petit détail que je n’avais pas dis au début, quand vous lisez le pronom “je” dans ces articles, ce n’est pas moi mais l’auteur véritable de l’article qui est ciblé (C’est-à-dire Devyn Collier Johnson).</p>
+
+<p><a href="/2013/07/22/Linux-Kernel-:-Code-Source.html">Article précédent</a></p>
+
+<p>Le noyau Linux est le cœur de tous les systèmes GNU/Linux. Si du code malicieux endommage ou prend le contrôle d’un élément du noyau, le système entier peut être sévèrement endommagé, des fichiers peuvent être supprimés ou corrompus, des informations privées peuvent être volées, etc… Il est clairement dans le meilleur intérêt de l’utilisateur de garder un noyau sécurisé. Heureusement, Linux est un système très sûr grâce à son noyau et a sa sécurité. Il y a moins de virus sous Linux que sous Windows, même en proportion du nombre d’utilisateurs. (C’est pourquoi beaucoup d’entreprises utilisent Linux pour gérer leur serveur.) Cependant, ce n’est pas une excuse pour négliger la sécurité du noyau. Linux possède de nombreuses fonctionnalités et programmes, mais seuls les Linux Security Modules (LSM) et autres système de sécurité du noyau seront abordés dans cet article.
+
+  </div>
+
+</div>
+
+
+    </div>
+
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
+
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>
