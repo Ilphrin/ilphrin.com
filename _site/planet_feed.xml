@@ -7,6 +7,52 @@
 		<atom:link href="http://ilphrin.com/feed.category.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Oni: Un GUI sympa pour Neovim</title>
+				<description>&lt;p&gt;Ca faisait longtemps que je n’avais pas parlé de &lt;a href=&quot;https://neovim.io/&quot;&gt;Neovim&lt;/a&gt; hein? Eh bien pour la peine je vais présenter un GUI fait avec Electron pour Neovim qui claque&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;J’avais déjà essayé un GUI qui s’appelait &lt;a href=&quot;https://github.com/rhysd/NyaoVim&quot;&gt;Nyaovim&lt;/a&gt; il y a plusieurs mois. Le souci que j’avais était que beaucoup de choses ne fonctionnaient pas très bien (peut-être qu’il y a eu des améliorations ceci-dit depuis le temps), mais il avait un grand avantage qui était son API pour développer des widgets graphiques qui venaient s’ajouter aux fonctionnalités de Nyaovim.&lt;/p&gt;
+
+&lt;p&gt;L’ayant laissé de côté en attendant une meilleure stabilité, j’ai découvert un autre programme qui s’appelle cette fois-ci &lt;a href=&quot;https://github.com/extr0py/oni&quot;&gt;Oni&lt;/a&gt;. Celui-ci possède beaucoup de points communs à Nyaovim. Il ont tous les deux un logo cool, ils fonctionnent tous les deux avec de l’Eléctron, ont tous les deux une API pour faire des extensions, etc.&lt;/p&gt;
+
+&lt;p&gt;Voici un petit screenshot de ce à quoi ressemble Oni pendant que je rédige mon article:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/oni.png&quot; alt=&quot;Oni&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;C’est cool hein? En comparaison voilà à quoi ressemble mon nvim en terminal (qui est déjà assez sympa à mon goût):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/oni_02.png&quot; alt=&quot;Neovim&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Dans les différences visible on peut voir (outre ma pub caché pour le terminal Terminix ;) ):&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Que les caractères de vim-airline ne passent pas très bien&lt;/li&gt;
+  &lt;li&gt;Qu’il y a une petite barre en plus à droite de mon buffer. Cette barre m’indique ma position par rapport au fichier entier&lt;/li&gt;
+  &lt;li&gt;L’auto-complétion n’a pas du tout la meme tronche. Oni profite de l’&lt;a href=&quot;https://github.com/neovim/neovim/pull/5686&quot;&gt;externalisation de l’UI&lt;/a&gt; qu’est en train de faire Neovim pour améliorer graphiquement les différents éléments.&lt;/li&gt;
+  &lt;li&gt;Il y a une image en fond. Ca peut paraitre bete mais c’est le genre de personnalisation que j’aime beaucoup et qui rajotue une touche personnelle supplémentaire.super&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Il faut savoir qu’au début de mes tests d’Oni, j’avais remarqué un bug d’affichage avec la première ligne de mon buffer et NERDTree, et j’ai donc fait un &lt;a href=&quot;https://github.com/extr0py/oni/issues/106&quot;&gt;rapport de bug&lt;/a&gt;, qui a été corrigé 4 jours plus tard, avec une poignée d’autres bugs corrigé.&lt;/p&gt;
+
+&lt;p&gt;C’est une réactivité vraiment sympa surtout quand on voit qu’il n’y a que quelques développeurs principaux (3 à première vue d’après les graphs Github), et le reste des contributions étant assez minimes en comparaison.&lt;/p&gt;
+
+&lt;p&gt;Il y a la &lt;a href=&quot;https://github.com/extr0py/oni/releases&quot;&gt;version 1.6&lt;/a&gt; qui est sortie tout récemment pour Oni qui rajoute notamment:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Le support des caractères &lt;a href=&quot;https://fr.wikipedia.org/wiki/Chinois,_japonais_et_cor%C3%A9en&quot;&gt;CJC&lt;/a&gt; (Chinois, Japonais, Coréen)&lt;/li&gt;
+  &lt;li&gt;Correction de l’affichage de l’autoauto-complétion&lt;/li&gt;
+  &lt;li&gt;Une refonte du système de plugin pour préparer les prochaines fonctionalités (Prévisualisation Markdown, intégration dynamique de l’UI des plugins)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;C’est en somme un logiciel que je conseille vivement malgré deux trois petits bug genant parfois (par exemple je dois ré-écrire cet-article sous Neovim en terminal, car les accents circonflexes ne se mettent pas sur Oni)&lt;/p&gt;
+</description>
+				<pubDate>Fri, 30 Dec 2016 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2016/12/30/oni-un-gui-pour-neovim.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2016/12/30/oni-un-gui-pour-neovim.html</guid>
+			</item>
+		
+			<item>
 				<title>Un nouveau stock de musiques en libre écoute</title>
 				<description>&lt;p&gt;Je n’en parle pas beaucoup, mais je suis un grand féru de musique et, bien que je ne sois pas un connaisseur technique dans le domaine, j’apprécie énormément la découverte de nouveaux groupes et de nouveaux genres. Je vais régulièrement sur le site de &lt;a href=&quot;https://jamendo.com&quot;&gt;Jamendo&lt;/a&gt;, qui présente un paquet d’artistes très hétérogènes, le tout sous écoute libre pour un usage personnel. Pour changer un peu du thème de l’informatique je me suis dit que j’allais faire un premier pack des derniers groupes que j’ai écouté sur le site.&lt;/p&gt;
 
