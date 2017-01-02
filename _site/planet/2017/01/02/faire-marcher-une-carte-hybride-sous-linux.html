@@ -49,29 +49,29 @@
     <div class="main">
         <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
   <div id="post_header">
-    <div id="title" style="background-image: url('/images/header_articles/book.jpg');">
+    <div id="title" style="background-image: url('/images/header_articles/');">
       <div>
-        <h1 itemprop="name"> Parcellite: la version 1.1.5 est sortie</h1>
+        <h1 itemprop="name"> Faire marcher une carte hybride sous Linux</h1>
       </div>
     </div>
     <div id="details">
       <p itemprop="datePublished">
         <i class="big calendar icon"></i>
-        <span>21
+        <span>2
 
-Juillet
+Janvier
   
-2013
+2017
 </span>
       </p>
       <div>
-        <a href="https://twitter.com/share?text='Parcellite: la version 1.1.5 est sortie'" target="_blank">
+        <a href="https://twitter.com/share?text='Faire marcher une carte hybride sous Linux'" target="_blank">
           <i class="big twitter icon"></i>
           <span>Twitter</span>
         </a>
       </div>
       <div>
-        <a href="http://sharetodiaspora.github.io/?title=Parcellite: la version 1.1.5 est sortie&url=/2013/07/21/Parcellite-la-version-1.1.5-est-sortie.html" target="_blank">
+        <a href="http://sharetodiaspora.github.io/?title=Faire marcher une carte hybride sous Linux&url=/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux.html" target="_blank">
           <i class="big icon star"></i>
           <span>Diaspora*</span>
         </a>
@@ -213,17 +213,62 @@ Juillet
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     <article>
-      <p>Salut tout l’monde!</p>
+      <p>Je possède un HP Elitebook 840, qui possède donc un système de carte graphique dit “hybride”, pour les besoins de mes études. Après deux ans j’ai enfin réussi à la faire fonctionner, et je me suis dis que j’allais partager ma méthode</p>
 
-<p>Alors tout d’abord brève présentation de ce logiciel qu’est Parcellite. C’est ou outils qui sert de presse-papier (pour le copier-coller). Il permet d’enregistrer facilement une quinzaine d’éléments copiés, allant de la simple phrase jusqu’au fichier en passant par les blocs de textes. Au lancement il affiche une petite icône dans la barre des tâches qui permet de gérer et choisir quel élément on veut coller. Et récemment est sortie la version 1.1.5 de ce logiciel, qui contient surtout des corrections de bugs, comme par exemple:
 <!--break-->
-* Mise à jour de la traduction allemande
-* Correction du bug 79 qui était provoqué lors de l’inversion de la liste d’éléments
-* Correction du bug 73, le Ctrl + c/v ne fonctionnait pas avec Blender.</p>
 
-<p>Et plusieurs dizaines d’autres! Vous pouvez voir la liste complète des modifications sur le <a href="http://parcellite.sourceforge.net/">site</a>.</p>
+<p>Pour détailler un peu, j’ai:</p>
 
-<p>Voilà c’était tout pour aujourd’hui! (le prochain article sur le noyau linux arrive bientôt, c’est juste que j’ai fait parti des “chanceux” de framapad à avoir perdu des données à cause des récents problèmes sur le site.^^”)</p>
+<ul>
+  <li>Un chipset Intel intégré -&gt; Intel HD Graphics 4400</li>
+  <li>Une carte graphique “discrète” (j’y reviendrais plus tard sur le terme) -&gt; AMD Radeon HD 8750M</li>
+</ul>
+
+<p>Bien sur, je n’utilise pas cet ordinateur que pour mes cours vu que c’est mon seul PC portable. L’utilisation la plus gourmande que j’ai vient des jeux vidéos. Souvent ce sont des jeux qui ne demandant pas grand chose comme Osu, Dungeon Crawl Stone Soup, ou Beyond Divinity.</p>
+
+<p>Mais certains jeux ont plus de demande, comme Doom 3 ou Path Of Exile (jouant à ce dernier fréquemment), et là la performance baisse énormément, avec des pic descendant à 2 images toutes les 2-3 secondes.</p>
+
+<p>Je ne me suis que rarement posé la question puisque je joue à tout ces jeux par le biais de Wine et PlayOnLinux. Seulement depuis 3 mois j’ai eu envie d’investiguer un peu sur les performances de mon pc et j’ai découvert une chose intéressante</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo cat /sys/kernel/debug/vgaswitcheroo/switch</code></pre></figure>
+
+<p>Cette commande permet d’afficher l’état des deux cartes graphiques sur un pc hybride</p>
+
+<ul>
+  <li>L’intégrée (IGD -&gt; InteGrateD) : C’est le chipset fourni avec la carte mère. Il s’occupe de tous les traitements peu gourmands comme le compositeur de bureau, des pages web, etc… Tout ce qui est graphique mais qui ne consomme pas grand chose</li>
+  <li>La discrete (DIS -&gt; Discrete) : C’est la carte graphique, beaucoup plus puissante et utilisée pour des traitements graphiques plus poussés comme de l’OpenGL.</li>
+</ul>
+
+<p>Dans la sortie de la commande plus haut on voit que la DIScrete est DynamicallyOFF, ce qui est normal puisque je ne fais aucun traitement particulier. Le soucis c’est que quoique je fasse je n’arrivais pas à l’activer. Jusqu’à maintenant (petit teaser ;)).</p>
+
+<p>Il faut d’abord rajouter une configuration dans votre xorg.conf:</p>
+
+<figure class="highlight"><pre><code class="language-xorg" data-lang="xorg">Section "Device"
+  Identifier "Radeon"
+  Driver "intel"
+    Option "AccelMethod" "UXA"
+    Option "SwapbuffersWait" "false"
+    Option "VSync" "false"
+    Option "DRI" "3"
+EndSection
+
+Section "Device"
+  Identifier "Radeon"
+  Driver "radeon"
+    Option "SwapbuffersWait" "false"
+    Option "TearFree" "false"
+    Option "DRI" "3"
+EndSection</code></pre></figure>
+
+<p>On redémarre, et maintenant on peut forcer l’utilisation de la carte graphique sur une commande en mettant une variable d’environnement:</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">DRI_PRIME</span><span class="o">=</span>1 macommande</code></pre></figure>
+
+<p>Maintenant je peux jouer à Path Of Exile sans trop ramer ;)</p>
+
+<div class="ui icon message inverted"><i class="ui icon sticky note"></i><div class="content">
+Je sais pas si ça marche pour tous les pc portables avec une carte hybride Intel/Radeon, et surtout je n'ai pas testé toutes les combinaisons de configuration. C'est un amalgame d'informations trouvées sur StackOverflow, le bug tracker de Xorg, et d'autres recherches Google. N'hésitez pas à me dire ce qui à marché pour vous je vais essayer de faire une partie "Note" sur le site pour stocker ce genre d'astuces
+</div></div>
 
     </article>
     <div id="comments" itemprop="comment">
@@ -243,10 +288,10 @@ Juillet
   Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
   </p>
   <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
-    <input name="options[slug]" type="hidden" value="Parcellite:-la-version-1.1.5-est-sortie">
-    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2013/07/21/Parcellite-la-version-1.1.5-est-sortie.html">
+    <input name="options[slug]" type="hidden" value="faire-marcher-une-carte-hybride-sous-linux">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
-    <input type="hidden" name="fields[post_id]" value="/2013/07/21/Parcellite:-la-version-1.1.5-est-sortie" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux" />
     <div class="ui inverted segment">
       <h2 class="ui dividing header">Commenter</h2>
       <div class="field">

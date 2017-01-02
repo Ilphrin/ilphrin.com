@@ -7,6 +7,70 @@
 		<atom:link href="http://ilphrin.com/feed.category.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Faire marcher une carte hybride sous Linux</title>
+				<description>&lt;p&gt;Je possède un HP Elitebook 840, qui possède donc un système de carte graphique dit “hybride”, pour les besoins de mes études. Après deux ans j’ai enfin réussi à la faire fonctionner, et je me suis dis que j’allais partager ma méthode&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;p&gt;Pour détailler un peu, j’ai:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Un chipset Intel intégré -&amp;gt; Intel HD Graphics 4400&lt;/li&gt;
+  &lt;li&gt;Une carte graphique “discrète” (j’y reviendrais plus tard sur le terme) -&amp;gt; AMD Radeon HD 8750M&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Bien sur, je n’utilise pas cet ordinateur que pour mes cours vu que c’est mon seul PC portable. L’utilisation la plus gourmande que j’ai vient des jeux vidéos. Souvent ce sont des jeux qui ne demandant pas grand chose comme Osu, Dungeon Crawl Stone Soup, ou Beyond Divinity.&lt;/p&gt;
+
+&lt;p&gt;Mais certains jeux ont plus de demande, comme Doom 3 ou Path Of Exile (jouant à ce dernier fréquemment), et là la performance baisse énormément, avec des pic descendant à 2 images toutes les 2-3 secondes.&lt;/p&gt;
+
+&lt;p&gt;Je ne me suis que rarement posé la question puisque je joue à tout ces jeux par le biais de Wine et PlayOnLinux. Seulement depuis 3 mois j’ai eu envie d’investiguer un peu sur les performances de mon pc et j’ai découvert une chose intéressante&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo cat /sys/kernel/debug/vgaswitcheroo/switch&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Cette commande permet d’afficher l’état des deux cartes graphiques sur un pc hybride&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;L’intégrée (IGD -&amp;gt; InteGrateD) : C’est le chipset fourni avec la carte mère. Il s’occupe de tous les traitements peu gourmands comme le compositeur de bureau, des pages web, etc… Tout ce qui est graphique mais qui ne consomme pas grand chose&lt;/li&gt;
+  &lt;li&gt;La discrete (DIS -&amp;gt; Discrete) : C’est la carte graphique, beaucoup plus puissante et utilisée pour des traitements graphiques plus poussés comme de l’OpenGL.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Dans la sortie de la commande plus haut on voit que la DIScrete est DynamicallyOFF, ce qui est normal puisque je ne fais aucun traitement particulier. Le soucis c’est que quoique je fasse je n’arrivais pas à l’activer. Jusqu’à maintenant (petit teaser ;)).&lt;/p&gt;
+
+&lt;p&gt;Il faut d’abord rajouter une configuration dans votre xorg.conf:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-xorg&quot; data-lang=&quot;xorg&quot;&gt;Section &quot;Device&quot;
+  Identifier &quot;Radeon&quot;
+  Driver &quot;intel&quot;
+    Option &quot;AccelMethod&quot; &quot;UXA&quot;
+    Option &quot;SwapbuffersWait&quot; &quot;false&quot;
+    Option &quot;VSync&quot; &quot;false&quot;
+    Option &quot;DRI&quot; &quot;3&quot;
+EndSection
+
+Section &quot;Device&quot;
+  Identifier &quot;Radeon&quot;
+  Driver &quot;radeon&quot;
+    Option &quot;SwapbuffersWait&quot; &quot;false&quot;
+    Option &quot;TearFree&quot; &quot;false&quot;
+    Option &quot;DRI&quot; &quot;3&quot;
+EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;On redémarre, et maintenant on peut forcer l’utilisation de la carte graphique sur une commande en mettant une variable d’environnement:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;&lt;span class=&quot;nv&quot;&gt;DRI_PRIME&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;1 macommande&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Maintenant je peux jouer à Path Of Exile sans trop ramer ;)&lt;/p&gt;
+
+&lt;div class=&quot;ui icon message inverted&quot;&gt;&lt;i class=&quot;ui icon sticky note&quot;&gt;&lt;/i&gt;&lt;div class=&quot;content&quot;&gt;
+Je sais pas si ça marche pour tous les pc portables avec une carte hybride Intel/Radeon, et surtout je n&#39;ai pas testé toutes les combinaisons de configuration. C&#39;est un amalgame d&#39;informations trouvées sur StackOverflow, le bug tracker de Xorg, et d&#39;autres recherches Google. N&#39;hésitez pas à me dire ce qui à marché pour vous je vais essayer de faire une partie &quot;Note&quot; sur le site pour stocker ce genre d&#39;astuces
+&lt;/div&gt;&lt;/div&gt;
+</description>
+				<pubDate>Mon, 02 Jan 2017 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux.html</guid>
+			</item>
+		
+			<item>
 				<title>Oni: Un GUI sympa pour Neovim</title>
 				<description>&lt;p&gt;Ca faisait longtemps que je n’avais pas parlé de &lt;a href=&quot;https://neovim.io/&quot;&gt;Neovim&lt;/a&gt; hein? Eh bien pour la peine je vais présenter un GUI fait avec Electron pour Neovim qui claque&lt;/p&gt;
 
