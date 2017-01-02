@@ -9,33 +9,37 @@
 			<item>
 				<title>Faire marcher une carte hybride sous Linux</title>
 				
-					<description>&lt;p&gt;Je possède un HP Elitebook 840, qui possède donc un système de carte graphique dit “hybride”, pour les besoins de mes études. Après deux ans j’ai enfin réussi à la faire fonctionner, et je me suis dis que j’allais partager ma méthode&lt;/p&gt;
+					<description>&lt;p&gt;J’ai un &lt;a href=&quot;http://www8.hp.com/us/en/ads/elite-products/elitebook-840.html&quot;&gt;HP Elitebook 840&lt;/a&gt;, qui possède un système de carte graphique dite “hybride”, pour les besoins de mes études. Après deux ans j’ai enfin réussi à la faire fonctionner, et je me suis dis que j’allais partager ma méthode&lt;/p&gt;
 
 &lt;!--break--&gt;
 
 &lt;p&gt;Pour détailler un peu, j’ai:&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;Un chipset Intel intégré -&amp;gt; Intel HD Graphics 4400&lt;/li&gt;
-  &lt;li&gt;Une carte graphique “discrète” (j’y reviendrais plus tard sur le terme) -&amp;gt; AMD Radeon HD 8750M&lt;/li&gt;
+  &lt;li&gt;Un chipset Intel intégré -&amp;gt; &lt;a href=&quot;http://www.intel.com/content/www/us/en/support/graphics-drivers/graphics-for-4th-generation-intel-processors/intel-hd-graphics-4400.html&quot;&gt;Intel HD Graphics 4400&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Une carte graphique “discrète” (j’y reviendrais plus tard sur le terme) -&amp;gt; &lt;a href=&quot;http://www.amd.com/en-us/products/graphics/notebook/8700m-8800m#&quot;&gt;AMD Radeon HD 8750M&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Bien sur, je n’utilise pas cet ordinateur que pour mes cours vu que c’est mon seul PC portable. L’utilisation la plus gourmande que j’ai vient des jeux vidéos. Souvent ce sont des jeux qui ne demandant pas grand chose comme Osu, Dungeon Crawl Stone Soup, ou Beyond Divinity.&lt;/p&gt;
+&lt;p&gt;Bien sûr, je n’utilise pas cet ordinateur que pour mes cours vu que c’est mon seul PC portable. L’utilisation la plus gourmande que j’ai vient des jeux vidéos. Souvent ce sont des jeux qui ne demandant pas grand-chose comme Osu, Dungeon Crawl Stone Soup, ou Beyond Divinity.&lt;/p&gt;
 
-&lt;p&gt;Mais certains jeux ont plus de demande, comme Doom 3 ou Path Of Exile (jouant à ce dernier fréquemment), et là la performance baisse énormément, avec des pic descendant à 2 images toutes les 2-3 secondes.&lt;/p&gt;
+&lt;p&gt;Mais certains jeux ont plus de demandes, comme Doom 3 ou Path Of Exile (jouant à ce dernier fréquemment), et là la performance baisse énormément, avec des piques descendant à 1 image toutes les 2-3 secondes.&lt;/p&gt;
 
-&lt;p&gt;Je ne me suis que rarement posé la question puisque je joue à tout ces jeux par le biais de Wine et PlayOnLinux. Seulement depuis 3 mois j’ai eu envie d’investiguer un peu sur les performances de mon pc et j’ai découvert une chose intéressante&lt;/p&gt;
+&lt;p&gt;Je ne me suis que rarement posé la question puisque je joue à tous ces jeux par le biais de Wine et PlayOnLinux, qui rajoute une couche de complexité et de travail pour l’ordinateur. Seulement depuis 3 mois j’ai eu envie d’investiguer un peu sur les performances de mon pc et j’ai découvert une chose intéressante&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo cat /sys/kernel/debug/vgaswitcheroo/switch&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sh&quot; data-lang=&quot;sh&quot;&gt;sudo cat /sys/kernel/debug/vgaswitcheroo/switch
+
+0:DIS: :DynOff:0000:03:00.0
+1:IGD:+:Pwr:0000:00:02.0
+2:DIS-Audio: :Off:0000:03:00.1&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Cette commande permet d’afficher l’état des deux cartes graphiques sur un pc hybride&lt;/p&gt;
 
 &lt;ul&gt;
-  &lt;li&gt;L’intégrée (IGD -&amp;gt; InteGrateD) : C’est le chipset fourni avec la carte mère. Il s’occupe de tous les traitements peu gourmands comme le compositeur de bureau, des pages web, etc… Tout ce qui est graphique mais qui ne consomme pas grand chose&lt;/li&gt;
+  &lt;li&gt;L’intégrée (IGD -&amp;gt; InteGrateD) : C’est le chipset fourni avec la carte mère. Il s’occupe de tous les traitements peu gourmands comme le compositeur de bureau, des pages web, etc. Tout ce qui est graphique mais qui ne consomme pas beaucoup de ressources.&lt;/li&gt;
   &lt;li&gt;La discrete (DIS -&amp;gt; Discrete) : C’est la carte graphique, beaucoup plus puissante et utilisée pour des traitements graphiques plus poussés comme de l’OpenGL.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Dans la sortie de la commande plus haut on voit que la DIScrete est DynamicallyOFF, ce qui est normal puisque je ne fais aucun traitement particulier. Le soucis c’est que quoique je fasse je n’arrivais pas à l’activer. Jusqu’à maintenant (petit teaser ;)).&lt;/p&gt;
+&lt;p&gt;Dans la sortie de la commande plus haut on voit que la DIScrete est DynamicallyOFF, ce qui est normal puisque je ne fais aucun traitement particulier. Le souci c’est que quoique je fasse je n’arrivais pas à l’activer. Jusqu’à maintenant (petit teaser ;)).&lt;/p&gt;
 
 &lt;p&gt;Il faut d’abord rajouter une configuration dans votre xorg.conf:&lt;/p&gt;
 
@@ -63,7 +67,7 @@ EndSection&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 &lt;p&gt;Maintenant je peux jouer à Path Of Exile sans trop ramer ;)&lt;/p&gt;
 
 &lt;div class=&quot;ui icon message inverted&quot;&gt;&lt;i class=&quot;ui icon sticky note&quot;&gt;&lt;/i&gt;&lt;div class=&quot;content&quot;&gt;
-Je sais pas si ça marche pour tous les pc portables avec une carte hybride Intel/Radeon, et surtout je n&#39;ai pas testé toutes les combinaisons de configuration. C&#39;est un amalgame d&#39;informations trouvées sur StackOverflow, le bug tracker de Xorg, et d&#39;autres recherches Google. N&#39;hésitez pas à me dire ce qui à marché pour vous je vais essayer de faire une partie &quot;Note&quot; sur le site pour stocker ce genre d&#39;astuces
+Je ne sais pas si ça marche pour tous les pc portables avec une carte hybride Intel/Radeon, et surtout je n&#39;ai pas testé toutes les combinaisons de configuration. C&#39;est un amalgame d&#39;informations trouvées sur StackOverflow, le bug tracker de Xorg, et d&#39;autres recherches Google. N&#39;hésitez pas à me dire ce qui à marché pour vous je vais essayer de faire une partie &quot;Note&quot; sur le site pour stocker ce genre d&#39;astuces
 &lt;/div&gt;&lt;/div&gt;
 </description>
 				<pubDate>Mon, 02 Jan 2017 00:00:00 +0100</pubDate>
