@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
+  <title>
+    Kevin / Ilphrin
+  </title>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//ilphrin.com/piwik/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+  <div class="headerCursor">
+    <img src="/images/decoration/header_01.svg" />
+  </div>
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/circuit.jpg');">
+      <div>
+        <h1 itemprop="name"> Neobot un bot en ligne de commande pour les unix like</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <i class="big calendar icon"></i>
+        <span>30
+
+Janvier
+  
+2015
+</span>
+      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Neobot un bot en ligne de commande pour les unix like'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Neobot un bot en ligne de commande pour les unix like&url=/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h4 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h4>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <article>
+      <p>Salut tout le monde</p>
+
+<p>Alors tout d’abord pour ceux qui ne le savent pas, qu’est-ce qu’un <em>bot</em> en informatique? C’est un programme qui va se gérer tout seul pour accomplir une ou des tâches voulues par les développeurs du bot. Leurs utilisation est vaste, cela va du jeu vidéo (les ennemis d’un jeu de FPS contrôlés par l’ordinateur par exemple) à la gestion des salons de discussion IRC en passant par les bien connus spambots, vous savez les faux comptes inscris sur les forums de discussions simplement pour balancer de la pub en vrac… Pour en savoir plus, je vous invite à lire la page wikipédia sur les <a href="https://fr.wikipedia.org/wiki/Bot_informatique">bot informatique</a>.</p>
+
+<!--break-->
+<p>Il existe une catégorie de bot qui ont pour but de tenir une conversation en ayant l’air le plus possible humain, connu sous le nom de Chatbot. C’est sur cette catégorie de bot que l’on va s’attarder aujourd’hui avec <a href="http://dcjtech.info/topic/neobot-v1-0b-release/">Neobot</a>. C’est un logiciel développé par Devyn C. Johnson (dont j’ai déjà parlé ici, rappelez-vous les articles sur le <a href="http://mintic.blog4ever.com/blog/linux-kernel-introduction">Kernel Linux</a>), dont le coeur du programme est développé en Python3, pour quelque détails supplémentaires sur les outils utilisé, vous pouvez regarder <a href="https://www.chatbots.org/chatbot/neo/">ICI</a>.</p>
+
+<p>Neobot est portable, c’est-à-dire qu’il n’a pas besoin d’être installé pour être lancé. Une fois téléchargé et dezippé, vous pouvez lancer directement l’executable appelé Betabot. Il faut attendre quelques secondes pour que le Neobot soit totalement lancé. Lorsque que c’est le cas il devrait vous afficher un message de bonjour. Voilà vous pouvez commencer à discuter avec lui (uniquement en anglais pour le moment)</p>
+
+<p>Je trouve ce bot particulièrement intéressant pour deux raisons principalement: la première est que, malgré le fait que ce soit écrit en python qui est un langage haut niveau, Neobot est assez performant. Il utilise un format de base de données crée spécialement pour cette catégorie de bot appelé Xaiml.</p>
+
+<p>La deuxième est que vous pouvez poser des questions sur votre pc a Neobot et il pourra vous repondre. Par exemple si vous lui demandez de lancer Firefox et bien il ira chercher Firefox et le lancera pour vous. Vous pouvez aussi demander des inforomations sur votre système. Par exemple si vous lui demandez “Where am I” il vous repondra par le dossier courant dans lequel vous êtes dans votre temrinal.</p>
+
+<p>Si vous souhaitez voir un peu les autres projets sur lesquels Devyn C.Johnson a travaillé ou même en discuter, vous pouvez aller jeter un coup d’oeil sur <a href="http://dcjtech.info/">http://dcjtech.info</a>.</p>
+
+<p>Bonne journée à tous!</p>
+
+    </article>
+    <div id="comments" itemprop="comment">
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
+  
+  
+      
+      
+  
+      
+      
+  
+      
+      
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="neobot-un-bot-en-ligne-de-commande-pour-les-unix-like">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2015/01/30/neobot-un-bot-en-ligne-de-commande-pour-les-unix-like" />
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
+      </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
+    </div>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
+
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

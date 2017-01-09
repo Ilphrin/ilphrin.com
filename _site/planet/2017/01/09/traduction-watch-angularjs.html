@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
+  <title>
+    Kevin / Ilphrin
+  </title>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//ilphrin.com/piwik/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+  <div class="headerCursor">
+    <img src="/images/decoration/header_01.svg" />
+  </div>
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/');">
+      <div>
+        <h1 itemprop="name"> Traduction: Maitriser $watch dans AngularJS</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <i class="big calendar icon"></i>
+        <span>9
+
+Janvier
+  
+2017
+</span>
+      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Traduction: Maitriser $watch dans AngularJS'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Traduction: Maitriser $watch dans AngularJS&url=/planet/2017/01/09/traduction-watch-angularjs.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h4 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h4>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+        
+        <li class="current_post">
+          
+            <a href="/planet/2017/01/09/traduction-watch-angularjs.html">Traduction: Maitriser $watch dans AngularJS: <time datetime="9 January 2017">9
+
+Janvier
+  
+2017
+</time></a>
+          </li>
+          
+          
+        
+        
+        <li class="current_post">
+          
+            <a href="/planet/2017/01/09/traduction-watch-angularjs.html">Traduction: Maitriser $watch dans AngularJS: <time datetime="9 January 2017">9
+
+Janvier
+  
+2017
+</time></a>
+          </li>
+          
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <article>
+      <p>Ce qui suit est une traduction d’un article sur <a href="https://www.sitepoint.com/mastering-watch-angularjs/">Sitepoint.com [lien d’origine]</a>, rédigé par <a href="https://www.sitepoint.com/author/mlarocca/">Marcello La Rocca</a> et <a href="https://www.sitepoint.com/author/fpaulo/">Francisco Paulo.</a> Je ne suis en aucun cas l’auteur de cet article, j’ai simplement eu envie de le traduire parce que j’aime ça et que je considère que beaucoup de ressources anglophones devraient être aussi à la portée des personnes qui ne parlent pas anglais.</p>
+
+<!--break-->
+
+<h1 id="maitriser-watch-dans-angularjs">Maitriser $watch dans AngularJS</h1>
+
+<p><a href="https://angularjs.org/">AngularJS</a> dispose de plusieurs options pour appliquer le modèle <a href="https://fr.wikipedia.org/wiki/Publish-subscribe">Publish-subscribe</a> à travers trois différentes méthodes “watch”. Chacune prend différent paramètres optionnels qui peuvent modifier son comportement.</p>
+
+<p>La documentation officielle de $watch ne va pas vraiment en profondeur: un problème récurrent qui a affecté l’entièreté d’AngularJS 1 après tout. Même la plupart des ressources en ligne qui en expliquent le fonctionnement sont éparpillées.</p>
+
+<p>Et au final, il devient difficile pour un développeur de choisir la bonne méthode pour une situation donnée. Et cela est particulièrement vrai pour les débutants. Le résultat peut être pleins de surprises et est imprévisible, amenant inévitablement à des bugs.</p>
+
+<p>Dans cet article, je (Ndt: Les auteurs d’origine de cet article) vais partir du principe que vous avez les bases d’AngularJS. Si vous avez besoin de vous rafraichir la mémoire, vous pourriez vous tourner vers des lectures sur <a href="https://docs.angularjs.org/guide/scope">$scope</a>, <a href="http://www.sitepoint.com/angularjs-tutorial-build-an-app-using-directives-and-data-binding/">binding</a> et <a href="http://www.sitepoint.com/understanding-angulars-apply-digest/">$apply et $digest</a>.</p>
+
+<h2 id="testez-vos-connaissances">Testez vos connaissances</h2>
+
+<p>Par exemple, quel est le meilleur moyen de surveiller le premier élément d’un tableau? Supposons que nous avons un tableau dans notre scope, <code>$scope.letters = ['A', 'B', 'C'];</code></p>
+
+<ul>
+  <li>Est-ce que <code class="javascript">$scope.$watch('letters', function() {...})</code> va lancer sa callback lorsque nous ajouterons un élément au tableau?</li>
+  <li>Le lancera-t-il si nous changeons le premier élément?</li>
+  <li>Et pour <code class="javascript">$scope.$watch('letters[0]', function() {...});</code> ? Fonctionnera-t-il de la même manière ou mieux?</li>
+  <li>Les éléments sont des valeurs primitives, que se passe-t-il si nous changeons le premier élément par la meme valeur?</li>
+  <li>Et maintenant supposons que notre tableau contienne des objets? Que se passe-t-il?</li>
+  <li>Quelle est la différence entre <code class="javascript">$watch</code>, <code class="javascript">$watchCollection</code>, et <code class="javascript">$watchGroup</code>?</li>
+</ul>
+
+<p>Si vous vous sentez confus par ces questions, continuez de lire cet article. Mon but est de rendre tout ça aussi clair que possible au travers de plusieurs example en vous guidant.</p>
+
+<h2 id="scopewatch">$scope.$watch</h2>
+
+<p>Commençons avec <code class="javascript">$scope.$watch</code>. C’est la bête de somme des toutes les fonctionnalités de surveillance: chacune des autres méthodes que nous verrons sera juste un raccourci pour <code class="javascript">$watch</code></p>
+
+<h3 id="watch-ez-a">$watch-ez ça</h3>
+
+<p>Ce qui est bien avec Angular est que l’on peut utilise le même mécanisme explicitement pour accomplir des actions complexes dans nos controllers, activées par des changements dans les données. Par example, vous pourriez placer un observater/watcher sur des données qui peuvent changer en réponse aux:</p>
+
+<ul>
+  <li>Timeouts</li>
+  <li>UI</li>
+  <li>Calculs asynchrones complexes par des Web Workers</li>
+  <li>Appels Ajax</li>
+</ul>
+
+<p>Vous pouvez mettre un ‘listener’ pour vérifier les changements de données, sans vous soucier de ce qui l’a causé.</p>
+
+<p>Pour ce faire, vous allez devoir appeler <code class="javascript">$scope.$watch</code> vous-même.</p>
+
+<h3 id="en-pratique">En pratique</h3>
+
+<p>Regardons le code de <code class="javascript">$rootscope.watch()</code>.</p>
+
+<p>Voici sa signature: <code class="javascript">function(watchExp, listener, objectEquality, prettyPrintExpression)</code>.</p>
+
+<p>En détail, ces 4 paramètres sont:</p>
+
+<ul>
+  <li><code class="javascript">watchExp</code> L’expression à observer. Cela peut être une fonction ou une chaine de caractères, elle est évaluée à chaque cycle.
+Un aspect à noter ici est que <em>si</em> l’expression est évaluée comme une fonction, alors cette fonction doit être idempotent. En d’autres termes, pour une même valeur en entré la fonction doit retourner la même sortie. Si ce n’est pas le cas, Angular va penser que les données ont changées. Et donc il va continuer à détecter une différence et appeler le listener à chaque itération du cycle.</li>
+  <li><code class="javascript">listener</code> Une callback lancé lorsque  l’observateur/watch est crée, et ensuite à chaque fois que, pendant un cycle, un changement <code class="javascript">watchExp</code> est détecté. L’appel initial à la configuration est faite pour enregistrer une première valeur de l’expression.</li>
+  <li><code class="javascript">objectEquality</code> L’observateur/watcher va faire une comparaison profonde si, et seulement si cette variable est vraie. Sinon elle opérera une comparaison en surface, ce qui veut dire que seules les références seront comparées.<br />Prenons un exemple: <code class="javascript">$scope.fruit = ["banana", "apple"];</code>.<br /> <code class="javascript">objectEquality == false</code> signifie que seul une réassignation de “fruit” lancera un appel au listener. Nous avons aussi besoin de savoir a quelle “profondeur” la comparaison se fera. Nous verrons ça plus tard.</li>
+  <li><code class="javascript">prettyPrintExpression</code> Si elle est indiquée, va surcharger l’expression observée. Ce paramètre n’est <strong>PAS</strong> fait pour être utilisé lors d’un appel normal à <code class="javascript">$watch();</code>, elle est utilisée en interne par le parser d’expression. <br /> <strong>Faites attention</strong>, comme vous pouvez le voir par vous-même il est très facile d’obtenir des résultats inatendus en passant le 4e argument par erreur.</li>
+</ul>
+
+<p>Maintenant nous sommes en passe de répondre à quelques questions de l’introduction. Regardons nos examples pour cette section:</p>
+
+<p data-height="345" data-theme-id="0" data-slug-hash="GoYyzB" data-default-tab="js" data-user="SitePoint" data-embed-version="2" data-pen-title="Angular $watch demo - $scope.$watch()" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/GoYyzB/">Angular $watch demo - $scope.$watch()</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>Prenez le temps de vous familiariser avec. Vous pouvez comparer les différences de comportement directement, ou suivre l’ordre dans l’article.</p>
+
+<h4 id="observer-un-array">Observer un Array</h4>
+
+<p>Vous voulez observer les changements d’un Array de votre scope, mais que signifie “changement”?</p>
+
+<p>Disons que vôtre controller ressemble à ceci:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">controller</span><span class="p">(</span><span class="s1">'watchDemoCtrl'</span><span class="p">,</span> <span class="p">[</span><span class="s1">'$scope'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="nx">$scope</span><span class="p">.</span><span class="nx">letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'A'</span><span class="p">,</span> <span class="s1">'B'</span><span class="p">,</span> <span class="s1">'C'</span><span class="p">];</span>
+<span class="p">}]);</span></code></pre></figure>
+
+<p>L’une des options serait de faire un appel comme ceci:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s1">'letters'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Faire quelque chose ici avec $scope.letters</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Dans la fonction au-dessus, <code class="javascript">newValue</code> et <code class="javascript">oldValue</code> parlent d’eux-mêmes, et seront mis à jour à chaque fois qu’elle est appelée par le cycle <code class="javascript">$digest</code>. La signification de <code class="javascript">scope</code> est assez intuitive aussi, elle contient une référence au scope courant.</p>
+
+<p>Mais la question est: quand le listener sera-t-il appelé? Si vous essayez d’ajouter, supprimer, ou remplacer des éléments du tableau <code class="javascript">letters</code>, et rien de se passera. C’est parce que par défaut <code class="javascript">$watch</code> par du principe que vous ne voulez vérifier que <em>l’égalité de références</em>, donc si vous assignez une nouvelle valeur à <code class="javascript">$scope.letters</code>, la callback sera lancée.</p>
+
+<p>Si vous voulez observer les changements d’un élément du tableau, vous devez passer <code class="javascript">true</code> en 3e paramètre a l’observateur (c’est-à-dire mettre une valeur au paramètre <code class="javascript">objectEquality</code> décrit plus haut).</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s1">'letters'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">// Faire quelque chose ici avec $scope.letters</span>
+<span class="p">});</span></code></pre></figure>
+
+<h4 id="observer-un-objet">Observer un Objet</h4>
+
+<p>Pour les objets c’est la même chose. Si <code class="javascript">objectEquality</code> est a <code class="javascript">false</code>, on observe juste la réassignation de cette variable dans le scope. Alors qu’à <code class="javascript">true</code>, a chaque changement d’un élément dans l’objet, la callback est appélée.</p>
+
+<h4 id="observer-le-premier-lment-dun-array">Observer le premier élément d’un Array</h4>
+
+<p>Il faut rappeler qu’avec <code class="javascript">objectEquality == true</code>, chaque fois que la callback est appelée, <code class="javascript">newValue</code> est <code class="javascript">oldValue</code> seront l’ancienne et nouvelle valeur du tableau <strong>en entier</strong>. Donc il faut faire la différence entre les deux à chaque fois pour savoir ce qui a changé.</p>
+
+<p>Imaginons que vous ne vouliez observer les changements du premier élément seulement (ou le 4e, c’est le même principe). Eh bien puisque Angular est génial, il vous permet de faire ça: vous pouvez l’écrire naturellement dans l’expression que vous passez en premier paramètre à <code class="javascript">$watch</code>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s1">'letter[4]'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//</span>
+<span class="p">},</span> <span class="kc">true</span><span class="p">);</span></code></pre></figure>
+
+<p>Et si le tableau n’avait que 2 éléments? Eh bien pas de problème, la callback ne sera lancé que lorsque vous ajouterez un 4e élément. Enfin, elle sera lancée quand vous initialiserez pour la première fois l’observateur/watch, et ensuite seulement lorsque vous mettrez un 4e élément.</p>
+
+<p>Si vous affichez <code class="javascript">oldValue</code>, vous que les deux fois elle vaudra <code class="javascript">undefined</code>. Comparez ceci avec ce qu’il se passe si on observe un élément existant: À l’initialisation, vous aurez toujours <code class="javascript">oldValue == undefined</code>. Donc rien que <code class="javascript">$watch</code> ne peut gérer!</p>
+
+<p>Maintenant passons à une question plus intéressante: doit-on passer <code class="javascript">objectEquality == true</code> ici?</p>
+
+<p>Malheureusement il n’y a pas de réponse simple à cette question.</p>
+
+<p>Cela dépend:</p>
+
+<ul>
+  <li>Dans cet exemple, puisque nous avons des valeurs primitives, nous n’avons pas besoin de comparaison profonde, donc nous pouvons omettre <code class="javascript">objectEquality</code>.</li>
+  <li>Mais supposons que nous ayons une matrice <code class="javascript">$scope.board = [[1, 2, 3], [4, 5, 6]];</code>, et que nous voulions observer la première ligne. Alors nous voudrions surement être alertés d’un changement comme <code class="javascript">$scope.board[0][1] = 7</code>.</li>
+</ul>
+
+<h4 id="observer-le-champ-dun-objet">Observer le champ d’un Objet</h4>
+
+<p>Sûrement encore plus utile qu’observer un élément arbitraire d’un tableau, nous pouvons observer un champ arbitraire dans un objet. Mais il n’y a là aucune surprise hein? Les Arrays en JavaScript sont des objets après tout.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'a'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'b'</span><span class="p">:</span> <span class="mi">2</span><span class="p">};</span>
+<span class="nx">$scope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s1">'obj["a"]'</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//</span>
+<span class="p">})</span></code></pre></figure>
+
+<h3 id="une-comparaison-jusqu-quelle-profondeur">Une comparaison jusqu’à quelle profondeur?</h3>
+
+<p>Nous devons éclaircir un dernier point crucial: que se passe-t-il si nous devons observer un objet complexe imbriqué avec uniquement des valeurs non-primitives? Comme un graphe ou un arbre, ou des données en JSON.</p>
+
+<p>Regardons tout ça!</p>
+
+<p>D’abord nous avons besoin d’un objet à observer:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">obj</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'a'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+  <span class="s1">'b'</span><span class="p">:</span> <span class="p">{</span>
+    <span class="s1">'ba'</span><span class="p">:</span> <span class="p">{</span>
+      <span class="s1">'bab'</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="p">},</span>
+    <span class="s1">'bb'</span><span class="err">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="s1">'bb1a'</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">'bb1b'</span><span class="p">:</span> <span class="mi">4</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+        <span class="s1">'bb2a'</span><span class="p">:</span> <span class="mi">5</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">}</span>
+<span class="p">};</span></code></pre></figure>
+
+<p>Appliquons notre watch sur l’objet en entier: Je suppose que maintenant il est assez clair que <code class="javascript">objectEquality</code> doit valoir <code class="javascript">true</code> dans ce cas.</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">$watch</span><span class="p">(</span><span class="s1">'obj'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">newValue</span><span class="p">,</span> <span class="nx">oldValue</span><span class="p">,</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//...</span>
+<span class="p">},</span> <span class="kc">true</span><span class="p">);</span></code></pre></figure>
+
+<p>La question est la suivante: Angular sera-t-il assez sympa pour nous prévenir lorsque nous ferons quelque chose du genre <code class="javascript">$scope.b.bb[1].bb2a = 7</code>?</p>
+
+<p>La réponse est oui, heureusement pour nous (vérifiez sur la démo CodePen précédente).</p>
+
+<h2 id="dautres-mthodes">D’autres méthodes</h2>
+
+<h3 id="code-classjavascriptscopewatchgroupcode"><code class="javascript">$scope.$watchGroup</code></h3>
+
+<p>Est-ce que <code class="javascript">$watchGroup</code> est vraiment une méthode? La réponse est non.</p>
+
+<p><code class="javascript">$watchGroup</code> est un raccourci pratique qui vous permet de placer plusieurs observateurs/watchers avec une même callback, en lui passant un tableau de <code class="javascript">watchExpressions</code>.</p>
+
+<p>Chaque expression passé sera observée en utilisant la méthode <code class="javascript">$scope.$watch()</code>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$scope</span><span class="p">.</span><span class="nx">$watchGroup</span><span class="p">([</span><span class="s1">'obj.a'</span><span class="p">,</span> <span class="s1">'obj.b.bb[1]'</span><span class="p">,</span> <span class="s1">'letters[2]'</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">newValues</span><span class="p">,</span> <span class="nx">oldValues</span><span class="p">,</span> <span class="nx">scope</span><span class="p">)</span> <span class="p">{</span>
+  <span class="c1">//</span>
+<span class="p">});</span></code></pre></figure>
+
+<p>Il est à noter qu’avec <code class="javascript">$watchGroup</code>, <code class="javascript">newValues</code> et <code class="javascript">oldValues</code> vont avoir une liste de valeur pour les expressionns, celles qui ont changées et celles d’avant, dans le <strong>même ordre</strong> que le tableau que vous lui donnez en paramètre.</p>
+
+<p>En regardant la documentation de cette méthode, on peut remarquer que cette méthode ne prend pas <code class="javascript">objectEquality</code>. C’est parce qu’elle ne prends que les expressions en elle-même, et ne réagit qu’aux changements de référence.</p>
+
+<p>En jouant avec la démo ci-dessous de <code class="javascript">$watchGroup</code>, vous pourriez remarquerer quelques subtilités. Par exemple <code class="javascript">unshift</code> va provoquer un appel du listener, au moins dans certains cas: c’est parce qu’en passant une liste d’expressionsns à <code class="javascript">$watchGroup</code>, <em>chacune d’entre elles</em> pourra provoquer l’execution de la callback.</p>
+
+<p data-height="345" data-theme-id="0" data-slug-hash="rxqpbe" data-default-tab="html" data-user="SitePoint" data-embed-version="2" data-pen-title="Angular $watch demo - $scope.$watchGroup" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/rxqpbe/">Angular $watch demo - $scope.$watchGroup</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>Notez aussi que changer un champ à l’intérieur de <code class="javascript">$scope.obj.j</code> ne provoquera pas de mise à jour, seulement l’assignation de <code class="javascript">b</code> le fera.</p>
+
+<h3 id="code-classjavascriptscopewatchcollectioncode"><code class="javascript">$scope.$watchCollection</code></h3>
+
+<p>C’est un autre raccourci pourriez observer des tableaux ou des objets. Pour les tableaux, le listener sera appelé à chaque fois qu’un élément est déplacé, supprimé ou ajouté. Pour les objets, c’est lorsqu’une propriété change. Encore une fois, <code class="javascript">objectEquality</code> n’est pas autorisé, la fonction ne regardera que le premier niveau de champs/éléments, et ne réagira pas aux changements de leurs sous-champs.</p>
+
+<p data-height="265" data-theme-id="0" data-slug-hash="VeEyNy" data-default-tab="html" data-user="SitePoint" data-embed-version="2" data-pen-title="Angular $watch demo - $scope.$watchCollection()" class="codepen">See the Pen <a href="http://codepen.io/SitePoint/pen/VeEyNy/">Angular $watch demo - $scope.$watchCollection()</a> by SitePoint (<a href="http://codepen.io/SitePoint">@SitePoint</a>) on <a href="http://codepen.io">CodePen</a>.</p>
+<script async="" src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>J’espère que ces exemples vous auront aidé à découvrir la puissance de cette fonctionnalité d’Angular, et à quel point il est important d’utiliser les bonnes options.</p>
+
+<p>N’hésitez pas à retoucher et forker les CodePens et à éxperimenter avec les méthodes des différents contextes, et n’oubliez pas de faire des retours en commentaires! (Ndlt: Du site original, moi les commentaires ne marche plus pour le moment, encore x) )</p>
+
+<p>Si vous voulez en savoir plus sur les différents concepts que nous avons abordés dans cet article, voici quelques suggestions de lectures:</p>
+
+<ul>
+  <li><a href="https://docs.angularjs.org/guide/scope">AngularJS scope</a></li>
+  <li><a href="http://www.sitepoint.com/understanding-angulars-apply-digest/">Understanding Angular’s $apply() and $digest()</a></li>
+  <li><a href="http://www.sitepoint.com/emerging-patterns-javascript-event-handling/">Emerging Patterns in JavaScript Event Handling</a></li>
+  <li><a href="https://www.sitepoint.com/premium/books/angularjs-novice-to-ninja/preview/prototypal-inheritance-in-angularjs-scopes-14afa0b">Prototypal Inheritance in AngularJS Scopes</a></li>
+  <li><a href="https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch">Documentation for watch &amp;co</a></li>
+</ul>
+
+<h2 id="conclusion-bis-dilphrin-cette-fois-ci">Conclusion Bis (D’Ilphrin cette fois-ci)</h2>
+
+<p>J’ai vraiment aimé faire cette traduction et je pense que j’en ferais bien plus par la suite car j’ai beaucoup appris. Que ce soit au niveau technique parce que…bah c’est un article technique quand même, et moi qui utilise AngularJS au travail c’est toujours un plus d’avoir des articles comme ça.</p>
+
+<p>Mais aussi au niveau rédactionnel, je me suis beaucoup imprégné de la façon d’écrire de l’auteur original, ce qui m’aidera pour écrire les prochains articles.</p>
+
+<p>J’en ai aussi profité pour faire quelques petits changements sur le site, notamment maintenant je peux faire de la coloration syntaxique avec highlight.js, et je peux maintenant écrie du code dans une ligne.</p>
+
+<p>J’éspère que cet article vous aura plu, j’en ferais d’autres par la suite ;)</p>
+
+    </article>
+    <div id="comments" itemprop="comment">
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
+  
+  
+      
+      
+  
+      
+      
+  
+      
+      
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="traduction-watch-angularjs">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2017/01/09/traduction-watch-angularjs.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2017/01/09/traduction-watch-angularjs" />
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
+      </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
+    </div>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
+
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>

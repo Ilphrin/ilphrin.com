@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <link rel="icon" href="/images/LogoV1.png"/>
+  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
+  <title>
+    Kevin / Ilphrin
+  </title>
+  <!-- Piwik -->
+  <script type="text/javascript">
+    var _paq = _paq || [];
+    // tracker methods like "setCustomDimension" should be called before "trackPageView"
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="//ilphrin.com/piwik/";
+      _paq.push(['setTrackerUrl', u+'piwik.php']);
+      _paq.push(['setSiteId', '1']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <div class="header">
+  <div class="navigation">
+    <div class="title">
+      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
+    </div>
+    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/kevin/index.html">Blog</a></li>
+      <li><a href="/kevin/project.html">Projets</a></li>
+      <li><a href="/kevin/about.html">A propos</a></li>
+      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+    </ul>
+  </div>
+  <div class="headerCursor">
+    <img src="/images/decoration/header_01.svg" />
+  </div>
+</div>
+
+    <div class="main">
+        <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
+  <div id="post_header">
+    <div id="title" style="background-image: url('/images/header_articles/');">
+      <div>
+        <h1 itemprop="name"> Faire marcher une carte hybride sous Linux</h1>
+      </div>
+    </div>
+    <div id="details">
+      <p itemprop="datePublished">
+        <i class="big calendar icon"></i>
+        <span>2
+
+Janvier
+  
+2017
+</span>
+      </p>
+      <div>
+        <a href="https://twitter.com/share?text='Faire marcher une carte hybride sous Linux'" target="_blank">
+          <i class="big twitter icon"></i>
+          <span>Twitter</span>
+        </a>
+      </div>
+      <div>
+        <a href="http://sharetodiaspora.github.io/?title=Faire marcher une carte hybride sous Linux&url=/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux.html" target="_blank">
+          <i class="big icon star"></i>
+          <span>Diaspora*</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="content" itemprop="articleBody">
+    <h4 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h4>
+    <div class="previously">
+      <ul class="previous_articles">
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+      </ul>
+    </div>
+
+    <script type="text/javascript">
+( function() {
+  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
+  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
+  var placement_id = window.CHITIKA.units.length;
+  window.CHITIKA.units.push(unit);
+  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
+}());
+    </script>
+    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
+    <article>
+      <p>J’ai un <a href="http://www8.hp.com/us/en/ads/elite-products/elitebook-840.html">HP Elitebook 840</a>, qui possède un système de carte graphique dite “hybride”, pour les besoins de mes études. Après deux ans j’ai enfin réussi à la faire fonctionner, et je me suis dis que j’allais partager ma méthode</p>
+
+<!--break-->
+
+<p>Pour détailler un peu, j’ai:</p>
+
+<ul>
+  <li>Un chipset Intel intégré -&gt; <a href="http://www.intel.com/content/www/us/en/support/graphics-drivers/graphics-for-4th-generation-intel-processors/intel-hd-graphics-4400.html">Intel HD Graphics 4400</a></li>
+  <li>Une carte graphique “discrète” (j’y reviendrais plus tard sur le terme) -&gt; <a href="http://www.amd.com/en-us/products/graphics/notebook/8700m-8800m#">AMD Radeon HD 8750M</a></li>
+</ul>
+
+<p>Bien sûr, je n’utilise pas cet ordinateur que pour mes cours vu que c’est mon seul PC portable. L’utilisation la plus gourmande que j’ai vient des jeux vidéos. Souvent ce sont des jeux qui ne demandant pas grand-chose comme Osu, Dungeon Crawl Stone Soup, ou Beyond Divinity.</p>
+
+<p>Mais certains jeux ont plus de demandes, comme Doom 3 ou Path Of Exile (jouant à ce dernier fréquemment), et là la performance baisse énormément, avec des piques descendant à 1 image toutes les 2-3 secondes.</p>
+
+<p>Je ne me suis que rarement posé la question puisque je joue à tous ces jeux par le biais de Wine et PlayOnLinux, qui rajoute une couche de complexité et de travail pour l’ordinateur. Seulement depuis 3 mois j’ai eu envie d’investiguer un peu sur les performances de mon pc et j’ai découvert une chose intéressante</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh">sudo cat /sys/kernel/debug/vgaswitcheroo/switch
+
+0:DIS: :DynOff:0000:03:00.0
+1:IGD:+:Pwr:0000:00:02.0
+2:DIS-Audio: :Off:0000:03:00.1</code></pre></figure>
+
+<p>Cette commande permet d’afficher l’état des deux cartes graphiques sur un pc hybride</p>
+
+<ul>
+  <li>L’intégrée (IGD -&gt; InteGrateD) : C’est le chipset fourni avec la carte mère. Il s’occupe de tous les traitements peu gourmands comme le compositeur de bureau, des pages web, etc. Tout ce qui est graphique mais qui ne consomme pas beaucoup de ressources.</li>
+  <li>La discrete (DIS -&gt; Discrete) : C’est la carte graphique, beaucoup plus puissante et utilisée pour des traitements graphiques plus poussés comme de l’OpenGL.</li>
+</ul>
+
+<p>Dans la sortie de la commande plus haut on voit que la DIScrete est DynamicallyOFF, ce qui est normal puisque je ne fais aucun traitement particulier. Le souci c’est que quoique je fasse je n’arrivais pas à l’activer. Jusqu’à maintenant (petit teaser ;)).</p>
+
+<p>Il faut d’abord rajouter une configuration dans votre xorg.conf:</p>
+
+<figure class="highlight"><pre><code class="language-xorg" data-lang="xorg">Section "Device"
+  Identifier "Radeon"
+  Driver "intel"
+    Option "AccelMethod" "UXA"
+    Option "SwapbuffersWait" "false"
+    Option "VSync" "false"
+    Option "DRI" "3"
+EndSection
+
+Section "Device"
+  Identifier "Radeon"
+  Driver "radeon"
+    Option "SwapbuffersWait" "false"
+    Option "TearFree" "false"
+    Option "DRI" "3"
+EndSection</code></pre></figure>
+
+<p>On redémarre, et maintenant on peut forcer l’utilisation de la carte graphique sur une commande en mettant une variable d’environnement:</p>
+
+<figure class="highlight"><pre><code class="language-sh" data-lang="sh"><span class="nv">DRI_PRIME</span><span class="o">=</span>1 macommande</code></pre></figure>
+
+<p>Maintenant je peux jouer à Path Of Exile sans trop ramer ;)</p>
+
+<div class="ui icon message inverted"><i class="ui icon sticky note"></i><div class="content">
+Je ne sais pas si ça marche pour tous les pc portables avec une carte hybride Intel/Radeon, et surtout je n'ai pas testé toutes les combinaisons de configuration. C'est un amalgame d'informations trouvées sur StackOverflow, le bug tracker de Xorg, et d'autres recherches Google. N'hésitez pas à me dire ce qui à marché pour vous je vais essayer de faire une partie "Note" sur le site pour stocker ce genre d'astuces
+</div></div>
+
+    </article>
+    <div id="comments" itemprop="comment">
+  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
+  
+  
+      
+      
+  
+      
+      
+  
+      
+      
+  
+  <p style="font-style: italic">
+  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+  </p>
+  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
+    <input name="options[slug]" type="hidden" value="faire-marcher-une-carte-hybride-sous-linux">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
+    <input type="hidden" name="fields[post_id]" value="/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux" />
+    <div class="ui inverted segment">
+      <h2 class="ui dividing header">Commenter</h2>
+      <div class="field">
+        <div class="three fields">
+          <div class="field">
+            <label>Nom</label>
+            <input name="fields[name]" placeholder="Requis" type="text" required/>
+          </div>
+          <div class="field">
+            <label>Email</label>
+            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
+          </div>
+          <div class="field">
+            <label>Lien</label>
+            <input name="fields[url]" placeholder="Optionnel" type="text"/>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <label>Allez-y parlez ;)</label>
+        <textarea name="fields[message]" placeholder="Requis" required></textarea>
+      </div>
+      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
+    </div>
+  </form>
+</div>
+
+  </div>
+</div>
+
+
+    </div>
+
+  <script src="/js/previous.js" charset="utf-8"></script>
+  <script src="/js/header.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/js/analytics.js"></script>
+
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>
