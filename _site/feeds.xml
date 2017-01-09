@@ -7,6 +7,243 @@
 		<atom:link href="http://ilphrin.com/feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Traduction: Maitriser $watch dans AngularJS</title>
+				
+					<description>&lt;p&gt;Ce qui suit est une traduction d’un article sur &lt;a href=&quot;https://www.sitepoint.com/mastering-watch-angularjs/&quot;&gt;Sitepoint.com [lien d’origine]&lt;/a&gt;, rédigé par &lt;a href=&quot;https://www.sitepoint.com/author/mlarocca/&quot;&gt;Marcello La Rocca&lt;/a&gt; et &lt;a href=&quot;https://www.sitepoint.com/author/fpaulo/&quot;&gt;Francisco Paulo.&lt;/a&gt; Je ne suis en aucun cas l’auteur de cet article, j’ai simplement eu envie de le traduire parce que j’aime ça et que je considère que beaucoup de ressources anglophones devraient être aussi à la portée des personnes qui ne parlent pas anglais.&lt;/p&gt;
+
+&lt;!--break--&gt;
+
+&lt;h1 id=&quot;maitriser-watch-dans-angularjs&quot;&gt;Maitriser $watch dans AngularJS&lt;/h1&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://angularjs.org/&quot;&gt;AngularJS&lt;/a&gt; dispose de plusieurs options pour appliquer le modèle &lt;a href=&quot;https://fr.wikipedia.org/wiki/Publish-subscribe&quot;&gt;Publish-subscribe&lt;/a&gt; à travers trois différentes méthodes “watch”. Chacune prend différent paramètres optionnels qui peuvent modifier son comportement.&lt;/p&gt;
+
+&lt;p&gt;La documentation officielle de $watch ne va pas vraiment en profondeur: un problème récurrent qui a affecté l’entièreté d’AngularJS 1 après tout. Même la plupart des ressources en ligne qui en expliquent le fonctionnement sont éparpillées.&lt;/p&gt;
+
+&lt;p&gt;Et au final, il devient difficile pour un développeur de choisir la bonne méthode pour une situation donnée. Et cela est particulièrement vrai pour les débutants. Le résultat peut être pleins de surprises et est imprévisible, amenant inévitablement à des bugs.&lt;/p&gt;
+
+&lt;p&gt;Dans cet article, je (Ndt: Les auteurs d’origine de cet article) vais partir du principe que vous avez les bases d’AngularJS. Si vous avez besoin de vous rafraichir la mémoire, vous pourriez vous tourner vers des lectures sur &lt;a href=&quot;https://docs.angularjs.org/guide/scope&quot;&gt;$scope&lt;/a&gt;, &lt;a href=&quot;http://www.sitepoint.com/angularjs-tutorial-build-an-app-using-directives-and-data-binding/&quot;&gt;binding&lt;/a&gt; et &lt;a href=&quot;http://www.sitepoint.com/understanding-angulars-apply-digest/&quot;&gt;$apply et $digest&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;testez-vos-connaissances&quot;&gt;Testez vos connaissances&lt;/h2&gt;
+
+&lt;p&gt;Par exemple, quel est le meilleur moyen de surveiller le premier élément d’un tableau? Supposons que nous avons un tableau dans notre scope, &lt;code&gt;$scope.letters = [&#39;A&#39;, &#39;B&#39;, &#39;C&#39;];&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Est-ce que &lt;code class=&quot;javascript&quot;&gt;$scope.$watch(&#39;letters&#39;, function() {...})&lt;/code&gt; va lancer sa callback lorsque nous ajouterons un élément au tableau?&lt;/li&gt;
+  &lt;li&gt;Le lancera-t-il si nous changeons le premier élément?&lt;/li&gt;
+  &lt;li&gt;Et pour &lt;code class=&quot;javascript&quot;&gt;$scope.$watch(&#39;letters[0]&#39;, function() {...});&lt;/code&gt; ? Fonctionnera-t-il de la même manière ou mieux?&lt;/li&gt;
+  &lt;li&gt;Les éléments sont des valeurs primitives, que se passe-t-il si nous changeons le premier élément par la meme valeur?&lt;/li&gt;
+  &lt;li&gt;Et maintenant supposons que notre tableau contienne des objets? Que se passe-t-il?&lt;/li&gt;
+  &lt;li&gt;Quelle est la différence entre &lt;code class=&quot;javascript&quot;&gt;$watch&lt;/code&gt;, &lt;code class=&quot;javascript&quot;&gt;$watchCollection&lt;/code&gt;, et &lt;code class=&quot;javascript&quot;&gt;$watchGroup&lt;/code&gt;?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Si vous vous sentez confus par ces questions, continuez de lire cet article. Mon but est de rendre tout ça aussi clair que possible au travers de plusieurs example en vous guidant.&lt;/p&gt;
+
+&lt;h2 id=&quot;scopewatch&quot;&gt;$scope.$watch&lt;/h2&gt;
+
+&lt;p&gt;Commençons avec &lt;code class=&quot;javascript&quot;&gt;$scope.$watch&lt;/code&gt;. C’est la bête de somme des toutes les fonctionnalités de surveillance: chacune des autres méthodes que nous verrons sera juste un raccourci pour &lt;code class=&quot;javascript&quot;&gt;$watch&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;watch-ez-a&quot;&gt;$watch-ez ça&lt;/h3&gt;
+
+&lt;p&gt;Ce qui est bien avec Angular est que l’on peut utilise le même mécanisme explicitement pour accomplir des actions complexes dans nos controllers, activées par des changements dans les données. Par example, vous pourriez placer un observater/watcher sur des données qui peuvent changer en réponse aux:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Timeouts&lt;/li&gt;
+  &lt;li&gt;UI&lt;/li&gt;
+  &lt;li&gt;Calculs asynchrones complexes par des Web Workers&lt;/li&gt;
+  &lt;li&gt;Appels Ajax&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Vous pouvez mettre un ‘listener’ pour vérifier les changements de données, sans vous soucier de ce qui l’a causé.&lt;/p&gt;
+
+&lt;p&gt;Pour ce faire, vous allez devoir appeler &lt;code class=&quot;javascript&quot;&gt;$scope.$watch&lt;/code&gt; vous-même.&lt;/p&gt;
+
+&lt;h3 id=&quot;en-pratique&quot;&gt;En pratique&lt;/h3&gt;
+
+&lt;p&gt;Regardons le code de &lt;code class=&quot;javascript&quot;&gt;$rootscope.watch()&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Voici sa signature: &lt;code class=&quot;javascript&quot;&gt;function(watchExp, listener, objectEquality, prettyPrintExpression)&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;En détail, ces 4 paramètres sont:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;javascript&quot;&gt;watchExp&lt;/code&gt; L’expression à observer. Cela peut être une fonction ou une chaine de caractères, elle est évaluée à chaque cycle.
+Un aspect à noter ici est que &lt;em&gt;si&lt;/em&gt; l’expression est évaluée comme une fonction, alors cette fonction doit être idempotent. En d’autres termes, pour une même valeur en entré la fonction doit retourner la même sortie. Si ce n’est pas le cas, Angular va penser que les données ont changées. Et donc il va continuer à détecter une différence et appeler le listener à chaque itération du cycle.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;javascript&quot;&gt;listener&lt;/code&gt; Une callback lancé lorsque  l’observateur/watch est crée, et ensuite à chaque fois que, pendant un cycle, un changement &lt;code class=&quot;javascript&quot;&gt;watchExp&lt;/code&gt; est détecté. L’appel initial à la configuration est faite pour enregistrer une première valeur de l’expression.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;javascript&quot;&gt;objectEquality&lt;/code&gt; L’observateur/watcher va faire une comparaison profonde si, et seulement si cette variable est vraie. Sinon elle opérera une comparaison en surface, ce qui veut dire que seules les références seront comparées.&lt;br /&gt;Prenons un exemple: &lt;code class=&quot;javascript&quot;&gt;$scope.fruit = [&quot;banana&quot;, &quot;apple&quot;];&lt;/code&gt;.&lt;br /&gt; &lt;code class=&quot;javascript&quot;&gt;objectEquality == false&lt;/code&gt; signifie que seul une réassignation de “fruit” lancera un appel au listener. Nous avons aussi besoin de savoir a quelle “profondeur” la comparaison se fera. Nous verrons ça plus tard.&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;javascript&quot;&gt;prettyPrintExpression&lt;/code&gt; Si elle est indiquée, va surcharger l’expression observée. Ce paramètre n’est &lt;strong&gt;PAS&lt;/strong&gt; fait pour être utilisé lors d’un appel normal à &lt;code class=&quot;javascript&quot;&gt;$watch();&lt;/code&gt;, elle est utilisée en interne par le parser d’expression. &lt;br /&gt; &lt;strong&gt;Faites attention&lt;/strong&gt;, comme vous pouvez le voir par vous-même il est très facile d’obtenir des résultats inatendus en passant le 4e argument par erreur.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Maintenant nous sommes en passe de répondre à quelques questions de l’introduction. Regardons nos examples pour cette section:&lt;/p&gt;
+
+&lt;p data-height=&quot;345&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;GoYyzB&quot; data-default-tab=&quot;js&quot; data-user=&quot;SitePoint&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Angular $watch demo - $scope.$watch()&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/SitePoint/pen/GoYyzB/&quot;&gt;Angular $watch demo - $scope.$watch()&lt;/a&gt; by SitePoint (&lt;a href=&quot;http://codepen.io/SitePoint&quot;&gt;@SitePoint&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Prenez le temps de vous familiariser avec. Vous pouvez comparer les différences de comportement directement, ou suivre l’ordre dans l’article.&lt;/p&gt;
+
+&lt;h4 id=&quot;observer-un-array&quot;&gt;Observer un Array&lt;/h4&gt;
+
+&lt;p&gt;Vous voulez observer les changements d’un Array de votre scope, mais que signifie “changement”?&lt;/p&gt;
+
+&lt;p&gt;Disons que vôtre controller ressemble à ceci:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;controller&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;watchDemoCtrl&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;$scope&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;letters&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;A&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;B&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;C&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;];&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}]);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;L’une des options serait de faire un appel comme ceci:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;letters&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oldValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Faire quelque chose ici avec $scope.letters&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Dans la fonction au-dessus, &lt;code class=&quot;javascript&quot;&gt;newValue&lt;/code&gt; et &lt;code class=&quot;javascript&quot;&gt;oldValue&lt;/code&gt; parlent d’eux-mêmes, et seront mis à jour à chaque fois qu’elle est appelée par le cycle &lt;code class=&quot;javascript&quot;&gt;$digest&lt;/code&gt;. La signification de &lt;code class=&quot;javascript&quot;&gt;scope&lt;/code&gt; est assez intuitive aussi, elle contient une référence au scope courant.&lt;/p&gt;
+
+&lt;p&gt;Mais la question est: quand le listener sera-t-il appelé? Si vous essayez d’ajouter, supprimer, ou remplacer des éléments du tableau &lt;code class=&quot;javascript&quot;&gt;letters&lt;/code&gt;, et rien de se passera. C’est parce que par défaut &lt;code class=&quot;javascript&quot;&gt;$watch&lt;/code&gt; par du principe que vous ne voulez vérifier que &lt;em&gt;l’égalité de références&lt;/em&gt;, donc si vous assignez une nouvelle valeur à &lt;code class=&quot;javascript&quot;&gt;$scope.letters&lt;/code&gt;, la callback sera lancée.&lt;/p&gt;
+
+&lt;p&gt;Si vous voulez observer les changements d’un élément du tableau, vous devez passer &lt;code class=&quot;javascript&quot;&gt;true&lt;/code&gt; en 3e paramètre a l’observateur (c’est-à-dire mettre une valeur au paramètre &lt;code class=&quot;javascript&quot;&gt;objectEquality&lt;/code&gt; décrit plus haut).&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;letters&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oldValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;// Faire quelque chose ici avec $scope.letters&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h4 id=&quot;observer-un-objet&quot;&gt;Observer un Objet&lt;/h4&gt;
+
+&lt;p&gt;Pour les objets c’est la même chose. Si &lt;code class=&quot;javascript&quot;&gt;objectEquality&lt;/code&gt; est a &lt;code class=&quot;javascript&quot;&gt;false&lt;/code&gt;, on observe juste la réassignation de cette variable dans le scope. Alors qu’à &lt;code class=&quot;javascript&quot;&gt;true&lt;/code&gt;, a chaque changement d’un élément dans l’objet, la callback est appélée.&lt;/p&gt;
+
+&lt;h4 id=&quot;observer-le-premier-lment-dun-array&quot;&gt;Observer le premier élément d’un Array&lt;/h4&gt;
+
+&lt;p&gt;Il faut rappeler qu’avec &lt;code class=&quot;javascript&quot;&gt;objectEquality == true&lt;/code&gt;, chaque fois que la callback est appelée, &lt;code class=&quot;javascript&quot;&gt;newValue&lt;/code&gt; est &lt;code class=&quot;javascript&quot;&gt;oldValue&lt;/code&gt; seront l’ancienne et nouvelle valeur du tableau &lt;strong&gt;en entier&lt;/strong&gt;. Donc il faut faire la différence entre les deux à chaque fois pour savoir ce qui a changé.&lt;/p&gt;
+
+&lt;p&gt;Imaginons que vous ne vouliez observer les changements du premier élément seulement (ou le 4e, c’est le même principe). Eh bien puisque Angular est génial, il vous permet de faire ça: vous pouvez l’écrire naturellement dans l’expression que vous passez en premier paramètre à &lt;code class=&quot;javascript&quot;&gt;$watch&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;letter[4]&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oldValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Et si le tableau n’avait que 2 éléments? Eh bien pas de problème, la callback ne sera lancé que lorsque vous ajouterez un 4e élément. Enfin, elle sera lancée quand vous initialiserez pour la première fois l’observateur/watch, et ensuite seulement lorsque vous mettrez un 4e élément.&lt;/p&gt;
+
+&lt;p&gt;Si vous affichez &lt;code class=&quot;javascript&quot;&gt;oldValue&lt;/code&gt;, vous que les deux fois elle vaudra &lt;code class=&quot;javascript&quot;&gt;undefined&lt;/code&gt;. Comparez ceci avec ce qu’il se passe si on observe un élément existant: À l’initialisation, vous aurez toujours &lt;code class=&quot;javascript&quot;&gt;oldValue == undefined&lt;/code&gt;. Donc rien que &lt;code class=&quot;javascript&quot;&gt;$watch&lt;/code&gt; ne peut gérer!&lt;/p&gt;
+
+&lt;p&gt;Maintenant passons à une question plus intéressante: doit-on passer &lt;code class=&quot;javascript&quot;&gt;objectEquality == true&lt;/code&gt; ici?&lt;/p&gt;
+
+&lt;p&gt;Malheureusement il n’y a pas de réponse simple à cette question.&lt;/p&gt;
+
+&lt;p&gt;Cela dépend:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Dans cet exemple, puisque nous avons des valeurs primitives, nous n’avons pas besoin de comparaison profonde, donc nous pouvons omettre &lt;code class=&quot;javascript&quot;&gt;objectEquality&lt;/code&gt;.&lt;/li&gt;
+  &lt;li&gt;Mais supposons que nous ayons une matrice &lt;code class=&quot;javascript&quot;&gt;$scope.board = [[1, 2, 3], [4, 5, 6]];&lt;/code&gt;, et que nous voulions observer la première ligne. Alors nous voudrions surement être alertés d’un changement comme &lt;code class=&quot;javascript&quot;&gt;$scope.board[0][1] = 7&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;observer-le-champ-dun-objet&quot;&gt;Observer le champ d’un Objet&lt;/h4&gt;
+
+&lt;p&gt;Sûrement encore plus utile qu’observer un élément arbitraire d’un tableau, nous pouvons observer un champ arbitraire dans un objet. Mais il n’y a là aucune surprise hein? Les Arrays en JavaScript sont des objets après tout.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;b&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;obj[&quot;a&quot;]&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oldValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;})&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;h3 id=&quot;une-comparaison-jusqu-quelle-profondeur&quot;&gt;Une comparaison jusqu’à quelle profondeur?&lt;/h3&gt;
+
+&lt;p&gt;Nous devons éclaircir un dernier point crucial: que se passe-t-il si nous devons observer un objet complexe imbriqué avec uniquement des valeurs non-primitives? Comme un graphe ou un arbre, ou des données en JSON.&lt;/p&gt;
+
+&lt;p&gt;Regardons tout ça!&lt;/p&gt;
+
+&lt;p&gt;D’abord nous avons besoin d’un objet à observer:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;obj&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&#39;a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;s1&quot;&gt;&#39;b&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;ba&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s1&quot;&gt;&#39;bab&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;s1&quot;&gt;&#39;bb&#39;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;bb1a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;bb1b&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s1&quot;&gt;&#39;bb2a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Appliquons notre watch sur l’objet en entier: Je suppose que maintenant il est assez clair que &lt;code class=&quot;javascript&quot;&gt;objectEquality&lt;/code&gt; doit valoir &lt;code class=&quot;javascript&quot;&gt;true&lt;/code&gt; dans ce cas.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$watch&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;obj&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oldValue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;//...&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;},&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;La question est la suivante: Angular sera-t-il assez sympa pour nous prévenir lorsque nous ferons quelque chose du genre &lt;code class=&quot;javascript&quot;&gt;$scope.b.bb[1].bb2a = 7&lt;/code&gt;?&lt;/p&gt;
+
+&lt;p&gt;La réponse est oui, heureusement pour nous (vérifiez sur la démo CodePen précédente).&lt;/p&gt;
+
+&lt;h2 id=&quot;dautres-mthodes&quot;&gt;D’autres méthodes&lt;/h2&gt;
+
+&lt;h3 id=&quot;code-classjavascriptscopewatchgroupcode&quot;&gt;&lt;code class=&quot;javascript&quot;&gt;$scope.$watchGroup&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;Est-ce que &lt;code class=&quot;javascript&quot;&gt;$watchGroup&lt;/code&gt; est vraiment une méthode? La réponse est non.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;javascript&quot;&gt;$watchGroup&lt;/code&gt; est un raccourci pratique qui vous permet de placer plusieurs observateurs/watchers avec une même callback, en lui passant un tableau de &lt;code class=&quot;javascript&quot;&gt;watchExpressions&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Chaque expression passé sera observée en utilisant la méthode &lt;code class=&quot;javascript&quot;&gt;$scope.$watch()&lt;/code&gt;:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-javascript&quot; data-lang=&quot;javascript&quot;&gt;&lt;span class=&quot;nx&quot;&gt;$scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;$watchGroup&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&#39;obj.a&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;obj.b.bb[1]&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&#39;letters[2]&#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;newValues&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;oldValues&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;scope&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;//&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Il est à noter qu’avec &lt;code class=&quot;javascript&quot;&gt;$watchGroup&lt;/code&gt;, &lt;code class=&quot;javascript&quot;&gt;newValues&lt;/code&gt; et &lt;code class=&quot;javascript&quot;&gt;oldValues&lt;/code&gt; vont avoir une liste de valeur pour les expressionns, celles qui ont changées et celles d’avant, dans le &lt;strong&gt;même ordre&lt;/strong&gt; que le tableau que vous lui donnez en paramètre.&lt;/p&gt;
+
+&lt;p&gt;En regardant la documentation de cette méthode, on peut remarquer que cette méthode ne prend pas &lt;code class=&quot;javascript&quot;&gt;objectEquality&lt;/code&gt;. C’est parce qu’elle ne prends que les expressions en elle-même, et ne réagit qu’aux changements de référence.&lt;/p&gt;
+
+&lt;p&gt;En jouant avec la démo ci-dessous de &lt;code class=&quot;javascript&quot;&gt;$watchGroup&lt;/code&gt;, vous pourriez remarquerer quelques subtilités. Par exemple &lt;code class=&quot;javascript&quot;&gt;unshift&lt;/code&gt; va provoquer un appel du listener, au moins dans certains cas: c’est parce qu’en passant une liste d’expressionsns à &lt;code class=&quot;javascript&quot;&gt;$watchGroup&lt;/code&gt;, &lt;em&gt;chacune d’entre elles&lt;/em&gt; pourra provoquer l’execution de la callback.&lt;/p&gt;
+
+&lt;p data-height=&quot;345&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;rxqpbe&quot; data-default-tab=&quot;html&quot; data-user=&quot;SitePoint&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Angular $watch demo - $scope.$watchGroup&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/SitePoint/pen/rxqpbe/&quot;&gt;Angular $watch demo - $scope.$watchGroup&lt;/a&gt; by SitePoint (&lt;a href=&quot;http://codepen.io/SitePoint&quot;&gt;@SitePoint&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Notez aussi que changer un champ à l’intérieur de &lt;code class=&quot;javascript&quot;&gt;$scope.obj.j&lt;/code&gt; ne provoquera pas de mise à jour, seulement l’assignation de &lt;code class=&quot;javascript&quot;&gt;b&lt;/code&gt; le fera.&lt;/p&gt;
+
+&lt;h3 id=&quot;code-classjavascriptscopewatchcollectioncode&quot;&gt;&lt;code class=&quot;javascript&quot;&gt;$scope.$watchCollection&lt;/code&gt;&lt;/h3&gt;
+
+&lt;p&gt;C’est un autre raccourci pourriez observer des tableaux ou des objets. Pour les tableaux, le listener sera appelé à chaque fois qu’un élément est déplacé, supprimé ou ajouté. Pour les objets, c’est lorsqu’une propriété change. Encore une fois, &lt;code class=&quot;javascript&quot;&gt;objectEquality&lt;/code&gt; n’est pas autorisé, la fonction ne regardera que le premier niveau de champs/éléments, et ne réagira pas aux changements de leurs sous-champs.&lt;/p&gt;
+
+&lt;p data-height=&quot;265&quot; data-theme-id=&quot;0&quot; data-slug-hash=&quot;VeEyNy&quot; data-default-tab=&quot;html&quot; data-user=&quot;SitePoint&quot; data-embed-version=&quot;2&quot; data-pen-title=&quot;Angular $watch demo - $scope.$watchCollection()&quot; class=&quot;codepen&quot;&gt;See the Pen &lt;a href=&quot;http://codepen.io/SitePoint/pen/VeEyNy/&quot;&gt;Angular $watch demo - $scope.$watchCollection()&lt;/a&gt; by SitePoint (&lt;a href=&quot;http://codepen.io/SitePoint&quot;&gt;@SitePoint&lt;/a&gt;) on &lt;a href=&quot;http://codepen.io&quot;&gt;CodePen&lt;/a&gt;.&lt;/p&gt;
+&lt;script async=&quot;&quot; src=&quot;https://production-assets.codepen.io/assets/embed/ei.js&quot;&gt;&lt;/script&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;J’espère que ces exemples vous auront aidé à découvrir la puissance de cette fonctionnalité d’Angular, et à quel point il est important d’utiliser les bonnes options.&lt;/p&gt;
+
+&lt;p&gt;N’hésitez pas à retoucher et forker les CodePens et à éxperimenter avec les méthodes des différents contextes, et n’oubliez pas de faire des retours en commentaires! (Ndlt: Du site original, moi les commentaires ne marche plus pour le moment, encore x) )&lt;/p&gt;
+
+&lt;p&gt;Si vous voulez en savoir plus sur les différents concepts que nous avons abordés dans cet article, voici quelques suggestions de lectures:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.angularjs.org/guide/scope&quot;&gt;AngularJS scope&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sitepoint.com/understanding-angulars-apply-digest/&quot;&gt;Understanding Angular’s $apply() and $digest()&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://www.sitepoint.com/emerging-patterns-javascript-event-handling/&quot;&gt;Emerging Patterns in JavaScript Event Handling&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.sitepoint.com/premium/books/angularjs-novice-to-ninja/preview/prototypal-inheritance-in-angularjs-scopes-14afa0b&quot;&gt;Prototypal Inheritance in AngularJS Scopes&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://docs.angularjs.org/api/ng/type/$rootScope.Scope#$watch&quot;&gt;Documentation for watch &amp;amp;co&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusion-bis-dilphrin-cette-fois-ci&quot;&gt;Conclusion Bis (D’Ilphrin cette fois-ci)&lt;/h2&gt;
+
+&lt;p&gt;J’ai vraiment aimé faire cette traduction et je pense que j’en ferais bien plus par la suite car j’ai beaucoup appris. Que ce soit au niveau technique parce que…bah c’est un article technique quand même, et moi qui utilise AngularJS au travail c’est toujours un plus d’avoir des articles comme ça.&lt;/p&gt;
+
+&lt;p&gt;Mais aussi au niveau rédactionnel, je me suis beaucoup imprégné de la façon d’écrire de l’auteur original, ce qui m’aidera pour écrire les prochains articles.&lt;/p&gt;
+
+&lt;p&gt;J’en ai aussi profité pour faire quelques petits changements sur le site, notamment maintenant je peux faire de la coloration syntaxique avec highlight.js, et je peux maintenant écrie du code dans une ligne.&lt;/p&gt;
+
+&lt;p&gt;J’éspère que cet article vous aura plu, j’en ferais d’autres par la suite ;)&lt;/p&gt;
+</description>
+				<pubDate>Mon, 09 Jan 2017 00:00:00 +0100</pubDate>
+				<link>http://ilphrin.com/planet/2017/01/09/traduction-watch-angularjs.html</link>
+				<guid isPermaLink="true">http://ilphrin.com/planet/2017/01/09/traduction-watch-angularjs.html</guid>
+			</item>
+		
+			<item>
 				<title>Faire marcher une carte hybride sous Linux</title>
 				
 					<description>&lt;p&gt;J’ai un &lt;a href=&quot;http://www8.hp.com/us/en/ads/elite-products/elitebook-840.html&quot;&gt;HP Elitebook 840&lt;/a&gt;, qui possède un système de carte graphique dite “hybride”, pour les besoins de mes études. Après deux ans j’ai enfin réussi à la faire fonctionner, et je me suis dis que j’allais partager ma méthode&lt;/p&gt;

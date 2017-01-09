@@ -2,11 +2,11 @@
 <html lang="fr">
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+  <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
   <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <link rel="icon" href="/images/LogoV1.png"/>
-  <link rel="stylesheet" href="https://cdn.rawgit.com/knsv/mermaid/0.6.0/dist/mermaid.css">
   <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
-
   <title>
     Kevin / Ilphrin
   </title>
@@ -48,16 +48,16 @@
 
     <div class="main">
         
-  <div class="header_blog" >
-    <a href="/planet/2017/01/02/faire-marcher-une-carte-hybride-sous-linux.html">
-      <h1>Faire marcher une carte hybride sous Linux</h1>
-      <h2>2
+  <div class="header_blog" style="background-image: url('/images/header_articles/angularjs_01.png');">
+    <a href="/planet/2017/01/09/traduction-watch-angularjs.html">
+      <h1>Traduction: Maitriser $watch dans AngularJS</h1>
+      <h2>9
 
 Janvier
   
 2017
 </h2>
-      <span><p>J’ai un <a href="http://www8.hp.com/us/en/ads/elite-products/elitebook-840.html">HP Elitebook 840</a>, qui possède un système de carte graphique dite “hybride”, pour les besoins de mes études. Après deux ans j’ai enfin réussi à la faire fonctionner, et je me suis dis que j’allais partager ma méthode</p>
+      <span><p>Ce qui suit est une traduction d’un article sur <a href="https://www.sitepoint.com/mastering-watch-angularjs/">Sitepoint.com [lien d’origine]</a>, rédigé par <a href="https://www.sitepoint.com/author/mlarocca/">Marcello La Rocca</a> et <a href="https://www.sitepoint.com/author/fpaulo/">Francisco Paulo.</a> Je ne suis en aucun cas l’auteur de cet article, j’ai simplement eu envie de le traduire parce que j’aime ça et que je considère que beaucoup de ressources anglophones devraient être aussi à la portée des personnes qui ne parlent pas anglais.</p>
 
 </span>
     </a>
@@ -109,6 +109,21 @@ Janvier
 <div class="posts">
 
   <div class="post">
+    <h2><a href="/2015/09/24/des-news-en-tout-genres.html">Des news en tout genre</a></h2>
+    <p>Depuis que j’ai mis en ligne le site, j’ai fait tout un tas de petites modifications mineures pour rendre le tout un peu plus joli/stable/fonctionnel, en voici une liste (non exhaustive puisque je ne me souviens pas de tout):</p>
+
+<ul>
+  <li>Les commentaires fonctionnent maintenant! J’ai bidouillé pendant un bon moment à comprendre pourquoi quand je recevais un mail avec le contenu du commentaire à ajouter, ce n’était pas en utf-8. En fait il fallait rajouter \r\n a la fin de chaque informations de l’en-tête de requete de mail pour que ça passe correctement…</li>
+  <li>Je profite des articles sur Vim pour améliorer mon fichier CSS vim_syntax.css, puisque Jekyll peut faire de la mise en valeur de code avec {\% highlight %}, mais avec mes règles CSS la coloration était effacée pour ne laisser que du jaune ocre. Puisque Jekyll est bien fait il crée une classe pour chaque élément sémantique du langage mis en valeur, ce qui fait qu’il ne reste plus qu’à créer une règle CSS par classe pour avoir sa coloration personnalisée!</li>
+  <li>Toujours dans le CSS j’ai viré tous les ‘outline’ possible avec un brutal =&gt;  * {outline: none;}, de plus je me suis amusé avec les propriétés :focus pour le formulaire de commentaire pour rendre tout ça un peu plus vivant</li>
+  <li>Je pense ajouter une partie pour les news qui m’ont interressé ou mes pensées du moment, choses qui ne suffiraient pas à faire un article et n’ont donc pas leur place ici.</li>
+  <li>Le lien en bas pour le code du site sur Github dirige maintenant vers le dépot récemment crée. Je ne me suis pas vraiment cassé la tête a commenter les layouts ou a faire les choses de façon propre. Déjà parce que c’est la première fois que je fais un site complet donc je n’ai pas toutes les bonnes habitudes, et ensuite parce que ce n’est pas la peine je pense de détailler puisqu’il suffit de comprendre l’organisation de façon globale. (Et puis il y a beaucoup de choses qui sont inspirées de code trouvé sur l’Internet donc mieux documentés que par moi).</li>
+  <li>Si vous avez regardé le dépôt vous avez pu remarquer que mon CV est sur le site, mais que je n’ai mis aucun lien pour l’afficher. C’est volontaire. Si vous souhaitez vraiment le voir il est a http://ilphrin.com/kevin/CV_en.pdf, je compte ne faire que passer le lien sur mon compte Linkedin ou dans mes cartes de visite, je ne crois pas que ce soit la peine de prendre un bout de place sur le site pour ça.</li>
+</ul>
+
+  </div>
+
+  <div class="post">
     <h2><a href="/planet/2015/09/21/topo-de-mes-plugins-vim-02.html">Topo de mes plugins Vim - 02</a></h2>
     <p>Les plugins c’est vraiment le top, alors dans Vim je vous en parle même pas, c’est comme rajouter des animations CSS, si je ne fait pas attention j’en rajoute un peu partout! Depuis la dernière fois j’ai rajouté quelque plugins qui ne révolutionnent pas mon utilisation de Vim, mais restent quand même un petit plus agréable. Du coup aujourd’hui ça va être plus court mais il y aura plus de monde ;)</p>
 
@@ -137,15 +152,6 @@ Janvier
 
   </div>
 
-  <div class="post">
-    <h2><a href="/planet/2015/01/25/premiers-pas-dans-le-developmment-d-applications-firefox-os.html">Premiers pas dans le développement de Firefox OS</a></h2>
-    <p>Salut tout le monde!</p>
-
-<p>Comme je le disais dans <a href="/2015/01/22/changer-de-homescreen-dans-firefox-os.html">mon précédent article</a>, il existe plusieurs applications pour changer son homescreen, mais elles datent toutes
- de plusieurs jour/mois et ne sont, pour la plupart, plus fonctionnelles. Je me suis donc dit que j’allais regarder l’un des projets que j’ai présenté et essayer de le patcher pour le faire fonctionner.
-
-  </div>
-
 </div>
 
 
@@ -159,6 +165,10 @@ Janvier
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
 
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
   <script defer>mermaid.initialize({startOnLoad:true});</script>
 </body>
 </html>

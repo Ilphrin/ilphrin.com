@@ -189,6 +189,10 @@ a, a:visited
   }
 }
 
+li {
+  padding-top: 10px;
+}
+
 .posts
 {
   margin-left: 5%;
@@ -332,6 +336,13 @@ a, a:visited
   #comments *{
     box-sizing: inherit;
   }
+}
+
+p > code.hljs, li > code.hljs {
+  display: inline;
+  padding: 0.1em;
+  border-radius: 6px;
+  background-color: #1d1d1d;
 }
 
 footer
