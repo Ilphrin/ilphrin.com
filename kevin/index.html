@@ -2,6 +2,7 @@
 layout: index
 ---
 
+<div class="post_home">
 {% for post in site.posts %}
   <div class="header_blog" {% if post.cover %}style="background-image: url('/images/header_articles/{{ post.cover }}');"{% endif %}>
     <a href="{{post.url}}">
@@ -63,4 +64,4 @@ layout: index
   </div>
 {% endfor %}
 </div>
-
+</div>
