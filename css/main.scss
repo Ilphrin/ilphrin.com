@@ -2,8 +2,8 @@
 # Front matter comment to ensure Jekyll properly reads file.
 ---
 
-$base-color: #111111;
-$secondary_color: #283A48;
+$base-color: #151515;
+$secondary_color: #1d1824;
 
 @mixin padding-both($value)
 {
@@ -184,16 +184,25 @@ a, a:visited
   padding-top: 1%;
   padding-bottom: 20px;
   @include padding-both(3%);
-  margin-left: 20%;
+  margin-left: 24%;
   margin-bottom: -20px;
   text-align: justify;
   font-family: "Open", sans-serif;
   font-weight: 100;
   color: white;
-  background-color: lighten($base-color, 10%);
   ul
   {
     list-style-image: url('/images/decoration/list.png');
+  }
+  #comments {
+    box-sizing: border-box;
+    form input[type="text"], form input[type="email"], form input[type="password"], textarea  {
+      background: #363636;
+      color: white;
+    }
+  }
+  #comments *{
+    box-sizing: inherit;
   }
 }
 
@@ -258,24 +267,29 @@ li {
 .post_home
 {
   @include flex-column();
+  background-color: lighten($base-color, 10%);
+  margin-bottom: 40px;
+  border: 1px solid #594f3f;
+  border-radius: 4px;
   #post_header {
     #post_title
     {
       color: #EEE;
-      height: 30em;
+      height: 25em;
       position: relative;
+      overflow: hidden;
+      width: 100%;
       * {
         position: absolute;
       }
       .cover_pic {
         width: 100%;
         height: 100%;
-        background-color: #000000C0;
+        background-color: #000000A0;
         z-index: 1;
       }
       img {
         width: 100%;
-        height: 100%;
       }
       svg {
         @include centerer;
@@ -287,7 +301,9 @@ li {
       h1 {
         z-index: 2;
         @include centerer;
-        top: 90px;
+        top: 50px;
+        text-align: center;
+        font-size: 250%;
       }
       span {
         z-index: 2;
@@ -299,8 +315,8 @@ li {
   }
   .content
   {
-    width: 95%;
-    font-size: 100%;
+    width: 100%;
+    font-size: 110%;
     line-height: 1.5em;
     img
     {
@@ -308,6 +324,42 @@ li {
       @include margin-height(1%);
       @include margin-both(auto);
       max-width: 100%;
+    }
+    .similar_articles {
+      position: fixed;
+      left: 0px;
+      top: 210px;
+      background-color: #1d1824;
+      padding: 10px;
+      padding-right: 0px;
+      margin-left: 5px;
+      width: 23%;
+      text-align: center;
+      ul {
+        max-height: 350px;
+        overflow-y: scroll;
+        padding: 0px;
+        width: 95%;
+        hr {
+          width: 40%;
+        }
+        li {
+          list-style: none;
+          p {
+            font-size: 70%;
+          }
+          &:last-child {
+            hr {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    article {
+      @include padding-both(80px);
+      margin-top: 110px;
+      padding-bottom: 45px;
     }
   }
   a
@@ -336,12 +388,13 @@ li {
     float: right;
     padding-left: 10px;
   }
-  #comments {
-    box-sizing: border-box;
-  }
-  #comments *{
-    box-sizing: inherit;
-  }
+}
+
+.ui.inverted.segment {
+  padding: 14px;
+  background-color: #1D1824;
+  margin-top: 40px;
+  border: 1px solid #3F3C5F;
 }
 
 p > code.hljs, li > code.hljs {
@@ -564,48 +617,6 @@ hr {
   width: 0px;
 }
 
-.previously {
-  display: none;
-  position: absolute;
-  margin-top: 10px;
-  font-size: 90%;
-  background-color: $secondary_color;
-  width: 50%;
-  border: 1px solid #AEAEAE;
-  white-space: nowrap;
-  li {
-    list-style: outside;
-    a {
-        color: white;
-        text-overflow: ellipsis;
-        text-decoration: underline;
-        &:hover {
-          text-decoration: none;
-          color: cyan;
-        }
-    }
-  }
-  .current_post a::after {
-    content: "";
-    display: inline-block;
-    background: url('/images/decoration/arrow.png');
-    background-size: 100% 100%;
-    width: 38px;
-    height: 38px;
-    background-position: 0px 10px;
-  }
-}
-
-#see_previous {
-  cursor: pointer;
-}
-
-#see_previous::after {
-  content: "";
-  width: 70%;
-  height: 1px;
-}
-
 #projects {
   display: flex;
   justify-content: space-between;
@@ -652,6 +663,13 @@ hr {
       }
     }
   }
+}
+
+div.ui.segment {
+  background: none;
+  border: none;
+  margin: 0px;
+  padding: 0px;
 }
 
 @media (max-width: 1210px) {

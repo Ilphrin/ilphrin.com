@@ -94,22 +94,31 @@ lang: fr
     </div>
   </div>
   <div class="content" itemprop="articleBody">
-    <h4 id="see_previous" onclick="see_previous()">Voir les articles sur le même sujet</h4>
-    <div class="previously">
-      <ul class="previous_articles">
-        {% for post in site.posts reversed %}
-        {% if post.serie == page.serie and post.serie %}
-        {% if post.title == page.title %}
-        <li class="current_post">
-          {% else %}
-          <li>
-            {% endif %}
-            <a href="{{post.url}}">{{post.title}}: <time datetime="{{page.date | date: '%-d %B %Y'}}">{% include date.html date=post.date %}</time></a>
-          </li>
+    {% for post in site.posts %}
+      {% if post.serie == page.serie and post.serie and post.title != page.title %}
+        {% assign ok = 1 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if ok %}
+    <div class="similar_articles">
+      <h2>Articles similaires</h2>
+      <ul>
+        {% for post in site.posts %}
+          {% if post.serie == page.serie and post.serie %}
+            <li>
+              <a href="{{post.url}}">{{post.title}}</a>
+              <p datetime="{{page.date | date: '%-d %B %Y'}}">{% include date.html date=post.date %}</p>
+              <hr />
+              <div class="similar_excerpt">
+                <p>{{ post.excerpt }}</p>
+              </div>
+            </li>
           {% endif %}
-          {% endfor %}
+        {% endfor %}
       </ul>
     </div>
+    {% endif %}
 
     <script type="text/javascript">
 ( function() {
@@ -124,15 +133,19 @@ lang: fr
     <article>
       {{ content }}
     </article>
-    <a href="https://twitter.com/share?text='{{page.title}}'" target="_blank">
-      <i class="big twitter icon"></i>
-      <span>Twitter</span>
-    </a>
-    <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank">
-      <i class="big icon star"></i>
-      <span>Diaspora*</span>
-    </a>
-    {% include comment_template.html post=page %}
   </div>
 </div>
+
+<div id="share" class="ui segment inverted">
+  <h2>Vous avez aimé cet article? Partagez-le</h2>
+  <a href="https://twitter.com/share?text='{{page.title}} {{page.url}}'" target="_blank">
+    <i class="big twitter icon"></i>
+    <span>Twitter</span>
+  </a>
+  <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank">
+    <i class="big icon star"></i>
+    <span>Diaspora*</span>
+  </a>
+</div>
+{% include comment_template.html post=page %}
 

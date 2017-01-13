@@ -1,5 +1,4 @@
 <div id="comments" itemprop="comment">
-  <h2 class="ui horizontal divider header inverted">Commentaires</h2>
   {% assign comments = site.data.comments | sort %}
   {% for comment in comments reversed %}
       {% assign c = comment[1] %}
@@ -23,9 +22,6 @@
       </div>
       {% endif %}
   {% endfor %}
-  <p style="font-style: italic">
-  Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
-  </p>
   <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
     <input name="options[slug]" type="hidden" value="{{ page.slug }}">
     <input name="options[redirect]" type="hidden" value="https://ilphrin.com{{page.url}}">
@@ -33,6 +29,9 @@
     <input type="hidden" name="fields[post_id]" value="{{page.id}}" />
     <div class="ui inverted segment">
       <h2 class="ui dividing header">Commenter</h2>
+      <p style="font-style: italic">
+      Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
+      </p>
       <div class="field">
         <div class="three fields">
           <div class="field">
