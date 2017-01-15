@@ -264,6 +264,37 @@ li {
   }
 }
 
+.similar_articles {
+  position: fixed;
+  left: 0px;
+  top: 210px;
+  background-color: #1d1824;
+  padding: 10px;
+  padding-right: 0px;
+  width: 23%;
+  text-align: center;
+  ul {
+    max-height: 350px;
+    overflow-y: scroll;
+    padding: 0px;
+    width: 95%;
+    hr {
+      width: 40%;
+    }
+    li {
+      list-style: none;
+      p {
+        font-size: 70%;
+      }
+      &:last-child {
+        hr {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
 .post_home
 {
   @include flex-column();
@@ -300,6 +331,7 @@ li {
       }
       h1 {
         z-index: 2;
+        width: 100%;
         @include centerer;
         top: 50px;
         text-align: center;
@@ -324,37 +356,6 @@ li {
       @include margin-height(1%);
       @include margin-both(auto);
       max-width: 100%;
-    }
-    .similar_articles {
-      position: fixed;
-      left: 0px;
-      top: 210px;
-      background-color: #1d1824;
-      padding: 10px;
-      padding-right: 0px;
-      margin-left: 5px;
-      width: 23%;
-      text-align: center;
-      ul {
-        max-height: 350px;
-        overflow-y: scroll;
-        padding: 0px;
-        width: 95%;
-        hr {
-          width: 40%;
-        }
-        li {
-          list-style: none;
-          p {
-            font-size: 70%;
-          }
-          &:last-child {
-            hr {
-              display: none;
-            }
-          }
-        }
-      }
     }
     article {
       @include padding-both(80px);
@@ -683,9 +684,11 @@ div.ui.segment {
     margin: auto;
   }
 
-  .post_home .title
-  {
-    width: 80%;
+  .post_home {
+    margin-bottom: 400px;
+    .title {
+      width: 80%;
+    }
   }
   .project
   {
@@ -719,6 +722,16 @@ div.ui.segment {
   .main {
     width: 80%;
     @include margin-both(auto);
+  }
+
+  .similar_articles {
+    left: 9.6%;
+    top: 130px;
+    width: 79.1%;
+    z-index: -1;
+    ul {
+      max-height: 260px;
+    }
   }
 }
 
@@ -829,6 +842,10 @@ div.ui.segment {
     font-size: 120%;
     .content {
       font-size: 120%;
+      article {
+        @include padding-both(0px);
+        border: none;
+      }
     }
     padding-top: 150px;
   }
@@ -853,5 +870,10 @@ div.ui.segment {
     ul {
       @include padding-both(0px);
     }
+  }
+
+  .similar_articles {
+    width: 100%;
+    left: 0px;
   }
 }

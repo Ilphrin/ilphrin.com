@@ -2,6 +2,32 @@
 layout: index
 lang: fr
 ---
+    {% for post in site.posts %}
+      {% if post.serie == page.serie and post.serie and post.title != page.title %}
+        {% assign ok = 1 %}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    {% if ok %}
+    <div class="similar_articles">
+      <h2>Articles similaires</h2>
+      <ul>
+        {% for post in site.posts %}
+          {% if post.serie == page.serie and post.serie %}
+            <li>
+              <a href="{{post.url}}">{{post.title}}</a>
+              <p datetime="{{page.date | date: '%-d %B %Y'}}">{% include date.html date=post.date %}</p>
+              <hr />
+              <div class="similar_excerpt">
+                <p>{{ post.excerpt }}</p>
+              </div>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+
 <div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
   <div id="post_header">
     <div id="post_title">
@@ -94,31 +120,6 @@ lang: fr
     </div>
   </div>
   <div class="content" itemprop="articleBody">
-    {% for post in site.posts %}
-      {% if post.serie == page.serie and post.serie and post.title != page.title %}
-        {% assign ok = 1 %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% if ok %}
-    <div class="similar_articles">
-      <h2>Articles similaires</h2>
-      <ul>
-        {% for post in site.posts %}
-          {% if post.serie == page.serie and post.serie %}
-            <li>
-              <a href="{{post.url}}">{{post.title}}</a>
-              <p datetime="{{page.date | date: '%-d %B %Y'}}">{% include date.html date=post.date %}</p>
-              <hr />
-              <div class="similar_excerpt">
-                <p>{{ post.excerpt }}</p>
-              </div>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
 
     <script type="text/javascript">
 ( function() {
