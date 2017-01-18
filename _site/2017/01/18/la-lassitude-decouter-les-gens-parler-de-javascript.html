@@ -255,12 +255,12 @@
         </g>
       </svg>
 
-      <h1 itemprop="name"> Présentation de Gnome-pie</h1>
-      <span>16
+      <h1 itemprop="name"> La lassitude d'écouter les gens parler de JavaScript</h1>
+      <span>18
 
-Septembre
+Janvier
   
-2012
+2017
 </span>
     </div>
   </div>
@@ -277,133 +277,47 @@ Septembre
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     <article>
-      <p>Gnome-pie est un petit logiciel fort sympathique. Il permet, par le biais d’un raccourcis tapé au clavier, de faire apparaître un disque de ses logiciels.</p>
+      <p>Aujourd’hui j’écris un billet un peu spécial, qui ne sera pas tellement technique, ce ne sera pas une traduction non plus, ni rien d’autre que j’ai l’habitude de faire sur mon site. J’aimerais simplement parler des reactions que je rencontre, et qui ont tendances à m’agacer, quand on me parle de JavaScript et surtout quand je dis que j’adore coder en JavaScript.</p>
 
-<p>En fait le terme exact devrait être une « tarte » de logiciels. Puisque ‘Pie’ en anglais veut dire aussi bien disque que tarte. Mais d’après le développeur on parle plus généralement de tartes. (je le soupçonne d’être fondateur d’une multinationale alimentaire…)
 <!--break-->
-Bon voici clairement a quoi ressemble les tartes :</p>
 
-<p>&lt;iframe width:”420” height:”360” src=”https://vimeo.com/30618179” frameborder=”0”&gt;&lt;/iframe&gt;
-(Vidéo officielle de Simon Schneegans, le développeur).</p>
+<p>JavaScript est utilisé internationalement, est le langage universel des navigateurs, et est utilisé pour faire des opérations sur l’Internet. Je dis l’Internet plutôt que le Web car aujourd’hui on l’utilise aussi en dehors grâce, par exemple, à des technologies comme <a href="https://nodejs.org/en/">NodeJS</a>, <a href="http://electron.atom.io/">Electron</a>, et j’en passe. Avant d’arriver au langage tel qu’on le connais (quand j’écris cet article, nous avons <a href="https://en.wikipedia.org/wiki/ECMAScript#Versions">ECMAScript 2016</a> comme dernière spécification, et ECMAScript 2017 qui est en cours de rédaction). En tout, 7 versions d’ECMAScript sont sorties, chacune rajoutant un lot énorme de changement et d’améliorations à apporter à JavaScript.</p>
 
-<p>Pour l’installation, je vais honteusement recopier le tuto du site de Mr Schneegans ^_^ :</p>
-
-<h2 id="installation-par-pparecommand">Installation par PPA(recommandé)</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo add-apt-repository ppa:simonschneegans/testing
-sudo apt-get update
-sudo apt-get install gnome-pie
-Installation par les sources
-</code></pre>
-</div>
-
-<p>Avec gtk2 :</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install git build-essential libgtk2.0-dev libcairo2-dev libappindicator-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-dev valac cmake libunique-dev libbamf-dev libwnck-dev bamfdaemon
-</code></pre>
-</div>
-
-<p>Avec gtk3 :</p>
-
-<p>sudo apt-get install git build-essential libgtk-3-dev libcairo2-dev libappindicator3-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-3-dev valac cmake libunique-3.0-dev libbamf3-dev libwnck-3-dev bamfdaemon</p>
-
-<p>Ensuite pour les deux cas vous n’avez plus qu’à télécharger Gnome-pie, le compiler et l’installer comme ceci :</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone git://github.com/Simmesimme/Gnome-Pie.git
-cd Gnome-Pie &amp;&amp; ./make.sh
-cd build &amp;&amp; sudo make install
-</code></pre>
-</div>
-
-<p>Ensuite, quelle que soit votre méthode d’installation, je vous recommande de le faire lancer au démarrage de votre session.</p>
-
-<h2 id="configurationpossibilits-de-base">Configuration/Possibilités de base</h2>
-
-<p>Au premier lancement plusieurs tartes sont déjà disponibles. Donc notamment les raccourcis clavier qui vont avec, voici plus ou moins ce que donnent ces raccourcis :</p>
-
-<p>-Ctrl+Alt+A : 6 objets ; Redémarrer Déconnecter Arrêter ainsi que trois logiciel qui sont sur votre ordinateur (je ne me souviens plus desquels je les ais changés depuis longtemps).</p>
-
-<p>-Ctrl+Alt+B : x objets ; Tous les dossier de votre répertoire personnel ainsi que les différents volumes montés.</p>
-
-<p>-Ctrl+Alt+Espace ; Représente les différents types de logiciels présents sur votre ordinateur ( Ceux qui sont dans votre menu de bureau par exemple Accessoire Internet Préférence Administration etc…)</p>
-
-<p>-Ctrl+Alt+W : Les différentes options de fenêtre c’est-à-dire Réduire Agrandir Restaurer Fermer.</p>
-
-<p>-Ctrl+Alt+M : Celui que j’utilise le plus fréquemment. Il correspond aux boutons de base de votre lecteur de musique. Lecture/Pause Précédant Suivant Stop.</p>
-
-<p>-Ctrl+Alt+Q : Redémarrer Arrêter Déconnecter.</p>
-
-<p>Il y a deux moyens pour créer/éditer ses propres tartes :</p>
-
-<p>-Le mode graphique : Dans le menu préférence de gnome-pie. Vous pouvez sélectionner les tartes existantes en cliquant sur l’un de ceux de la liste de gauche, puis en cliquant dans le vide sur la tarte montrée a droite pour en ajouter une. Là il ne vous reste plus qu’à taper la commande a lancer et a vous choisir un nom ainsi qu’une icône.</p>
-
-<p>Vous pouvez aussi ajouter une tarte en cliquant sur l’icône + en bas a gauche de la fenêtre. Là il vous est demandé d’entrer un nom ainsi que d’appuyer sur la combinaison de touche nécessaire a l’ouverture de cette tarte. Vous pouvez dès lors y ajouter des applications.</p>
-
-<p>Attention : Sur mon ordinateur la sélection d’icône provoque un crash du logiciel, peut-être que vous aurez plus de chances que moi, en attendant si c’est votre cas vous pourrez choisir l’icône avec la deuxième méthode que je vais vous présenter.</p>
-
-<p>-Le mode texte : Vous pouvez aussi tout écrire a la main, en allant directement dans le fichier de config. L’avantage ? Si comme moi vous avez un problème avec les icône, vous pouvez les choisir en donnant le chemin de l’icône.</p>
-
-<p>Chez moi le fichier de config se trouve dans : /home/chezmoi/.conf/gnome-pie/pies.conf</p>
-
-<p>Vous devez normalement vous retrouver devant un fichier de type texte xml. Vous pouvez créer une tarte de la façon suivante :</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;pie name="Multimédia" id="831" icon="stock_media-play" hotkey="Control+Alt+m"&gt;&lt;/pie&gt;
-</code></pre>
-</div>
-
-<p>Vous avez plusieurs choses bizarres dans ces lignes, je vais vous y décrire ce que fait chaque attribut :</p>
+<p>JavaScript est un langage que j’affectionne particulièrement pour plusieurs raisons:</p>
 
 <ul>
-  <li>
-    <p>&lt; pie&gt; &lt; /pie&gt; Correspond a la création d’une tarte avec une balise ouvrante et une fermante.</p>
-  </li>
-  <li>
-    <p>name= ‘‘Multimédia ‘’ Correspond au nom donné a la tarte, ici c’est Multimédia (plus quelques caractères pour gérer l’accent du ‘‘é’’ ).</p>
-  </li>
-  <li>
-    <p>'’id=831’’ Bon alors celui-ci je dois avouer que je ne saurais l’utiliser correctement. Je ne sais non plus comment il fonctionne (si quelqu’un peut me le dire d’ailleurs ce serait cool x) ).</p>
-  </li>
-  <li>
-    <p>icon=’‘stock_media-play’’ Là il vous est possible de choisir votre icône. Soit c’est une icône système auquel cas vous pouvez directement entrer son nom, ou alors vous écrivez le chemin (de préférence le chemin absolu) pour y accéder.</p>
-  </li>
-  <li>
-    <p>hotkey=”Control+Alt+m” Là il s’agit du raccourcis sur lequel appuyer pour ouvrir la tarte, je ne saurais expliquer comment savoir a quoi correspondent les caractères qu’il y a entre chacune des touches a entrer.</p>
-  </li>
+  <li>C’est le langage du Net, et surtout du Web (mais pas que, on n’oublie pas ;) ). Et j’adore Internet.</li>
+  <li>Il existe une myriade de libriaries pour tout et n’importe quoi (Bon d’accord, souvent <a href="http://mynameismatthieu.com/WOW/">n’importe quoi</a>), il y en a pour tous les gouts.</li>
+  <li>Il est très facile à apprendre, mais est suffisamment bien fichu pour qu’on aie toujours un truc à apprendre dessus: que ce soit au niveau de la syntaxe, de la construction du langage, d’un élément de la librairie standard, une optimisation possible, etc.</li>
+  <li>Sa syntaxe est assez agréable et pas prise de tete.</li>
 </ul>
 
-<p>Vous pouvez aussi a l’intérieur d’une tarte mettre une nouvelle application. Les lignes ressemblent a ceci : (j’ai pris une icône de la tarte Multimédia)</p>
+<p>Et du coup il m’arrive de dire une phrase qui provoque des réactions souvent étranges, que ce soit en bien ou en mal: J’aime bien JavaScript.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;slice type="key" name="Piste Suivante" icon="stock_media-next" command="XF86AudioNext" quickAction="true"/&gt;
-</code></pre>
+<p>Quand je dis ça, dans mon entourage proche et semi-proche (l’école, les gens que je rencontre dans des conférences ou autre, etc.), je me rends compte d’une sorte de mépris de cette technologie, que je n’ai jamais rencontré de façon aussi “unanime” avec d’autres langages.</p>
+
+<p>Phrase type: “Mais c’est moche comme langage. Et il est tellement puissant qu’on a besoin de frameworks comme AngularJS qui refont quasiment le langage”.</p>
+
+<p>Je ne vise personne en disant cette phrase (et ce n’est pas une citation, juste un gros récapitulatif bien sale de ce qui m’a marqué quand on m’a répondu), mais cela résume assez bien les différentes réactions que j’ai pu avoir c’est pourquoi je me permet de la prendre comme exemple.</p>
+
+<p>Il y a plusieurs choses qui me gênent dans cette phrase, et je pense que je peux résumer en trois points ma réaction face à cela.</p>
+
+<p>1) Les personnes qui me disent ça ne savent pas coder en JavaScript. En tout cas pas plus loin que if…else if…else. À partir de là, comment est-ce que quelqu’un peut poser une opinion aussi brutale sur un langage, sans même savoir de quoi elle parle? Ce n’est pas parce qu’on a fait deux boutons de JQuery qu’on connait le JavaScript.</p>
+
+<p>2) La partie “C’est moche”, est dans le sens de la construction du langage surement. Je prends un exemple de ce qui est reproché: La syntaxe de l’orienté objet en Javascript. Depuis les dernières normes ECMAScript on peut utiliser le mot-clé <strong>class</strong>, donc plus d’excuses. Je comprends que la syntaxe Prototype du JavaScript puisse en dérouter certains, parce que c’est pas très intuitif (et c’est pour ça que maintenant la syntaxe objet est plus classique), mais de là à dire que c’est moche et intuitiflisable, plus parce que ça sort de sa zone de confort qu’autre chose…</p>
+
+<p>3) “Et il est tellement puissant qu’on a besoin de frameworks comme AngularJS qui refont quasiment le langage”. Bah justement, c’est un point positif, vous en connaissez beaucoup vous des langages qui sont assez flexibles pour se permettre de créer des librairies qui changent la façon de fonctionner? Il est vrai que toutes les semaines il y a un nouveau framework a la mode, une nouvelle librairie qui fait mieux tout, etc. Mais d’un autre côté, n’est-ce pas là justement une marque de force que d’avoir constamment de nouvelles briques?</p>
+
+<p>Et, toujours concernant ce dernier point, j’entends parfois des développeurs parler de philosophie KISS (Keep it Simple, Sandwich), mais râler deux jours après parce qu’ils ont commencé un tuto web et se retrouvent avec 50 sous-dépendances NPM en installant 2 librairies. C’est une bonne chose à mon avis d’avoir plus de paquets différents, ça permet une plus grande flexibilité et un découpage plus intense des taches, et donc potentiellement moins de bug (enfin ça c’est chez les bisounours ;)).</p>
+
+<p>J’ai surement pas mal d’autres choses à dire, mais il est presque minuit quand je rédige cet article, et j’aimerais couper court! Pour changer un peu de ton, et faire un peu de teasing, je vais bosser sur d’autres traduction d’articles de Sitepoint dans les prochains jours (il se pourrait que le prochain parle d’objets connectés…). Du coup je vais me mettre de façon beaucoup plus intensive au JavaScript (parce que je suis juste un Noob dans le domaine hein, faut pas croire), et je vais essayer de faire des petits articles sur des notions de JavaScript qui peuvent être cool.</p>
+
+<div class="ui icon message inverted">
+<i class="icon sticky note"></i>
+<div class="content">
+D'ailleurs en trainant à la Fnac je suis tombé sur le livre d'Eyrolles "JavaScript pour les kids", et je l'ai feuilleté par curiosité. Je ne sais pas si ça marche, mais en tout cas je n'ai pas du tout accroché au style du livre. Déjà JavaScript n'est pas un langage que je recommanderais pour des enfants de 10 ans, contrairement à Scratch, et en plus la forme de langage utilisé par le livre est assez limite. En tout cas si j'étais tombé sur ce livre à 10 ans, je n'aurais pas continué bien longtemps je pense.
 </div>
-
-<p>Alors là à l’inverse des balises <pie> et &lt; /pie&gt; la balise &lt; slice /&gt; est dite orpheline, car elle se termine sur la même balise qui l'à commencé (on peut le voir notamment avec le '/' a la fin). Littéralement slice en français veut dire 'part' comme...part de tarte ! C'est bien fait n'est-ce pas ^^</pie></p>
-
-<p>Bon passons au découpage de cette balise :</p>
-
-<ul>
-  <li>
-    <p>type=’‘key’’ signifie que c’est une commande un peu spéciale. Généralement quand vous voudrez ajouter une part de tarte cela sera plutôt : type=’‘app’’ .</p>
-  </li>
-  <li>
-    <p>name= ‘‘Piste suivante’’ Est le nom qui va s’afficher pour le bouton.</p>
-  </li>
-  <li>
-    <p>icone=’‘stock_media-next’’ Est la même chose que pour la balise <pie> .</pie></p>
-  </li>
-  <li>
-    <p>command=’’ XF86AudioNext’’ Est la commande qui va être lancée. Vous pouvez écrire une commande comme vous le feriez dans un terminal.</p>
-  </li>
-  <li>
-    <p>quickAction=’true’’ Bon je dois avouer ne pas connaître grand chose non plus sur l’utilité de cet attribut, mais toutes les applications que j’ai ajouté se sont vues mettre l’attribut : quickAction=”false” .</p>
-  </li>
-</ul>
-
-<p>Personnellement je n’ai crée qu’un seule tarte nommée ‘Jeux’ dans laquelle j’ai mis….mes jeux !</p>
-
-<p>Voici le lien sur site de Mr Schneegans: <a href="http://www.simonschneegans.de">http://www.simonschneegans.de</a></p>
-
-<p>Bon et bien voilà je crois que j’ai fait le tour. Sur ce je vais vous souhaiter une bonne fin de journée, tout en espérant en avoir amadoué quelques uns ;P</p>
+</div>
 
     </article>
   </div>
@@ -411,11 +325,11 @@ cd build &amp;&amp; sudo make install
 
 <div id="share" class="ui segment inverted">
   <h2>Vous avez aimé cet article? Partagez-le</h2>
-  <a href="https://twitter.com/share?text='Présentation de Gnome-pie /2012/09/16/presentation-de-gnome-pie.html'" target="_blank">
+  <a href="https://twitter.com/share?text='La lassitude d'écouter les gens parler de JavaScript /2017/01/18/la-lassitude-decouter-les-gens-parler-de-javascript.html'" target="_blank">
     <i class="big twitter icon"></i>
     <span>Twitter</span>
   </a>
-  <a href="http://sharetodiaspora.github.io/?title=Présentation de Gnome-pie&url=/2012/09/16/presentation-de-gnome-pie.html" target="_blank">
+  <a href="http://sharetodiaspora.github.io/?title=La lassitude d'écouter les gens parler de JavaScript&url=/2017/01/18/la-lassitude-decouter-les-gens-parler-de-javascript.html" target="_blank">
     <i class="big icon star"></i>
     <span>Diaspora*</span>
   </a>
@@ -433,10 +347,10 @@ cd build &amp;&amp; sudo make install
       
   
   <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
-    <input name="options[slug]" type="hidden" value="presentation-de-gnome-pie">
-    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2012/09/16/presentation-de-gnome-pie.html">
+    <input name="options[slug]" type="hidden" value="la-lassitude-decouter-les-gens-parler-de-javascript">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2017/01/18/la-lassitude-decouter-les-gens-parler-de-javascript.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
-    <input type="hidden" name="fields[post_id]" value="/2012/09/16/presentation-de-gnome-pie" />
+    <input type="hidden" name="fields[post_id]" value="/2017/01/18/la-lassitude-decouter-les-gens-parler-de-javascript" />
     <div class="ui inverted segment">
       <h2 class="ui dividing header">Commenter</h2>
       <p style="font-style: italic">
