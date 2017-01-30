@@ -269,18 +269,12 @@
         <lastmod>2017-01-19T11:27:46+01:00</lastmod>
     </url>
     <url>
-        <loc>
-            http://ilphrin.com/2017/01/18/la-lassitude-decouter-les-gens-parler-de-javascript.html
-        </loc>
-        <lastmod>2017-01-19T11:27:46+01:00</lastmod>
-    </url>
-    <url>
         <loc>http://ilphrin.com/kevin/about.html</loc>
         <lastmod>2017-01-16T22:28:12+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilphrin.com/node_modules/postcss-cssnext/docs/content/credits.md</loc>
-        <lastmod>2016-01-19T22:57:54+01:00</lastmod>
+        <lastmod>2017-01-30T22:11:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilphrin.com/kevin/projects/dodgell.html</loc>
@@ -288,7 +282,7 @@
     </url>
     <url>
         <loc>http://ilphrin.com/node_modules/postcss-cssnext/docs/content/features.md</loc>
-        <lastmod>2016-11-28T08:41:57+01:00</lastmod>
+        <lastmod>2017-01-30T22:11:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilphrin.com/feeds.xml</loc>
@@ -296,7 +290,7 @@
     </url>
     <url>
         <loc>http://ilphrin.com/kevin/</loc>
-        <lastmod>2017-01-19T11:27:46+01:00</lastmod>
+        <lastmod>2017-01-16T22:28:12+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilphrin.com/</loc>
@@ -304,13 +298,13 @@
     </url>
     <url>
         <loc>http://ilphrin.com/node_modules/postcss-cssnext/docs/content/index.md</loc>
-        <lastmod>2016-11-28T08:41:57+01:00</lastmod>
+        <lastmod>2017-01-30T22:11:55+01:00</lastmod>
     </url>
     <url>
         <loc>
             http://ilphrin.com/node_modules/postcss-cssnext/docs/content/it-s-cssnext-not-CSSNext.md
         </loc>
-        <lastmod>2016-01-19T22:57:54+01:00</lastmod>
+        <lastmod>2017-01-30T22:11:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilphrin.com/planet_feed.xml</loc>
@@ -318,11 +312,11 @@
     </url>
     <url>
         <loc>http://ilphrin.com/node_modules/postcss-cssnext/docs/content/playground.html</loc>
-        <lastmod>2016-11-28T08:41:57+01:00</lastmod>
+        <lastmod>2017-01-30T22:11:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilphrin.com/node_modules/postcss-cssnext/docs/content/postcss.md</loc>
-        <lastmod>2016-11-10T18:01:22+01:00</lastmod>
+        <lastmod>2017-01-30T22:11:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilphrin.com/kevin/project.html</loc>
@@ -330,7 +324,7 @@
     </url>
     <url>
         <loc>http://ilphrin.com/node_modules/postcss-cssnext/docs/content/setup.md</loc>
-        <lastmod>2016-01-19T22:57:54+01:00</lastmod>
+        <lastmod>2017-01-30T22:11:55+01:00</lastmod>
     </url>
     <url>
         <loc>http://ilphrin.com/traduction.html</loc>
@@ -342,6 +336,6 @@
     </url>
     <url>
         <loc>http://ilphrin.com/node_modules/postcss-cssnext/docs/content/usage.md</loc>
-        <lastmod>2016-11-28T08:46:54+01:00</lastmod>
+        <lastmod>2017-01-30T22:11:55+01:00</lastmod>
     </url>
 </urlset>
