@@ -255,12 +255,12 @@
         </g>
       </svg>
 
-      <h1 itemprop="name"> Présentation de Gnome-pie</h1>
-      <span>16
+      <h1 itemprop="name"> Traduction: Développement Front-End dans le monde de l'Internet Des Objets</h1>
+      <span>23
 
-Septembre
+Janvier
   
-2012
+2017
 </span>
     </div>
   </div>
@@ -277,133 +277,57 @@ Septembre
     </script>
     <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
     <article>
-      <p>Gnome-pie est un petit logiciel fort sympathique. Il permet, par le biais d’un raccourcis tapé au clavier, de faire apparaître un disque de ses logiciels.</p>
+      <p>Cet article est une traduction de <a href="https://www.sitepoint.com/the-future-of-the-web-in-an-internet-of-things-world/">“Front-End Development in an Internet of Things World”</a>, dont l’auteur est <a href="https://www.sitepoint.com/the-future-of-the-web-in-an-internet-of-things-world/">Patrick Catanzariti</a>. Je ne suis en aucun cas l’auteur de cet article, j’ai simplement eu envie de le traduire parce que j’aime ça et que je considère que beaucoup de ressources anglophones devraient etre aussi à la portée des personnes qui ne parlent pas anglais.</p>
 
-<p>En fait le terme exact devrait être une « tarte » de logiciels. Puisque ‘Pie’ en anglais veut dire aussi bien disque que tarte. Mais d’après le développeur on parle plus généralement de tartes. (je le soupçonne d’être fondateur d’une multinationale alimentaire…)
 <!--break-->
-Bon voici clairement a quoi ressemble les tartes :</p>
 
-<p>&lt;iframe width:”420” height:”360” src=”https://vimeo.com/30618179” frameborder=”0”&gt;&lt;/iframe&gt;
-(Vidéo officielle de Simon Schneegans, le développeur).</p>
+<h1 id="dveloppement-front-end-dans-le-monde-de-linternet-des-objets">Développement Front-End dans le monde de l’Internet Des Objets</h1>
 
-<p>Pour l’installation, je vais honteusement recopier le tuto du site de Mr Schneegans ^_^ :</p>
+<p>Le World Wide Web à évolué constammment à travers ses 27 ans d’histoire. La façon d’afficher et de styliser le contenu est passé par de nombreuses phases, la plus récente étant l’émergence du <em>Responsive Web</em>, un Web qui s’adapte à plusieurs navigateurs et tailles d’écran. Avec un nombre toujours croissant d’Objets Connectés comme les Raspberry Pis, les smartwatches, les assistants personnels qui sont commandés par la voix, et plus encore, le potentiel du Responsive Web est mise à rude épreuve.</p>
 
-<h2 id="installation-par-pparecommand">Installation par PPA(recommandé)</h2>
+<p>L’Internet des Objets signifie qu’encore plus d’outils peuvent potentiellement charger du contenu Web. Nous devons nous assurer que le Web reste accessible et utilisable pour ces dispositifs si nous voulons éviter une segmentation similaire à ce que nous avons eu entre les ordinateurs et les téléphones. La dernière chose que nous voulons c’est un Web conçu pour l’Internet des Objets, et un conçu pour les ordinateur et mobiles.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo add-apt-repository ppa:simonschneegans/testing
-sudo apt-get update
-sudo apt-get install gnome-pie
-Installation par les sources
-</code></pre>
-</div>
+<h2 id="quels-objets-connects-pourraient-afficher-du-web">Quels Objets Connectés pourraient afficher du Web?</h2>
 
-<p>Avec gtk2 :</p>
+<p>Une bonne partie des développeurs ne réalisent pas le nombre potentiel de dispositifs qui pourraient afficher du contenu Web dans le futur.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>sudo apt-get install git build-essential libgtk2.0-dev libcairo2-dev libappindicator-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-dev valac cmake libunique-dev libbamf-dev libwnck-dev bamfdaemon
-</code></pre>
-</div>
+<h3 id="les-objets-avec-de-petits-affichages">Les Objets avec de petits affichages</h3>
 
-<p>Avec gtk3 :</p>
+<p>Les dispositifs comme les Raspberry Pis avec des écran 2.4” et plus ont le Wi-Fi, l’ethernet, et meme des connections 3G/4G, leurs donnant tout le potentiel pour afficher du contenu Web. Ce contenu peut avoir la forme de page Web depuis le World Wide Web, ou depuis des pages Web locales pour les manuels d’objets embarqués, les outils controlés avec les pages Web et les tableaux de bords affichés en Web.</p>
 
-<p>sudo apt-get install git build-essential libgtk-3-dev libcairo2-dev libappindicator3-dev libgee-dev libxml2-dev libxtst-dev libgnome-menu-3-dev valac cmake libunique-3.0-dev libbamf3-dev libwnck-3-dev bamfdaemon</p>
+<h3 id="smartwatches">Smartwatches</h3>
 
-<p>Ensuite pour les deux cas vous n’avez plus qu’à télécharger Gnome-pie, le compiler et l’installer comme ceci :</p>
+<p>Les Smartwatches ont des écrans encore plus petits, avec des grandes palettes de couleurs et de résolutions. Alors que l’Apple Watch n’a pas encore de navigateur Web, Android dispose d’un navigateur pour sont Android Wear de Appfour et il y a toutes les chances pour qu’au fil du temps de plus en plus de montres connectées disposent de navigateurs Web (en éspérant que quelqu’un conçoive l’application de manière à l’utiliser facilement!). Si le Web est vraiment <em>responsive</em> et accessible partout, nous devrions être préparé pour cette situation. Que se passera-t-il si, dans le futur, quelqu’un lisant un email sur sa Smartwatch cliquera sur un lien Web? Un simple navigateur Web sur une puissante Smartwach n’est pas impossible.</p>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>git clone git://github.com/Simmesimme/Gnome-Pie.git
-cd Gnome-Pie &amp;&amp; ./make.sh
-cd build &amp;&amp; sudo make install
-</code></pre>
-</div>
+<h3 id="assistants-personnel--commande-vocale">Assistants Personnel à commande vocale</h3>
 
-<p>Ensuite, quelle que soit votre méthode d’installation, je vous recommande de le faire lancer au démarrage de votre session.</p>
+<p>La nouvelle mode numérique est l’assistant vocal intelligent, comme Siri d’Apple, Echo Alexa d’Amazon, Google Now et Cortana de Microsoft. Le rôle de ces assistants dans une maison est d’éteindre ou d’allumer la lumière, mettre un réveil, ajuster la température et ainsi de suite. Ces services répondes aussi aux commandes vocales et aux question avec les données qu’elles récupèrent de différents endroits sur le net, impliquant souvent de croiser chaque base de données des enteprises avec les informations à propos de la personne utilisant le service. Pour les personnes intéressées, j’ai (Ndt: l’auteur original de l’article) écris des articles pour créer sa propre intelligence artificielle d’assistant sur SitePoint, comme [Five Simple Ways to Build Artificial Intelligence in 2016] et une série sur [How to Build Your Own AI Assistant Using Api.ai].</p>
 
-<h2 id="configurationpossibilits-de-base">Configuration/Possibilités de base</h2>
+<p>Au fil du temps avec les améliorations des intelligences artificielles et du <em>machine learning</em>, ces assistants pourraient parcourir le Web pour chercher des informations et nous les lire.</p>
 
-<p>Au premier lancement plusieurs tartes sont déjà disponibles. Donc notamment les raccourcis clavier qui vont avec, voici plus ou moins ce que donnent ces raccourcis :</p>
+<p>Pour que cela soit possible, il faut que le Web soit accessible au Bots qui vont exploiter l’information plutôt que l’afficher. Dans l’idéal, les pages Web devraient déjà être structurées pour aider les lecteurs d’écran, cependant l’utilisation des outils d’accéssibilité est souvent mis de coté aujourd’hui. L’emergence de services d’assistant personnel pourrait changer cela.</p>
 
-<p>-Ctrl+Alt+A : 6 objets ; Redémarrer Déconnecter Arrêter ainsi que trois logiciel qui sont sur votre ordinateur (je ne me souviens plus desquels je les ais changés depuis longtemps).</p>
+<h3 id="de-tout-nouveaux-affichages">De tout nouveaux affichages</h3>
 
-<p>-Ctrl+Alt+B : x objets ; Tous les dossier de votre répertoire personnel ainsi que les différents volumes montés.</p>
+<p>Les écrans futurs, quand on parle d’Internet des Objets, peuvent apporter de nombreuses et fantastiques nouvelles possibilités. Pensez aux Smart Mirrors, aux Smart Windows (Ndt: Eheh, un Windows intelligent…), aux tableaux de bords de voitures, etc. Ceux-ci vont apparaître petit à petit dans notre vie, mais comment le Web s’affichera dessus? De nouvelles questions de conceptions sont à venir: pour afficher du contenu sur un miroir/une fenêtre, nous aurions besoin d’avoir un plus grand contraste de couleurs. Les affichage de miroir/fenêtre pourraient avoir une gamme de couleur limité, dont les développeurs auraient à prendre en compte? C’est en phase de devenir un tout nouveau monde.</p>
 
-<p>-Ctrl+Alt+Espace ; Représente les différents types de logiciels présents sur votre ordinateur ( Ceux qui sont dans votre menu de bureau par exemple Accessoire Internet Préférence Administration etc…)</p>
+<h2 id="prparer-notre-css-et-notre-markup-pour-le-futur">Préparer notre CSS et notre Markup pour le futur</h2>
 
-<p>-Ctrl+Alt+W : Les différentes options de fenêtre c’est-à-dire Réduire Agrandir Restaurer Fermer.</p>
+<p>Il y a plusieurs points clés sur lesquels les développeurs web doivent concentrer leur attention, si vous voulons un Web qui convient à toutes ces nouvelles technologies.</p>
 
-<p>-Ctrl+Alt+M : Celui que j’utilise le plus fréquemment. Il correspond aux boutons de base de votre lecteur de musique. Lecture/Pause Précédant Suivant Stop.</p>
+<h3 id="du-css-vraiment-responsive">Du CSS vraiment Responsive</h3>
 
-<p>-Ctrl+Alt+Q : Redémarrer Arrêter Déconnecter.</p>
+<p>Les pages Web auront besoin de s’adapter et être relativement lisible sur de tout petits affichages. Détecter de toutes petites résolutions sera surement l’un des pilier ici d’un point de vue CSS. Est-ce que le CSS sur un tout petit écran sera similaire à un site sur mobile? Ou devons-nous créer des règles et des standards qui vont aider à afficher le texte dans une plus grande police? De nouveaux standads pour restructurer la disposition sur de petits écran en utilisant les flexbox? De nouveaux standards pour concevoir des menu sur de petits écrans? Seul le temps nous le dira, mais seule une poignée de développeurs Web seront pionniers dans cet effort et il sera fascinant de voir comment la communauté suivra.</p>
 
-<p>Il y a deux moyens pour créer/éditer ses propres tartes :</p>
+<h3 id="llment-picture">L’élément &lt;picture&gt;</h3>
 
-<p>-Le mode graphique : Dans le menu préférence de gnome-pie. Vous pouvez sélectionner les tartes existantes en cliquant sur l’un de ceux de la liste de gauche, puis en cliquant dans le vide sur la tarte montrée a droite pour en ajouter une. Là il ne vous reste plus qu’à taper la commande a lancer et a vous choisir un nom ainsi qu’une icône.</p>
+<p>L’élement picture nous permet de choisir plusieurs images en fonction de la résolution et du type d’écran. La version final de cette spec sera clé pour avoir un web qui tournera bien lors du chargement de pages sur ce qui sera peut-être des objets avec peu de batteries et de faibles connections, et avec des objets avec de petites résolutions qui n’arriveront pas à afficher de larges images.</p>
 
-<p>Vous pouvez aussi ajouter une tarte en cliquant sur l’icône + en bas a gauche de la fenêtre. Là il vous est demandé d’entrer un nom ainsi que d’appuyer sur la combinaison de touche nécessaire a l’ouverture de cette tarte. Vous pouvez dès lors y ajouter des applications.</p>
+<h3 id="la-dpendance--javascript-est-dangereuse">La dépendance à JavaScript est dangereuse</h3>
 
-<p>Attention : Sur mon ordinateur la sélection d’icône provoque un crash du logiciel, peut-être que vous aurez plus de chances que moi, en attendant si c’est votre cas vous pourrez choisir l’icône avec la deuxième méthode que je vais vous présenter.</p>
+<p>Lorsque l’on regarde des dispositifs avec de petites batteries et des assistants personnels qui vont lire à voix haute le contenu de page web, il ne vont pas obligatoirement laner du JavaScript ou être capable de le gérer de la même manière qu’un smartphone ou une tablette. Si votre site Web repose sur du JavaScript pour insérer ses données sans aucun moyen alternatifs, les derniers Objets Connectés pourraient avoir des problèmes à y accèder. S’assurer que le Web fonctionne même sans JavaScript est un effort valable!</p>
 
-<p>-Le mode texte : Vous pouvez aussi tout écrire a la main, en allant directement dans le fichier de config. L’avantage ? Si comme moi vous avez un problème avec les icône, vous pouvez les choisir en donnant le chemin de l’icône.</p>
-
-<p>Chez moi le fichier de config se trouve dans : /home/chezmoi/.conf/gnome-pie/pies.conf</p>
-
-<p>Vous devez normalement vous retrouver devant un fichier de type texte xml. Vous pouvez créer une tarte de la façon suivante :</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;pie name="Multimédia" id="831" icon="stock_media-play" hotkey="Control+Alt+m"&gt;&lt;/pie&gt;
-</code></pre>
-</div>
-
-<p>Vous avez plusieurs choses bizarres dans ces lignes, je vais vous y décrire ce que fait chaque attribut :</p>
-
-<ul>
-  <li>
-    <p>&lt; pie&gt; &lt; /pie&gt; Correspond a la création d’une tarte avec une balise ouvrante et une fermante.</p>
-  </li>
-  <li>
-    <p>name= ‘‘Multimédia ‘’ Correspond au nom donné a la tarte, ici c’est Multimédia (plus quelques caractères pour gérer l’accent du ‘‘é’’ ).</p>
-  </li>
-  <li>
-    <p>'’id=831’’ Bon alors celui-ci je dois avouer que je ne saurais l’utiliser correctement. Je ne sais non plus comment il fonctionne (si quelqu’un peut me le dire d’ailleurs ce serait cool x) ).</p>
-  </li>
-  <li>
-    <p>icon=’‘stock_media-play’’ Là il vous est possible de choisir votre icône. Soit c’est une icône système auquel cas vous pouvez directement entrer son nom, ou alors vous écrivez le chemin (de préférence le chemin absolu) pour y accéder.</p>
-  </li>
-  <li>
-    <p>hotkey=”Control+Alt+m” Là il s’agit du raccourcis sur lequel appuyer pour ouvrir la tarte, je ne saurais expliquer comment savoir a quoi correspondent les caractères qu’il y a entre chacune des touches a entrer.</p>
-  </li>
-</ul>
-
-<p>Vous pouvez aussi a l’intérieur d’une tarte mettre une nouvelle application. Les lignes ressemblent a ceci : (j’ai pris une icône de la tarte Multimédia)</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>&lt;slice type="key" name="Piste Suivante" icon="stock_media-next" command="XF86AudioNext" quickAction="true"/&gt;
-</code></pre>
-</div>
-
-<p>Alors là à l’inverse des balises <pie> et &lt; /pie&gt; la balise &lt; slice /&gt; est dite orpheline, car elle se termine sur la même balise qui l'à commencé (on peut le voir notamment avec le '/' a la fin). Littéralement slice en français veut dire 'part' comme...part de tarte ! C'est bien fait n'est-ce pas ^^</pie></p>
-
-<p>Bon passons au découpage de cette balise :</p>
-
-<ul>
-  <li>
-    <p>type=’‘key’’ signifie que c’est une commande un peu spéciale. Généralement quand vous voudrez ajouter une part de tarte cela sera plutôt : type=’‘app’’ .</p>
-  </li>
-  <li>
-    <p>name= ‘‘Piste suivante’’ Est le nom qui va s’afficher pour le bouton.</p>
-  </li>
-  <li>
-    <p>icone=’‘stock_media-next’’ Est la même chose que pour la balise <pie> .</pie></p>
-  </li>
-  <li>
-    <p>command=’’ XF86AudioNext’’ Est la commande qui va être lancée. Vous pouvez écrire une commande comme vous le feriez dans un terminal.</p>
-  </li>
-  <li>
-    <p>quickAction=’true’’ Bon je dois avouer ne pas connaître grand chose non plus sur l’utilité de cet attribut, mais toutes les applications que j’ai ajouté se sont vues mettre l’attribut : quickAction=”false” .</p>
-  </li>
-</ul>
-
-<p>Personnellement je n’ai crée qu’un seule tarte nommée ‘Jeux’ dans laquelle j’ai mis….mes jeux !</p>
-
-<p>Voici le lien sur site de Mr Schneegans: <a href="http://www.simonschneegans.de">http://www.simonschneegans.de</a></p>
-
-<p>Bon et bien voilà je crois que j’ai fait le tour. Sur ce je vais vous souhaiter une bonne fin de journée, tout en espérant en avoir amadoué quelques uns ;P</p>
+<h3 id="wai-aria-et-autres-techniques-daccessibilit">WAI-ARIA et autres techniques d’Accessibilité</h3>
 
     </article>
   </div>
@@ -411,11 +335,11 @@ cd build &amp;&amp; sudo make install
 
 <div id="share" class="ui segment inverted">
   <h2>Vous avez aimé cet article? Partagez-le</h2>
-  <a href="https://twitter.com/share?text='Présentation de Gnome-pie /2012/09/16/presentation-de-gnome-pie.html'" target="_blank">
+  <a href="https://twitter.com/share?text='Traduction: Développement Front-End dans le monde de l'Internet Des Objets /frontend/2017/01/23/traduction-dev-front-dans-le-monde-de-linternet-des-objets.html'" target="_blank">
     <i class="big twitter icon"></i>
     <span>Twitter</span>
   </a>
-  <a href="http://sharetodiaspora.github.io/?title=Présentation de Gnome-pie&url=/2012/09/16/presentation-de-gnome-pie.html" target="_blank">
+  <a href="http://sharetodiaspora.github.io/?title=Traduction: Développement Front-End dans le monde de l'Internet Des Objets&url=/frontend/2017/01/23/traduction-dev-front-dans-le-monde-de-linternet-des-objets.html" target="_blank">
     <i class="big icon star"></i>
     <span>Diaspora*</span>
   </a>
@@ -433,10 +357,10 @@ cd build &amp;&amp; sudo make install
       
   
   <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
-    <input name="options[slug]" type="hidden" value="presentation-de-gnome-pie">
-    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2012/09/16/presentation-de-gnome-pie.html">
+    <input name="options[slug]" type="hidden" value="traduction-dev-front-dans-le-monde-de-linternet-des-objets">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/frontend/2017/01/23/traduction-dev-front-dans-le-monde-de-linternet-des-objets.html">
     <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
-    <input type="hidden" name="fields[post_id]" value="/2012/09/16/presentation-de-gnome-pie" />
+    <input type="hidden" name="fields[post_id]" value="/frontend/2017/01/23/traduction-dev-front-dans-le-monde-de-linternet-des-objets" />
     <div class="ui inverted segment">
       <h2 class="ui dividing header">Commenter</h2>
       <p style="font-style: italic">
