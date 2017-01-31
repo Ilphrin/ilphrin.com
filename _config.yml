@@ -8,6 +8,11 @@ name: Kevin / Ilphrin
 description: A blog about IT, free software and stuff like that
 url: http://ilphrin.com
 gems: ['jekyll-paginate', 'jekyll-mermaid']
+exclude: [
+  'Gruntfile.js',
+  'new_article.sh',
+  'node_modules/'
+]
 
 #Handling reading
 encoding: "utf-8"
