@@ -1,5 +1,5 @@
 comments:
-  path: "_data/comments/"
+  path: "_data/comments"
   allowedFields: ["name", "email", "url", "message", "post_id"]
   allowedOrigins: ["ilphrin.com", "localhost"]
   branch: "master"
