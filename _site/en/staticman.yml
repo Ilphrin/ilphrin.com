@@ -1,0 +1,17 @@
+comments:
+  path: "_data/comments/"
+  allowedFields: ["name", "email", "url", "message", "post_id"]
+  allowedOrigins: ["ilphrin.com", "localhost"]
+  branch: "master"
+  filename: "{fields.name}_{@timestamp}"
+  format: "yml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp-seconds"
+  moderation: true
+  name: "ilphrin.com"
+  requiredFields: ["name", "email", "message", "post_id"]
+  commitMessage: "New comment on the blog"
+

@@ -8,14 +8,16 @@
   <!-- End Meta info -->
 
   <!-- CSS -->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
     <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
     <link rel="icon" href="/images/LogoV1.png"/>
-    <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
 
     <link rel="stylesheet" type="text/css" href="/css/main.css"/>
   <!-- End CSS -->
+
   <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
 
   <!-- Piwik code -->
     <script type="text/javascript">
@@ -36,27 +38,21 @@
 
 <body itemscope itemtype="http://schema.org/Blog">
   {% include header.html %}
-    <div class="main">
+    <div id="main">
         {{ content }}
     </div>
   {% include footer.html %}
 
-  <script src="/js/previous.js" charset="utf-8"></script>
-  <script src="/js/header.js" charset="utf-8"></script>
-  <script type="text/javascript" src="/js/analytics.js"></script>
 
+  <script type="text/javascript" src="/js/analytics.js"></script>
   <!-- Piwik -->
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
-
   <script src="/js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
   <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
   <script defer>mermaid.initialize({startOnLoad:true});</script>
-
-
   <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
-  <script src="/bower_components/semantic/dist/semantic.min.js" charset="utf-8"></script>
+
 </body>
 </html>

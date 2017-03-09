@@ -1,3 +1,76 @@
 ---
 layout: index
 ---
+
+<article class="one_pager">
+  <section id="brand">
+    <div class="column">
+      <div class="row center">
+        <object type="image/svg+xml" data="/images/decoration/logo2.svg"></object>
+        <div class="column" id="evinlphrin">
+          <span>evin</span>
+          <span>lphrin</span>
+        </div>
+      </div>
+      <em>
+        <span>{% t index.brand_one %}</span>
+      </em>
+      <em>
+        <span>{% t index.brand_two %}</span>
+      </em>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="right_float">
+      <h1>{% t index.work.one %}</h1>
+      <h2>{% t index.work.two %}</h2>
+    </div>
+    <div class="hexag_container left_float">
+      {% for work in site.translations[site.lang].work_ %}
+      <div class="hexag">
+        <svg id="svg{{work[1].title}}" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+        </svg>
+        <div class="content">
+          <span>{{work[1].title}}</span>
+          <span>{{work[1].url}}</span>
+          <span>{{work[1].role}}</span>
+          <img src="{{work[1].icon}}"/>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- <section id="projects"> -->
+    <!-- <div class="slider"> -->
+      <!-- <div class="prev_button" onclick="plusDivs(-1)"></div> -->
+      <!-- <div class="next_button" onclick="plusDivs(1)"></div> -->
+      <!-- {% for project in site.translations[site.lang].projects_ %} -->
+      <!-- <div class="slide" style="background-image: url('{{project[1].image}}')"> -->
+        <!-- <h2>{{project[1].title}}</h2> -->
+        <!-- <p>{{project[1].description}}</p> -->
+      <!-- </div> -->
+      <!-- {% endfor %} -->
+    <!-- </div> -->
+  <!-- </section> -->
+
+  <section id="blog">
+    <h1>{% t index.blog %}</h1>
+    <div id="trending_article">
+      {% for post in site.posts %}
+        <p>{{ post.title }}</p>
+      {% endfor %}
+    </div>
+    <div id="last_articles">
+    </div>
+  </section>
+
+  <section id="contact">
+    <h1>{% t index.contact %}</h1>
+  </section>
+</article>
+
+<script defer src="/js/svg.min.js" charset="utf-8"></script>
+<script defer src="/js/main.js" charset="utf-8"></script>
