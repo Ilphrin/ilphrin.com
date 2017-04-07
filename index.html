@@ -4,10 +4,10 @@ layout: index
 
 <article class="one_pager">
   <section id="brand">
-    <div class="column">
+    <div class="column center">
       <div class="row center">
         <object type="image/svg+xml" data="/images/decoration/logo2.svg"></object>
-        <div class="column" id="evinlphrin">
+        <div class="column leftAlign" id="evinlphrin">
           <span>evin</span>
           <span>lphrin</span>
         </div>
@@ -60,15 +60,44 @@ layout: index
     <h1>{% t index.blog %}</h1>
     <div id="trending_article">
       {% for post in site.posts %}
-        <p>{{ post.title }}</p>
+        {% if forloop.index == 1 %}
+        <a href="{{post.url}}" id="featured_article" class="hexag_container">
+          <div class="hexag no_hover">
+            <svg id="svg{{post.title}}" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+            </svg>
+            <div class="content">
+              <span>{{post.title}}</span>
+              <span>{{post.url}}</span>
+              <img src="/images/header_articles/{{post.cover}}"/>
+            </div>
+          </div>
+          <div>
+            <h2>{{ post.title }}</h2>
+            <sub>{{ post.date | date:"%d/%m/%y" }}</sub>
+          </div>
+        </a>
+        {% endif %}
       {% endfor %}
-    </div>
-    <div id="last_articles">
+      <div class="row">
+        {% for post in site.posts limit: 4 %}
+          {% if forloop.first != true %}
+            <a href="{{post.url}}" class="three">
+              <h3>{{ post.title }}</h3>
+              <div class="text_content">{{ post.date | date: "%d/%m/%Y"}}</div>
+            </a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <h4>{%t blog_.more %}</h4>
     </div>
   </section>
 
   <section id="contact">
-    <h1>{% t index.contact %}</h1>
+    <div class="column center">
+      <h1>{% t index.contact %}</h1>
+      <a href="mailto:ilphrin@autistici.org?Subject=Hello%20from%20your%20website" target="_top">ilphrin@autistici.org</a>
+    </div>
   </section>
 </article>
 

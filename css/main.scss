@@ -123,6 +123,7 @@ aside {
       img {
         height: auto;
         width: 45px;
+        filter: drop-shadow(1px 1px 2px black);
       }
     }
   }
@@ -138,14 +139,6 @@ aside {
     h2 {
       font-size: 45px;
     }
-    .left_float {
-      float: left;
-    }
-    .right_float {
-      float: right;
-      width: 40%;
-      text-align: center;
-    }
   }
   #brand {
     & > .column {
@@ -155,7 +148,6 @@ aside {
       top: 40%;
       transform: translate(-50%, -50%);
       & > em {
-        text-align: center;
         font-size: 30px;
         line-height: 45px;
       }
@@ -169,6 +161,7 @@ aside {
       }
       #evinlphrin {
         font-size: 70px;
+        line-height: 35px;
         span {
           height: 70px;
           padding-top: 20px;
@@ -199,19 +192,115 @@ aside {
       justify-content: space-between;
       width: calc(100% - 200px);
     }
+    .left_float {
+      float: left;
+    }
+    .right_float {
+      float: right;
+      width: 40%;
+      text-align: center;
+    }
   }
 
   #blog {
-    h1 {
+    background: url('/images/decoration/background_02.jpg');
+    background-size: cover;
+    text-decoration: none;
+    color: inherit;
+    &>h1 {
       display: inline-block;
       position: relative;
-      @include centerAbsolute();
+      left: 160px;
+    }
+    h4 {
+      text-align: center;
+    }
+    #trending_article {
+      width: 60%;
+      position: relative;
+      left: 40%;
+      top: -75px;
+      text-align: center;
+      #featured_article {
+        text-decoration: none;
+        h2 {
+          color: #3a6c95;
+          text-decoration: underline;
+          margin-bottom: 0px;
+        }
+        sub {
+          margin-bottom: 25px;
+        }
+        display: inline-block;
+        height: 460px;
+        position: relative;
+      }
+      .row {
+        justify-content: center;
+        height: 130px;
+        .three {
+          border-left: 1px solid rgba(1, 1, 1, 0.3);
+          transition: background-color .4s;
+          &:hover {
+            background-color: darkgrey;
+            color: white
+          }
+          h3 {
+            min-height: 55px;
+            color: #565656;
+          }
+        }
+        .three:nth-child(2) {
+          border-left: none;
+        }
+        a {
+          text-decoration: none;
+          .text_content {
+            margin-top: 30px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+            color: #565656;
+          }
+        }
+      }
+      h4 {
+        display: inline-block;
+        margin-top: 60px;
+        font-size: 18px;
+        color: #777;
+      }
+    }
+  }
+
+  #contact {
+    height: 1000px;
+    .column {
+      width: 100%;
+      position: relative;
+      left: 50%;
+      top: 40%;
+      transform: translate(-50%, -50%);
+      a {
+        background-color: #3A6C95;
+        transition: background-color .3s;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        &:hover {
+          background-color: #007298;
+        }
+      }
     }
   }
 }
 
 #main {
-  width: 100%;
+  width: 97%;
+  margin-left: 1.5%;
   margin-top: 60px;
   margin-bottom: 100px;
   box-shadow: 0px 0px 15px black;
@@ -227,6 +316,13 @@ aside {
 
 .center {
   justify-content: center;
+  & > * {
+    text-align: center;
+  }
+}
+
+.leftAlign {
+  text-align: left;
 }
 
 ////////// Hexagons
@@ -247,7 +343,7 @@ aside {
         display: none;
       }
     }
-    &:hover {
+    &:not(.no_hover):hover {
       svg {
         filter: brightness(10%);
         transition: filter .3s;
@@ -265,6 +361,10 @@ aside {
       }
     }
     svg {
+      polygon {
+        stroke: #17496099;
+        stroke-width: 2px;
+      }
     }
   }
 }
@@ -303,12 +403,9 @@ aside {
   }
 }
 
-////////// Semantic UI modifications
-
-.ui.cards::after {
-  content: none;
-}
-
-.ui.cards {
-  flex-wrap: nowrap;
+.three {
+  display: inline-block;
+  width: calc(100% / 3);
+  padding-left: 20px;
+  padding-right: 20px;
 }

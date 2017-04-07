@@ -3,7 +3,7 @@ index:
   brand_two: "Welcome to my website"
   projects: "What I have done"
   contact: "You want to get in touch?"
-  blog: "I write too"
+  blog: "My articles"
   work: 
     one: "I worked for them"
     two: "And I learned with them"
@@ -20,7 +20,7 @@ header:
 work_:
   reportlinker:
     title: "ReportLinker"
-    role: "Internship Web R&D"
+    role: "Internship Web and R&D"
     url: "http://www.reportlinker.com/"
     icon: "/images/work/reportlinker.png"
     from: "July 2015"
@@ -72,3 +72,6 @@ projects_:
     link: ""
     license: ""
     technos: ["Rust"]
+
+blog_:
+  more: "See more articles"

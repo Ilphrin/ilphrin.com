@@ -6,7 +6,7 @@ index:
     two: "Et j'ai appris avec eux"
   projects: "Ce que j'ai fait"
   contact: "Intéressé? Contactez-moi"
-  blog: "J'écris aussi"
+  blog: "Mes articles"
 
 footer:
   about: "A propos"
@@ -20,7 +20,7 @@ header:
 work_:
   reportlinker:
     title: "ReportLinker"
-    role: "Stage Web R&D"
+    role: "Stage Web et R&D"
     url: "http://www.reportlinker.com/"
     icon: "/images/work/reportlinker.png"
     from: "Juillet 2015"
@@ -72,3 +72,6 @@ projects_:
     link: ""
     license: ""
     technos: ["Rust"]
+
+blog_:
+  more: "Voir plus d'articles"

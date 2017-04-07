@@ -35,11 +35,12 @@ function Hexagon(link, bg, title, desc) {
 // };
 //
 var fillHexagon = function(data, element) {
+  console.log(data);
   let svg = SVG('svg' + data.title.innerHTML);
   let pattern = svg.pattern(300, 300, function(add) {
     add.rect(300,300);
     add.fill(add.image(data.bg.getAttribute('src'), 300, 300));
-    add.stroke({color: '#000', width: 5});
+    add.stroke({color: '#000', width: 3});
   });
   svg.attr({fill: pattern});
 };
@@ -75,8 +76,21 @@ var fillWorkHexagon = function() {
     positionHexagon(work, index, works.length);
     index++;
   }
+};
+
+var fillBlogHexagon = function() {
+  let hexagon = new Hexagon();
+  let post = document.querySelector("#blog .hexag").children[1];
+
+  hexagon.title = post.children[0];
+  hexagon.desc = "";
+  hexagon.link = post.children[1];
+  hexagon.bg = post.children[2];
+
+  fillHexagon(hexagon);
 }
 
 // showDivs(slideIndex);
 fillWorkHexagon();
+fillBlogHexagon();
 
