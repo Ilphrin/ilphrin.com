@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/CV_fr.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgFaire son propre écran de login MDM en HTML" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Faire son propre écran de login MDM en HTML</span>
+            <img src="/images/header_articles/linuxmint.png"/>
+          </div>
+        </div>
+        <div>
+          <h1>Faire son propre écran de login MDM en HTML</h1>
+          <sub>01/03/13</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Salut tout l’monde!</p>
+
+<p><a href="http://blog.linuxmint.com/?p=2327">The Linux Mint Blog</a> à publié récemment un article concernant MDM expliquant qu’il gère maintenant les thèmes HTML5.  Si vous n’aimez pas l’Anglais, voici comment avoir la dernière version de mdm:
+<!--break-->
+- Télécharger et installer l’archive ici : <a href="http://build.linuxmint.com/automate/www/instances/linuxmint/ubuntu/pool/main/m/mdm/">archive</a></p>
+
+<ul>
+  <li>
+    <p>Enlever les “ajustements de Mint” (je met entre guillemet car je ne sais pas vraiment à quoi cela correspond) :</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  rm -f /etc/linuxmint/adjustments/15-mdm.overwrite 
+</code></pre>
+    </div>
+  </li>
+  <li>Redémarrer son pc</li>
+  <li>Ensuite vous pouvez configurer MDM par deux façons:</li>
+  <li>Par le menu du panel   :  Menu-&gt;Administration-&gt;Ecran de démarrage (Login Window)</li>
+  <li>
+    <p>Ou en ligne de commande avec:</p>
+
+    <div class="highlighter-rouge"><pre class="highlight"><code>  sudo mdmsetup 
+</code></pre>
+    </div>
+  </li>
+  <li>Dans l’onglet “Locale”, mettez “Style” sur HTML</li>
+  <li>Faites une copie du répertoire /usr/share/mdm/html-themes/mdm dans votre dossier personnel, ce sera ce dossier là avec lequel vous ferez mumuse ;)</li>
+  <li>Quand vous avez fini vous pouvez nommer votre thème comme bon vous semble puis le copier dans le répertoire /usr/share/mdm/html-themes/</li>
+</ul>
+
+<p>Vous pouvez avoir un aperçu de votre résultat en entrant la commande</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>mdm-theme-emulator 
+</code></pre>
+</div>
+
+<p>Et en ouvrant le fichier <strong>index.html</strong></p>
+
+<p>Et voilà vous avez de quoi vous occuper un bon moment! Moi je ne peux pas encore faire  grand chose vu qu’il faut connaitre l’html/css et le javascript pour faire de joli trucs, du coup je me suis contenté de celui proposé de base.</p>
+
+<p>Bonne journée à tous! _o/</p>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site et contenus sous <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimisé pour Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>

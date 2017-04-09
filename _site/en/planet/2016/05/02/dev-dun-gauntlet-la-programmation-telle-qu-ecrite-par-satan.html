@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/planet/2016/05/02/dev-dun-gauntlet-la-programmation-telle-qu-ecrite-par-satan.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/planet/2016/05/02/dev-dun-gauntlet-la-programmation-telle-qu-ecrite-par-satan.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/articles/">Articles</a></li>
+      <li><a href="/CV_en.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgDev' d'un Gauntlet: La programmation telle que l'a écrit Satan" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Dev' d'un Gauntlet: La programmation telle que l'a écrit Satan</span>
+            <img src="/images/header_articles/gauntlet.jpg"/>
+          </div>
+        </div>
+        <div>
+          <h1>Dev' d'un Gauntlet: La programmation telle que l'a écrit Satan</h1>
+          <sub>02/05/16</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Mettons un peu de contexte derrière ce titre étrange… Nous approchons de la fin de 2e année à Epitech, et l’un des plus gros projet de C++ a commencé: Indie Studio.</p>
+
+<p>Nous sommes 6 sur ce projet, avec 1 mois et demi devant nous pour développer 1 jeu dans une petite liste:</p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Gran_Trak_10">Sprint</a>: Un jeu de courses de voitures avec l’ajout de power-ups façon Mario-Kart</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Lemming">Lemmings</a>: Un jeu de reflexion où l’on doit gérer des petites bestioles un peu débiles. (Mais on connait non?)</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Worms_(s%C3%A9rie://fr.wikipedia.org/wiki/Worms_(s%C3%A9rie))">Worms</a>: Nan celui-là vous êtes obligé de le connaitre, allez y jouer avant de continuer cet article.</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Bomberman">Bomberman</a>: Un jeu multijoueur dont le but est de poser des bombes pour tuer le plus d’ennemis. (Je vais me faire censurer par le gouvernement avec des phrase comme ça)</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Gauntlet">Gauntlet</a>: Un jeu d’action dans un donjon en vue de dessus, avec multijoueur jusque 4 sur le même pc! <strong>On a pris celui-ci</strong>.</li>
+</ul>
+
+<!--break-->
+
+<p>Nous avons quelques restrictions dont deux d’entres elles qui sont: Un jeu 3D, et un jeu multijoueur. Une fois le jeu choisi on va prendre un moteur 3D en piochant l’un de ces deux-là:</p>
+
+<ul>
+  <li><a href="https://fr.wikipedia.org/wiki/Irrlicht">Irrlicht</a>: Simple est bien foutu, et à décidé de parti sur celui-ci.</li>
+  <li><a href="https://fr.wikipedia.org/wiki/Ogre_3D">Ogre 3D</a>: Plus connu, il est apparemment beaucoup plus puissant et performant, mais nous n’avons pas réussi à le faire marcher, et vu que le temps presse nous avons dû trancher.</li>
+</ul>
+
+<p>Mon but est d’écrire un article chaque fois que nous nous réunissons tous pour bosser une journée entière dessus, afin de noter notre avancée et partager un peu nos démarches, idées, et pourquoi pas quelques bouts de codes. Mais nous ne pourrons pas diffuser le code du jeu réalisé puisqu’il sera au nom et à la licence d’Epitech.</p>
+
+<p>Je dirais que nous avons travaillé principalement sur 2 aspects aujourd’hui:</p>
+
+<h3>1) La documentation/L'organisation</h3>
+
+<p>Nous avons commencé a nous répartir les tâches, en fonction des envies et des capacités. Moi et mon binome dans ce groupe, Nathanael, devons nous occuper de tout ce qui attrait à l’environnement de jeu et l’interface. C’est-à-dire un menu principal pour commencer.</p>
+
+<p>Mais aussi la gestion des cartes dans lesquelles les joueurs vont jouer avec notamment une possible génération aléatoire de carte, et les mécanismes pour ajuster le niveau de jeu: Le nombre de monstres, la force de ceuxi-ci, l’adaptation au nombre de joueurs, etc…</p>
+
+<p>J’avais fait un peu de lecture à l’époque ou j’ai codé <a href="https://github.com/Ilphrin/TuxleTriad">TuxleTriad</a> sur la façon de gérer la difficulté dans un jeu du type de Gauntlet, et j’en avais retenu un “algo” que je pense utilise pour notre jeu.</p>
+
+<p>Chaque acteur - monstre, boss, héros, pnj - possède un ‘poids’ qu’il lui est attribué préalablement par le biais d’un fichier de configuration et qui détermine un peu sa force globale. Un héros aura un grand poids, et le but est qu’une fois le niveau crée, le total des poids des ennemis soit supérieur ou égal au poids des joueurs. Viennent par dessus s’ajouter des modificateurs externes pour ajuster la difficulté selon une situation ou un événement.</p>
+
+<p>Il y a plusieurs avantages à ce principe:</p>
+
+<ul>
+  <li><strong>Les cartes</strong>: On va pouvoir créer des cartes aléatoirement assez facilement si on construit bien ce système.</li>
+  <li><strong>La modularité</strong>: On possède une grande modularité sur la façon de créer un niveau. On peut par exemple facilement imaginer une courbe de croissance….croissante, du modificateur de difficulté au fil de l’avancée dans les différents niveau. Ou faire des niveaux secrets avec pleins de trésors, mais aussi beaucoup d’ennemis puissants.</li>
+</ul>
+
+<p>Je vois par contre un défaut à ce système: La mise en place. Nous allons avoir besoin de beaucoup de données de configurations pour générer tout ça, un fichier par niveau par exemple.</p>
+
+<p>Sinon nous en avons profité pour lire la Doc’ d’Irrlicht, et la chose la plus importante: Ça vient de l’Allemand et ça signifie Feu Follet! Quand même, je me devais de le dire ;)</p>
+
+<p>On sais donc que l’on peut utiliser OpenGL facilement sur Windows et sous Linux avec Irrlicht, qu’il possède un module de gestion des controlleur de types manettes, et qu’il possède un gestionnaire de fichier XML integré, dont nous nous servirons surement pour décrire les stats’ des monstres, des joueurs, et de tout le reste.</p>
+
+<h3>2) L'enfer</h3>
+
+<p>Voilà on y arrive. En fait j’ai oublié de mentionner une restrictions de taille tout à l’heure: Nous devons créer un installateur pour Linux ET Windows.</p>
+
+<p>2 problèmes: De 1 personne n’aime coder sous Windows dans notre groupe, et de 2 on a jamais eu de projet à faire sous Windows avec Epitech, et là on va devoir tout apprendre sur le système de compilation et de linkage sous Windows.</p>
+
+<p>Et croyez-moi, maintenant que nous avons frolé le museau de la bête, on a pas envie de sentir ses poils! (J’espère que vous avez bien l’image en tete maintenant).</p>
+
+<p>Je vais vous épargnez les détails, mais dans le gros de notre processus d’apprentissage voici ce qu’il s’est passé:</p>
+
+<ul>
+  <li>On a voulu compiler avec GCC, on a compris qu’il fallait installer MinGW.</li>
+  <li>Mingw était pas trouvé dans le CMD (sérieux, Windows ose appeler ça la ligne de commande…)</li>
+  <li>J’ai réussi à lancer un tout petit fichier C avec MinGW.</li>
+  <li>On a quitté de rage, et regardé comment faire de la cross-compilation pour Windows à partir de notre chère patrie Linux. Après facilement 200Mo de paquets installés, on a quitté de rage.</li>
+  <li>On est retourné sous Windows, Rémi, happé par le désespoir, à installé Visual Studio pour créer un fichier de projet Irrlicht pour avoir une DLL de notre moteur.</li>
+  <li>Après 3/4h de travail acharné. Le Saint Graal apparait: “Compilation finished, 1 Build created, 0 errors” \o/</li>
+</ul>
+
+<p>Ce qu’il reste à faire donc:</p>
+
+<ul>
+  <li>Faire un .BAT pour automatiser cette compilation.</li>
+  <li>Avoir un .exe de notre jeu</li>
+  <li>Utiliser un outil comme Inno Setup pour lancer ce .BAT, générer noter .exe, et installer notre jeu correctement sous Windows.</li>
+</ul>
+
+<p>Je peux vous dire que les insultes contre Windows ont été nombreuses (surtout venant de moi :D).</p>
+
+<p>Bon maintenant qu’on vois à peu près comment ça marche ça devrait le faire, mais plusieurs choses me gênent énormément dans ce que l’on a fait, mais que l’on ne peut pas faire grand chose contre par manque de temps:</p>
+
+<ul>
+  <li>Pourquoi faut-il un IDE obèse come Visual Studio pour compiler du code C?</li>
+  <li>Quitte à avoir un OS qui fait tout seul ce qu’il faut, pourquoi c’est si compliqué de compiler un printf(“Coucou\n”); ?</li>
+  <li>Pourquoi l’installateur de MinGW est aussi moche?</li>
+</ul>
+
+<p>Et enfin, pouquoi c’est si mal documenté? J’veux dire, la comilation c’est quand même l’essence même de l’informatique, pourquoi une chose aussi triviale est un tel calvaire à réaliser? Je sais que Windows se veut un OS pour le grand public, mais il y a bien des gens qui codent dessus? Sinon GNU/Linux n’aurait pas de soucis de popularité.</p>
+
+<p>Je ne veux que deux possibilités pour que quelqu’un développe de son plein gré (c’est-à-dire en dehors de son travail et tout) sous Windows: Soit il le fait depuis des années et connait le workflow Windows, dans ce cas ce serait sympa de la part de ce mec de populariser le MSDN ou de nous faire un ptit Wiki (j’offre des cookies =D), ou alors c’est que la lobotomie commerciale de Windows fait des merveilles, et que les gens ne codent sous Windows que parce qu’ils pensent que c’est ce qu’il se fait de mieux.</p>
+
+<p>Alors que franchement, entre nous, au final c’est pas si mal notre petit:</p>
+
+<pre>
+<code class="bash">
+./configure
+make
+make install
+</code>
+</pre>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimized for Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>

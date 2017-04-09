@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/planet/2016/12/12/update-neovim-1-7-tour-des-fonctionalites.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/planet/2016/12/12/update-neovim-1-7-tour-des-fonctionalites.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/articles/">Articles</a></li>
+      <li><a href="/CV_en.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgUpdate: Neovim 0.1.7, petit tour" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Update: Neovim 0.1.7, petit tour</span>
+            <img src="/images/header_articles/vim_nvim.png"/>
+          </div>
+        </div>
+        <div>
+          <h1>Update: Neovim 0.1.7, petit tour</h1>
+          <sub>12/12/16</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Ca y est, une nouvelle version de Neovim vient de sortir! Et avec elle sont lot de fonctionalités et de corrections bien sympa (voire même plus que sympa vous allez voir ;) ), profitons-en pour revoir les fonctionalités cool de Neovim</p>
+
+<!--break-->
+
+<p>Neovim est en développement depuis une paire d’années maintenant et, avec le soutien de nombreux contributeurs, rajoute un interêt non negligeable à ce bon vieux Vim qui sort une version toutes les décennies. Voici une liste non-exhaustives des nouveautés non seulement dans la 0.1.7 mais aussi dans le travail antérieur:</p>
+
+<ul>
+  <li>En 0.1.7 nous avons maintenant le <strong>inccommand</strong>, successeur au <em>incsub</em>, nous permet d’avoir un aperçu temps-réel des modifs sur du texte, par le biais par example d’une substitution comme :%s/coucou/plop/g (une exemple <a href="https://asciinema.org/a/92207">ICI</a>)</li>
+  <li>La Newsletter #7 est sortie, et dedans un il y un retour sur ce qui a été fait</li>
+  <li>La commande <em>:tchdir</em> qui permet de changer de répertoire localement à un ‘tab’</li>
+  <li>La ‘statusline’ peut maintenant aligner un nombre indéfini d’élements</li>
+  <li><a href="https://github.com/extr0py/oni">oni</a> est un GUI pour Mac, mais le support de Linux est en cours (chez moi il se lance mais n’affiche rien d’autre qu’une barre et une page blanche), il peut réussir là ou NyaoVim à été un peu décevant à mon goût</li>
+  <li>La commande <em>:CheckHealth</em> qui permet d’avoir des rapports d’erreurs sur la configuration, le statut des plugins, et diverses informations comme le statut de la gestion du clipboard sur votre système</li>
+  <li>Les utilisateurs de Debian seront heureux d’apprendre que Neovim sera dans la <a href="https://packages.debian.org/stretch/neovim">prochaine version de Debian</a> ;)</li>
+  <li>Le transcompileur VimL vers Lua fait des progès intéressants, mais sont développement est mis en arrière-plan par rapport au support de Windows.</li>
+</ul>
+
+<p>Bien sûr ce n’est pas une liste complète, pour cela je vous invite à aller voir <a href="https://neovim.io/news/">CECI</a> et <a href="https://github.com/neovim/neovim/releases/tag/v0.1.7">CELA</a> pour beaucoup plus de détails.</p>
+
+<p>Désolé pour cet article un peu court, et en retard par rapport a mon planning hebdomadaire mais je dois avoue que j’ai pas mal de boulot en ce moment, mais promis je reviendrais assez rapidement, probablement pour parler des commentaires sur mon blog qui sont maintenant fonctionnel et ce grâce à Staticman!</p>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimized for Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>

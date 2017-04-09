@@ -2,15 +2,15 @@ index:
   brand_one: "I am a developper, Mozillian, and an Open Source lover"
   brand_two: "Welcome to my website"
   projects: "What I have done"
-  contact: "You want to get in touch?"
+  contact: "Want to get in touch?"
   blog: "My articles"
   work: 
     one: "I worked for them"
     two: "And I learned with them"
 
 footer:
-  about: "About"
-  cv: "CV"
+  license: "Site and content under"
+  optimized: "Optimized for Firefox"
 
 header:
   home: "Home"

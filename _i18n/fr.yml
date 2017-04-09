@@ -9,8 +9,8 @@ index:
   blog: "Mes articles"
 
 footer:
-  about: "A propos"
-  cv: "CV"
+  license: "Site et contenus sous"
+  optimized: "Optimisé pour Firefox"
 
 header:
   home: "Accueil"

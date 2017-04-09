@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/planet/2016/01/02/ce-que-j-ai-appris-avec-gaia.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/planet/2016/01/02/ce-que-j-ai-appris-avec-gaia.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/CV_fr.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgCe que j'ai appris avec Gaia" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Ce que j'ai appris avec Gaia</span>
+            <img src="/images/header_articles/"/>
+          </div>
+        </div>
+        <div>
+          <h1>Ce que j'ai appris avec Gaia</h1>
+          <sub>02/01/16</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Cela fait un moment que je n’ai pas parlé de Gaia, depuis la dernière fois où j’expliquais mon envie de bosser sur FirefoxOS, et ce que j’ai entrepris pour y contribuer au niveau du code. Je viens de finir de corriger mon premier bug, et il a été ajouté au code de la branche principale de FirefoxOS. Je me suis donc dit qu’un petit debrief sur ce que j’ai appris me permettrai de revoir un peu tout ça et notamment de réfléchir à la suite.</p>
+
+<!--break-->
+
+<p>Si je devais résumer en deux mots ce que j’ai appris ce qui me viendrais là tout de suite à l’esprit c’est: Git et Tests.</p>
+
+<p>La plus grande difficulté quand on corrige un bug ce n’est pas tant la correction en elle-même pour des bugs de cette catégorie. Mais plutôt de se poser la question suivante: “Est-ce que ce que j’ai rajouté ou enlevé à un impact sur le code qui nécessite une modification ailleurs?”. Et dans mon cas la réponse à été un grand OUI (sinon je n’écrirais pas cet article ;) ). La correction du bug à été très simple, je vous montre le code espacé par deux lignes avant et après la modif:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">icon</span><span class="err">:</span> <span class="nx">NotificationHelper</span><span class="p">.</span><span class="nx">getIconURI</span><span class="p">(</span><span class="nx">app</span><span class="p">)</span> <span class="o">+</span> <span class="s1">'?titleID='</span> <span class="o">+</span> <span class="nx">title</span>
+
+
+<span class="nl">icon</span><span class="p">:</span> <span class="nx">NotificationHelper</span><span class="p">.</span><span class="nx">getIconURI</span><span class="p">(</span><span class="nx">app</span><span class="p">),</span>
+<span class="nx">data</span><span class="err">:</span> <span class="p">{</span> <span class="nx">title</span> <span class="p">}</span></code></pre></figure>
+
+<p>Jusque là, rien de bien compliqué. En fait là où des modifications devenaient nécessaire, c’est au niveau des tests unitaires. Il fallait modifier la façon dont les tests étaient fait pour ces variables, ce qui à conduit à modifer d’autres éléments, et ainsi de suite.</p>
+
+<p>Et sans l’aide du système de mentoring je n’aurais jamais vu qu’il fallait faire ces changements!</p>
+
+<p>Du coup j’ai dû apprendre à utiliser l’outil de tests unitaires de Gaia pour vérifier à chacune de mes modifications si les tests étaient fonctionnels. Cela peut paraître normal pour un développeur affirmé quelle que soit la catégorie, mais je ne suis qu’un jeune étudiant. Ce bug est ma toute première véritable contribution à du code dans le monde du logiciel libre. Du coup j’ai perdu un bon paquet de temps à comprendre ça 8)</p>
+
+<p>Ensuite est survenu un deuxième problème bien plus long et embêtant: Ma faible connaissance dans Git. Alors oui je l’utilise constamment pour tous les projets à rendre à Epitech, mais ça ne fait pas de moi un utilisateur avancé bien au contraire! Je ne suis jamais allé plus loin qu’un git commit -am “coucou” suivi d’un git push!</p>
+
+<p>Il a fallu donc tout que j’apprenne sur le système de branche, de merge, et autres joyeusetés qui forment ce CVS. Et c’est surement de ce coté-là que j’ai le plus appris car c’est là que j’ai fais le plus d’erreurs! (qui m’ont obligé d’ailleurs à faire 3 Pull Request sur Github avant que tout soit fonctionnel)</p>
+
+<p>Problème ou pas problème, je vais m’y remettre dès que la période de piscine de C++ d’Epitech est terminée. Car avec le système de mentoring de bug pour les débutants comme moi, on peut facilement s’intégrer et se faire aider par un mentor de bug, dans mon cas  azasypkin (qui à fait preuve d’une grande patience avec moi x) ), et ça m’a beaucoup motivé et donné envie de continuer!</p>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site et contenus sous <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimisé pour Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>

@@ -14,28 +14,7 @@ function Hexagon(link, bg, title, desc) {
   this.desc = desc;
 }
 
-// var slideIndex = 1;
-// var plusDivs = function(n) {
-  // showDivs(slideIndex += n);
-// };
-//
-// var showDivs = function(n) {
-  // var i;
-  // var x = document.getElementsByClassName("slide");
-  // if (n >= x.length) {
-    // slideIndex = 0;
-  // }
-  // if (n < 0) {
-    // slideIndex = x.length - 1;
-  // }
-  // for (i = 0; i < x.length; i++) {
-    // x[i].style.display = "none";
-  // }
-  // x[slideIndex].style.display = "block";
-// };
-//
 var fillHexagon = function(data, element) {
-  console.log(data);
   let svg = SVG('svg' + data.title.innerHTML);
   let pattern = svg.pattern(300, 300, function(add) {
     add.rect(300,300);
@@ -64,33 +43,64 @@ var fillWorkHexagon = function() {
   let baseLeft = "50%";
 
   let works = document.querySelectorAll("#work .hexag");
-  let index = 0;
-  for (work of works) {
-    let content = work.children[1];
+  if (works) {
+   let index = 0;
+    for (work of works) {
+      let content = work.children[1];
 
-    hexagon.link = content.children[1];
-    hexagon.title = content.children[0];
-    hexagon.desc = content.children[2];
-    hexagon.bg = content.children[3];
-    fillHexagon(hexagon);
-    positionHexagon(work, index, works.length);
-    index++;
+      hexagon.link = content.children[1];
+      hexagon.title = content.children[0];
+      hexagon.desc = content.children[2];
+      hexagon.bg = content.children[3];
+      fillHexagon(hexagon);
+      positionHexagon(work, index, works.length);
+      index++;
+    }
   }
 };
 
 var fillBlogHexagon = function() {
   let hexagon = new Hexagon();
-  let post = document.querySelector("#blog .hexag").children[1];
+  let post = document.querySelector("#blog .hexag");
+  if (post) {
+    post = post.children[1];
 
-  hexagon.title = post.children[0];
-  hexagon.desc = "";
-  hexagon.link = post.children[1];
-  hexagon.bg = post.children[2];
+    hexagon.title = post.children[0];
+    hexagon.desc = "";
+    hexagon.link = post.children[1];
+    hexagon.bg = post.children[2];
+    console.log(hexagon.bg);
 
-  fillHexagon(hexagon);
+    fillHexagon(hexagon);
+  }
 }
 
-// showDivs(slideIndex);
+var fillHeaderCurrentArticle = function() {
+  let hexagon = new Hexagon();
+  let post = document.querySelector("#trending_article .hexag");
+  if (post) {
+    post = post.children[1];
+
+    hexagon.title = post.children[0];
+    hexagon.desc = "";
+    hexagon.link = "";
+    hexagon.bg = post.children[1];
+    fillHexagon(hexagon);
+  }
+
+  post = document.querySelector("#header_article .hexag");
+  if (post) {
+    post = post.children[1];
+
+    hexagon.title = post.children[0];
+    hexagon.desc = "";
+    hexagon.link = "";
+    hexagon.bg = post.children[1];
+    fillHexagon(hexagon);
+  }
+}
+
+fillHeaderCurrentArticle();
 fillWorkHexagon();
 fillBlogHexagon();
 

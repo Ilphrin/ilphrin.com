@@ -63,7 +63,7 @@
 $secondary-color: #C1C1C1;
 
 html {
-  background: linear-gradient(to top right, #150081, #003078, rgba(0, 55, 77, 0.9));
+  background: linear-gradient(to top right, #162e41, #3a6c95);
   background-attachment: fixed;
   height: 100%;
 }
@@ -221,49 +221,17 @@ aside {
       left: 40%;
       top: -75px;
       text-align: center;
-      #featured_article {
-        text-decoration: none;
-        h2 {
-          color: #3a6c95;
-          text-decoration: underline;
-          margin-bottom: 0px;
-        }
-        sub {
-          margin-bottom: 25px;
-        }
-        display: inline-block;
-        height: 460px;
-        position: relative;
-      }
       .row {
         justify-content: center;
         height: 130px;
-        .three {
+        a {
           border-left: 1px solid rgba(1, 1, 1, 0.3);
-          transition: background-color .4s;
-          &:hover {
-            background-color: darkgrey;
-            color: white
-          }
-          h3 {
-            min-height: 55px;
-            color: #565656;
-          }
         }
-        .three:nth-child(2) {
+        a:nth-child(1) {
           border-left: none;
         }
-        a {
-          text-decoration: none;
-          .text_content {
-            margin-top: 30px;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 30px;
-            color: #565656;
-          }
-        }
       }
+      // See more articles
       h4 {
         display: inline-block;
         margin-top: 60px;
@@ -298,12 +266,183 @@ aside {
   }
 }
 
+#trending_article {
+  #featured_article {
+    h2 {
+      color: #3a6c95;
+      text-decoration: underline;
+      margin-bottom: 0px;
+    }
+    display: inline-block;
+    position: relative;
+  }
+  .row {
+    justify-content: center;
+    height: 130px;
+    a {
+      text-decoration: none;
+      transition: background-color .4s;
+      &:hover {
+        background-color: darkgrey;
+        h3 {
+          color: #3a6c95;
+        }
+      }
+      .text_content {
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 30px;
+        color: #565656;
+      }
+      h3 {
+        min-height: 55px;
+        color: #565656;
+      }
+    }
+  }
+}
+
 #main {
   width: 97%;
   margin-left: 1.5%;
   margin-top: 60px;
   margin-bottom: 100px;
   box-shadow: 0px 0px 15px black;
+}
+
+#articles_list {
+  width: 90%;
+  margin-left:auto;
+  margin-right: auto;
+  #trending_article {
+    .column {
+      background-color: #efefef;
+      box-shadow: 0px 4px 8px black;
+      .row {
+        a {
+          h3 {
+            margin-bottom: 0px;
+          }
+          .text_content {
+            margin-top: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+
+#articles_list #featured_article, #header_article {
+  background-color: #1111114d;
+  transition: background-color 1s;
+  box-shadow: 0px 0px 8px black;
+  &:hover {
+    background-color: #1111119f;
+    h1 {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+  h1 {
+    margin-top: 28px;
+    margin-bottom: 0px;
+    color: #3a6c95;
+    font-size: 42px;
+    &::after {
+      width: 0px;
+      transition: width .4s;
+      height: 2px;
+      content: "";
+      background-color: #3a6c95;
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  sub {
+    color: white;
+    margin-bottom: 25px;
+  }
+}
+
+#trending_article .hexag_container, #header_article .hexag_container {
+  height: 460px;
+  text-decoration: none;
+
+}
+
+#article {
+  width: 90%;
+  margin-left:auto;
+  margin-right: auto;
+  #content_article {
+    background-color: #efefef;
+    font-size: 22px;
+    p, ul {
+      width: 70%;
+      margin-left: auto;
+      margin-right: auto;
+      color: #121212;
+    }
+    p {
+      img {
+        height: auto;
+        width: 500px;
+      }
+    }
+    a {
+      color: #3A6C95;
+    }
+    h1 {
+      font-size: 40px;
+      color: #3A6C95;
+    }
+    h2,h3,h4 {
+      color: #162e42;
+      margin-left: 5%;
+    }
+
+    // Fallback for when I was using Semantic UI for endnote of and article
+    .ui.icon.message {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 70px;
+      margin-bottom: 70px;
+      background: #3A6C95;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 2px black;
+    }
+
+    .medium {
+      height: auto;
+      width: 500px;
+    }
+    .small {
+      height: auto;
+      width: 350px;
+    }
+    // End
+
+    // Fallback for when I wasn't using highlightJS
+    code:not(.hljs) {
+	display: block;
+	overflow-x: auto;
+	padding: 0.5em;
+	background: #23241f;
+    }
+    // End
+  }
+}
+
+footer {
+  a {
+    color: #C1C1C1;
+  }
 }
 
 .left {
@@ -362,50 +501,24 @@ aside {
     }
     svg {
       polygon {
-        stroke: #17496099;
-        stroke-width: 2px;
+        stroke: #00637e;
+        stroke-width: 4px;
       }
     }
   }
 }
 
-////////// Slider css
-
-.slider {
-  position: relative;
-  top: 6%;
-  left:0px;
-  width: 100%;
-  height: calc(100% - 122px);
-  .slide {
-    width: 100%;
-    height: 100%;
-    display: block;
-    animation: opac 0.8s;
-    background-size: cover;
-    background-position: center center;
-  }
-
-  .prev_button, .next_button {
-    position: absolute;
-    top: 50%;
-    background: url('/images/decoration/arrows.png');
-    width: 55px;
-    height: 75px;
-  }
-  .prev_button {
-    background-position: 0px 0px;
-    left: 30px;
-  }
-  .next_button {
-    background-position: 295px 0px;
-    right: 30px;
-  }
-}
 
 .three {
   display: inline-block;
   width: calc(100% / 3);
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.two {
+  display: inline-block;
+  width: calc(100% / 2);
   padding-left: 20px;
   padding-right: 20px;
 }

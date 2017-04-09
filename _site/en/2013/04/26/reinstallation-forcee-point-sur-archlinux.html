@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/2013/04/26/reinstallation-forcee-point-sur-archlinux.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/2013/04/26/reinstallation-forcee-point-sur-archlinux.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/articles/">Articles</a></li>
+      <li><a href="/CV_en.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgRéinstallation forcée --> Point sur Arch Linux" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Réinstallation forcée --> Point sur Arch Linux</span>
+            <img src="/images/header_articles/archlinux.png"/>
+          </div>
+        </div>
+        <div>
+          <h1>Réinstallation forcée --> Point sur Arch Linux</h1>
+          <sub>26/04/13</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Salut tout l’monde!</p>
+
+<p>Bon comme l’indique le titre de l’article, j’ai été obligé de faire un ré-installation de mon pc. En effet la moitié de mes applications ne voulaient plus s’ouvrir et j’avais d’autres problèmes important, et j’ai jamais réussi à comprendre pourquoi ça faisait ça tout d’un coup. Alors après quelques jours de combat j’ai finalement abandonné et ai télechargé une image iso d’archlinux. Malheureusement je ne pourrai donc pas continuer l’article pour détailler l’installation, mais si vous êtes intéressés je vous conseille vivement le wiki d’archlinux anglais et français.
+<!--break-->
+Bon, tout le monde ne connait pas forcément Arch Linux, j’vais donc faire une petite intro pour vous présenter le contexte. Arch est une distribution sortie en 2002, qui se veut basée sur la simplicité, au sens sans “option” rajoutée. Lorsque l’on se procure une Arch linux, on dispose du strict nécessaire pour avoir un système, le reste c’est à l’utilisateur de choisir ce qu’il veut avoir. Et bien sur je ne peux pas parler du fonctionnement d’Arch Linux sans mentionner le principe <a href="http://wiki.archlinux.fr/kiss">KISS</a>! Pour faire court, il s’agit de laisser un éventail d’action maximum pour l’utilisateur afin qui puisse prendre sons système en main dans sa totalité. On trouvera rarement des GUI aux outils fourni par Archlinux car généralement un programme en interface graphique offre moins de contrôle sur le programme, alors qu’en ligne de commande on peut savoir précisément ce que l’on fait.</p>
+
+<p>Cela signifie que l’on peut choisir la quasi-totalité des logiciels qui vont composer notre système. Du gestionnaire de réseaux au dock du bureau en passant par votre lecteur vidéo. Les avantages de cette procédure sont juste énormes à mon sens. L’utilisation de la RAM et de la mémoire CPU seront moins importants puisque vous n’aurez pas tous les logiciels lancés au démarrage sur les autres distributions. Et pour les disques durs qui ne font pas quinze millions de terra-octets vous aurez plus de place pour vos données après l’installation ^^ ( moi personellement avec mes 20Go ça m’aide plutôt bien…)</p>
+
+<p>Bon en tout cas, j’ai fini de l’installer il y a de cela plusieurs semaines déjà et j’en suis plus que content. Les principaux logiciels que j’utilisais avant sous Linux Mint fonctionnent plus la plus grande majorité, comme sunflower, vlc, xchat, gimp etc… Pareil pour ce qui est de la composition de mon bureau Openbox avec conky, nitrogen,tint2 et wbar principalement. Le démarrage de ma session donne l’impression d’être plus rapide mais pas de beaucoup. Mais surtout ce que j’apprécie le plus avec cette distribution, c’est la gestion des paquêts qui est grandement améliorée avec l’<a href="https://wiki.archlinux.org/index.php/AUR_User_Guidelines">AUR</a>, qui est en gros un dépôt ou chaque utilisateur peut venir rajouter son paquet, le tout géré par le système de PKGBUILD sur lequel je ne m’attarderais pas car je ne suis pas encore assez connaisseur là-dedans…</p>
+
+<p>Néanmoins il me reste encore pas mal de choses à corriger, même si je pense que certaines sont dues à l’âge avancé de mon ordinateur.  Je mets ici la liste des choses que j’ai à corriger; plus pour servir de pense-bête qu’autre chose:</p>
+
+<ul>
+  <li>Comportement D-Bus étrange</li>
+  <li>Gestion du wifi non-fonctionnelle</li>
+  <li>Slim  ne veut pas se lancer parfois quand je me déconnecte simplement de ma session</li>
+  <li>Gestion du son avec Alsa vraiment bizarre.</li>
+</ul>
+
+<p>En tout cas je vous conseille vivement cette distribution si vous n’avez pas froid aux yeux en voyant que vous devez commencer par du mode texte pendant un bon moment et lire un peu de documentation pour comprendre le fonctionnement. Pour vous aider je vous renvoie aux liens que j’ai donné dans mon ancien article Test Archlinux en Virtualbox (1/2)</p>
+
+<p>Sur ce je vous souhaite une bonne journée et à bientôt! ;)</p>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimized for Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>

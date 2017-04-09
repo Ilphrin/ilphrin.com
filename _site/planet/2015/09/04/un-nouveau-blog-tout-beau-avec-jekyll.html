@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/planet/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/planet/2015/09/04/un-nouveau-blog-tout-beau-avec-jekyll.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/CV_fr.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgUn nouveau blog tout beau avec Jekyll" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Un nouveau blog tout beau avec Jekyll</span>
+            <img src="/images/header_articles/"/>
+          </div>
+        </div>
+        <div>
+          <h1>Un nouveau blog tout beau avec Jekyll</h1>
+          <sub>04/09/15</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Voilà j’ai enfin terminé de faire ce blog! Il sera passé par beaucoup d’étapes, mais le résultat vaut vraiment le coup. Principalement parce que c’est moi qui l’ai fait, en choississant a ma sauce chaque petit morceau. Je pense que la partie la plus dure n’a pas tant été l’apprentissage de Jekyll pour générer un site statique, mais plutôt le choix d’un design final pour ce site. Autant se l’avouer tout de suite: Je ne suis pas doué quand il s’agit de réfléchir au design d’un site web. Autant pour un logiciel il existe des bibliothèques qui définissent des menus, des canvas, des onglets etc… Autant dans le web c’est une galaxie de possibilités, a un tel point qu’on ne s’y retrouve plus.
+<!--break--></p>
+
+<p>Mais bon j’y suis finalement arrivé. Il manque encore quelques petite touches au site (je pense notamment aux commentaires, qui ne fonctionnenent pas du tout vous pouvez essayer vous ne verrez jamais votre commentaire s’afficher sur mon site, et aussi une petite liste des copains et autres sites a voir. Peut-être vais-je rajouter ça dans l’onglet Contact).</p>
+
+<p>Un peu de technique maintenant. Comme je l’ai mentionné, j’utilise Jekyll pour faire de la génération de code statique. Pour ceux qui ne savent pas, statique signifie (en gros) qu’il n’y a pas de code PHP, donc pas de gestion coté serveur. Vous avec de l’HTML, et du CSS. C’est quasiment tout ce qu’il y a sur ce site. Le gros avantage de Jekyll par rapport a ce que je voulais est qu’il est spécialisé pour la conception de Blogs, avec une gestion des articles qui sont écrit de mon coté en langage Markdown, puis sont transformé en page HTML/CSS par Jekyll selon un modèle que j’ai défini.</p>
+
+<p>Ah oui il faut en parler de ces modèles, ou plutôt appelé par Jekyll des Layouts. Pour générer du code avec Jekyll, on commence par écrire des pages qui serviront de modèles pour la génération, et en mettant dedans des commandes Jekyll pour lui donner des informations, comme lui dire a quel endroit insérer le contenu de la page qui utilise ce Layout. Un modèle peut être tout et n’importe quoi en HTML. Pour ce site j’utilise a peu près deux catégories de Layouts, d’un coté ceux qui contiennent le code de base d’une page HTML donc avec le DOCTYPE les balises &lt;head&gt; les lignes d’insertion de CSS etc… Agrémentés donc en plein milieu d’une ligne avec  pour placer le contenu de la page. Et d’un autre coté j’utilise des Layouts qui eux-mêmes sont derivés des Layouts de la première catégories.</p>
+
+<p>C’est le système que j’aime le plus avec Jekyll car ça permet de créer des modèles de pages au début, ce qui fait que pour la suite on a plus qu’à écrire le contenu qu’on veut et indiquer le modèle a utiliser. Non seulement ça simplifie la vie mais c’est en plus très facilement lisible quand on veut remettre les mains dans le cambouis. Par exemple quand j’écris cet article, j’écris un fichier de type Markdown, avec le contenu de mon article et le formattage que je veux faire (Jekyll s’occupe aussi de convertir le Markdown en HTML. Franchement, quel homme ce Jekyll!), et avec au début deux trois lignes d’information qui sont utilisées par Jekyll dont le Layout.</p>
+
+<p>Je pense que je vais conclure sur le fait que je suis vraiment satisfait des possibilités offertes par Jekyll. Il permet de facilement faire du code statique sans se casser la tête et surtout le rendu final est très performant puisqu’on n’a ni PHP ni Javascript pour faire tout ça. Mais après rien n’empêche de rajouter du PHP ou du Javascript! Par exemple sur ce site le bouton ‘Contact’ a une propriété HTML onclick qui lance une fonction Javascript pour afficher ou non la barre de Contact. J’ai aussi quelques lignes de PHP qui me permettent de gérer le formulaire d’envoi de commentaire, pour m’envoyer un mail avec le contenu et je n’ai plus qu’à rajouter ça au site (pas très pratique certes puisqu’il faut recopier le contenu du mail, le nom et l’article associé, dans le dossier _comments, mais apparemment il existe des ptits gars qui ont fait un script pour automatiser tout ça)</p>
+
+<p>Si vous voulez vous lancer dans la création d’un blog et que vous êtes débutant comme moi, Jekyll est vraiment un très bon outil pour faire ça.</p>
+
+<p>Gloire a Jekyll :3</p>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site et contenus sous <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimisé pour Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>
