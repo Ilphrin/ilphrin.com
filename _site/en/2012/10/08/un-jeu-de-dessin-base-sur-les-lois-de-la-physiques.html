@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/2012/10/08/un-jeu-de-dessin-base-sur-les-lois-de-la-physiques.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/articles/">Articles</a></li>
+      <li><a href="/CV_en.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgUn jeu de dessin basé sur les lois de la physique" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Un jeu de dessin basé sur les lois de la physique</span>
+            <img src="/images/header_articles/game.jpg"/>
+          </div>
+        </div>
+        <div>
+          <h1>Un jeu de dessin basé sur les lois de la physique</h1>
+          <sub>08/10/12</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Caph est un petit jeu extrêmement sympathique dont le but est de faire se coller un objet A sur un objet B. Basé sur deux principes : Primo tout est a base de dessins. Pour parvenir a votre objectif, vous n’avez que votre souris qui vous permet de dessiner des formes sur lesquelles vont venir se construire vos techniques pour faire avances l’objet A. Secundo la difficulté la plus importante, est que ce jeu est basé sur les lois de la physique ! En effet selon ce que vous dessinez il y aura des effet de gravité et d’énergie mécanique variable.
+<!--break-->
+##Installation</p>
+
+<p>Pour installer ce jeu il faut aller télécharger a partir de → <a href="http://caphgame.sourceforge.net/">Caph</a></p>
+
+<p>Normalement une commande par le terminal et apt-get permettrai de l’installer. Mais depuis peu il y a des problèmes avec le fichier deb. Mais pour les autres version il n’y a manifestement pas de problème, vous pouvez donc continuer à utiliser ces version du jeux. Pour le reste il faut suivre le lien précédent et dans la catégorie “Downloads” cliquer sur le lien et télécharger la dernière version. Ensuite dans le répertoire où vous l’avez téléchargé vous faites une extraction d’un contenu de l’archive avec votre gestionnaire d’archive préféré. Ensuite ça se complique légèrement. Il faut aller dans le dossier caph/src/ puis vous ouvrez un terminal dans ce répertoire. vous lancez ensuite les commandes suivante:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>./config                           
+./build                            
+</code></pre>
+</div>
+
+<p>Ne faites pas attention aux quelques messages apparaissant, maintenant vous pouvez exécuter le fichier caph avec un simple ./caph . Le jeu se lance alors!</p>
+
+<p>A partir de là libre à vous de créer les raccourcis que vous voulez pour lancer le jeu plus rapidement. (Par exemple en exécutant une commande avec Gnome-Pie!)</p>
+
+<p>Si vous voulez plus d’infos sur le jeu, il y a un répertoire doc dans le jeu avec un fichier README qui fournit pas mal d’informations.</p>
+
+<h2 id="comment-jouer">Comment jouer</h2>
+
+<p>Voici les commande de base a connaître :</p>
+
+<p>La souris vous permet de dessiner toutes les formes qui vous passent par la tête pour arriver au bout du niveau. Le clic-droit vous permet de changer de types de matériaux (Noir : Solide , Vert:Solide déformable et Bleu :Corde flexible).</p>
+
+<p>Echap permet de faire un retour arrière dans les objets crées. Il est surtout a combiner avec la touche T qui permet de stopper les temps.</p>
+
+<p>La touche R permet de recommencer le niveau</p>
+
+<p>La touche N permet de passer au niveau suivant (n’ayant pas de système de sauvegarde vous pouvez retourner a votre niveau de cette façon)</p>
+
+<p>Et enfin la touche Q vous permet de quitter le jeu.</p>
+
+<p>Voilà j’espère que vous vous amuserez bien avec ce petit jeu, en tout cas au début c’est un peu difficile a prendre en main mais après ça va mieux. Bien sur les niveau vont en difficulté crescendo ! (je ne sais pas encore combien de niveau il existe, je vous le dirais quand je l’aurais fini x) ). Sur ce bonne fin de journée a tous et amusez-vous bien !</p>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimized for Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>

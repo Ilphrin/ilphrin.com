@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
-  <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
-  <link rel="icon" href="/images/LogoV1.png"/>
-  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
-  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-  <title>
-    Kevin / Ilphrin
-  </title>
-  <!-- Piwik -->
-  <script type="text/javascript">
-    var _paq = _paq || [];
-    // tracker methods like "setCustomDimension" should be called before "trackPageView"
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//ilphrin.com/piwik/";
-      _paq.push(['setTrackerUrl', u+'piwik.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
   <!-- End Piwik Code -->
 </head>
 
 <body itemscope itemtype="http://schema.org/Blog">
-  <div class="header">
-  <div class="navigation">
-    <div class="title">
-      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
-    </div>
-    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/kevin/index.html">Blog</a></li>
-      <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a href="/kevin/about.html">A propos</a></li>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">EN</a></li>
     </ul>
   </div>
+<<<<<<< HEAD
   <div class="headerCursor">
     <img src="/images/decoration/header_01.svg" />
   </div>
@@ -263,20 +270,37 @@ Octobre
 2015
 </span>
     </div>
+=======
+  <div>
+    <ul class="row spaced">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/CV_fr.pdf">CV</a></li>
+    </ul>
+>>>>>>> style
   </div>
-  <div class="content" itemprop="articleBody">
+</header>
 
-    <script type="text/javascript">
-( function() {
-  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
-  var placement_id = window.CHITIKA.units.length;
-  window.CHITIKA.units.push(unit);
-  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-    </script>
-    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <article>
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgPremiers pas avec Gaia (FirefoxOS)" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Premiers pas avec Gaia (FirefoxOS)</span>
+            <img src="/images/header_articles/firefox.jpg"/>
+          </div>
+        </div>
+        <div>
+          <h1>Premiers pas avec Gaia (FirefoxOS)</h1>
+          <sub>16/10/15</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
       <p>J’utilise tous les jours mon Open C avec Firefox OS dessus, depuis deux ans maintenant (plus ou moins).
 J’ai vu passer l’OS de la version 1.2 jusqu’à la version 3.0 d’aujourd’hui, si on omet la “nouvelle” branche 2.5 que je n’ai pas encore pu observer par moi-même.
 Je met fréquemment a jour mon téléphone grâce au travail considérable de la communauté francophone pour Firefox OS qui a travaillé dur pour fournir un système automatisé de construction de builds installable sur les Open C vendu sur Ebay et dans les magasin en France, et ce avec différentes branches (la Beta, la Aurora, la Nightly, et Spark en 2.5), tout est expliqué en détail sur le site <a href="http://builds.firefoxos.mozfr.org/doc/fr/devices/zte-open-c">http://builds.firefoxos.mozfr.org/doc/fr/devices/zte-open-c</a></p>
@@ -310,88 +334,38 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
 
 <p>Avant de finir, vous avez vu ce que l’on peut faire avec Spark (Firefox OS 2.5)? Avec une recherche sur Lilo/DuckDuckGo/Tonton Roger, on peut trouver des exemple de deux/trois add-ons qui ont l’air vachement cool! Notamment un gars qui a rajouté une dizaine d’icones en bas du menu des notifications (le menu qu’on fait descendre avec un glissement de doigt du bord haut vers le bas). Malheureusement maintenant que j’écris cet article je n’arrive plus a retrouver où est-ce que j’ai vu cet add-on, mais bon tant pis il re-fera bien son apparition!</p>
 
-    </article>
+    </section>
   </div>
-</div>
+</article>
 
-<div id="share" class="ui segment inverted">
-  <h2>Vous avez aimé cet article? Partagez-le</h2>
-  <a href="https://twitter.com/share?text='Premiers pas avec Gaia (FirefoxOS) /planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html'" target="_blank">
-    <i class="big twitter icon"></i>
-    <span>Twitter</span>
-  </a>
-  <a href="http://sharetodiaspora.github.io/?title=Premiers pas avec Gaia (FirefoxOS)&url=/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html" target="_blank">
-    <i class="big icon star"></i>
-    <span>Diaspora*</span>
-  </a>
-</div>
-<div id="comments" itemprop="comment">
-  
-  
-      
-      
-  
-      
-      
-  
-      
-      
-  
-  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
-    <input name="options[slug]" type="hidden" value="coder-pour-firefoxos-c'est-cool">
-    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">
-    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
-    <input type="hidden" name="fields[post_id]" value="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool" />
-    <div class="ui inverted segment">
-      <h2 class="ui dividing header">Commenter</h2>
-      <p style="font-style: italic">
-      Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
-      </p>
-      <div class="field">
-        <div class="three fields">
-          <div class="field">
-            <label>Nom</label>
-            <input name="fields[name]" placeholder="Requis" type="text" required/>
-          </div>
-          <div class="field">
-            <label>Email</label>
-            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
-          </div>
-          <div class="field">
-            <label>Lien</label>
-            <input name="fields[url]" placeholder="Optionnel" type="text"/>
-          </div>
-        </div>
-      </div>
-      <div class="field">
-        <label>Allez-y parlez ;)</label>
-        <textarea name="fields[message]" placeholder="Requis" required></textarea>
-      </div>
-      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
-    </div>
-  </form>
-</div>
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site et contenus sous <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimisé pour Firefox</p>
+</footer>
 
 
 
-    </div>
-
-  <script src="/js/previous.js" charset="utf-8"></script>
-  <script src="/js/header.js" charset="utf-8"></script>
   <script type="text/javascript" src="/js/analytics.js"></script>
-
   <!-- Piwik -->
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
-
   <script src="/js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
   <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
   <script defer>mermaid.initialize({startOnLoad:true});</script>
-
-
   <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
-  <script src="/bower_components/semantic/dist/semantic.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
 </body>
 </html>

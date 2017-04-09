@@ -2,19 +2,108 @@
 layout: index
 ---
 
-<div class="post_home">
-<section class="info_IT">
-  <div class="pic">
-    <p>Informatique</p>
-  </div>
-  <p>Ma plus grande passion. Je suis accro à tout ce qui touche aux ordinateurs depuis que je suis tout petit, à jouer avec de vieux jeux comme Dungeon Keeper, Kyrandia ou Final Fantasy. La curiosité m'a ammené a me demander comment ces grosses boites fonctionnaient, et cette curiosité m'a elle-même ammené au stade ou j'en suis aujourd'hui. Je suis étudiant en informatique et un fervant utilisateur de logiciels et médias sous licence libre. C'est d'ailleurs GNU/Linux qui a marqué mes premiers vrais pas dans la compréhension de l'informatique (bon ok avoir un père informaticien ça aide aussi). J'adore programmer, j'ai mon premier projet est TuxleTriad, entièrement en Python, et je continue aujourd'hui de lui rajouter des fonctionalités ou de l'optimiser par pur plaisir. Tous les domaines m'intéressent en informatique, sécurité, web, administration systême, développement, etc...Mes coups de cœur du moment? Mozilla, Firefox OS, Gimp, KDE, NeoVim, Wine, et j'en oublie sûrement quelques un</p>
-</section>
-<section class="info_translator">
-  <div class="pic">
-    <p>Traduction</p>
-  </div>
-  <p>
-  <a style="display: block; text-align: center; font-size: 120%;"href="./traduction.html">Go to my translator page info!</a>
-  Depuis peu je m'intéresse à la traduction en freelance. J'en ai souvent fait mais à titre bénévole: Contribution à des Wiki, traductions collaboratives sur Framapad, etc... Or je me suis rendu compte grâce a un cousin que je pouvais travailler en Freelance pour avoir un petit revenu supplémentaire (je suis étudiant, je ne travaille pas encore et mes yeux brillent devant une pièce de 1 euros!), alors je me suis mis en collaboration avec des amis et ensemble nous répondons à des offres de traductions sur plusieurs sites et mettons en application notre connaissance de la langue de Shakespeare.</p>
-</section>
+<div id="main">
+
+<article class="one_pager">
+  <section id="brand">
+    <div class="column center">
+      <div class="row center">
+        <object type="image/svg+xml" data="/images/decoration/logo2.svg"></object>
+        <div class="column leftAlign" id="evinlphrin">
+          <span>evin</span>
+          <span>lphrin</span>
+        </div>
+      </div>
+      <em>
+        <span>{% t index.brand_one %}</span>
+      </em>
+      <em>
+        <span>{% t index.brand_two %}</span>
+      </em>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="right_float">
+      <h1>{% t index.work.one %}</h1>
+      <h2>{% t index.work.two %}</h2>
+    </div>
+    <div class="hexag_container left_float">
+      {% for work in site.translations[site.lang].work_ %}
+      <div class="hexag">
+        <svg id="svg{{work[1].title}}" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+        </svg>
+        <div class="content">
+          <span>{{work[1].title}}</span>
+          <span>{{work[1].url}}</span>
+          <span>{{work[1].role}}</span>
+          <img src="{{work[1].icon}}"/>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <!-- <section id="projects"> -->
+    <!-- <div class="slider"> -->
+      <!-- <div class="prev_button" onclick="plusDivs(-1)"></div> -->
+      <!-- <div class="next_button" onclick="plusDivs(1)"></div> -->
+      <!-- {% for project in site.translations[site.lang].projects_ %} -->
+      <!-- <div class="slide" style="background-image: url('{{project[1].image}}')"> -->
+        <!-- <h2>{{project[1].title}}</h2> -->
+        <!-- <p>{{project[1].description}}</p> -->
+      <!-- </div> -->
+      <!-- {% endfor %} -->
+    <!-- </div> -->
+  <!-- </section> -->
+
+  <section id="blog">
+    <h1>{% t index.blog %}</h1>
+    <div id="trending_article">
+      {% for post in site.posts %}
+      {% if forloop.index == 1 %}
+      <a href="{{post.url}}" id="featured_article" class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svg{{post.title}}" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>{{post.title}}</span>
+            <span>{{post.url}}</span>
+            <img src="/images/header_articles/{{post.cover}}"/>
+          </div>
+        </div>
+        <div>
+          <h2>{{ post.title }}</h2>
+          <sub>{{ post.date | date:"%d/%m/%y" }}</sub>
+        </div>
+      </a>
+      {% endif %}
+      {% endfor %}
+      <div class="row">
+        {% for post in site.posts limit: 4 %}
+        {% if forloop.first != true %}
+        <a href="{{post.url}}" class="three">
+          <h3>{{ post.title }}</h3>
+          <div class="text_content">{{ post.date | date: "%d/%m/%Y"}}</div>
+        </a>
+        {% endif %}
+        {% endfor %}
+      </div>
+      <h4><a href="{{site.baseurl}}/articles/">{%t blog_.more %}</a></h4>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="column center">
+      <h1>{% t index.contact %}</h1>
+      <a href="mailto:ilphrin@autistici.org?Subject=Hello%20from%20your%20website" target="_top">ilphrin@autistici.org</a>
+    </div>
+  </section>
+</article>
+
 </div>
+
+<script defer src="/js/svg.min.js" charset="utf-8"></script>
+<script defer src="/js/main.js" charset="utf-8"></script>

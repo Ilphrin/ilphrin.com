@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/planet/2015/09/21/topo-de-mes-plugins-vim-02.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/planet/2015/09/21/topo-de-mes-plugins-vim-02.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/articles/">Articles</a></li>
+      <li><a href="/CV_en.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgTopo de mes plugins Vim - 02" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Topo de mes plugins Vim - 02</span>
+            <img src="/images/header_articles/vim_nvim.png"/>
+          </div>
+        </div>
+        <div>
+          <h1>Topo de mes plugins Vim - 02</h1>
+          <sub>21/09/15</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Les plugins c’est vraiment le top, alors dans Vim je vous en parle même pas, c’est comme rajouter des animations CSS, si je ne fait pas attention j’en rajoute un peu partout! Depuis la dernière fois j’ai rajouté quelque plugins qui ne révolutionnent pas mon utilisation de Vim, mais restent quand même un petit plus agréable. Du coup aujourd’hui ça va être plus court mais il y aura plus de monde ;)</p>
+
+<!--break-->
+
+<h2 id="rustvim">rust.vim</h2>
+
+<h4 id="pour-grer-le-langage-de-mozilla">Pour gérer le langage de Mozilla</h4>
+
+<p>Installation: <a href="http://vimawesome.com/plugin/rust-vim-love-story">http://vimawesome.com/plugin/rust-vim-love-story</a></p>
+
+<p>Je pense que tout est dans le titre, si vous vous lancez dans l’apprentissage de Rust ce plugin est incontournable pour avoir une coloration syntaxique et quelques outils de completion (comme pour la documentation de code avec ///), et quelques actions supplémentaires (mais je n’utilise que la coloration syntaxique personnellement).
+Note intéressante sur ce plugin: Apparemment il se synchronise de façon journalière au dépot github de Rust (le dépot du plugin pas le plugin en lui-même hein!)
+Il n’y a pas besoin de configuration précise pour fonctionner correctement, vous faites un git clone dans votre dossier de plugins et le tour est joué!</p>
+
+<h2 id="indentline">indentLine</h2>
+
+<h4 id="savoir-o-en-est-lindentation">Savoir où en est l’indentation</h4>
+
+<p>Installation: <a href="http://vimawesome.com/plugin/indentline">http://vimawesome.com/plugin/indentline</a></p>
+
+<p>C’est un plugin que j’ai découvert cette semaine. Il permet d’afficher des guides pour les nieaux d’indentation dans le fichier. Je trouve ça assez pratique surtout quand des fois j’ai de mauvaises indentation (genre une espace après avoir indenté d’un niveau).
+Avec ce plugin on peut notamment configurer le caractère a afficher en fond comme guide, et aussi la couleur de ce caractère. Respectivement avec les commandes dans le vimrc:</p>
+
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">let</span> <span class="nv">g:indentLine_char</span> <span class="p">=</span> <span class="s1">'¦'</span> "Je <span class="k">ne</span> sais pas comment <span class="k">on</span> obtiens <span class="k">ce</span> caractè<span class="k">re</span> <span class="k">au</span> clavier<span class="p">,</span> je <span class="k">l</span>'ai récuperé avec <span class="k">un</span> Copier<span class="p">-</span>Coller
+<span class="k">let</span> <span class="nv">g:indentLine_color_term</span> <span class="p">=</span> <span class="m">0</span> "Pour avoir une couleur noir</code></pre></figure>
+
+<h2 id="nerdcommenter">NERDCommenter</h2>
+
+<h4 id="les-commentaires-faciles">Les commentaires faciles</h4>
+
+<p>Installation: <a href="http://vimawesome.com/plugin/the-nerd-commenter">http://vimawesome.com/plugin/the-nerd-commenter</a></p>
+
+<p>Je l’utilise souvent pour écrire un pavé de texte dans du code, puis le mettre en commentaire en sélectionnant le tout et en faisant ensuite \cc ou \cs. Il dispose de tout un tas de commandes pour aller un peu plus loin dans la gestion des commentaires mais son utilisation basique me suffit amplement. Il ne lui manque plus qu’à ajouter la gestion pour Rust et ce serait parfait :D (j’ai posté une Issue sur la page Github à ce sujet, je mettrai à jour l’article si il y a du nouveau de ce coté là!)</p>
+
+<h2 id="vim-cargo">vim-cargo</h2>
+
+<h4 id="quelques-commandes-pour-cargo">Quelques commandes pour Cargo</h4>
+
+<p>Installation: <a href="http://vimawesome.com/plugin/vim-cargo">http://vimawesome.com/plugin/vim-cargo</a></p>
+
+<p>Fork plus complet: <a href="https://github.com/shmup/vim-cargo">https://github.com/shmup/vim-cargo</a></p>
+
+<p>Tant qu’on parle de Rust autant parler de ce plugin. Ce petit plugin très simple rajoute 4 (à ce jour, et 8 dans le Fork que j’ai mis en lien) petites commandes classiques pour manipuler Cargo le gestionnaire de projet qui va de pair avec Rust. Le code semble très court et simple je pense que je vais essayer de l’étoffer un peu, ça me permettra d’apprendre a écrire du VimScript!</p>
+
+<h2 id="colorizer">Colorizer</h2>
+
+<h4 id="avoir-un-surlignage-selon-les-couleurs">Avoir un surlignage selon les couleurs</h4>
+
+<p>Installation: <a href="http://vimawesome.com/plugin/color-highlight">http://vimawesome.com/plugin/color-highlight</a></p>
+
+<p>Tout est dans le titre encore une fois. Colorizer va analyser votre texte/code, et si il reconnait des écritures de format de couleur il va surligner le texte de la couleur correspondante, par exemple avec “red” il va surligner red en rouge, il sait reconnaitre aussi des modèles plus complexes comme notamment les format utilisés en CSS. #FF0000, rgb(255, 0, 0), rgba(255, 0, 0, 255) et hsl(120%, 70%, 820%) par exemple seront tous surligné en une teinte de rouge.</p>
+
+<h2 id="mru-most-recently-used">MRU (Most Recently Used)</h2>
+
+<h4 id="voir-les-fichiers-rcemments-ouverts">Voir les fichiers récemments ouverts</h4>
+
+<p>Installation: <a href="http://vimawesome.com/plugin/mru-vim">http://vimawesome.com/plugin/mru-vim</a></p>
+
+<p>MRU permet par le biais de la commande eponyme (:MRU, on sait jamais) de voir la liste des fichiers récemments ouverts, d’en sélectionner un, et de l’ouvrir avec la touche Enter. C’est une fonctionalité classique mais j’avoue que je n’y pensais plus quand j’utilisais Vim, maintenant je lance vim dans mon terminal où que je sois avec j’ouvre le fichier sur lequel je bosse en ce moment avec le :MRU. Je me suis meme permis de rajouter ces quelque petites lignes dans mon vimrc:</p>
+
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="k">if</span> bufname<span class="p">(</span><span class="s1">''</span><span class="p">)</span> <span class="p">==</span> <span class="s1">''</span>
+  autocmd <span class="nb">VimEnter</span> * MRU
+<span class="k">endif</span>
+autocmd <span class="nb">BufNewFile</span> * MRU</code></pre></figure>
+
+<p>Comme ça MRU se lance si j’ai ouvert vim sans aucun fichier en paramètre, et lorsque que je crée un nouveau buffer vide. Néanmoins il ne s’ouvre pas lorsque je crée un nouvel Onglet vide (j’y travaille j’y travaille!)</p>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimized for Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>

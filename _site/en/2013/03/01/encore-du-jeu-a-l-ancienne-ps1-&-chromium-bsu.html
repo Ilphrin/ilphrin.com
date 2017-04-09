@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
+  <!-- End Piwik Code -->
+</head>
+
+<body itemscope itemtype="http://schema.org/Blog">
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/2013/03/01/encore-du-jeu-a-l-ancienne-ps1-&-chromium-bsu.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/2013/03/01/encore-du-jeu-a-l-ancienne-ps1-&-chromium-bsu.html">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="/en/">Home</a></li>
+      <li><a href="/en/articles/">Articles</a></li>
+      <li><a href="/CV_en.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>
+
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgEncore du jeu à l'ancienne - PS1 & Chromium-bsu" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>Encore du jeu à l'ancienne - PS1 & Chromium-bsu</span>
+            <img src="/images/header_articles/game.jpg"/>
+          </div>
+        </div>
+        <div>
+          <h1>Encore du jeu à l'ancienne - PS1 & Chromium-bsu</h1>
+          <sub>01/03/13</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      <p>Salut tout l’monde!</p>
+
+<p>Aujourd’hui je vais aborder deux choses dont voici tout de suite la première:</p>
+
+<p>Jusqu’à récemment sur mon ordinateur se trouvait l’émulateur Epsxe, qui me permettait d’émuler une console de Playstation 1 et d’y faire tourner tout les jeux de cette console qui à fait mon enfance. Néanmoins en voulant le montrer à une amie il ne voulait plus marcher. En fait c’est comme si le plugin qui permet de gérer les commandes n’existait plus.
+<!--break-->
+En cherchant de l’aide sur le net je suis tombé sur cette page de doc Ubuntu. Ce Pcsx-reloaded serait un fork de Pcsx en version libre et dont le développement continue contrairement à Pcsx (epsxe à l’air de continuer à être développer mais pas pour Linux qui en est toujours à une version 1.6 alros que la 1.8 est sortie récemment pour Windows).</p>
+
+<p>Je l’ai donc testé, pour le téléchargement et l’installation rien de plus simple il suffit d’installer pcsxr qui est disponible dans les dépôts.</p>
+
+<p><img src="/images/pcsxr.png" alt="pcsxr" /></p>
+
+<p>L’interface a l’air d’être exactement la même que pour Pcsx, mais plusieurs plugins libre sont déjà présent. Vous pouvez rajouter des plugins, notamment si vous aviez déjà epsxe ou pcsx avant vous pouvez copier les fichiers de plugins dans le répertoire plugin. D’ailleurs pour information, à l’installation un répertoire  .pcsx/ a dû être crée, c’est là-dedans que se trouvent tous les fichiers de configuration et de plugins ainsi que les sauvegardes et les cartes-mémoire.</p>
+
+<p>Mais pour ce qui est de configurer cet engin, je ne pourrais pas vous aider. En effet ce type de logiciel est assez spécial, cela ne prend pas seulement en compte les capacités de votre machine pour tourner mais tout un tas d’autres paramètres, du coup pour trouver la bonne configuration il faut essayer tous les boutons jusqu’à ce qu’il y ai quelque chose de convenable…</p>
+
+<p>Pour trouver un bios et des jeux vous pouvez aller sur mondemul.net. Néanmoins je vous conseille d’y aller avec au moins adblock plus pour les pubs…</p>
+
+<p>Voilà maintenant passons au deuxième sujet qui sera un peu plus court. Il s’agit du jeu Chromium-bsu, dont j’ai entendu parler auprès du poadcast Parole de Tux (que je conseille d’ailleurs grandement ;) ).</p>
+
+<p>C’est un jeu de type Shoot-them Up, vous avez un vaisseau que vous bougez avec les flèches et le but est de casser les autres vaisseaux jusqu’à ce que vous finissiez le jeu ou que mort s’en suive (à la faon Raptor sur Dos ^^ ). Je ne sais pas vraiment quoi dire dessus, je ne l’ai essayé qu’une petite demi-heure, et je le trouve particulièrement difficile, et au début je ne comprenais pas vraiment pourquoi je perdais mes vies, c’est qu’en fait il ne faut laisser passer aucun vaisseaux! Vous avez aussi d’après le poadcast une touche qui vous permet de vous suicider et je n’ai pas écouté de ce fait je ne sais toujours pas quelle touche c’est… Enfin bref, un bon petit jeu sympa ^^</p>
+
+<p>Voilà sur ce amusez-vous bien avec vos nouveaux jouet et bonne journée à tous! _o/</p>
+
+    </section>
+  </div>
+</article>
+
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimized for Firefox</p>
+</footer>
+
+
+
+  <script type="text/javascript" src="/js/analytics.js"></script>
+  <!-- Piwik -->
+  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+  <!-- End Piwik Code -->
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+  <script defer>mermaid.initialize({startOnLoad:true});</script>
+  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
+</body>
+</html>

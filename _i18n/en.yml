@@ -1,0 +1,77 @@
+index:
+  brand_one: "I am a developper, Mozillian, and an Open Source lover"
+  brand_two: "Welcome to my website"
+  projects: "What I have done"
+  contact: "Want to get in touch?"
+  blog: "My articles"
+  work: 
+    one: "I worked for them"
+    two: "And I learned with them"
+
+footer:
+  license: "Site and content under"
+  optimized: "Optimized for Firefox"
+
+header:
+  home: "Home"
+  articles: "Articles"
+  portfolio: "Portfolio"
+
+work_:
+  reportlinker:
+    title: "ReportLinker"
+    role: "Internship Web and R&D"
+    url: "http://www.reportlinker.com/"
+    icon: "/images/work/reportlinker.png"
+    from: "July 2015"
+    to: "December 2015"
+    job: ["AngularJS", "ElasticSearch", "Git"]
+  luminaires:
+    title: "LED"
+    role: "Create showcase site"
+    url: "https://luminaireseteclairagesdedemain.jimdo.com/accueil/"
+    icon: "/images/work/led.png"
+    from: "November 2015"
+    to: ""
+    job: ["Jimdo"]
+  coursierprive:
+    title: "Coursier Privé"
+    role: "Internship Web Front-End"
+    url: "coursierprive.com"
+    icon: "/images/work/coursierprive.png"
+    from: "December 2016"
+    to: "February 2017"
+    job: ["AngularJS", "Angular Material",  "Java"]
+
+projects_:
+  tuxletriad:
+    title: "TuxleTriad"
+    image: "/images/projects/tuxletriad.jpg"
+    description: ""
+    link: ""
+    license: "Licence MIT"
+    technos: ["Python", "Pygame"]
+  dodgell:
+    title: "Dodgell"
+    image: "/images/projects/dodgell.jpg"
+    description: ""
+    link: ""
+    license: "Licence MIT"
+    technos: ["TypeScript", "SuperPowers engine"]
+  pablo:
+    title: "Pablo: A Fish Story"
+    image: ""
+    description: ""
+    link: ""
+    license: ""
+    technos: ["C#", "Unity3D"]
+  everss:
+    title: "Everss"
+    image: ""
+    description: ""
+    link: ""
+    license: ""
+    technos: ["Rust"]
+
+blog_:
+  more: "See more articles"

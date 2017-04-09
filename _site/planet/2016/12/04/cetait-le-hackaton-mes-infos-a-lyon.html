@@ -1,46 +1,53 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/monokai-sublime.min.css">
-  <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
-  <link rel="icon" href="/images/LogoV1.png"/>
-  <link rel="stylesheet" type="text/css" href="/bower_components/semantic/dist/semantic.css">
-  <link rel="stylesheet" type="text/css" href="/css/main.css"/>
-  <title>
-    Kevin / Ilphrin
-  </title>
-  <!-- Piwik -->
-  <script type="text/javascript">
-    var _paq = _paq || [];
-    // tracker methods like "setCustomDimension" should be called before "trackPageView"
-    _paq.push(['trackPageView']);
-    _paq.push(['enableLinkTracking']);
-    (function() {
-      var u="//ilphrin.com/piwik/";
-      _paq.push(['setTrackerUrl', u+'piwik.php']);
-      _paq.push(['setSiteId', '1']);
-      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-      g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
-    })();
-  </script>
+  <!-- Meta info -->
+    <meta charset="utf-8">
+    <meta name="description" content="A website of an IT developer and open-source lover">
+    <meta name="author" content="Kevin Pellet (Ilphrin)">
+  <!-- End Meta info -->
+
+  <!-- CSS -->
+    <link rel="stylesheet" href="/css/monokai-sublime.min.css">
+    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
+    <link rel="icon" href="/images/LogoV1.png"/>
+
+    <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+  <!-- End CSS -->
+
+  <title>Kevin / Ilphrin</title>
+  <link rel="localization" hreflang="fr" href="/l10n/fr.json" type="application/vnd.oftn.l10n+json"/>
+  <link rel="localization" hreflang="en" href="/l10n/en.json" type="application/vnd.oftn.l10n+json"/>
+
+  <!-- Piwik code -->
+    <script type="text/javascript">
+      var _paq = _paq || [];
+      // tracker methods like "setCustomDimension" should be called before "trackPageView"
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function() {
+        var u="//ilphrin.com/piwik/";
+        _paq.push(['setTrackerUrl', u+'piwik.php']);
+        _paq.push(['setSiteId', '1']);
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+      })();
+    </script>
   <!-- End Piwik Code -->
 </head>
 
 <body itemscope itemtype="http://schema.org/Blog">
-  <div class="header">
-  <div class="navigation">
-    <div class="title">
-      <h1 style="color: #B9EFFF;" itemprop="author">Kevin <span class="slash">/</span> Ilphrin</h1>
-    </div>
-    <ul class="shad-effect" itemscope itemtype="http://schema.org/SiteNavigationElement">
-      <li><a href="/">Accueil</a></li>
-      <li><a href="/kevin/index.html">Blog</a></li>
-      <li><a href="/kevin/project.html">Projets</a></li>
-      <li><a href="/kevin/about.html">A propos</a></li>
-      <li><a href="/feeds.xml" id="rss"><img src="/images/links/rss.png" alt="Flux RSS"/></a></li>
+  <header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="/planet/2016/12/04/cetait-le-hackaton-mes-infos-a-lyon.html">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en/planet/2016/12/04/cetait-le-hackaton-mes-infos-a-lyon.html">EN</a></li>
     </ul>
   </div>
+<<<<<<< HEAD
   <div class="headerCursor">
     <img src="/images/decoration/header_01.svg" />
   </div>
@@ -263,20 +270,37 @@ Décembre
 2016
 </span>
     </div>
+=======
+  <div>
+    <ul class="row spaced">
+      <li><a href="/">Accueil</a></li>
+      <li><a href="/articles/">Articles</a></li>
+      <li><a href="/CV_fr.pdf">CV</a></li>
+    </ul>
+>>>>>>> style
   </div>
-  <div class="content" itemprop="articleBody">
+</header>
 
-    <script type="text/javascript">
-( function() {
-  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
-  var placement_id = window.CHITIKA.units.length;
-  window.CHITIKA.units.push(unit);
-  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-    </script>
-    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <article>
+        <article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svgC'était: Le Hackaton MesInfos à Lyon" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>C'était: Le Hackaton MesInfos à Lyon</span>
+            <img src="/images/header_articles/mesinfos.png"/>
+          </div>
+        </div>
+        <div>
+          <h1>C'était: Le Hackaton MesInfos à Lyon</h1>
+          <sub>04/12/16</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
       <p>Bon pour commencer l’explication il faudrait parler de <a href="cozycloud.cc">CozyCloud</a>. Pour ceux qui ne savent pas, CozyCloud est un outil de cloud (j’ai l’impression de rien dire) personnel. Il fonctionne comme un serveur sur lequel on utilise des applications. Applications qui sont trouvable soit sur le marketplace officiel, et qui contient une vingtaine d’applications, soit sur un dépot Github quelconque. Ces applications peuvent être sur tout et n’importe quoi. Mais l’interêt consiste surtout à pouvoir être le seul à posséder ses données, car CozyCloud est fait pour être auto-hébergé.</p>
 
 <!--break-->
@@ -321,88 +345,38 @@ Décembre
 
 <p>Donc résultat un très bon weekend et que je re-ferais avec plaisir, ça m’a permis de voir un peu plus comment développer des applications dans CozyCloud et avec NodeJS, et ça m’a donné quelques idées d’applications à faire à l’occasion (comme une vue des commits Github, j’aime pas du tout l’interface du profil Github).</p>
 
-    </article>
+    </section>
   </div>
-</div>
+</article>
 
-<div id="share" class="ui segment inverted">
-  <h2>Vous avez aimé cet article? Partagez-le</h2>
-  <a href="https://twitter.com/share?text='C'était: Le Hackaton MesInfos à Lyon /planet/2016/12/04/cetait-le-hackaton-mes-infos-a-lyon.html'" target="_blank">
-    <i class="big twitter icon"></i>
-    <span>Twitter</span>
-  </a>
-  <a href="http://sharetodiaspora.github.io/?title=C'était: Le Hackaton MesInfos à Lyon&url=/planet/2016/12/04/cetait-le-hackaton-mes-infos-a-lyon.html" target="_blank">
-    <i class="big icon star"></i>
-    <span>Diaspora*</span>
-  </a>
-</div>
-<div id="comments" itemprop="comment">
-  
-  
-      
-      
-  
-      
-      
-  
-      
-      
-  
-  <form class="ui form" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments">
-    <input name="options[slug]" type="hidden" value="cetait-le-hackaton-mes-infos-a-lyon">
-    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2016/12/04/cetait-le-hackaton-mes-infos-a-lyon.html">
-    <input name="options[origin]" type="hidden" value="https://ilphrin.com" />
-    <input type="hidden" name="fields[post_id]" value="/planet/2016/12/04/cetait-le-hackaton-mes-infos-a-lyon" />
-    <div class="ui inverted segment">
-      <h2 class="ui dividing header">Commenter</h2>
-      <p style="font-style: italic">
-      Tous les commentaires sont sujet à modération. Un formatage HTML basique est utilisable
-      </p>
-      <div class="field">
-        <div class="three fields">
-          <div class="field">
-            <label>Nom</label>
-            <input name="fields[name]" placeholder="Requis" type="text" required/>
-          </div>
-          <div class="field">
-            <label>Email</label>
-            <input name="fields[email]" placeholder="Requis, non publié" type="email" required/>
-          </div>
-          <div class="field">
-            <label>Lien</label>
-            <input name="fields[url]" placeholder="Optionnel" type="text"/>
-          </div>
-        </div>
-      </div>
-      <div class="field">
-        <label>Allez-y parlez ;)</label>
-        <textarea name="fields[message]" placeholder="Requis" required></textarea>
-      </div>
-      <button class="ui submit button" type="submit" name="submit">Envoyer</button>
-    </div>
-  </form>
-</div>
+  <aside>
+  <ul class="column">
+    <li><a href="https://github.com/Ilphrin"><img class="ui mini image" src="/images/icons/github.png"/></a></li>
+    <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img class="ui mini image" src="/images/icons/diaspora.png"/></a></li>
+    <li><a href="https://twitter.com/Kilphrin"><img class="ui mini image" src="/images/icons/twitter.svg"/></a></li>
+    <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img class="ui mini image" src="/images/icons/linkedin-icon.png"/></a></li>
+  </ul>
+</aside>
+
+<footer class="spaced row">
+  <p>Site et contenus sous <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Optimisé pour Firefox</p>
+</footer>
 
 
 
-    </div>
-
-  <script src="/js/previous.js" charset="utf-8"></script>
-  <script src="/js/header.js" charset="utf-8"></script>
   <script type="text/javascript" src="/js/analytics.js"></script>
-
   <!-- Piwik -->
   <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
   <!-- End Piwik Code -->
-
   <script src="/js/highlight.pack.js"></script>
   <script>hljs.initHighlightingOnLoad();</script>
-
   <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
   <script defer>mermaid.initialize({startOnLoad:true});</script>
-
-
   <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
-  <script src="/bower_components/semantic/dist/semantic.min.js" charset="utf-8"></script>
+
+  <script defer src="/js/svg.min.js" charset="utf-8"></script>
+  <script defer src="/js/main.js" charset="utf-8"></script>
+
 </body>
 </html>

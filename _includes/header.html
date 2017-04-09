@@ -1,0 +1,18 @@
+<header class="spaced">
+  <div class="row">
+    <object id="logo" type="image/svg+xml" data="/images/decoration/logo.svg">
+    </object>
+    <ul class="row">
+      <li><a href="{{page.url}}">FR</a></li>
+      <li><div class="separator"></div></li>
+      <li><a href="/en{{page.url}}">EN</a></li>
+    </ul>
+  </div>
+  <div>
+    <ul class="row spaced">
+      <li><a href="{{site.baseurl}}/">{% t header.home %}</a></li>
+      <li><a href="{{site.baseurl}}/articles/">{% t header.articles %}</a></li>
+      <li><a href="{{site.baseurl_root}}/CV_{{site.lang}}.pdf">CV</a></li>
+    </ul>
+  </div>
+</header>

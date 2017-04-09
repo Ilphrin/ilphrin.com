@@ -7,7 +7,9 @@ collection: null
 name: Kevin / Ilphrin
 description: A blog about IT, free software and stuff like that
 url: http://ilphrin.com
-gems: ['jekyll-paginate', 'jekyll-mermaid']
+gems: ['jekyll-paginate', 'jekyll-mermaid', 'jekyll-multiple-languages-plugin']
+languages: ["fr", "en"]
+exclude_from_localizations: ["js", "bower_components", "node_modules", "css"]
 exclude: [
   'Gruntfile.js',
   'new_article.sh',
