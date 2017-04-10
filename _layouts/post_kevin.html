@@ -1,152 +1,28 @@
 ---
 layout: index
-lang: fr
 ---
-    {% for post in site.posts %}
-      {% if post.serie == page.serie and post.serie and post.title != page.title %}
-        {% assign ok = 1 %}
-        {% break %}
-      {% endif %}
-    {% endfor %}
-    {% if ok %}
-    <div class="similar_articles">
-      <h2>Articles similaires</h2>
-      <ul>
-        {% for post in site.posts %}
-          {% if post.serie == page.serie and post.serie %}
-            <li>
-              <a href="{{post.url}}">{{post.title}}</a>
-              <p datetime="{{page.date | date: '%-d %B %Y'}}">{% include date.html date=post.date %}</p>
-              <hr />
-              <div class="similar_excerpt">
-                <p>{{ post.excerpt }}</p>
-              </div>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </div>
-    {% endif %}
 
-<div class="post_home" itemscope itemtype="http://schema.org/Article" itemprop="blogPost">
-  <div id="post_header">
-    <div id="post_title">
-      <div class="cover_pic"></div>
-      {% if page.cover %}
-        <img src="/images/header_articles/{{page.cover}}" plop="{{page.cover}}"/>
-      {% else %}
-        <img src="/images/decoration/default_header_article.jpg" />
-      {% endif %}
-
-      <svg
-         xmlns:dc="http://purl.org/dc/elements/1.1/"
-         xmlns:cc="http://creativecommons.org/ns#"
-         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-         xmlns:svg="http://www.w3.org/2000/svg"
-         xmlns="http://www.w3.org/2000/svg"
-         xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-         xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-         width="100%"
-         height="110mm"
-         viewBox="0 0 396.85016 173.622"
-         sodipodi:docname="logoV2.svg">
-        <metadata
-           id="metadata7">
-          <rdf:RDF>
-            <cc:Work
-               rdf:about="">
-              <dc:format>image/svg+xml</dc:format>
-              <dc:type
-                 rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-              <dc:title></dc:title>
-            </cc:Work>
-          </rdf:RDF>
-        </metadata>
-        <g
-           id="layer1"
-           transform="translate(0,-878.73978)">
-          <g
-             id="g4240"
-             transform="translate(-173.94827,758.01847)">
-            <path
-               inkscape:connector-curvature="0"
-               id="path4152"
-               d="m 178.797,180.34802 388.90873,0"
-               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
-            <g
-               transform="translate(0.5,0)"
-               id="g4171">
-              <path
-                 style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-                 d="m 567.70573,180.34802 0,-54.2957"
-                 id="path4154"
-                 inkscape:connector-curvature="0" />
-              <path
-                 style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-                 d="m 567.70573,234.64372 0,-54.2957"
-                 id="path4154-3"
-                 inkscape:connector-curvature="0" />
-            </g>
-            <g
-               id="g4171-6"
-               transform="translate(-389.40873,0)">
-              <path
-                 style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-                 d="m 567.70573,180.34802 0,-54.2957"
-                 id="path4154-7"
-                 inkscape:connector-curvature="0" />
-              <path
-                 style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-                 d="m 567.70573,234.64372 0,-54.2957"
-                 id="path4154-3-5"
-                 inkscape:connector-curvature="0" />
-            </g>
-            <path
-               inkscape:connector-curvature="0"
-               id="path4196"
-               d="M 373.28787,180.36362 567.87002,287.49944"
-               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02377963px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" />
-            <path
-               inkscape:connector-curvature="0"
-               id="path4196-3"
-               d="M 373.21419,180.37989 178.13336,287.51442"
-               style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:1.02508438px;stroke-linecap:round;stroke-linejoin:miter;stroke-opacity:1" />
-          </g>
-        </g>
-      </svg>
-
-      <h1 itemprop="name"> {{ page.title }}</h1>
-      <span>{% include date.html date=page.date %}</span>
-    </div>
+<article id="article">
+  <div class="column">
+    <section id="header_article" class="column center">
+      <div class="hexag_container">
+        <div class="hexag no_hover">
+          <svg id="svg{{page.title}}" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+          </svg>
+          <div class="content">
+            <span>{{page.title}}</span>
+            <img src="/images/header_articles/{{page.cover}}"/>
+          </div>
+        </div>
+        <div>
+          <h1>{{ page.title }}</h1>
+          <sub>{{ page.date | date:"%d/%m/%y" }}</sub>
+        </div>
+      </div>
+    </section>
+    <section id="content_article">
+      {{content}}
+    </section>
   </div>
-  <div class="content" itemprop="articleBody">
-
-    <script type="text/javascript">
-( function() {
-  if (window.CHITIKA === undefined) { window.CHITIKA = { 'units' : [] }; };
-  var unit = {"calltype":"async[2]","publisher":"ilphrin","width":728,"height":90,"sid":"Chitika Default"};
-  var placement_id = window.CHITIKA.units.length;
-  window.CHITIKA.units.push(unit);
-  document.write('<div id="chitikaAdBlock-' + placement_id + '"></div>');
-}());
-    </script>
-    <script type="text/javascript" src="//cdn.chitika.net/getads.js" async></script>
-    <article>
-      {{ content }}
-    </article>
-  </div>
-</div>
-
-<div id="share" class="ui segment inverted">
-  <h2>Vous avez aimé cet article? Partagez-le</h2>
-  <a href="https://twitter.com/share?text='{{page.title}} {{page.url}}'" target="_blank">
-    <i class="big twitter icon"></i>
-    <span>Twitter</span>
-  </a>
-  <a href="http://sharetodiaspora.github.io/?title={{ page.title }}&url={{ page.url }}" target="_blank">
-    <i class="big icon star"></i>
-    <span>Diaspora*</span>
-  </a>
-</div>
-{% include comment_template.html post=page %}
-
+</article>

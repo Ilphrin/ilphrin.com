@@ -1,0 +1,44 @@
+---
+layout: index
+---
+
+<div id="articles_list">
+  <div id="trending_article" class="column center">
+    {% for post in site.posts %}
+    {% if forloop.index == 1 %}
+    <a href="{{post.url}}" id="featured_article" class="hexag_container">
+      <div class="hexag no_hover">
+        <svg id="svg{{post.title}}" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+        </svg>
+        <div class="content">
+          <span>{{post.title}}</span>
+          <img src="/images/header_articles/{{post.cover}}"/>
+        </div>
+      </div>
+      <div>
+        <h1>{{ post.title }}</h1>
+        <sub>{{ post.date | date:"%d/%m/%y" }}</sub>
+      </div>
+    </a>
+    {% endif %}
+    {% endfor %}
+    <div class="column">
+      {% for post in site.posts limit: none %}
+        {% if forloop.first != true %}
+          {% assign index = forloop.index | minus: 2 | modulo: 2 %}
+          {% if index == 0 %}
+            <div class="row">
+          {% endif %}
+              <a href="{{post.url}}" class="two">
+                <h3>{{ post.title }}</h3>
+                <div class="text_content">{{ post.date | date: "%d/%m/%Y"}}</div>
+              </a>
+          {% if index == 1 %}
+            </div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
