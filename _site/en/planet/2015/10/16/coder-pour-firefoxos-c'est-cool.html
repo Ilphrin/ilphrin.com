@@ -110,11 +110,67 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
 <p>Avant de finir, vous avez vu ce que l’on peut faire avec Spark (Firefox OS 2.5)? Avec une recherche sur Lilo/DuckDuckGo/Tonton Roger, on peut trouver des exemple de deux/trois add-ons qui ont l’air vachement cool! Notamment un gars qui a rajouté une dizaine d’icones en bas du menu des notifications (le menu qu’on fait descendre avec un glissement de doigt du bord haut vers le bas). Malheureusement maintenant que j’écris cet article je n’arrive plus a retrouver où est-ce que j’ai vu cet add-on, mais bon tant pis il re-fera bien son apparition!</p>
 
     </section>
-    <section id="comments" class="column center">
-
+    <section id="comments" class="column">
+      
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
     </section>
   </div>
 </article>
+
+<div id="post_comment" class="row">
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments" class="column">
+    <input name="options[slug]" type="hidden" value="coder-pour-firefoxos-c'est-cool">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2015/10/16/coder-pour-firefoxos-c'est-cool.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com">
+    <input type="hidden" name="fields[post_id]" value="/planet/2015/10/16/coder-pour-firefoxos-c'est-cool">
+    <fieldset>
+      <label>Name/Pseudo</label>
+      <input name="fields[name]" placeholder="Required" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label>Email</label>
+      <input name="fields[email]" placeholder="Required, unpublished" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label>Link</label>
+      <input name="fields[url]" type="text" placeholder="Optional">
+    </fieldset>
+    <textarea name="fields[message]" placeholder="Required"></textarea>
+    <button type="submit" name="submit">Submit</button>
+  </form>
+  <img src="/images/decoration/write_icon.png"/>
+</div>
+
+<script>
+let elem = document.querySelector("#post_comment");
+let img = elem.children[1];
+let form = elem.children[0];
+
+img.onclick = function() {
+  if (form.style.display == "flex") {
+    form.style.display = "none";
+    elem.style.width = "48px";
+    elem.style.height = "48px";
+    form.className = "column";
+  }
+  else {
+    form.style.display = "flex";
+    form.style.opacity = "1";
+    elem.style.width = "500px";
+    elem.style.height = "300px";
+    form.className = "column ease_appear";
+  }
+}
+</script>
 
   <aside>
   <ul class="column">
@@ -126,7 +182,7 @@ Oui parce que, mon objectif à moi pour l’instant ce n’est pas de rajouter l
 </aside>
 
 <footer class="spaced row">
-  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA</a></p>
   <p>Optimized for Firefox</p>
 </footer>
 

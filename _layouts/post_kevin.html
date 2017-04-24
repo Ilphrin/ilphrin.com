@@ -24,8 +24,75 @@ layout: index
     <section id="content_article">
       {{content}}
     </section>
-    <section id="comments" class="column center">
-
+    <section id="comments" class="column">
+      {% assign comments = site.data.comments | sort %}
+      {% for comment in comments %}
+        {% assign c = comment[1] %}
+        {% if c.post_id == page.id %}
+          <div class="comment {% cycle 'odd', 'even' %}">
+            <p>
+              {% t comments.from %}: {% if c.url and c.url != '' %}
+              <a href="{{c.url}}">{{c.name}}</a>
+            {% else %}
+              {{c.name}}
+            {% endif %}
+            <br />
+            <span class="comment_date">
+              {% include date.html date=c.date %}
+            </span>
+            </p>
+            <p class="comment_content">
+            {{c.message | newline_to_br}}
+            </p>
+          </div>
+        {% endif %}
+      {% endfor %}
     </section>
   </div>
 </article>
+
+<div id="post_comment" class="row">
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments" class="column">
+    <input name="options[slug]" type="hidden" value="{{page.slug}}">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com{{page.url}}">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com">
+    <input type="hidden" name="fields[post_id]" value="{{page.id}}">
+    <fieldset>
+      <label>{% t comments.name %}</label>
+      <input name="fields[name]" placeholder="{% t comments.required %}" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label>{% t comments.email %}</label>
+      <input name="fields[email]" placeholder="{% t comments.required_and_unpublished %}" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label>{% t comments.link %}</label>
+      <input name="fields[url]" type="text" placeholder="{% t comments.optional %}">
+    </fieldset>
+    <textarea name="fields[message]" placeholder="{% t comments.required %}"></textarea>
+    <button type="submit" name="submit">{% t comments.send %}</button>
+  </form>
+  <img src="/images/decoration/write_icon.png"/>
+</div>
+
+<script>
+let elem = document.querySelector("#post_comment");
+let img = elem.children[1];
+let form = elem.children[0];
+
+img.onclick = function() {
+  if (form.style.display == "flex") {
+    form.style.display = "none";
+    elem.style.width = "48px";
+    elem.style.height = "48px";
+    form.className = "column";
+  }
+  else {
+    form.style.display = "flex";
+    form.style.opacity = "1";
+    elem.style.width = "500px";
+    elem.style.height = "300px";
+    form.className = "column ease_appear";
+  }
+}
+</script>

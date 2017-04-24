@@ -124,11 +124,127 @@
 </div>
 
     </section>
-    <section id="comments" class="column center">
+    <section id="comments" class="column">
+      
+      
+        
+        
+          <div class="comment odd">
+            <p>
+              From: 
+              Ilphrin
+            
+            <br />
+            <span class="comment_date">
+              29
 
+Novembre
+  
+2016
+
+            </span>
+            </p>
+            <p class="comment_content">
+            Oh, je vais essayer UMLet alors, j'en ai absolument pas entendu parler. Merci a vous :D
+            </p>
+          </div>
+        
+      
+        
+        
+          <div class="comment even">
+            <p>
+              From: 
+              PapsOu
+            
+            <br />
+            <span class="comment_date">
+              24
+
+Novembre
+  
+2016
+
+            </span>
+            </p>
+            <p class="comment_content">
+            Il y a aussi UMLet, plutôt basique mais tres riche en terme de diagrammes. http://www.umlet.com Il permet de se concentrer sur le fond plutôt que la forme. Il est ecrit en Java donc par définition cross platform. Et il est publié sous licence GPL. C''est mon outils de modélisation UML préféré.
+            </p>
+          </div>
+        
+      
+        
+        
+          <div class="comment odd">
+            <p>
+              From: 
+              <a href="https://www.deblan.io">Simon</a>
+            
+            <br />
+            <span class="comment_date">
+              24
+
+Novembre
+  
+2016
+
+            </span>
+            </p>
+            <p class="comment_content">
+            Pour réaliser de l'UML, tu peux également t'intéresser à umlet. Il vraiment très bien et rempli tout ce qu'on attends d'un éditeur UML avec la particularité de configurer par une forme de code chacun des éléments graphiques.
+            </p>
+          </div>
+        
+      
     </section>
   </div>
 </article>
+
+<div id="post_comment" class="row">
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments" class="column">
+    <input name="options[slug]" type="hidden" value="encore-de-l-uml-avec-staruml">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/planet/2016/11/24/encore-de-l-uml-avec-staruml.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com">
+    <input type="hidden" name="fields[post_id]" value="/planet/2016/11/24/encore-de-l-uml-avec-staruml">
+    <fieldset>
+      <label>Name/Pseudo</label>
+      <input name="fields[name]" placeholder="Required" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label>Email</label>
+      <input name="fields[email]" placeholder="Required, unpublished" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label>Link</label>
+      <input name="fields[url]" type="text" placeholder="Optional">
+    </fieldset>
+    <textarea name="fields[message]" placeholder="Required"></textarea>
+    <button type="submit" name="submit">Submit</button>
+  </form>
+  <img src="/images/decoration/write_icon.png"/>
+</div>
+
+<script>
+let elem = document.querySelector("#post_comment");
+let img = elem.children[1];
+let form = elem.children[0];
+
+img.onclick = function() {
+  if (form.style.display == "flex") {
+    form.style.display = "none";
+    elem.style.width = "48px";
+    elem.style.height = "48px";
+    form.className = "column";
+  }
+  else {
+    form.style.display = "flex";
+    form.style.opacity = "1";
+    elem.style.width = "500px";
+    elem.style.height = "300px";
+    form.className = "column ease_appear";
+  }
+}
+</script>
 
   <aside>
   <ul class="column">
@@ -140,7 +256,7 @@
 </aside>
 
 <footer class="spaced row">
-  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA</a></p>
   <p>Optimized for Firefox</p>
 </footer>
 

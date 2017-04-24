@@ -118,11 +118,67 @@
 <p>Bonne journée à tous! _o/</p>
 
     </section>
-    <section id="comments" class="column center">
-
+    <section id="comments" class="column">
+      
+      
+        
+        
+      
+        
+        
+      
+        
+        
+      
     </section>
   </div>
 </article>
+
+<div id="post_comment" class="row">
+  <form id="commentform" method="POST" action="https://api.staticman.net/v2/entry/Ilphrin/ilphrin.com/master/comments" class="column">
+    <input name="options[slug]" type="hidden" value="faire-son-propre-ecran-de-login-mdm-in-html">
+    <input name="options[redirect]" type="hidden" value="https://ilphrin.com/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html.html">
+    <input name="options[origin]" type="hidden" value="https://ilphrin.com">
+    <input type="hidden" name="fields[post_id]" value="/2013/03/01/faire-son-propre-ecran-de-login-mdm-in-html">
+    <fieldset>
+      <label>Name/Pseudo</label>
+      <input name="fields[name]" placeholder="Required" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label>Email</label>
+      <input name="fields[email]" placeholder="Required, unpublished" type="text" required>
+    </fieldset>
+    <fieldset>
+      <label>Link</label>
+      <input name="fields[url]" type="text" placeholder="Optional">
+    </fieldset>
+    <textarea name="fields[message]" placeholder="Required"></textarea>
+    <button type="submit" name="submit">Submit</button>
+  </form>
+  <img src="/images/decoration/write_icon.png"/>
+</div>
+
+<script>
+let elem = document.querySelector("#post_comment");
+let img = elem.children[1];
+let form = elem.children[0];
+
+img.onclick = function() {
+  if (form.style.display == "flex") {
+    form.style.display = "none";
+    elem.style.width = "48px";
+    elem.style.height = "48px";
+    form.className = "column";
+  }
+  else {
+    form.style.display = "flex";
+    form.style.opacity = "1";
+    elem.style.width = "500px";
+    elem.style.height = "300px";
+    form.className = "column ease_appear";
+  }
+}
+</script>
 
   <aside>
   <ul class="column">
@@ -134,7 +190,7 @@
 </aside>
 
 <footer class="spaced row">
-  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Licence Creative Commons BY-NC-SA</a></p>
+  <p>Site and content under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons BY-NC-SA</a></p>
   <p>Optimized for Firefox</p>
 </footer>
 
