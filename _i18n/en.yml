@@ -75,3 +75,13 @@ projects_:
 
 blog_:
   more: "See more articles"
+
+comments:
+  from: "From"
+  name: "Name/Pseudo"
+  link: "Link"
+  email: "Email"
+  required: "Required"
+  required_and_unpublished: "Required, unpublished"
+  optional: "Optional"
+  send: "Submit"

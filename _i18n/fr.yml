@@ -75,3 +75,13 @@ projects_:
 
 blog_:
   more: "Voir plus d'articles"
+
+comments:
+  from: "De"
+  name: "Nom/Pseudo"
+  email: "Mail"
+  link: "Lien"
+  required: "Requis"
+  required_and_unpublished: "Requis, non publié"
+  optional: "Optionnel"
+  send: "Envoyer"

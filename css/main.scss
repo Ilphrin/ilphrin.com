@@ -377,7 +377,11 @@ aside {
   width: 90%;
   margin-left:auto;
   margin-right: auto;
+  a {
+    color: #3A6C95;
+  }
   #content_article {
+    box-shadow: 0px 0px 8px black;
     background-color: #efefef;
     font-size: 22px;
     p, ul {
@@ -391,9 +395,6 @@ aside {
         height: auto;
         width: 500px;
       }
-    }
-    a {
-      color: #3A6C95;
     }
     h1 {
       font-size: 40px;
@@ -436,6 +437,83 @@ aside {
 	background: #23241f;
     }
     // End
+  }
+}
+
+#comments {
+  background-color: #3A6C95;
+  box-shadow: 0px 2px 6px black;
+  border-top: 1px solid #727272;
+  .comment {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 110%;
+    background-color: #efefef;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    padding: 10px;
+    color: #121212;
+    .comment_date {
+      font-size: 13px;
+      color: #535353;
+    }
+  }
+}
+
+@keyframes comment_opac {
+  0% {opacity: 0;}
+  70% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.ease_appear {
+  animation: comment_opac ease .8s;
+}
+#post_comment {
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 0px 0px 10px black;
+  z-index: 10;
+  background-color: #162e41;
+  align-items: end;
+  transition: width .4s, height .4s;
+  width: 48px;
+  height: 48px;
+  img {
+    cursor: pointer;
+    height: 48px;
+    width: 48px;
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  form {
+    display: none;
+    width: 85%;
+    padding: 10px;
+    fieldset {
+      width: 90%;
+      border: none;
+      padding-left: 0px;
+      margin-left: 0px;
+      label {
+        display: block;
+      }
+      input {
+        width: 100%;
+        font-family: "Rambla", sans-serif;
+      }
+    }
+    textarea {
+      font-family: "Rambla", sans-serif;
+      height: 60px;
+    }
   }
 }
 
