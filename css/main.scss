@@ -348,7 +348,7 @@ aside {
   h1 {
     margin-top: 28px;
     margin-bottom: 0px;
-    color: #3a6c95;
+    color: #e6f4ff;
     font-size: 42px;
     &::after {
       width: 0px;
@@ -385,7 +385,7 @@ aside {
     background-color: #efefef;
     font-size: 22px;
     p, ul {
-      width: 70%;
+      width: 700px;
       margin-left: auto;
       margin-right: auto;
       color: #121212;
@@ -398,11 +398,11 @@ aside {
     }
     h1 {
       font-size: 40px;
-      color: #3A6C95;
+      color:  #3A6C95;
     }
     h2,h3,h4 {
       color: #162e42;
-      margin-left: 5%;
+      margin-left: 15%;
     }
 
     // Fallback for when I was using Semantic UI for endnote of and article
@@ -431,12 +431,16 @@ aside {
 
     // Fallback for when I wasn't using highlightJS
     code:not(.hljs) {
-	display: block;
-	overflow-x: auto;
-	padding: 0.5em;
-	background: #23241f;
+      display: block;
+      overflow-x: auto;
+      padding: 0.5em;
+      background: #23241f;
     }
     // End
+    .javascript.hljs {
+      display: inline;
+      padding: 1px;
+    }
   }
 }
 
