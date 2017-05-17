@@ -395,6 +395,11 @@ aside {
         height: auto;
         width: 500px;
       }
+      img + em {
+        display: block;
+        font-size: 80%;
+        color: #5f5f5f;
+      }
     }
     h1 {
       font-size: 40px;
