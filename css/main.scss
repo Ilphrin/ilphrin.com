@@ -66,6 +66,12 @@ html {
   background: linear-gradient(to top right, #162e41, #3a6c95);
   background-attachment: fixed;
   height: 100%;
+  a {
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 body {
@@ -86,7 +92,6 @@ header {
     padding-left: 0px;
     a {
       color: inherit;
-      transition: color .1s;
     }
   }
   top: 0px;
@@ -100,10 +105,6 @@ header {
   ul:nth-child(1) {
     font-size: 20px;
     width: 350px;
-    a:hover {
-      color: #1e70bf;
-    }
-
   }
   #logo {
     height: auto;
@@ -383,12 +384,17 @@ aside {
   #content_article {
     box-shadow: 0px 0px 8px black;
     background-color: #efefef;
-    font-size: 22px;
+    font-size: 23px;
     p, ul {
       width: 700px;
       margin-left: auto;
       margin-right: auto;
       color: #121212;
+    }
+    iframe {
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
     }
     p {
       img {
@@ -407,7 +413,12 @@ aside {
     }
     h2,h3,h4 {
       color: #162e42;
-      margin-left: 15%;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: 700px;
+      margin-top: 40px;
+      margin-bottom: 0px;
     }
 
     // Fallback for when I was using Semantic UI for endnote of and article
