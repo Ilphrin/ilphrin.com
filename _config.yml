@@ -12,8 +12,7 @@ languages: ["fr", "en"]
 exclude_from_localizations: ["js", "bower_components", "node_modules", "css"]
 exclude: [
   'Gruntfile.js',
-  'new_article.sh',
-  'node_modules/'
+  'new_article.sh'
 ]
 
 #Handling reading

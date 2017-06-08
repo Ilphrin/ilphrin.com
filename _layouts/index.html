@@ -7,6 +7,7 @@
     <meta name="author" content="Kevin Pellet (Ilphrin)">
   <!-- End Meta info -->
 
+  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
   <!-- CSS -->
     <link rel="stylesheet" href="/css/monokai-sublime.min.css">
     <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
@@ -42,18 +43,18 @@
   {% include footer.html %}
 
 
-  <script type="text/javascript" src="/js/analytics.js"></script>
-  <!-- Piwik -->
-  <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-  <!-- End Piwik Code -->
-  <script src="/js/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
-  <script defer>mermaid.initialize({startOnLoad:true});</script>
-  <script src="/bower_components/jquery/dist/jquery.min.js" charset="utf-8"></script>
+  <!-- JS -->
+    <script type="text/javascript" src="/js/analytics.js"></script>
 
-  <script defer src="/js/svg.min.js" charset="utf-8"></script>
-  <script defer src="/js/main.js" charset="utf-8"></script>
+    <!-- Piwik -->
+      <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
+
+    <script src="/js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
+  <!-- End JS -->
 
 </body>
 </html>

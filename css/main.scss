@@ -1,11 +1,30 @@
 ---
 ---
 
+$secondary-color: #C1C1C1;
+$margin: 45px;
+$space: 10px;
+$width: 98%;
+$content-width: 800px;
+$line-height: 35px;
+
+
 /////////// FONTS
 @font-face {
-  font-family: Rambla;
-  src: url(/fonts/Rambla/rambla/Rambla-Regular.otf);
+  font-family: Yanone;
+  src: url('/fonts/Yanone/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf');
 }
+
+@font-face {
+  font-family: Oswald;
+  src: url('/fonts/Oswald/Oswald-Medium.ttf');
+}
+
+@font-face {
+  font-family: TheanoDidot;
+  src: url('/fonts/theano_didot/TheanoDidot-Regular.ttf');
+}
+
 
 ////////// Mixins
 
@@ -60,24 +79,27 @@
   margin-right: 4px;
 }
 
-$secondary-color: #C1C1C1;
 
 html {
   background: linear-gradient(to top right, #162e41, #3a6c95);
   background-attachment: fixed;
   height: 100%;
+}
+
+body {
+  color: $secondary-color;
+  height: 100%;
+  font-family: "Yanone", sans-serif;
+  font-size: 18px;
+  h1,h2,h3,h4,h5,h6 {
+    font-family: "Oswald", sans-serif;
+  }
   a {
     text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
   }
-}
-
-body {
-  color: $secondary-color;
-  height: 100%;
-  font-family: "Rambla", sans-serif;
 }
 
 header {
@@ -102,8 +124,10 @@ header {
       padding-left: 50px;
     }
   }
+  ul {
+    font-size: 130%;
+  }
   ul:nth-child(1) {
-    font-size: 20px;
     width: 350px;
   }
   #logo {
@@ -112,69 +136,71 @@ header {
   }
 }
 
-aside {
-  position: fixed;
-  bottom: 40%;
-  left: 0px;
-  ul {
-    list-style: none;
-    padding-left: 5px;
-    li {
-      padding: 5px;
-      img {
-        height: auto;
-        width: 45px;
-        filter: drop-shadow(1px 1px 2px black);
-      }
-    }
-  }
-}
-
 .one_pager {
   section {
     width: 100%;
     height: 1000px;
     h1 {
-      font-size: 50px;
+      font-size: 85px;
     }
     h2 {
-      font-size: 45px;
+      font-size: 50px;
     }
   }
   #brand {
-    & > .column {
+    & > .row {
       width: 100%;
       position: relative;
       left: 50%;
       top: 40%;
       transform: translate(-50%, -50%);
-      & > em {
-        font-size: 30px;
-        line-height: 45px;
+      .right {
+        a {
+          font-size: 50px;
+          margin-bottom: 10px;
+          margin-top: auto;
+        }
+        a:visited {
+          color: $secondary-color;
+        }
+        flex-grow: 1;
       }
-      .row {
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
-      }
-      object {
-        height: 160px;
-      }
-      #evinlphrin {
-        font-size: 70px;
-        line-height: 35px;
-        span {
-          height: 70px;
-          padding-top: 20px;
-          -webkit-text-fill-color: transparent;
-          background: linear-gradient(to left, rgba(108, 169, 209, 0.4), #369ee3);
-          -webkit-background-clip: text;
+    }
+    h1 {
+      margin-top: 0px;
+      line-height: 105px;
+      margin-bottom: -30px;
+      color: $secondary-color;
+    }
+    #social_share {
+      margin-top: auto;
+      ul {
+        margin-bottom: 10px;
+        list-style: none;
+        padding: 0px;
+        li {
+          padding: 5px;
+          &:nth-child(1) {
+            padding-left: 0px;
+          }
+          img {
+            height: auto;
+            width: 45px;
+            &:hover {
+              filter: drop-shadow(1px 1px 2px black);
+            }
+          }
         }
       }
     }
+    p {
+      font-size: 20px;
+      padding-left: 4px;
+      color: $secondary-color;
+    }
+
   }
   #work, #projects, #blog {
-    background: white;
     h1 {
       color: #162E41;
     }
@@ -193,14 +219,6 @@ aside {
       justify-content: space-between;
       width: calc(100% - 200px);
     }
-    .left_float {
-      float: left;
-    }
-    .right_float {
-      float: right;
-      width: 40%;
-      text-align: center;
-    }
   }
 
   #blog {
@@ -208,19 +226,13 @@ aside {
     background-size: cover;
     text-decoration: none;
     color: inherit;
-    &>h1 {
-      display: inline-block;
-      position: relative;
-      left: 160px;
-    }
     h4 {
       text-align: center;
     }
     #trending_article {
-      width: 60%;
+      width: 1000px;
       position: relative;
-      left: 40%;
-      top: -75px;
+      top: 75px;
       text-align: center;
       .row {
         justify-content: center;
@@ -236,7 +248,6 @@ aside {
       h4 {
         display: inline-block;
         margin-top: 60px;
-        font-size: 18px;
         color: #777;
       }
     }
@@ -258,7 +269,7 @@ aside {
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 20px;
+        font-size: 120%;
         &:hover {
           background-color: #007298;
         }
@@ -305,15 +316,16 @@ aside {
 }
 
 #main {
-  width: 97%;
-  margin-left: 1.5%;
-  margin-top: 60px;
-  margin-bottom: 100px;
+  width: $width;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  margin-bottom: 20px;
   box-shadow: 0px 0px 15px black;
 }
 
 #articles_list {
-  width: 90%;
+  width: $width;
   margin-left:auto;
   margin-right: auto;
   #trending_article {
@@ -350,7 +362,7 @@ aside {
     margin-top: 28px;
     margin-bottom: 0px;
     color: #e6f4ff;
-    font-size: 42px;
+    font-size: 50px;
     &::after {
       width: 0px;
       transition: width .4s;
@@ -375,28 +387,19 @@ aside {
 }
 
 #article {
-  width: 90%;
+  width: $width;
   margin-left:auto;
   margin-right: auto;
   a {
     color: #3A6C95;
   }
   #content_article {
+    font-family: TheanoDidot;
     box-shadow: 0px 0px 8px black;
     background-color: #efefef;
-    font-size: 23px;
-    p, ul {
-      width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #121212;
-    }
-    iframe {
-      margin-left: auto;
-      margin-right: auto;
-      display: block;
-    }
+    font-size: 22px;
     p {
+      line-height: $line-height;
       img {
         height: auto;
         width: 500px;
@@ -407,18 +410,40 @@ aside {
         color: #5f5f5f;
       }
     }
+    ul {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      line-height: $line-height;
+    }
+    p, ul {
+      width: $content-width;
+      margin-left: auto;
+      margin-right: auto;
+      color: #121212;
+    }
+    iframe {
+      margin-left: auto;
+      margin-right: auto;
+      width: $content-width;
+      display: block;
+    }
     h1 {
       font-size: 40px;
       color:  #3A6C95;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      width: $content-width;
     }
     h2,h3,h4 {
       color: #162e42;
       margin-left: auto;
       margin-right: auto;
       display: block;
-      width: 700px;
+      width: $content-width;
       margin-top: 40px;
-      margin-bottom: 0px;
+      margin-bottom: -10px;
+      font-size: 45px;
     }
 
     // Fallback for when I was using Semantic UI for endnote of and article
@@ -456,6 +481,11 @@ aside {
     .javascript.hljs {
       display: inline;
       padding: 1px;
+    }
+
+    iframe {
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
   }
 }
@@ -560,6 +590,26 @@ footer {
 
 .leftAlign {
   text-align: left;
+}
+
+.rightAlign {
+  text-align: right;
+}
+
+.leftMargin {
+  margin-left: $margin;
+}
+
+.rightMargin {
+  margin-right: $margin;
+}
+
+.spaceLeft {
+  margin-left: $space;
+}
+
+.spaceRight {
+  margin-right: $space;
 }
 
 ////////// Hexagons

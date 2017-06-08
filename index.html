@@ -6,29 +6,52 @@ layout: index
 
 <article class="one_pager">
   <section id="brand">
-    <div class="column center">
-      <div class="row center">
-        <object type="image/svg+xml" data="/images/decoration/logo2.svg"></object>
-        <div class="column leftAlign" id="evinlphrin">
-          <span>evin</span>
-          <span>lphrin</span>
+    <div class="row">
+      <div class="column left leftMargin">
+        <div class="row">
+          <div class="hexag_container">
+            <div class="hexag no_hover">
+              <svg id="svgbrand" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
+              </svg>
+              <div class="content">
+                <img src="/images/hp/170.jpg"/>
+              </div>
+            </div>
+          </div>
+          <div class="column spaceLeft">
+            <div class="row" id="evinlphrin">
+              <h1>Kevin Pellet aka Ilphrin</h1>
+            </div>
+            <div class="row">
+              <p>
+              <span>{% t index.brand_one %}</span>
+              </p>
+            </div>
+            <div id="social_share">
+              <ul class="row">
+                <li><a href="https://github.com/Ilphrin"><img src="/images/icons/github.png"/></a></li>
+                <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img src="/images/icons/diaspora.png"/></a></li>
+                <li><a href="https://twitter.com/Kilphrin"><img src="/images/icons/twitter.svg"/></a></li>
+                <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img src="/images/icons/linkedin-icon.png"/></a></li>
+                <li><a href="https://masto.raildecake.fr/@Ilphrin"><img src="/images/icons/mastodon.png"/></a></li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-      <em>
-        <span>{% t index.brand_one %}</span>
-      </em>
-      <em>
-        <span>{% t index.brand_two %}</span>
-      </em>
+      <div class="column right rightAlign rightMargin">
+        <a href="/articles/">{% t index.read %}</a>
+      </div>
     </div>
   </section>
 
   <section id="work">
-    <div class="right_float">
+    <div class="right rightAlign rightMargin">
       <h1>{% t index.work.one %}</h1>
       <h2>{% t index.work.two %}</h2>
     </div>
-    <div class="hexag_container left_float">
+    <div class="hexag_container left leftMargin">
       {% for work in site.translations[site.lang].work_ %}
       <div class="hexag">
         <svg id="svg{{work[1].title}}" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -45,22 +68,9 @@ layout: index
     </div>
   </section>
 
-  <!-- <section id="projects"> -->
-    <!-- <div class="slider"> -->
-      <!-- <div class="prev_button" onclick="plusDivs(-1)"></div> -->
-      <!-- <div class="next_button" onclick="plusDivs(1)"></div> -->
-      <!-- {% for project in site.translations[site.lang].projects_ %} -->
-      <!-- <div class="slide" style="background-image: url('{{project[1].image}}')"> -->
-        <!-- <h2>{{project[1].title}}</h2> -->
-        <!-- <p>{{project[1].description}}</p> -->
-      <!-- </div> -->
-      <!-- {% endfor %} -->
-    <!-- </div> -->
-  <!-- </section> -->
-
   <section id="blog">
-    <h1>{% t index.blog %}</h1>
-    <div id="trending_article">
+    <h1 class="left leftAlign leftMargin">{% t index.blog %}</h1>
+    <div id="trending_article" class="right rightMargin">
       {% for post in site.posts %}
       {% if forloop.index == 1 %}
       <a href="{{post.url}}" id="featured_article" class="hexag_container">
@@ -105,5 +115,5 @@ layout: index
 
 </div>
 
-<script defer src="/js/svg.min.js" charset="utf-8"></script>
-<script defer src="/js/main.js" charset="utf-8"></script>
+<script src="/js/svg.min.js" charset="utf-8"></script>
+<script src="/js/main.js" charset="utf-8"></script>

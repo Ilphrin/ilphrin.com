@@ -1,0 +1,31 @@
+{
+  "name": "ilphrin.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cssnano": "^3.10.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-cssnano": "^2.1.0",
+    "grunt-jekyll": "^0.4.6",
+    "grunt-postcss": "^0.8.0",
+    "jquery": "^3.2.1",
+    "postcss-cssnext": "^2.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ilphrin/ilphrin.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ilphrin/ilphrin.com/issues"
+  },
+  "homepage": "https://github.com/Ilphrin/ilphrin.com#readme"
+}
