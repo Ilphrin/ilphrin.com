@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /bower_components/
+Disallow: /node_modules/
+Disallow: /CV_*.pdf
