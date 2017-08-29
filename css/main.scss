@@ -2,9 +2,11 @@
 ---
 
 $secondary-color: #C1C1C1;
+$link-color: #3a6c95;
+$date-color: #565656;
 $margin: 45px;
 $space: 10px;
-$width: 98%;
+$width: calc(100% - 2 * #{$margin});
 $content-width: 800px;
 $line-height: 35px;
 
@@ -45,6 +47,13 @@ $line-height: 35px;
 @mixin centerAbsolute {
   left: 50%;
   transform: translateX(-50%);
+}
+
+@mixin underlineHover {
+  text-decoration: underline;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 /////////// Animations
@@ -89,6 +98,7 @@ html {
 body {
   color: $secondary-color;
   height: 100%;
+  margin: 0px;
   font-family: "Yanone", sans-serif;
   font-size: 18px;
   h1,h2,h3,h4,h5,h6 {
@@ -103,9 +113,6 @@ body {
 }
 
 header {
-  width: calc(100% - 25px);
-  padding-left: 5px;
-  padding-right: 20px;
   @include row;
   justify-content: space-between;
   transition: background .6s;
@@ -114,6 +121,7 @@ header {
     padding-left: 0px;
     a {
       color: inherit;
+      @include underlineHover;
     }
   }
   top: 0px;
@@ -138,12 +146,11 @@ header {
 
 .one_pager {
   section {
-    width: 100%;
-    height: 1000px;
-    h1 {
-      font-size: 85px;
-    }
+    height: 900px;
     h2 {
+      font-size: 80px;
+    }
+    h3 {
       font-size: 50px;
     }
   }
@@ -154,16 +161,14 @@ header {
       left: 50%;
       top: 40%;
       transform: translate(-50%, -50%);
-      .right {
-        a {
-          font-size: 50px;
-          margin-bottom: 10px;
-          margin-top: auto;
-        }
-        a:visited {
-          color: $secondary-color;
-        }
-        flex-grow: 1;
+      a {
+        font-size: 30px;
+        @include underlineHover;
+        margin-bottom: 10px;
+        margin-top: auto;
+      }
+      a:visited {
+        color: $secondary-color;
       }
     }
     h1 {
@@ -193,31 +198,18 @@ header {
         }
       }
     }
-    p {
-      font-size: 20px;
-      padding-left: 4px;
-      color: $secondary-color;
-    }
-
   }
   #work, #projects, #blog {
-    h1 {
+    h2 {
       color: #162E41;
     }
   }
 
   #work {
-    padding-top: 100px;
-    height: 900px;
     background: url('/images/decoration/background.jpg');
     background-size: cover;
-    .work {
-      position: relative;
-      top: 200px;
-      left: 100px;
-      display: flex;
-      justify-content: space-between;
-      width: calc(100% - 200px);
+    & > div {
+      width: 50%;
     }
   }
 
@@ -226,9 +218,6 @@ header {
     background-size: cover;
     text-decoration: none;
     color: inherit;
-    h4 {
-      text-align: center;
-    }
     #trending_article {
       width: 1000px;
       position: relative;
@@ -238,6 +227,7 @@ header {
         justify-content: center;
         height: 130px;
         a {
+          color: $link-color;
           border-left: 1px solid rgba(1, 1, 1, 0.3);
         }
         a:nth-child(1) {
@@ -245,8 +235,9 @@ header {
         }
       }
       // See more articles
-      h4 {
+      h5 {
         display: inline-block;
+        text-align: center;
         margin-top: 60px;
         color: #777;
       }
@@ -276,14 +267,29 @@ header {
       }
     }
   }
+
+  .hexag_container {
+    position: absolute;
+    top: 1100px;
+    white-space: nowrap;
+  }
 }
 
 #trending_article {
   #featured_article {
-    h2 {
+    margin-bottom: 60px;
+    margin-top: 30px;
+    color: $link-color;
+    &:visited {
+      color: $link-color;
+    }
+    h3 {
       color: #3a6c95;
-      text-decoration: underline;
-      margin-bottom: 0px;
+      margin-bottom: 30px;
+    }
+    sub {
+      color: $date-color;
+      display: block;
     }
     display: inline-block;
     position: relative;
@@ -292,11 +298,13 @@ header {
     justify-content: center;
     height: 130px;
     a {
+      color: $link-color;
       text-decoration: none;
       transition: background-color .4s;
       &:hover {
+        text-decoration: underline;
         background-color: darkgrey;
-        h3 {
+        h4 {
           color: #3a6c95;
         }
       }
@@ -305,23 +313,19 @@ header {
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 30px;
-        color: #565656;
-      }
-      h3 {
-        min-height: 55px;
-        color: #565656;
+        color: $date-color;
       }
     }
   }
-}
-
-#main {
-  width: $width;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0px 0px 15px black;
+  #more {
+    font-size: 30px;
+    color: $link-color;
+    margin-top: 50px;
+    display: block;
+    &:visited {
+      color: $link-color;
+    }
+  }
 }
 
 #articles_list {
@@ -604,14 +608,6 @@ footer {
   margin-right: $margin;
 }
 
-.spaceLeft {
-  margin-left: $space;
-}
-
-.spaceRight {
-  margin-right: $space;
-}
-
 ////////// Hexagons
 
 .hexag_container {
@@ -669,4 +665,9 @@ footer {
   width: calc(100% / 2);
   padding-left: 20px;
   padding-right: 20px;
+}
+
+
+@media (max-width: 1600px) {
+
 }
