@@ -106,4 +106,4 @@ Les tests A/B sont un autre moyen d'apprendre quelles actions l'utilisateur entr
 
 ## Des liens sur UxBooth
 
-Si cette traduction vous a plu, n'hésitez pas à me le faire savoir, par mail ou par commentaire (je lis aussi de temps en temps les commentaire sur le journal du hacker). Je vous renvoie vers [l'article d'origin sur UXBooth](http://www.uxbooth.com/articles/complete-beginners-guide-to-design-research/#tasks) pour pleins de liens vers des personnalités à suivre sur les réseaux, des idées de livre sur le sujet, et plein d'autres choses.
+Si cette traduction vous a plu, n'hésitez pas à me le faire savoir, par mail ou par commentaire (je lis aussi de temps en temps les commentaire sur le journal du hacker). Je vous renvoie vers [l'article d'origine sur UXBooth](http://www.uxbooth.com/articles/complete-beginners-guide-to-design-research/#tasks) pour pleins de liens vers des personnalités à suivre sur les réseaux, des idées de livre sur le sujet, et plein d'autres choses.
