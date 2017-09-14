@@ -2,7 +2,6 @@
 layout: post_kevin
 title: "Un an à étudier à Québec: Le choc culturel sur tous les plans"
 author: kevin
-category: planet
 ---
 
 Cette année je pars étudier pendant un an l'informatique à l'Université Laval à Québec. Pour ceux qui ne le savent pas je suis étudiant à Epitech Lyon (j'aurai un long article sur le sujet à la fin de mes études), et dans mon cursus je dois faire la 4e année à l'étranger dans l'un des [nombreux programmes partenaires d'Epitech](http://www.epitech.eu/partenariats-internationaux.aspx). Mon choix s'est porté sur l'Université Laval, et me voici donc à écrire cet article après ma première semaine de cours!
