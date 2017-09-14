@@ -10,7 +10,7 @@ Cette année je pars étudier pendant un an l'informatique à l'Université Lava
 
 [![Les 3 Brasseurs pas loin de la maison](/images/quebec_01.jpg){:style="width:100%;"}](https://www.flickr.com/photos/159186107@N06/37047534981/in/dateposted-public/)
 ![]()
-*Petite bière accompagnée d'une Pizza poutine aux 3 brasseurs*
+*Petite bière accompagnée d'une Flamekueche poutine aux 3 brasseurs*
 
 ## Laval parmi tant d'autres
 
@@ -80,9 +80,9 @@ Nous sommes allés manger dans un endroit de Saint-Roch appelé [La Korrigane](h
 * [Les 3 Brasseurs](http://www.les3brasseurs.com/): Ils existent aussi en France et à Lyon. Un coin sympa ou aller si vous voulez manger un bout avec une bonne bière. Ils font des Flammekueches-Poutines bien grasse, et donc bien bonne!
 * [Le Pub Universitaire](http://pubuniversitaire.com/): Alors ça peut paraitre bête, mais le Pub Universitaire de Laval est un coin top pour manger et boire! Les bières sont environ à 5$CAD la pinte, et si vous venez en groupe, vous pouvez prendre la Poutine du Pub pour 30 dollars, et qui remplit le ventre de facilement 5 personnes!
 
-Je pense que je peux garder un peu d'encre numérique pour parler des transports en commun à Québec. Le réseau s'appelle RTC pour Réseau de Transports de la Capitale, et existe depuis 50 ans. Il se compose, à ma connaissance, niquement de bus hybride (moitié essence, moitié éléctrique). Ce réseau est très bien développé puisqu'on a accès à beaucoup de lignes de bus sur une grande partie du territoire, et sur de grandes plages d'horaires (ma ligne de bus est disponible de 5h jusqu'au 1h du matin). Et en plus ils sont très fréquent!
+Je pense que je peux garder un peu d'encre numérique pour parler des transports en commun à Québec. Le réseau s'appelle RTC pour Réseau de Transports de la Capitale, et existe depuis 50 ans. Il se compose, à ma connaissance, uniquement de bus hybrides (moitié essence, moitié éléctrique). Ce réseau est très bien développé puisqu'on a accès à beaucoup de lignes de bus sur une grande partie du territoire, et sur de grandes plages d'horaires (ma ligne de bus est disponible de 5h jusqu'au 1h du matin). Et en plus ils sont très fréquents!
 
-Le système d'abonnemnt est par contre un peu moins pratique qu'à Lyon. Déjà chose étrange: On peut acheter les cartes de bus a la Pharmacie! Aussi, de façon générale les tarifs sont un peu plus chers. L'abonnement au mois me coute environ 40€, et l'abonnement à la semaine n'existe pas. Enfin, pas comme à Lyon, c'est-à-dire que la semaine vaut 5 jours à Québec et pas 7! Enfin, il n'existe pas d'abonnement annuel, du coup tous les mois faut retourner au dépanneur ou a la pharmacie du coin pour refaire l'abonnement.
+Le système d'abonnement est par contre un peu moins pratique qu'à Lyon. Déjà chose étrange, on peut acheter les cartes de bus a la Pharmacie! Aussi, de façon générale les tarifs sont un peu plus chers. L'abonnement au mois me coûte environ 40€, et l'abonnement à la semaine n'existe pas. Enfin, pas comme à Lyon, c'est-à-dire que la semaine vaut 5 jours à Québec et pas 7! Et il n'existe pas d'abonnement annuel, du coup tous les mois faut retourner au dépanneur ou a la pharmacie du coin pour refaire l'abonnement.
 
 ## L'Université
 
