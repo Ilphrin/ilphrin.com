@@ -374,11 +374,15 @@ header {
   }
   sub {
     color: white;
+    display: block;
     margin-bottom: 25px;
   }
 }
-
-#trending_article .hexag_container, #header_article .hexag_container {
+#header_article .hexag_container {
+  min-height: 460px;
+  text-decoration: none;
+}
+#trending_article .hexag_container{
   height: 460px;
   text-decoration: none;
 
@@ -395,7 +399,7 @@ header {
     font-family: TheanoDidot;
     box-shadow: 0px 0px 8px black;
     background-color: #efefef;
-    font-size: 20px;
+    font-size: 22px;
     p {
       line-height: $line-height;
       img {
@@ -665,6 +669,20 @@ footer {
 }
 
 
-@media (max-width: 1600px) {
+@media (max-width: 1400px) {
+  #article {
+    width: 100%;
+  }
+  code, code.hljs {
+    padding-left: 2em;
+  }
 
+  #article #content_article p, #article #content_article ul {
+    width: 98%;
+  }
+
+  #article #content_article h2, #article #content_article h3, #article #content_article h4 {
+    display: inline-block;
+    margin-left: 1%;
+  }
 }
