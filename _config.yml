@@ -6,14 +6,13 @@ collection: null
 name: Kevin / Ilphrin
 description: A blog about IT, free software and stuff like that
 url: https://www.ilphrin.com
-plugins: ['jekyll-paginate', 'jekyll-mermaid', 'jekyll-multiple-languages-plugin']
+plugins: ['jekyll-paginate', 'jekyll-mermaid', 'jekyll-multiple-languages-plugin', 'jekyll-timeago']
 languages: ["fr", "en"]
-exclude_from_localizations: ["js", "bower_components", "node_modules", "css"]
+exclude_from_localizations: ["js", "bower_components", "node_modules", "css", 'images', 'fonts', 'feeds.xml', 'package.json', 'planet_feed.xml', 'robots.txt', 'staticman.yml']
 exclude: [
-  'Gruntfile.js',
-  'new_article.sh'
 ]
 baseurl: ""
+excerpt_separator: "<!--break-->"
 
 #Handling reading
 encoding: "utf-8"
@@ -26,7 +25,6 @@ lsi: false
 paginate: 5
 
 #Serving
-detach: true
 port: 4001
 
 #Backwards compatibility
@@ -34,6 +32,7 @@ relative_permalinks: false
 
 #Outputting
 permalink: date
+
 
 #Markdown processors
 maruku:
@@ -54,5 +53,3 @@ sitemap:
   exclude:
     - "feeds.xml"
     - "planet_feed.xml"
-  include_posts:
-    - "/kevin/index.html"

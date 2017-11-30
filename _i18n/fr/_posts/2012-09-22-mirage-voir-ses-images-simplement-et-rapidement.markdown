@@ -5,7 +5,9 @@ author: kevin
 ---
 
 Mirage est un logiciel qui permet de visualiser des images. Tout simplement. Je pense qu'une image vaut mieux que de longs discours:
+
 <!--break-->
+
 ![mirage](/images/mirage01.jpg)
 
 Je trouve l'apparence de Mirage particulièrement agréable. On voit rapidement une liste des images du dossier que l'on regarde sur la gauche (configurable dans le menu Edit>Preferences). Et l'affichage se fait rapidement, même pour de grosses images.

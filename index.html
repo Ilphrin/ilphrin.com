@@ -1,6 +1,7 @@
 ---
 layout: index
 title: 'Kevin / Ilphrin'
+description: 'A website of an IT developer and open-source lover'
 ---
 
 <div id="main">
@@ -16,15 +17,6 @@ title: 'Kevin / Ilphrin'
           <div>
             <a href="/articles">{% t index.read %}</a>
           </div>
-          <!-- <div id="social_share"> -->
-            <!-- <ul class="row"> -->
-              <!-- <li><a href="https://github.com/Ilphrin"><img src="/images/icons/github.png"/></a></li> -->
-              <!-- <li><a href="https://diaspora-fr.org/people/30b7e950ca4c01315a827b9da7d7bc36"><img src="/images/icons/diaspora.png"/></a></li> -->
-              <!-- <li><a href="https://twitter.com/Kilphrin"><img src="/images/icons/twitter.svg"/></a></li> -->
-              <!-- <li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><img src="/images/icons/linkedin-icon.png"/></a></li> -->
-              <!-- <li><a href="https://masto.raildecake.fr/@Ilphrin"><img src="/images/icons/mastodon.png"/></a></li> -->
-            <!-- </ul> -->
-          <!-- </div> -->
         </div>
       </div>
     </div>
@@ -58,10 +50,8 @@ title: 'Kevin / Ilphrin'
       {% for post in site.posts %}
         {% if forloop.index == 1 %}
           <a href="{{post.url}}" id="featured_article">
-            <div>
               <h3>{{ post.title }}</h3>
               <sub>{{ post.date | date:"%d/%m/%y" }}</sub>
-            </div>
           </a>
         {% endif %}
       {% endfor %}

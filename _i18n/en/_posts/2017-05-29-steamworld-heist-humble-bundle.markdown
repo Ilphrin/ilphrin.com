@@ -9,7 +9,7 @@ This article is the first of a series about the [Humble Indie Bundle 18](https:/
 
 <!--break-->
 
-##SteamWorld: Heist
+## SteamWorld: Heist
 
 <iframe width="700" height="350" src="https://www.youtube.com/embed/3yEjocL0i2A" frameborder="0" allowfullscreen></iframe>
 
@@ -17,7 +17,7 @@ This article is the first of a series about the [Humble Indie Bundle 18](https:/
 
 You can recuit new team members, each one has his/her own capabilities and skills. All characters can evolve by levelling up, and earn equipment you'll loot on the battlefield like: weapons, grenades, armor, health pack, etc.
 
-##The game and the studio
+## The game and the studio
 
 ![Image & Form](/images/imageForm_01.png){:style="width:100%;"}
 
@@ -36,7 +36,7 @@ Joke appart, one particularity of this game is the shooting system. You can aim 
 And it is by shooting just above the head of an ennemy you can make his hat fall and get it then!
 
 
-##Steam Powered Giraffe
+## Steam Powered Giraffe
 
 <iframe width="700" height="350" src="https://www.youtube.com/embed/dDRHx4cPgbE" frameborder="0" allowfullscreen></iframe>
 

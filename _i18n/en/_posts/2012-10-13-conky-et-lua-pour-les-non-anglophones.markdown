@@ -2,7 +2,6 @@
 layout: post_kevin
 title: Conky et Lua pour les non-angolophobes
 author: kevin
-cover: conky.jpg
 ---
 
 Salut tout l'monde!

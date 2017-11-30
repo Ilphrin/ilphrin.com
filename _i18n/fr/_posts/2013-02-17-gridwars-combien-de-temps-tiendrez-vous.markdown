@@ -10,7 +10,9 @@ Salut à tous! J'espère que vous allez bien. Moi en tout cas je pète la forme!
 Allez trêves de bavardages. Aujourd'hui je vais vous présenter un jeu que j'ai découvert en farfouillant sur le site de jeuxlinux.fr. Ce jeu c'est : Gridwars!
 
 Vous vous souvenez de mon article sur M.A.R.S ? Prenez un petit peu le même style psychédélique du genre dans un jeu de tir brut où l'objectif est de survivre le plus longtemps possible. En guise de décors on se retrouve avec une grille simple. L'intérêt de cette grille est qu'elle se déforme selon les mouvement que vous faites et vos tirs! Voilà ce que ça donne en situation:
+
 <!--break-->
+
 ![gridwars01](/images/gridwars01.png) 
 
 Oui ça part un peu dans tout les sens je l'admets. Mais c'est ce qui fait tout son charme ;)

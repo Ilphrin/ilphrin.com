@@ -8,10 +8,12 @@ cover: game.jpg
 Salut tout le monde!
 
 En ce moment je passe mon temps à fouiller le web à la découverte de nouveaux logiciels libre, et en me baladant sur un forum, quelqu'un posait la question: "Est-ce qu'il existe un jeux de casse-brique cool sous Linux? Un peu à la DxBall2
+
 <!--break-->
+
 DxBall2 pour ceux qui ne connaissent pas est un jeu de casse-brique qui commence à avoir une bonne paire d'années. Ce qui fait tout son charme est, à mes souvenirs, le nombre d'objets que l'on peut récupérer en cours de partie, tels que les missiles, les billes explosives, la bonus de raquette etc...
 
-Alors en cherchant de ce coté-là je suis allé faire un tour sur Framasoft et j'y ai trouvé Lbreakout2. Il est téléchargeable sur ce site --> [ICI](http://lgames.sourceforge.net/index.php?project=LBreakout2)
+Alors en cherchant de ce coté-là je suis allé faire un tour sur Framasoft et j'y ai trouvé Lbreakout2. Il est téléchargeable [sur ce site](http://lgames.sourceforge.net/index.php?project=LBreakout2)
 
 Pour l'installation, il suffit d'ouvrir un terminal et le fichier texte README dans le dossier du jeu téléchargé, dans lequel toutes les commandes à entrer y sont indiquées.
 

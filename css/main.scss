@@ -4,7 +4,7 @@
 $secondary-color: #C1C1C1;
 $link-color: #3a6c95;
 $date-color: #565656;
-$margin: 45px;
+$margin: 2.34%;
 $space: 10px;
 $width: calc(100% - 2 * #{$margin});
 $content-width: 800px;
@@ -13,8 +13,8 @@ $line-height: 35px;
 
 /////////// FONTS
 @font-face {
-  font-family: Yanone;
-  src: url('/fonts/Yanone/fonts/Yanone_Kaffeesatz/YanoneKaffeesatz-Regular.ttf');
+  font-family: BebasNeue;
+  src: url('/fonts/BebasNeue.otf');
 }
 
 @font-face {
@@ -99,10 +99,10 @@ body {
   color: $secondary-color;
   height: 100%;
   margin: 0px;
-  font-family: "Yanone", sans-serif;
+  font-family: "TheanoDidot", sans-serif;
   font-size: 18px;
   h1,h2,h3,h4,h5,h6 {
-    font-family: "Oswald", sans-serif;
+    font-family: "BebasNeue", sans-serif;
   }
 }
 
@@ -171,27 +171,6 @@ header {
       margin-bottom: -30px;
       color: $secondary-color;
     }
-    #social_share {
-      margin-top: auto;
-      ul {
-        margin-bottom: 10px;
-        list-style: none;
-        padding: 0px;
-        li {
-          padding: 5px;
-          &:nth-child(1) {
-            padding-left: 0px;
-          }
-          img {
-            height: auto;
-            width: 45px;
-            &:hover {
-              filter: drop-shadow(1px 1px 2px black);
-            }
-          }
-        }
-      }
-    }
   }
   #work, #projects, #blog {
     h2 {
@@ -228,7 +207,6 @@ header {
           border-left: none;
         }
       }
-      // See more articles
       h5 {
         display: inline-block;
         text-align: center;
@@ -271,15 +249,25 @@ header {
 
 #trending_article {
   #featured_article {
-    margin-bottom: 60px;
-    margin-top: 30px;
+    padding-bottom: 60px;
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
     color: $link-color;
     &:visited {
       color: $link-color;
     }
+    &:hover {
+      background-color: darkgrey;
+      h1 {
+        &::after {
+          width: 100%;
+        }
+      }
+    }
     h3 {
       color: #3a6c95;
-      margin-bottom: 30px;
+      padding-bottom: 10px;
     }
     sub {
       color: $date-color;
@@ -287,27 +275,25 @@ header {
     }
     display: inline-block;
     position: relative;
+    transition: background-color .4s;
   }
   .row {
     justify-content: center;
-    height: 130px;
     a {
       color: $link-color;
-      text-decoration: none;
       transition: background-color .4s;
       &:hover {
-        text-decoration: underline;
+        text-decoration: none;
         background-color: darkgrey;
-        h4 {
-          color: #3a6c95;
-        }
       }
       .text_content {
-        margin-top: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 30px;
         color: $date-color;
+        text-decoration: none;
+      }
+      h4 {
+        font-size: 23px;
       }
     }
   }
@@ -318,6 +304,9 @@ header {
     display: block;
     &:visited {
       color: $link-color;
+    }
+    &:hover {
+      text-decoration: none;
     }
   }
 }
@@ -348,19 +337,11 @@ header {
   background-color: #1111114d;
   transition: background-color 1s;
   box-shadow: 0px 0px 8px black;
-  &:hover {
-    background-color: #1111119f;
-    h1 {
-      &::after {
-        width: 100%;
-      }
-    }
-  }
   h1 {
     margin-top: 28px;
     margin-bottom: 0px;
     color: #e6f4ff;
-    font-size: 50px;
+    font-size: 65px;
     &::after {
       width: 0px;
       transition: width .4s;
@@ -376,6 +357,15 @@ header {
     color: white;
     display: block;
     margin-bottom: 25px;
+  }
+}
+
+#header_article {
+  background-color: #1111119f;
+  h1 {
+    &::after {
+      width: 100%;
+    }
   }
 }
 #header_article .hexag_container {
@@ -396,7 +386,6 @@ header {
     color: #3A6C95;
   }
   #content_article {
-    font-family: TheanoDidot;
     box-shadow: 0px 0px 8px black;
     background-color: #efefef;
     font-size: 22px;
@@ -405,6 +394,9 @@ header {
       img {
         height: auto;
         width: 500px;
+        &.cover {
+          width: 100%;
+        }
       }
       img + em {
         display: block;
@@ -445,7 +437,7 @@ header {
       width: $content-width;
       margin-top: 40px;
       margin-bottom: -10px;
-      font-size: 40px;
+      font-size: 50px;
     }
 
     // Fallback for when I was using Semantic UI for endnote of and article
@@ -512,6 +504,10 @@ header {
       color: #535353;
     }
   }
+}
+
+#articles {
+
 }
 
 @keyframes comment_opac {
@@ -672,17 +668,18 @@ footer {
 @media (max-width: 1400px) {
   #article {
     width: 100%;
+    #content_article {
+      h2, h3, h4 {
+        display: inline;
+        margin-left: 2.5%;
+      }
+    }
   }
   code, code.hljs {
     padding-left: 2em;
   }
 
   #article #content_article p, #article #content_article ul {
-    width: 98%;
-  }
-
-  #article #content_article h2, #article #content_article h3, #article #content_article h4 {
-    display: inline-block;
-    margin-left: 1%;
+    width: 95%;
   }
 }
