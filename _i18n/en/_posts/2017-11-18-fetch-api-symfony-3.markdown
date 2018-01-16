@@ -2,6 +2,7 @@
 layout: post_kevin
 title: "Making a JS request with the Fetch API in Symfony 3"
 author: kevin
+hashtags: symfony javascript
 ---
 
 Hey! It has been a while, isn't it? ;)
