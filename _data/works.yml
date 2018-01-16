@@ -1,0 +1,10 @@
+- name: ReportLinker
+  link: https://www.reportlinker.com/
+  contentOne: ReportLinker is a technology company that simplifies how analysts and decision makers get industry data for their business.
+  contentTwo: I worked within the Web Development Team as FullStack Developper Intern, learning to code with NodeJS and React, and work in an Agile Team with tools like Jira and Bitbucket. I also learned a lot about UI and UX by creating a project from scratch.
+  background: 'ReportLinker.jpg'
+- name: CoursierPrivé
+  link: http://www.coursierprive.com/
+  contentOne: Technology platform for dispatching races invoiced per kilometre, based on a fleet of professional couriers. CoursierPrivé is a startup based in Paris, France.
+  contentTwo: Working remotely for the first time, I learned how to work without seeing my team everyday. I was in charge of updqting the Front-End platform, using technologies like AngularJS and Java as a Back-End
+  background: 'coursierprive.png'

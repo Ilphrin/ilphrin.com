@@ -1,16 +1,15 @@
 index:
-  brand_one: "Je suis Kevin alias \"Ilphrin\", développeur, Mozillien, passionné d'Open-Source, d'UX, de Métal et de Sushis"
+  brand_one: "Je suis Kevin alias \"Ilphrin\", développeur, Mozillien, passionné d'Open-Source, d'UX, de Métal et de Sushi"
   work:
     one: "J'ai travaillé pour eux"
     two: "Et j'ai appris avec eux"
   projects: "Ce que j'ai fait"
-  contact: "Intéressé? Contactez-moi"
+  contact: "Gardons contact!"
   read: "Lire mes articles"
   blog: "Mes articles"
 
 footer:
   license: "Site et contenus sous"
-  optimized: "Optimisé pour Firefox"
 
 header:
   home: "Accueil"
@@ -85,3 +84,6 @@ comments:
   required_and_unpublished: "Requis, non publié"
   optional: "Optionnel"
   send: "Envoyer"
+
+article:
+  previous: "Article précédent"

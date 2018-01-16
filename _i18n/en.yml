@@ -1,5 +1,5 @@
 index:
-  brand_one: "I am Kevin aka \"Ilphrin\", developper, Mozillian, passionned for Open-Source, UX, Metal and Sushis"
+  brand_one: "I am Kevin aka \"Ilphrin\", developper, Mozillian, passionned for Open-Source, UX, Metal and Sushi"
   projects: "What I have done"
   contact: "Want to get in touch?"
   blog: "My articles"
@@ -10,7 +10,6 @@ index:
 
 footer:
   license: "Site and content under"
-  optimized: "Optimized for Firefox"
 
 header:
   home: "Home"
@@ -85,3 +84,6 @@ comments:
   required_and_unpublished: "Required, unpublished"
   optional: "Optional"
   send: "Submit"
+
+article:
+  previous: "Previous Article"

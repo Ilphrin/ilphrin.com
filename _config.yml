@@ -22,7 +22,6 @@ paginate_path: kevin/page/:num
 #Conversion
 highlighters: rouge
 lsi: false
-paginate: 5
 
 #Serving
 port: 4001

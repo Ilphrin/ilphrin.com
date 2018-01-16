@@ -13,7 +13,7 @@ Bon déjà je pars avec un avis subjectif puisque j'accroche beaucoup au nom et 
 
 Lorsque l'on arrive sur le site du projet, on est accueilli avec une demo de l'application avec deux personnes qui travaillent sur un projet en même temps:
 
-<div style="width:85%; height:634px;" >
+<div style="height:634px;" >
 <iframe style="border:none; width:100%; height:100%;" src="https://player.vimeo.com/video/184067080?background=1"></iframe>
 </div>
 

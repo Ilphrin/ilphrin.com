@@ -24,7 +24,35 @@ description: {{post.excerpt | strip_html}}
       </div>
     </section>
     <section id="content_article">
-      {{content}}
+    {% if page.previous.url %}
+    {% if site.lang == "en" %}
+     {% capture url1 %}/en{{page.previous.url}}{% endcapture %}
+     <a href="{{ url1 }}" class="sticky_side leftMargin">
+    {% else %}
+      {% capture url2 %}{{site.baseurl_root}}{{page.previous.url}}{% endcapture %}
+      <a href="{{ url2 }}" class="sticky_side leftMargin">
+    {% endif %}
+      <p style="font-weight: normal;">{% t article.previous %}:</p>
+        <p>{{ page.previous.title }}</p>
+      </a>
+    {% endif %}
+    {{content}}
+
+    
+    <div id="share-buttons">
+      <a href="https://twitter.com/share?url={{site.url}}{{site.baseurl}}{{page.url}}&amp;text={{page.title}} via @Kilphrin&amp;hashtags={{page.hashtags}}" target="_blank">
+          <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
+      </a>
+      <a href="mailto:?Subject={{page.title}}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 {{site.url}}{{site.baseurl}}{{page.url}}">
+          <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
+      </a>
+      <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url={{site.url}}{{site.baseurl}}{{page.url}}" target="_blank">
+          <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
+      </a>
+      <a href="http://reddit.com/submit?url={{site.url}}{{site.baseurl}}{{page.url}}&amp;title={{page.title}}" target="_blank">
+          <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
+      </a>
+    </div>
     </section>
     <section id="comments" class="column">
       {% assign comments = site.data.comments | sort %}
@@ -60,21 +88,21 @@ description: {{post.excerpt | strip_html}}
     <input name="options[origin]" type="hidden" value="https://ilphrin.com">
     <input type="hidden" name="fields[post_id]" value="{{page.id}}">
     <fieldset>
-      <label>{% t comments.name %}</label>
+      <label for="fields[name]">{% t comments.name %}</label>
       <input name="fields[name]" placeholder="{% t comments.required %}" type="text" required>
     </fieldset>
     <fieldset>
-      <label>{% t comments.email %}</label>
+      <label for="fields[name]">{% t comments.email %}</label>
       <input name="fields[email]" placeholder="{% t comments.required_and_unpublished %}" type="text" required>
     </fieldset>
     <fieldset>
-      <label>{% t comments.link %}</label>
+      <label for="fields[name]">{% t comments.link %}</label>
       <input name="fields[url]" type="text" placeholder="{% t comments.optional %}">
     </fieldset>
     <textarea name="fields[message]" placeholder="{% t comments.required %}"></textarea>
     <button type="submit" name="submit">{% t comments.send %}</button>
   </form>
-  <img src="/images/decoration/write_icon.png"/>
+  <img src="/images/decoration/write_icon.png" alt="Comment"/>
 </div>
 
 <script>
@@ -98,7 +126,3 @@ img.onclick = function() {
   }
 }
 </script>
-
-<script src="/js/svg.min.js" charset="utf-8"></script>
-<script src="/js/hexagon.js" charset="utf-8"></script>
-<script src="/js/main.js" charset="utf-8"></script>

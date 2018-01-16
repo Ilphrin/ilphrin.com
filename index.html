@@ -4,54 +4,69 @@ title: 'Kevin / Ilphrin'
 description: 'A website of an IT developer and open-source lover'
 ---
 
+<script charset="utf-8">
+  let blocksBackground = [
+    {% for work in site.data.works %}
+      "/images/work/{{ work.background }}",
+    {% endfor %}
+  ];
+
+  function changeIndice(factor, shape) {
+    indice += factor;
+    if (indice < 0) {
+      indice = blocks.length - 1;
+    }
+    else if (indice >= blocks.length) {
+      indice = 0;
+    }
+    for (let i = 0; i < blocks.length; i++) {
+      console.log(indice);
+      if (i != indice) {
+        blocks[i].style.display = 'none';
+      }
+      else {
+        blocks[i].style.display = 'block';
+      }
+    }
+  }
+</script>
+
 <div id="main">
 
 <article class="one_pager">
   <section id="brand">
     <div class="row">
-      <div class="leftMargin rightMargin">
-        <div class="column">
-          <object class="leftAlign" style="width: 15vh; height:auto; margin-left: -20px;" type="image/svg+xml" data="/images/decoration/logo.svg">
-          </object>
-          <h3>{% t index.brand_one %}</h3>
-          <div>
-            <a href="/articles">{% t index.read %}</a>
-          </div>
+      <div class="leftWideMargin rightWideMargin column">
+        <h3>{% t index.brand_one %}</h3>
+        <div>
+          <a href="/articles">{% t index.read %}</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="work">
-    <div class="right rightAlign rightMargin">
-      <h2>{% t index.work.one %}</h2>
-      <h3>{% t index.work.two %}</h3>
-    </div>
-    <div class="hexag_container left leftMargin">
-      {% for work in site.translations[site.lang].work_ %}
-      <div class="hexag">
-        <svg id="svg{{work[1].title}}" xmlns="http://www.w3.org/2000/svg" version="1.1" width="300" height="300" xmlns:xlink="http://www.w3.org/1999/xlink">
-          <polygon class="hex" points="300,150 225,280 75,280 0,150 75,20 225,20"></polygon>
-        </svg>
-        <div class="content">
-          <span>{{work[1].title}}</span>
-          <span>{{work[1].url}}</span>
-          <span>{{work[1].role}}</span>
-          <img src="{{work[1].icon}}"/>
+  <section id="work" class="leftMargin rightMargin row" >
+    <div class="work_slider row">
+      <i id="arrowLeft"></i>
+      <div class="work_hexag_container"></div>
+      {% for work in site.data.works %}
+        <div class="work_block">
+          <h2>{{work.name}}</h2>
+          <p>{{work.contentOne}}</p>
+          <p>{{work.contentTwo}}</p>
         </div>
-      </div>
       {% endfor %}
+      <i id="arrowRight"></i>
     </div>
   </section>
 
   <section id="blog">
-    <h2 class="left leftAlign leftMargin">{% t index.blog %}</h2>
-    <div id="trending_article" class="right rightMargin">
+    <div id="trending_article" class="rightWideMargin leftWideMargin">
       {% for post in site.posts %}
         {% if forloop.index == 1 %}
           <a href="{{post.url}}" id="featured_article">
               <h3>{{ post.title }}</h3>
-              <sub>{{ post.date | date:"%d/%m/%y" }}</sub>
+              <sub class="textContent">{{ post.date | date:"%d/%m/%y" }}</sub>
           </a>
         {% endif %}
       {% endfor %}
@@ -60,7 +75,7 @@ description: 'A website of an IT developer and open-source lover'
         {% if forloop.first != true %}
         <a href="{{post.url}}" class="three">
           <h4>{{ post.title }}</h4>
-          <div class="text_content">{{ post.date | date: "%d/%m/%Y"}}</div>
+          <sub class="textContent">{{ post.date | date: "%d/%m/%Y"}}</sub>
         </a>
         {% endif %}
         {% endfor %}
@@ -72,13 +87,26 @@ description: 'A website of an IT developer and open-source lover'
   <section id="contact">
     <div class="column center">
       <h2>{% t index.contact %}</h2>
-      <a href="mailto:ilphrin@autistici.org?Subject=Hello%20from%20your%20website" target="_top">ilphrin@autistici.org</a>
+      <span>
+        <a href="https://twitter.com/Kilphrin" target="_blank"><img src="/images/icons/twitter.svg" /></a>
+        <a href="https://medium.com/@pellet_k" target="_blank"><img src="/images/icons/medium.png"/></a>
+        <a href="mailto:ilphrin@autistici.org?Subject=Hello%20from%20your%20website" target="_top"><img src="/images/icons/mail.png"</a>
+        <a href="https://www.flickr.com/photos/159186107@N06/" target="_blank"><img src="/images/icons/flickr.png" /></a>
+        <a href="https://www.linkedin.com/in/kevin-pellet-5a123ba9/" target="_blank"><img src="/images/icons/linkedin-icon.png"/></a>
+      </span>
     </div>
   </section>
 </article>
 
 </div>
 
-<script src="/js/svg.min.js" charset="utf-8"></script>
-<script src="/js/hexagon.js" charset="utf-8"></script>
-<script src="/js/main.js" charset="utf-8"></script>
+<script charset="utf-8">
+  let blocks = document.querySelectorAll('.work_block');
+  let indice = 0;
+  for (let elem of blocks) {
+    elem.style.display = 'none';
+  }
+  blocks[indice].style.display = 'block';
+  let arrow = document.querySelector('#arrowLeft').addEventListener('click', () => changeIndice(-1));
+  arrow = document.querySelector('#arrowRight').addEventListener('click', () => changeIndice(1));
+</script>

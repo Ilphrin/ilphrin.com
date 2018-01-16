@@ -3,6 +3,7 @@ layout: post_kevin
 title: "Utiliser la Fetch API en JS avec du Symfony 3"
 author: kevin
 category: planet
+hashtags: javascript symfony
 ---
 
 
