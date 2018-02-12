@@ -11,13 +11,12 @@
     <link rel="alternate" type="application/rss+xml"  href="{{site.url}}/planet_feed.xml" title="Articles pour Planet-Libre">
   <!-- End Meta info -->
 
-  <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
   <!-- CSS -->
     <link rel="stylesheet" href="/css/monokai-sublime.min.css">
-    <link rel="stylesheet" href="/bower_components/mermaid/dist/mermaid.css">
-    <link rel="icon" href="/images/LogoV1.png"/>
-
     <link rel="stylesheet" type="text/css" href="/css/main.css"/>
+
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="icon" href="/favicon.png"/>
   <!-- End CSS -->
 
   <title>{{ page.title }}</title>
@@ -42,22 +41,16 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/Blog">
+  <!-- Piwik -->
+      <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
+    <!-- End Piwik Code -->
   {% include header.html %}
         {{ content }}
   {% include footer.html %}
 
-
   <!-- JS -->
-  <script type="text/javascript" src="/js/analytics.js"></script>
-
-    <!-- Piwik -->
-      <noscript><p><img src="//ilphrin.com/analytics/piwik.php?idsite=1" style="border:0;" alt="" /></p></noscript>
-    <!-- End Piwik Code -->
-
-    <script src="/js/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/bower_components/mermaid/dist/mermaid.min.js" charset="utf-8"></script>
-    <script>mermaid.initialize({startOnLoad:true});</script>
+    <script type="text/javascript" src="/js/launch_sw.js" defer ></script>
+    <script type="text/javascript" src="/js/analytics.js" defer></script>
   <!-- End JS -->
 
 </body>

@@ -8,9 +8,7 @@ Cette année je pars étudier pendant un an l'informatique à l'Université Lava
 
 <!--break-->
 
-[![Les 3 Brasseurs pas loin de la maison](/images/quebec_01.jpg){:style="width:100%;"}](https://www.flickr.com/photos/159186107@N06/37047534981/in/dateposted-public/)
-![]()
-*Petite bière accompagnée d'une Flamekueche poutine aux 3 brasseurs*
+[<img class="cover" src="/images/quebec_01.jpg"/>*Petite bière accompagnée d'une Flamekueche poutine aux 3 brasseurs*](https://www.flickr.com/photos/159186107@N06/37047534981/in/dateposted-public/){:.img}
 
 ## Laval parmi tant d'autres
 
@@ -64,9 +62,7 @@ Mis à part ces problèmes, nous avons un jardin magnifique, avec pleins d'écur
 
 ## La découverte de la ville
 
-[![Québec](/images/quebec_03.jpg){:style="width:100%;"}](https://www.flickr.com/photos/159186107@N06/37018115132/in/dateposted-public/)
-![]()
-*Un ancien bureau de poste dans la ville de Québec*
+[<img class="cover" src="/images/quebec_03.jpg" />*Un ancien bureau de poste dans la ville de Québec*](https://www.flickr.com/photos/159186107@N06/37018115132/in/dateposted-public/){:.img}
 
 Dès les premiers jours nous avons commencé à nous balader dans Québec. C'est une ville vraiment magnifique, et __très grande__! Elle est découpée en plusieurs parties: La haute ville, la basse ville, le Vieux Québec, les quartiers de son agglomération comme Saint-Sacrement, Sainte-Foy, Saint-Roch, etc.
 
@@ -87,9 +83,6 @@ Je pense que je peux garder un peu d'encre numérique pour parler des transports
 Le système d'abonnement est par contre un peu moins pratique qu'à Lyon. Déjà chose étrange, on peut acheter les cartes de bus a la Pharmacie! Aussi, de façon générale les tarifs sont un peu plus chers. L'abonnement au mois me coûte environ 40€, et l'abonnement à la semaine n'existe pas. Enfin, pas comme à Lyon, c'est-à-dire que la semaine vaut 5 jours à Québec et pas 7! Et il n'existe pas d'abonnement annuel, du coup tous les mois faut retourner au dépanneur ou a la pharmacie du coin pour refaire l'abonnement.
 
 ## L'Université
-
-![]()
-*Photo à venir!*
 
 La première chose qui m'a choqué sur l'Université, c'est sa taille. Le campus fait __1,9km²__, une __quinzaine de bâtiments de cours__, un __complexe sportif__ que je détaille plus loin, __une forêt__ (qui est la plus grande forêt de recherche scientifique au monde) et des centres commerciaux.
 

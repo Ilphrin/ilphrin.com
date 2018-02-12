@@ -3,16 +3,23 @@ source: .
 destination: ./_site
 layouts_dir: ./_layouts
 collection: null
-name: Kevin / Ilphrin
-description: A blog about IT, free software and stuff like that
+owner: Kevin / Ilphrin
+title: Kevin / Ilphrin
+description: Web developper and Mozillian, passionned for Open-Source, UX, Metal, and Photography
 url: https://www.ilphrin.com
-plugins: ['jekyll-paginate', 'jekyll-mermaid', 'jekyll-multiple-languages-plugin', 'jekyll-timeago']
+plugins: ['jekyll-paginate', 'jekyll-timeago', 'jekyll-multiple-languages-plugin']
 languages: ["fr", "en"]
 exclude_from_localizations: ["js", "bower_components", "node_modules", "css", 'images', 'fonts', 'feeds.xml', 'package.json', 'planet_feed.xml', 'robots.txt', 'staticman.yml']
-exclude: [
-]
+exclude: []
 baseurl: ""
 excerpt_separator: "<!--break-->"
+email: 'ilphrin@autistici.org'
+social:
+  twitter: 'https://twitter.com/Kilphrin'
+  github: 'http://github.com/Ilphrin/'
+  linkedin-square: 'https://www.linkedin.com/in/kevin-pellet-5a123ba9/edit/topcard/'
+  flickr: 'https://www.flickr.com/photos/159186107@N06/'
+
 
 #Handling reading
 encoding: "utf-8"
@@ -41,8 +48,6 @@ maruku:
   fenced_code_blocks: true
 
 #SASS configuration
-sass:
-  style: compressed
 
 mermaid:
   src: "http://www.sveido.com/mermaid/dist/mermaid.full.js"
@@ -51,4 +56,12 @@ sitemap:
   file: "/sitemap.xml"
   exclude:
     - "feeds.xml"
+    - "feed.xml"
+    - "node_modules/"
+    - "fonts/"
+    - "css/"
+    - "js/"
     - "planet_feed.xml"
+
+sass:
+  style: compressed

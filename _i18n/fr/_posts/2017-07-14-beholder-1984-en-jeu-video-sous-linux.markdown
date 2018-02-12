@@ -11,8 +11,6 @@ Cet article est le deuxième d’une petite série sur le pack de jeux Humble In
 
 ## Beholder
 
-<iframe width="700" height="350" src="https://www.youtube.com/embed/M_ssES2E3-M" frameborder="0" allowfullscreen></iframe>
-
 Beholder est un jeu un peu particulier. Nous sommes dans une dystopie, avec un monde similaire au nôtre il y a une trentaine d'années, ou règne un régime totalitaire qui contrôle chaque aspect de la vie des habitants, notamment grâce à une surveillance totale et avec une vie privée.
 
 On joue ici le rôle d'un tout nouvel employé de l'État, qui a à sa charge un bâtiment et ses résidents. L'objectif est de s'occuper de la gestion de ces résidents, notamment en les espionnant par tous les moyens possibles, pour finalement dénoncer les criminels à la police lorsqu'il y a une infraction.

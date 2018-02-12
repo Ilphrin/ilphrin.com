@@ -2,6 +2,7 @@
 layout: post_kevin
 title: "Making a JS request with the Fetch API in Symfony 3"
 author: kevin
+category: javascript, planet
 hashtags: symfony javascript
 ---
 
@@ -12,10 +13,8 @@ After this long pause of two months without a bit of article, et much longer wit
 
 <!--break-->
 
-[<img class="cover" src="/images/header_articles/ilya-pavlov-87438.jpg" />](https://unsplash.com/photos/OqtafYT5kTw)
-![]()
+[<img class="cover" src="/images/ilya-pavlov-87438.jpg" />_Photo by Ilya Pavlov on Unsplash_](https://unsplash.com/photos/OqtafYT5kTw){:.img}
 
-_Photo by Ilya Pavlov on Unsplash_
 ## The project
 
 First, a little bit of context. During my education, I have to create a project from scratch in 2 years, with a group of 7 students (including me). We are free to choose the subject, but it has to be validated by a range of presentations in front of selected jurys in order to check if the project has potential to lead to the creation of a startup.

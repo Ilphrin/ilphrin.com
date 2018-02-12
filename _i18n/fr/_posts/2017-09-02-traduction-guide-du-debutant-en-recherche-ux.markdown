@@ -26,7 +26,7 @@ L'objectif principal de la Recherche de Design est d'aviser le processus de conc
 
 Avec cette idée en tête, la recherche à deux parties: Récolter des données, et les synthétiser pour améliorer l'utilisation. Au début d'un projet, la recherche de conception sur l'apprentissage des requis du projet de la part des parties prenantes, et connaître les objectifs et besoins des utilisateurs finaux. Les chercheurs feront des interviews, des questionnaires, observer la perspectives des utilisateurs, et analyser les écrits, données et analyses existants. Ensuite, dans un travail de conception itératif, la recherche va se concentrer sur l'utilisation et les sentiments. Les chercheurs peuvent faire des tests d'utilisation ou des tests A/B, des interviews d'utilisateur sur le processus, et des hypothèses générales qui amélioreront le design.
 
-![Modèles mentaux. Young, Indi. 2008](/images/ux_01.png){:style="width:100%;"}
+![Modèles mentaux. Young, Indi. 2008](/images/ux_01.png)
 
 Nous pouvons aussi diviser les méthodes de recherche UX en deux catégories: quantitatives et qualitatives:
 

@@ -17,24 +17,24 @@ Cette logique et cette interactivité donnent un prototype.
 
 Jusqu'à récemment, la plupart des outils liés au design étaient propriétaire et payant (très cher même parfois). Un outil très connu est inVision qui permet d'importer des images ou des fichiers Sketch. Mais depuis tout récemment, Presentator est sorti dans sa version 1.0, et il mérite clairement le coup d'oeil
 
-![interface](/images/presentator_interface.jpg){:style="width:100%"}
+![interface](/images/presentator_interface.jpg){:.img.cover}
 *L'interface de Presentator, une belle page d'accueil!*
 
 Tout d'abord nous avons la possibilité de créer et gérer des projects, mais aussi leur version en enregistrant un projet à un moment donné.
 
 Chaque projet possède ensuite ses "Screens", une vue de l'application. On peut voir ça comme une page de notre projet.
 
-![Screen](/images/presentator_screen.jpg){:style="width:100%"}
+![Screen](/images/presentator_screen.jpg){:.img.cover}
 *Un screen test piqué depuis un exemlpe de inVision, eheh*
 
 Sur un Screen, on a la possibilité de rajouter des HotSpots, des cadres dans lequel on peut cliquer pour aller sur un autre screen comme un lien hypertexte.
 
-![Hotspots](/images/presentator_hotspots.jpg)
+![Hotspots](/images/presentator_hotspots.jpg){:.img.cover}
 *Les hotspots emmènent vers d'autres screens, ou des URL externes*
 
 Il y a aussi une dimension collaborative, puisqu'on peut partager ses projets à d'autres personnes, et celles-ci peuvent mettre un commentaire pour avoir des retour sur le prototype
 
-![Commentaire](/images/presentator_comment.jpg)
+![Commentaire](/images/presentator_comment.jpg){:.img.cover}
 *On peut avoir des avis sur nos design très rapidement comme ça!*
 
 Le projet vient de sortir dans sa version 1.0, et possède déjà de nombreux atouts en plus de sa superbe interface agréable à prendre en main. Faites un tour dessus, mais attention vous risquez de ne plus vouloir partir!

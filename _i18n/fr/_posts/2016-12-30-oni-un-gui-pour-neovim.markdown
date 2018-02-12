@@ -17,11 +17,11 @@ L'ayant laissé de côté en attendant une meilleure stabilité, j'ai découvert
 
 Voici un petit screenshot de ce à quoi ressemble Oni pendant que je rédige mon article:
 
-![Oni](/images/oni.png)
+![Oni](/images/oni.png){:.img.cover}
 
 C'est cool hein? En comparaison voilà à quoi ressemble mon nvim en terminal (qui est déjà assez sympa à mon goût):
 
-![Neovim](/images/oni_02.png)
+![Neovim](/images/oni_02.png){:.img.cover}
 
 Dans les différences visible on peut voir (outre ma pub caché pour le terminal Terminix ;) ):
 

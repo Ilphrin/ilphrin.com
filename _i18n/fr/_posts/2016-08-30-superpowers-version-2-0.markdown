@@ -25,7 +25,7 @@ Le développement de Superpowers avance constamment et ça fait plaisir à voir.
 
 J'aimerais parler d'une fonctionalité qui m'intéresse particulièrement, qui est l'ajout de Shaders. Pour une petite définition de ce qu'est un Shader je vous invite à lire l'article sur [wikipedia](https://en.wikipedia.org/wiki/Shader).
 
-![superpowers_03](/images/superpowers_03.jpg)
+![superpowers_03](/images/superpowers_03.jpg){:.cover}
 
 Lorsque l'on édite un Shader, on arrive sur une page découpé en 4 zones. En haut à gauche la définition des _uniforms_ et des _attributes_, en haut à droite on a une prévsualisation du Shader sur la surface que l'on veut (Un plan, une image, une sphere, ou un cube), en bas a gauche l'éditeur de Shader Vertex, et en bas à droite l'éditeur de Shader Fragments.
 

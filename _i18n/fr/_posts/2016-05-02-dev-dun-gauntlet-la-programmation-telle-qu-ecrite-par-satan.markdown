@@ -87,8 +87,7 @@ Je ne veux que deux possibilités pour que quelqu'un développe de son plein gr�
 Alors que franchement, entre nous, au final c'est pas si mal notre petit:
 
 <pre>
-<code class="bash">
-./configure
+<code class="bash">./configure
 make
 make install
 </code>

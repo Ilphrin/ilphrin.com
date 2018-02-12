@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article id="main">
+
+  <header>
+    <h2>{{ page.title }}</h2>
+    <p>{{page.excerpt}}</p>
+    {% if page.title == 'Articles' %}
+      <ul class="actions">
+        <li><a href="{{site.baseurl_root}}/en/articles">English</a></li>
+        <li><a href="{{site.baseurl_root}}/articles">Français</a></li>
+      </ul>
+    {% endif %}
+  </header>
+
+  <section class="wrapper style5">
+    <div class="inner fullwidth">
+      {{ content }}
+    </div>
+  </section>
+
+</article>
+

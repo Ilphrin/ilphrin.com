@@ -11,15 +11,13 @@ This article is the first of a series about the [Humble Indie Bundle 18](https:/
 
 ## SteamWorld: Heist
 
-<iframe width="700" height="350" src="https://www.youtube.com/embed/3yEjocL0i2A" frameborder="0" allowfullscreen></iframe>
-
 'SteamWorld: Heist' is a 2D steampunk tactical game, in which you lead a team of steam robots that are space pirates. Each level is an ennemy ship to board, with goals to accomplish before fleeing out.
 
 You can recuit new team members, each one has his/her own capabilities and skills. All characters can evolve by levelling up, and earn equipment you'll loot on the battlefield like: weapons, grenades, armor, health pack, etc.
 
 ## The game and the studio
 
-![Image & Form](/images/imageForm_01.png){:style="width:100%;"}
+![Image & Form](/images/imageForm_01.png)
 
 This game has been developped by the Swedish studio [Image & Form Games](http://imageform.se), they already have a few games done. Most of their games are about SteamWorld.(SteamWorld: Heist, SteamWorld Dig et Dig 2, SteamWorld Tower Defense)
 
@@ -38,7 +36,7 @@ And it is by shooting just above the head of an ennemy you can make his hat fall
 
 ## Steam Powered Giraffe
 
-<iframe width="700" height="350" src="https://www.youtube.com/embed/dDRHx4cPgbE" frameborder="0" allowfullscreen></iframe>
+<iframe width="350" height="175" src="https://www.youtube.com/embed/dDRHx4cPgbE" frameborder="0" allowfullscreen></iframe>
 
 There is a last thing I'd want to talk about: The OST. Most of the songs have been made by 'Steam Powered Giraffe', a group a didn't even know before playing this game. The mix a few styles, but often it hear like Jazz, sometimes it is more like Folk or Pop. Anyway, go watch their videos because they are really fun to watch and listen, they have paint on the face and body, and their facial expressions add more to their crazy style.
 

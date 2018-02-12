@@ -47,7 +47,7 @@ Mais il y a quand même plusieurs choses qui ont fonctionné très très bien da
 
 IrrEdit est une extension au logiciel propriétaire et payant CopperCube, "un éditeur pour créer des jeux en 3D, des applications et des sites 3D sans programmer (cf le [site officiel](http://www.ambiera.com/coppercube/))"
 
-![irredit_1](/images/irredit_01.png){:style="float:left"}
+![irredit_1](/images/irredit_01.png){:.cover}
 
 Voilà le premier niveau que j'ai fait avec celui-ci. J'ai dû passer 30 h à apprendre à l'utiliser, et 2h à faire vraiment les niveaux. Son interface est pas mal du tout et je n'ai même pas encore exploité un centième de ses capacités.
 

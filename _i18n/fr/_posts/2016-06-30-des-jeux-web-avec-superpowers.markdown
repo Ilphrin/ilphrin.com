@@ -16,7 +16,7 @@ Superpowers est un projet libre, qui tourne sur une base d'[Electron](http://ele
 
 Superpowers fonctionne par système de client\<-\>serveur, le serveur s'occupe de gérer les différents projets, et l'accès par les clients à ceux-ci. Lorsque vous lancez le serveur il se lance par défaut en _localhost_ sur un port pré-défini. Une fois le serveur lancé vous pouvez vous y connecter avec un client, avec potentiellement un mot de passe et/ou un nom d'utilisateur à fournir.
 
-![superpowers_01](/images/superpowers_01.png)
+![superpowers_01](/images/superpowers_01.png){:.cover}
 
 ### On peut commencer à travailler...
 
@@ -28,7 +28,7 @@ Lorsque l'on travaille avec Superpowers sur l'aspect du code, on ne travaille pa
 
 Le gros point qui est à mettre en avant à mon avis, et le fait que Superpowers permet aux créateurs de Jeux Vidéos de travailler ensemble, et simultanément sur un projet. Chaque changement se voit en temps réel auprès des autres clients connectés: L'un peut coder pendant qu'un autre prépare des TileSets, et qu'un autre construit une Scène de jeu.
 
-![superpowers_02](/images/superpowers_02.png)
+![superpowers_02](/images/superpowers_02.png){:.cover}
 
 Ce logiciel est encore en Bêta officiellement, il a donc encore quelques soucis, et manque de deux/trois fonctionalités qui pourraient être utiles (des notifications de modifications sur une partie du projet, un moyen de communication, pourquoi pas intégrer un client IRC directement à l'intérieur), mais cela n'assombrit pas ses nombreuses qualités.
 

@@ -36,7 +36,7 @@ J'ai découvert donc récemment un logiciel sous KDE pour faire de l'UML rapidem
 
 Ce logiciel est en développement et une version mineure sors tous les 4 mois à peu près. Une petite capture pour présenter la bête:
 
-![umbrello interface](/images/umbrello01.png)
+![umbrello interface](/images/umbrello01.png){:.cover}
 
 En haut on a la barre d'outils pour faire la plupart des opérations nécessaires: création d'une interface, d'une classe, flèche de composition, d'agrégation, etc. Sur la gauche on a un panneau de détails sur les boites qu'on a crée sous forme d'arborescence et d'autres petits outils que je vous laisserais découvrir ;)
 

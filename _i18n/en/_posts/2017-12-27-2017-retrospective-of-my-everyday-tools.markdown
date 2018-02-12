@@ -42,7 +42,7 @@ And this year, Oni had not less than __20__ new versions! It exploded with the r
 - And a lot more new fixes and improvements I can't write here
 
 
-![Oni smart completion](/images/Gifs/Oni_01.gif){:style="width:100%;"}
+![Oni smart completion](/images/Gifs/Oni_01.gif)
 
 Oni isn't yet in 0.3.0, and it has a lot of awesome features. One things I'd like to point here is that we have BountySource+OpenCollective as ways to give to Oni's developpers and support his work, and in 2018 it will really be one of the project I will give my money to! Don't hesitate to take a look at it!o
 
@@ -69,7 +69,7 @@ I was amused by this one, because I loved it but I knew it would be controversal
 
 The fact is that playing with '://' is the best part in my opinion, you directly see that Mozilla is talking about Web. Now this new Logo is not alone, it comes with a new bunch of colors. And the two main colors are....White and black.
 
-![MDN's new look with Black and white](/images/MDN_01.png){:style="width:100%;"}
+![MDN's new look with Black and white](/images/MDN_01.png){:.cover}
 
 At first, we could say that this is a pretty poor choice of color, and that it makes it really 'hard' and bold. And yes it is, but when I look for example at MDN now or the Mozilla's Blog, I can't think anything but that it was done with accessibility in mind. This contrast makes it really perfect for users that need big differences of colors.
 

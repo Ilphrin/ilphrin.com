@@ -13,7 +13,7 @@ Ca y est, une nouvelle version de Neovim vient de sortir! Et avec elle sont lot 
 
 Neovim est en développement depuis une paire d'années maintenant et, avec le soutien de nombreux contributeurs, rajoute un interêt non negligeable à ce bon vieux Vim qui sort une version toutes les décennies. Voici une liste non-exhaustives des nouveautés non seulement dans la 0.1.7 mais aussi dans le travail antérieur:
 
-* En 0.1.7 nous avons maintenant le __inccommand__, successeur au _incsub_, nous permet d'avoir un aperçu temps-réel des modifs sur du texte, par le biais par example d'une substitution comme :%s/coucou/plop/g (une exemple [ICI](https://asciinema.org/a/92207))
+* En 0.1.7 nous avons maintenant le __inccommand__, successeur au _incsub_, nous permet d'avoir un aperçu temps-réel des modifs sur du texte, par le biais par example d'une substitution comme `:%s/coucou/plop/g` (une exemple [ICI](https://asciinema.org/a/92207))
 * La Newsletter #7 est sortie, et dedans un il y un retour sur ce qui a été fait
 * La commande _:tchdir_ qui permet de changer de répertoire localement à un 'tab'
 * La 'statusline' peut maintenant aligner un nombre indéfini d'élements

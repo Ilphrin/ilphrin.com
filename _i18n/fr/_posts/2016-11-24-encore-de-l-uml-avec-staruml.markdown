@@ -20,7 +20,7 @@ Déjà en arrivant sur la page du projet, on a une assez bonne surprise puisque 
 
 Du coup pour le faire fonctionner j'ai pris la version windows que j'ai installé avec Wine et PlayOnLinux au bout de quelques essais.
 
-![Capture StarUML](/images/staruml.jpg)
+![Capture StarUML](/images/staruml.jpg){:.img.cover}
 
 J'ai l'impression de commencer cet article en faisant de la mauvaise pub pour StarUML, mais en vérité j'aime beaucoup ce logiciel! Sur le site officiel on a une liste de ses fonctionnalités phares à mon avis tout à fait subjectif:
 

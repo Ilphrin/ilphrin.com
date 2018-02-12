@@ -1,112 +1,107 @@
 ---
-layout: index
-title: 'Kevin / Ilphrin'
-description: 'A website of an IT developer and open-source lover'
+layout: landing
 ---
+<!-- Banner -->
+<section id="banner">
+  <div class="inner">
+    <h2>{{ site.title }}</h2>
+    <p>{{ site.description | markdownify }}</p>
+    <ul class="actions">
+      <li><a href={{ "/en/articles" | prepend: site.baseurl_root }} class="button special">Articles</a></li>
+      <li><a href={{ "/works" | prepend: site.baseurl_root }} class="button special">Works</a></li>
+      <li><a href={{ "/photos" | prepend: site.baseurl_root }} class="button special">Photos</a></li>
+    </ul>
+  </div>
+  <a href="#one" class="more scrolly">Learn More about me</a>
+</section>
 
-<script charset="utf-8">
-  let blocksBackground = [
-    {% for work in site.data.works %}
-      "/images/work/{{ work.background }}",
-    {% endfor %}
-  ];
+<!-- One -->
+<section id="one" class="wrapper style1 special">
+  <div class="inner">
+    <header class="major">
+      <h2>My name is Kevin Pellet (aka Ilphrin, that's my favorite name)</h2>
+      <p>I started learning programming
+        since I was a kid, and love Web development. I also like to work on
+        UX/UI design and talk about privacy on the Internet. 
+        <br />
+        Oh, and in everyday life you can get my attention with sushi,
+        music, or video games. I am also a Mozillian since a few years.</p>
+    </header>
+  </div>
+</section>
 
-  function changeIndice(factor, shape) {
-    indice += factor;
-    if (indice < 0) {
-      indice = blocks.length - 1;
-    }
-    else if (indice >= blocks.length) {
-      indice = 0;
-    }
-    for (let i = 0; i < blocks.length; i++) {
-      console.log(indice);
-      if (i != indice) {
-        blocks[i].style.display = 'none';
-      }
-      else {
-        blocks[i].style.display = 'block';
-      }
-    }
-  }
-</script>
-
-<div id="main">
-
-<article class="one_pager">
-  <section id="brand">
-    <div class="row">
-      <div class="leftWideMargin rightWideMargin column">
-        <h3>{% t index.brand_one %}</h3>
-        <div>
-          <a href="/articles">{% t index.read %}</a>
-        </div>
-      </div>
+<!-- Two -->
+<section id="two" class="wrapper alt style2">
+  <a href="/articles" class="spotlight">
+    <div class="image"><img src="/images/pic01.jpg" alt="" /></div><div class="content">
+      <h2>Articles</h2>
+      <p>I like to write about Programming, Open Source, new Tools, and sometimes my everyday life</p>
     </div>
-  </section>
-
-  <section id="work" class="leftMargin rightMargin row" >
-    <div class="work_slider row">
-      <i id="arrowLeft"></i>
-      <div class="work_hexag_container"></div>
-      {% for work in site.data.works %}
-        <div class="work_block">
-          <h2>{{work.name}}</h2>
-          <p>{{work.contentOne}}</p>
-          <p>{{work.contentTwo}}</p>
-        </div>
-      {% endfor %}
-      <i id="arrowRight"></i>
+  </a>
+  <a href="/works" class="spotlight">
+    <div class="image"><img src="images/pic03.jpg" alt="" /></div><div class="content">
+      <h2>Work</h2>
+      <p>Here you can see all of my previous experiences, and also my personnal projects and some bytes of (not always)useful code</p>
     </div>
-  </section>
-
-  <section id="blog">
-    <div id="trending_article" class="rightWideMargin leftWideMargin">
-      {% for post in site.posts %}
-        {% if forloop.index == 1 %}
-          <a href="{{post.url}}" id="featured_article">
-              <h3>{{ post.title }}</h3>
-              <sub class="textContent">{{ post.date | date:"%d/%m/%y" }}</sub>
-          </a>
-        {% endif %}
-      {% endfor %}
-      <div class="row">
-        {% for post in site.posts limit: 4 %}
-        {% if forloop.first != true %}
-        <a href="{{post.url}}" class="three">
-          <h4>{{ post.title }}</h4>
-          <sub class="textContent">{{ post.date | date: "%d/%m/%Y"}}</sub>
-        </a>
-        {% endif %}
-        {% endfor %}
-      </div>
-      <a href="{{site.baseurl}}/articles" id="more">{%t blog_.more %}</a>
+  </a>
+  <a href="https://www.flickr.com/photos/159186107@N06/" class="spotlight">
+    <div class="image"><img src="images/pic02.jpg" alt="" /></div><div class="content">
+      <h2>Photography</h2>
+      <p>Since not a long time now, I try to do some amateur photography, you can take a look here!</p>
     </div>
-  </section>
+  </a>
+</section>
 
-  <section id="contact">
-    <div class="column center">
-      <h2>{% t index.contact %}</h2>
-      <span>
-        <a href="https://twitter.com/Kilphrin" target="_blank"><img src="/images/icons/twitter.svg" /></a>
-        <a href="https://medium.com/@pellet_k" target="_blank"><img src="/images/icons/medium.png"/></a>
-        <a href="mailto:ilphrin@autistici.org?Subject=Hello%20from%20your%20website" target="_top"><img src="/images/icons/mail.png"</a>
-        <a href="https://www.flickr.com/photos/159186107@N06/" target="_blank"><img src="/images/icons/flickr.png" /></a>
-        <a href="https://www.linkedin.com/in/kevin-pellet-5a123ba9/" target="_blank"><img src="/images/icons/linkedin-icon.png"/></a>
-      </span>
-    </div>
-  </section>
-</article>
+<!-- Three -->
+<section id="three" class="wrapper style3 special">
+  <div class="inner">
+    <header class="major">
+      <h2>This is what I love most</h2>
+      <p>But I like other things too! Just not as much</p>
+    </header>
+    <ul class="features">
+      <li class="icon fa-laptop">
+        <h3>Open Source</h3>
+        <p>I hope for a future where everyone would be able to trust technology. A future where the Internet of Things would not betray our privacy and security. And I beleive this can only be achieved through Open-Source softwares</p>
+      </li>
+      <li class="icon fa-code">
+        <h3>JavaScript</h3>
+        <p>Some hate it, some love it. I am from the second side. JavaScript is an awesome language, but it is misunderstood by those who use it the wrong way. Though it is thanks to it we have cross-plateform/devices awesome app!</p>
+      </li>
+      <li class="icon fa-firefox">
+        <h3>Mozilla</h3>
+        <p>I am a volunteer since a few years now. I believe in the work of Mozilla, it gives us a free (as in freedom) and trusty open-source Web and its awesome Firefox browser</p>
+      </li>
+      <li class="icon fa-street-view">
+        <h3>UX Design</h3>
+        <p>I never really worked as a UX Designer, but learned a lot about it (books, online courses, internships, etc.), and I have this strong conviction that UX Design is where I will have the better impact in the world, more than if I only worked as Web developper</p>
+      </li>
+      <li class="icon fa-camera">
+        <h3>Photography</h3>
+        <p>I bought a camera to have fun. And know I can't have a month or a week without taking some photos. Nature, architecture, landscape, etc.. I like everything!</p>
+      </li>
+      <li class="icon fa-paint-brush">
+        <h3>Painting</h3>
+        <p>I felt in love with Warhammer 40K a long time ago, but only with painting figurines. Now I paint on any kind of figurines, and this is soooooo relaxing. It also helped me working on my focus and concentration skills</p>
+      </li>
+      <li class="icon fa-headphones">
+        <h3>Music</h3>
+        <p>Megadeth more than Ketty Perry. Dragon Force more than Snoop Dogg. Dissection reaaaaallly more than Rebecca Black. Vocaloid more than Shakira. Well, I am more Metal, Nightcore, and some kind of Electro in the end</p>
+      </li>
+    </ul>
+  </div>
+</section>
 
-</div>
-
-<script charset="utf-8">
-  let blocks = document.querySelectorAll('.work_block');
-  let indice = 0;
-  for (let elem of blocks) {
-    elem.style.display = 'none';
-  }
-  blocks[indice].style.display = 'block';
-  let arrow = document.querySelector('#arrowLeft').addEventListener('click', () => changeIndice(-1));
-  arrow = document.querySelector('#arrowRight').addEventListener('click', () => changeIndice(1));
-</script>
+<!-- CTA -->
+<section id="cta" class="wrapper style4">
+  <div class="inner">
+    <header>
+      <h2>Let's get in touch!</h2>
+      <p>Send me an email or a tweet!</p>
+    </header>
+    <ul class="actions vertical">
+      <li><a href="mailto:kevinpellet@ilphrin.com" class="button fit" target="_blank">Mail</a></li>
+      <li><a href="https://twitter.com/Kilphrin" target="_blank" class="button fit special">Tweet</a></li>
+    </ul>
+  </div>
+</section>

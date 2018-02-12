@@ -65,10 +65,8 @@ Il n'y a pas grand-chose à dire sur ce fichier-là il parle de lui-même à mon
   </form>
 {% endhighlight %}
 
-Là il ne faut surtout pas oublier deux choses: la première c'est l'action du formulaire à indiquer dans la balise __\<form\>__, et la deuxième c'est que les différents champs que vous voulez renseigner sont dans des objets. Pour ajouter une option vous aurez __\<input name="option[MonOption]"\>__ et pour un champ à traiter se sera __\<input name="fields[MonChamp]"\>__
+Là il ne faut surtout pas oublier deux choses: la première c'est l'action du formulaire à indiquer dans la balise `<form\>`, et la deuxième c'est que les différents champs que vous voulez renseigner sont dans des objets. Pour ajouter une option vous aurez `<input name="option[MonOption]" />` et pour un champ à traiter se sera `<input name="fields[MonChamp]"/>`
 
 Voilà vous avez maintenant les outils pour mettre en place des commentaires facilement et rapidement pour votre site, vous n'aurez plus d'excuses ;)
 
-{% note %}
-Pour plus de lecture sur le sujet je vous conseille aussi ce très bon article (en anglais) <a href="https://mademistakes.com/articles/jekyll-static-comments/">SUR CE LIEN</a></content>
-{% endnote %}
+Pour plus de lecture sur le sujet je vous conseille aussi ce très bon article (en anglais) [ici](https://mademistakes.com/articles/jekyll-static-comments/)

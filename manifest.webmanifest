@@ -1,0 +1,13 @@
+{
+  "background-color": "#231946",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "size": "128x128",
+      "type": "images/png"
+    }
+  ],
+  "name": "Ilphrin",
+  "start_url": "/index.html"
+}

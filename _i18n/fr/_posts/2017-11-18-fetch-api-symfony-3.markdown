@@ -2,7 +2,7 @@
 layout: post_kevin
 title: "Utiliser la Fetch API en JS avec du Symfony 3"
 author: kevin
-category: planet
+category: planet, javascript
 hashtags: javascript symfony
 ---
 
@@ -13,9 +13,7 @@ Après cette absence de deux mois sans article, et encore plus sans sujet un peu
 
 <!--break-->
 
-[<img class="cover" src="/images/header_articles/ilya-pavlov-87438.jpg" />](https://unsplash.com/photos/OqtafYT5kTw)
-![]()
-_Photo par Ilya Pavlov sur Unsplash_
+[<img class="cover" src="/images/ilya-pavlov-87438.jpg" />_Photo par Ilya Pavlov sur Unsplash_](https://unsplash.com/photos/OqtafYT5kTw){:.img}
 
 ## Le projet
 
