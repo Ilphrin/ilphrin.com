@@ -8,8 +8,8 @@ title: Kevin / Ilphrin - Freelance Web Developper
 description: Freelance web developper and Mozillian, passionned for Open-Source, UX, Metal, and Photography
 url: https://www.ilphrin.com
 plugins: ['jekyll-paginate', 'jekyll-timeago', 'jekyll-multiple-languages-plugin']
-languages: ["fr", "en"]
-exclude_from_localizations: ["js", "bower_components", "node_modules", "css", 'images', 'fonts', 'feeds.xml', 'package.json', 'planet_feed.xml', 'robots.txt', 'staticman.yml']
+languages: ["en", "fr"]
+exclude_from_localizations: ["js", "bower_components", "node_modules", "css", 'images', 'fonts', 'package.json', 'planet_feed.xml', 'robots.txt', 'staticman.yml']
 exclude: []
 baseurl: ""
 excerpt_separator: "<!--break-->"
