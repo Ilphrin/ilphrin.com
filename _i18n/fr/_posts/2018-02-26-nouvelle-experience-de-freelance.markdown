@@ -5,7 +5,7 @@ author: kevin
 hashtags: freelance wordpress
 ---
 
-Je suis au sous-sol de ma maison québecoise, travaillant sur mon cours développement Web, par un temps glacial commun au mois de décembre dans cette région du monde. Et je me fais la réflexion que je n'apprends pas assez, que j'aimerais pouvoir mettre en application ce que je sais déjà, et me débrouiller par moi-même pour découvrir de nouvelles choses.
+Je suis au sous-sol de ma maison québecoise, travaillant sur mon cours de développement Web, par un temps glacial commun au mois de décembre dans cette région du monde. Et je me fais la réflexion que je n'apprends pas assez, que j'aimerais pouvoir mettre en application ce que je sais déjà, et me débrouiller par moi-même pour découvrir de nouvelles choses.
 
 Ce genre de réflexions et de questionnements, je pense que beaucoup de personnes dans ma tranche d'âge se la posent. J'entends beaucoup dire "Je veux travailler, j'en ai marre d'être encore à l'école à mon âge", et c'est plus ou moins le même genre de pensées que j'ai. Même si être à Epitech (ou l'université Laval en ce moment) est un peu différent que d'être dans une école dite "classique" comme une faculté.
 
