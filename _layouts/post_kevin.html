@@ -2,10 +2,11 @@
 layout: default
 title: {{page.title}}
 ---
-<article id="main">
+<article id="main" itemscope itemtype="http://schema.org/Article">
 
   <header>
-    <h2>{{ page.title }}</h2>
+    <h2 itemprop="name">{{ page.title }}</h2>
+    <p itemprop="datePublished">[{{page.date | date: "%d %b %Y" }}]</p>
     <ul class="actions">
       <a href="{{site.baseurl}}/articles">Go back to articles</a>
     </ul>
@@ -26,16 +27,16 @@ title: {{page.title}}
       </div>
       {{ content }}
       <div id="share-buttons">
-        <a href="mailto:?Subject={{page.title}}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://ilphrin.com/{{site.baseurl}}{{page.url}}">
+        <a href="mailto:?Subject={{page.title}}&amp;Body=I%20saw%20this%20and%20thought%20of%20you!%20 https://ilphrin.com/{{site.baseurl}}{{page.url}}" id="share-email">
           <img src="https://simplesharebuttons.com/images/somacro/email.png" alt="Email" />
         </a>
-        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://ilphrin.com/{{site.baseurl}}{{page.url}}" target="_blank">
+        <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://ilphrin.com/{{site.baseurl}}{{page.url}}" target="_blank" id="share-linkedin">
           <img src="https://simplesharebuttons.com/images/somacro/linkedin.png" alt="LinkedIn" />
         </a>
-        <a href="http://reddit.com/submit?url=https://ilphrin.com/{{site.baseurl}}{{page.url}}&amp;title={{page.title}}" target="_blank">
+        <a href="http://reddit.com/submit?url=https://ilphrin.com/{{site.baseurl}}{{page.url}}&amp;title={{page.title}}" target="_blank" id="share-reddit">
           <img src="https://simplesharebuttons.com/images/somacro/reddit.png" alt="Reddit" />
         </a>
-        <a href="https://twitter.com/share?url=https://ilphrin.com/{{site.baseurl}}{{page.url}}&amp;text={{page.title}}&amp;hashtags={{page.hashtags}}" target="_blank">
+        <a href="https://twitter.com/share?url=https://ilphrin.com/{{site.baseurl}}{{page.url}}&amp;text={{page.title}}&amp;hashtags={{page.hashtags}}" target="_blank" id="share-twitter">
           <img src="https://simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" />
         </a>
       </div>
@@ -43,3 +44,18 @@ title: {{page.title}}
   </section>
 
 </article>
+
+<script>
+document.querySelector('#mce-EMAIL').addEventListener('click', function(e) {
+  _paq.push(['trackEvent', 'Article', 'Email newsletter']);
+});
+document.querySelector('#mc-embedded-subscribe').addEventListener('click', function(e) {
+  _paq.push(['trackEvent', 'Article', 'Newsletter subscription']);
+});
+document.querySelectorAll('.share-buttons a').forEach(function(element) {
+  var type = element.id;
+  element.addEventListener('click', function (e) {
+    _paq.push(['trackEvent', 'Article', type + ' clicked']);
+  });
+});
+</script>

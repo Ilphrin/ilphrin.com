@@ -5,7 +5,7 @@
   <channel>
     <title>{{ site.name | xml_escape }} - Planet Libre</title>
     <description>Posts categorized as 'planet'</description>
-    <link>{{ site.url }}</link>
+    <link>https://ilphrin.com</link>
     <atom:link href="{{ site.url }}/feed.category.xml" rel="self" type="application/rss+xml" />
     {% for post in site.posts %}
     {% if post.category contains 'planet' %}
@@ -13,8 +13,8 @@
         <title>{{ post.title | xml_escape }}</title>
         <description>{{ post.content | xml_escape }}</description>
         <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ site.url }}{{ post.url }}</link>
-        <guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
+        <link>https://ilphrin.com/fr{{ post.url }}</link>
+        <guid isPermaLink="true">https://ilphrin.com/fr{{ post.url }}</guid>
       </item>
     {% endif %}
     {% endfor %}

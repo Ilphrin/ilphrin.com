@@ -98,24 +98,26 @@
   });
 
   // Newsletter subscription
-  $.fn.isInViewport = function() {
-    var elementTop = $(this).offset().top;
-    var elementBottom = $(this).outerHeight() + elementTop;
-    var viewportTop = $(window).scrollTop();
-    var viewportBottom = $(window).height() + viewportTop;
-    return elementBottom > viewportTop && elementTop < viewportBottom;
-  }
-
-  let alreadyDone = false;
-  $(window).on('scroll', function() {
-    const input = $('#mc_embed_signup_scroll');
-    if (input.isInViewport() && !alreadyDone) {
-      alreadyDone = true;
-      input.css('transition', 'all .3s').delay(500).queue((next) => {
-        input.addClass('boxPopup');
-        next();
-      })
+  if ($(document).find("title").text() !== 'Works' && $(document).find('title').text() !== 'My Everyday Articles') {
+    $.fn.isInViewport = function() {
+      var elementTop = $(this).offset().top;
+      var elementBottom = $(this).outerHeight() + elementTop;
+      var viewportTop = $(window).scrollTop();
+      var viewportBottom = $(window).height() + viewportTop;
+      return elementBottom > viewportTop && elementTop < viewportBottom;
     }
-  })
+
+    let alreadyDone = false;
+    $(window).on('scroll', function() {
+      const input = $('#mc_embed_signup_scroll');
+      if (input.isInViewport() && !alreadyDone) {
+        alreadyDone = true;
+        input.css('transition', 'all .3s').delay(500).queue((next) => {
+          input.addClass('boxPopup');
+          next();
+        })
+      }
+    })
+  }
 
 })(jQuery);
