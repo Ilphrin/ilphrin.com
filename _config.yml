@@ -10,7 +10,7 @@ url: https://www.ilphrin.com
 plugins: ['jekyll-paginate', 'jekyll-timeago', 'jekyll-multiple-languages-plugin']
 languages: ["en", "fr"]
 exclude_from_localizations: ["js", "bower_components", "node_modules", "css", 'images', 'fonts', 'package.json', 'planet_feed.xml', 'robots.txt', 'staticman.yml']
-exclude: []
+exclude: [_css, _js, _images, _sass, package.json, package-lock.json]
 baseurl: ""
 excerpt_separator: "<!--break-->"
 email: 'ilphrin@autistici.org'

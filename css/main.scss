@@ -1047,7 +1047,7 @@ input[type="submit"] {
 /* Wrapper */
 
 @mixin wrapper($p) {
-  background-color: _palette($p, bg);
+  background: _palette($p, bg);
   color: _palette($p, fg);
 
   // Basic
@@ -1305,6 +1305,10 @@ input[type="submit"] {
     @include wrapper(accent7);
   }
 
+  &.style6 {
+    @include wrapper(accent8);
+  }
+
   @include breakpoint(medium) {
     @include padding(4em, 3em);
   }
@@ -1339,7 +1343,7 @@ input[type="submit"] {
   @include vendor('transform', 'translateX(20em)');
   @include vendor('transition', 'transform #{_duration(menu)} ease');
   -webkit-overflow-scrolling: touch;
-  background: _palette(accent1, bg);
+  background: _palette(accent5, bg);
   color: _palette(accent1, fg-bold);
   height: 100%;
   max-width: 80%;
@@ -1529,7 +1533,7 @@ body.is-menu-visible {
   @include vendor('flex-direction', 'column');
   @include vendor('justify-content', 'center');
   cursor: default;
-  height: 100vh;
+  height: 90vh;
   min-height: 35em;
   overflow: hidden;
   position: relative;
@@ -1917,4 +1921,143 @@ body.is-mobile {
   background-color: rgba(255,255,255, 0.05);
   box-shadow: 0px 0px 10px black;
   padding: 10px;
+}
+
+#one.work {
+  width: 100%;
+  .project {
+    text-align: center;
+    cursor: pointer;
+    height: 220px;
+    overflow: hidden;
+    border: 1px solid #2e3842;
+    transition: all .3s;
+    transition: height .5s;
+    background: _palette(accent5, bg);
+    .metadata {
+      position: relative;
+      top: 80px;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      z-index: 1;
+      .datetime {
+        display: none;
+        transform: translateY(200px);
+        transition: all .5s;
+      }
+      h2 {
+        margin: 0;
+        display: inline-block;
+        &::after {
+          display: block;
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: white;
+          transition: width ease-out .2s;
+          margin: auto;
+        }
+      }
+    }
+    &:not(.visible):hover {
+      h2::after {
+        width: 0;
+      }
+      img {
+        filter: brightness(40%);
+      }
+    }
+    img {
+      position: relative;
+      top: -80px;
+      filter: brightness(25%);
+      transition: filter ease-out .2s;
+      width: 100%;
+      transform: translateY(-40%);
+    }
+    p {
+      position: absolute;
+      top: 380px;
+      width: 80%;
+      margin-left: 10%;
+      display: none;
+    }
+    .projectWrapper {
+      height: 300px;
+      overflow: hidden;
+    }
+    &.visible {
+      cursor: initial;
+      position: fixed;
+      height: 100vh;
+      width: 100%;
+      z-index: 100000;
+      top: 0;
+      overflow: auto;
+      span {
+        color: #dd962f;
+        font-weight: bold;
+      }
+      img {
+        top: 25%;
+      }
+      p {
+        display: block;
+      }
+      .metadata {
+        top: 130px;
+        h2 {
+          &::after {
+            width: 0;
+          }
+        }
+        .datetime {
+          display: inline-block;
+          transform: translateY(0px);
+        }
+      }
+      img {
+        filter: brightness(40%);
+      }
+    }
+    &.unvisible {
+      filter: brightness(50%);
+      transition: .2s;
+    }
+    &.unvisible:hover {
+      filter: brightness(100%);
+    }
+  }
+}
+
+body.stop {
+  overflow: hidden;
+}
+
+#crossButton {
+  position: fixed;
+  right: 1em;
+  top: 1em;
+  z-index: 100001;
+  width: 32px;
+  height: auto;
+  cursor: pointer;
+  display: none;
+  opacity: 0;
+  transition: opacity .5s;
+  &.visible {
+    display: block;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 900px) {
+  #one.work .project {
+    img {
+      transform: none;
+      top: -60px;
+    }
+  }
 }

@@ -121,3 +121,45 @@
   }
 
 })(jQuery);
+
+(function($){
+  const works = document.querySelectorAll('.project');
+  const body = document.body;
+  const cross = document.getElementById('crossButton');
+  const header = document.getElementById('header');
+
+  cross.addEventListener('click', () => {
+    let work = document.querySelector('.project.visible');
+    work.classList.remove('visible');
+    body.classList.remove('stop');
+    cross.classList.remove('visible');
+    header.classList.remove('alt');
+  });
+
+  for (let work of works) {
+    work.addEventListener('click', (e) => {
+      if (work.classList.contains('visible')) {
+        return;
+      }
+      for (let _work of works) {
+        $('html, body').animate({
+          scrollTop: work.getBoundingClientRect().top - body.getBoundingClientRect().top - 60 + 'px',
+        });
+        if (_work.id !== work.id) {
+          _work.classList.add('unvisible');
+        }
+        else {
+          _work.classList.remove('unvisible');
+        }
+      }
+
+      header.classList.add('alt');
+
+      window.setTimeout(() => {
+        work.classList.add('visible');
+        body.classList.add('stop');
+        cross.classList.add('visible');
+      }, 200);
+    });
+  }
+})(jQuery);

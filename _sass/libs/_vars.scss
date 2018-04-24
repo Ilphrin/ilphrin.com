@@ -37,9 +37,9 @@ $font: (
 
 // Palette.
 $palette: (
-        bg:                                     #2e3842,
-        fg:                                     #fff,
-        fg-bold:                        #fff,
+        bg:                                     #10051d,
+        fg:                                     #ddd,
+        fg-bold:                        #ddd,
         fg-light:                       rgba(255,255,255,0.5),
         border:                         #fff,
         border-bg:                      rgba(144,144,144,0.25),
@@ -91,7 +91,7 @@ $palette: (
         ),
 
         accent5: (
-                bg:                             #6c5093,
+                bg:                             linear-gradient(darken(#320F59, 3%), #10051d),
                 fg-bold:                #ffffff,
                 fg:                             mix(#6c5093, #ffffff, 25%),
                 fg-light:               mix(#6c5093, #ffffff, 40%),
@@ -121,5 +121,16 @@ $palette: (
                 border-bg:              rgba(0,0,0,0.0375),
                 border2:                #bfbfbf,
                 border2-bg:             rgba(0,0,0,0.1)
+        ),
+
+        accent8: (
+                bg:                             linear-gradient(darken(#320F59, 7%), #10051d),
+                fg-bold:                #ffffff,
+                fg:                             mix(#6c5093, #ffffff, 25%),
+                fg-light:               mix(#6c5093, #ffffff, 40%),
+                border:                 rgba(0,0,0,0.125),
+                border-bg:              rgba(255,255,255,0.075),
+                border2:                rgba(0,0,0,0.25),
+                border2-bg:             rgba(255,255,255,0.2)
         )
 );
