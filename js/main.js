@@ -98,7 +98,7 @@
   });
 
   // Newsletter subscription
-  if ($(document).find("title").text() !== 'Works' && $(document).find('title').text() !== 'My Everyday Articles') {
+  if ($(document).find("title").text() !== 'Portfolio' && $(document).find('title').text() !== 'My Everyday Articles') {
     $.fn.isInViewport = function() {
       var elementTop = $(this).offset().top;
       var elementBottom = $(this).outerHeight() + elementTop;
@@ -131,9 +131,11 @@
   cross.addEventListener('click', () => {
     let work = document.querySelector('.project.visible');
     work.classList.remove('visible');
-    body.classList.remove('stop');
     cross.classList.remove('visible');
-    header.classList.remove('alt');
+    window.setTimeout(() => {
+      work.classList.add('unvisible');
+      body.classList.remove('stop');
+    }, 850);
   });
 
   for (let work of works) {
@@ -144,7 +146,11 @@
       for (let _work of works) {
         $('html, body').animate({
           scrollTop: work.getBoundingClientRect().top - body.getBoundingClientRect().top - 60 + 'px',
-        });
+        },
+        400,
+          () => {
+            console.log("animate");
+          });
         if (_work.id !== work.id) {
           _work.classList.add('unvisible');
         }
@@ -153,13 +159,12 @@
         }
       }
 
-      header.classList.add('alt');
-
       window.setTimeout(() => {
         work.classList.add('visible');
         body.classList.add('stop');
         cross.classList.add('visible');
-      }, 200);
+        console.log("timeout");
+      }, 400);
     });
   }
 })(jQuery);

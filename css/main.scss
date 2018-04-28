@@ -1931,8 +1931,7 @@ body.is-mobile {
     height: 220px;
     overflow: hidden;
     border: 1px solid #2e3842;
-    transition: all .3s;
-    transition: height .5s;
+    transition: all .85s ease;
     background: _palette(accent5, bg);
     .metadata {
       position: relative;
@@ -1942,22 +1941,22 @@ body.is-mobile {
       flex-direction: column;
       align-items: center;
       z-index: 1;
-      .datetime {
-        display: none;
-        transform: translateY(200px);
-        transition: all .5s;
-      }
+      transition: all .85s ease;
       h2 {
         margin: 0;
         display: inline-block;
+        position: relative;
         &::after {
           display: block;
-          content: "";
+          content: '';
           width: 100%;
           height: 2px;
-          background-color: white;
-          transition: width ease-out .2s;
+          background: white;
+          transition: all ease .85s;
           margin: auto;
+          position: absolute;
+          bottom: 0;
+          right: 0;
         }
       }
     }
@@ -1973,7 +1972,7 @@ body.is-mobile {
       position: relative;
       top: -80px;
       filter: brightness(25%);
-      transition: filter ease-out .2s;
+      transition: filter ease .85s;
       width: 100%;
       transform: translateY(-40%);
     }
@@ -1994,28 +1993,17 @@ body.is-mobile {
       height: 100vh;
       width: 100%;
       z-index: 100000;
-      top: 0;
+      top: 3em;
       overflow: auto;
-      span {
-        color: #dd962f;
-        font-weight: bold;
-      }
-      img {
-        top: 25%;
-      }
       p {
         display: block;
       }
       .metadata {
-        top: 130px;
+        top: 7em;
         h2 {
           &::after {
             width: 0;
           }
-        }
-        .datetime {
-          display: inline-block;
-          transform: translateY(0px);
         }
       }
       img {
@@ -2024,7 +2012,7 @@ body.is-mobile {
     }
     &.unvisible {
       filter: brightness(50%);
-      transition: .2s;
+      transition: all .85 ease;
     }
     &.unvisible:hover {
       filter: brightness(100%);
@@ -2039,7 +2027,7 @@ body.stop {
 #crossButton {
   position: fixed;
   right: 1em;
-  top: 1em;
+  top: calc(1em + 60px);
   z-index: 100001;
   width: 32px;
   height: auto;
